@@ -5,7 +5,7 @@ Donate link: http://www.cozmoslabs.com/2011/04/12/wordpress-profile-builder-a-fr
 Tags: user registration, custom field registration, customize profile, user fields, builder, profile builder 
 Requires at least: 3.1
 Tested up to: 3.1
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 
 
 Login, registration and edit profile shortcodes for the front-end. Also you can chose what fields should be displayed.
@@ -63,6 +63,9 @@ No, only fields visible to the users will/can be modified/updated.
 3. Backend Settings: screenshot-3.jpg
 
 == Changelog ==
+
+= 1.0.2 =
+Small changes.
 
 = 1.0.1 =
 Changes to the ReadMe File
