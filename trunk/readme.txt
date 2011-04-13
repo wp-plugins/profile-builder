@@ -2,10 +2,10 @@
 
 Contributors: reflectionmedia, barinagabriel
 Donate link: http://www.cozmoslabs.com/2011/04/12/wordpress-profile-builder-a-front-end-user-registration-login-and-edit-profile-plugin
-Tags: user registration, custom field registration, customize profile, user fields, builder, profile builder 
+Tags: user registration, custom field registration, customize profile, user fields, builder, profile builder
 Requires at least: 3.1
 Tested up to: 3.1
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 
 
 Login, registration and edit profile shortcodes for the front-end. Also you can chose what fields should be displayed.
