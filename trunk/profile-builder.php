@@ -6,7 +6,7 @@ Description: Login, registration and edit profile shortcodes for the front-end. 
 Version: 1.0.5
 Author: Reflection Media
 Author URI: http://reflectionmedia.ro
-License: GPL2 
+License: GPL2
 
 == Copyright ==
 Copyright 2011 Reflection Media (wwww.reflectionmedia.ro)
