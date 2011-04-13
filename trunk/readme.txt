@@ -64,5 +64,8 @@ No, only fields visible to the users will/can be modified/updated.
 
 == Changelog ==
 
+= 1.0.1 =
+Changes to the ReadMe File
+
 = 1.0 =
-* Added the posibility of displaying/hiding default WordPress information-fields, and to modify basic layout.
+Added the posibility of displaying/hiding default WordPress information-fields, and to modify basic layout.
