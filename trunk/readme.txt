@@ -10,7 +10,7 @@ Stable tag: 1.0.8
 
 Login, registration and edit profile shortcodes for the front-end. Also you can chose what fields should be displayed.
 
-
+ 
 == Description ==
 
 Profile Builder lets you customize your website by adding a front-end menu for all your users, 
