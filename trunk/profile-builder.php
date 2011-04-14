@@ -3,7 +3,7 @@
 Plugin Name: Profile Builder
 Plugin URI: http://www.cozmoslabs.com/2011/04/12/wordpress-profile-builder-a-front-end-user-registration-login-and-edit-profile-plugin/
 Description: Login, registration and edit profile shortcodes for the front-end. Also you can chose what fields should be displayed.
-Version: 1.0.6
+Version: 1.0.8
 Author: Reflection Media
 Author URI: http://reflectionmedia.ro
 License: GPL2
