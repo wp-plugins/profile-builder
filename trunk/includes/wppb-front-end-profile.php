@@ -1,5 +1,6 @@
 <?php
 function wppb_front_end_profile_info() {
+	ob_start();
 	get_currentuserinfo();
 	$wppb_defaultOptions = get_option('wppb_default_settings');
 	$changesSaved = 'no';
@@ -59,7 +60,8 @@ function wppb_front_end_profile_info() {
 		}
 			
 		if ($wppb_defaultOptions['website'] == 'show'){
-			if(strpos($_POST['website'], 'http://') || empty( $_POST['website'] )){
+			$wppbPos = strpos($_POST['website'], 'http://');
+			if($wppbPos !== FALSE){
 				wp_update_user( array( 'ID' => $current_user->id, 'user_url' => esc_attr( $_POST['website'] )));
 				$changesSaved = 'yes';
 			}else{
@@ -273,7 +275,11 @@ function wppb_front_end_profile_info() {
 
 			<?php endif; ?>
 	</div>	
-<?php	
+<?php
+	$output = ob_get_contents();
+    ob_end_clean();
+    return $output;
+
 }
 
 ?>

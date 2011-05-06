@@ -1,6 +1,7 @@
 <?php
 
 function wppb_front_end_register(){
+	ob_start();
 	$wppb_defaultOptions = get_option('wppb_default_settings');
 	global $current_user;
 	get_currentuserinfo(); 
@@ -275,6 +276,9 @@ function wppb_front_end_register(){
 	
 	</div>
 <?php
+	$output = ob_get_contents();
+    ob_end_clean();
+    return $output;
 }
 
 ?>
