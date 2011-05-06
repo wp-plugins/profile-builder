@@ -3,7 +3,7 @@
 Plugin Name: Profile Builder
 Plugin URI: http://www.cozmoslabs.com/2011/04/12/wordpress-profile-builder-a-front-end-user-registration-login-and-edit-profile-plugin/
 Description: Login, registration and edit profile shortcodes for the front-end. Also you can chose what fields should be displayed.
-Version: 1.0.8
+Version: 1.0.9
 Author: Reflection Media
 Author URI: http://reflectionmedia.ro
 License: GPL2
@@ -114,4 +114,7 @@ if (is_admin() ){ 											            // if we are in the admin menu
 	include_once('includes/wppb-front-end-register.php');        		// include the menu file for the register screen
 	add_shortcode('wppb-register', 'wppb_front_end_register');
 	add_filter( 'show_admin_bar' , 'wppb_show_admin_bar');				// set the front-end admin bar to show/hide
+
+	/* Allow shortcodes to be used in the text widgets */
+	add_filter('widget_text', 'do_shortcode');
 }

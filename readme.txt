@@ -2,9 +2,9 @@
 
 Contributors: reflectionmedia, barinagabriel
 Donate link: http://www.cozmoslabs.com/2011/04/12/wordpress-profile-builder-a-front-end-user-registration-login-and-edit-profile-plugin
-Tags: user registration, custom field registration, customize profile, user fields, builder, profile builder
+Tags: registration, profile, user registration, custom field registration, customize profile, user fields, builder, profile builder
 Requires at least: 3.1
-Tested up to: 3.1
+Tested up to: 3.1.2
 Stable tag: 1.0.8
 
 
@@ -63,6 +63,10 @@ No, only fields visible to the users will/can be modified/updated.
 3. Backend Settings: screenshot-3.jpg
 
 == Changelog ==
+
+= 1.0.9 =
+Bugfix - On the edit profile page the website field added a new http:// everytime you updated your profile.
+Bugfix/ExtraFeature - Add support for shortcodes to be run in a text widget area.
 
 = 1.0.6 =
 Apparently the WordPress.org svn converts my EOL from Windows to Mac and because of that you get "The plugin does not have a valid header."

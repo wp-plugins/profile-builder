@@ -17,6 +17,7 @@ function wppb_signon(){
 add_action('init', 'wppb_signon');
 
 function wppb_front_end_login(){
+	ob_start();
 	global $wppb_login;
 	
 	echo '<div class="wppb_holder" id="wppb_login">';
@@ -83,4 +84,9 @@ function wppb_front_end_login(){
 	<?php endif;?>
 	</div>
 	<?php
+	
+	$output = ob_get_contents();
+    ob_end_clean();
+    return $output;
+	
 }
