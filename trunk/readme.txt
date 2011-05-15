@@ -1,4 +1,4 @@
-=== Profile Builder ===
+=== Profile Builder === 
 
 Contributors: reflectionmedia, barinagabriel
 Donate link: http://www.cozmoslabs.com/2011/04/12/wordpress-profile-builder-a-front-end-user-registration-login-and-edit-profile-plugin
@@ -63,6 +63,10 @@ No, only fields visible to the users will/can be modified/updated.
 3. Backend Settings: screenshot-3.jpg
 
 == Changelog ==
+
+= 1.0.10 =
+Bugfix - The wp_update_user attempts to clear and reset cookies if it's updating the password.
+ Because of that we get "headers already sent". Fixed by hooking into the init.
 
 = 1.0.9 =
 Bugfix - On the edit profile page the website field added a new http:// everytime you updated your profile.
