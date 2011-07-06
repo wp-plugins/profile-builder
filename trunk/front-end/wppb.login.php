@@ -1,10 +1,22 @@
 <?php
+if(!function_exists('curPageURL')){
+    function curPageURL() {
+     $pageURL = 'http';
+     if ((isset($_SERVER["HTTPS"])) && ($_SERVER["HTTPS"] == "on")) {
+		$pageURL .= "s";
+	 }
+     $pageURL .= "://";
+     if ($_SERVER["SERVER_PORT"] != "80") {
+      $pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
+     } else {
+      $pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
+     }
+     return $pageURL;
+    }
+}
 
-
-
-
-// wp_signon can only be executed before anything is outputed in the page
-// because of that we're adding it to the init hook
+/* wp_signon can only be executed before anything is outputed in the page because of that we're adding it to the init hook */
+global $wppb_login; 
 $wppb_login = false;
 
 function wppb_signon(){
@@ -31,9 +43,6 @@ function wppb_front_end_login(){
 		
 	?>
 	
-	
-	
-		
 		<p class="alert">
 			<?php printf( __('You are currently logged in as <a href="%1$s" title="%2$s">%2$s</a>.', 'profilebuilder'), get_author_posts_url( $wppb_user->ID ), $wppb_user->display_name ); ?> <a href="<?php echo wp_logout_url( get_permalink() ); ?>" title="<?php _e('Log out of this account', 'profilebuilder'); ?>"><?php _e('Log out &raquo;', 'profilebuilder'); ?></a>
 		</p><!-- .alert -->
@@ -59,10 +68,18 @@ function wppb_front_end_login(){
 			</p><!-- .error -->
 		<?php endif; ?>
 		
-		<form action="<?php the_permalink(); ?>" method="post" class="sign-in">
+		<?php /* use this action hook to add extra content before the login form. */ ?>
+		<?php do_action( 'wppb_before_login' ); ?> 
+		
+		<form action="<?php curPageURL(); ?>" method="post" class="sign-in">
 			<p class="login-form-username">
 				<label for="user-name"><?php _e('Username', 'profilebuilder'); ?></label>
-				<input type="text" name="user-name" id="user-name" class="text-input" value="<?php echo wp_specialchars( $_POST['user-name'], 1 ); ?>" />
+				<?php
+					if (isset($_POST['user-name']))
+						$userName = esc_html( $_POST['user-name'] );
+					else $userName = '';
+				?>
+				<?php echo '<input type="text" name="user-name" id="user-name" class="text-input" value="'.$userName.'" />'; ?>
 			</p><!-- .form-username -->
 
 			<p class="login-form-password">
@@ -82,11 +99,16 @@ function wppb_front_end_login(){
 		</form><!-- .sign-in -->
 
 	<?php endif;?>
+	
+	<?php /* use this action hook to add extra content after the login form. */ ?>
+	<?php do_action( 'wppb_after_login' ); ?> 
+	
 	</div>
 	<?php
-	
 	$output = ob_get_contents();
     ob_end_clean();
+		
+	$output = apply_filters ('wppb_login', $output);
+
     return $output;
-	
 }
