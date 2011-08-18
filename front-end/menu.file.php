@@ -42,30 +42,20 @@
 
 		<h2><?php _e('Plugin Layout', 'profilebuilder');?></h2>
 		<h3><?php _e('Plugin Layout', 'profilebuilder');?></h3>
-		<table class="wp-list-table widefat fixed pages" cellspacing="0">
-
-		<tbody class="plugins">
-			<tr height="10"></tr>
-			<tr>
-				<td><font size="2"><?php _e('Stylesheet used:', 'profilebuilder');?></font></td>
-				<td>
-					<select name="wppb_default_style" width="100" style="width: 100px">
-						<option value="yes" <?php if ($wppb_showDefaultCss == 'yes') echo 'selected';?>><?php _e('Default', 'profilebuilder');?></option>
-						<?php 
-							$wppb_premiumStyle = wppb_plugin_dir . '/premium/';	
-							if (file_exists ( $wppb_premiumStyle.'premium.php' )){
-						?>
-								<option value="white" <?php if ($wppb_showDefaultCss == 'white') echo 'selected';?>><?php _e('White', 'profilebuilder');?></option>
-								<option value="black" <?php if ($wppb_showDefaultCss == 'black') echo 'selected';?>><?php _e('Black', 'profilebuilder');?></option>
-						<?php
-							}
-						?>
-						<option value="no" <?php if ($wppb_showDefaultCss == 'no') echo 'selected';?>><?php _e('None', 'profilebuilder');?></option>
-					</select>
-				</td>
-			</tr>		
-		</tbody>
-		</table>
+		<font size="2"><?php _e('Stylesheet used:', 'profilebuilder');?></font>
+		<select name="wppb_default_style" class="wppb_default_style">
+			<option value="yes" <?php if ($wppb_showDefaultCss == 'yes') echo 'selected';?>><?php _e('Default', 'profilebuilder');?></option>
+			<?php 
+				$wppb_premiumStyle = wppb_plugin_dir . '/premium/';	
+				if (file_exists ( $wppb_premiumStyle.'premium.php' )){
+			?>
+					<option value="white" <?php if ($wppb_showDefaultCss == 'white') echo 'selected';?>><?php _e('White', 'profilebuilder');?></option>
+					<option value="black" <?php if ($wppb_showDefaultCss == 'black') echo 'selected';?>><?php _e('Black', 'profilebuilder');?></option>
+			<?php
+				}
+			?>
+			<option value="no" <?php if ($wppb_showDefaultCss == 'no') echo 'selected';?>><?php _e('None', 'profilebuilder');?></option>
+		</select>
 		<div align="right">
 			<input type="hidden" name="action" value="update" />
 			<p class="submit">
@@ -92,12 +82,11 @@
 		<table class="wp-list-table widefat fixed pages" cellspacing="0">
 			<thead>
 				<tr>
-					<th class="manage-column" scope="col"><?php _e('User-group', 'profilebuilder');?></th>
-					<th class="manage-column" scope="col"><?php _e('Visibility', 'profilebuilder');?></th>
+					<th class="manage-column" scope="col"><b><?php _e('User-group', 'profilebuilder');?></b></th>
+					<th class="manage-column" scope="col"><b><?php _e('Visibility', 'profilebuilder');?></b></th>
 				</tr>
 			</thead>
 				<tbody>
-					<tr height="10"></tr>
 					<?php
 					foreach($wppb_showAdminBar as $key => $data){
 						echo'<tr> 
@@ -139,12 +128,11 @@
 		<table class="wp-list-table widefat fixed pages" cellspacing="0">
 			<thead>
 				<tr>
-					<th class="manage-column" scope="col"><?php _e('Input Field Name', 'profilebuilder');?></th>
-					<th class="manage-column" scope="col"><?php _e('Visibility', 'profilebuilder');?></th>
+					<th class="manage-column" scope="col"><b><?php _e('Input Field Name', 'profilebuilder');?></b></th>
+					<th class="manage-column" scope="col"><b><?php _e('Visibility', 'profilebuilder');?></b></th>
 				</tr>
 			</thead>
 				<tbody class="plugins" > 
-					<tr height="10"></tr>
 					<tr>
 						<td><font size="4"><?php _e('Name:', 'profilebuilder');?></font></td> 
 						<td></td> 
@@ -197,7 +185,6 @@
 						</td> 
 					</tr>
 				<tbody class="plugins">
-					<tr height="10"></tr>
 					<tr> 
 						<td><font size="4"><?php _e('Contact Info:', 'profilebuilder');?></font></td> 
 						<td></td> 
@@ -253,7 +240,6 @@
 						</td> 
 					</tr>
 				<tbody class="plugins">
-					<tr height="10"></tr>
 					<tr> 
 						<td><font size="4"><?php _e('About Yourself:', 'profilebuilder');?></font></td> 
 						<td></td> 
@@ -269,7 +255,7 @@
 							<input type="radio" name="wppb_default_settings[bio]" value="hide" <?php if ($wppb_defaultOptions['bio'] == 'hide') echo 'checked';?> /><font size="1"><?php _e('Hide', 'profilebuilder');?></font>
 						</td> 
 					</tr>
-				<tbody class="plugins">
+				<tbody>
 					<tr>  
 						<td> 
 							<span style="padding-left:50px"></span><font size="2"><?php _e('New Password', 'profilebuilder');?></font>

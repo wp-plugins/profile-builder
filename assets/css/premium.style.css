@@ -922,11 +922,145 @@ div.file_wrap {
 #wppb_profile_builder_pro_serial{
 	width:335px;
 }
+
+#framework_wrap #content #customRedirect .afterRegistrationText{
+	position:relative;		
+	vertical-align:middle;
+	display:inline-block !important;
+	margin-bottom:0 !important;
+	width: 400px;
+	*display:inline !important;
+	zoom:1;
+}	
+
+#framework_wrap #content #customRedirect .afterLoginText{
+	position:relative;
+	left:37px;
+	vertical-align:middle;
+	display:inline-block !important;
+	margin-bottom:0 !important;
+	width: 400px;
+	*display:inline !important;
+	zoom:1;
+}	
+#customRedirect #afterRegisterDescription{
+	vertical-align:middle;
+}	
+
+#customRedirect #afterLoginDescription{
+	vertical-align:middle;
+}
+
+#framework_wrap #content #userListing .sortingOrderSelect{
+	vertical-align:left;
+	display:inline-block !important;
+	margin-bottom:0 !important;
+	width: 110px;
+	*display:inline !important;
+	zoom:1;
+	font-size: 11px;
+}	
+
+#framework_wrap #content #userListing .sortingOrderCriteria{
+	vertical-align:left;
+	display:inline-block !important;
+	margin-bottom:0 !important;
+	width: 140px;
+	*display:inline !important;
+	zoom:1;
+	font-size: 11px;
+}
+
+#framework_wrap #content #userListing .sortingNumberSelect{
+	vertical-align:left;
+	display:inline-block !important;
+	margin-bottom:0 !important;
+	width: 75px;
+	*display:inline !important;
+	zoom:1;
+	font-size: 11px;
+}	
+
+#userListing #sortingCriteria{
+	vertical-align:middle;
+}	
+
+#userListing #sortingOrder{
+	vertical-align:middle;
+}	
+
+#userListing #sortingNumber{
+	vertical-align:middle;
+}	
 	
-#plugin-layout input[type="submit"], #show-hide-admin-bar input[type="submit"], #default-fields input[type="submit"], #register-profile-builder input[type="submit"] {
+#plugin-layout input[type="submit"], #show-hide-admin-bar input[type="submit"], #default-fields input[type="submit"], #register-profile-builder input[type="submit"], #add-ons input[type="submit"], #customRedirect input[type="submit"], #userListing input[type="submit"], #disableLoginAndRegistration input[type="submit"]{
 	position:absolute; 
 	bottom:0; 
 	right:0; 
 	margin-bottom:-30px; 
 	margin-right:25px;
 }
+
+#ui-datepicker-div{
+	font: 70% "Trebuchet MS", sans-serif;
+}
+
+#addonHeader{
+	width:70%;
+}
+#framework_wrap #content .wppb_default_style{
+	position:relative;
+	left:18px;
+	vertical-align:middle;
+	display:inline-block !important;
+	margin-bottom:0 !important;
+	width: 100px;
+	*display:inline !important;
+	zoom:1;
+}
+#framework_wrap #content .sortingTable{
+    border: 0px !important;
+}
+#framework_wrap #content .sortingTableCell1, .sortingTableCell2{
+    border: 0px !important;
+}
+
+.redirectTableCell1{
+	width:120px;
+}
+.sortingTableCell1{
+	width: 115px;
+}
+
+#framework_wrap #content #customRedirect .redirectFirstInput{
+	vertical-align:left;
+	display:inline-block !important;
+	margin-bottom:0 !important;
+	width: 325px;
+	*display:inline !important;
+	zoom:1;
+}
+#framework_wrap #content #customRedirect .redirectSecondInput{
+	vertical-align:left;
+	display:inline-block !important;
+	margin-bottom:0 !important;
+	width: 325px;
+	*display:inline !important;
+	zoom:1;
+}	
+#framework_wrap #content #customRedirect .registerRedirectTarget{
+	vertical-align:left;
+	display:inline-block !important;
+	margin-bottom:0 !important;
+	width: 330px;
+	*display:inline !important;
+	zoom:1;
+}	
+#framework_wrap #content #customRedirect .loginRedirectTarget{
+	vertical-align:left;
+	display:inline-block !important;
+	margin-bottom:0 !important;
+	width: 330px;
+	*display:inline !important;
+	zoom:1;
+}	
