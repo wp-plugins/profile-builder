@@ -1,9 +1,9 @@
 <?php
 /*
-Plugin Name: Profile Builder
-Plugin URI: http://www.cozmoslabs.com/wordpress-profile-builder/
-Description: Login, registration and edit profile shortcodes for the front-end. Also you can chose what fields should be displayed.
-Version: 1.1
+Plugin Name: Profile Builder Pro
+Plugin URI: http://www.cozmoslabs.com/2011/04/12/wordpress-profile-builder-a-front-end-user-registration-login-and-edit-profile-plugin/
+Description: Login, registration and edit profile shortcodes for the front-end. Also you can chose what fields should be displayed or add new (custom) ones both in the front-end and in the dashboard.
+Version: 1.1.4
 Author: Reflection Media, Barina Gabriel
 Author URI: http://www.reflectionmedia.ro
 License: GPL2
@@ -54,13 +54,16 @@ function return_bytes($val) {
 } 
  
  
-define( 'ProfileBuilderVersion', '1.1' );
+define( 'ProfileBuilderVersion', '1.1.5' );
 define( 'wppb_plugin_dir', WP_PLUGIN_DIR . '/' . dirname( plugin_basename( __FILE__ ) ) );
 define( 'wppb_plugin_url', WP_PLUGIN_URL . '/' . dirname( plugin_basename( __FILE__ ) ) );
-define( 'ServerMaxUploadSizeByte', return_bytes( ini_get( 'post_max_size') ) );
-define( 'ServerMaxUploadSizeMega', ini_get( 'post_max_size') );
+define( 'ServerMaxUploadSizeByte', return_bytes( ini_get( 'upload_max_filesize') ) );
+define( 'ServerMaxUploadSizeMega', ini_get( 'upload_max_filesize') );
+define( 'ServerMaxPostSizeByte', return_bytes( ini_get( 'post_max_size') ) );
+define( 'ServerMaxPostSizeMega', ini_get( 'post_max_size') );
 define ('wppb_TRANSLATEDIR', wppb_plugin_dir.'/translation');
 define ('wppb_TRANSLATIONDOMAIN', 'profilebuilder');
+
 
 /**
  * Required Files
@@ -89,8 +92,8 @@ if (file_exists ($wppb_premiumUpdate.'update-checker.php')){
  * Initialize the translation for the Plugin.
  *
  */
-function wppb_init_translation(){	
-	load_plugin_textdomain(wppb_TRANSLATIONDOMAIN, wppb_TRANSLATEDIR);
+function wppb_init_translation(){
+	load_plugin_textdomain( 'profilebuilder', false, basename( dirname( __FILE__ ) ) . '/translation/' ); 
 }
 add_action('init', 'wppb_init_translation');
 

@@ -324,8 +324,8 @@ Original Author URI: http://valendesigns.com
       $('a.delete-inline').addClass('disable');
       $('a.add-option').addClass('disable');
       
-      // Set Colspan to 4
-      $('td', editRow).attr('colspan', 4);
+      // Set Colspan to 5
+      $('td', editRow).attr('colspan', 5);
       
       // Add Row
       $("#framework-settings tr:last").after(addRow);
@@ -470,7 +470,7 @@ Original Author URI: http://valendesigns.com
       
       // Clone the blank row
       editRow = $('#inline-edit').clone(true);
-      $('td', editRow).attr('colspan', 4);
+      $('td', editRow).attr('colspan', 5);
       $("#option-" + c).hide().after(editRow);
       
       // First Option Settings 

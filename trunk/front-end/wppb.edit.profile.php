@@ -18,7 +18,8 @@ function wppb_save_the_password(){
 	/* Load registration file. */
 	require_once(ABSPATH . WPINC . '/registration.php');
 	/* Get user info. */
-	global $current_user;	
+	global $current_user;
+
 	if ( 'POST' == $_SERVER['REQUEST_METHOD'] && !empty( $_POST['action'] ) && $_POST['action'] == 'update-user' && wp_verify_nonce($_POST['edit_nonce_field'],'verify_edit_user') ) { 
 		/* Update user password. */
 		if ( !empty($_POST['pass1'] ) && !empty( $_POST['pass2'] ) ) {
@@ -37,6 +38,7 @@ function wppb_save_the_password(){
 add_action('init', 'wppb_save_the_password');
 		
 function wppb_front_end_profile_info() {
+
 	global $changesSaved;
 	global $changesSavedNoMatchingPass;
 	global $changesSavedNoPass;
@@ -66,6 +68,15 @@ function wppb_front_end_profile_info() {
 	if (isset($_GET['userID']) && isset($_GET['fieldOriginal']) && isset($_GET['fieldResized'])){
 		update_user_meta( $_GET['userID'], $_GET['fieldOriginal'], '');
 		update_user_meta( $_GET['userID'], $_GET['fieldResized'], '');
+	}
+	
+	//fallback if the file was largen then post_max_size, case in which no errors can be saved in $_FILES[fileName]['error']	
+	if (empty($_FILES) && empty($_POST) && isset($_SERVER['REQUEST_METHOD']) && strtolower($_SERVER['REQUEST_METHOD']) == 'post') {  
+		echo '<p class="error">';
+		 _e('The information size you were trying to submit was larger then '. ServerMaxUploadSizeMega .'b!<br/>', 'profilebuilder');
+		 _e('This is usually caused by a large file(s) trying to be uploaded.<br/>', 'profilebuilder');
+		 _e('Since it was also larger than '. ServerMaxPostSizeMega .'b no additional information is available.<br/>', 'profilebuilder');
+		echo '</p>';
 	}
 		
 	/* If profile was saved, update profile. */
@@ -152,8 +163,11 @@ function wppb_front_end_profile_info() {
 							$checkboxOption = '';
 							$checkboxValue = explode(',', $value['item_options']);
 							foreach($checkboxValue as $thisValue){
-								if (isset($_POST[$thisValue.$value['id']]))
-									$checkboxOption = $checkboxOption.$_POST[$thisValue.$value['id']].',';
+								$thisValue = str_replace(' ', '#@space@#', $thisValue); //we need to escape the space-codification we sent earlier in the post
+								if (isset($_POST[$thisValue.$value['id']])){
+									$localValue = str_replace('#@space@#', ' ', $_POST[$thisValue.$value['id']]);
+									$checkboxOption = $checkboxOption.$localValue.',';
+								}
 							}
 							update_user_meta( $current_user->id, 'custom_field_'.$value['id'], esc_attr( $checkboxOption ) );
 							break;
@@ -166,22 +180,56 @@ function wppb_front_end_profile_info() {
 							update_user_meta( $current_user->id, 'custom_field_'.$value['id'], esc_attr( $_POST[$value['item_id'].$value['id']] ) );
 							break;
 						}
+						case "countrySelect":{
+							update_user_meta( $current_user->id, 'custom_field_'.$value['id'], esc_attr( $_POST[$value['item_id'].$value['id']] ) );
+							break;
+						}
+						case "timeZone":{
+							update_user_meta( $current_user->id, 'custom_field_'.$value['id'], esc_attr( $_POST[$value['item_id'].$value['id']] ) );
+							break;
+						}
+						case "datepicker":{
+							update_user_meta( $current_user->id, 'custom_field_'.$value['id'], esc_attr( $_POST[$value['item_id'].$value['id']] ) );
+							break;
+						}
 						case "textarea":{
 							update_user_meta( $current_user->id, 'custom_field_'.$value['id'], esc_attr( $_POST[$value['item_id'].$value['id']] ) );
 							break;
 						}
 						case "upload":{
 								$uploadedfile = $value['item_type'].$value['id'];
-								if (($_FILES[$uploadedfile]['size'] == 0) && (basename( $_FILES[$uploadedfile]['name']) != ''))
-									array_push($uploadName, basename( $_FILES[$uploadedfile]['name']));
-								$target_path = "wp-content/uploads/profile_builder/attachments/";
-
-								$target_path = $target_path . 'userID_'.$current_user->id.'_attachment_'. basename( $_FILES[$uploadedfile]['name']); 	
 								
-								if (move_uploaded_file($_FILES[$uploadedfile]['tmp_name'], $target_path)){
-									$upFile = get_bloginfo('home').'/'.$target_path;
-									update_user_meta( $current_user->id, 'custom_field_'.$value['id'], $upFile);
-									$pictureUpload = 'yes';
+								//first we need to verify if we don't try to upload a 0b or 0 length file
+								if ( (basename( $_FILES[$uploadedfile]['name']) != '')){
+									
+									//second we need to verify if the uploaded file size is less then the set file size in php.ini
+									if (($_FILES[$uploadedfile]['size'] < ServerMaxUploadSizeByte) && ($_FILES[$uploadedfile]['size'] !=0)){
+										//we need to prepare the basename of the file, so that ' becomes ` as ' gives an error
+										$fileName = basename( $_FILES[$uploadedfile]['name']);
+										$finalFileName = '';
+										
+										for ($i=0; $i < strlen($fileName); $i++){
+											if ($fileName[$i] == "'")
+												$finalFileName .= '`';
+											else $finalFileName .= $fileName[$i];
+										}
+											
+										//create the target path for uploading	
+										$target_path = "wp-content/uploads/profile_builder/attachments/";
+										$target_path = $target_path . 'userID_'.$current_user->id.'_attachment_'. $finalFileName; 
+
+										if (move_uploaded_file($_FILES[$uploadedfile]['tmp_name'], $target_path)){
+											$upFile = get_bloginfo('home').'/'.$target_path;
+											update_user_meta( $current_user->id, 'custom_field_'.$value['id'], $upFile);
+											$pictureUpload = 'yes';
+										}else{
+											//insert the name of the file in an array so that in case an error comes up, we know which files we just uploaded
+											array_push($uploadName, basename( $_FILES[$uploadedfile]['name']));
+										}
+									}else{
+										//insert the name of the file in an array so that in case an error comes up, we know which files we just uploaded
+										array_push($uploadName, basename( $_FILES[$uploadedfile]['name']));
+									}
 								}
 							break;
 						}
@@ -190,12 +238,23 @@ function wppb_front_end_profile_info() {
 								$uploadedfile = $value['item_type'].$value['id'];
 								$target_path_original = "wp-content/uploads/profile_builder/avatars/";
 								$fileName = $_FILES[$uploadedfile]['name'];
+								$finalFileName = '';
+										
+								for ($i=0; $i < strlen($fileName); $i++){
+									if ($fileName[$i] == "'")
+										$finalFileName .= '`';
+									elseif ($fileName[$i] == ' ')
+										$finalFileName .= '_';
+									else $finalFileName .= $fileName[$i];
+								}
+								
+								$fileName = $finalFileName;
 
 								$target_path = $target_path_original . 'userID_'.$current_user->id.'_originalAvatar_'. $fileName; 	
 								$target_path_avatar = $target_path_original . 'userID_'.$current_user->id.'_resziedAvatarSize_'.$value['item_options'].'_orignalName_'.$fileName; 
 
 								/* when trying to upload file, be sure it's one of the accepted image file-types */
-								if (($_FILES[$uploadedfile]['type'] == 'image/jpeg') || ($_FILES[$uploadedfile]['type'] == 'image/jpg') || ($_FILES[$uploadedfile]['type'] == 'image/png') || ($_FILES[$uploadedfile]['type'] == 'image/bmp') || ($_FILES[$uploadedfile]['type'] == 'image/pjpeg') || ($_FILES[$uploadedfile]['type'] == 'image/x-png')){
+								if ( (($_FILES[$uploadedfile]['type'] == 'image/jpeg') || ($_FILES[$uploadedfile]['type'] == 'image/jpg') || ($_FILES[$uploadedfile]['type'] == 'image/png') || ($_FILES[$uploadedfile]['type'] == 'image/bmp') || ($_FILES[$uploadedfile]['type'] == 'image/pjpeg') || ($_FILES[$uploadedfile]['type'] == 'image/x-png')) && (($_FILES[$uploadedfile]['size'] < ServerMaxUploadSizeByte) && ($_FILES[$uploadedfile]['size'] !=0)) ){
 									$avatarUpload = 'yes';
 									$wp_filetype = wp_check_filetype(basename( $_FILES[$uploadedfile]['name']), null );
 									$attachment = array(
@@ -214,6 +273,17 @@ function wppb_front_end_profile_info() {
 									$upFile = $upFile[0];
 									$upFile_avatar = $upFile_avatar[0];
 									
+									//calculate memory needed for file creation and allocate dynamically, in case of large files
+									$memoryNeeded = round(($upFile[0] * $upFile[1] * $upFile['bits'] * $upFile['channels'] / 8 + Pow(2, 16)) * 1.8);
+									$memoryHave = memory_get_usage();
+									$memoryHave = memoryHave * Pow(1024,2);
+									$memoryLimitMB = ini_get('memory_limit');
+									$memoryLimit = substr ( $memoryLimitMB, 0, strlen($memoryLimitMB)-1 );
+									$memoryLimit = $memoryLimit * Pow(1024,2);
+									
+									$newLimit = ceil( (($memoryHave + $memoryNeeded + $memoryLimit) / Pow(1024,2)) * 1.8 );
+									ini_set( 'memory_limit', $newLimit . 'M' );
+															
 									//if file upload succeded			
 									if (move_uploaded_file($_FILES[$uploadedfile]['tmp_name'], $target_path)){
 										// update the usermeta field with the original file url
@@ -230,12 +300,11 @@ function wppb_front_end_profile_info() {
 											$src = imagecreatefrompng($upFile);
 										else 
 											$src = imagecreatefromgif($upFile);
-										//echo $scr;
 										
 										list($width,$height)=getimagesize($upFile);
 
-										$newwidth=$value['item_options']; //160;
-										$newheight=$value['item_options']; //($height/$width)*$newwidth;
+										$newwidth=$value['item_options'];
+										$newheight=$value['item_options'];
 										$tmp=imagecreatetruecolor($newwidth,$newheight);
 							
 										imagecopyresampled($tmp,$src,0,0,0,0,$newwidth,$newheight,$width,$height);
@@ -246,12 +315,16 @@ function wppb_front_end_profile_info() {
 										imagedestroy($src);
 										imagedestroy($tmp);
 										
+										//restore the old value of the memory after imageprocessing is done
+										ini_restore ( 'memory_limit' );
+										
 										// update/add a new usermeta field containing the url to the resized image
 										update_user_meta( $current_user->id, 'custom_field_resized'.$value['id'], $upFile_avatar);
 									}
 									else $avatarUpload = 'no'; 
-								}
-								if (($_FILES[$uploadedfile]['type'] == ''))
+								}elseif ( (($_FILES[$uploadedfile]['size'] > ServerMaxUploadSizeByte) || ($_FILES[$uploadedfile]['size'] == 0)) && ($fileName != '') )
+									$avatarUpload = 'no';
+								elseif ($fileName == '')
 									$avatarUpload = 'yes';
 							break;
 						}
@@ -308,7 +381,6 @@ function wppb_front_end_profile_info() {
 					}
 					
 					if (($changesSaved == 'yes') && ($changesSavedNoEmail == 'yes') && ($previousError == 'no')){
-						echo '<p class="error">';
 						echo '<p class="semi-saved">';
 						 _e('The email address you entered is invalid. <br/> The email address was ', 'profilebuilder');
 						echo'<span class="error">'; _e('NOT', 'profilebuilder');echo'</span>';
@@ -318,7 +390,6 @@ function wppb_front_end_profile_info() {
 					}
 					
 					if (($changesSaved == 'yes') && ($changesSavedNoMatchingPass == 'yes') && ($previousError == 'no')){
-						echo '<p class="error">';
 						echo '<p class="semi-saved">';
 						 _e('The passwords you entered do not match. <br/> The password was ', 'profilebuilder');
 						echo'<span class="error">'; _e('NOT', 'profilebuilder');echo'</span>';
@@ -327,7 +398,6 @@ function wppb_front_end_profile_info() {
 						$previousError = 'yes';
 					}
 					if (($changesSaved == 'yes') && ($changesSavedNoPass == 'yes') && ($previousError == 'no')){
-						echo '<p class="error">';
 						echo '<p class="semi-saved">';
 						 _e('You didn\'t complete both password fields. <br/> The password was ', 'profilebuilder');
 						echo'<span class="error">'; _e('NOT', 'profilebuilder');echo'</span>';
@@ -339,7 +409,6 @@ function wppb_front_end_profile_info() {
 						if (file_exists ( $wppb_premium.'extra.fields.php' )){
 							if (($changesSaved == 'yes') && ($nrOfBadUploads > 0) && ($previousError == 'no')){
 								$lastOne = 0;
-								echo '<p class="error">';
 								echo '<p class="semi-saved">';
 								 _e('There was an error while trying to upload the following attachments:<br/>', 'profilebuilder');
 								echo '<span class="error">';
@@ -357,7 +426,6 @@ function wppb_front_end_profile_info() {
 								echo '</p>';
 								$previousError = 'yes';
 							}		if (($changesSaved == 'yes') && ($avatarUpload == 'no') && ($previousError == 'no')){
-								echo '<p class="error">';
 								echo '<p class="semi-saved">';
 								 _e('There was an error while trying to upload your avatar picture.<br/>Possible cause: size/incorrect file-type.<br/>The avatar was ', 'profilebuilder');
 								echo'<span class="error">'; _e('NOT', 'profilebuilder');echo'</span>';

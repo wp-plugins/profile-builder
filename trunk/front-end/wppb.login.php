@@ -58,7 +58,28 @@ function wppb_front_end_login(){
 
 		<p class="success">
 				<?php printf( __('You have successfully logged in as <a href="%1$s" title="%2$s">%2$s</a>.', 'profilebuilder'), get_author_posts_url( $wppb_login->ID ), $wppb_login->display_name ); ?>
-		</p><!-- .success-->
+				<?php 
+					$permaLnk2 = get_permalink();
+					$wppb_addons = wppb_plugin_dir . '/premium/addon/';
+					if (file_exists ( $wppb_addons.'addon.php' )){
+						//check to see if the redirecting addon is present and activated
+						$wppb_premium_addon_settings = get_option('wppb_premium_addon_settings'); //fetch the descriptions array
+						if ($wppb_premium_addon_settings['customRedirect'] == 'show'){
+							//check to see if the redirect location is not an empty string and is activated
+							$customRedirectSettings = get_option('customRedirectSettings');
+							if ((trim($customRedirectSettings['afterLoginTarget']) != '') && ($customRedirectSettings['afterLogin'] == 'yes')){
+								$permaLnk2 = trim($customRedirectSettings['afterLoginTarget']);
+								$findHttp = strpos($permaLnk2, 'http');
+								if ($findHttp === false)
+									$permaLnk2 = 'http://'. $permaLnk2;
+							}
+						}
+					}
+				?>
+				
+				</p><!-- .success-->
+				<?php echo '<font color="black">You will soon be redirected automatically. If you see this page for more than 1 second, please click <a href="'.$permaLnk2.'">here</a>.<meta http-equiv="Refresh" content="1;url='.$permaLnk2.'" /></font><br/><br/>'; ?>
+				<br/><br/>
 	<?php else : // Not logged in ?>
 
 		<?php if (!empty( $_POST['action'] )): ?>

@@ -1,12 +1,13 @@
 <?php
 
-function wppb_front_end_register(){
+function wppb_front_end_register($atts){
 	ob_start();
 	$wppb_defaultOptions = get_option('wppb_default_settings');
 	global $current_user;
 	global $wp_roles;
 	global $wpdb;
 	global $error;
+	$agreed = true;
 	$new_user = 'no';
 	get_currentuserinfo(); 
 	
@@ -15,9 +16,31 @@ function wppb_front_end_register(){
 
 	/* Check if users can register. */
 	$registration = get_option( 'users_can_register' );
-
+	
+	
+	//fallback if the file was largen then post_max_size, case in which no errors can be saved in $_FILES[fileName]['error']	
+	if (empty($_FILES) && empty($_POST) && isset($_SERVER['REQUEST_METHOD']) && strtolower($_SERVER['REQUEST_METHOD']) == 'post') {  
+		echo '<p class="error">';
+		 _e('The information size you were trying to submit was larger then '. ServerMaxUploadSizeMega .'b!<br/>', 'profilebuilder');
+		 _e('This is usually caused by a large file(s) trying to be uploaded.<br/>', 'profilebuilder');
+		 _e('Since it was also larger than '. ServerMaxPostSizeMega .'b no additional information is available.<br/>', 'profilebuilder');
+		 _e('The user was NOT created!', 'profilebuilder');
+		echo '</p>';
+	}
+	
 	/* If user registered, input info. */
 	if ( 'POST' == $_SERVER['REQUEST_METHOD'] && !empty( $_POST['action'] ) && $_POST['action'] == 'adduser' && wp_verify_nonce($_POST['register_nonce_field'],'verify_true_registration') ) {
+		//global $wp_roles;
+		
+		//get value sent in the shortcode as parameter, default to "subscriber" if not set
+		extract(shortcode_atts(array('role' => 'subscriber'), $atts));
+
+		//check if the specified role exists in the database, else fall back to the "safe-zone"
+		$found = get_role($role);
+		
+		if ($found != null)
+			$aprovedRole = $role;
+		else $aprovedRole = get_option( 'default_role' );
 	
 		$user_pass = esc_attr( $_POST['passw1'] );
 		$userdata = array(
@@ -32,8 +55,23 @@ function wppb_front_end_register(){
 			'yim' => esc_attr( $_POST['yim'] ),
 			'jabber' => esc_attr( $_POST['jabber'] ),
 			'description' => esc_attr( $_POST['description'] ),
-			'role' => get_option( 'default_role' ),
-		);
+			'role' => $aprovedRole);
+			
+		//check if the user agreed to the terms and conditions (if it was set)
+		$wppb_premium = wppb_plugin_dir . '/premium/functions/';
+			if (file_exists ( $wppb_premium.'extra.fields.php' )){
+				$wppbFetchArray = get_option('wppb_custom_fields');
+				foreach ( $wppbFetchArray as $key => $value){
+					switch ($value['item_type']) {
+						case "agreeToTerms":{
+							$agreed = false;
+							if ( (isset($_POST[$value['item_id'].$value['id']] )) && ($_POST[$value['item_id'].$value['id']] == 'agree'))
+								$agreed = true;
+							break;
+						}
+					}
+				}
+			}
 		
 		if ( !$userdata['user_login'] )
 			$error = __('A username is required for registration.', 'profilebuilder');
@@ -50,6 +88,8 @@ function wppb_front_end_register(){
 				elseif ( $_POST['pass1'] != $_POST['pass2'] )																   //verify if the the password and the retyped password are a match
 					$error = __('The entered passwords don\'t match!', 'profilebuilder');
 			}
+		elseif ( $agreed == false )
+			$error = __('You must agree to the terms and conditions before registering!', 'profilebuilder');
 		
 		else{
 			$registered_name = $_POST['user_name'];
@@ -69,9 +109,13 @@ function wppb_front_end_register(){
 							$checkboxOption = '';
 							$checkboxValue = explode(',', $value['item_options']);
 							foreach($checkboxValue as $thisValue){
-								if (isset($_POST[$thisValue.$value['id']]))
-									$checkboxOption = $checkboxOption.$_POST[$thisValue.$value['id']].',';
-							}
+								$thisValue = str_replace(' ', '#@space@#', $thisValue); //we need to escape the space-codification we sent earlier in the post
+								if (isset($_POST[$thisValue.$value['id']])){
+									$localValue = str_replace('#@space@#', ' ', $_POST[$thisValue.$value['id']]);
+									$checkboxOption = $checkboxOption.$localValue.',';
+								}
+							}							
+							
 							add_user_meta( $new_user, 'custom_field_'.$value['id'], $checkboxOption );
 							break;
 						}
@@ -83,19 +127,51 @@ function wppb_front_end_register(){
 							add_user_meta( $new_user, 'custom_field_'.$value['id'], $_POST[$value['item_id'].$value['id']] );
 							break;
 						}
+						case "countrySelect":{
+							update_user_meta( $new_user, 'custom_field_'.$value['id'], $_POST[$value['item_id'].$value['id']] );
+							break;
+						}
+						case "timeZone":{
+							update_user_meta( $new_user, 'custom_field_'.$value['id'], $_POST[$value['item_id'].$value['id']] );
+							break;
+						}
+						case "datepicker":{
+							update_user_meta( $new_user, 'custom_field_'.$value['id'], $_POST[$value['item_id'].$value['id']] );
+							break;
+						}
 						case "textarea":{
 							add_user_meta( $new_user, 'custom_field_'.$value['id'], esc_attr($_POST[$value['item_id'].$value['id']]) );
 							break;
 						}
 						case "upload":{
+						
 							$uploadedfile = $value['item_type'].$value['id'];
-							$target_path = "wp-content/uploads/profile_builder/attachments/";
+								
+							//first we need to verify if we don't try to upload a 0b or 0 length file
+							if ( (basename( $_FILES[$uploadedfile]['name']) != '')){
+								
+								//second we need to verify if the uploaded file size is less then the set file size in php.ini
+								if (($_FILES[$uploadedfile]['size'] < ServerMaxUploadSizeByte) && ($_FILES[$uploadedfile]['size'] !=0)){
+									//we need to prepare the basename of the file, so that ' becomes ` as ' gives an error
+									$fileName = basename( $_FILES[$uploadedfile]['name']);
+									$finalFileName = '';
+									
+									for ($i=0; $i < strlen($fileName); $i++){
+										if ($fileName[$i] == "'")
+											$finalFileName .= '`';
+										else $finalFileName .= $fileName[$i];
+									}
+										
+									//create the target path for uploading	
+									$target_path = "wp-content/uploads/profile_builder/attachments/";
+									$target_path = $target_path . 'userID_'.$new_user.'_attachment_'. $finalFileName;
 
-							$target_path = $target_path . 'userID_'.$new_user.'_attachment_'. basename( $_FILES[$uploadedfile]['name']); 	
-							
-							if (move_uploaded_file($_FILES[$uploadedfile]['tmp_name'], $target_path)){
-								$upFile = get_bloginfo('home').'/'.$target_path;
-								add_user_meta( $new_user, 'custom_field_'.$value['id'], $upFile );
+									if (move_uploaded_file($_FILES[$uploadedfile]['tmp_name'], $target_path)){
+										$upFile = get_bloginfo('home').'/'.$target_path;
+										add_user_meta( $new_user, 'custom_field_'.$value['id'], $upFile );
+										$pictureUpload = 'yes';
+									}
+								}
 							}
 							break;
 						}
@@ -103,14 +179,26 @@ function wppb_front_end_register(){
 
 							$uploadedfile = $value['item_type'].$value['id'];
 							$target_path_original = "wp-content/uploads/profile_builder/avatars/";
+							$fileName = $_FILES[$uploadedfile]['name'];
+							$finalFileName = '';
+									
+							for ($i=0; $i < strlen($fileName); $i++){
+								if ($fileName[$i] == "'")
+									$finalFileName .= '`';
+								elseif ($fileName[$i] == ' ')
+									$finalFileName .= '_';
+								else $finalFileName .= $fileName[$i];
+							}
+							
+							$fileName = $finalFileName;
 
-							$target_path = $target_path_original . 'userID_'.$new_user.'_originalAvatar_'. basename( $_FILES[$uploadedfile]['name']); 	
+							$target_path = $target_path_original . 'userID_'.$new_user.'_originalAvatar_'. $fileName; 	
 							
 							/* when trying to upload file, be sure it's one of the accepted image file-types */
-							if (($_FILES[$uploadedfile]['type'] == 'image/jpeg') || ($_FILES[$uploadedfile]['type'] == 'image/jpg') || ($_FILES[$uploadedfile]['type'] == 'image/png') || ($_FILES[$uploadedfile]['type'] == 'image/bmp')){
+							if ( (($_FILES[$uploadedfile]['type'] == 'image/jpeg') || ($_FILES[$uploadedfile]['type'] == 'image/jpg') || ($_FILES[$uploadedfile]['type'] == 'image/png') || ($_FILES[$uploadedfile]['type'] == 'image/bmp') || ($_FILES[$uploadedfile]['type'] == 'image/pjpeg') || ($_FILES[$uploadedfile]['type'] == 'image/x-png')) && (($_FILES[$uploadedfile]['size'] < ServerMaxUploadSizeByte) && ($_FILES[$uploadedfile]['size'] !=0)) ){
 								$wp_filetype = wp_check_filetype(basename( $_FILES[$uploadedfile]['name']), null );
 								$attachment = array('post_mime_type' => $wp_filetype['type'],
-													'post_title' => preg_replace('/\.[^.]+$/', '', basename($_FILES[$uploadedfile]['name'])),
+													'post_title' => $fileName, //preg_replace('/\.[^.]+$/', '', basename($_FILES[$uploadedfile]['name'])),
 													'post_content' => '',
 													'post_status' => 'inherit'
 													);
@@ -138,8 +226,17 @@ function wppb_front_end_register(){
 			}
 			
 			
+			//send an email to the admin regarding each and every new subscriber
+			$bloginfo = get_bloginfo( 'name' );
+			$mailMessage  = ''; 
+			$mailMessage  = sprintf(__('New subscriber on %s:'), $bloginfo) . "\r\n\r\n";
+			$mailMessage .= sprintf(__('Username: %s'), esc_attr( $_POST['user_name'] )) . "\r\n";
+			$mailMessage .= sprintf(__('E-mail: %s'), esc_attr( $_POST['email'] )) . "\r\n";
+
+			wp_mail(get_option('admin_email'), sprintf(__('[%s] A new subscriber has (been) registered!'), $bloginfo), $mailMessage);
 
 			
+			//send an email to the newly registered user, if this option was selected
 			if (isset($_POST['send_credentials_via_email']) && ($_POST['send_credentials_via_email'] == 'sending')){
 				$email = $_POST['email'];                                 //change these variables to modify sent email message, destination and source.
 				$fromemail = get_bloginfo('name');
@@ -175,13 +272,54 @@ function wppb_front_end_register(){
 			
 			
 			<?php
-				
-					echo'<p class="success">';
-					if ( current_user_can( 'create_users' ) )
+					
+					if ( current_user_can( 'create_users' ) ){
+						echo'<p class="success">';
 						printf( __('A user account for %1$s has been created.', 'profilebuilder'), $registered_name );
-					else 
+						echo'</p><!-- .success -->';
+						
+						$wppb_addons = wppb_plugin_dir . '/premium/addon/';
+						if (file_exists ( $wppb_addons.'addon.php' )){
+							//check to see if the redirecting addon is present and activated
+							$wppb_premium_addon_settings = get_option('wppb_premium_addon_settings');
+							if ($wppb_premium_addon_settings['customRedirect'] == 'show'){
+								//check to see if the redirect location is not an empty string and is activated
+								$customRedirectSettings = get_option('customRedirectSettings');
+								if ((trim($customRedirectSettings['afterRegisterTarget']) != '') && ($customRedirectSettings['afterRegister'] == 'yes')){
+									$redirectLink = trim($customRedirectSettings['afterRegisterTarget']);
+									$findHttp = strpos($redirectLink, 'http');
+									if ($findHttp === false)
+										$redirectLink = 'http://'. $redirectLink;
+								}
+							}
+						}
+						echo '<font color="black">You will soon be redirected automatically. If you see this page for more than 3 second, please click <a href="'.$redirectLink.'">here</a>.<meta http-equiv="Refresh" content="3;url='.$redirectLink.'" /></font>';
+						echo '<br/><br/>';						
+						
+					}else{
+						echo'<p class="success">';
 						printf( __('Thank you for registering, %1$s.', 'profilebuilder'), $registered_name );
-					echo'</p><!-- .success -->';
+						echo'</p><!-- .success -->';
+						
+						$wppb_addons = wppb_plugin_dir . '/premium/addon/';
+						if (file_exists ( $wppb_addons.'addon.php' )){
+							//check to see if the redirecting addon is present and activated
+							$wppb_premium_addon_settings = get_option('wppb_premium_addon_settings');
+							if ($wppb_premium_addon_settings['customRedirect'] == 'show'){
+								//check to see if the redirect location is not an empty string and is activated
+								$customRedirectSettings = get_option('customRedirectSettings');
+								if ((trim($customRedirectSettings['afterRegisterTarget']) != '') && ($customRedirectSettings['afterRegister'] == 'yes')){
+									$redirectLink = trim($customRedirectSettings['afterRegisterTarget']);
+									$findHttp = strpos($redirectLink, 'http');
+									if ($findHttp === false)
+										$redirectLink = 'http://'. $redirectLink;
+								}
+							}
+						}
+						echo '<font color="black">You will soon be redirected automatically. If you see this page for more than 3 second, please click <a href="'.$redirectLink.'">here</a>.<meta http-equiv="Refresh" content="3;url='.$redirectLink.'" /></font>';
+						echo '<br/><br/>';
+					}
+					
 			?>
 			
 			<?php
@@ -203,8 +341,7 @@ function wppb_front_end_register(){
 				<p class="error">
 					<?php echo $error; ?>
 				</p><!-- .error -->
-			<?php endif; ?>
-
+			<?php endif; ?>	
 			
 			<?php if ( current_user_can( 'create_users' ) && $registration ) : ?>
 				<p class="alert">

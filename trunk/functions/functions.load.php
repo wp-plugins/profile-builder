@@ -12,11 +12,23 @@ Original Author URI: http://valendesigns.com
  */
  /* whitelist options, you can add more register_settings changing the second parameter */
  
- function wppb_register_settings() { 								
+ function wppb_register_settings() {
+	$premiumPresent = wppb_plugin_dir . '/premium/premium.php';
+	$addonPresent = wppb_plugin_dir . '/premium/addon/addon.php';
+	
 	register_setting( 'wppb_option_group', 'wppb_default_settings' );
 	register_setting( 'wppb_default_style', 'wppb_default_style' );
 	register_setting( 'wppb_display_admin_settings', 'wppb_display_admin_settings' );
-	register_setting( 'wppb_profile_builder_pro_serial', 'wppb_profile_builder_pro_serial' );
+	if (file_exists($premiumPresent)){
+		register_setting( 'wppb_profile_builder_pro_serial', 'wppb_profile_builder_pro_serial' );
+	}
+	if (file_exists($addonPresent)){
+		register_setting( 'wppb_premium_addon_settings', 'wppb_premium_addon_settings' );
+		register_setting( 'customRedirectSettings', 'customRedirectSettings' );
+		register_setting( 'userListingSettings', 'userListingSettings' );
+	}
+	
+	
 }
 
 
@@ -62,9 +74,30 @@ function wppb_show_admin_bar($content){
 		return true;
 }
 
+if(!function_exists('curPageURL')){
+    function curPageURL() {
+     $pageURL = 'http';
+     if ((isset($_SERVER["HTTPS"])) && ($_SERVER["HTTPS"] == "on")) {
+		$pageURL .= "s";
+	 }
+     $pageURL .= "://";
+     if ($_SERVER["SERVER_PORT"] != "80") {
+      $pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
+     } else {
+      $pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
+     }
+     return $pageURL;
+    }
+}
 
 
 if ( is_admin() ){
+   /* include the css for the datepicker */
+   $wppb_premiumDatepicker = wppb_plugin_dir . '/premium/assets/css/';
+   if (file_exists ( $wppb_premiumDatepicker.'admin.style.css' ))
+		wp_enqueue_style( 'profile-builder-admin-datepicker-style', wppb_plugin_url.'/premium/assets/css/admin.style.css', false, ProfileBuilderVersion);
+
+ 
   
   /* register the settings for the menu only display sidebar menu for a user with a certain capability, in this case only the "admin" */
   add_action('admin_init', 'wppb_register_settings');
@@ -97,39 +130,90 @@ if ( is_admin() ){
 
 }
 else if ( !is_admin() ){
-  /* include the stylesheet */
-  add_action('wp_print_styles', 'wppb_add_plugin_stylesheet');		
-  
-  $wppb_plugin = wppb_plugin_dir . '/';
-  
-  /* include the menu file for the profile informations */
-  include_once($wppb_plugin.'front-end/wppb.edit.profile.php');        		 
-  add_shortcode('wppb-edit-profile', 'wppb_front_end_profile_info');
-  
-  /*include the menu file for the login screen */
-  include_once($wppb_plugin.'front-end/wppb.login.php');       
-  add_shortcode('wppb-login', 'wppb_front_end_login');
-  
-  /* include the menu file for the register screen */
-  include_once($wppb_plugin.'front-end/wppb.register.php');        		
-  add_shortcode('wppb-register', 'wppb_front_end_register');
-  
-  /* set the front-end admin bar to show/hide */
-  add_filter( 'show_admin_bar' , 'wppb_show_admin_bar');
+	//check if the plugin has the addons module
+	$addonPresent = wppb_plugin_dir . '/premium/addon/addon.php';
+	if (file_exists($addonPresent)){
+		//check if the required action was the "wordpress register new user" or the login
+		$wpLogin = curPageURL();
+		$findLoginPage = strpos($wpLogin, 'wp-login.php');
+		
+		if ((isset($_GET['action'])) && ($_GET['action'] == 'register')){
+			//check to see if it's been requested a redirect on this page
+			$customRedirectSettings = get_option('customRedirectSettings','not_found');
+			if ($customRedirectSettings != 'not_found'){
+				if (($customRedirectSettings['registerRedirect'] == 'yes') && (trim($customRedirectSettings['registerRedirectTarget']) != '')){
+					$redirectLink = trim($customRedirectSettings['registerRedirectTarget']);
+					include ('wp-includes/pluggable.php');
+					$findHttp = strpos($redirectLink, 'http');
+					if ($findHttp === false)
+						wp_redirect( 'http://'.$redirectLink );
+					else wp_redirect( $redirectLink );
+					exit;
+				}
+			}
+		//}elseif (($findLoginPage !== false) && ( isset($_GET['action']) && (($_GET['action'] != 'logout') || ($_GET['action'] != 'lostpassword') ))){
+		}elseif (($findLoginPage !== false) && (($_GET['action'] != 'logout') && ($_GET['action'] != 'lostpassword'))) {
+			$customRedirectSettings = get_option('customRedirectSettings','not_found');
+			if ($customRedirectSettings != 'not_found'){
+				if (($customRedirectSettings['loginRedirect'] == 'yes') && (trim($customRedirectSettings['loginRedirectTarget']) != '')){
+					$redirectLink = trim($customRedirectSettings['loginRedirectTarget']);
+					include ('wp-includes/pluggable.php');
+					$findHttp = strpos($redirectLink, 'http');
+					if ($findHttp === false)
+						wp_redirect( 'http://'.$redirectLink );
+					else wp_redirect( $redirectLink );
+					exit;
+				}
+			}
+		}
+		
+	}
 
-  /* Shortcodes used for the widget area. Just uncomment whichever you need */
-  add_filter('widget_text', 'do_shortcode', 11);
-  
-  /* check to see if the premium functions are present */
-  $wppb_premiumAdmin = wppb_plugin_dir . '/premium/functions/';	
-  if (file_exists ( $wppb_premiumAdmin.'premium.functions.load.php' )){
-  
-      include_once($wppb_premiumAdmin.'premium.functions.load.php');    
-	  
-	  /* filter to set current users custom avatar */
-      add_filter('get_avatar', 'changeDefaultAvatar', 21, 5);
-	  
-	  /* check if there is a need to resize the current avatar image for all the users*/
-	  add_action('init', 'wppb_resize_avatar');
-  }
+	/* include the stylesheet */
+	add_action('wp_print_styles', 'wppb_add_plugin_stylesheet');		
+
+	$wppb_plugin = wppb_plugin_dir . '/';
+
+	/* include the menu file for the profile informations */
+	include_once($wppb_plugin.'front-end/wppb.edit.profile.php');        		 
+	add_shortcode('wppb-edit-profile', 'wppb_front_end_profile_info');
+
+	/*include the menu file for the login screen */
+	include_once($wppb_plugin.'front-end/wppb.login.php');       
+	add_shortcode('wppb-login', 'wppb_front_end_login');
+
+	/* include the menu file for the register screen */
+	include_once($wppb_plugin.'front-end/wppb.register.php');        		
+	add_shortcode('wppb-register', 'wppb_front_end_register');
+
+	/* set the front-end admin bar to show/hide */
+	add_filter( 'show_admin_bar' , 'wppb_show_admin_bar');
+
+	/* Shortcodes used for the widget area. Just uncomment whichever you need */
+	add_filter('widget_text', 'do_shortcode', 11);
+
+	/* check to see if the premium functions are present */
+	$wppb_premiumAdmin = wppb_plugin_dir . '/premium/functions/';	
+	if (file_exists ( $wppb_premiumAdmin.'premium.functions.load.php' )){
+
+		include_once($wppb_premiumAdmin.'premium.functions.load.php');    
+
+		/* filter to set current users custom avatar */
+		add_filter('get_avatar', 'changeDefaultAvatar', 21, 5);
+
+		/* check if there is a need to resize the current avatar image for all the users*/
+		add_action('init', 'wppb_resize_avatar');
+	}
+
+	$wppb_premiumAddon = wppb_plugin_dir . '/premium/addon/';	
+	if (file_exists ( $wppb_premiumAddon.'addon.functions.php' )){
+		//include the file containing the addon functions
+		include_once($wppb_premiumAddon.'addon.functions.php');    
+
+		$wppb_addonOptions = get_option('wppb_premium_addon_settings');
+		if ($wppb_addonOptions['userListing'] == 'show'){
+		  //add shortcode for the user-listing functionality
+		  add_shortcode('wppb-list-users', 'wppb_list_all_users');
+		}
+	}
 }

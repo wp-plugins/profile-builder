@@ -58,11 +58,29 @@ Original Author URI: http://valendesigns.com
 			<li><a href="#plugin-layout"><?php _e('Plugin Layout','profilebuilder');?></a><span></span></li>
 			<li><a href="#show-hide-admin-bar"><?php _e('Show/Hide the Admin Bar on Front-end','profilebuilder');?></a><span></span></li>
 			<li><a href="#default-fields"><?php _e('Default Profile Fields','profilebuilder');?></a><span></span></li>
-			<?php $wppb_premium = wppb_plugin_dir . '/premium/';
+			<?php 
+				$wppb_premium = wppb_plugin_dir . '/premium/';
+				$wppb_addons = wppb_plugin_dir . '/premium/addon/';
+				
 				if (file_exists ( $wppb_premium.'premium.php' )){
 					echo '<li><a href="#create-extra-fields">'; _e('Extra Profile Fields','profilebuilder'); echo'</a><span></span></li>'; 
+				}
+				if (file_exists ( $wppb_addons.'addon.php' )){
+					echo '<li><a href="#add-ons">'; _e('Addons','profilebuilder'); echo'</a><span></span></li>'; 
+				}
+				if (file_exists ( $wppb_premium.'premium.php' )){
 					echo '<li><a href="#register-profile-builder">'; _e('Register Your Version','profilebuilder'); echo'</a><span></span></li>'; 
 				}
+			?>
+			<?php 
+			$addons_options_set = get_option('wppb_premium_addon_settings','not_found');
+			if ($addons_options_set != 'not_found'){ 
+				$addons_options_description = get_option('wppb_premium_addon_settings_description'); //fetch the descriptions array
+				foreach ($addons_options_set as $key => $value)
+					if ($value == 'show'){
+						echo '<li><a href="#'.$key.'">'; _e($addons_options_description[$key],'profilebuilder'); echo '</a><span></span></li>';
+					}
+			}
 			?>
 			
           </ul>
@@ -93,8 +111,27 @@ Original Author URI: http://valendesigns.com
 					register_profile_builder();
 					echo '</div>';
 				}
+			?>	
+			
+			<?php $wppb_addons = wppb_plugin_dir . '/premium/addon/';
+				if (file_exists ( $wppb_addons.'addon.php' )){
+					require_once($wppb_addons.'addon.php');
+					echo '<div id="add-ons" class="block has-table">';
+					displayAddons();
+					echo '</div>';
+					
+					$addons_options_set = get_option('wppb_premium_addon_settings','not_found');
+					if ($addons_options_set != 'not_found'){ 
+						foreach ($addons_options_set as $key => $value)
+							if ($value == 'show'){
+								echo '<div id="'.$key.'" class="block has-table">';
+								$key();
+								echo '</div>';
+							}
+					}
+				}
 			?>
-		
+			
 			<br class="clear" />
    
         </div>
