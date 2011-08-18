@@ -5,7 +5,7 @@ Donate link: http://www.cozmoslabs.com/wordpress-profile-builder/
 Tags: registration, profile, user registration, custom field registration, customize profile, user fields, builder, profile builder, custom fields, avatar
 Requires at least: 3.1
 Tested up to: 3.2
-Stable tag: 1.1.3
+Stable tag: 1.1.5
 
 
 Login, registration and edit profile shortcodes for the front-end. Also you can chose what fields should be displayed or add custom ones.
