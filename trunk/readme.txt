@@ -1,14 +1,14 @@
-=== Profile Builder Pro === 
+=== Profile Builder === 
 
 Contributors: reflectionmedia, barinagabriel
 Donate link: http://www.cozmoslabs.com/wordpress-profile-builder/
-Tags: registration, profile, user registration, custom field registration, customize profile, user fields, builder, profile builder, custom fields, avatar
+Tags: registration, profile, user registration, custom field registration, customize profile, user fields, builder, profile builder
 Requires at least: 3.1
 Tested up to: 3.2
-Stable tag: 1.1.5
+Stable tag: 1.1.6
 
 
-Login, registration and edit profile shortcodes for the front-end. Also you can chose what fields should be displayed or add custom ones.
+Login, registration and edit profile shortcodes for the front-end. Also you can chose what fields should be displayed.
 
  
 == Description ==
@@ -31,8 +31,19 @@ Users with administrator rights have access to the following features:
 * add a custom stylesheet/inherit values from the current theme or use one of the following built into this plugin: default, white or black.
 * select whether to display or not the admin bar in the front end for a specific user-group registered to the site.
 * select which information-field can users see/modify. The hidden fields' values remain unmodified.
-* add custom fields to the existing ones, with several types to choose from: heading, text, textarea, select, checkbox, radio, and/or upload.
-* add an avatar field.
+
+== PROFILE BUILDER PRO ==
+
+The [Pro version](http://www.cozmoslabs.com/wordpress-profile-builder/) has the following extra features:
+
+* Create Extra User Fields
+* Add avatar upload for users
+* Select one of the 2 additional CSS styles: black or white
+* Access to support forums and documentation
+* 1 Year of Updates / Priority Support
+
+[Click here to find out more](http://www.cozmoslabs.com/wordpress-profile-builder/).
+
 
 NOTE:
 
@@ -55,18 +66,6 @@ This plugin only adds/removes fields in the front-end. The default information-f
 = Why do the custom WordPress fields still show up, even though I set it to be "hidden"? =
 
 	Profile Builder only disables the default fields in the front-end of your site/blog, it does absolutely nothing in the dashboard.
-
-= I entered the serial number I received in the confirmation e-mail, but the indicator still is red. What’s wrong? =
-
-	The validation, as well as the update checks require an active internet connection. If you are currently working on a localhost, check your internet connection. If you, however, are on a live server and your serial number won't validate, it means that either our servers are/were down or your server blocked the validation request.
-
-= I see that there is a heading in the Extra Profile Fields section of Profile Builder, but it isn’t displaying in the front-end, neither in the back-end. How come? =
-
-	If you mean the default Header item "Extra Profile Fields", as long as you don't change the title, it won't show up.
-
-= I deleted the default header from the Extra Profile Fields section, but when I refreshed the page, it was there again. Am I seeing things? =
-
-	Luckily for you, you aren't imagining it! The plugin is designed in such way, that there must always be a header item in the list. But don't worry: your users won't see the default header.
  
 
 = I can’t find a question similar to my issue; Where can I find support? =
@@ -75,14 +74,13 @@ This plugin only adds/removes fields in the front-end. The default information-f
 
 
 == Screenshots ==
-1. Plugin Layout (Control Panel): screenshot1.jpg
-2. Show/Hide the Admin Bar (Control Panel): screenshot2.jpg
-3. Default Profile Fields (Control Panel): screenshot3.jpg
-4. Extra Profile Fields (Control Panel): screenshot4.jpg
-5. Register Your Version (Control Panel): screenshot5.jpg
-6. Edit Profile Page: screenshot6.jpg
-7. Login Page: screenshot7.jpg
-8. Registration Page: screenshot8.jpg
+1. Basic information: screenshot1.jpg
+2. Layout Control: screenshot2.jpg
+3. Show/Hide Admin Bar: screenshot3.jpg
+4. Select Default User Fields: screenshot4
+6. Register Page: screenshot6.jpg
+7. Logged in Page: screenshot7.jpg
+
 
 
 
@@ -120,11 +118,8 @@ Bugfixes/enhancements:
 *fixed issue where adding one or more spaces in the checkbox options list, the user can't save values.
 
 
-= 1.1.1 =
-Avatar bugfix where the image appeared from another account's ID
-
 = 1.1 =
-Added a new user-interface (borrowed from the awesome plugin OptionTree created by Derek Herman) and the posibility to add custom fields to the list.
+Added a new user-interface (borrowed from the awesome plugin OptionTree created by Derek Herman), and bugfixes.
 
 = 1.0.10 =
 Bugfix - The wp_update_user attempts to clear and reset cookies if it's updating the password.
