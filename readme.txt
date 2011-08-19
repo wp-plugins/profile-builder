@@ -5,7 +5,7 @@ Donate link: http://www.cozmoslabs.com/wordpress-profile-builder/
 Tags: registration, profile, user registration, custom field registration, customize profile, user fields, builder, profile builder
 Requires at least: 3.1
 Tested up to: 3.2
-Stable tag: 1.1.6
+Stable tag: 1.1.7
 
 
 Login, registration and edit profile shortcodes for the front-end. Also you can chose what fields should be displayed.
@@ -85,20 +85,19 @@ This plugin only adds/removes fields in the front-end. The default information-f
 
 
 == Changelog ==
+= 1.1.7 =
+Minor modification in the readme file.
+
 = 1.1.6 =
 Minor upload bug on WP repository. 
 
 = 1.1.5 =
-Minor bugfix on the registration page. The user was prompted to agree to the terms and conditions even though this was not set on the register page.
 Added translations:
 *czech (thanks to Martin Jurica, martin@jurica.info)
 *updated the english translation
 
 = 1.1.4 =
-Added the possibility to set up the default user-role on registration; by adding the role="role_name" argument (e.g. [wppb-register role="editor"]) the role is automaticly set to all new users. Also, you can find new custom fields, like a time-zone select, a datepicker, country select etc. 
-Added addons feature: 
-*custom redirect url after registration/login
-*added user-listing (use short-code: [wppb-list-users])
+Added the possibility to set up the default user-role on registration; by adding the role="role_name" argument (e.g. [wppb-register role="editor"]) the role is automaticly set to all new users. 
 Added translations:
 *norvegian (thanks to Havard Ulvin, haavard@ulvin.no)
 *dutch (thanks to Pascal Frencken, pascal.frencken@dedeelgaard.nl)
@@ -107,7 +106,7 @@ Added translations:
  
 
 = 1.1.3 =
-Avatar bugfix.
+Minor bugfix.
 
 = 1.1.2 =
 Added translations to: 
