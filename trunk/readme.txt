@@ -32,7 +32,7 @@ Users with administrator rights have access to the following features:
 * select whether to display or not the admin bar in the front end for a specific user-group registered to the site.
 * select which information-field can users see/modify. The hidden fields' values remain unmodified.
 
-== PROFILE BUILDER PRO ==
+PROFILE BUILDER PRO
 
 The [Pro version](http://www.cozmoslabs.com/wordpress-profile-builder/) has the following extra features:
 
