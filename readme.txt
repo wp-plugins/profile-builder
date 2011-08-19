@@ -85,6 +85,9 @@ This plugin only adds/removes fields in the front-end. The default information-f
 
 
 == Changelog ==
+= 1.1.6 =
+Minor upload bug on WP repository. 
+
 = 1.1.5 =
 Minor bugfix on the registration page. The user was prompted to agree to the terms and conditions even though this was not set on the register page.
 Added translations:
