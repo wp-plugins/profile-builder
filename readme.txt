@@ -25,6 +25,7 @@ You can use the following shortcodes:
 * [wppb-edit-profile] - to grant users a front-end acces to their personal information(requires user to be logged in).
 * [wppb-login] - for a log-in form.
 * [wppb-register] - to add a registration form.
+* [wppb-recover-password] - to add a password recovery form.
 
 Users with administrator rights have access to the following features:
 
