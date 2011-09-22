@@ -9,7 +9,21 @@ function wppb_front_end_register($atts){
 	global $error;
 	$agreed = true;
 	$new_user = 'no';
-	get_currentuserinfo(); 
+	$registerFilterArray = array();
+	$extraFieldsErrorHolder = array();  //we will use this array to store the ID's of the extra-fields left uncompleted
+	get_currentuserinfo();
+
+	/* variables used to verify if all required fields were submitted*/
+	$firstnameComplete = 'yes';
+	$lastnameComplete = 'yes';
+	$nicknameComplete = 'yes';
+	$websiteComplete = 'yes';
+	$aimComplete = 'yes';
+	$yahooComplete = 'yes';
+	$jabberComplete = 'yes';
+	$bioComplete = 'yes';
+	/* END variables used to verify if all required fields were submitted*/
+	
 	
 	/* Load registration file. */
 	require_once( ABSPATH . WPINC . '/registration.php' );
@@ -19,13 +33,16 @@ function wppb_front_end_register($atts){
 	
 	
 	//fallback if the file was largen then post_max_size, case in which no errors can be saved in $_FILES[fileName]['error']	
-	if (empty($_FILES) && empty($_POST) && isset($_SERVER['REQUEST_METHOD']) && strtolower($_SERVER['REQUEST_METHOD']) == 'post') {  
-		echo '<p class="error">';
-		 _e('The information size you were trying to submit was larger then '. ServerMaxUploadSizeMega .'b!<br/>', 'profilebuilder');
-		 _e('This is usually caused by a large file(s) trying to be uploaded.<br/>', 'profilebuilder');
-		 _e('Since it was also larger than '. ServerMaxPostSizeMega .'b no additional information is available.<br/>', 'profilebuilder');
-		 _e('The user was NOT created!', 'profilebuilder');
-		echo '</p>';
+	if (empty($_FILES) && empty($_POST) && isset($_SERVER['REQUEST_METHOD']) && strtolower($_SERVER['REQUEST_METHOD']) == 'post') {
+		$registerFilterArray['noPostError'] = '
+		<p class="error">'.
+		 __('The information size you were trying to submit was larger than', 'profilebuilder') .' '. ServerMaxUploadSizeMega .'b!<br/>'.
+		 __('This is usually caused by a large file(s) trying to be uploaded.', 'profilebuilder') .'<br/>'.
+		 __('Since it was also larger than', 'profilebuilder') .' '. ServerMaxPostSizeMega .'b, '. __('no additional information is available.', 'profilebuilder'). '<br/>'.
+		 __('The user was NOT created!', 'profilebuilder') .
+		'</p>';
+		$registerFilterArray['noPostError'] = apply_filters('wppb_register_no_post_error_message', $registerFilterArray['noPostError']);
+		echo $registerFilterArray['noPostError'];
 	}
 	
 	/* If user registered, input info. */
@@ -43,6 +60,21 @@ function wppb_front_end_register($atts){
 		else $aprovedRole = get_option( 'default_role' );
 	
 		$user_pass = esc_attr( $_POST['passw1'] );
+		
+		/* use filters to modify (if needed) the posted data before creating the user-data */
+		$user_pass = apply_filters('wppb_register_posted_password', $user_pass);
+		$_POST['user_name'] = apply_filters('wppb_register_posted_email', $_POST['user_name']);
+		$_POST['first_name'] = apply_filters('wppb_register_posted_first_name', $_POST['first_name']);
+		$_POST['last_name'] = apply_filters('wppb_register_posted_last_name', $_POST['last_name']);
+		$_POST['nickname'] = apply_filters('wppb_register_posted_nickname', $_POST['nickname']);
+		$_POST['email'] = apply_filters('wppb_register_posted_email', $_POST['email']);
+		$_POST['website'] = apply_filters('wppb_register_posted_website', $_POST['website']);
+		$_POST['aim'] = apply_filters('wppb_register_posted_aim', $_POST['aim']);
+		$_POST['yim'] = apply_filters('wppb_register_posted_yahoo', $_POST['yim']);
+		$_POST['jabber'] = apply_filters('wppb_register_posted_jabber', $_POST['jabber']);
+		$_POST['description'] = apply_filters('wppb_register_posted_bio', $_POST['description']);
+		/* END use filters to modify (if needed) the posted data before creating the user-data */
+		
 		$userdata = array(
 			'user_pass' => $user_pass,
 			'user_login' => esc_attr( $_POST['user_name'] ),
@@ -56,7 +88,10 @@ function wppb_front_end_register($atts){
 			'jabber' => esc_attr( $_POST['jabber'] ),
 			'description' => esc_attr( $_POST['description'] ),
 			'role' => $aprovedRole);
-			
+		
+		//get required and shown fields
+		$wppb_defaultOptions = get_option('wppb_default_settings');
+		
 		//check if the user agreed to the terms and conditions (if it was set)
 		$wppb_premium = wppb_plugin_dir . '/premium/functions/';
 			if (file_exists ( $wppb_premium.'extra.fields.php' )){
@@ -73,24 +108,174 @@ function wppb_front_end_register($atts){
 				}
 			}
 		
-		if ( !$userdata['user_login'] )
+		$registerFilterArray['extraError'] = ''; //this is for creating extra error message and bypassing registration
+		$registerFilterArray['extraError'] = apply_filters('wppb_register_extra_error', $registerFilterArray['extraError']);
+		
+		/* check if all the required fields were completed */
+		if($wppb_defaultOptions['firstname'] == 'show'){
+			if (($wppb_defaultOptions['firstnameRequired'] == 'yes') && (trim($_POST['first_name']) == ''))
+				$firstnameComplete = 'no';
+		}elseif($wppb_defaultOptions['lastname'] == 'show'){
+			if (($wppb_defaultOptions['lastnameRequired'] == 'yes') && (trim($_POST['last_name']) == ''))
+				$lastnameComplete = 'no';
+		}elseif($wppb_defaultOptions['nickname'] == 'show'){
+			if (($wppb_defaultOptions['nicknameRequired'] == 'yes') && (trim($_POST['nickname']) == ''))
+				$nicknameComplete = 'no';
+		}elseif($wppb_defaultOptions['website'] == 'show'){
+			if (($wppb_defaultOptions['websiteRequired'] == 'yes') && (trim($_POST['website']) == ''))
+				$websiteComplete = 'no';
+		}elseif($wppb_defaultOptions['aim'] == 'show'){
+			if (($wppb_defaultOptions['aimRequired'] == 'yes') && (trim($_POST['aim']) == ''))
+				$aimComplete = 'no';
+		}elseif($wppb_defaultOptions['yahoo'] == 'show'){
+			if (($wppb_defaultOptions['yahooRequired'] == 'yes') && (trim($_POST['yahoo']) == ''))
+				$yahooComplete = 'no';
+		}elseif($wppb_defaultOptions['jabber'] == 'show'){
+			if (($wppb_defaultOptions['jabberRequired'] == 'yes') && (trim($_POST['jabber']) == ''))
+				$jabberComplete = 'no';
+		}elseif($wppb_defaultOptions['bio'] == 'show'){
+			if (($wppb_defaultOptions['bioRequired'] == 'yes') && (trim($_POST['description']) == ''))
+				$bioComplete = 'no';
+		}
+		
+		// check the extra fields also
+		$wppb_premium = wppb_plugin_dir . '/premium/functions/';
+		if (file_exists ( $wppb_premium.'extra.fields.php' )){
+			$wppbFetchArray = get_option('wppb_custom_fields');
+			foreach ( $wppbFetchArray as $key => $value){
+				switch ($value['item_type']) {
+					case "input":{
+						$_POST[$value['item_id'].$value['id']] = apply_filters('wppb_register_input_custom_field_'.$value['id'], $_POST[$value['item_id'].$value['id']]);
+						if ($value['item_required'] != null){
+							if ($value['item_required'] == 'yes'){
+								if (trim($_POST[$value['item_id'].$value['id']]) == '')
+									array_push($extraFieldsErrorHolder, $value['id']);
+							}
+						}
+						break;					
+					}
+					case "checkbox":{
+						$checkboxOption = '';
+						$checkboxValue = explode(',', $value['item_options']);
+						foreach($checkboxValue as $thisValue){
+							$thisValue = str_replace(' ', '#@space@#', $thisValue); //we need to escape the space-codification we sent earlier in the post
+							if (isset($_POST[$thisValue.$value['id']])){
+								$localValue = str_replace('#@space@#', ' ', $_POST[$thisValue.$value['id']]);
+								$checkboxOption = $checkboxOption.$localValue.',';
+							}
+						}
+						
+						if ($value['item_required'] != null){
+							if ($value['item_required'] == 'yes'){
+								if (trim($checkboxOption) == '')
+									array_push($extraFieldsErrorHolder, $value['id']);
+							}
+						}
+						break;
+					}
+					case "radio":{
+						if ($value['item_required'] != null){
+							if ($value['item_required'] == 'yes'){
+								if (trim($_POST[$value['item_id'].$value['id']]) == '')
+									array_push($extraFieldsErrorHolder, $value['id']);
+							}
+						}
+						break;
+					}
+					case "select":{
+						if ($value['item_required'] != null){
+							if ($value['item_required'] == 'yes'){
+								if (trim($_POST[$value['item_id'].$value['id']]) == '')
+									array_push($extraFieldsErrorHolder, $value['id']);
+							}
+						}
+						break;
+					}
+					case "countrySelect":{
+						if ($value['item_required'] != null){
+							if ($value['item_required'] == 'yes'){
+								if (trim($_POST[$value['item_id'].$value['id']]) == '')
+									array_push($extraFieldsErrorHolder, $value['id']);
+							}
+						}
+						break;
+					}
+					case "timeZone":{
+						if ($value['item_required'] != null){
+							if ($value['item_required'] == 'yes'){
+								if (trim($_POST[$value['item_id'].$value['id']]) == '')
+									array_push($extraFieldsErrorHolder, $value['id']);
+							}
+						}
+						break;
+					}
+					case "datepicker":{
+						if ($value['item_required'] != null){
+							if ($value['item_required'] == 'yes'){
+								if (trim($_POST[$value['item_id'].$value['id']]) == '')
+									array_push($extraFieldsErrorHolder, $value['id']);
+							}
+						}
+						break;
+					}
+					case "textarea":{
+						if ($value['item_required'] != null){
+							if ($value['item_required'] == 'yes'){
+								if (trim($_POST[$value['item_id'].$value['id']]) == '')
+									array_push($extraFieldsErrorHolder, $value['id']);
+							}
+						}
+						break;
+					}
+					case "upload":{
+						$uploadedfile = $value['item_type'].$value['id'];
+						if ( (basename( $_FILES[$uploadedfile]['name']) == '')){
+							if ($value['item_required'] != null){
+								if ($value['item_required'] == 'yes')
+										array_push($extraFieldsErrorHolder, $value['id']);
+							}
+						}
+						break;
+					}
+					case "avatar":{
+
+						$uploadedfile = $value['item_type'].$value['id'];
+
+						if ( (basename( $_FILES[$uploadedfile]['name']) == '')){
+							if (($_FILES[$uploadedfile]['type'] != 'image/jpeg') || ($_FILES[$uploadedfile]['type'] != 'image/jpg') || ($_FILES[$uploadedfile]['type'] != 'image/png') || ($_FILES[$uploadedfile]['type'] != 'image/bmp') || ($_FILES[$uploadedfile]['type'] != 'image/pjpeg') || ($_FILES[$uploadedfile]['type'] != 'image/x-png'))
+								if ($value['item_required'] != null){
+									if ($value['item_required'] == 'yes')
+											array_push($extraFieldsErrorHolder, $value['id']);
+								}
+						}
+						break;
+					}
+				}
+			}
+		}
+		
+		/* END check if all the required fields were completed */
+		
+		if ($registerFilterArray['extraError'] != '')
+			$error = $registerFilterArray['extraError'];
+		elseif ( !$userdata['user_login'] )
 			$error = __('A username is required for registration.', 'profilebuilder');
 		elseif ( username_exists($userdata['user_login']) )
 			$error = __('Sorry, that username already exists!', 'profilebuilder');
-		
 		elseif ( !is_email($userdata['user_email'], true) )
 			$error = __('You must enter a valid email address.', 'profilebuilder');
 		elseif ( email_exists($userdata['user_email']) )
 			$error = __('Sorry, that email address is already used!', 'profilebuilder');
-		elseif (( empty($_POST['passw1'] ) || empty( $_POST['passw2'] )) || ( $_POST['pass1'] != $_POST['pass2'] )){
-				if ( empty($_POST['passw1'] ) || empty( $_POST['passw2'] ))                                                    //verify if the user has completed both password fields
-					$error = __('You didn\'t complete one of the password-fields!', 'profilebuilder');
-				elseif ( $_POST['pass1'] != $_POST['pass2'] )																   //verify if the the password and the retyped password are a match
-					$error = __('The entered passwords don\'t match!', 'profilebuilder');
-			}
+		elseif (( empty($_POST['passw1'] ) || empty( $_POST['passw2'] )) || ( $_POST['passw1'] != $_POST['passw2'] )){
+			if ( empty($_POST['passw1'] ) || empty( $_POST['passw2'] ))                                                    //verify if the user has completed both password fields
+				$error = __('You didn\'t complete one of the password-fields!', 'profilebuilder');
+			elseif ( $_POST['passw1'] != $_POST['passw2'] )																   //verify if the the password and the retyped password are a match
+				$error = __('The entered passwords don\'t match!', 'profilebuilder');
+		}
 		elseif ( $agreed == false )
 			$error = __('You must agree to the terms and conditions before registering!', 'profilebuilder');
-		
+		elseif(($firstnameComplete == 'no' || $lastnameComplete == 'no' ||	$nicknameComplete == 'no' || $websiteComplete == 'no' || $aimComplete == 'no' || $yahooComplete == 'no' ||	$jabberComplete == 'no' ||	$bioComplete == 'no' ) || !empty($extraFieldsErrorHolder))
+			$error = __('The account was NOT created!', 'profilebuilder') .'<br/>'. __('(Several required fields were left uncompleted)', 'profilebuilder');
 		else{
 			$registered_name = $_POST['user_name'];
 			$new_user = wp_insert_user( $userdata );
@@ -102,6 +287,10 @@ function wppb_front_end_register($atts){
 				foreach ( $wppbFetchArray as $key => $value){
 					switch ($value['item_type']) {
 						case "input":{
+							add_user_meta( $new_user, 'custom_field_'.$value['id'], esc_attr($_POST[$value['item_id'].$value['id']]) );
+							break;
+						}						
+						case "hiddenInput":{
 							add_user_meta( $new_user, 'custom_field_'.$value['id'], esc_attr($_POST[$value['item_id'].$value['id']]) );
 							break;
 						}
@@ -228,25 +417,38 @@ function wppb_front_end_register($atts){
 			
 			//send an email to the admin regarding each and every new subscriber
 			$bloginfo = get_bloginfo( 'name' );
-			$mailMessage  = ''; 
-			$mailMessage  = sprintf(__('New subscriber on %s:'), $bloginfo) . "\r\n\r\n";
-			$mailMessage .= sprintf(__('Username: %s'), esc_attr( $_POST['user_name'] )) . "\r\n";
-			$mailMessage .= sprintf(__('E-mail: %s'), esc_attr( $_POST['email'] )) . "\r\n";
+			$registerFilterArray['adminMessageOnRegistration']  = ''; 
+			$registerFilterArray['adminMessageOnRegistration']  = __('New subscriber on', 'profilebuilder') .' '.$bloginfo . "\r\n\r\n";
+			$registerFilterArray['adminMessageOnRegistration'] .= __('Username', 'profilebuilder') .': '. esc_attr($_POST['user_name']) . "\r\n";
+			$registerFilterArray['adminMessageOnRegistration'] .= __('E-mail', 'profilebuilder') .': '. esc_attr($_POST['email']) . "\r\n";
+			$registerFilterArray['adminMessageOnRegistration'] = apply_filters('wppb_register_admin_message_content', $registerFilterArray['adminMessageOnRegistration']);
+			
+			$registerFilterArray['adminMessageOnRegistrationTitle'] = '['. $bloginfo .']'. __('A new subscriber has (been) registered!');
+			$registerFilterArray['adminMessageOnRegistrationTitle'] = apply_filters ('wppb_register_admin_message_title', $registerFilterArray['adminMessageOnRegistrationTitle']);
 
-			wp_mail(get_option('admin_email'), sprintf(__('[%s] A new subscriber has (been) registered!'), $bloginfo), $mailMessage);
+			if (trim($registerFilterArray['adminMessageOnRegistration']) != '')
+				wp_mail(get_option('admin_email'), $registerFilterArray['adminMessageOnRegistrationTitle'], $registerFilterArray['adminMessageOnRegistration']);
 
 			
 			//send an email to the newly registered user, if this option was selected
 			if (isset($_POST['send_credentials_via_email']) && ($_POST['send_credentials_via_email'] == 'sending')){
-				$email = $_POST['email'];                                 //change these variables to modify sent email message, destination and source.
-				$fromemail = get_bloginfo('name');
+				//change these variables to modify sent email message, destination and source.
+				$email = $_POST['email'];
 				$mailPassword = $_POST['passw1'];
-				$mailUsername = $_POST['user_name'];
-				$subject = 'A new account has been created for you.';
-				$msg = 'Welcome to blog '.$fromemail.'. Your username is:'.$mailUsername.' and password:'.$mailPassword;
-				$messageSent = wp_mail( $email, $subject, $msg);
+				$mailUsername = $_POST['user_name'];				
+				
+				$registerFilterArray['userMessageFrom'] = get_bloginfo('name');
+				$registerFilterArray['userMessageFrom'] = apply_filters('wppb_register_from_email_content', $registerFilterArray['userMessageFrom']);
+
+				$registerFilterArray['userMessageSubject'] = 'A new account has been created for you.';
+				$registerFilterArray['userMessageSubject'] = apply_filters('wppb_register_subject_email_content', $registerFilterArray['userMessageSubject']);
+				
+				$registerFilterArray['userMessageContent'] = 'Welcome to blog '.$registerFilterArray['userMessageFrom'].'. Your username is:'.$mailUsername.' and password:'.$mailPassword;
+				$registerFilterArray['userMessageContent'] = apply_filters('wppb_register_email_content', $registerFilterArray['userMessageContent']);
+				
+				$messageSent = wp_mail( $email, $registerFilterArray['userMessageSubject'], $registerFilterArray['userMessageContent']);
 				if( $messageSent == TRUE)
-					$sentEmailStatus = 2;
+					$sentEmailStatus = 2; 
 				else
 					$sentEmailStatus = 1;
 			}
@@ -256,27 +458,25 @@ function wppb_front_end_register($atts){
 
 ?>
 	<div class="wppb_holder" id="wppb_register">
-	<?php if ( is_user_logged_in() && !current_user_can( 'create_users' ) ) : ?>
-		<?php
+<?php 	
+		if ( is_user_logged_in() && !current_user_can( 'create_users' ) ) :
+
 		global $user_ID; 
 		$login = get_userdata( $user_ID );
 		if($login->display_name == ''){ 
 			$login->display_name = $login->user_login;
 		}
-		?>
-			<p class="log-in-out alert">
-			<?php printf( __('You are logged in as <a href="%1$s" title="%2$s">%2$s</a>.  You don\'t need another account.', 'profilebuilder'), get_author_posts_url( $login->ID ), $login->display_name ); ?> <a href="<?php echo wp_logout_url( get_permalink() ); ?>" title="<?php _e('Log out of this account', 'profilebuilder'); ?>"><?php _e('Logout &raquo;', 'profilebuilder'); ?></a>
-			</p><!-- .log-in-out .alert -->
-
-		<?php elseif ( $new_user != 'no' ) : ?>
+			$registerFilterArray['loginLogoutError'] = '
+				<p class="log-in-out alert">'. __('You are logged in as', 'profilebuilder') .' <a href="'.get_author_posts_url( $login->ID ).'" title="'.$login->display_name.'">'.$login->display_name.'</a>. '. __('You don\'t need another account.', 'profilebuilder') .' <a href="'.wp_logout_url(get_permalink()).'" title="'. __('Log out of this account.', 'profilebuilder') .'">'. __('Logout', 'profilebuilder') .'  &raquo;</a></p><!-- .log-in-out .alert -->';
+			$registerFilterArray['loginLogoutError'] = apply_filters('wppb_register_have_account_alert', $registerFilterArray['loginLogoutError']);
+			echo $registerFilterArray['loginLogoutError'];
 			
-			
-			<?php
-					
+		elseif ( $new_user != 'no' ) :
 					if ( current_user_can( 'create_users' ) ){
-						echo'<p class="success">';
-						printf( __('A user account for %1$s has been created.', 'profilebuilder'), $registered_name );
-						echo'</p><!-- .success -->';
+						$registerFilterArray['registrationMessage1'] = '
+							<p class="success">'. __('A user account has been created for', 'profilebuilder') .' '. $registered_name. '.</p><!-- .success -->';
+						$registerFilterArray['registrationMessage1'] = apply_filters('wppb_register_account_created1', $registerFilterArray['registrationMessage1']);
+						echo $registerFilterArray['registrationMessage1'];
 						
 						$wppb_addons = wppb_plugin_dir . '/premium/addon/';
 						if (file_exists ( $wppb_addons.'addon.php' )){
@@ -293,13 +493,15 @@ function wppb_front_end_register($atts){
 								}
 							}
 						}
-						echo '<font color="black">You will soon be redirected automatically. If you see this page for more than 3 second, please click <a href="'.$redirectLink.'">here</a>.<meta http-equiv="Refresh" content="3;url='.$redirectLink.'" /></font>';
-						echo '<br/><br/>';						
+						$registerFilterArray['redirectMessage1'] = '<font color="black">You will soon be redirected automatically. If you see this page for more than 3 second, please click <a href="'.$redirectLink.'">here</a>.<meta http-equiv="Refresh" content="3;url='.$redirectLink.'" /></font><br/><br/>';	
+						$registerFilterArray['redirectMessage1'] = apply_filters('wppb_register_redirect_after_creation1', $registerFilterArray['redirectMessage1']);
+						echo $registerFilterArray['redirectMessage1'];			
 						
 					}else{
-						echo'<p class="success">';
-						printf( __('Thank you for registering, %1$s.', 'profilebuilder'), $registered_name );
-						echo'</p><!-- .success -->';
+						$registerFilterArray['registrationMessage2'] = '
+							<p class="success">'. __('Thank you for registering', 'profilebuilder') .' '. $registered_name .'.</p><!-- .success -->';
+						$registerFilterArray['registrationMessage2'] = apply_filters('wppb_register_account_created2', $registerFilterArray['registrationMessage2']);
+						echo $registerFilterArray['registrationMessage2'];
 						
 						$wppb_addons = wppb_plugin_dir . '/premium/addon/';
 						if (file_exists ( $wppb_addons.'addon.php' )){
@@ -316,271 +518,326 @@ function wppb_front_end_register($atts){
 								}
 							}
 						}
-						echo '<font color="black">You will soon be redirected automatically. If you see this page for more than 3 second, please click <a href="'.$redirectLink.'">here</a>.<meta http-equiv="Refresh" content="3;url='.$redirectLink.'" /></font>';
-						echo '<br/><br/>';
+						$registerFilterArray['redirectMessage2'] = '<font color="black">You will soon be redirected automatically. If you see this page for more than 3 second, please click <a href="'.$redirectLink.'">here</a>.<meta http-equiv="Refresh" content="3;url='.$redirectLink.'" /></font><br/><br/>';	
+						$registerFilterArray['redirectMessage2'] = apply_filters('wppb_register_redirect_after_creation2', $registerFilterArray['redirectMessage2']);
+						echo $registerFilterArray['redirectMessage2'];
 					}
-					
-			?>
+
 			
-			<?php
 				if(isset($_POST['send_credentials_via_email'])){
 					if ($sentEmailStatus == 1){
-						echo '<p class="error">';
-						echo 'An error occured while trying to send the notification email.';
-						echo '</p><!-- .error -->';
+						$registerFilterArray['emailMessage1'] = '<p class="error">'. __('An error occured while trying to send the notification email.', 'profilebuilder') .'</p><!-- .error -->';
+						$registerFilterArray['emailMessage1'] = apply_filters('wppb_register_send_notification_email_fail', $registerFilterArray['emailMessage1']);
+						echo $registerFilterArray['emailMessage1'];
 					}elseif ($sentEmailStatus == 2){
-						echo '<p class="success">';
-						echo 'An email containing the username and password was successfully sent.';
-						echo '</p><!-- .success -->';
+						$registerFilterArray['emailMessage2'] = '<p class="success">'. __('An email containing the username and password was successfully sent.', 'profilebuilder') .'</p><!-- .success -->';
+						$registerFilterArray['emailMessage2'] = apply_filters('wppb_register_send_notification_email_success', $registerFilterArray['emailMessage2']);
+						echo $registerFilterArray['emailMessage2'];
 					}
-				}	
-			?>
-		<?php else : ?>
-
-			<?php if ( $error ) : ?>
-				<p class="error">
-					<?php echo $error; ?>
-				</p><!-- .error -->
-			<?php endif; ?>	
+				}
+?>
+<?php			
+			else :
+				if ( $error ) : 
+					$registerFilterArray['errorMessage'] = '<p class="error">'. $error .'</p><!-- .error -->';
+					$registerFilterArray['errorMessage'] = apply_filters('wppb_register_error_messaging', $registerFilterArray['errorMessage']);
+					echo $registerFilterArray['errorMessage'];
+				endif;
 			
-			<?php if ( current_user_can( 'create_users' ) && $registration ) : ?>
-				<p class="alert">
-					<?php _e('Users can register themselves or you can manually create users here.', 'profilebuilder'); ?>
-				</p><!-- .alert -->
-			<?php elseif ( current_user_can( 'create_users' ) ) : ?>
-				<p class="alert">
-					<?php _e('Users cannot currently register themselves, but you can manually create users here.', 'profilebuilder'); ?>
-				</p><!-- .alert -->
-			<?php elseif ( !current_user_can( 'create_users' ) && !$registration) : ?>
-				<p class="alert">
-					<?php _e('Only an administrator can add new users.', 'profilebuilder'); ?>
-				</p><!-- .alert -->
-				
-			<?php endif; ?>
+				if ( current_user_can( 'create_users' ) && $registration ) :
+					$registerFilterArray['alertMessage1'] = '<p class="alert">'. __('Users can register themselves or you can manually create users here.', 'profilebuilder') .'</p><!-- .alert -->';
+					$registerFilterArray['alertMessage1'] = apply_filters('wppb_register_alert_messaging1', $registerFilterArray['alertMessage1']);
+					echo $registerFilterArray['alertMessage1'];					
+					
+				elseif ( current_user_can( 'create_users' ) ) :
+					$registerFilterArray['alertMessage2'] = '<p class="alert">'. __('Users cannot currently register themselves, but you can manually create users here.', 'profilebuilder') .'</p><!-- .alert -->';
+					$registerFilterArray['alertMessage2'] = apply_filters('wppb_register_alert_messaging2', $registerFilterArray['alertMessage2']);
+					echo $registerFilterArray['alertMessage2'];
+					
+				elseif ( !current_user_can( 'create_users' ) && !$registration) :
+					$registerFilterArray['alertMessage3'] = '<p class="alert">'. __('Only an administrator can add new users.', 'profilebuilder') .'</p><!-- .alert -->';
+					$registerFilterArray['alertMessage3'] = apply_filters('wppb_register_alert_messaging3', $registerFilterArray['alertMessage3']);
+					echo $registerFilterArray['alertMessage3'];				
+				endif;
 
-			<?php if ( $registration || current_user_can( 'create_users' ) ) : ?>
+				if ( $registration || current_user_can( 'create_users' ) ) :
+					/* use this action hook to add extra content before the register form. */
+					do_action( 'wppb_before_register_fields' );
+?>
+					<form enctype="multipart/form-data" method="post" id="adduser" class="user-forms" action="http://<?php echo $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>">
+<?php 					
+						echo '<input type="hidden" name="MAX_FILE_SIZE" value="'.ServerMaxUploadSizeByte.'" /><!-- set the MAX_FILE_SIZE to the server\'s current max upload size in bytes -->'; 
 
-			<?php /* use this action hook to add extra content before the register form. */ ?>
-			<?php do_action( 'wppb_before_register_fields' ); ?> 
-			
-			<form enctype="multipart/form-data" method="post" id="adduser" class="user-forms" action="http://<?php echo $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>">
-				<?php echo '<input type="hidden" name="MAX_FILE_SIZE" value="'.ServerMaxUploadSizeByte.'" />'; ?> <!-- set the MAX_FILE_SIZE to the server's current max upload size in bytes -->
-			
-				<p>
-				<strong><?php _e('Name', 'profilebuilder');?></strong>
-				</p>
-				
-				<?php
-				if ($wppb_defaultOptions['username'] == 'show'){ 
-					if (isset($_POST['user_name']))
-						$localUserName = esc_html($_POST['user_name']);
-					else $localUserName = '';
-				
-					echo'
-					<p class="form-username">
-						<label for="user_name">'; _e('Username', 'profilebuilder');  echo '</label>
-						<input class="text-input" name="user_name" type="text" id="user_name" value="'.$localUserName.'" />
-						<span class="wppb-description-delimiter">'; _e('(required)', 'profilebuilder');echo'</span>
-					</p><!-- .form-username -->';
-				}
-				?>
-				
-				<?php
-				if ($wppb_defaultOptions['firstname'] == 'show'){ 
-					if (isset($_POST['first_name']))
-						$localFirstName = esc_html($_POST['first_name']);
-					else $localFirstName = '';
-					
-					echo'
-					<p class="first_name">
-						<label for="first_name">'; _e('First Name', 'profilebuilder'); echo'</label>
-						<input class="text-input" name="first_name" type="text" id="first_name" value="'.$localFirstName.'" />
-					</p><!-- .first_name -->';
-				}
-				?>
-				
-				<?php 
-				if ($wppb_defaultOptions['lastname'] == 'show'){ 
-					if (isset($_POST['last_name']))
-						$localLastName = esc_html($_POST['last_name']);
-					else $localLastName = '';
-					
-					echo'
-					<p class="last_name">
-						<label for="last_name">'; _e('Last Name', 'profilebuilder'); echo'</label>
-						<input class="text-input" name="last_name" type="text" id="last_name" value="'.$localLastName.'" />
-					</p><!-- .last_name -->';
-				}
-				?>
-				
-				<?php 
-				if ($wppb_defaultOptions['nickname'] == 'show'){ 
-					if (isset($_POST['nickname']))
-						$localNickName = esc_html($_POST['nickname']);
-					else $localNickName = '';
-					
-					echo'
-					<p class="nickname">
-						<label for="nickname">'; _e('Nickname', 'profilebuilder'); echo'</label>
-						<input class="text-input" name="nickname" type="text" id="nickname" value="'.$localNickName.'" />
-					</p><!-- .nickname -->';
-				}
-				?>
-				
-				<p>
-				<strong><?php _e('Contact Info', 'profilebuilder');?></strong>
-				</p>
-				
-				<?php 
-				if ($wppb_defaultOptions['email'] == 'show'){ 
-					if (isset($_POST['email']))
-						$localEmail = esc_html($_POST['email']);
-					else $localEmail = '';
-								
-					echo'
-					<p class="form-email">
-						<label for="email">'; _e('E-mail', 'profilebuilder'); echo '</label>
-						<input class="text-input" name="email" type="text" id="email" value="'.$localEmail.'" />
-						<span class="wppb-description-delimiter">'; _e('(required)', 'profilebuilder');echo'</span>
-					</p><!-- .form-email -->';
-				}
-				?>
-				
-				<?php 
-				if ($wppb_defaultOptions['website'] == 'show'){ 
-					if (isset($_POST['website']))
-						$localWebsite = esc_html($_POST['website']);
-					else $localWebsite = '';
-				
-					echo'
-					<p class="form-website">
-						<label for="website">'; _e('Website', 'profilebuilder'); echo'</label>
-						<input class="text-input" name="website" type="text" id="website" value="'.$localWebsite.'" />
-					</p><!-- .form-website -->';
-				}
-				?>
-				
-				<?php 
-				if ($wppb_defaultOptions['aim'] == 'show'){ 
-					if (isset($_POST['aim']))
-						$localAim = esc_html($_POST['aim']);
-					else $localAim = '';
-			
-					echo'
-					<p class="form-aim">
-						<label for="aim">'; _e('AIM', 'profilebuilder'); echo'</label>
-						<input class="text-input" name="aim" type="text" id="aim" value="'.$localAim.'" />
-					</p><!-- .form-aim -->';
-				}
-				?>
-				
-				<?php 
-				if ($wppb_defaultOptions['yahoo'] == 'show'){ 
-					if (isset($_POST['yim']))
-						$localYim = esc_html($_POST['yim']);
-					else $localYim = '';
-					
-					echo'
-					<p class="form-yim">
-						<label for="yim">'; _e('Yahoo IM', 'profilebuilder'); echo'</label>
-						<input class="text-input" name="yim" type="text" id="yim" value="'.$localYim.'" />
-					</p><!-- .form-yim -->';
-				}
-				?>
-				
-				<?php 
-				if ($wppb_defaultOptions['jabber'] == 'show'){ 
-					if (isset($_POST['jabber']))
-						$localJabber = esc_html($_POST['jabber']);
-					else $localJabber = '';
-					
-					echo'
-					<p class="form-jabber">
-						<label for="jabber">'; _e('Jabber / Google Talk', 'profilebuilder'); echo'</label>
-						<input class="text-input" name="jabber" type="text" id="jabber" value="'.$localJabber.'" />
-					</p><!-- .form-jabber -->';
-				}
-				?>
-				
-				<p>
-				<strong><?php _e('About Yourself', 'profilebuilder');?></strong>
-				</p>
-				
-				<?php 
-				if ($wppb_defaultOptions['bio'] == 'show'){ 
-					if (isset($_POST['description']))
-						$localDescription = esc_html($_POST['description']);
-					else $localDescription = '';
-					
-					echo'
-					<p class="form-description">
-						<label for="description">'; _e('Biographical Info', 'profilebuilder'); echo'</label>
-						<textarea class="text-input" name="description" id="description" rows="5" cols="30">'.$localDescription.'</textarea>
-					</p><!-- .form-description -->';
-				}
-				?>
-				
-				<?php 
-				if ($wppb_defaultOptions['password'] == 'show'){
-					if (isset($_POST['pass1']))
-						$localPass1 = $_POST['pass1'];
-					else $localPass1 = '';
-					
-					if (isset($_POST['pass2']))
-						$localPass2 = $_POST['pass2'];
-					else $localPass2 = '';
-					
-					echo'
-					<p class="form-password">
-						<label for="pass1">'; _e('Password', 'profilebuilder'); echo'</label>
-						<input class="text-input" name="passw1" type="password" id="pass1" value="'.$localPass1.'" />
-					</p><!-- .form-password -->
-	 
-					<p class="form-password">
-						<label for="pass2">'; _e('Repeat Password', 'profilebuilder'); echo'</label>
-						<input class="text-input" name="passw2" type="password" id="pass2" value="'.$localPass2.'" />
-					</p><!-- .form-password -->';
-				}
-				?>
-				
-				<?php
-					$wppb_premium = wppb_plugin_dir . '/premium/functions/';
-					if (file_exists ( $wppb_premium.'extra.fields.php' )){
-						require_once($wppb_premium.'extra.fields.php');
-						register_user_extra_fields($error, $_POST);
-					}
-				?>
-				
-				<?php
-						echo '
-						<p class="send-confirmation-email">
-						<label for="send-confirmation-email">'; 
-						echo'<input id="send_credentials_via_email" type="checkbox" name="send_credentials_via_email" value="sending"';if (isset($_POST['send_credentials_via_email'])) echo 'checked';echo'/>
-						<span class="wppb-description-delimiter">'; _e(' Send these credentials via email.', 'profilebuilder');echo'</span></label>
-						</p><!-- .send-confirmation-email -->';
-				?>
-					
-				<p class="form-submit">
-					<?php //echo $referer; ?>
-					<input name="adduser" type="submit" id="addusersub" class="submit button" value="<?php if ( current_user_can( 'create_users' ) ) _e('Add User', 'profilebuilder'); else _e('Register', 'profilebuilder'); ?>" />
-					<input name="action" type="hidden" id="action" value="adduser" />
-				</p><!-- .form-submit -->
-				<?php wp_nonce_field('verify_true_registration','register_nonce_field'); ?>
-			</form><!-- #adduser -->
+						$registerFilterArray['name1'] = '<p class="registerNameHeading"><strong>'. __('Name', 'profilebuilder') .'</strong></p>';
+						$registerFilterArray['name1'] = apply_filters('wppb_register_content_name1', $registerFilterArray['name1']);
+						echo $registerFilterArray['name1'];	
+						
+						if ($wppb_defaultOptions['username'] == 'show'){
+							$errorMark = '';
+							if ($wppb_defaultOptions['usernameRequired'] == 'yes'){
+								$errorMark = '<font color="red" title="This field is required for registration.">*</font>';
+							}
+						
+							$registerFilterArray['name2'] = '
+								<p class="form-username">
+									<label for="user_name">'. __('Username', 'profilebuilder') .$errorMark.'</label>
+									<input class="text-input" name="user_name" type="text" id="user_name" value="'.trim($_POST['user_name']).'" />
+									<span class="wppb-description-delimiter">'. __('(required)', 'profilebuilder') .'</span>
+								</p><!-- .form-username -->';
+							$registerFilterArray['name2'] = apply_filters('wppb_register_content_name2', $registerFilterArray['name2']);
+							echo $registerFilterArray['name2'];
+						}
+						
+						if ($wppb_defaultOptions['firstname'] == 'show'){
+								$errorVar = '';
+								$errorMark = '';
+								if ($wppb_defaultOptions['firstnameRequired'] == 'yes'){
+									$errorMark = '<font color="red" title="This field is marked as required by the administrator.">*</font>';
+									if ((trim($_POST['first_name']) == '') && isset($_POST['first_name'])){
+										$errorMark = '<img src="'.wppb_plugin_url . '/assets/images/pencil_delete.png" title="This field must be filled out before registering (It was marked as required by the administrator)."/>';
+										$errorVar = ' errorHolder';
+									}
+								}
 
-			<?php endif; ?>
+							$registerFilterArray['name3'] = '
+								<p class="first_name'.$errorVar.'">
+									<label for="first_name">'. __('First Name', 'profilebuilder') .$errorMark.'</label>
+									<input class="text-input" name="first_name" type="text" id="first_name" value="'.trim($_POST['first_name']).'" />
+								</p><!-- .first_name -->';
+							$registerFilterArray['name3'] = apply_filters('wppb_register_content_name3', $registerFilterArray['name3']);
+							echo $registerFilterArray['name3'];
+						}
 
-		<?php endif; ?>
+						if ($wppb_defaultOptions['lastname'] == 'show'){ 
+							$errorVar = '';
+							$errorMark = '';
+							if ($wppb_defaultOptions['lastnameRequired'] == 'yes'){
+								$errorMark = '<font color="red" title="This field is marked as required by the administrator.">*</font>';
+								if ((trim($_POST['last_name']) == '') && isset($_POST['last_name'])){
+									$errorMark = '<img src="'.wppb_plugin_url . '/assets/images/pencil_delete.png" title="This field must be filled out before registering (It was marked as required by the administrator)."/>';
+									$errorVar = ' errorHolder';
+								}
+							}
+							
+							$registerFilterArray['name4'] = '
+								<p class="last_name'.$errorVar.'">
+									<label for="last_name">'. __('Last Name', 'profilebuilder') .$errorMark.'</label>
+									<input class="text-input" name="last_name" type="text" id="last_name" value="'.trim($_POST['last_name']).'" />
+								</p><!-- .last_name -->';
+							$registerFilterArray['name4'] = apply_filters('wppb_register_content_name4', $registerFilterArray['name4']);
+							echo $registerFilterArray['name4'];
+						}
+
+						if ($wppb_defaultOptions['nickname'] == 'show'){
+							$errorVar = '';
+							$errorMark = '';
+							if ($wppb_defaultOptions['nicknameRequired'] == 'yes'){
+								$errorMark = '<font color="red" title="This field is marked as required by the administrator.">*</font>';
+								if ((trim($_POST['nickname']) == '') && isset($_POST['nickname'])){
+									$errorMark = '<img src="'.wppb_plugin_url . '/assets/images/pencil_delete.png" title="This field must be filled out before registering (It was marked as required by the administrator)."/>';
+									$errorVar = ' errorHolder';
+								}
+							}
+							
+							$registerFilterArray['name5'] = '
+								<p class="nickname'.$errorVar.'">
+									<label for="nickname">'. __('Nickname', 'profilebuilder') .$errorMark.'</label>
+									<input class="text-input" name="nickname" type="text" id="nickname" value="'.trim($_POST['nickname']).'" />
+								</p><!-- .nickname -->';
+							$registerFilterArray['name5'] = apply_filters('wppb_register_content_name5', $registerFilterArray['name5']);
+							echo $registerFilterArray['name5'];
+						}
+
+						$registerFilterArray['info1'] = '<p register="registerContactInfoHeading"><strong>'. __('Contact Info', 'profilebuilder') .'</strong></p>';
+						$registerFilterArray['info1'] = apply_filters('wppb_register_content_info1', $registerFilterArray['info1']);
+						echo $registerFilterArray['info1'];			
+
+						if ($wppb_defaultOptions['email'] == 'show'){
+							$errorVar = '';
+							$errorMark = '';
+							if ($wppb_defaultOptions['emailRequired'] == 'yes'){
+								$errorMark = '<font color="red" title="This field is marked as required by the administrator.">*</font>';
+								if ((trim($_POST['email']) == '') && isset($_POST['email']))
+									$errorMark = '<img src="'.wppb_plugin_url . '/assets/images/pencil_delete.png" title="This field is required for registration."/>';
+							}
+										
+							$registerFilterArray['info2'] = '
+								<p class="form-email">
+									<label for="email">'. __('E-mail', 'profilebuilder') .$errorMark.'</label>
+									<input class="text-input" name="email" type="text" id="email" value="'.trim($_POST['email']).'" />
+									<span class="wppb-description-delimiter">'. __('(required)', 'profilebuilder') .'</span>
+								</p><!-- .form-email -->';
+							$registerFilterArray['info2'] = apply_filters('wppb_register_content_info2', $registerFilterArray['info2']);
+							echo $registerFilterArray['info2'];	
+						}
+
+						if ($wppb_defaultOptions['website'] == 'show'){
+							$errorVar = '';
+							$errorMark = '';
+							if ($wppb_defaultOptions['websiteRequired'] == 'yes'){
+								$errorMark = '<font color="red" title="This field is marked as required by the administrator.">*</font>';
+								if ((trim($_POST['website']) == '') && isset($_POST['website'])){
+									$errorMark = '<img src="'.wppb_plugin_url . '/assets/images/pencil_delete.png" title="This field must be filled out before registering (It was marked as required by the administrator)."/>';
+									$errorVar = ' errorHolder';
+								}
+							}
+						
+							$registerFilterArray['info3'] = '
+								<p class="form-website'.$errorVar.'">
+									<label for="website">'. __('Website', 'profilebuilder') .$errorMark.'</label>
+									<input class="text-input" name="website" type="text" id="website" value="'.trim($_POST['website']).'" />
+								</p><!-- .form-website -->';
+							$registerFilterArray['info3'] = apply_filters('wppb_register_content_info3', $registerFilterArray['info3']);
+							echo $registerFilterArray['info3'];	
+						}
+
+						if ($wppb_defaultOptions['aim'] == 'show'){
+							$errorVar = '';
+								$errorMark = '';
+								if ($wppb_defaultOptions['aimRequired'] == 'yes'){
+									$errorMark = '<font color="red" title="This field is marked as required by the administrator.">*</font>';
+									if ((trim($_POST['aim']) == '') && isset($_POST['aim'])){
+										$errorMark = '<img src="'.wppb_plugin_url . '/assets/images/pencil_delete.png" title="This field must be filled out before registering (It was marked as required by the administrator)."/>';
+										$errorVar = ' errorHolder';
+									}
+								}					
+
+							$registerFilterArray['info4'] = '
+								<p class="form-aim'.$errorVar.'">
+									<label for="aim">'. __('AIM', 'profilebuilder') .$errorMark.'</label>
+									<input class="text-input" name="aim" type="text" id="aim" value="'.trim($_POST['aim']).'" />
+								</p><!-- .form-aim -->';
+							$registerFilterArray['info4'] = apply_filters('wppb_register_content_info4', $registerFilterArray['info4']);
+							echo $registerFilterArray['info4'];	
+						}
+
+						if ($wppb_defaultOptions['yahoo'] == 'show'){
+							$errorVar = '';
+							$errorMark = '';
+							if ($wppb_defaultOptions['yahooRequired'] == 'yes'){
+								$errorMark = '<font color="red" title="This field is marked as required by the administrator.">*</font>';
+								if ((trim($_POST['yim']) == '') && isset($_POST['yim'])){
+									$errorMark = '<img src="'.wppb_plugin_url . '/assets/images/pencil_delete.png" title="This field must be filled out before registering (It was marked as required by the administrator)."/>';
+									$errorVar = ' errorHolder';
+								}
+							}
+							
+							$registerFilterArray['info5'] = '
+								<p class="form-yim'.$errorVar.'">
+									<label for="yim">'. __('Yahoo IM', 'profilebuilder') .$errorMark.'</label>
+									<input class="text-input" name="yim" type="text" id="yim" value="'.trim($_POST['yim']).'" />
+								</p><!-- .form-yim -->';
+							$registerFilterArray['info5'] = apply_filters('wppb_register_content_info5', $registerFilterArray['info5']);
+							echo $registerFilterArray['info5'];	
+						}
+
+						if ($wppb_defaultOptions['jabber'] == 'show'){
+							$errorVar = '';
+							$errorMark = '';
+							if ($wppb_defaultOptions['jabberRequired'] == 'yes'){
+								$errorMark = '<font color="red" title="This field is marked as required by the administrator.">*</font>';
+								if ((trim($_POST['jabber']) == '') && isset($_POST['jabber'])){
+									$errorMark = '<img src="'.wppb_plugin_url . '/assets/images/pencil_delete.png" title="This field must be filled out before registering (It was marked as required by the administrator)."/>';
+									$errorVar = ' errorHolder';
+								}
+							}						
+						
+							$registerFilterArray['info6'] = '
+								<p class="form-jabber'.$errorVar.'">
+									<label for="jabber">'. __('Jabber / Google Talk', 'profilebuilder') .$errorMark.'</label>
+									<input class="text-input" name="jabber" type="text" id="jabber" value="'.trim($_POST['jabber']).'" />
+								</p><!-- .form-jabber -->';
+							$registerFilterArray['info6'] = apply_filters('wppb_register_content_info6', $registerFilterArray['info6']);
+							echo $registerFilterArray['info6'];	
+						}
+						
+						$registerFilterArray['ay1'] = '<p class="registerAboutYourselfHeader"><strong>'. __('About Yourself', 'profilebuilder') .'</strong></p>';
+						$registerFilterArray['ay1'] = apply_filters('wppb_register_content_about_yourself1', $registerFilterArray['ay1']);
+						echo $registerFilterArray['ay1'];	
+						
+						if ($wppb_defaultOptions['bio'] == 'show'){
+							$errorVar = '';
+							$errorMark = '';
+							if ($wppb_defaultOptions['bioRequired'] == 'yes'){
+								$errorMark = '<font color="red" title="This field is marked as required by the administrator.">*</font>';
+								if ((trim($_POST['description']) == '') && isset($_POST['description'])){
+									$errorMark = '<img src="'.wppb_plugin_url . '/assets/images/pencil_delete.png" title="This field must be filled out before registering (It was marked as required by the administrator)."/>';
+									$errorVar = ' errorHolder';
+								}
+							}
+							
+							$registerFilterArray['ay2'] = '
+								<p class="form-description'.$errorVar.'">
+									<label for="description">'. __('Biographical Info', 'profilebuilder') .$errorMark.'</label>
+									<textarea class="text-input" name="description" id="description" rows="5" cols="30">'.trim($_POST['description']).'</textarea>
+								</p><!-- .form-description -->';
+							$registerFilterArray['ay2'] = apply_filters('wppb_register_content_about_yourself2', $registerFilterArray['ay2']);
+							echo $registerFilterArray['ay2'];	
+						}
+
+						if ($wppb_defaultOptions['password'] == 'show'){
+							$errorMark = '';
+							if ($wppb_defaultOptions['passwordRequired'] == 'yes'){
+								$errorMark = '<font color="red" title="This field is required for registration.">*</font>';
+							}
+							
+							$registerFilterArray['ay3'] = '
+								<p class="form-password">
+									<label for="pass1">'. __('Password', 'profilebuilder') .$errorMark.'</label>
+									<input class="text-input" name="passw1" type="password" id="pass1" value="'.trim($_POST['passw1']).'" />
+								</p><!-- .form-password -->
+				 
+								<p class="form-password">
+									<label for="pass2">'. __('Repeat Password', 'profilebuilder') .$errorMark.'</label>
+									<input class="text-input" name="passw2" type="password" id="pass2" value="'.trim($_POST['passw2']).'" />
+								</p><!-- .form-password -->';
+							$registerFilterArray['ay3'] = apply_filters('wppb_register_content_about_yourself3', $registerFilterArray['ay3']);
+							echo $registerFilterArray['ay3'];	
+						}
+
+							$wppb_premium = wppb_plugin_dir . '/premium/functions/';
+							if (file_exists ( $wppb_premium.'extra.fields.php' )){
+								require_once($wppb_premium.'extra.fields.php');
+								register_user_extra_fields($error, $_POST, $extraFieldsErrorHolder);
+							}
+
+							if (isset($_POST['send_credentials_via_email'])) 
+								$checkedVar = ' checked';
+							else $checkedVar = '';
+							$registerFilterArray['confirmationEmailForm'] = '
+								<p class="send-confirmation-email">
+									<label for="send-confirmation-email"> 
+										<input id="send_credentials_via_email" type="checkbox" name="send_credentials_via_email" value="sending"'. $checkedVar .'/>
+										<span class="wppb-description-delimiter"> '. __('Send these credentials via email.', 'profilebuilder') .'</span>
+									</label>
+								</p><!-- .send-confirmation-email -->';
+							$registerFilterArray['confirmationEmailForm'] = apply_filters('wppb_register_confirmation_email_form', $registerFilterArray['confirmationEmailForm']);
+							echo $registerFilterArray['confirmationEmailForm'];	
+?>
+							
+						<p class="form-submit">
+							<input name="adduser" type="submit" id="addusersub" class="submit button" value="<?php if ( current_user_can( 'create_users' ) ) _e('Add User', 'profilebuilder'); else _e('Register', 'profilebuilder'); ?>" />
+							<input name="action" type="hidden" id="action" value="adduser" />
+						</p><!-- .form-submit -->
+<?php 
+						wp_nonce_field('verify_true_registration','register_nonce_field'); 
+?>
+					</form><!-- #adduser -->
+
+<?php	
+				endif;
+			endif;
 		
-		<?php /* use this action hook to add extra content after the register form. */ ?>
-		<?php do_action( 'wppb_after_register_fields' ); ?> 
+		/* use this action hook to add extra content after the register form. */
+		do_action( 'wppb_after_register_fields' );
+?>
 	
 	</div>
 <?php
 	$output = ob_get_contents();
     ob_end_clean();
-		
-	$output = apply_filters ('wppb_register', $output);
+	
+	$registerFilterArray = apply_filters('wppb_register', $registerFilterArray);
 	
     return $output;
 }

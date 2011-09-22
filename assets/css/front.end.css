@@ -1,14 +1,12 @@
 /*
 NOTES:
 The global Profile Builder class is: wppb_holder
-The id for the individual sections are: wppb_modify for [wppb-profile-info] 
-										wppb_login for [wppb-registered-login]
-										wppb_register for [wppb-register-new]
+										
 
 */
 /*    WPPB_MODIFY, WPPB_REGISTER, WPPB_LOGIN    */
 
-#wppb_modify p, #wppb_register p, #wppb_login p{
+#wppb_modify p, #wppb_register p, #wppb_login p, #wppb_recover_password p{
 	clear:both;
 }
 
@@ -51,13 +49,13 @@ The id for the individual sections are: wppb_modify for [wppb-profile-info]
     padding-left: 45px;
 }
 
-#wppb_modify p label, #wppb_register p label, #wppb_login p label{
+#wppb_modify p label, #wppb_register p label, #wppb_login p label, #wppb_recover_password p label{
 	width:30%;
 	float:left;
 	clear:left;
 	padding-right:15px;
 }
-#wppb_modify input[type=text], #wppb_modify input[type=password], #wppb_modify select, #wppb_modify textarea, #wppb_register input[type=text], #wppb_register input[type=password], #wppb_register select, #wppb_register textarea, #wppb_login input[type=text], #wppb_login input[type=password], #wppb_login select, #wppb_login textarea{
+#wppb_modify input[type=text], #wppb_modify input[type=password], #wppb_modify select, #wppb_modify textarea, #wppb_register input[type=text], #wppb_register input[type=password], #wppb_register select, #wppb_register textarea, #wppb_login input[type=text], #wppb_login input[type=password], #wppb_login select, #wppb_login textarea, #wppb_recover_password input[type=text]{
 	width:60%;
 	margin-bottom:5px;	
 }
@@ -67,6 +65,10 @@ The id for the individual sections are: wppb_modify for [wppb-profile-info]
 	margin:5px;
 }
 
+#wppb_recover_password input[type="text"], #wppb_recover_password input[type="password"]{
+	width:60%;
+	margin-bottom:5px;	
+}
 
 #wppb_register .send-confirmation-email label{
 	width:auto;
@@ -98,13 +100,89 @@ The id for the individual sections are: wppb_modify for [wppb-profile-info]
 	float:none;
 }
 
-.userListingTable{
+#userListingForm{
+	font-size:11px;
+	margin-bottom:15px;
+}
+
+#userListingForm > *{
+	vertical-align:middle;
+}
+
+
+#userListingForm select{
+	font-size:11px;
+	margin:0;
+}
+
+#userListingForm .button-primary-reorder{
+	font-size:12px;
+	margin:0 3px;
+}
+
+/* userListingTable */
+#userListingTable{
+	border-collapse: separate;
+	width:100%;
+	text-align: left;
+}
+
+#userListingTable thead th{
+	background-color: #F0F0F0;	
+}
+
+#userListingTable tbody td, #userListingTable thead th{
+	line-height: 14px;
+	font-size:12px;
+	padding: 5px;
+	font-weight:normal;	
+}
+
+#userListingTable .avatarColumn{
+	padding-right: 2px !important;
+}
+
+#userListingTable .loginNameColumn{
+	text-align: left;
+	padding-left: 2px !important;
+}
+
+/* userListingTable */
+
+
+/* userListingDisplayTable */
+#userListingDisplayTable{
+	border:none !important;
 	border-collapse: separate;
 }
 
-.userListingTable .tableHeader{
-	background-color: #F0F0F0;
+#userListingDisplayTable tbody td{
+	border: none;
+	text-align:left;
 }
+
+#userListingDisplayTable tbody td span{
+	color: gray;
+}
+
+#userListingDisplayTable tbody td strong{
+	color: #000;
+}
+
+
+#userListingDisplayTableEmptyHeaderCell1{
+	height:20px;
+}
+
+#userListingDisplayTableCell1{
+	width:5%;
+}
+
+#userListingDisplayTableCell2{
+	width:30%;
+	padding-left:30px !important;
+}
+/* userListingDisplayTable */
 
 .button-primary-reorder{
 	position:relative;
@@ -112,7 +190,7 @@ The id for the individual sections are: wppb_modify for [wppb-profile-info]
 	height:24px;
 	font-size:10px;
 }
-
+/*
 .sortingOrderCriteria2{
 	height:24px;
 	font-size:10px;
@@ -128,6 +206,8 @@ The id for the individual sections are: wppb_modify for [wppb-profile-info]
 	font-size:10px;
 	width:60px;
 }
+*/
+
 
 #ui-datepicker-div{
 	font: 70% "Trebuchet MS", sans-serif;
@@ -141,30 +221,6 @@ The id for the individual sections are: wppb_modify for [wppb-profile-info]
     padding: 5px;
 }*/
 
-
-.userListingDisplayTable{
-	border-collapse: separate;
-}
-
-
-.userListingDisplayTable{
-	border:none;
-}
-.userListingDisplayTableCell1, .userListingDisplayTableCell2, .userListingDisplayTableCell3, .userListingDisplayTableEmptyHeaderCell1, .userListingDisplayTableEmptyInputCell1{
-	border: none;
-}
-
-.userListingDisplayTableEmptyHeaderCell1{
-	height:20px;
-}
-
-.userListingDisplayTableCell1{
-	width:5%;
-}
-
-.userListingDisplayTableCell2{
-	width:30%;
-}
 
 .avatarColumn{
 	width:4px;
@@ -180,4 +236,19 @@ The id for the individual sections are: wppb_modify for [wppb-profile-info]
 
 .postsColumn{
 	width:40px;
+}
+
+
+#wppb_modify p.errorHolder{
+	background-color: #FFDFDF;
+    border: 1px dotted #C89797;
+    margin-bottom: 6px !important;
+    padding: 6px 0px 4px !important;
+}
+
+#wppb_register p.errorHolder{
+	background-color: #FFDFDF;
+    border: 1px dotted #C89797;
+    margin-bottom: 6px !important;
+    padding: 6px 0px 4px !important;
 }
