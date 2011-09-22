@@ -930,3 +930,7 @@ div.file_wrap {
 	margin-bottom:-30px; 
 	margin-right:25px;
 }
+
+#secondColumn, #thirdColumn{
+	width:25%;
+}

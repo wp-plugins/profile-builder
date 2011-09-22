@@ -73,18 +73,32 @@ class PB_Admin{
     }
 	
 	
-	$wppb_default_settings = array(  'username' => 'show', 
-							  'firstname'=> 'show',
-							  'lastname' => 'show',
-							  'nickname' => 'show',
-							  'dispname' => 'show',
-							  'email'	 => 'show',
-							  'website'  => 'show',
-							  'aim' 	 => 'show',
-							  'yahoo'    => 'show',
-							  'jabber'	 => 'show',
-							  'bio'		 => 'show',
-							  'password' => 'show');
+	$wppb_default_settings = array(
+								'username' => 'show',
+								'usernameRequired' => 'no',
+								'firstname' => 'show',
+								'firstnameRequired' => 'no',
+								'lastname' => 'show',
+								'lastnameRequired' => 'no',
+								'nickname' => 'show',
+								'nicknameRequired' => 'no',
+								'dispname' => 'show',
+								'dispnameRequired' => 'no',
+								'email'	=> 'show',
+								'emailRequired' => 'no',
+								'website' => 'show',
+								'websiteRequired' => 'no',
+								'aim' => 'show',
+								'aimRequired' => 'no',
+								'yahoo' => 'show',
+								'yahooRequired' => 'no',
+								'jabber' => 'show',
+								'jabberRequired' => 'no',
+								'bio' => 'show',
+								'bioRequired' => 'no',
+								'password' => 'show',
+								'passwordRequired' => 'no' 
+							);
 		add_option( 'wppb_default_settings', $wppb_default_settings );    //set all fields visible on first activation of the plugin
 		add_option( 'wppb_default_style', 'yes');
 		$all_roles = $wp_roles->roles;

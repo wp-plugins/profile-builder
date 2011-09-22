@@ -1036,7 +1036,7 @@ div.file_wrap {
 	vertical-align:left;
 	display:inline-block !important;
 	margin-bottom:0 !important;
-	width: 325px;
+	width: 320px;
 	*display:inline !important;
 	zoom:1;
 }
@@ -1044,7 +1044,15 @@ div.file_wrap {
 	vertical-align:left;
 	display:inline-block !important;
 	margin-bottom:0 !important;
-	width: 325px;
+	width: 320px;
+	*display:inline !important;
+	zoom:1;
+}	
+#framework_wrap #content #customRedirect .redirectThirdInput{
+	vertical-align:left;
+	display:inline-block !important;
+	margin-bottom:0 !important;
+	width: 320px;
 	*display:inline !important;
 	zoom:1;
 }	
@@ -1052,7 +1060,7 @@ div.file_wrap {
 	vertical-align:left;
 	display:inline-block !important;
 	margin-bottom:0 !important;
-	width: 330px;
+	width: 320px;
 	*display:inline !important;
 	zoom:1;
 }	
@@ -1060,7 +1068,20 @@ div.file_wrap {
 	vertical-align:left;
 	display:inline-block !important;
 	margin-bottom:0 !important;
-	width: 330px;
+	width: 320px;
 	*display:inline !important;
 	zoom:1;
-}	
+}
+
+#framework_wrap #content #customRedirect .dashboardRedirectTarget{
+	vertical-align:left;
+	display:inline-block !important;
+	margin-bottom:0 !important;
+	width: 320px;
+	*display:inline !important;
+	zoom:1;
+}
+
+#secondColumn, #thirdColumn{
+	width:25%;
+}

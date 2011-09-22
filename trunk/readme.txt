@@ -85,6 +85,12 @@ This plugin only adds/removes fields in the front-end. The default information-f
 
 
 == Changelog ==
+= 1.1.8 =
+Added the possibility to set the default fields as required (only works in the front end for now), and added a lot of new filters for a better and easier way to personalize the plugin. Also added a recover password feature (shortcode) to be in tune with the rest of the theme.
+Added translations:
+*italian (thanks to Gabriele, globalwebadvices@gmail.com)
+*updated the english translation
+
 = 1.1.7 =
 Minor modification in the readme file.
 
