@@ -54,7 +54,7 @@ function return_bytes($val) {
 } 
  
  
-define( 'ProfileBuilderVersion', '1.1.7' );
+define( 'ProfileBuilderVersion', '1.1.9' );
 define( 'wppb_plugin_dir', WP_PLUGIN_DIR . '/' . dirname( plugin_basename( __FILE__ ) ) );
 define( 'wppb_plugin_url', WP_PLUGIN_URL . '/' . dirname( plugin_basename( __FILE__ ) ) );
 define( 'ServerMaxUploadSizeByte', return_bytes( ini_get( 'upload_max_filesize') ) );
