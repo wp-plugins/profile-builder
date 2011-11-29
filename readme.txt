@@ -2,53 +2,59 @@
 
 Contributors: reflectionmedia, barinagabriel
 Donate link: http://www.cozmoslabs.com/wordpress-profile-builder/
-Tags: registration, profile, user registration, custom field registration, customize profile, user fields, builder, profile builder
+Tags: registration, profile, user registration, custom field registration, customize profile, user fields, builder, profile builder, custom profile, user profile, custom user profile, user profile page, 
+custom registration, custom registration form, custom registration page, extra user fields, registration page, user custom fields, user listing, user login, user registration form, front-end login, 
+front-end register, front-end registration, frontend edit profile, edit profile
 Requires at least: 3.1
 Tested up to: 3.2
-Stable tag: 1.1.9
+Stable tag: 1.1.10
 
-
-Login, registration and edit profile shortcodes for the front-end. Also you can chose what fields should be displayed.
-
+Simple to use profile plugin allowing front-end login, registration and edit profile by using shortcodes. 
  
 == Description ==
 
-Profile Builder lets you customize your website by adding a front-end menu for all your users, 
-giving them a more flexible way to modify their user-information or to register new users. 
-Also, grants users with administrator rights to customize basic fields or add custom ones. 
-To achieve this, just create a new page, and give it an intuitive name(i.e. Edit Profile).
+Profile Builder is WordPress registration done right. 
+
+It lets you customize your website by adding a front-end menu for all your users, 
+giving them a more flexible way to modify their user-information or register new users (front-end registration). 
+Also, grants users with administrator rights to customize basic user fields or add custom ones. 
+
+To achieve this, just create a new page and give it an intuitive name(i.e. Edit Profile).
 Now all you need to do is add the following shortcode(for the previous example): [wppb-edit-profile]. 
-Publish your page and you are done!
+Publish the page and you are done!
 
 You can use the following shortcodes:
 
-* [wppb-edit-profile] - to grant users a front-end acces to their personal information(requires user to be logged in).
-* [wppb-login] - for a log-in form.
-* [wppb-register] - to add a registration form.
-* [wppb-recover-password] - to add a password recovery form.
+* **[wppb-edit-profile]** - to grant users front-end access to their personal information (requires user to be logged in).
+* **[wppb-login]** - to add a front-end log-in form.
+* **[wppb-register]** - to add a front-end registration form.
+* **[wppb-recover-password]** - to add a password recovery form.
 
 Users with administrator rights have access to the following features:
 
 * add a custom stylesheet/inherit values from the current theme or use one of the following built into this plugin: default, white or black.
 * select whether to display or not the admin bar in the front end for a specific user-group registered to the site.
-* select which information-field can users see/modify. The hidden fields' values remain unmodified.
+* select which information-field can users see/modify. The hidden fields values remain unmodified.
 
-PROFILE BUILDER PRO
+**PROFILE BUILDER PRO**
 
 The [Pro version](http://www.cozmoslabs.com/wordpress-profile-builder/) has the following extra features:
 
-* Create Extra User Fields
+* Create Extra User Fields (Heading, Input, Checkbox, Agree to Terms Checkbox, Radio Buttons, DatePicker, Textareas, Upload fields, Selects, Country Selects, Timezone selects, Avatar Upload)
 * Add avatar upload for users
+* Front-end User Listing (sorting included)
+* Custom Redirects
 * Select one of the 2 additional CSS styles: black or white
 * Access to support forums and documentation
 * 1 Year of Updates / Priority Support
 
-[Click here to find out more](http://www.cozmoslabs.com/wordpress-profile-builder/).
+[Click here to find out more](http://www.cozmoslabs.com/wordpress-profile-builder/) or watch the video below:
 
+[youtube http://www.youtube.com/watch?v=Uv8piGapOoA]
 
 NOTE:
 
-This plugin only adds/removes fields in the front-end. The default information-fields will still be visible(and thus modifiable) from the back-end, while custom fields will only be visible in the front-end.
+This plugin only adds/removes fields in the front-end. The default information-fields will still be visible (and thus modifiable) from the back-end, while custom fields will only be visible in the front-end.
 	
 
 
@@ -56,7 +62,7 @@ This plugin only adds/removes fields in the front-end. The default information-f
 
 1. Upload the profile-builder folder to the '/wp-content/plugins/' directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
-1. Create a new page and use one of the shortcodes available
+1. Create a new page and use one of the shortcodes available. Publish the page and you're done!
 
 == Frequently Asked Questions ==
 
@@ -82,10 +88,11 @@ This plugin only adds/removes fields in the front-end. The default information-f
 6. Register Page: screenshot6.jpg
 7. Logged in Page: screenshot7.jpg
 
-
-
-
 == Changelog ==
+
+= 1.1.10 = 
+Minor changes to readme file.
+
 = 1.1.9 = 
 Minor changes to readme file.
 
@@ -161,3 +168,4 @@ Changes to the ReadMe File
 
 = 1.0 =
 Added the posibility of displaying/hiding default WordPress information-fields, and to modify basic layout.
+

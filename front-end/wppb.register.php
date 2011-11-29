@@ -25,8 +25,10 @@ function wppb_front_end_register($atts){
 	/* END variables used to verify if all required fields were submitted*/
 	
 	
-	/* Load registration file. */
-	require_once( ABSPATH . WPINC . '/registration.php' );
+	/* Load registration file if the version number is less then 3.1. */
+	$versionNo = get_bloginfo( 'version' );
+	if ($versionNo <= '3.1')
+		require_once(ABSPATH . WPINC . '/registration.php');
 
 	/* Check if users can register. */
 	$registration = get_option( 'users_can_register' );
@@ -58,35 +60,68 @@ function wppb_front_end_register($atts){
 		if ($found != null)
 			$aprovedRole = $role;
 		else $aprovedRole = get_option( 'default_role' );
-	
-		$user_pass = esc_attr( $_POST['passw1'] );
+		
+		/* preset the values in case some are not submitted */
+		$user_pass = '';
+		if (isset($_POST['passw1']))
+			$user_pass = esc_attr( $_POST['passw1'] );
+		$user_name = '';
+		if (isset($_POST['user_name']))
+			$user_name = trim ($_POST['user_name']);
+		$first_name = '';
+		if (isset($_POST['first_name']))
+			$first_name = trim ($_POST['first_name']);
+		$last_name = '';
+		if (isset($_POST['last_name']))
+			$last_name = trim ($_POST['last_name']);
+		$nickname = '';
+		if (isset($_POST['nickname']))
+			$nickname = trim ($_POST['nickname']);
+		$email = '';
+		if (isset($_POST['email']))
+			$email = trim ($_POST['email']);
+		$website = '';
+		if (isset($_POST['website']))
+			$website = trim ($_POST['website']);
+		$aim = '';
+		if (isset($_POST['aim']))
+			$aim = trim ($_POST['aim']);
+		$yim = '';
+		if (isset($_POST['yim']))
+			$yim = trim ($_POST['yim']);
+		$jabber = '';
+		if (isset($_POST['jabber']))
+			$jabber = trim ($_POST['jabber']);
+		$description = '';
+		if (isset($_POST['description']))
+			$description = trim ($_POST['description']);
 		
 		/* use filters to modify (if needed) the posted data before creating the user-data */
 		$user_pass = apply_filters('wppb_register_posted_password', $user_pass);
-		$_POST['user_name'] = apply_filters('wppb_register_posted_email', $_POST['user_name']);
-		$_POST['first_name'] = apply_filters('wppb_register_posted_first_name', $_POST['first_name']);
-		$_POST['last_name'] = apply_filters('wppb_register_posted_last_name', $_POST['last_name']);
-		$_POST['nickname'] = apply_filters('wppb_register_posted_nickname', $_POST['nickname']);
-		$_POST['email'] = apply_filters('wppb_register_posted_email', $_POST['email']);
-		$_POST['website'] = apply_filters('wppb_register_posted_website', $_POST['website']);
-		$_POST['aim'] = apply_filters('wppb_register_posted_aim', $_POST['aim']);
-		$_POST['yim'] = apply_filters('wppb_register_posted_yahoo', $_POST['yim']);
-		$_POST['jabber'] = apply_filters('wppb_register_posted_jabber', $_POST['jabber']);
-		$_POST['description'] = apply_filters('wppb_register_posted_bio', $_POST['description']);
+		$user_name = apply_filters('wppb_register_posted_email', $user_name);
+		$first_name = apply_filters('wppb_register_posted_first_name', $first_name);
+		$last_name = apply_filters('wppb_register_posted_last_name', $last_name);
+		$nickname = apply_filters('wppb_register_posted_nickname', $nickname);
+		$email = apply_filters('wppb_register_posted_email', $email);
+		$website = apply_filters('wppb_register_posted_website', $website);
+		$aim = apply_filters('wppb_register_posted_aim', $aim);
+		$yim = apply_filters('wppb_register_posted_yahoo', $yim);
+		$jabber = apply_filters('wppb_register_posted_jabber', $jabber);
+		$description = apply_filters('wppb_register_posted_bio', $description);
 		/* END use filters to modify (if needed) the posted data before creating the user-data */
 		
 		$userdata = array(
 			'user_pass' => $user_pass,
-			'user_login' => esc_attr( $_POST['user_name'] ),
-			'first_name' => esc_attr( $_POST['first_name'] ),
-			'last_name' => esc_attr( $_POST['last_name'] ),
-			'nickname' => esc_attr( $_POST['nickname'] ),
-			'user_email' => esc_attr( $_POST['email'] ),
-			'user_url' => esc_attr( $_POST['website'] ),
-			'aim' => esc_attr( $_POST['aim'] ),
-			'yim' => esc_attr( $_POST['yim'] ),
-			'jabber' => esc_attr( $_POST['jabber'] ),
-			'description' => esc_attr( $_POST['description'] ),
+			'user_login' => esc_attr( $user_name ),
+			'first_name' => esc_attr( $first_name ),
+			'last_name' => esc_attr( $last_name ),
+			'nickname' => esc_attr( $nickname ),
+			'user_email' => esc_attr( $email ),
+			'user_url' => esc_attr( $website ),
+			'aim' => esc_attr( $aim ),
+			'yim' => esc_attr( $yim ),
+			'jabber' => esc_attr( $jabber ),
+			'description' => esc_attr( $description ),
 			'role' => $aprovedRole);
 		
 		//get required and shown fields
@@ -146,7 +181,7 @@ function wppb_front_end_register($atts){
 				switch ($value['item_type']) {
 					case "input":{
 						$_POST[$value['item_id'].$value['id']] = apply_filters('wppb_register_input_custom_field_'.$value['id'], $_POST[$value['item_id'].$value['id']]);
-						if ($value['item_required'] != null){
+						if (isset($value['item_required'])){
 							if ($value['item_required'] == 'yes'){
 								if (trim($_POST[$value['item_id'].$value['id']]) == '')
 									array_push($extraFieldsErrorHolder, $value['id']);
@@ -165,7 +200,7 @@ function wppb_front_end_register($atts){
 							}
 						}
 						
-						if ($value['item_required'] != null){
+						if (isset($value['item_required'])){
 							if ($value['item_required'] == 'yes'){
 								if (trim($checkboxOption) == '')
 									array_push($extraFieldsErrorHolder, $value['id']);
@@ -174,7 +209,7 @@ function wppb_front_end_register($atts){
 						break;
 					}
 					case "radio":{
-						if ($value['item_required'] != null){
+						if (isset($value['item_required'])){
 							if ($value['item_required'] == 'yes'){
 								if (trim($_POST[$value['item_id'].$value['id']]) == '')
 									array_push($extraFieldsErrorHolder, $value['id']);
@@ -183,7 +218,7 @@ function wppb_front_end_register($atts){
 						break;
 					}
 					case "select":{
-						if ($value['item_required'] != null){
+						if (isset($value['item_required'])){
 							if ($value['item_required'] == 'yes'){
 								if (trim($_POST[$value['item_id'].$value['id']]) == '')
 									array_push($extraFieldsErrorHolder, $value['id']);
@@ -192,7 +227,7 @@ function wppb_front_end_register($atts){
 						break;
 					}
 					case "countrySelect":{
-						if ($value['item_required'] != null){
+						if (isset($value['item_required'])){
 							if ($value['item_required'] == 'yes'){
 								if (trim($_POST[$value['item_id'].$value['id']]) == '')
 									array_push($extraFieldsErrorHolder, $value['id']);
@@ -201,7 +236,7 @@ function wppb_front_end_register($atts){
 						break;
 					}
 					case "timeZone":{
-						if ($value['item_required'] != null){
+						if (isset($value['item_required'])){
 							if ($value['item_required'] == 'yes'){
 								if (trim($_POST[$value['item_id'].$value['id']]) == '')
 									array_push($extraFieldsErrorHolder, $value['id']);
@@ -210,7 +245,7 @@ function wppb_front_end_register($atts){
 						break;
 					}
 					case "datepicker":{
-						if ($value['item_required'] != null){
+						if (isset($value['item_required'])){
 							if ($value['item_required'] == 'yes'){
 								if (trim($_POST[$value['item_id'].$value['id']]) == '')
 									array_push($extraFieldsErrorHolder, $value['id']);
@@ -219,7 +254,7 @@ function wppb_front_end_register($atts){
 						break;
 					}
 					case "textarea":{
-						if ($value['item_required'] != null){
+						if (isset($value['item_required'])){
 							if ($value['item_required'] == 'yes'){
 								if (trim($_POST[$value['item_id'].$value['id']]) == '')
 									array_push($extraFieldsErrorHolder, $value['id']);
@@ -230,7 +265,7 @@ function wppb_front_end_register($atts){
 					case "upload":{
 						$uploadedfile = $value['item_type'].$value['id'];
 						if ( (basename( $_FILES[$uploadedfile]['name']) == '')){
-							if ($value['item_required'] != null){
+							if (isset($value['item_required'])){
 								if ($value['item_required'] == 'yes')
 										array_push($extraFieldsErrorHolder, $value['id']);
 							}
@@ -243,7 +278,7 @@ function wppb_front_end_register($atts){
 
 						if ( (basename( $_FILES[$uploadedfile]['name']) == '')){
 							if (($_FILES[$uploadedfile]['type'] != 'image/jpeg') || ($_FILES[$uploadedfile]['type'] != 'image/jpg') || ($_FILES[$uploadedfile]['type'] != 'image/png') || ($_FILES[$uploadedfile]['type'] != 'image/bmp') || ($_FILES[$uploadedfile]['type'] != 'image/pjpeg') || ($_FILES[$uploadedfile]['type'] != 'image/x-png'))
-								if ($value['item_required'] != null){
+								if (isset($value['item_required'])){
 									if ($value['item_required'] == 'yes')
 											array_push($extraFieldsErrorHolder, $value['id']);
 								}
@@ -352,11 +387,13 @@ function wppb_front_end_register($atts){
 									}
 										
 									//create the target path for uploading	
-									$target_path = "wp-content/uploads/profile_builder/attachments/";
+									$wpUploadPath = wp_upload_dir(); // Array of key => value pairs
+									$target_path = $wpUploadPath['basedir']."/profile_builder/attachments/";
 									$target_path = $target_path . 'userID_'.$new_user.'_attachment_'. $finalFileName;
 
 									if (move_uploaded_file($_FILES[$uploadedfile]['tmp_name'], $target_path)){
-										$upFile = get_bloginfo('home').'/'.$target_path;
+										//$upFile = get_bloginfo('home').'/'.$target_path;
+										$upFile = $wpUploadPath['baseurl'].'/profile_builder/attachments/userID_'.$new_user.'_attachment_'. $finalFileName;
 										add_user_meta( $new_user, 'custom_field_'.$value['id'], $upFile );
 										$pictureUpload = 'yes';
 									}
@@ -367,7 +404,8 @@ function wppb_front_end_register($atts){
 						case "avatar":{
 
 							$uploadedfile = $value['item_type'].$value['id'];
-							$target_path_original = "wp-content/uploads/profile_builder/avatars/";
+							$wpUploadPath = wp_upload_dir(); // Array of key => value pairs
+							$target_path_original = $wpUploadPath['basedir']."/profile_builder/avatars/";
 							$fileName = $_FILES[$uploadedfile]['name'];
 							$finalFileName = '';
 									
@@ -578,10 +616,13 @@ function wppb_front_end_register($atts){
 								$errorMark = '<font color="red" title="This field is required for registration.">*</font>';
 							}
 						
+							$localVar = '';
+							if (isset($_POST['user_name']))
+								$localVar = $_POST['user_name'];
 							$registerFilterArray['name2'] = '
 								<p class="form-username">
 									<label for="user_name">'. __('Username', 'profilebuilder') .$errorMark.'</label>
-									<input class="text-input" name="user_name" type="text" id="user_name" value="'.trim($_POST['user_name']).'" />
+									<input class="text-input" name="user_name" type="text" id="user_name" value="'.trim($localVar).'" />
 									<span class="wppb-description-delimiter">'. __('(required)', 'profilebuilder') .'</span>
 								</p><!-- .form-username -->';
 							$registerFilterArray['name2'] = apply_filters('wppb_register_content_name2', $registerFilterArray['name2']);
@@ -593,16 +634,21 @@ function wppb_front_end_register($atts){
 								$errorMark = '';
 								if ($wppb_defaultOptions['firstnameRequired'] == 'yes'){
 									$errorMark = '<font color="red" title="This field is marked as required by the administrator.">*</font>';
-									if ((trim($_POST['first_name']) == '') && isset($_POST['first_name'])){
-										$errorMark = '<img src="'.wppb_plugin_url . '/assets/images/pencil_delete.png" title="This field must be filled out before registering (It was marked as required by the administrator)."/>';
-										$errorVar = ' errorHolder';
+									if (isset($_POST['first_name'])){
+										if (trim($_POST['first_name']) == ''){
+											$errorMark = '<img src="'.wppb_plugin_url . '/assets/images/pencil_delete.png" title="This field must be filled out before registering (It was marked as required by the administrator)."/>';
+											$errorVar = ' errorHolder';
+										}
 									}
 								}
-
+								
+							$localVar = '';
+							if (isset($_POST['first_name']))
+								$localVar = $_POST['first_name'];
 							$registerFilterArray['name3'] = '
 								<p class="first_name'.$errorVar.'">
 									<label for="first_name">'. __('First Name', 'profilebuilder') .$errorMark.'</label>
-									<input class="text-input" name="first_name" type="text" id="first_name" value="'.trim($_POST['first_name']).'" />
+									<input class="text-input" name="first_name" type="text" id="first_name" value="'.trim($localVar).'" />
 								</p><!-- .first_name -->';
 							$registerFilterArray['name3'] = apply_filters('wppb_register_content_name3', $registerFilterArray['name3']);
 							echo $registerFilterArray['name3'];
@@ -613,16 +659,21 @@ function wppb_front_end_register($atts){
 							$errorMark = '';
 							if ($wppb_defaultOptions['lastnameRequired'] == 'yes'){
 								$errorMark = '<font color="red" title="This field is marked as required by the administrator.">*</font>';
-								if ((trim($_POST['last_name']) == '') && isset($_POST['last_name'])){
-									$errorMark = '<img src="'.wppb_plugin_url . '/assets/images/pencil_delete.png" title="This field must be filled out before registering (It was marked as required by the administrator)."/>';
-									$errorVar = ' errorHolder';
+								if (isset($_POST['last_name'])){
+									if (trim($_POST['last_name']) == ''){
+										$errorMark = '<img src="'.wppb_plugin_url . '/assets/images/pencil_delete.png" title="This field must be filled out before registering (It was marked as required by the administrator)."/>';
+										$errorVar = ' errorHolder';
+									}
 								}
 							}
 							
+							$localVar = '';
+							if (isset($_POST['last_name']))
+								$localVar = $_POST['last_name'];
 							$registerFilterArray['name4'] = '
 								<p class="last_name'.$errorVar.'">
 									<label for="last_name">'. __('Last Name', 'profilebuilder') .$errorMark.'</label>
-									<input class="text-input" name="last_name" type="text" id="last_name" value="'.trim($_POST['last_name']).'" />
+									<input class="text-input" name="last_name" type="text" id="last_name" value="'.trim($localVar).'" />
 								</p><!-- .last_name -->';
 							$registerFilterArray['name4'] = apply_filters('wppb_register_content_name4', $registerFilterArray['name4']);
 							echo $registerFilterArray['name4'];
@@ -633,22 +684,27 @@ function wppb_front_end_register($atts){
 							$errorMark = '';
 							if ($wppb_defaultOptions['nicknameRequired'] == 'yes'){
 								$errorMark = '<font color="red" title="This field is marked as required by the administrator.">*</font>';
-								if ((trim($_POST['nickname']) == '') && isset($_POST['nickname'])){
-									$errorMark = '<img src="'.wppb_plugin_url . '/assets/images/pencil_delete.png" title="This field must be filled out before registering (It was marked as required by the administrator)."/>';
-									$errorVar = ' errorHolder';
+								if (isset($_POST['nickname'])){
+									if (trim($_POST['nickname']) == ''){
+										$errorMark = '<img src="'.wppb_plugin_url . '/assets/images/pencil_delete.png" title="This field must be filled out before registering (It was marked as required by the administrator)."/>';
+										$errorVar = ' errorHolder';
+									}
 								}
 							}
 							
+							$localVar = '';
+							if (isset($_POST['nickname']))
+								$localVar = $_POST['nickname'];
 							$registerFilterArray['name5'] = '
 								<p class="nickname'.$errorVar.'">
 									<label for="nickname">'. __('Nickname', 'profilebuilder') .$errorMark.'</label>
-									<input class="text-input" name="nickname" type="text" id="nickname" value="'.trim($_POST['nickname']).'" />
+									<input class="text-input" name="nickname" type="text" id="nickname" value="'.trim($localVar).'" />
 								</p><!-- .nickname -->';
 							$registerFilterArray['name5'] = apply_filters('wppb_register_content_name5', $registerFilterArray['name5']);
 							echo $registerFilterArray['name5'];
 						}
 
-						$registerFilterArray['info1'] = '<p register="registerContactInfoHeading"><strong>'. __('Contact Info', 'profilebuilder') .'</strong></p>';
+						$registerFilterArray['info1'] = '<p class="registerContactInfoHeading"><strong>'. __('Contact Info', 'profilebuilder') .'</strong></p>';
 						$registerFilterArray['info1'] = apply_filters('wppb_register_content_info1', $registerFilterArray['info1']);
 						echo $registerFilterArray['info1'];			
 
@@ -657,14 +713,18 @@ function wppb_front_end_register($atts){
 							$errorMark = '';
 							if ($wppb_defaultOptions['emailRequired'] == 'yes'){
 								$errorMark = '<font color="red" title="This field is marked as required by the administrator.">*</font>';
-								if ((trim($_POST['email']) == '') && isset($_POST['email']))
-									$errorMark = '<img src="'.wppb_plugin_url . '/assets/images/pencil_delete.png" title="This field is required for registration."/>';
+								if (isset($_POST['email']))
+									if (trim($_POST['email']) == '')
+										$errorMark = '<img src="'.wppb_plugin_url . '/assets/images/pencil_delete.png" title="This field is required for registration."/>';
 							}
-										
+							
+							$localVar = '';
+							if (isset($_POST['email']))
+								$localVar = $_POST['email'];
 							$registerFilterArray['info2'] = '
 								<p class="form-email">
 									<label for="email">'. __('E-mail', 'profilebuilder') .$errorMark.'</label>
-									<input class="text-input" name="email" type="text" id="email" value="'.trim($_POST['email']).'" />
+									<input class="text-input" name="email" type="text" id="email" value="'.trim($localVar).'" />
 									<span class="wppb-description-delimiter">'. __('(required)', 'profilebuilder') .'</span>
 								</p><!-- .form-email -->';
 							$registerFilterArray['info2'] = apply_filters('wppb_register_content_info2', $registerFilterArray['info2']);
@@ -676,16 +736,21 @@ function wppb_front_end_register($atts){
 							$errorMark = '';
 							if ($wppb_defaultOptions['websiteRequired'] == 'yes'){
 								$errorMark = '<font color="red" title="This field is marked as required by the administrator.">*</font>';
-								if ((trim($_POST['website']) == '') && isset($_POST['website'])){
-									$errorMark = '<img src="'.wppb_plugin_url . '/assets/images/pencil_delete.png" title="This field must be filled out before registering (It was marked as required by the administrator)."/>';
-									$errorVar = ' errorHolder';
+								if (isset($_POST['website'])){
+									if (trim($_POST['website']) == ''){
+										$errorMark = '<img src="'.wppb_plugin_url . '/assets/images/pencil_delete.png" title="This field must be filled out before registering (It was marked as required by the administrator)."/>';
+										$errorVar = ' errorHolder';
+									}
 								}
 							}
 						
+							$localVar = '';
+							if (isset($_POST['website']))
+								$localVar = $_POST['website'];
 							$registerFilterArray['info3'] = '
 								<p class="form-website'.$errorVar.'">
 									<label for="website">'. __('Website', 'profilebuilder') .$errorMark.'</label>
-									<input class="text-input" name="website" type="text" id="website" value="'.trim($_POST['website']).'" />
+									<input class="text-input" name="website" type="text" id="website" value="'.trim($localVar).'" />
 								</p><!-- .form-website -->';
 							$registerFilterArray['info3'] = apply_filters('wppb_register_content_info3', $registerFilterArray['info3']);
 							echo $registerFilterArray['info3'];	
@@ -696,16 +761,21 @@ function wppb_front_end_register($atts){
 								$errorMark = '';
 								if ($wppb_defaultOptions['aimRequired'] == 'yes'){
 									$errorMark = '<font color="red" title="This field is marked as required by the administrator.">*</font>';
-									if ((trim($_POST['aim']) == '') && isset($_POST['aim'])){
-										$errorMark = '<img src="'.wppb_plugin_url . '/assets/images/pencil_delete.png" title="This field must be filled out before registering (It was marked as required by the administrator)."/>';
-										$errorVar = ' errorHolder';
+									if (isset($_POST['aim'])){
+										if (trim($_POST['aim']) == ''){
+											$errorMark = '<img src="'.wppb_plugin_url . '/assets/images/pencil_delete.png" title="This field must be filled out before registering (It was marked as required by the administrator)."/>';
+											$errorVar = ' errorHolder';
+										}
 									}
 								}					
 
+							$localVar = '';
+							if (isset($_POST['aim']))
+								$localVar = $_POST['aim'];
 							$registerFilterArray['info4'] = '
 								<p class="form-aim'.$errorVar.'">
 									<label for="aim">'. __('AIM', 'profilebuilder') .$errorMark.'</label>
-									<input class="text-input" name="aim" type="text" id="aim" value="'.trim($_POST['aim']).'" />
+									<input class="text-input" name="aim" type="text" id="aim" value="'.trim($localVar).'" />
 								</p><!-- .form-aim -->';
 							$registerFilterArray['info4'] = apply_filters('wppb_register_content_info4', $registerFilterArray['info4']);
 							echo $registerFilterArray['info4'];	
@@ -716,16 +786,21 @@ function wppb_front_end_register($atts){
 							$errorMark = '';
 							if ($wppb_defaultOptions['yahooRequired'] == 'yes'){
 								$errorMark = '<font color="red" title="This field is marked as required by the administrator.">*</font>';
-								if ((trim($_POST['yim']) == '') && isset($_POST['yim'])){
-									$errorMark = '<img src="'.wppb_plugin_url . '/assets/images/pencil_delete.png" title="This field must be filled out before registering (It was marked as required by the administrator)."/>';
-									$errorVar = ' errorHolder';
+								if (isset($_POST['yim'])){
+									if (trim($_POST['yim']) == ''){
+										$errorMark = '<img src="'.wppb_plugin_url . '/assets/images/pencil_delete.png" title="This field must be filled out before registering (It was marked as required by the administrator)."/>';
+										$errorVar = ' errorHolder';
+									}
 								}
 							}
 							
+							$localVar = '';
+							if (isset($_POST['yim']))
+								$localVar = $_POST['yim'];
 							$registerFilterArray['info5'] = '
 								<p class="form-yim'.$errorVar.'">
 									<label for="yim">'. __('Yahoo IM', 'profilebuilder') .$errorMark.'</label>
-									<input class="text-input" name="yim" type="text" id="yim" value="'.trim($_POST['yim']).'" />
+									<input class="text-input" name="yim" type="text" id="yim" value="'.trim($localVar).'" />
 								</p><!-- .form-yim -->';
 							$registerFilterArray['info5'] = apply_filters('wppb_register_content_info5', $registerFilterArray['info5']);
 							echo $registerFilterArray['info5'];	
@@ -736,16 +811,21 @@ function wppb_front_end_register($atts){
 							$errorMark = '';
 							if ($wppb_defaultOptions['jabberRequired'] == 'yes'){
 								$errorMark = '<font color="red" title="This field is marked as required by the administrator.">*</font>';
-								if ((trim($_POST['jabber']) == '') && isset($_POST['jabber'])){
-									$errorMark = '<img src="'.wppb_plugin_url . '/assets/images/pencil_delete.png" title="This field must be filled out before registering (It was marked as required by the administrator)."/>';
-									$errorVar = ' errorHolder';
+								if (isset($_POST['jabber'])){
+									if (trim($_POST['jabber']) == ''){
+										$errorMark = '<img src="'.wppb_plugin_url . '/assets/images/pencil_delete.png" title="This field must be filled out before registering (It was marked as required by the administrator)."/>';
+										$errorVar = ' errorHolder';
+									}
 								}
 							}						
 						
+							$localVar = '';
+							if (isset($_POST['jabber']))
+								$localVar = $_POST['jabber'];
 							$registerFilterArray['info6'] = '
 								<p class="form-jabber'.$errorVar.'">
 									<label for="jabber">'. __('Jabber / Google Talk', 'profilebuilder') .$errorMark.'</label>
-									<input class="text-input" name="jabber" type="text" id="jabber" value="'.trim($_POST['jabber']).'" />
+									<input class="text-input" name="jabber" type="text" id="jabber" value="'.trim($localVar).'" />
 								</p><!-- .form-jabber -->';
 							$registerFilterArray['info6'] = apply_filters('wppb_register_content_info6', $registerFilterArray['info6']);
 							echo $registerFilterArray['info6'];	
@@ -760,16 +840,21 @@ function wppb_front_end_register($atts){
 							$errorMark = '';
 							if ($wppb_defaultOptions['bioRequired'] == 'yes'){
 								$errorMark = '<font color="red" title="This field is marked as required by the administrator.">*</font>';
-								if ((trim($_POST['description']) == '') && isset($_POST['description'])){
-									$errorMark = '<img src="'.wppb_plugin_url . '/assets/images/pencil_delete.png" title="This field must be filled out before registering (It was marked as required by the administrator)."/>';
-									$errorVar = ' errorHolder';
+								if (isset($_POST['description'])){
+									if (trim($_POST['description']) == ''){
+										$errorMark = '<img src="'.wppb_plugin_url . '/assets/images/pencil_delete.png" title="This field must be filled out before registering (It was marked as required by the administrator)."/>';
+										$errorVar = ' errorHolder';
+									}
 								}
 							}
 							
+							$localVar = '';
+							if (isset($_POST['description']))
+								$localVar = $_POST['description'];
 							$registerFilterArray['ay2'] = '
 								<p class="form-description'.$errorVar.'">
 									<label for="description">'. __('Biographical Info', 'profilebuilder') .$errorMark.'</label>
-									<textarea class="text-input" name="description" id="description" rows="5" cols="30">'.trim($_POST['description']).'</textarea>
+									<textarea class="text-input" name="description" id="description" rows="5" cols="30">'.trim($localVar).'</textarea>
 								</p><!-- .form-description -->';
 							$registerFilterArray['ay2'] = apply_filters('wppb_register_content_about_yourself2', $registerFilterArray['ay2']);
 							echo $registerFilterArray['ay2'];	
@@ -781,15 +866,21 @@ function wppb_front_end_register($atts){
 								$errorMark = '<font color="red" title="This field is required for registration.">*</font>';
 							}
 							
+							$localVar1 = '';
+							if (isset($_POST['passw1']))
+								$localVar1 = $_POST['passw1'];
+							$localVar2 = '';
+							if (isset($_POST['passw2']))
+								$localVar2 = $_POST['passw2'];
 							$registerFilterArray['ay3'] = '
 								<p class="form-password">
 									<label for="pass1">'. __('Password', 'profilebuilder') .$errorMark.'</label>
-									<input class="text-input" name="passw1" type="password" id="pass1" value="'.trim($_POST['passw1']).'" />
+									<input class="text-input" name="passw1" type="password" id="pass1" value="'.trim($localVar).'" />
 								</p><!-- .form-password -->
 				 
 								<p class="form-password">
 									<label for="pass2">'. __('Repeat Password', 'profilebuilder') .$errorMark.'</label>
-									<input class="text-input" name="passw2" type="password" id="pass2" value="'.trim($_POST['passw2']).'" />
+									<input class="text-input" name="passw2" type="password" id="pass2" value="'.trim($localVar2).'" />
 								</p><!-- .form-password -->';
 							$registerFilterArray['ay3'] = apply_filters('wppb_register_content_about_yourself3', $registerFilterArray['ay3']);
 							echo $registerFilterArray['ay3'];	

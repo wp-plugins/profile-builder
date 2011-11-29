@@ -342,10 +342,13 @@ function wppb_front_end_password_recovery(){
 						$recoverPasswordFilterArray['notification'] = apply_filters('wppb_recover_password_message1', $recoverPasswordFilterArray['notification']);
 						echo $recoverPasswordFilterArray['notification'];
 						
+						$username_email = '';
+						if (isset($_POST['username_email']))
+							$username_email = $_POST['username_email'];
 						$recoverPasswordFilterArray['input'] = '
 							<p class="username_email">
 								<label for="username_email">'. __('Username or E-mail', 'profilebuilder').'</label>
-								<input class="text-input" name="username_email" type="text" id="username_email" value="'.$_POST['username_email'].'" />
+								<input class="text-input" name="username_email" type="text" id="username_email" value="'.trim($username_email).'" />
 							</p><!-- .username_email -->';
 						$recoverPasswordFilterArray['input'] = apply_filters('wppb_recover_password_input', $recoverPasswordFilterArray['input']);
 						echo $recoverPasswordFilterArray['input'];

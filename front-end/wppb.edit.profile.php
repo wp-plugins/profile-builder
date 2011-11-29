@@ -15,8 +15,10 @@ function wppb_save_the_password(){
 	global $changesSavedNoMatchingPass;
 	global $changesSavedNoPass;
 	
-	/* Load registration file. */
-	require_once(ABSPATH . WPINC . '/registration.php');
+	/* Load registration file if the version number is less then 3.1. */
+	$versionNo = get_bloginfo( 'version' );
+	if ($versionNo <= '3.1')
+		require_once(ABSPATH . WPINC . '/registration.php');
 	/* Get user info. */
 	global $current_user;
 
@@ -59,7 +61,9 @@ function wppb_front_end_profile_info() {
 	$editFilterArray = array();
 	
 	
-	/* Load registration file. */
+	/* Load registration file if the version number is less then 3.1. */
+	$versionNo = get_bloginfo( 'version' );
+	if ($versionNo <= '3.1')
 		require_once(ABSPATH . WPINC . '/registration.php');
 	/* Get user info. */
 		global $current_user;
@@ -275,13 +279,14 @@ function wppb_front_end_profile_info() {
 					switch ($value['item_type']) {
 						case "input":{
 							$_POST[$value['item_id'].$value['id']] = apply_filters('wppb_edit_profile_input_custom_field_'.$value['id'], $_POST[$value['item_id'].$value['id']]);
-							if ($value['item_required'] != null){
+							if (isset($value['item_required'])){
 								if ($value['item_required'] == 'yes'){
 									if (trim($_POST[$value['item_id'].$value['id']]) != '')
 										update_user_meta( $current_user->id, 'custom_field_'.$value['id'], esc_attr( $_POST[$value['item_id'].$value['id']] ) );
 									else 
 										array_push($extraFieldsErrorHolder, $value['id']);
-								}
+								}else
+									update_user_meta( $current_user->id, 'custom_field_'.$value['id'], esc_attr( $_POST[$value['item_id'].$value['id']] ) );
 							}else
 								update_user_meta( $current_user->id, 'custom_field_'.$value['id'], esc_attr( $_POST[$value['item_id'].$value['id']] ) );
 								
@@ -303,87 +308,96 @@ function wppb_front_end_profile_info() {
 								}
 							}
 							
-							if ($value['item_required'] != null){
+							if (isset($value['item_required'])){
 								if ($value['item_required'] == 'yes'){
 									if (trim($checkboxOption) != '')
 										update_user_meta( $current_user->id, 'custom_field_'.$value['id'], esc_attr( $checkboxOption ) );
 									else 
 										array_push($extraFieldsErrorHolder, $value['id']);
-								}
+								}else
+									update_user_meta( $current_user->id, 'custom_field_'.$value['id'], esc_attr( $checkboxOption ) );
 							}else
 								update_user_meta( $current_user->id, 'custom_field_'.$value['id'], esc_attr( $checkboxOption ) );
 								
 							break;
 						}
 						case "radio":{
-							if ($value['item_required'] != null){
+							if (isset($value['item_required'])){
 								if ($value['item_required'] == 'yes'){
 									if (trim($_POST[$value['item_id'].$value['id']]) != '')
 										update_user_meta( $current_user->id, 'custom_field_'.$value['id'], esc_attr( $_POST[$value['item_id'].$value['id']] ) );
 									else 
 										array_push($extraFieldsErrorHolder, $value['id']);
-								}
-							}
+								}else
+									update_user_meta( $current_user->id, 'custom_field_'.$value['id'], esc_attr( $_POST[$value['item_id'].$value['id']] ) );
+							}else
+								update_user_meta( $current_user->id, 'custom_field_'.$value['id'], esc_attr( $_POST[$value['item_id'].$value['id']] ) );
 							break;
 						}
 						case "select":{
-							if ($value['item_required'] != null){
+							if (isset($value['item_required'])){
 								if ($value['item_required'] == 'yes'){
 									if (trim($_POST[$value['item_id'].$value['id']]) != '')
 										update_user_meta( $current_user->id, 'custom_field_'.$value['id'], esc_attr( $_POST[$value['item_id'].$value['id']] ) );
 									else 
 										array_push($extraFieldsErrorHolder, $value['id']);
-								}
-							}
+								}else
+									update_user_meta( $current_user->id, 'custom_field_'.$value['id'], esc_attr( $_POST[$value['item_id'].$value['id']] ) );
+							}else
+								update_user_meta( $current_user->id, 'custom_field_'.$value['id'], esc_attr( $_POST[$value['item_id'].$value['id']] ) );
 							break;
 						}
 						case "countrySelect":{
-							if ($value['item_required'] != null){
+							if (isset($value['item_required'])){
 								if ($value['item_required'] == 'yes'){
 									if (trim($_POST[$value['item_id'].$value['id']]) != '')
 										update_user_meta( $current_user->id, 'custom_field_'.$value['id'], esc_attr( $_POST[$value['item_id'].$value['id']] ) );
 									else 
 										array_push($extraFieldsErrorHolder, $value['id']);
-								}
+								}else
+									update_user_meta( $current_user->id, 'custom_field_'.$value['id'], esc_attr( $_POST[$value['item_id'].$value['id']] ) );
 							}else
 								update_user_meta( $current_user->id, 'custom_field_'.$value['id'], esc_attr( $_POST[$value['item_id'].$value['id']] ) );
 							
 							break;
 						}
 						case "timeZone":{
-							if ($value['item_required'] != null){
+							if (isset($value['item_required'])){
 								if ($value['item_required'] == 'yes'){
 									if (trim($_POST[$value['item_id'].$value['id']]) != '')
 										update_user_meta( $current_user->id, 'custom_field_'.$value['id'], esc_attr( $_POST[$value['item_id'].$value['id']] ) );
 									else 
 										array_push($extraFieldsErrorHolder, $value['id']);
-								}
+								}else
+									update_user_meta( $current_user->id, 'custom_field_'.$value['id'], esc_attr( $_POST[$value['item_id'].$value['id']] ) );
 							}else
 								update_user_meta( $current_user->id, 'custom_field_'.$value['id'], esc_attr( $_POST[$value['item_id'].$value['id']] ) );
 							
 							break;
 						}
 						case "datepicker":{
-							if ($value['item_required'] != null){
+							if (isset($value['item_required'])){
 								if ($value['item_required'] == 'yes'){
 									if (trim($_POST[$value['item_id'].$value['id']]) != '')
 										update_user_meta( $current_user->id, 'custom_field_'.$value['id'], esc_attr( $_POST[$value['item_id'].$value['id']] ) );
 									else 
 										array_push($extraFieldsErrorHolder, $value['id']);
-								}
+								}else
+									update_user_meta( $current_user->id, 'custom_field_'.$value['id'], esc_attr( $_POST[$value['item_id'].$value['id']] ) );
 							}else
 								update_user_meta( $current_user->id, 'custom_field_'.$value['id'], esc_attr( $_POST[$value['item_id'].$value['id']] ) );
 							
 							break;
 						}
 						case "textarea":{
-							if ($value['item_required'] != null){
+							if (isset($value['item_required'])){
 								if ($value['item_required'] == 'yes'){
 									if (trim($_POST[$value['item_id'].$value['id']]) != '')
 										update_user_meta( $current_user->id, 'custom_field_'.$value['id'], esc_attr( $_POST[$value['item_id'].$value['id']] ) );
 									else 
 										array_push($extraFieldsErrorHolder, $value['id']);
-								}
+								}else
+									update_user_meta( $current_user->id, 'custom_field_'.$value['id'], esc_attr( $_POST[$value['item_id'].$value['id']] ) );
 							}else
 								update_user_meta( $current_user->id, 'custom_field_'.$value['id'], esc_attr( $_POST[$value['item_id'].$value['id']] ) );
 							
@@ -407,12 +421,15 @@ function wppb_front_end_profile_info() {
 											else $finalFileName .= $fileName[$i];
 										}
 											
-										//create the target path for uploading	
-										$target_path = "wp-content/uploads/profile_builder/attachments/";
-										$target_path = $target_path . 'userID_'.$current_user->id.'_attachment_'. $finalFileName; 
+										//create the target path for uploading
+										$wpUploadPath = wp_upload_dir(); // Array of key => value pairs
+										$target_path = $wpUploadPath['basedir']."/profile_builder/attachments/";
+										//$target_path = "wp-content/uploads/profile_builder/attachments/";
+										$target_path = $target_path . 'userID_'.$current_user->id.'_attachment_'. $finalFileName;
 
 										if (move_uploaded_file($_FILES[$uploadedfile]['tmp_name'], $target_path)){
-											$upFile = get_bloginfo('home').'/'.$target_path;
+											//$upFile = get_bloginfo('home').'/'.$target_path;
+											$upFile = $wpUploadPath['baseurl'].'/profile_builder/attachments/userID_'.$current_user->id.'_attachment_'. $finalFileName;
 											update_user_meta( $current_user->id, 'custom_field_'.$value['id'], $upFile);
 											$pictureUpload = 'yes';
 										}else{
@@ -429,7 +446,8 @@ function wppb_front_end_profile_info() {
 						case "avatar":{
 								$avatarUpload = 'no';
 								$uploadedfile = $value['item_type'].$value['id'];
-								$target_path_original = "wp-content/uploads/profile_builder/avatars/";
+								$wpUploadPath = wp_upload_dir(); // Array of key => value pairs
+								$target_path_original = $wpUploadPath['basedir']."/profile_builder/avatars/";
 								$fileName = $_FILES[$uploadedfile]['name'];
 								$finalFileName = '';
 										
@@ -669,9 +687,11 @@ function wppb_front_end_profile_info() {
 				$errorMark = '';
 				if ($wppb_defaultOptions['firstnameRequired'] == 'yes'){
 					$errorMark = '<font color="red" title="This field is marked as required by the administrator.">*</font>';
-					if ((trim($_POST['first_name']) == '') && isset($_POST['first_name'])){
-						$errorMark = '<img src="'.wppb_plugin_url . '/assets/images/pencil_delete.png" title="This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator)."/>';
-						$errorVar = ' errorHolder';
+					if (isset($_POST['first_name'])){
+						if (trim($_POST['first_name']) == ''){
+							$errorMark = '<img src="'.wppb_plugin_url . '/assets/images/pencil_delete.png" title="This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator)."/>';
+							$errorVar = ' errorHolder';
+						}
 					}
 				}
 				$editProfileFilterArray['contentName3'] = '
@@ -688,9 +708,11 @@ function wppb_front_end_profile_info() {
 				$errorMark = '';
 				if ($wppb_defaultOptions['lastnameRequired'] == 'yes'){
 					$errorMark = '<font color="red" title="This field is marked as required by the administrator.">*</font>';
-					if ((trim($_POST['last_name']) == '') && isset($_POST['last_name'])){
-						$errorMark = '<img src="'.wppb_plugin_url . '/assets/images/pencil_delete.png" title="This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator)."/>';
-						$errorVar = ' errorHolder';
+					if (isset($_POST['last_name'])){
+						if (trim($_POST['last_name']) == ''){
+							$errorMark = '<img src="'.wppb_plugin_url . '/assets/images/pencil_delete.png" title="This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator)."/>';
+							$errorVar = ' errorHolder';
+						}
 					}
 				}					
 				$editProfileFilterArray['contentName4'] = '
@@ -707,9 +729,11 @@ function wppb_front_end_profile_info() {
 				$errorMark = '';
 				if ($wppb_defaultOptions['nicknameRequired'] == 'yes'){
 					$errorMark = '<font color="red" title="This field is marked as required by the administrator.">*</font>';
-					if ((trim($_POST['nickname']) == '') && isset($_POST['nickname'])){
-						$errorMark = '<img src="'.wppb_plugin_url . '/assets/images/pencil_delete.png" title="This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator)."/>';
-						$errorVar = ' errorHolder';
+					if (isset($_POST['nickname'])){
+						if (trim($_POST['nickname']) == ''){
+							$errorMark = '<img src="'.wppb_plugin_url . '/assets/images/pencil_delete.png" title="This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator)."/>';
+							$errorVar = ' errorHolder';
+						}
 					}
 				}					
 				$editProfileFilterArray['contentName5'] = '
@@ -727,9 +751,11 @@ function wppb_front_end_profile_info() {
 				$errorMark = '';
 				if ($wppb_defaultOptions['dispnameRequired'] == 'yes'){
 					$errorMark = '<font color="red" title="This field is marked as required by the administrator.">*</font>';
-					if ((trim($_POST['display_name']) == '') && isset($_POST['display_name'])){
-						$errorMark = '<img src="'.wppb_plugin_url . '/assets/images/pencil_delete.png" title="This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator)."/>';
-						$errorVar = ' errorHolder';
+					if (isset($_POST['display_name'])){
+						if (trim($_POST['display_name']) == ''){
+							$errorMark = '<img src="'.wppb_plugin_url . '/assets/images/pencil_delete.png" title="This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator)."/>';
+							$errorVar = ' errorHolder';
+						}
 					}
 				}					
 				echo '
@@ -770,9 +796,11 @@ function wppb_front_end_profile_info() {
 				$errorMark = '';
 				if ($wppb_defaultOptions['emailRequired'] == 'yes'){
 					$errorMark = '<font color="red" title="This field is marked as required by the administrator.">*</font>';
-					if ((trim($_POST['email']) == '') && isset($_POST['email'])){
-						$errorMark = '<img src="'.wppb_plugin_url . '/assets/images/pencil_delete.png" title="This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator)."/>';
-						$errorVar = ' errorHolder';
+					if (isset($_POST['email'])){
+						if (trim($_POST['email']) == ''){
+							$errorMark = '<img src="'.wppb_plugin_url . '/assets/images/pencil_delete.png" title="This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator)."/>';
+							$errorVar = ' errorHolder';
+						}
 					}
 				}					
 				$editProfileFilterArray['contentInfo2'] = '
