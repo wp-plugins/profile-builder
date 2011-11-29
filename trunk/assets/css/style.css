@@ -934,3 +934,16 @@ div.file_wrap {
 #secondColumn, #thirdColumn{
 	width:25%;
 }
+
+#framework_wrap #content .wppb_default_style {
+    display: inline-block !important;
+    left: 18px;
+    margin-bottom: 0 !important;
+    position: relative;
+    vertical-align: middle;
+    width: 100px;
+}
+#framework_wrap #content select {
+    height: 28px;
+    padding: 4px 5px;
+}
