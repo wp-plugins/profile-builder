@@ -6,8 +6,8 @@ Tags: registration, profile, user registration, custom field registration, custo
 custom registration, custom registration form, custom registration page, extra user fields, registration page, user custom fields, user listing, user login, user registration form, front-end login, 
 front-end register, front-end registration, frontend edit profile, edit profile
 Requires at least: 3.1
-Tested up to: 3.2
-Stable tag: 1.1.12
+Tested up to: 3.3
+Stable tag: 1.1.13
 
 Simple to use profile plugin allowing front-end login, registration and edit profile by using shortcodes. 
  
