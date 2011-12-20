@@ -1,4 +1,24 @@
 <?php
+	/* this is for the backwards compatibility from v.1.1.12 to v.1.1.13 */
+	$update = false;
+	$arraySettingsPresent = get_option('wppb_custom_fields','not_found');
+		if ($arraySettingsPresent != 'not_found'){
+			foreach ($arraySettingsPresent as $key => $value){
+				if ($value['item_metaName'] == null){
+					$arraySettingsPresent[$key]['item_metaName'] = 'custom_field_'.$value['id'];
+					$update = true;
+				}
+				if ($value['item_LastMetaName'] == null){
+					$arraySettingsPresent[$key]['item_LastMetaName'] = 'custom_field_'.$value['id'];
+					$update = true;
+				}
+			}
+			// only update if it is needed
+			if ($update == true)
+				update_option( 'wppb_custom_fields', $arraySettingsPresent);
+		}
+	/* END backwards compatibility */
+
 	function basic_info(){
 ?>
 
@@ -22,6 +42,8 @@
 		&rarr; <?php _e('select which information-field can users see/modify. The hidden fields\' values remain unmodified.', 'profilebuilder');?><br/>
 		&rarr; <?php _e('add custom fields to the existing ones, with several types to choose from: heading, text, textarea, select, checkbox, radio, and/or upload.', 'profilebuilder');?><br/>
 		&rarr; <?php _e('add an avatar field.', 'profilebuilder');?><br/>
+		&rarr; <?php _e('create custom redirects.', 'profilebuilder');?><br/>
+		&rarr; <?php echo $echoString = __('front-end userlisting using the', 'profilebuilder').' <strong>[wppb-list-users]</strong> '. __('shortcode.', 'profilebuilder');?><br/>
 		<br/>
 
 		<strong><?php _e('NOTE:', 'profilebuilder');?></strong>
@@ -47,7 +69,7 @@
 		<select name="wppb_default_style" class="wppb_default_style">
 			<option value="yes" <?php if ($wppb_showDefaultCss == 'yes') echo 'selected';?>><?php _e('Default', 'profilebuilder');?></option>
 			<?php 
-				$wppb_premiumStyle = wppb_plugin_dir . '/premium/';	
+				$wppb_premiumStyle = WPPB_PLUGIN_DIR . '/premium/';	
 				if (file_exists ( $wppb_premiumStyle.'premium.php' )){
 			?>
 					<option value="white" <?php if ($wppb_showDefaultCss == 'white') echo 'selected';?>><?php _e('White', 'profilebuilder');?></option>
@@ -57,6 +79,10 @@
 			?>
 			<option value="no" <?php if ($wppb_showDefaultCss == 'no') echo 'selected';?>><?php _e('None', 'profilebuilder');?></option>
 		</select>
+		<?php	
+			if (file_exists ( $wppb_premiumStyle.'premium.php' ))
+				echo '<div id="layoutNoticeDiv"><font size="1" id="layoutNotice"><b>'. __('NOTE:', 'profilebuilder') .'</b><br/>&rarr; '. __('The black stylesheet is intended for sites/blogs with a dark background.', 'profilebuilder') .'<br/>&rarr; '. __('The white stylesheet is intended for a sites/blogs with a light background color.', 'profilebuilder') .'</font></div>';
+		?>
 		<div align="right">
 			<input type="hidden" name="action" value="update" />
 			<p class="submit">

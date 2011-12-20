@@ -55,12 +55,11 @@ function wppb_front_end_login(){
 				</p><!-- .alert-->';
 		
 			$loginFilterArray['loginMessage1'] = apply_filters('wppb_login_login_message1', $loginFilterArray['loginMessage1']);
-			echo $loginFilterArray['loginMessage1'];
+			echo $loginFilterArray['loginMessage1'];	
 		?>
 	
 	<?php elseif ( $wppb_login->ID ) : // Successful login ?>
 		<?php
-			//$wppb_login = get_userdata( $wppb_login->ID ); 
 			if($wppb_login->display_name == ''){ 
 				$wppb_login->display_name = $wppb_login->user_login;
 			}
@@ -80,7 +79,7 @@ function wppb_front_end_login(){
 			
 				<?php 
 					$permaLnk2 = get_permalink();
-					$wppb_addons = wppb_plugin_dir . '/premium/addon/';
+					$wppb_addons = WPPB_PLUGIN_DIR . '/premium/addon/';
 					if (file_exists ( $wppb_addons.'addon.php' )){
 						//check to see if the redirecting addon is present and activated
 						$wppb_premium_addon_settings = get_option('wppb_premium_addon_settings'); //fetch the descriptions array
