@@ -1,9 +1,9 @@
 <?php
 /*
-Plugin Name: Profile Builder
+Plugin Name: Profile Builder Pro
 Plugin URI: http://www.cozmoslabs.com/2011/04/12/wordpress-profile-builder-a-front-end-user-registration-login-and-edit-profile-plugin/
 Description: Login, registration and edit profile shortcodes for the front-end. Also you can chose what fields should be displayed or add new (custom) ones both in the front-end and in the dashboard.
-Version: 1.1.12
+Version: 1.1.16
 Author: Reflection Media, Barina Gabriel
 Author URI: http://www.reflectionmedia.ro
 License: GPL2
@@ -25,10 +25,10 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 */
 
  /*
-Original Plugin Name: OptionTree
-Original Plugin URI: http://wp.envato.com
-Original Author: Derek Herman
-Original Author URI: http://valendesigns.com
+Interface based on : OptionTree
+Initial Interface URI: http://wp.envato.com
+Initial Interface Author: Derek Herman
+Initial Interface Author URI: http://valendesigns.com
 */
 
 /**
@@ -54,15 +54,15 @@ function return_bytes($val) {
 } 
  
  
-define( 'ProfileBuilderVersion', '1.1.12' );
-define( 'wppb_plugin_dir', WP_PLUGIN_DIR . '/' . dirname( plugin_basename( __FILE__ ) ) );
-define( 'wppb_plugin_url', WP_PLUGIN_URL . '/' . dirname( plugin_basename( __FILE__ ) ) );
-define( 'ServerMaxUploadSizeByte', return_bytes( ini_get( 'upload_max_filesize') ) );
-define( 'ServerMaxUploadSizeMega', ini_get( 'upload_max_filesize') );
-define( 'ServerMaxPostSizeByte', return_bytes( ini_get( 'post_max_size') ) );
-define( 'ServerMaxPostSizeMega', ini_get( 'post_max_size') );
-define ('wppb_TRANSLATEDIR', wppb_plugin_dir.'/translation');
-define ('wppb_TRANSLATIONDOMAIN', 'profilebuilder');
+define( 'PROFILE_BUILDER_VERSION', '1.1.13' );
+define( 'WPPB_PLUGIN_DIR', WP_PLUGIN_DIR . '/' . dirname( plugin_basename( __FILE__ ) ) );
+define( 'WPPB_PLUGIN_URL', WP_PLUGIN_URL . '/' . dirname( plugin_basename( __FILE__ ) ) );
+define( 'WPPB_SERVER_MAX_UPLOAD_SIZE_BYTE', return_bytes( ini_get( 'upload_max_filesize') ) );
+define( 'WPPB_SERVER_MAX_UPLOAD_SIZE_MEGA', ini_get( 'upload_max_filesize') );
+define( 'WPPB_SERVER_MAX_POST_SIZE_BYTE', return_bytes( ini_get( 'post_max_size') ) );
+define( 'WPPB_SERVER_MAX_POST_SIZE_MEGA', ini_get( 'post_max_size') );
+define( 'WPPB_TRANSLATE_DIR', WPPB_PLUGIN_DIR.'/translation' );
+define( 'WPPB_TRANSLATE_DOMAIN', 'profilebuilder' );
 
 
 /**
@@ -72,7 +72,7 @@ define ('wppb_TRANSLATIONDOMAIN', 'profilebuilder');
  */
 require_once('functions/functions.load.php');
 
-$wppb_premiumAdmin = wppb_plugin_dir . '/premium/classes/';	
+$wppb_premiumAdmin = WPPB_PLUGIN_DIR . '/premium/classes/';	
 if (file_exists ( $wppb_premiumAdmin.'premium.class.admin.php' )){
 	require_once($wppb_premiumAdmin.'premium.class.admin.php');
 }else{
@@ -80,7 +80,7 @@ if (file_exists ( $wppb_premiumAdmin.'premium.class.admin.php' )){
 }
 
 /* check for updates */
-$wppb_premiumUpdate = wppb_plugin_dir.'/premium/update/';
+$wppb_premiumUpdate = WPPB_PLUGIN_DIR.'/premium/update/';
 if (file_exists ($wppb_premiumUpdate.'update-checker.php')){
 	require ($wppb_premiumUpdate.'update-checker.php');
 	$localSerial = get_option( 'wppb_profile_builder_pro_serial' );

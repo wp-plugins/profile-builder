@@ -13,20 +13,27 @@ delete_option( 'wppb_premium_addon_settings_description' ); // Delete addon sett
 delete_option( 'customRedirectSettings' ); 					// Delete the custom redirect settings
 delete_option( 'userListingSettings' ); 					// Delete the user-listing settings
 
+/* get all the custom fields' names in one single array */
+$customFields = get_option('wppb_custom_fields','not_found');
+
+$customFieldNames = array();
+foreach($customFields as $key => $value)
+	array_push($customFieldNames, $value['item_metaName']);
+/* END get all custom fields */
+
 
 /* delete all the custom fields */
 global $wpdb;
 $allUserMeta = $wpdb->get_results("SELECT * FROM $wpdb->usermeta");
 
 foreach ($allUserMeta as $userMeta) {
-	$found = strpos ( $userMeta->meta_key , 'custom_field_' );
-	if ( $found !== FALSE ){
+	if (in_array($userMeta->meta_key, $customFieldNames)){
 		$metaFieldName = $userMeta->meta_key;
 		$metaFieldValue = $userMeta->meta_value;
 		$wpdb->query("DELETE FROM $wpdb->usermeta WHERE meta_key = '".$metaFieldName."'	AND meta_value = '".$metaFieldValue."'");
 	}
 
-	$foundAvatar = strpos ( $userMeta->meta_key , 'custom_field_resized' );
+	$foundAvatar = strpos ( $userMeta->meta_key , 'resized_avatar_' );
 	if ( $foundAvatar !== FALSE ){
 		$metaFieldName = $userMeta->meta_key;
 		$metaFieldValue = $userMeta->meta_value;
