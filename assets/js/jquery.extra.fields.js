@@ -365,7 +365,7 @@ Original Author URI: http://valendesigns.com
 		/* avatar */
         }else if (temp_select == 'Avatar'){
 			$('.regular').hide();
-            $('.alternative').show().html('<strong>Avatar Size:</strong> Enter a numeric value (between 20 and 200) for the avatar size.');
+            $('.alternative').show().html('<strong>Avatar Size:</strong> Enter a pair of values (between 20 and 200), separated (only) by a comma in the following format: width,height. If you only specify one number, the avatar will be square.');
             $('.option-desc', editRow).show();
             $('.option-options', editRow).show();
 		/* end avatar */
@@ -525,7 +525,7 @@ Original Author URI: http://valendesigns.com
 		/*avatar */
 		} else if (temp_select == 'Avatar'){
 			$('.regular').hide();
-            $('.alternative').show().html('<strong>Avatar Size:</strong> Enter a numeric value (between 20 and 200) for size of the avatar.');
+            $('.alternative').show().html('<strong>Avatar Size:</strong> Enter a pair of values (between 20 and 200), separated (only) by a comma in the following format: width,height. If you only specify one number, the avatar will be square.');
             $('.option-desc', editRow).show();
             $('.option-options', editRow).show();
 		/* end avatar */
@@ -567,7 +567,7 @@ Original Author URI: http://valendesigns.com
 		/*avatar */
 		} else if (temp_select == 'Avatar'){
 			$('.regular').hide();
-            $('.alternative').show().html('<strong>Avatar Size:</strong> Enter a numeric value (between 20 and 200) for size of the avatar.');
+            $('.alternative').show().html('<strong>Avatar Size:</strong> Enter a pair of values (between 20 and 200), separated (only) by a comma in the following format: width,height. If you only specify one number, the avatar will be square.');
             $('.option-desc', editRow).show();
             $('.option-options', editRow).show();
 		/* end avatar */
