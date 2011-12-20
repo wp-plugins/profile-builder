@@ -252,3 +252,9 @@ The global Profile Builder class is: wppb_holder
     margin-bottom: 6px !important;
     padding: 6px 0px 4px !important;
 }
+#wppb_recover_password p.errorHolder{
+	background-color: #FFDFDF;
+    border: 1px dotted #C89797;
+    margin-bottom: 6px !important;
+    padding: 6px 0px 4px !important;
+}
