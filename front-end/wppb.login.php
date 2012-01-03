@@ -55,7 +55,7 @@ function wppb_front_end_login(){
 				</p><!-- .alert-->';
 		
 			$loginFilterArray['loginMessage1'] = apply_filters('wppb_login_login_message1', $loginFilterArray['loginMessage1']);
-			echo $loginFilterArray['loginMessage1'];	
+			echo $loginFilterArray['loginMessage1'];		
 		?>
 	
 	<?php elseif ( $wppb_login->ID ) : // Successful login ?>

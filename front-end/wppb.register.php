@@ -485,7 +485,7 @@ function wppb_front_end_register($atts){
 				$registerFilterArray['userMessageSubject'] = 'A new account has been created for you.';
 				$registerFilterArray['userMessageSubject'] = apply_filters('wppb_register_subject_email_content', $registerFilterArray['userMessageSubject']);
 				
-				$registerFilterArray['userMessageContent'] = 'Welcome to blog '.$registerFilterArray['userMessageFrom'].'. Your username is:'.$mailUsername.' and password:'.$mailPassword;
+				$registerFilterArray['userMessageContent'] = 'Welcome to '.$registerFilterArray['userMessageFrom'].'. Your username is:'.$mailUsername.' and password:'.$mailPassword;
 				$registerFilterArray['userMessageContent'] = apply_filters('wppb_register_email_content', $registerFilterArray['userMessageContent']);
 				
 				$messageSent = wp_mail( $email, $registerFilterArray['userMessageSubject'], $registerFilterArray['userMessageContent']);
