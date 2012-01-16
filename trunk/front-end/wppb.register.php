@@ -15,6 +15,7 @@ function wppb_front_end_register($atts){
 	$new_user = 'no';
 	$registerFilterArray = array();
 	$registerFilterArray2 = array();
+	$uploadExt = array();
 	$extraFieldsErrorHolder = array();  //we will use this array to store the ID's of the extra-fields left uncompleted
 	get_currentuserinfo();
 
@@ -126,6 +127,7 @@ function wppb_front_end_register($atts){
 			'jabber' => esc_attr( $_POST['jabber'] ),
 			'description' => esc_attr( $_POST['description'] ),
 			'role' => $aprovedRole);
+		$userdata = apply_filters('wppb_register_userdata', $userdata);
 		
 		//get required and shown fields
 		$wppb_defaultOptions = get_option('wppb_default_settings');
@@ -267,16 +269,40 @@ function wppb_front_end_register($atts){
 					}
 					case "upload":{
 						$uploadedfile = $value['item_type'].$value['id'];
+
 						if ( (basename( $_FILES[$uploadedfile]['name']) == '')){
 							if (isset($value['item_required'])){
 								if ($value['item_required'] == 'yes')
 										array_push($extraFieldsErrorHolder, $value['id']);
 							}
+						}elseif ( (basename( $_FILES[$uploadedfile]['name']) != '')){
+							//get allowed file types
+							if (($value['item_options'] != NULL) || ($value['item_options'] != '')){
+								$allFiles = false;
+								$extensions = explode(',', $value['item_options']);
+								foreach($extensions as $key2 => $value2)
+									$extensions[$key2] = trim($value2);
+							}else 
+								$allFiles = true;
+							
+							$thisFileExtStart = strrpos($_FILES[$uploadedfile]['name'], '.');
+							$thisFileExt = substr($_FILES[$uploadedfile]['name'], $thisFileExtStart);
+								
+							if (($allFiles == false) && (!in_array($thisFileExt, $extensions))){
+								array_push($uploadExt, basename( $_FILES[$uploadedfile]['name']));
+								$allowedExtensions = '';
+								(int)$nrOfExt = count($extensions)-2;
+								foreach($extensions as $key2 => $value2){
+									$allowedExtensions .= $value2;
+									if ($key2 <= $nrOfExt)
+										$allowedExtensions .= ', ';
+										
+								}
+							}
 						}
 						break;
 					}
 					case "avatar":{
-
 						$uploadedfile = $value['item_type'].$value['id'];
 
 						if ( (basename( $_FILES[$uploadedfile]['name']) == '')){
@@ -293,7 +319,6 @@ function wppb_front_end_register($atts){
 		}
 		
 		/* END check if all the required fields were completed */
-		
 		if ($registerFilterArray['extraError'] != '')
 			$error = $registerFilterArray['extraError'];
 		elseif ( !$userdata['user_login'] )
@@ -309,6 +334,17 @@ function wppb_front_end_register($atts){
 				$error = __('You didn\'t complete one of the password-fields!', 'profilebuilder');
 			elseif ( $_POST['passw1'] != $_POST['passw2'] )																   //verify if the the password and the retyped password are a match
 				$error = __('The entered passwords don\'t match!', 'profilebuilder');
+		}elseif(count($uploadExt) > 0){
+			$error ='<p class="semi-saved">'.
+						__('There was an error while trying to upload the following attachment(s)', 'profilebuilder') .': <span class="error">';
+						foreach ($uploadExt as $key5 => $name5){
+							$lastOne++;
+							$error .= $name5;
+							if (count($uploadExt)-$lastOne > 0) 
+								$error .= ';<span style="padding-left:10px"></span>';
+						}
+						$error .= '</span><br/>'. __('Only files with the following extension(s) can be uploaded:', 'profilebuilder') .' <span class="error">'.$allowedExtensions.'</span><br/><span class="error">'. __('The account was NOT created!', 'profilebuilder') .'</span>
+					</p>';
 		}
 		elseif ( $agreed == false )
 			$error = __('You must agree to the terms and conditions before registering!', 'profilebuilder');
@@ -371,7 +407,6 @@ function wppb_front_end_register($atts){
 							break;
 						}
 						case "upload":{
-						
 							$uploadedfile = $value['item_type'].$value['id'];
 								
 							//first we need to verify if we don't try to upload a 0b or 0 length file
