@@ -111,7 +111,7 @@ if ( is_admin() ){
 	/* include the css for the datepicker */
 	$wppb_premiumDatepicker = WPPB_PLUGIN_DIR . '/premium/assets/css/';
 	if (file_exists ( $wppb_premiumDatepicker.'datepicker.style.css' ))
-		wp_enqueue_style( 'profile-builder-admin-datepicker-style', WPPB_PLUGIN_URL.'/premium/assets/css/datepicker.style.css', false, PROFILE_BUILDER_VERSION);
+		wp_enqueue_style( 'profile-builder-admin-datepicker-style', WPPB_PLUGIN_URL.'/premium/assets/css/datepicker.style.css', false, ProfileBuilderVersion);
 
 
 
