@@ -1,0 +1,499 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Profile Builder\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-07-06 14:23+0200\n"
+"PO-Revision-Date: 2011-08-22 11:52+0100\n"
+"Last-Translator: Sébastien CEZARD <foxyflying@gmail.com>\n"
+"Language-Team: ReflectionMedia\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: C:\\Users\\Cristi\\Desktop\\free\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-SearchPath-0: C:\\Users\\Cristi\\Desktop\\free\n"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:5
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:8
+msgid "Profile Builder"
+msgstr "Profile Builder"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:6
+msgid "Welcome to Profile Builder!"
+msgstr "Bienvenue dans Profile Builder !"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:8
+msgid " lets you customize your website by adding a front-end menu for all your users, giving them a more flexible way to modify their user-information or to register new users."
+msgstr " vous permet de personnaliser votre site en y ajoutant un menu visible par les utilisateurs, leur permettant de modifier de manière plus flexible les informations les concernant ou encore, de permettre l'enregistrement de nouveaux utilisateurs."
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:9
+msgid "Also, grants users with administrator rights to customize basic fields or to add new ones."
+msgstr "Il permet également aux utilisateurs dotés de droits d'administrateurs de personnaliser les champs de base ou d'en ajouter d'autre à leur guise."
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:10
+msgid "To achieve this, just create a new page, and give it an intuitive name(e.g. Edit Profile)."
+msgstr "Pour mettre en place le dispositif, créez simplement une nouvelle page et donnez-lui un nom évocateur (par exemple, \"Modifier le Profil\")."
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:11
+msgid "Now all you need to do is add the following shortcode(for the previous example): "
+msgstr "Tout ce qu'il vous reste à faire ensuite est d'ajouter le shortcode suivant (pour l'exemple précédent): [wppb-edit-profile]."
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:12
+msgid "Publish your page and you are ready to go!"
+msgstr "Publiez votre page et le tour est joué !"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:13
+msgid "You can use the following shortcodes:"
+msgstr "Vous pouvez utiliser les shortcodes suivant:"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:14
+msgid "for a log-in form."
+msgstr "pour un formulaire de connexion."
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:15
+msgid "to add a registration form."
+msgstr "pour ajouter un formulaire d'enregistrement."
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:16
+msgid "to grant users a front-end acces to their personal information(requires user to be logged in)."
+msgstr "pour permettre aux utilisateurs d'accéder à leurs données personnelles (l'utilisateur doit être connecté)."
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:18
+msgid "Users with administrator rights have access to the following features:"
+msgstr "Les utilisateurs possédant des droits d'administrateurs ont accés aux fonctions suivantes:"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:19
+msgid "add a custom stylesheet/inherit values from the current theme or use one of the following built into this plugin: default, white or black."
+msgstr "ajout de feuilles de styles personnalisées/héritées du thème courant ou incluses par défaut dans le plugin: défaut, blanc ou noir."
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:20
+msgid "select whether to display or not the admin bar in the front end for a specific user-group registered to the site."
+msgstr "possibilité d'afficher ou non la Barre d'Administration sur le Front-End pour un groupe d'utilisateurs spécifique enregistré sur le site."
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:21
+msgid "select which information-field can users see/modify. The hidden fields' values remain unmodified."
+msgstr "choix du type de champ pouvant être affiché ou modifié. Les valeurs entrées dans les champs masqués demeurent non modifiées."
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:22
+msgid "add custom fields to the existing ones, with several types to choose from: heading, text, textarea, select, checkbox, radio, and/or upload."
+msgstr "ajout de champs personnalisés, avec le choix entre différents types: titre, texte, zone de texte, sélection, case à cocher, bouton, et/ou téléversement."
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:23
+msgid "add an avatar field."
+msgstr "ajout d'un champ d'avatar"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:26
+msgid "NOTE:"
+msgstr "NOTE:"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:27
+msgid "this plugin only adds/removes fields in the front-end."
+msgstr "ce plugin ajoute/retire des champs uniquement sur le Front-End."
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:28
+msgid "The default information-fields will still be visible(and thus modifiable)"
+msgstr "Les champs d'informations par défaut seront encore visibles (donc modifiables)"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:29
+msgid "from the back-end, while custom fields will only be visible in the front-end."
+msgstr "depuis le Back-End, alors que les champs personnalisés ne seront visibles que sur le Front-End. "
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:43
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:44
+#: C:\Users\Cristi\Desktop\free/front-end/options.php:58
+msgid "Plugin Layout"
+msgstr "Apparence du Plugin"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:50
+msgid "Stylesheet used:"
+msgstr "Feuille de style utilisée"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:53
+msgid "Default"
+msgstr "Défaut"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:58
+msgid "White"
+msgstr "Blanc"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:59
+msgid "Black"
+msgstr "Noir"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:63
+msgid "None"
+msgstr "Aucune"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:72
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:119
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:287
+msgid "Save Changes"
+msgstr "Sauvegarder les modifications"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:90
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:91
+msgid "Show/Hide the Admin Bar on Front End"
+msgstr "Afficher/Masquer la Barre d'Administration sur le Front-End"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:95
+msgid "User-group"
+msgstr "Groupe d'Utilisateurs"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:96
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:143
+msgid "Visibility"
+msgstr "Visibilité"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:108
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:159
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:168
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:177
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:186
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:195
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:212
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:221
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:233
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:242
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:251
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:268
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:278
+msgid "Show"
+msgstr "Afficher"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:109
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:160
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:169
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:178
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:187
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:196
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:213
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:222
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:234
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:243
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:252
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:269
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:279
+msgid "Hide"
+msgstr "Masquer"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:137
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:138
+#: C:\Users\Cristi\Desktop\free/front-end/options.php:60
+msgid "Default Profile Fields"
+msgstr "Champs de Profil par Défaut"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:142
+msgid "Input Field Name"
+msgstr "Nom du Champ de Saisie"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:149
+msgid "Name:"
+msgstr "Nom:"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:156
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:385
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.login.php:76
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:244
+msgid "Username"
+msgstr "Nom d'Utilisateur"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:165
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:394
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:259
+msgid "First Name"
+msgstr "Prénom"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:174
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:403
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:273
+msgid "Last Name"
+msgstr "Nom"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:183
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:412
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:287
+msgid "Nickname"
+msgstr "Pseudo"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:192
+msgid "Display name publicly as..."
+msgstr "Apparaître publiquement en tant que..."
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:202
+msgid "Contact Info:"
+msgstr "Infos de Contact"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:209
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:457
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:305
+msgid "E-mail"
+msgstr "Courriel"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:218
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:467
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:320
+msgid "Website"
+msgstr "Site Web"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:230
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:476
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:334
+msgid "AIM"
+msgstr "AIM"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:239
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:485
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:348
+msgid "Yahoo IM"
+msgstr "Yahoo IM"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:248
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:494
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:362
+msgid "Jabber / Google Talk"
+msgstr "Jabber / Google Talk"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:258
+msgid "About Yourself:"
+msgstr "À propos de vous:"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:265
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:507
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:380
+msgid "Biographical Info"
+msgstr "Infos Biographiques"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:275
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:516
+msgid "New Password"
+msgstr "Nouveau Mot de Passe"
+
+#: C:\Users\Cristi\Desktop\free/front-end/options.php:57
+msgid "Basic Information"
+msgstr "Informations de Base"
+
+#: C:\Users\Cristi\Desktop\free/front-end/options.php:59
+msgid "Show/Hide the Admin Bar on Front-end"
+msgstr "Afficher/Masquer la Barre d'Administration sur le Front-End"
+
+#: C:\Users\Cristi\Desktop\free/front-end/options.php:63
+msgid "Extra Profile Fields"
+msgstr "Champs de Profile Supplémentaires"
+
+#: C:\Users\Cristi\Desktop\free/front-end/options.php:64
+msgid "Register Your Version"
+msgstr "Enregistrer Votre Version"
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:269
+msgid "You must be logged in to edit your profile."
+msgstr "Vous devez être connecté(e) pour modifier votre profil."
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:278
+msgid "The avatar was successfully deleted."
+msgstr "L'avatar a bien été supprimé."
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:283
+msgid "The attachment \""
+msgstr "La pièce jointe \""
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:285
+msgid "\" was successfully deleted."
+msgstr "\" a bien été supprimée."
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:298
+msgid "The changes have been successfully saved."
+msgstr "Les modifications ont bien été sauvegardées."
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:303
+msgid "The email address you entered is already registered to a different user.<br/>The email address was "
+msgstr "L'adresse de courriel indiquée appartient déjà à un autre utilisateur.<br/>L'adresse de courriel était "
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:304
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:314
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:324
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:333
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:355
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:363
+msgid "NOT"
+msgstr "PAS"
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:305
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:315
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:325
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:334
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:356
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:364
+msgid " updated along with the rest of the information."
+msgstr " mis à jour avec le reste des informations."
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:313
+msgid "The email address you entered is invalid. <br/> The email address was "
+msgstr "L'adresse de courriel n'est pas valide. <br/> L'adresse de courriel était "
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:323
+msgid "The passwords you entered do not match. <br/> The password was "
+msgstr "Les mots de passe ne correspondent pas. <br/> Les mots de passe étaient "
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:332
+msgid "You didn't complete both password fields. <br/> The password was "
+msgstr "Vous n'avez pas renseigné les champs de mots de passe. <br/> Les mots de passe étaient "
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:344
+msgid "There was an error while trying to upload the following attachments:<br/>"
+msgstr "Une erreur est survenue durant le téléversement des fichiers suivante:<br/>"
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:352
+msgid "<br/>Possible cause: the size was bigger than "
+msgstr "<br/>Cause possible: la taille est supérieur à "
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:354
+msgid "b.<br/>The listed attachements were "
+msgstr "b.<br/>les fichiers étaient "
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:362
+msgid "There was an error while trying to upload your avatar picture.<br/>Possible cause: size/incorrect file-type.<br/>The avatar was "
+msgstr "Une erreur est survenue durant le téléversement de l'image.<br/>Cause possible: taille/type de fichier incorrect.<br/>L'avatar était "
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:380
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:233
+msgid "Name"
+msgstr "Nom"
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:386
+msgid " Usernames cannot be changed."
+msgstr " Les noms d'utilisateurs ne peuvent être modifiés."
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:414
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:459
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:246
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:307
+msgid "(required)"
+msgstr "(requis)"
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:422
+msgid "Display name publicly as"
+msgstr "Apparaître publiquement en tant que"
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:451
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:294
+msgid "Contact Info"
+msgstr "Infos de Contact"
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:501
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:369
+msgid "About Yourself"
+msgstr "À Propos de Vous"
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:521
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:403
+msgid "Repeat Password"
+msgstr "Répéter le Mot de Passe"
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:537
+msgid "Update"
+msgstr "Mettre à Jour"
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.login.php:47
+#, php-format
+msgid "You are currently logged in as <a href=\"%1$s\" title=\"%2$s\">%2$s</a>."
+msgstr "Vous êtes actuellement connecté(e) en tant que <a href=\"%1$s\" title=\"%2$s\">%2$s</a>."
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.login.php:47
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:171
+msgid "Log out of this account"
+msgstr "Se déconnecter de ce compte"
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.login.php:47
+msgid "Log out &raquo;"
+msgstr "Déconnexion &raquo;"
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.login.php:60
+#, php-format
+msgid "You have successfully logged in as <a href=\"%1$s\" title=\"%2$s\">%2$s</a>."
+msgstr "Vous vous êtes connecté en tant que <a href=\"%1$s\" title=\"%2$s\">%2$s</a>."
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.login.php:86
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:398
+msgid "Password"
+msgstr "Mot de Passe"
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.login.php:90
+msgid "Log in"
+msgstr "Connexion"
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.login.php:92
+msgid "Remember me"
+msgstr "Se souvenir de moi"
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.login.php:96
+msgid "Lost password?"
+msgstr "Mot de passe oublié ?"
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:39
+msgid "A username is required for registration."
+msgstr "Un nom d'utilisateur est requis pour l'enregistrement."
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:41
+msgid "Sorry, that username already exists!"
+msgstr "Désolé, ce nom d'utilisateur existe déjà !"
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:44
+msgid "You must enter a valid email address."
+msgstr "Vous devez entrer une adresse de courriel valide."
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:46
+msgid "Sorry, that email address is already used!"
+msgstr "Désolé, cette adresse de courriel est déjà utilisée !"
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:49
+msgid "You didn't complete one of the password-fields!"
+msgstr "Vous n'avez pas renseigné un des champs de mot de passe !"
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:51
+msgid "The entered passwords don't match!"
+msgstr "Les mots de passe ne correspondent pas !"
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:171
+#, php-format
+msgid "You are logged in as <a href=\"%1$s\" title=\"%2$s\">%2$s</a>.  You don't need another account."
+msgstr "Vous êtes connecté(e) en tant que <a href=\"%1$s\" title=\"%2$s\">%2$s</a>.  Vous n'avez pas besoin de créer un autre compte."
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:171
+msgid "Logout &raquo;"
+msgstr "Déconnexion &raquo;"
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:181
+#, php-format
+msgid "A user account for %1$s has been created."
+msgstr "Un compte utilisateur pour %1$s a été créé."
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:183
+#, php-format
+msgid "Thank you for registering, %1$s."
+msgstr "Merci de vous être enregistré, %1$s."
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:211
+msgid "Users can register themselves or you can manually create users here."
+msgstr "Les utilisateurs peuvent s'enregistrer ou bien vous pouvez les créer manuellement ici."
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:215
+msgid "Users cannot currently register themselves, but you can manually create users here."
+msgstr "Les utilisateurs ne peuvent actuellement pas s'enregistrer eux-même, mais vous pouvez les créer manuellement ici."
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:219
+msgid "Only an administrator can add new users."
+msgstr "Seul un administrateur peut ajouter de nouveaux utilisateurs."
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:422
+msgid " Send these credentials via email."
+msgstr " Envoyer ces données par courriel."
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:428
+msgid "Add User"
+msgstr "Ajouter un Utilisateur"
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:428
+msgid "Register"
+msgstr "Enregistrement"
+
