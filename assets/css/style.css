@@ -45,12 +45,12 @@ a:hover strong {
   margin: 15px;
 }
 #framework_wrap #header {
-  -webkit-border-top-left-radius: 3px;
-  -webkit-border-top-right-radius: 3px;
-  -moz-border-radius-topleft: 3px;
-  -moz-border-radius-topright: 3px;
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
+  -webkit-border-top-left-radius: 8px;
+  -webkit-border-top-right-radius: 8px;
+  -moz-border-radius-topleft: 8px;
+  -moz-border-radius-topright: 8px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
   background: #6d6d6d url(../images/header.png) repeat-x left top;
   border: 1px solid #555;
   height: 71px;
@@ -914,8 +914,7 @@ div.file_wrap {
     }
 
 #register-profile-builder .validateStatus{
-	position:relative;
-	top:3px;
+
 }
 .wppb-serialnumber-descr{
 	padding-left:100px;
@@ -935,6 +934,16 @@ div.file_wrap {
 #secondColumn, #thirdColumn{
 	width:25%;
 }
-.options_tabs{
-	margin:0;
+
+#framework_wrap #content .wppb_default_style {
+    display: inline-block !important;
+    left: 18px;
+    margin-bottom: 0 !important;
+    position: relative;
+    vertical-align: middle;
+    width: 100px;
+}
+#framework_wrap #content select {
+    height: 28px;
+    padding: 4px 5px;
 }
