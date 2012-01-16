@@ -7,9 +7,9 @@ custom registration, custom registration form, custom registration page, extra u
 front-end register, front-end registration, frontend edit profile, edit profile
 Requires at least: 3.1
 Tested up to: 3.3
-Stable tag: 1.1.20
+Stable tag: 1.1.22
 
-Simple to use profile plugin allowing front-end login, registration and edit profile by using shortcodes. 
+Simple to use profile plugin allowing front-end login, registration and edit profile by using shortcodes.
  
 == Description ==
 
@@ -89,6 +89,12 @@ This plugin only adds/removes fields in the front-end. The default information-f
 7. Logged in Page: screenshot7.jpg
 
 == Changelog ==
+= 1.1.22 =
+Changes.
+
+= 1.1.21 =
+Bugfix.
+
 = 1.1.20 =
 Consecutive updates.
 
