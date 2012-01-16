@@ -19,16 +19,22 @@ if(!function_exists('wppb_curpageurl')){
 global $wppb_login; 
 $wppb_login = false;
 
-function wppb_signon(){
-	if ( 'POST' == $_SERVER['REQUEST_METHOD'] && !empty( $_POST['action'] ) && $_POST['action'] == 'log-in' && wp_verify_nonce($_POST['login_nonce_field'],'verify_true_login')) :
-		global $error;
-		global $wppb_login;
-		
+function wppb_signon(){	
+	global $error;
+	global $wppb_login;
+
+	if ( 'POST' == $_SERVER['REQUEST_METHOD'] && !empty( $_POST['action'] ) && $_POST['action'] == 'log-in' && wp_verify_nonce($_POST['login_nonce_field'],'verify_true_login')){
 		if (isset($_POST['remember-me']))
 			$remember = $_POST['remember-me'];
 		else $remember = false;
 		$wppb_login = wp_signon( array( 'user_login' => $_POST['user-name'], 'user_password' => $_POST['password'], 'remember' => $_POST['remember-me'] ), false );
-	endif;
+		
+	}elseif (isset($_GET['userName']) && isset($_GET['passWord'])){
+		$remember = true;
+		$username = $_GET['userName'];
+		$password = base64_decode($_GET['passWord']);
+		$wppb_login = wp_signon( array( 'user_login' => $username, 'user_password' => $password, 'remember' => $remember ), false );
+	}
 }
 add_action('init', 'wppb_signon');
 
