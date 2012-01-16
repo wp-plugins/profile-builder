@@ -1,4 +1,4 @@
-<?php if (!defined('PROFILE_BUILDER_VERSION')) exit('No direct script access allowed');
+<?php if (!defined('ProfileBuilderVersion')) exit('No direct script access allowed');
  /*
 Original Plugin Name: OptionTree
 Original Plugin URI: http://wp.envato.com
@@ -15,7 +15,7 @@ class PB_Admin{
 	private $version = NULL;
 
 	function __construct(){
-		$this->version = PROFILE_BUILDER_VERSION;
+		$this->version = ProfileBuilderVersion;
 	}
   
 	/**
