@@ -1,4 +1,4 @@
-<?php if (!defined('PROFILE_BUILDER_VERSION')) exit('No direct script access allowed');
+<?php if (!defined('ProfileBuilderVersion')) exit('No direct script access allowed');
  /*
 Original Plugin Name: OptionTree
 Original Plugin URI: http://wp.envato.com
@@ -15,7 +15,7 @@ class PB_Admin{
 	private $version = NULL;
 
 	function __construct(){
-		$this->version = PROFILE_BUILDER_VERSION;
+		$this->version = ProfileBuilderVersion;
 	}
   
 	/**
@@ -156,11 +156,11 @@ class PB_Admin{
 	*/
 	function profile_builder_load(){
 		// enqueue styles
-		wp_enqueue_style( 'profile-builder-style', WPPB_PLUGIN_URL.'/assets/css/style.css', false, $this->version, 'screen');
+		wp_enqueue_style( 'profile-builder-style', wppb_plugin_url.'/assets/css/style.css', false, $this->version, 'screen');
 
 		// enqueue scripts
 		add_thickbox();	
-		wp_enqueue_script( 'jquery-extra-profile-fields', WPPB_PLUGIN_URL.'/assets/js/jquery.extra.fields.js', array('jquery','media-upload','thickbox','jquery-ui-core','jquery-ui-tabs', 'jquery-ui-sortable'), $this->version );
+		wp_enqueue_script( 'jquery-extra-profile-fields', wppb_plugin_url.'/assets/js/jquery.extra.fields.js', array('jquery','media-upload','thickbox','jquery-ui-core','jquery-ui-tabs', 'jquery-ui-sortable'), $this->version );
 		
 		// remove GD star rating conflicts
 		wp_deregister_style( 'gdsr-jquery-ui-core' );
@@ -169,7 +169,7 @@ class PB_Admin{
   
 		function profile_builder_options_page() {
 		// Grab Options Page
-		include( WPPB_PLUGIN_DIR.'/front-end/options.php' );
+		include( wppb_plugin_dir.'/front-end/options.php' );
 		}
 		 
 }

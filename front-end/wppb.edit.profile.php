@@ -58,6 +58,7 @@ function wppb_front_end_profile_info() {
 	$avatarUpload = 'yes';
 	$allRequiredCompleted = 'yes';
 	$uploadName = array();
+	$uploadExt = array();
 	$uploadSize = array();
 	$editFilterArray = array();
 	
@@ -405,39 +406,92 @@ function wppb_front_end_profile_info() {
 						case "upload":{
 							$uploadedfile = $value['item_type'].$value['id'];
 							
+							//get allowed file types
+							if (($value['item_options'] != NULL) || ($value['item_options'] != '')){
+								$allFiles = false;
+								$extensions = explode(',', $value['item_options']);
+								foreach($extensions as $key3 => $value3)
+									$extensions[$key3] = trim($value3);
+							}else 
+								$allFiles = true;
 							//first we need to verify if we don't try to upload a 0b or 0 length file
 							if ( (basename( $_FILES[$uploadedfile]['name']) != '')){
+								//get this attachments extension
+								$thisFileExtStart = strrpos($_FILES[$uploadedfile]['name'], '.');
+								$thisFileExt = substr($_FILES[$uploadedfile]['name'], $thisFileExtStart);
 								
-								//second we need to verify if the uploaded file size is less then the set file size in php.ini
-								if (($_FILES[$uploadedfile]['size'] < WPPB_SERVER_MAX_UPLOAD_SIZE_BYTE) && ($_FILES[$uploadedfile]['size'] !=0)){
-									//we need to prepare the basename of the file, so that ' becomes ` as ' gives an error
-									$fileName = basename( $_FILES[$uploadedfile]['name']);
-									$finalFileName = '';
-									
-									for ($i=0; $i < strlen($fileName); $i++){
-										if ($fileName[$i] == "'")
-											$finalFileName .= '`';
-										else $finalFileName .= $fileName[$i];
-									}
-										
-									//create the target path for uploading
-									$wpUploadPath = wp_upload_dir(); // Array of key => value pairs
-									$target_path = $wpUploadPath['basedir']."/profile_builder/attachments/";
-									//$target_path = "wp-content/uploads/profile_builder/attachments/";
-									$target_path = $target_path . 'userID_'.$current_user->id.'_attachment_'. $finalFileName;
+								if ($allFiles === false){
+									if (in_array($thisFileExt, $extensions)){
+										//second we need to verify if the uploaded file size is less then the set file size in php.ini
+										if (($_FILES[$uploadedfile]['size'] < WPPB_SERVER_MAX_UPLOAD_SIZE_BYTE) && ($_FILES[$uploadedfile]['size'] !=0)){
+											//we need to prepare the basename of the file, so that ' becomes ` as ' gives an error
+											$fileName = basename( $_FILES[$uploadedfile]['name']);
+											$finalFileName = '';
+											
+											for ($i=0; $i < strlen($fileName); $i++){
+												if ($fileName[$i] == "'")
+													$finalFileName .= '`';
+												else $finalFileName .= $fileName[$i];
+											}
+												
+											//create the target path for uploading
+											$wpUploadPath = wp_upload_dir(); // Array of key => value pairs
+											$target_path = $wpUploadPath['basedir']."/profile_builder/attachments/";
+											$target_path = $target_path . 'userID_'.$current_user->id.'_attachment_'. $finalFileName;
 
-									if (move_uploaded_file($_FILES[$uploadedfile]['tmp_name'], $target_path)){
-										//$upFile = get_bloginfo('home').'/'.$target_path;
-										$upFile = $wpUploadPath['baseurl'].'/profile_builder/attachments/userID_'.$current_user->id.'_attachment_'. $finalFileName;
-										update_user_meta( $current_user->id, $value['item_metaName'], $upFile);
-										$pictureUpload = 'yes';
+											if (move_uploaded_file($_FILES[$uploadedfile]['tmp_name'], $target_path)){
+												$upFile = $wpUploadPath['baseurl'].'/profile_builder/attachments/userID_'.$current_user->id.'_attachment_'. $finalFileName;
+												update_user_meta( $current_user->id, $value['item_metaName'], $upFile);
+												$pictureUpload = 'yes';
+											}else{
+												//insert the name of the file in an array so that in case an error comes up, we know which files we just uploaded
+												array_push($uploadName, basename( $_FILES[$uploadedfile]['name']));
+											}
+										}else{
+											//insert the name of the file in an array so that in case an error comes up, we know which files we just uploaded
+											array_push($uploadName, basename( $_FILES[$uploadedfile]['name']));
+										}
+									}else{
+										array_push($uploadExt, basename( $_FILES[$uploadedfile]['name']));
+										$allowedExtensions = '';
+										(int)$nrOfExt = count($extensions)-2;
+										foreach($extensions as $key4 => $value4){
+											$allowedExtensions .= $value4;
+											if ($key4 <= $nrOfExt)
+												$allowedExtensions .= ', ';
+												
+										}
+									}
+								}else{
+									//second we need to verify if the uploaded file size is less then the set file size in php.ini
+									if (($_FILES[$uploadedfile]['size'] < WPPB_SERVER_MAX_UPLOAD_SIZE_BYTE) && ($_FILES[$uploadedfile]['size'] !=0)){
+										//we need to prepare the basename of the file, so that ' becomes ` as ' gives an error
+										$fileName = basename( $_FILES[$uploadedfile]['name']);
+										$finalFileName = '';
+										
+										for ($i=0; $i < strlen($fileName); $i++){
+											if ($fileName[$i] == "'")
+												$finalFileName .= '`';
+											else $finalFileName .= $fileName[$i];
+										}
+											
+										//create the target path for uploading
+										$wpUploadPath = wp_upload_dir(); // Array of key => value pairs
+										$target_path = $wpUploadPath['basedir']."/profile_builder/attachments/";
+										$target_path = $target_path . 'userID_'.$current_user->id.'_attachment_'. $finalFileName;
+
+										if (move_uploaded_file($_FILES[$uploadedfile]['tmp_name'], $target_path)){
+											$upFile = $wpUploadPath['baseurl'].'/profile_builder/attachments/userID_'.$current_user->id.'_attachment_'. $finalFileName;
+											update_user_meta( $current_user->id, $value['item_metaName'], $upFile);
+											$pictureUpload = 'yes';
+										}else{
+											//insert the name of the file in an array so that in case an error comes up, we know which files we just uploaded
+											array_push($uploadName, basename( $_FILES[$uploadedfile]['name']));
+										}
 									}else{
 										//insert the name of the file in an array so that in case an error comes up, we know which files we just uploaded
 										array_push($uploadName, basename( $_FILES[$uploadedfile]['name']));
 									}
-								}else{
-									//insert the name of the file in an array so that in case an error comes up, we know which files we just uploaded
-									array_push($uploadName, basename( $_FILES[$uploadedfile]['name']));
 								}
 							}
 							break;
@@ -531,8 +585,8 @@ function wppb_front_end_profile_info() {
 			/* all the other messages/errors */
 				$nrOfBadUploads = 0;
 				$nrOfBadUploads = count($uploadName);
-			
-			if (($changesSaved == 'yes') && ($changesSavedNoMatchingPass == 'no')  && ($changesSavedNoPass == 'no') && ($changesSavedNoEmail == 'no') && ($changesSavedNoEmailExist == 'no') && ($avatarUpload == 'yes') && ($nrOfBadUploads == 0)){
+				$nrOfBadExtUploads = count($uploadExt);
+			if (($changesSaved == 'yes') && ($changesSavedNoMatchingPass == 'no')  && ($changesSavedNoPass == 'no') && ($changesSavedNoEmail == 'no') && ($changesSavedNoEmailExist == 'no') && ($avatarUpload == 'yes') && ($nrOfBadUploads == 0) && ($nrOfBadExtUploads == 0)){
 				$editProfileFilterArray['allChangesSaved'] = '
 					<p class="changes-saved">'. __('The changes have been successfully saved.', 'profilebuilder') .'</p><!-- .changes-saved -->';
 				$editProfileFilterArray['allChangesSaved'] = apply_filters('wppb_edit_profile_all_changes_saved', $editProfileFilterArray['allChangesSaved']);
@@ -608,6 +662,21 @@ function wppb_front_end_profile_info() {
 							</p>';
 						$editProfileFilterArray['errorUploadingAvatar'] = apply_filters('wppb_edit_profile_error_uploading_avatar', $editProfileFilterArray['errorUploadingAvatar']);
 						echo $editProfileFilterArray['errorUploadingAvatar'];
+						$previousError = 'yes';
+					}if (($changesSaved == 'yes') && ($nrOfBadExtUploads != 0) && ($previousError == 'no')){
+						$editProfileFilterArray['errorUploadingAttachmentExts'] = '
+							<p class="semi-saved">'.
+								__('There was an error while trying to upload the following attachment(s)', 'profilebuilder') .': <span class="error">';
+								foreach ($uploadExt as $key5 => $name5){
+									$lastOne++;
+									$editProfileFilterArray['errorUploadingAttachmentExts'] .= $name5;
+									if ($nrOfBadExtUploads-$lastOne > 0) 
+										$editProfileFilterArray['errorUploadingAttachmentExts'] .= ';<span style="padding-left:10px"></span>';
+								}
+								$editProfileFilterArray['errorUploadingAttachmentExts'] .= '</span><br/>'. __('Only files with the following extension(s) can be uploaded:', 'profilebuilder') .' <span class="error">'.$allowedExtensions.'</span><br/>'. __('This file was', 'profilebuilder') .' <span class="error">'. __('NOT', 'profilebuilder') .'</span> '. __('updated along with the rest of the information.', 'profilebuilder') .'
+							</p>';
+						$editProfileFilterArray['errorUploadingAttachmentExts'] = apply_filters('wppb_edit_profile_error_uploading_attachment', $editProfileFilterArray['errorUploadingAttachmentExts']);
+						echo $editProfileFilterArray['errorUploadingAttachmentExts'];
 						$previousError = 'yes';
 					}
 				}
@@ -689,7 +758,6 @@ function wppb_front_end_profile_info() {
 					<p class="nickname'.$errorVar.'">
 						<label for="nickname">'. __('Nickname', 'profilebuilder') .$errorMark.'</label>
 						<input class="text-input" name="nickname" type="text" id="nickname" value="'. get_the_author_meta( 'nickname', $current_user->id ) .'" />
-						<span class="wppb-description-delimiter">'. __('(required)', 'profilebuilder') .'</span>
 					</p><!-- .nickname -->';
 				$editProfileFilterArray2['contentName5'] = apply_filters('wppb_edit_profile_content_name5', $editProfileFilterArray2['contentName5']);	
 			}
