@@ -19,22 +19,16 @@ if(!function_exists('wppb_curpageurl')){
 global $wppb_login; 
 $wppb_login = false;
 
-function wppb_signon(){	
-	global $error;
-	global $wppb_login;
-
-	if ( 'POST' == $_SERVER['REQUEST_METHOD'] && !empty( $_POST['action'] ) && $_POST['action'] == 'log-in' && wp_verify_nonce($_POST['login_nonce_field'],'verify_true_login')){
+function wppb_signon(){
+	if ( 'POST' == $_SERVER['REQUEST_METHOD'] && !empty( $_POST['action'] ) && $_POST['action'] == 'log-in' && wp_verify_nonce($_POST['login_nonce_field'],'verify_true_login')) :
+		global $error;
+		global $wppb_login;
+		
 		if (isset($_POST['remember-me']))
 			$remember = $_POST['remember-me'];
 		else $remember = false;
 		$wppb_login = wp_signon( array( 'user_login' => $_POST['user-name'], 'user_password' => $_POST['password'], 'remember' => $_POST['remember-me'] ), false );
-		
-	}elseif (isset($_GET['userName']) && isset($_GET['passWord'])){
-		$remember = true;
-		$username = $_GET['userName'];
-		$password = base64_decode($_GET['passWord']);
-		$wppb_login = wp_signon( array( 'user_login' => $username, 'user_password' => $password, 'remember' => $remember ), false );
-	}
+	endif;
 }
 add_action('init', 'wppb_signon');
 
@@ -61,11 +55,12 @@ function wppb_front_end_login(){
 				</p><!-- .alert-->';
 		
 			$loginFilterArray['loginMessage1'] = apply_filters('wppb_login_login_message1', $loginFilterArray['loginMessage1']);
-			echo $loginFilterArray['loginMessage1'];		
+			echo $loginFilterArray['loginMessage1'];
 		?>
 	
 	<?php elseif ( $wppb_login->ID ) : // Successful login ?>
 		<?php
+			//$wppb_login = get_userdata( $wppb_login->ID ); 
 			if($wppb_login->display_name == ''){ 
 				$wppb_login->display_name = $wppb_login->user_login;
 			}
@@ -85,7 +80,7 @@ function wppb_front_end_login(){
 			
 				<?php 
 					$permaLnk2 = get_permalink();
-					$wppb_addons = WPPB_PLUGIN_DIR . '/premium/addon/';
+					$wppb_addons = wppb_plugin_dir . '/premium/addon/';
 					if (file_exists ( $wppb_addons.'addon.php' )){
 						//check to see if the redirecting addon is present and activated
 						$wppb_premium_addon_settings = get_option('wppb_premium_addon_settings'); //fetch the descriptions array
