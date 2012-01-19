@@ -55,22 +55,34 @@ function wppb_add_plugin_stylesheet() {
 
 function wppb_show_admin_bar($content){
 	global $current_user;
+	global $wpdb;
 	$admintSettingsPresent = get_option('wppb_display_admin_settings','not_found');
-	if ($admintSettingsPresent != 'not_found'){    
-		$wppb_showAdminBar = get_option('wppb_display_admin_settings');
+
+	if ($admintSettingsPresent != 'not_found'){
 		if ($current_user->ID != 0){
-			$userRole = ($current_user->data->wp_capabilities);
+			$capabilityName = $wpdb->prefix.'capabilities';
+			$userRole = ($current_user->data->$capabilityName);
 			if ($userRole != NULL){
 				$currentRole = key($userRole);
-				$getSettings = $wppb_showAdminBar[$currentRole];
+				$getSettings = $admintSettingsPresent[$currentRole];
 				if ($getSettings == 'show')
 					return true;
 				elseif ($getSettings == 'hide')
 					return false;
-			}
+			}elseif ($userRole == NULL){ // this is for the WP v.3.3
+				$userRole = ($current_user->roles[0]);
+				if ($userRole != NULL){
+					$getSettings = $admintSettingsPresent[$userRole];
+					if ($getSettings == 'show')
+						return true;
+					elseif ($getSettings == 'hide')
+						return false;
+				}
+			}else
+				return true;
 		}
 	}
-	else 
+	else
 		return true;
 }
 
