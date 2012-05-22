@@ -45,12 +45,12 @@ a:hover strong {
   margin: 15px;
 }
 #framework_wrap #header {
-  -webkit-border-top-left-radius: 8px;
-  -webkit-border-top-right-radius: 8px;
-  -moz-border-radius-topleft: 8px;
-  -moz-border-radius-topright: 8px;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-top-right-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-topright: 3px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
   background: #6d6d6d url(../images/header.png) repeat-x left top;
   border: 1px solid #555;
   height: 71px;
@@ -550,7 +550,7 @@ a:hover strong {
           font-size: 12px;
           margin-bottom: 9px !important;
           padding: 5px;
-          width: 344px;
+          width: 310px;
           display: block;
           color: #888;
           resize: none;
@@ -914,7 +914,8 @@ div.file_wrap {
     }
 
 #register-profile-builder .validateStatus{
-
+	position:relative;
+	top:3px;
 }
 .wppb-serialnumber-descr{
 	padding-left:100px;
@@ -951,35 +952,6 @@ div.file_wrap {
 	vertical-align:middle;
 }
 
-#framework_wrap #content #userListing .sortingOrderSelect{
-	vertical-align:left;
-	display:inline-block !important;
-	margin-bottom:0 !important;
-	width: 110px;
-	*display:inline !important;
-	zoom:1;
-	font-size: 11px;
-}	
-
-#framework_wrap #content #userListing .sortingOrderCriteria{
-	vertical-align:left;
-	display:inline-block !important;
-	margin-bottom:0 !important;
-	width: 140px;
-	*display:inline !important;
-	zoom:1;
-	font-size: 11px;
-}
-
-#framework_wrap #content #userListing .sortingNumberSelect{
-	vertical-align:left;
-	display:inline-block !important;
-	margin-bottom:0 !important;
-	width: 75px;
-	*display:inline !important;
-	zoom:1;
-	font-size: 11px;
-}	
 
 #userListing #sortingCriteria{
 	vertical-align:middle;
@@ -993,7 +965,7 @@ div.file_wrap {
 	vertical-align:middle;
 }	
 	
-#plugin-layout input[type="submit"], #show-hide-admin-bar input[type="submit"], #default-fields input[type="submit"], #register-profile-builder input[type="submit"], #add-ons input[type="submit"], #customRedirect input[type="submit"], #userListing input[type="submit"], #disableLoginAndRegistration input[type="submit"]{
+#plugin-layout input[type="submit"], #show-hide-admin-bar input[type="submit"], #default-fields input[type="submit"], #register-profile-builder input[type="submit"], #add-ons input[type="submit"], #wppb_customRedirect input[type="submit"], #wppb_userListing input[type="submit"], #disableLoginAndRegistration input[type="submit"]{
 	position:absolute; 
 	bottom:0; 
 	right:0; 
@@ -1020,6 +992,7 @@ div.file_wrap {
 }
 #framework_wrap #content .sortingTable{
     border: 0px !important;
+	width:100%;
 }
 #framework_wrap #content .sortingTableCell1, .sortingTableCell2{
     border: 0px !important;
@@ -1029,14 +1002,19 @@ div.file_wrap {
 	width:120px;
 }
 .sortingTableCell1{
-	width: 115px;
+	width: 50%;
+	vertical-align:top;
+}
+#framework_wrap #content .sortingTableCell3{
+	width:100%;
+	border:none;
 }
 
 #framework_wrap #content #customRedirect .redirectFirstInput{
 	vertical-align:left;
 	display:inline-block !important;
 	margin-bottom:0 !important;
-	width: 320px;
+	width: 310px !important;
 	*display:inline !important;
 	zoom:1;
 }
@@ -1044,7 +1022,7 @@ div.file_wrap {
 	vertical-align:left;
 	display:inline-block !important;
 	margin-bottom:0 !important;
-	width: 320px;
+	width: 310px;
 	*display:inline !important;
 	zoom:1;
 }	
@@ -1052,7 +1030,7 @@ div.file_wrap {
 	vertical-align:left;
 	display:inline-block !important;
 	margin-bottom:0 !important;
-	width: 320px;
+	width: 310px;
 	*display:inline !important;
 	zoom:1;
 }	
@@ -1060,7 +1038,7 @@ div.file_wrap {
 	vertical-align:left;
 	display:inline-block !important;
 	margin-bottom:0 !important;
-	width: 320px;
+	width: 310px;
 	*display:inline !important;
 	zoom:1;
 }	
@@ -1068,7 +1046,7 @@ div.file_wrap {
 	vertical-align:left;
 	display:inline-block !important;
 	margin-bottom:0 !important;
-	width: 320px;
+	width: 310px;
 	*display:inline !important;
 	zoom:1;
 }
@@ -1077,11 +1055,106 @@ div.file_wrap {
 	vertical-align:left;
 	display:inline-block !important;
 	margin-bottom:0 !important;
-	width: 320px;
+	width: 310px;
 	*display:inline !important;
 	zoom:1;
 }
 
 #secondColumn, #thirdColumn{
 	width:25%;
+}
+#internal_id{
+	width:24% !important;
+	text-align:center;
+}
+#layoutNotice{
+	color:grey;
+}
+#layoutNoticeDiv{
+	position: absolute;
+	bottom: 20px;
+}
+.options_tabs{
+	margin:0;
+}
+
+#show-hide-admin-bar table th, #default-fields table th{
+	font-size: 10px !important;
+	padding: 6px 10px;
+	font-weight: bold !important;
+}
+
+#show-hide-admin-bar table td, #default-fields table td{
+	font-size: 11px !important;
+}
+
+#framework_wrap #content #searchFields{
+	height:90px;
+}
+#framework_wrap #content #sortFields{
+	height:90px;
+}
+#framework_wrap #content #allUserlisting{
+	height:500px;
+	width:100%;
+	font-size:10px;
+}
+#framework_wrap #content #singleUserlisting{
+	height:500px;
+	width:100%;
+	font-size:10px;
+}
+#framework_wrap #content .fieldTable{
+    border: 0px !important;
+	width:100%;
+}
+#framework_wrap #content .sortingTable{
+    border: 0px !important;
+	width:100%;
+}
+#framework_wrap #content .fieldTableCell1{
+    border: 0px !important;
+	width:33%;
+}
+#framework_wrap #content .sortingTableCell1{
+    border: 0px !important;
+	width:33%;
+}
+#framework_wrap #content .fieldTableCell2{
+    border: 0px !important;
+}
+#framework_wrap #content .sortingTableCell2{
+    border: 0px !important;
+}
+#framework_wrap #content .fieldTableCell3{
+    border: 0px !important;
+	width:100%;
+}
+#framework_wrap #content .fieldTableCell4{
+    border: 1px solid #E6DB55 !important;
+	width:60%;
+	background-color: #FFFBCC;
+	border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;	
+	border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+	
+}
+#framework_wrap #content #insertSortField{
+	width:100%;
+}
+#framework_wrap #content #sortingNumberSelect{
+	width:80px;
+}
+#framework_wrap #content #singleSlug{
+	width:100%;
+}
+#framework_wrap #content #sortingOrderSelect{
+	width:120px;
+}
+#framework_wrap #content #insertUserMetaField{
+	width:100%;
+}
+#framework_wrap #content #insertExtraFunction{
+	width:100%;
 }

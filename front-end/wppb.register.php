@@ -102,7 +102,7 @@ function wppb_front_end_register($atts){
 		
 		/* use filters to modify (if needed) the posted data before creating the user-data */
 		$user_pass = apply_filters('wppb_register_posted_password', $user_pass);
-		$user_name = apply_filters('wppb_register_posted_email', $user_name);
+		$user_name = apply_filters('wppb_register_posted_username', $user_name);
 		$first_name = apply_filters('wppb_register_posted_first_name', $first_name);
 		$last_name = apply_filters('wppb_register_posted_last_name', $last_name);
 		$nickname = apply_filters('wppb_register_posted_nickname', $nickname);
@@ -116,16 +116,16 @@ function wppb_front_end_register($atts){
 		
 		$userdata = array(
 			'user_pass' => $user_pass,
-			'user_login' => esc_attr( $_POST['user_name'] ),
-			'first_name' => esc_attr( $_POST['first_name'] ),
-			'last_name' => esc_attr( $_POST['last_name'] ),
-			'nickname' => esc_attr( $_POST['nickname'] ),
-			'user_email' => esc_attr( $_POST['email'] ),
-			'user_url' => esc_attr( $_POST['website'] ),
-			'aim' => esc_attr( $_POST['aim'] ),
-			'yim' => esc_attr( $_POST['yim'] ),
-			'jabber' => esc_attr( $_POST['jabber'] ),
-			'description' => esc_attr( $_POST['description'] ),
+			'user_login' => esc_attr( $user_name ),
+			'first_name' => esc_attr( $first_name ),
+			'last_name' => esc_attr( $last_name ),
+			'nickname' => esc_attr( $nickname ),
+			'user_email' => esc_attr( $email ),
+			'user_url' => esc_attr( $website ),
+			'aim' => esc_attr( $aim ),
+			'yim' => esc_attr( $yim ),
+			'jabber' => esc_attr( $jabber ),
+			'description' => esc_attr( $description ),
 			'role' => $aprovedRole);
 		$userdata = apply_filters('wppb_register_userdata', $userdata);
 		
@@ -140,7 +140,7 @@ function wppb_front_end_register($atts){
 					switch ($value['item_type']) {
 						case "agreeToTerms":{
 							$agreed = false;
-							if ( (isset($_POST[$value['item_id'].$value['id']] )) && ($_POST[$value['item_id'].$value['id']] == 'agree'))
+							if ( (isset($_POST[$value['item_type'].$value['id']] )) && ($_POST[$value['item_type'].$value['id']] == 'agree'))
 								$agreed = true;
 							break;
 						}
@@ -185,10 +185,10 @@ function wppb_front_end_register($atts){
 			foreach ( $wppbFetchArray as $key => $value){
 				switch ($value['item_type']) {
 					case "input":{
-						$_POST[$value['item_id'].$value['id']] = apply_filters('wppb_register_input_custom_field_'.$value['id'], $_POST[$value['item_id'].$value['id']]);
+						$_POST[$value['item_type'].$value['id']] = apply_filters('wppb_register_input_custom_field_'.$value['id'], $_POST[$value['item_type'].$value['id']]);
 						if (isset($value['item_required'])){
 							if ($value['item_required'] == 'yes'){
-								if (trim($_POST[$value['item_id'].$value['id']]) == '')
+								if (trim($_POST[$value['item_type'].$value['id']]) == '')
 									array_push($extraFieldsErrorHolder, $value['id']);
 							}
 						}
@@ -216,7 +216,7 @@ function wppb_front_end_register($atts){
 					case "radio":{
 						if (isset($value['item_required'])){
 							if ($value['item_required'] == 'yes'){
-								if (trim($_POST[$value['item_id'].$value['id']]) == '')
+								if (trim($_POST[$value['item_type'].$value['id']]) == '')
 									array_push($extraFieldsErrorHolder, $value['id']);
 							}
 						}
@@ -225,7 +225,7 @@ function wppb_front_end_register($atts){
 					case "select":{
 						if (isset($value['item_required'])){
 							if ($value['item_required'] == 'yes'){
-								if (trim($_POST[$value['item_id'].$value['id']]) == '')
+								if (trim($_POST[$value['item_type'].$value['id']]) == '')
 									array_push($extraFieldsErrorHolder, $value['id']);
 							}
 						}
@@ -234,7 +234,7 @@ function wppb_front_end_register($atts){
 					case "countrySelect":{
 						if (isset($value['item_required'])){
 							if ($value['item_required'] == 'yes'){
-								if (trim($_POST[$value['item_id'].$value['id']]) == '')
+								if (trim($_POST[$value['item_type'].$value['id']]) == '')
 									array_push($extraFieldsErrorHolder, $value['id']);
 							}
 						}
@@ -243,7 +243,7 @@ function wppb_front_end_register($atts){
 					case "timeZone":{
 						if (isset($value['item_required'])){
 							if ($value['item_required'] == 'yes'){
-								if (trim($_POST[$value['item_id'].$value['id']]) == '')
+								if (trim($_POST[$value['item_type'].$value['id']]) == '')
 									array_push($extraFieldsErrorHolder, $value['id']);
 							}
 						}
@@ -252,7 +252,7 @@ function wppb_front_end_register($atts){
 					case "datepicker":{
 						if (isset($value['item_required'])){
 							if ($value['item_required'] == 'yes'){
-								if (trim($_POST[$value['item_id'].$value['id']]) == '')
+								if (trim($_POST[$value['item_type'].$value['id']]) == '')
 									array_push($extraFieldsErrorHolder, $value['id']);
 							}
 						}
@@ -261,7 +261,7 @@ function wppb_front_end_register($atts){
 					case "textarea":{
 						if (isset($value['item_required'])){
 							if ($value['item_required'] == 'yes'){
-								if (trim($_POST[$value['item_id'].$value['id']]) == '')
+								if (trim($_POST[$value['item_type'].$value['id']]) == '')
 									array_push($extraFieldsErrorHolder, $value['id']);
 							}
 						}
@@ -322,18 +322,18 @@ function wppb_front_end_register($atts){
 		if ($registerFilterArray['extraError'] != '')
 			$error = $registerFilterArray['extraError'];
 		elseif ( !$userdata['user_login'] )
-			$error = __('A username is required for registration.', 'profilebuilder');
+			$error = apply_filters('wppb_register_userlogin_error1', __('A username is required for registration.', 'profilebuilder'));
 		elseif ( username_exists($userdata['user_login']) )
-			$error = __('Sorry, that username already exists!', 'profilebuilder');
+			$error = apply_filters('wppb_register_userlogin_error2', __('Sorry, that username already exists!', 'profilebuilder'));
 		elseif ( !is_email($userdata['user_email'], true) )
-			$error = __('You must enter a valid email address.', 'profilebuilder');
+			$error = apply_filters('wppb_register_useremail_error1', __('You must enter a valid email address.', 'profilebuilder'));
 		elseif ( email_exists($userdata['user_email']) )
-			$error = __('Sorry, that email address is already used!', 'profilebuilder');
+			$error = apply_filters('wppb_register_useremail_error2', __('Sorry, that email address is already used!', 'profilebuilder'));
 		elseif (( empty($_POST['passw1'] ) || empty( $_POST['passw2'] )) || ( $_POST['passw1'] != $_POST['passw2'] )){
 			if ( empty($_POST['passw1'] ) || empty( $_POST['passw2'] ))                                                    //verify if the user has completed both password fields
-				$error = __('You didn\'t complete one of the password-fields!', 'profilebuilder');
+				$error = apply_filters('wppb_register_userpass_error1', __('You didn\'t complete one of the password-fields!', 'profilebuilder'));
 			elseif ( $_POST['passw1'] != $_POST['passw2'] )																   //verify if the the password and the retyped password are a match
-				$error = __('The entered passwords don\'t match!', 'profilebuilder');
+				$error = apply_filters('wppb_register_userpass_error2', __('The entered passwords don\'t match!', 'profilebuilder'));
 		}elseif(count($uploadExt) > 0){
 			$error ='<p class="semi-saved">'.
 						__('There was an error while trying to upload the following attachment(s)', 'profilebuilder') .': <span class="error">';
@@ -361,11 +361,11 @@ function wppb_front_end_register($atts){
 				foreach ( $wppbFetchArray as $key => $value){
 					switch ($value['item_type']) {
 						case "input":{
-							add_user_meta( $new_user, $value['item_metaName'], esc_attr($_POST[$value['item_id'].$value['id']]) );
+							add_user_meta( $new_user, $value['item_metaName'], esc_attr($_POST[$value['item_type'].$value['id']]) );
 							break;
 						}						
 						case "hiddenInput":{
-							add_user_meta( $new_user, $value['item_metaName'], esc_attr($_POST[$value['item_id'].$value['id']]) );
+							add_user_meta( $new_user, $value['item_metaName'], esc_attr($_POST[$value['item_type'].$value['id']]) );
 							break;
 						}
 						case "checkbox":{
@@ -383,27 +383,27 @@ function wppb_front_end_register($atts){
 							break;
 						}
 						case "radio":{
-							add_user_meta( $new_user, $value['item_metaName'], $_POST[$value['item_id'].$value['id']] );
+							add_user_meta( $new_user, $value['item_metaName'], $_POST[$value['item_type'].$value['id']] );
 							break;
 						}
 						case "select":{
-							add_user_meta( $new_user, $value['item_metaName'], $_POST[$value['item_id'].$value['id']] );
+							add_user_meta( $new_user, $value['item_metaName'], $_POST[$value['item_type'].$value['id']] );
 							break;
 						}
 						case "countrySelect":{
-							update_user_meta( $new_user, $value['item_metaName'], $_POST[$value['item_id'].$value['id']] );
+							update_user_meta( $new_user, $value['item_metaName'], $_POST[$value['item_type'].$value['id']] );
 							break;
 						}
 						case "timeZone":{
-							update_user_meta( $new_user, $value['item_metaName'], $_POST[$value['item_id'].$value['id']] );
+							update_user_meta( $new_user, $value['item_metaName'], $_POST[$value['item_type'].$value['id']] );
 							break;
 						}
 						case "datepicker":{
-							update_user_meta( $new_user, $value['item_metaName'], $_POST[$value['item_id'].$value['id']] );
+							update_user_meta( $new_user, $value['item_metaName'], $_POST[$value['item_type'].$value['id']] );
 							break;
 						}
 						case "textarea":{
-							add_user_meta( $new_user, $value['item_metaName'], esc_attr($_POST[$value['item_id'].$value['id']]) );
+							add_user_meta( $new_user, $value['item_metaName'], esc_attr($_POST[$value['item_type'].$value['id']]) );
 							break;
 						}
 						case "upload":{
@@ -498,9 +498,9 @@ function wppb_front_end_register($atts){
 			$registerFilterArray['adminMessageOnRegistration']  = __('New subscriber on', 'profilebuilder') .' '.$bloginfo . "\r\n\r\n";
 			$registerFilterArray['adminMessageOnRegistration'] .= __('Username', 'profilebuilder') .': '. esc_attr($_POST['user_name']) . "\r\n";
 			$registerFilterArray['adminMessageOnRegistration'] .= __('E-mail', 'profilebuilder') .': '. esc_attr($_POST['email']) . "\r\n";
-			$registerFilterArray['adminMessageOnRegistration'] = apply_filters('wppb_register_admin_message_content', $registerFilterArray['adminMessageOnRegistration']);
+			$registerFilterArray['adminMessageOnRegistration'] = apply_filters('wppb_register_admin_message_content', $registerFilterArray['adminMessageOnRegistration'], $bloginfo, esc_attr($_POST['user_name']), esc_attr($_POST['email']));
 			
-			$registerFilterArray['adminMessageOnRegistrationTitle'] = '['. $bloginfo .']'. __('A new subscriber has (been) registered!');
+			$registerFilterArray['adminMessageOnRegistrationTitle'] = '['. $bloginfo .'] '. __('A new subscriber has (been) registered!');
 			$registerFilterArray['adminMessageOnRegistrationTitle'] = apply_filters ('wppb_register_admin_message_title', $registerFilterArray['adminMessageOnRegistrationTitle']);
 
 			if (trim($registerFilterArray['adminMessageOnRegistration']) != '')
@@ -521,7 +521,7 @@ function wppb_front_end_register($atts){
 				$registerFilterArray['userMessageSubject'] = apply_filters('wppb_register_subject_email_content', $registerFilterArray['userMessageSubject']);
 				
 				$registerFilterArray['userMessageContent'] = 'Welcome to '.$registerFilterArray['userMessageFrom'].'. Your username is:'.$mailUsername.' and password:'.$mailPassword;
-				$registerFilterArray['userMessageContent'] = apply_filters('wppb_register_email_content', $registerFilterArray['userMessageContent']);
+				$registerFilterArray['userMessageContent'] = apply_filters('wppb_register_email_content', $registerFilterArray['userMessageContent'], $registerFilterArray['userMessageFrom'], $mailUsername, $mailPassword);
 				
 				$messageSent = wp_mail( $email, $registerFilterArray['userMessageSubject'], $registerFilterArray['userMessageContent']);
 				if( $messageSent == TRUE)
@@ -545,21 +545,21 @@ function wppb_front_end_register($atts){
 		}
 			$registerFilterArray['loginLogoutError'] = '
 				<p class="log-in-out alert">'. __('You are logged in as', 'profilebuilder') .' <a href="'.get_author_posts_url( $login->ID ).'" title="'.$login->display_name.'">'.$login->display_name.'</a>. '. __('You don\'t need another account.', 'profilebuilder') .' <a href="'.wp_logout_url(get_permalink()).'" title="'. __('Log out of this account.', 'profilebuilder') .'">'. __('Logout', 'profilebuilder') .'  &raquo;</a></p><!-- .log-in-out .alert -->';
-			$registerFilterArray['loginLogoutError'] = apply_filters('wppb_register_have_account_alert', $registerFilterArray['loginLogoutError']);
+			$registerFilterArray['loginLogoutError'] = apply_filters('wppb_register_have_account_alert', $registerFilterArray['loginLogoutError'], $login->ID);
 			echo $registerFilterArray['loginLogoutError'];
 			
 		elseif ( $new_user != 'no' ) :
 					if ( current_user_can( 'create_users' ) ){
 						$registerFilterArray['registrationMessage1'] = '
 							<p class="success">'. __('A user account has been created for', 'profilebuilder') .' '. $registered_name. '.</p><!-- .success -->';
-						$registerFilterArray['registrationMessage1'] = apply_filters('wppb_register_account_created1', $registerFilterArray['registrationMessage1']);
+						$registerFilterArray['registrationMessage1'] = apply_filters('wppb_register_account_created1', $registerFilterArray['registrationMessage1'], $registered_name);
 						echo $registerFilterArray['registrationMessage1'];
 						
 						$wppb_addons = WPPB_PLUGIN_DIR . '/premium/addon/';
 						if (file_exists ( $wppb_addons.'addon.php' )){
 							//check to see if the redirecting addon is present and activated
-							$wppb_premium_addon_settings = get_option('wppb_premium_addon_settings');
-							if ($wppb_premium_addon_settings['customRedirect'] == 'show'){
+							$wppb_addon_settings = get_option('wppb_addon_settings');
+							if ($wppb_addon_settings['wppb_customRedirect'] == 'show'){
 								//check to see if the redirect location is not an empty string and is activated
 								$customRedirectSettings = get_option('customRedirectSettings');
 								if ((trim($customRedirectSettings['afterRegisterTarget']) != '') && ($customRedirectSettings['afterRegister'] == 'yes')){
@@ -570,21 +570,21 @@ function wppb_front_end_register($atts){
 								}
 							}
 						}
-						$registerFilterArray['redirectMessage1'] = '<font color="black">You will soon be redirected automatically. If you see this page for more than 3 seconds, please click <a href="'.$redirectLink.'">here</a>.<meta http-equiv="Refresh" content="3;url='.$redirectLink.'" /></font><br/><br/>';	
-						$registerFilterArray['redirectMessage1'] = apply_filters('wppb_register_redirect_after_creation1', $registerFilterArray['redirectMessage1']);
+						$registerFilterArray['redirectMessage1'] = '<font id="messageTextColor">You will soon be redirected automatically. If you see this page for more than 3 seconds, please click <a href="'.$redirectLink.'">here</a>.<meta http-equiv="Refresh" content="3;url='.$redirectLink.'" /></font><br/><br/>';	
+						$registerFilterArray['redirectMessage1'] = apply_filters('wppb_register_redirect_after_creation1', $registerFilterArray['redirectMessage1'], $redirectLink);
 						echo $registerFilterArray['redirectMessage1'];			
 						
 					}else{
 						$registerFilterArray['registrationMessage2'] = '
 							<p class="success">'. __('Thank you for registering', 'profilebuilder') .' '. $registered_name .'.</p><!-- .success -->';
-						$registerFilterArray['registrationMessage2'] = apply_filters('wppb_register_account_created2', $registerFilterArray['registrationMessage2']);
+						$registerFilterArray['registrationMessage2'] = apply_filters('wppb_register_account_created2', $registerFilterArray['registrationMessage2'], $registered_name);
 						echo $registerFilterArray['registrationMessage2'];
 						
 						$wppb_addons = WPPB_PLUGIN_DIR . '/premium/addon/';
 						if (file_exists ( $wppb_addons.'addon.php' )){
 							//check to see if the redirecting addon is present and activated
-							$wppb_premium_addon_settings = get_option('wppb_premium_addon_settings');
-							if ($wppb_premium_addon_settings['customRedirect'] == 'show'){
+							$wppb_addon_settings = get_option('wppb_addon_settings');
+							if ($wppb_addon_settings['wppb_customRedirect'] == 'show'){
 								//check to see if the redirect location is not an empty string and is activated
 								$customRedirectSettings = get_option('customRedirectSettings');
 								if ((trim($customRedirectSettings['afterRegisterTarget']) != '') && ($customRedirectSettings['afterRegister'] == 'yes')){
@@ -595,8 +595,8 @@ function wppb_front_end_register($atts){
 								}
 							}
 						}
-						$registerFilterArray['redirectMessage2'] = '<font color="black">You will soon be redirected automatically. If you see this page for more than 3 second, please click <a href="'.$redirectLink.'">here</a>.<meta http-equiv="Refresh" content="3;url='.$redirectLink.'" /></font><br/><br/>';	
-						$registerFilterArray['redirectMessage2'] = apply_filters('wppb_register_redirect_after_creation2', $registerFilterArray['redirectMessage2']);
+						$registerFilterArray['redirectMessage2'] = '<font id="messageTextColor">You will soon be redirected automatically. If you see this page for more than 3 second, please click <a href="'.$redirectLink.'">here</a>.<meta http-equiv="Refresh" content="3;url='.$redirectLink.'" /></font><br/><br/>';	
+						$registerFilterArray['redirectMessage2'] = apply_filters('wppb_register_redirect_after_creation2', $registerFilterArray['redirectMessage2'], $redirectLink);
 						echo $registerFilterArray['redirectMessage2'];
 					}
 
@@ -617,7 +617,7 @@ function wppb_front_end_register($atts){
 			else :
 				if ( $error ) : 
 					$registerFilterArray['errorMessage'] = '<p class="error">'. $error .'</p><!-- .error -->';
-					$registerFilterArray['errorMessage'] = apply_filters('wppb_register_error_messaging', $registerFilterArray['errorMessage']);
+					$registerFilterArray['errorMessage'] = apply_filters('wppb_register_error_messaging', $registerFilterArray['errorMessage'], $error);
 					echo $registerFilterArray['errorMessage'];
 				endif;
 			
@@ -668,7 +668,7 @@ function wppb_front_end_register($atts){
 									<label for="user_name">'. __('Username', 'profilebuilder') .$errorMark.'</label>
 									<input class="text-input" name="user_name" type="text" id="user_name" value="'.trim($localVar).'" />
 								</p><!-- .form-username -->';
-							$registerFilterArray2['name2'] = apply_filters('wppb_register_content_name2', $registerFilterArray2['name2']);
+							$registerFilterArray2['name2'] = apply_filters('wppb_register_content_name2', $registerFilterArray2['name2'], trim($localVar));
 						}
 						
 						if ($wppb_defaultOptions['firstname'] == 'show'){
@@ -692,7 +692,7 @@ function wppb_front_end_register($atts){
 									<label for="first_name">'. __('First Name', 'profilebuilder') .$errorMark.'</label>
 									<input class="text-input" name="first_name" type="text" id="first_name" value="'.trim($localVar).'" />
 								</p><!-- .first_name -->';
-							$registerFilterArray2['name3'] = apply_filters('wppb_register_content_name3', $registerFilterArray2['name3']);
+							$registerFilterArray2['name3'] = apply_filters('wppb_register_content_name3', $registerFilterArray2['name3'], trim($localVar));
 						}
 
 						if ($wppb_defaultOptions['lastname'] == 'show'){ 
@@ -716,7 +716,7 @@ function wppb_front_end_register($atts){
 									<label for="last_name">'. __('Last Name', 'profilebuilder') .$errorMark.'</label>
 									<input class="text-input" name="last_name" type="text" id="last_name" value="'.trim($localVar).'" />
 								</p><!-- .last_name -->';
-							$registerFilterArray2['name4'] = apply_filters('wppb_register_content_name4', $registerFilterArray2['name4']);
+							$registerFilterArray2['name4'] = apply_filters('wppb_register_content_name4', $registerFilterArray2['name4'], trim($localVar));
 						}
 
 						if ($wppb_defaultOptions['nickname'] == 'show'){
@@ -740,7 +740,7 @@ function wppb_front_end_register($atts){
 									<label for="nickname">'. __('Nickname', 'profilebuilder') .$errorMark.'</label>
 									<input class="text-input" name="nickname" type="text" id="nickname" value="'.trim($localVar).'" />
 								</p><!-- .nickname -->';
-							$registerFilterArray2['name5'] = apply_filters('wppb_register_content_name5', $registerFilterArray2['name5']);
+							$registerFilterArray2['name5'] = apply_filters('wppb_register_content_name5', $registerFilterArray2['name5'], trim($localVar));
 						}
 
 						$registerFilterArray2['info1'] = '<p class="registerContactInfoHeading"><strong>'. __('Contact Info', 'profilebuilder') .'</strong></p>';
@@ -767,7 +767,7 @@ function wppb_front_end_register($atts){
 									<label for="email">'. __('E-mail', 'profilebuilder') .$errorMark.'</label>
 									<input class="text-input" name="email" type="text" id="email" value="'.trim($localVar).'" />
 								</p><!-- .form-email -->';
-							$registerFilterArray2['info2'] = apply_filters('wppb_register_content_info2', $registerFilterArray2['info2']);
+							$registerFilterArray2['info2'] = apply_filters('wppb_register_content_info2', $registerFilterArray2['info2'], trim($localVar));
 						}
 
 						if ($wppb_defaultOptions['website'] == 'show'){
@@ -791,7 +791,7 @@ function wppb_front_end_register($atts){
 									<label for="website">'. __('Website', 'profilebuilder') .$errorMark.'</label>
 									<input class="text-input" name="website" type="text" id="website" value="'.trim($localVar).'" />
 								</p><!-- .form-website -->';
-							$registerFilterArray2['info3'] = apply_filters('wppb_register_content_info3', $registerFilterArray2['info3']);
+							$registerFilterArray2['info3'] = apply_filters('wppb_register_content_info3', $registerFilterArray2['info3'], trim($localVar));
 						}
 
 						if ($wppb_defaultOptions['aim'] == 'show'){
@@ -815,7 +815,7 @@ function wppb_front_end_register($atts){
 									<label for="aim">'. __('AIM', 'profilebuilder') .$errorMark.'</label>
 									<input class="text-input" name="aim" type="text" id="aim" value="'.trim($localVar).'" />
 								</p><!-- .form-aim -->';
-							$registerFilterArray2['info4'] = apply_filters('wppb_register_content_info4', $registerFilterArray2['info4']);
+							$registerFilterArray2['info4'] = apply_filters('wppb_register_content_info4', $registerFilterArray2['info4'], trim($localVar));
 						}
 
 						if ($wppb_defaultOptions['yahoo'] == 'show'){
@@ -839,7 +839,7 @@ function wppb_front_end_register($atts){
 									<label for="yim">'. __('Yahoo IM', 'profilebuilder') .$errorMark.'</label>
 									<input class="text-input" name="yim" type="text" id="yim" value="'.trim($localVar).'" />
 								</p><!-- .form-yim -->';
-							$registerFilterArray2['info5'] = apply_filters('wppb_register_content_info5', $registerFilterArray2['info5']);
+							$registerFilterArray2['info5'] = apply_filters('wppb_register_content_info5', $registerFilterArray2['info5'], trim($localVar));
 						}
 
 						if ($wppb_defaultOptions['jabber'] == 'show'){
@@ -863,7 +863,7 @@ function wppb_front_end_register($atts){
 									<label for="jabber">'. __('Jabber / Google Talk', 'profilebuilder') .$errorMark.'</label>
 									<input class="text-input" name="jabber" type="text" id="jabber" value="'.trim($localVar).'" />
 								</p><!-- .form-jabber -->';
-							$registerFilterArray2['info6'] = apply_filters('wppb_register_content_info6', $registerFilterArray2['info6']);
+							$registerFilterArray2['info6'] = apply_filters('wppb_register_content_info6', $registerFilterArray2['info6'], trim($localVar));
 						}
 						
 						$registerFilterArray2['ay1'] = '<p class="registerAboutYourselfHeader"><strong>'. __('About Yourself', 'profilebuilder') .'</strong></p>';
@@ -890,7 +890,7 @@ function wppb_front_end_register($atts){
 									<label for="description">'. __('Biographical Info', 'profilebuilder') .$errorMark.'</label>
 									<textarea class="text-input" name="description" id="description" rows="5" cols="30">'.trim($localVar).'</textarea>
 								</p><!-- .form-description -->';
-							$registerFilterArray2['ay2'] = apply_filters('wppb_register_content_about_yourself2', $registerFilterArray2['ay2']);
+							$registerFilterArray2['ay2'] = apply_filters('wppb_register_content_about_yourself2', $registerFilterArray2['ay2'], trim($localVar));
 						}
 
 						if ($wppb_defaultOptions['password'] == 'show'){
@@ -924,7 +924,7 @@ function wppb_front_end_register($atts){
 									<label for="pass2">'. __('Repeat Password', 'profilebuilder') .$errorMark2.'</label>
 									<input class="text-input" name="passw2" type="password" id="pass2" value="'.trim($localVar2).'" />
 								</p><!-- .form-password -->';
-							$registerFilterArray2['ay3'] = apply_filters('wppb_register_content_about_yourself3', $registerFilterArray2['ay3']);
+							$registerFilterArray2['ay3'] = apply_filters('wppb_register_content_about_yourself3', $registerFilterArray2['ay3'], trim($localVar1), trim($localVar2));
 						}
 
 							$wppb_premium = WPPB_PLUGIN_DIR . '/premium/functions/';
@@ -952,10 +952,10 @@ function wppb_front_end_register($atts){
 								<p class="send-confirmation-email">
 									<label for="send-confirmation-email"> 
 										<input id="send_credentials_via_email" type="checkbox" name="send_credentials_via_email" value="sending"'. $checkedVar .'/>
-										<span class="wppb-description-delimiter"> '. __('Send these credentials via email.', 'profilebuilder') .'</span>
+										'. __('Send these credentials via email.', 'profilebuilder') . '
 									</label>
 								</p><!-- .send-confirmation-email -->';
-							$registerFilterArray2['confirmationEmailForm'] = apply_filters('wppb_register_confirmation_email_form', $registerFilterArray2['confirmationEmailForm']);
+							$registerFilterArray2['confirmationEmailForm'] = apply_filters('wppb_register_confirmation_email_form', $registerFilterArray2['confirmationEmailForm'], $checkedVar);
 							
 							
 							$registerFilterArray2 = apply_filters('wppb_register', $registerFilterArray2);
