@@ -1,5 +1,25 @@
 <?php
-	function basic_info(){
+	/* this is for the backwards compatibility from v.1.1.12 to v.1.1.13 */
+	$update = false;
+	$arraySettingsPresent = get_option('wppb_custom_fields','not_found');
+		if ($arraySettingsPresent != 'not_found'){
+			foreach ($arraySettingsPresent as $key => $value){
+				if ($value['item_metaName'] == null){
+					$arraySettingsPresent[$key]['item_metaName'] = 'custom_field_'.$value['id'];
+					$update = true;
+				}
+				if ($value['item_LastMetaName'] == null){
+					$arraySettingsPresent[$key]['item_LastMetaName'] = 'custom_field_'.$value['id'];
+					$update = true;
+				}
+			}
+			// only update if it is needed
+			if ($update == true)
+				update_option( 'wppb_custom_fields', $arraySettingsPresent);
+		}
+	/* END backwards compatibility */
+
+	function wppb_basic_info(){
 ?>
 
 		<h2><?php _e('Profile Builder', 'profilebuilder');?></h2>
@@ -22,6 +42,8 @@
 		&rarr; <?php _e('select which information-field can users see/modify. The hidden fields\' values remain unmodified.', 'profilebuilder');?><br/>
 		&rarr; <?php _e('add custom fields to the existing ones, with several types to choose from: heading, text, textarea, select, checkbox, radio, and/or upload.', 'profilebuilder');?><br/>
 		&rarr; <?php _e('add an avatar field.', 'profilebuilder');?><br/>
+		&rarr; <?php _e('create custom redirects.', 'profilebuilder');?><br/>
+		&rarr; <?php echo $echoString = __('front-end userlisting using the', 'profilebuilder').' <strong>[wppb-list-users]</strong> '. __('shortcode.', 'profilebuilder');?><br/>
 		<br/>
 
 		<strong><?php _e('NOTE:', 'profilebuilder');?></strong>
@@ -35,7 +57,7 @@
 ?>
 
 <?php
-	function plugin_layout(){
+	function wppb_plugin_layout(){
 ?>		
 		<form method="post" action="options.php#plugin-layout">
 		<?php $wppb_showDefaultCss = get_option('wppb_default_style'); ?>
@@ -47,7 +69,7 @@
 		<select name="wppb_default_style" class="wppb_default_style">
 			<option value="yes" <?php if ($wppb_showDefaultCss == 'yes') echo 'selected';?>><?php _e('Default', 'profilebuilder');?></option>
 			<?php 
-				$wppb_premiumStyle = wppb_plugin_dir . '/premium/';	
+				$wppb_premiumStyle = WPPB_PLUGIN_DIR . '/premium/';	
 				if (file_exists ( $wppb_premiumStyle.'premium.php' )){
 			?>
 					<option value="white" <?php if ($wppb_showDefaultCss == 'white') echo 'selected';?>><?php _e('White', 'profilebuilder');?></option>
@@ -57,6 +79,10 @@
 			?>
 			<option value="no" <?php if ($wppb_showDefaultCss == 'no') echo 'selected';?>><?php _e('None', 'profilebuilder');?></option>
 		</select>
+		<?php	
+			if (file_exists ( $wppb_premiumStyle.'premium.php' ))
+				echo '<div id="layoutNoticeDiv"><font size="1" id="layoutNotice"><b>'. __('NOTE:', 'profilebuilder') .'</b><br/>&rarr; '. __('The black stylesheet is intended for sites/blogs with a dark background.', 'profilebuilder') .'<br/>&rarr; '. __('The white stylesheet is intended for a sites/blogs with a light background color.', 'profilebuilder') .'</font></div>';
+		?>
 		<div align="right">
 			<input type="hidden" name="action" value="update" />
 			<p class="submit">
@@ -71,7 +97,7 @@
 ?>		
 
 <?php
-	function display_admin_settings(){
+	function wppb_display_admin_settings(){
 ?>		
 		<form method="post" action="options.php#show-hide-admin-bar">
 		<?php $wppb_showAdminBar = get_option('wppb_display_admin_settings'); ?>
@@ -83,18 +109,16 @@
 		<table class="wp-list-table widefat fixed pages" cellspacing="0">
 			<thead>
 				<tr>
-					<th class="manage-column" scope="col"><b><?php _e('User-group', 'profilebuilder');?></b></th>
-					<th class="manage-column" scope="col"><b><?php _e('Visibility', 'profilebuilder');?></b></th>
+					<th id="manage-column" scope="col"><?php _e('User-group', 'profilebuilder');?></th>
+					<th id="manage-column" scope="col"><?php _e('Visibility', 'profilebuilder');?></th>
 				</tr>
 			</thead>
 				<tbody>
 					<?php
 					foreach($wppb_showAdminBar as $key => $data){
 						echo'<tr> 
-								<td> 
-									<font size="2">'.$key.'</font>
-								</td>
-								<td>
+								<td id="manage-columnCell">'.$key.'</td>
+								<td id="manage-columnCell">
 									<input type="radio" name="wppb_display_admin_settings['.$key.']" value="show"';if ($wppb_showAdminBar[$key] == 'show') echo ' checked';echo'/><font size="1">'; _e('Show', 'profilebuilder'); echo'</font><span style="padding-left:20px"></span>
 									<input type="radio" name="wppb_display_admin_settings['.$key.']" value="hide"';if ($wppb_showAdminBar[$key] == 'hide') echo ' checked';echo'/><font size="1">'; _e('Hide', 'profilebuilder'); echo'</font>
 								</td> 
@@ -117,7 +141,7 @@
 ?>	
 	
 <?php
-	function default_settings(){
+	function wppb_default_settings(){
 ?>
 		<form method="post" action="options.php#default-fields">
 		<?php $wppb_defaultOptions = get_option('wppb_default_settings'); ?>
@@ -129,110 +153,110 @@
 		<table class="wp-list-table widefat fixed pages" cellspacing="0">
 			<thead>
 				<tr>
-					<th class="manage-column" scope="col" id="firstColumn"><b><?php _e('Input Field Name', 'profilebuilder');?></b></th>
-					<th class="manage-column" scope="col" id="secondColumn"><b><?php _e('Visibility', 'profilebuilder');?></b></th>
-					<th class="manage-column" scope="col" id="thirdColumn"><b><?php _e('Required', 'profilebuilder');?></b></th>
+					<th id="manage-column" scope="col"><?php _e('Input Field Name', 'profilebuilder');?></th>
+					<th id="manage-column" scope="col"><?php _e('Visibility', 'profilebuilder');?></th>
+					<th id="manage-column" scope="col"><?php _e('Required', 'profilebuilder');?></th>
 				</tr>
 			</thead>
 				<tbody class="plugins" > 
 					<tr>
-						<td colspan="3"><font size="4"><?php _e('Name:', 'profilebuilder');?></font></td> 
+						<td colspan="3"><font size="2"><?php _e('Name:', 'profilebuilder');?></font></td> 
 					</tr>
 				</tbody>
 				<tbody>
 					<tr>  
-						<td> 
-							<span style="padding-left:50px"></span><font size="2"><?php _e('Username', 'profilebuilder');?></font>
+						<td id="manage-columnCell"> 
+							<span style="padding-left:50px"></span><?php _e('Username', 'profilebuilder');?>
 						</td> 
-						<td> 
+						<td id="manage-columnCell"> 
 							<input type="radio" name="wppb_default_settings[username]" value="show" checked /><font size="1"><?php _e('Show', 'profilebuilder');?></font><span style="padding-left:20px"></span>
 							<input type="radio" name="wppb_default_settings[username]" value="hide" disabled /><font size="1" color="grey"><?php _e('Hide', 'profilebuilder');?></font>
 						</td> 						
-						<td> 
+						<td id="manage-columnCell"> 
 							<input type="radio" name="wppb_default_settings[usernameRequired]" value="yes" checked /><font size="1"><?php _e('Yes', 'profilebuilder');?></font><span style="padding-left:20px"></span>
 							<input type="radio" name="wppb_default_settings[usernameRequired]" value="no" disabled /><font size="1" color="grey"><?php _e('No', 'profilebuilder');?></font>
 						</td> 
 					</tr>
 					<tr>  
-						<td> 
-							<span style="padding-left:50px"></span><font size="2"><?php _e('First Name', 'profilebuilder');?></font>
+						<td id="manage-columnCell"> 
+							<span style="padding-left:50px"></span><?php _e('First Name', 'profilebuilder');?>
 						</td> 
-						<td> 
+						<td id="manage-columnCell"> 
 							<input type="radio" name="wppb_default_settings[firstname]" value="show" <?php if ($wppb_defaultOptions['firstname'] == 'show') echo 'checked';?> /><font size="1"><?php _e('Show', 'profilebuilder');?></font><span style="padding-left:20px"></span>
 							<input type="radio" name="wppb_default_settings[firstname]" value="hide" <?php if ($wppb_defaultOptions['firstname'] == 'hide') echo 'checked';?> /><font size="1"><?php _e('Hide', 'profilebuilder');?></font>
 						</td> 						
-						<td> 
+						<td id="manage-columnCell"> 
 							<input type="radio" name="wppb_default_settings[firstnameRequired]" value="yes" <?php if ($wppb_defaultOptions['firstnameRequired'] == 'yes') echo 'checked';?> /><font size="1"><?php _e('Yes', 'profilebuilder');?></font><span style="padding-left:20px"></span>
 							<input type="radio" name="wppb_default_settings[firstnameRequired]" value="no" <?php if ($wppb_defaultOptions['firstnameRequired'] == 'no') echo 'checked';?> /><font size="1"><?php _e('No', 'profilebuilder');?></font>
 						</td> 
 					</tr>
 					<tr>  
-						<td> 
-							<span style="padding-left:50px"></span><font size="2"><?php _e('Last Name', 'profilebuilder');?></font>
+						<td id="manage-columnCell"> 
+							<span style="padding-left:50px"></span><?php _e('Last Name', 'profilebuilder');?>
 						</td> 
-						<td> 
+						<td id="manage-columnCell"> 
 							<input type="radio" name="wppb_default_settings[lastname]" value="show" <?php if ($wppb_defaultOptions['lastname'] == 'show') echo 'checked';?> /><font size="1"><?php _e('Show', 'profilebuilder');?></font><span style="padding-left:20px"></span>
 							<input type="radio" name="wppb_default_settings[lastname]" value="hide" <?php if ($wppb_defaultOptions['lastname'] == 'hide') echo 'checked';?> /><font size="1"><?php _e('Hide', 'profilebuilder');?></font>
 						</td>
-						<td> 
+						<td id="manage-columnCell"> 
 							<input type="radio" name="wppb_default_settings[lastnameRequired]" value="yes" <?php if ($wppb_defaultOptions['lastnameRequired'] == 'yes') echo 'checked';?> /><font size="1"><?php _e('Yes', 'profilebuilder');?></font><span style="padding-left:20px"></span>
 							<input type="radio" name="wppb_default_settings[lastnameRequired]" value="no" <?php if ($wppb_defaultOptions['lastnameRequired'] == 'no') echo 'checked';?> /><font size="1"><?php _e('No', 'profilebuilder');?></font>
 						</td> 
 					</tr>
 					<tr>  
-						<td> 
-							<span style="padding-left:50px"></span><font size="2"><?php _e('Nickname', 'profilebuilder');?></font>
+						<td id="manage-columnCell"> 
+							<span style="padding-left:50px"></span><?php _e('Nickname', 'profilebuilder');?>
 						</td> 
-						<td> 
+						<td id="manage-columnCell"> 
 							<input type="radio" name="wppb_default_settings[nickname]" value="show" <?php if ($wppb_defaultOptions['nickname'] == 'show') echo 'checked';?> /><font size="1"><?php _e('Show', 'profilebuilder');?></font><span style="padding-left:20px"></span>
 							<input type="radio" name="wppb_default_settings[nickname]" value="hide" <?php if ($wppb_defaultOptions['nickname'] == 'hide') echo 'checked';?> /><font size="1"><?php _e('Hide', 'profilebuilder');?></font>
 						</td>
-						<td> 
+						<td id="manage-columnCell"> 
 							<input type="radio" name="wppb_default_settings[nicknameRequired]" value="yes" <?php if ($wppb_defaultOptions['nicknameRequired'] == 'yes') echo 'checked';?> /><font size="1"><?php _e('Yes', 'profilebuilder');?></font><span style="padding-left:20px"></span>
 							<input type="radio" name="wppb_default_settings[nicknameRequired]" value="no" <?php if ($wppb_defaultOptions['nicknameRequired'] == 'no') echo 'checked';?> /><font size="1"><?php _e('No', 'profilebuilder');?></font>
 						</td> 						
 					</tr>
 					<tr>  
-						<td> 
-							<span style="padding-left:50px"></span><font size="2"><?php _e('Display name publicly as...', 'profilebuilder');?></font>
+						<td id="manage-columnCell"> 
+							<span style="padding-left:50px"></span><?php _e('Display name publicly as...', 'profilebuilder');?>
 						</td> 
-						<td> 
-							<input type="radio" name="wppb_default_settings[dispname]" value="show" <?php if ($wppb_defaultOptions['dispname'] == 'show') echo 'checked';?> /><font size="1"><?php _e('Show', 'profilebuilder');?></font><span style="padding-left:20px"></span>
-							<input type="radio" name="wppb_default_settings[dispname]" value="hide" <?php if ($wppb_defaultOptions['dispname'] == 'hide') echo 'checked';?> /><font size="1"><?php _e('Hide', 'profilebuilder');?></font>
+						<td id="manage-columnCell"> 
+							<input type="radio" name="wppb_default_settings[dispname]" value="show" <?php if ($wppb_defaultOptions['dispname'] == 'show') echo 'checked';?> /><?php _e('Show', 'profilebuilder');?><span style="padding-left:20px"></span>
+							<input type="radio" name="wppb_default_settings[dispname]" value="hide" <?php if ($wppb_defaultOptions['dispname'] == 'hide') echo 'checked';?> /><?php _e('Hide', 'profilebuilder');?>
 						</td>
-						<td> 
-							<input type="radio" name="wppb_default_settings[dispnameRequired]" value="yes" <?php if ($wppb_defaultOptions['dispnameRequired'] == 'yes') echo 'checked';?> /><font size="1"><?php _e('Yes', 'profilebuilder');?></font><span style="padding-left:20px"></span>
-							<input type="radio" name="wppb_default_settings[dispnameRequired]" value="no" <?php if ($wppb_defaultOptions['dispnameRequired'] == 'no') echo 'checked';?> /><font size="1"><?php _e('No', 'profilebuilder');?></font>
+						<td id="manage-columnCell"> 
+							<input type="radio" name="wppb_default_settings[dispnameRequired]" value="yes" <?php if ($wppb_defaultOptions['dispnameRequired'] == 'yes') echo 'checked';?> /><?php _e('Yes', 'profilebuilder');?></font><span style="padding-left:20px"></span>
+							<input type="radio" name="wppb_default_settings[dispnameRequired]" value="no" <?php if ($wppb_defaultOptions['dispnameRequired'] == 'no') echo 'checked';?> /><?php _e('No', 'profilebuilder');?>
 						</td> 						
 					</tr>
 				<tbody class="plugins">
 					<tr> 
-						<td colspan="3"><font size="4"><?php _e('Contact Info:', 'profilebuilder');?></font></td> 
+						<td colspan="3"><font size="2"><?php _e('Contact Info:', 'profilebuilder');?></font></td> 
 					</tr>
 				</tbody>
 				<tbody>
 					<tr>  
-						<td> 
-							<span style="padding-left:50px"></span><font size="2"><?php _e('E-mail', 'profilebuilder');?></font>
+						<td id="manage-columnCell"> 
+							<span style="padding-left:50px"></span><?php _e('E-mail', 'profilebuilder');?>
 						</td> 
-						<td> 
+						<td id="manage-columnCell"> 
 							<input type="radio" name="wppb_default_settings[email]" value="show" checked><font size="1"><?php _e('Show', 'profilebuilder');?></font><span style="padding-left:20px"></span>
 							<input type="radio" name="wppb_default_settings[email]" value="hide" disabled><font size="1" color="grey"><?php _e('Hide', 'profilebuilder');?></font>
 						</td>
-						<td> 
+						<td id="manage-columnCell"> 
 							<input type="radio" name="wppb_default_settings[emailRequired]" value="yes" checked /><font size="1"><?php _e('Yes', 'profilebuilder');?></font><span style="padding-left:20px"></span>
 							<input type="radio" name="wppb_default_settings[emailRequired]" value="no" disabled /><font size="1" color="grey"><?php _e('No', 'profilebuilder');?></font>
 						</td> 		
 					</tr>
 					<tr>  
-						<td> 
-							<span style="padding-left:50px"></span><font size="2"><?php _e('Website', 'profilebuilder');?></font>
+						<td id="manage-columnCell"> 
+							<span style="padding-left:50px"></span><?php _e('Website', 'profilebuilder');?>
 						</td> 
-						<td> 
+						<td id="manage-columnCell"> 
 							<input type="radio" name="wppb_default_settings[website]" value="show" <?php if ($wppb_defaultOptions['website'] == 'show') echo 'checked';?> /><font size="1"><?php _e('Show', 'profilebuilder');?></font><span style="padding-left:20px"></span>
 							<input type="radio" name="wppb_default_settings[website]" value="hide" <?php if ($wppb_defaultOptions['website'] == 'hide') echo 'checked';?> /><font size="1"><?php _e('Hide', 'profilebuilder');?></font>
 						</td>
-						<td> 
+						<td id="manage-columnCell"> 
 							<input type="radio" name="wppb_default_settings[websiteRequired]" value="yes" <?php if ($wppb_defaultOptions['websiteRequired'] == 'yes') echo 'checked';?> /><font size="1"><?php _e('Yes', 'profilebuilder');?></font><span style="padding-left:20px"></span>
 							<input type="radio" name="wppb_default_settings[websiteRequired]" value="no" <?php if ($wppb_defaultOptions['websiteRequired'] == 'no') echo 'checked';?> /><font size="1"><?php _e('No', 'profilebuilder');?></font>
 						</td> 						
@@ -241,73 +265,73 @@
 				</tbody>
 				<tbody>
 					<tr>  
-						<td> 
-							<span style="padding-left:50px"></span><font size="2"><?php _e('AIM', 'profilebuilder');?></font>
+						<td id="manage-columnCell"> 
+							<span style="padding-left:50px"></span><?php _e('AIM', 'profilebuilder');?>
 						</td> 
-						<td> 
+						<td id="manage-columnCell"> 
 							<input type="radio" name="wppb_default_settings[aim]" value="show" <?php if ($wppb_defaultOptions['aim'] == 'show') echo 'checked';?> /><font size="1"><?php _e('Show', 'profilebuilder');?></font><span style="padding-left:20px"></span>
 							<input type="radio" name="wppb_default_settings[aim]" value="hide" <?php if ($wppb_defaultOptions['aim'] == 'hide') echo 'checked';?> /><font size="1"><?php _e('Hide', 'profilebuilder');?></font>
 						</td>
-						<td> 
+						<td id="manage-columnCell"> 
 							<input type="radio" name="wppb_default_settings[aimRequired]" value="yes" <?php if ($wppb_defaultOptions['aimRequired'] == 'yes') echo 'checked';?> /><font size="1"><?php _e('Yes', 'profilebuilder');?></font><span style="padding-left:20px"></span>
 							<input type="radio" name="wppb_default_settings[aimRequired]" value="no" <?php if ($wppb_defaultOptions['aimRequired'] == 'no') echo 'checked';?> /><font size="1"><?php _e('No', 'profilebuilder');?></font>
 						</td> 						
 					</tr>
 					<tr>  
-						<td> 
-							<span style="padding-left:50px"></span><font size="2"><?php _e('Yahoo IM', 'profilebuilder');?></font>
+						<td id="manage-columnCell"> 
+							<span style="padding-left:50px"></span><?php _e('Yahoo IM', 'profilebuilder');?>
 						</td> 
-						<td> 
+						<td id="manage-columnCell"> 
 							<input type="radio" name="wppb_default_settings[yahoo]" value="show" <?php if ($wppb_defaultOptions['yahoo'] == 'show') echo 'checked';?> /><font size="1"><?php _e('Show', 'profilebuilder');?></font><span style="padding-left:20px"></span>
 							<input type="radio" name="wppb_default_settings[yahoo]" value="hide" <?php if ($wppb_defaultOptions['yahoo'] == 'hide') echo 'checked';?> /><font size="1"><?php _e('Hide', 'profilebuilder');?></font>
 						</td>
-						<td> 
+						<td id="manage-columnCell"> 
 							<input type="radio" name="wppb_default_settings[yahooRequired]" value="yes" <?php if ($wppb_defaultOptions['yahooRequired'] == 'yes') echo 'checked';?> /><font size="1"><?php _e('Yes', 'profilebuilder');?></font><span style="padding-left:20px"></span>
 							<input type="radio" name="wppb_default_settings[yahooRequired]" value="no" <?php if ($wppb_defaultOptions['yahooRequired'] == 'no') echo 'checked';?> /><font size="1"><?php _e('No', 'profilebuilder');?></font>
 						</td> 						
 					</tr>
 					<tr>  
-						<td> 
-							<span style="padding-left:50px"></span><font size="2"><?php _e('Jabber / Google Talk', 'profilebuilder');?></font>
+						<td id="manage-columnCell"> 
+							<span style="padding-left:50px"></span><?php _e('Jabber / Google Talk', 'profilebuilder');?>
 						</td> 
-						<td> 
+						<td id="manage-columnCell"> 
 							<input type="radio" name="wppb_default_settings[jabber]" value="show" <?php if ($wppb_defaultOptions['jabber'] == 'show') echo 'checked';?> /><font size="1"><?php _e('Show', 'profilebuilder');?></font><span style="padding-left:20px"></span>
 							<input type="radio" name="wppb_default_settings[jabber]" value="hide" <?php if ($wppb_defaultOptions['jabber'] == 'hide') echo 'checked';?> /><font size="1"><?php _e('Hide', 'profilebuilder');?></font>
 						</td>
-						<td> 
+						<td id="manage-columnCell"> 
 							<input type="radio" name="wppb_default_settings[jabberRequired]" value="yes" <?php if ($wppb_defaultOptions['jabberRequired'] == 'yes') echo 'checked';?> /><font size="1"><?php _e('Yes', 'profilebuilder');?></font><span style="padding-left:20px"></span>
 							<input type="radio" name="wppb_default_settings[jabberRequired]" value="no" <?php if ($wppb_defaultOptions['jabberRequired'] == 'no') echo 'checked';?> /><font size="1"><?php _e('No', 'profilebuilder');?></font>
 						</td> 						
 					</tr>
 				<tbody class="plugins">
 					<tr> 
-						<td  colspan="3"><font size="4"><?php _e('About Yourself:', 'profilebuilder');?></font></td> 
+						<td  colspan="3"><font size="2"><?php _e('About Yourself:', 'profilebuilder');?></font></td> 
 					</tr>
 				</tbody>
 				<tbody>
 					<tr>  
-						<td> 
-							<span style="padding-left:50px"></span><font size="2"><?php _e('Biographical Info', 'profilebuilder');?></font>
+						<td id="manage-columnCell"> 
+							<span style="padding-left:50px"></span><?php _e('Biographical Info', 'profilebuilder');?>
 						</td> 
-						<td> 
+						<td id="manage-columnCell"> 
 							<input type="radio" name="wppb_default_settings[bio]" value="show" <?php if ($wppb_defaultOptions['bio'] == 'show') echo 'checked';?> /><font size="1"><?php _e('Show', 'profilebuilder');?></font><span style="padding-left:20px"></span>
 							<input type="radio" name="wppb_default_settings[bio]" value="hide" <?php if ($wppb_defaultOptions['bio'] == 'hide') echo 'checked';?> /><font size="1"><?php _e('Hide', 'profilebuilder');?></font>
 						</td>
-						<td> 
+						<td id="manage-columnCell"> 
 							<input type="radio" name="wppb_default_settings[bioRequired]" value="yes" <?php if ($wppb_defaultOptions['bioRequired'] == 'yes') echo 'checked';?> /><font size="1"><?php _e('Yes', 'profilebuilder');?></font><span style="padding-left:20px"></span>
 							<input type="radio" name="wppb_default_settings[bioRequired]" value="no" <?php if ($wppb_defaultOptions['bioRequired'] == 'no') echo 'checked';?> /><font size="1"><?php _e('No', 'profilebuilder');?></font>
 						</td> 
 					</tr>
 				<tbody>
 					<tr>  
-						<td> 
-							<span style="padding-left:50px"></span><font size="2"><?php _e('New Password', 'profilebuilder');?></font>
+						<td id="manage-columnCell"> 
+							<span style="padding-left:50px"></span><?php _e('New Password', 'profilebuilder');?>
 						</td> 
-						<td> 
+						<td id="manage-columnCell"> 
 							<input type="radio" name="wppb_default_settings[password]" value="show" checked><font size="1"><?php _e('Show', 'profilebuilder');?></font><span style="padding-left:20px"></span>
 							<input type="radio" name="wppb_default_settings[password]" value="hide" disabled><font size="1" color="grey"><?php _e('Hide', 'profilebuilder');?></font>
 						</td>
-						<td> 
+						<td id="manage-columnCell"> 
 							<input type="radio" name="wppb_default_settings[passwordRequired]" value="yes" checked /><font size="1"><?php _e('Yes', 'profilebuilder');?></font><span style="padding-left:20px"></span>
 							<input type="radio" name="wppb_default_settings[passwordRequired]" value="no" disabled /><font size="1" color="grey"><?php _e('No', 'profilebuilder');?></font>
 						</td> 						

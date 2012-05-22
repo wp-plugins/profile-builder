@@ -278,22 +278,22 @@ function wppb_front_end_profile_info() {
 				foreach ( $wppbFetchArray as $key => $value){
 					switch ($value['item_type']) {
 						case "input":{
-							$_POST[$value['item_id'].$value['id']] = apply_filters('wppb_edit_profile_input_custom_field_'.$value['id'], $_POST[$value['item_id'].$value['id']]);
+							$_POST[$value['item_type'].$value['id']] = apply_filters('wppb_edit_profile_input_custom_field_'.$value['id'], $_POST[$value['item_type'].$value['id']]);
 							if (isset($value['item_required'])){
 								if ($value['item_required'] == 'yes'){
-									if (trim($_POST[$value['item_id'].$value['id']]) != '')
-										update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $_POST[$value['item_id'].$value['id']] ) );
+									if (trim($_POST[$value['item_type'].$value['id']]) != '')
+										update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
 									else 
 										array_push($extraFieldsErrorHolder, $value['id']);
 								}else
-									update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $_POST[$value['item_id'].$value['id']] ) );
+									update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
 							}else
-								update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $_POST[$value['item_id'].$value['id']] ) );
+								update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
 								
 							break;
 						}						
 						case "hiddenInput":{
-							update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $_POST[$value['item_id'].$value['id']] ) );
+							update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
 							
 							break;
 						}
@@ -324,82 +324,82 @@ function wppb_front_end_profile_info() {
 						case "radio":{
 							if (isset($value['item_required'])){
 								if ($value['item_required'] == 'yes'){
-									if (trim($_POST[$value['item_id'].$value['id']]) != '')
-										update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $_POST[$value['item_id'].$value['id']] ) );
+									if (trim($_POST[$value['item_type'].$value['id']]) != '')
+										update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
 									else 
 										array_push($extraFieldsErrorHolder, $value['id']);
 								}else
-									update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $_POST[$value['item_id'].$value['id']] ) );
+									update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
 							}else
-								update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $_POST[$value['item_id'].$value['id']] ) );
+								update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
 							break;
 						}
 						case "select":{
 							if (isset($value['item_required'])){
 								if ($value['item_required'] == 'yes'){
-									if (trim($_POST[$value['item_id'].$value['id']]) != '')
-										update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $_POST[$value['item_id'].$value['id']] ) );
+									if (trim($_POST[$value['item_type'].$value['id']]) != '')
+										update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
 									else 
 										array_push($extraFieldsErrorHolder, $value['id']);
 								}else
-									update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $_POST[$value['item_id'].$value['id']] ) );
+									update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
 							}else
-								update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $_POST[$value['item_id'].$value['id']] ) );
+								update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
 							break;
 						}
 						case "countrySelect":{
 							if (isset($value['item_required'])){
 								if ($value['item_required'] == 'yes'){
-									if (trim($_POST[$value['item_id'].$value['id']]) != '')
-										update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $_POST[$value['item_id'].$value['id']] ) );
+									if (trim($_POST[$value['item_type'].$value['id']]) != '')
+										update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
 									else 
 										array_push($extraFieldsErrorHolder, $value['id']);
 								}else
-									update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $_POST[$value['item_id'].$value['id']] ) );
+									update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
 							}else
-								update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $_POST[$value['item_id'].$value['id']] ) );
+								update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
 							
 							break;
 						}
 						case "timeZone":{
 							if (isset($value['item_required'])){
 								if ($value['item_required'] == 'yes'){
-									if (trim($_POST[$value['item_id'].$value['id']]) != '')
-										update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $_POST[$value['item_id'].$value['id']] ) );
+									if (trim($_POST[$value['item_type'].$value['id']]) != '')
+										update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
 									else 
 										array_push($extraFieldsErrorHolder, $value['id']);
 								}else
-									update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $_POST[$value['item_id'].$value['id']] ) );
+									update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
 							}else
-								update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $_POST[$value['item_id'].$value['id']] ) );
+								update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
 							
 							break;
 						}
 						case "datepicker":{
 							if (isset($value['item_required'])){
 								if ($value['item_required'] == 'yes'){
-									if (trim($_POST[$value['item_id'].$value['id']]) != '')
-										update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $_POST[$value['item_id'].$value['id']] ) );
+									if (trim($_POST[$value['item_type'].$value['id']]) != '')
+										update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
 									else 
 										array_push($extraFieldsErrorHolder, $value['id']);
 								}else
-									update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $_POST[$value['item_id'].$value['id']] ) );
+									update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
 							}else
-								update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $_POST[$value['item_id'].$value['id']] ) );
+								update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
 							
 							break;
 						}
 						case "textarea":{
 							if (isset($value['item_required'])){
 								if ($value['item_required'] == 'yes'){
-									if (trim($_POST[$value['item_id'].$value['id']]) != '')
-										update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $_POST[$value['item_id'].$value['id']] ) );
+									if (trim($_POST[$value['item_type'].$value['id']]) != '')
+										update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
 									else 
 										array_push($extraFieldsErrorHolder, $value['id']);
 								}else
-									update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $_POST[$value['item_id'].$value['id']] ) );
+									update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
 							}else
-								update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $_POST[$value['item_id'].$value['id']] ) );
+								update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
 							
 							break;
 						}
@@ -602,7 +602,7 @@ function wppb_front_end_profile_info() {
 				$previousError = 'yes';
 			}
 			
-			if (($changesSaved == 'yes') && ($changesSavedNoEmail == 'yes') && ($previousError == 'no')){
+			elseif (($changesSaved == 'yes') && ($changesSavedNoEmail == 'yes') && ($previousError == 'no')){
 				$editProfileFilterArray['allChangesSavedExceptInvalidEmail'] = '
 					<p class="semi-saved"> '.
 						__('The email address you entered is invalid.', 'profilebuilder') .'<br/>'. __('The email address was', 'profilebuilder') .' <span class="error">'. __('NOT', 'profilebuilder') .'</span> '. __('updated along with the rest of the information.', 'profilebuilder') .'
@@ -611,17 +611,16 @@ function wppb_front_end_profile_info() {
 				echo $editProfileFilterArray['allChangesSavedExceptInvalidEmail'];
 				$previousError = 'yes';
 			}
-			
-			if (($changesSaved == 'yes') && ($changesSavedNoMatchingPass == 'yes') && ($previousError == 'no')){
+			elseif (($changesSaved == 'yes') && ($changesSavedNoMatchingPass == 'yes') && ($previousError == 'no')){
 				$editProfileFilterArray['allChangesSavedMismatchedPass'] = '
-					<p class="semi-saved">';
+					<p class="semi-saved">'.
 						__('The passwords you entered do not match.', 'profilebuilder') .'<br/>'. __('The password was', 'profilebuilder') .' <span class="error">'. __('NOT', 'profilebuilder') .'</span> '. __('updated along with the rest of the information.', 'profilebuilder') .'
 					</p>';
 				$editProfileFilterArray['allChangesSavedMismatchedPass'] = apply_filters('wppb_edit_profile_all_changes_saved_except_mismatch_password', $editProfileFilterArray['allChangesSavedMismatchedPass']);
 				echo $editProfileFilterArray['allChangesSavedMismatchedPass'];
 				$previousError = 'yes';
 			}
-			if (($changesSaved == 'yes') && ($changesSavedNoPass == 'yes') && ($previousError == 'no')){
+			elseif (($changesSaved == 'yes') && ($changesSavedNoPass == 'yes') && ($previousError == 'no')){
 				$editProfileFilterArray['allChangesSavedUncompletedPass'] = '
 					<p class="semi-saved">'.
 						__('You didn\'t complete both password fields.', 'profilebuilder') .'<br/>'. __('The password was', 'profilebuilder') .' <span class="error">'. __('NOT', 'profilebuilder') .'</span> '. __('updated along with the rest of the information.', 'profilebuilder') .'
@@ -630,7 +629,7 @@ function wppb_front_end_profile_info() {
 				echo $editProfileFilterArray['allChangesSavedUncompletedPass'];
 				$previousError = 'yes';
 			}
-			if ($allRequiredCompleted == 'no'){
+			elseif ($allRequiredCompleted == 'no'){
 				$editProfileFilterArray['errorSavingChanges'] = '<p class="error">'.$errorMessage.'<br/>'. __('Your profile was NOT updated!', 'profilebuilder').'</p><!-- .error -->';
 				$editProfileFilterArray['errorSavingChanges'] = apply_filters('wppb_edit_profile_error_saving_changes', $editProfileFilterArray['errorSavingChanges']);
 				echo $editProfileFilterArray['errorSavingChanges'];
@@ -663,7 +662,7 @@ function wppb_front_end_profile_info() {
 						$editProfileFilterArray['errorUploadingAvatar'] = apply_filters('wppb_edit_profile_error_uploading_avatar', $editProfileFilterArray['errorUploadingAvatar']);
 						echo $editProfileFilterArray['errorUploadingAvatar'];
 						$previousError = 'yes';
-					}if (($changesSaved == 'yes') && ($nrOfBadExtUploads != 0) && ($previousError == 'no')){
+					}elseif (($changesSaved == 'yes') && ($nrOfBadExtUploads != 0) && ($previousError == 'no')){
 						$editProfileFilterArray['errorUploadingAttachmentExts'] = '
 							<p class="semi-saved">'.
 								__('There was an error while trying to upload the following attachment(s)', 'profilebuilder') .': <span class="error">';
@@ -699,14 +698,14 @@ function wppb_front_end_profile_info() {
 						<label for="user_login">'. __('Username', 'profilebuilder') .'</label>
 						<input class="text-input" name="user_login" type="text" id="user_login" value="'. get_the_author_meta( 'user_login', $current_user->id ) .'" disabled="disabled"/> <span class="wppb-description-delimiter"> '. __('Usernames cannot be changed.', 'profilebuilder') .'</span>
 					</p><!-- .first_name -->';
-				$editProfileFilterArray2['contentName2'] = apply_filters('wppb_edit_profile_content_name2', $editProfileFilterArray2['contentName2']);
+				$editProfileFilterArray2['contentName2'] = apply_filters('wppb_edit_profile_content_name2', $editProfileFilterArray2['contentName2'], $current_user->id);
 			}
 
 			if ($wppb_defaultOptions['firstname'] == 'show'){
 				$errorVar = '';
 				$errorMark = '';
 				if ($wppb_defaultOptions['firstnameRequired'] == 'yes'){
-					$errorMark = '<font color="red" title="This field is marked as required by the administrator.">*</font>';
+					$errorMark = '<font color="red" title="'. __('This field is marked as required by the administrator.', 'profilebuilder') .'">*</font>';
 					if (isset($_POST['first_name'])){
 						if (trim($_POST['first_name']) == ''){
 							$errorMark = '<img src="'.WPPB_PLUGIN_URL . '/assets/images/pencil_delete.png" title="This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator)."/>';
@@ -719,14 +718,14 @@ function wppb_front_end_profile_info() {
 						<label for="first_name">'. __('First Name', 'profilebuilder') .$errorMark.'</label>
 						<input class="text-input" name="first_name" type="text" id="first_name" value="'. get_the_author_meta( 'first_name', $current_user->id ) .'" />
 					</p><!-- .first_name -->';
-				$editProfileFilterArray2['contentName3'] = apply_filters('wppb_edit_profile_content_name3', $editProfileFilterArray2['contentName3']);	
+				$editProfileFilterArray2['contentName3'] = apply_filters('wppb_edit_profile_content_name3', $editProfileFilterArray2['contentName3'], $current_user->id, $errorVar, $errorMark);	
 			}
 				
 			if ($wppb_defaultOptions['lastname'] == 'show'){
 				$errorVar = '';
 				$errorMark = '';
 				if ($wppb_defaultOptions['lastnameRequired'] == 'yes'){
-					$errorMark = '<font color="red" title="This field is marked as required by the administrator.">*</font>';
+					$errorMark = '<font color="red" title="'. __('This field is marked as required by the administrator.', 'profilebuilder') .'">*</font>';
 					if (isset($_POST['last_name'])){
 						if (trim($_POST['last_name']) == ''){
 							$errorMark = '<img src="'.WPPB_PLUGIN_URL . '/assets/images/pencil_delete.png" title="This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator)."/>';
@@ -739,14 +738,14 @@ function wppb_front_end_profile_info() {
 						<label for="last_name">'. __('Last Name', 'profilebuilder') .$errorMark.'</label>
 						<input class="text-input" name="last_name" type="text" id="last_name" value="'. get_the_author_meta( 'last_name', $current_user->id ) .'" />
 					</p><!-- .last_name -->';
-				$editProfileFilterArray2['contentName4'] = apply_filters('wppb_edit_profile_content_name4', $editProfileFilterArray2['contentName4']);
+				$editProfileFilterArray2['contentName4'] = apply_filters('wppb_edit_profile_content_name4', $editProfileFilterArray2['contentName4'], $current_user->id);
 			}
 				
 			if ($wppb_defaultOptions['nickname'] == 'show'){
 				$errorVar = '';
 				$errorMark = '';
 				if ($wppb_defaultOptions['nicknameRequired'] == 'yes'){
-					$errorMark = '<font color="red" title="This field is marked as required by the administrator.">*</font>';
+					$errorMark = '<font color="red" title="'. __('This field is marked as required by the administrator.', 'profilebuilder') .'">*</font>';
 					if (isset($_POST['nickname'])){
 						if (trim($_POST['nickname']) == ''){
 							$errorMark = '<img src="'.WPPB_PLUGIN_URL . '/assets/images/pencil_delete.png" title="This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator)."/>';
@@ -759,14 +758,14 @@ function wppb_front_end_profile_info() {
 						<label for="nickname">'. __('Nickname', 'profilebuilder') .$errorMark.'</label>
 						<input class="text-input" name="nickname" type="text" id="nickname" value="'. get_the_author_meta( 'nickname', $current_user->id ) .'" />
 					</p><!-- .nickname -->';
-				$editProfileFilterArray2['contentName5'] = apply_filters('wppb_edit_profile_content_name5', $editProfileFilterArray2['contentName5']);	
+				$editProfileFilterArray2['contentName5'] = apply_filters('wppb_edit_profile_content_name5', $editProfileFilterArray2['contentName5'], $current_user->id, $errorVar, $errorMark);	
 			}
 				
 			if ($wppb_defaultOptions['dispname'] == 'show'){
 				$errorVar = '';
 				$errorMark = '';
 				if ($wppb_defaultOptions['dispnameRequired'] == 'yes'){
-					$errorMark = '<font color="red" title="This field is marked as required by the administrator.">*</font>';
+					$errorMark = '<font color="red" title="'. __('This field is marked as required by the administrator.', 'profilebuilder') .'">*</font>';
 					if (isset($_POST['display_name'])){
 						if (trim($_POST['display_name']) == ''){
 							$errorMark = '<img src="'.WPPB_PLUGIN_URL . '/assets/images/pencil_delete.png" title="This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator)."/>';
@@ -806,7 +805,7 @@ function wppb_front_end_profile_info() {
 						</select>
 					</p><!-- .display_name -->';
 					
-				$editProfileFilterArray2['displayName'] = apply_filters('wppb_edit_profile_display_name', $editProfileFilterArray2['displayName']);	
+				$editProfileFilterArray2['displayName'] = apply_filters('wppb_edit_profile_display_name', $editProfileFilterArray2['displayName'], $current_user->id, $errorVar, $errorMark);	
 			}
 
 			$editProfileFilterArray2['contentInfo1'] = '<p class="contactInfoHeader"><strong>'. __('Contact Info', 'profilebuilder') .'</strong></p>';
@@ -816,7 +815,7 @@ function wppb_front_end_profile_info() {
 				$errorVar = '';
 				$errorMark = '';
 				if ($wppb_defaultOptions['emailRequired'] == 'yes'){
-					$errorMark = '<font color="red" title="This field is marked as required by the administrator.">*</font>';
+					$errorMark = '<font color="red" title="'. __('This field is marked as required by the administrator.', 'profilebuilder') .'">*</font>';
 					if (isset($_POST['email'])){
 						if (trim($_POST['email']) == ''){
 							$errorMark = '<img src="'.WPPB_PLUGIN_URL . '/assets/images/pencil_delete.png" title="This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator)."/>';
@@ -830,14 +829,14 @@ function wppb_front_end_profile_info() {
 						<input class="text-input" name="email" type="text" id="email" value="'. get_the_author_meta( 'user_email', $current_user->id ) .'" />
 						<span class="wppb-description-delimiter">'. __('(required)', 'profilebuilder') .'</span>
 					</p><!-- .form-email -->';
-				$editProfileFilterArray2['contentInfo2'] = apply_filters('wppb_edit_profile_content_info2', $editProfileFilterArray2['contentInfo2']);
+				$editProfileFilterArray2['contentInfo2'] = apply_filters('wppb_edit_profile_content_info2', $editProfileFilterArray2['contentInfo2'], $current_user->id, $errorVar, $errorMark);
 			}
 				
 			if ($wppb_defaultOptions['website'] == 'show'){
 				$errorVar = '';
 				$errorMark = '';
 				if ($wppb_defaultOptions['websiteRequired'] == 'yes'){
-					$errorMark = '<font color="red" title="This field is marked as required by the administrator.">*</font>';
+					$errorMark = '<font color="red" title="'. __('This field is marked as required by the administrator.', 'profilebuilder') .'">*</font>';
 					if ((trim($_POST['website']) == '') && isset($_POST['website'])){
 						$errorMark = '<img src="'.WPPB_PLUGIN_URL . '/assets/images/pencil_delete.png" title="This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator)."/>';
 						$errorVar = ' errorHolder';
@@ -848,14 +847,14 @@ function wppb_front_end_profile_info() {
 						<label for="website">'. __('Website', 'profilebuilder') .$errorMark.'</label>
 						<input class="text-input" name="website" type="text" id="website" value="'. get_the_author_meta( 'user_url', $current_user->id ) .'" />
 					</p><!-- .form-website -->';
-				$editProfileFilterArray2['contentInfo3'] = apply_filters('wppb_edit_profile_content_info3', $editProfileFilterArray2['contentInfo3']);
+				$editProfileFilterArray2['contentInfo3'] = apply_filters('wppb_edit_profile_content_info3', $editProfileFilterArray2['contentInfo3'], $current_user->id, $errorVar, $errorMark);
 			}
 
 			if ($wppb_defaultOptions['aim'] == 'show'){
 				$errorVar = '';
 				$errorMark = '';
 				if ($wppb_defaultOptions['aimRequired'] == 'yes'){
-					$errorMark = '<font color="red" title="This field is marked as required by the administrator.">*</font>';
+					$errorMark = '<font color="red" title="'. __('This field is marked as required by the administrator.', 'profilebuilder') .'">*</font>';
 					if ((trim($_POST['aim']) == '') && isset($_POST['aim'])){
 						$errorMark = '<img src="'.WPPB_PLUGIN_URL . '/assets/images/pencil_delete.png" title="This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator)."/>';
 						$errorVar = ' errorHolder';
@@ -866,14 +865,14 @@ function wppb_front_end_profile_info() {
 						<label for="aim">'. __('AIM', 'profilebuilder') .'</label>
 						<input class="text-input" name="aim" type="text" id="aim" value="'. get_the_author_meta( 'aim', $current_user->id ) .'" />
 					</p><!-- .form-aim -->';
-				$editProfileFilterArray2['contentInfo4'] = apply_filters('wppb_edit_profile_content_info4', $editProfileFilterArray2['contentInfo4']);
+				$editProfileFilterArray2['contentInfo4'] = apply_filters('wppb_edit_profile_content_info4', $editProfileFilterArray2['contentInfo4'], $current_user->id, $errorVar, $errorMark);
 			}
 				
 			if ($wppb_defaultOptions['yahoo'] == 'show'){
 				$errorVar = '';
 				$errorMark = '';
 				if ($wppb_defaultOptions['yahooRequired'] == 'yes'){
-					$errorMark = '<font color="red" title="This field is marked as required by the administrator.">*</font>';
+					$errorMark = '<font color="red" title="'. __('This field is marked as required by the administrator.', 'profilebuilder') .'">*</font>';
 					if ((trim($_POST['yim']) == '') && isset($_POST['yim'])){
 						$errorMark = '<img src="'.WPPB_PLUGIN_URL . '/assets/images/pencil_delete.png" title="This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator)."/>';
 						$errorVar = ' errorHolder';
@@ -884,14 +883,14 @@ function wppb_front_end_profile_info() {
 						<label for="yim">'. __('Yahoo IM', 'profilebuilder') .$errorMark.'</label>
 						<input class="text-input" name="yim" type="text" id="yim" value="'. get_the_author_meta( 'yim', $current_user->id ) .'" />
 					</p><!-- .form-yim -->';
-				$editProfileFilterArray2['contentInfo5'] = apply_filters('wppb_edit_profile_content_info5', $editProfileFilterArray2['contentInfo5']);
+				$editProfileFilterArray2['contentInfo5'] = apply_filters('wppb_edit_profile_content_info5', $editProfileFilterArray2['contentInfo5'], $current_user->id, $errorVar, $errorMark);
 			}
  
 			if ($wppb_defaultOptions['jabber'] == 'show'){
 				$errorVar = '';
 				$errorMark = '';
 				if ($wppb_defaultOptions['jabberRequired'] == 'yes'){
-					$errorMark = '<font color="red" title="This field is marked as required by the administrator.">*</font>';
+					$errorMark = '<font color="red" title="'. __('This field is marked as required by the administrator.', 'profilebuilder') .'">*</font>';
 					if ((trim($_POST['jabber']) == '') && isset($_POST['jabber'])){
 						$errorMark = '<img src="'.WPPB_PLUGIN_URL . '/assets/images/pencil_delete.png" title="This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator)."/>';
 						$errorVar = ' errorHolder';
@@ -902,7 +901,7 @@ function wppb_front_end_profile_info() {
 						<label for="jabber">'. __('Jabber / Google Talk', 'profilebuilder') .$errorMark.'</label>
 						<input class="text-input" name="jabber" type="text" id="jabber" value="'. get_the_author_meta( 'jabber', $current_user->id ) .'" />
 					</p><!-- .form-jabber -->';
-				$editProfileFilterArray2['contentInfo6'] = apply_filters('wppb_edit_profile_content_info6', $editProfileFilterArray2['contentInfo6']);
+				$editProfileFilterArray2['contentInfo6'] = apply_filters('wppb_edit_profile_content_info6', $editProfileFilterArray2['contentInfo6'], $current_user->id, $errorVar, $errorMark);
 			}
 				
 			$editProfileFilterArray2['aboutYourself1'] = '<p class="aboutYourselfHeader"><strong>'. __('About Yourself', 'profilebuilder') .'</strong></p>';
@@ -912,7 +911,7 @@ function wppb_front_end_profile_info() {
 				$errorVar = '';
 				$errorMark = '';
 				if ($wppb_defaultOptions['bioRequired'] == 'yes'){
-					$errorMark = '<font color="red" title="This field is marked as required by the administrator.">*</font>';
+					$errorMark = '<font color="red" title="'. __('This field is marked as required by the administrator.', 'profilebuilder') .'">*</font>';
 					if ((trim($_POST['description']) == '') && isset($_POST['description'])){
 						$errorMark = '<img src="'.WPPB_PLUGIN_URL . '/assets/images/pencil_delete.png" title="This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator)."/>';
 						$errorVar = ' errorHolder';
@@ -923,7 +922,7 @@ function wppb_front_end_profile_info() {
 						<label for="description">'. __('Biographical Info', 'profilebuilder') .$errorMark.'</label>
 						<textarea class="text-input" name="description" id="description" rows="5" cols="30">'. get_the_author_meta( 'description', $current_user->id ) .'</textarea>
 					</p><!-- .form-description -->';
-				$editProfileFilterArray2['aboutYourself2'] = apply_filters('wppb_edit_profile_content_about_yourself2', $editProfileFilterArray2['aboutYourself2']);
+				$editProfileFilterArray2['aboutYourself2'] = apply_filters('wppb_edit_profile_content_about_yourself2', $editProfileFilterArray2['aboutYourself2'], $current_user->id, $errorVar, $errorMark);
 			}
 				
 			if ($wppb_defaultOptions['password'] == 'show'){
@@ -938,7 +937,7 @@ function wppb_front_end_profile_info() {
 						<label for="pass2">'. __('Repeat Password', 'profilebuilder') .$errorMark.'</label>
 						<input class="text-input" name="pass2" type="password" id="pass2" />
 					</p><!-- .form-password -->';
-				$editProfileFilterArray2['aboutYourself3'] = apply_filters('wppb_edit_profile_content_about_yourself3', $editProfileFilterArray2['aboutYourself3']);
+				$editProfileFilterArray2['aboutYourself3'] = apply_filters('wppb_edit_profile_content_about_yourself3', $editProfileFilterArray2['aboutYourself3'], $errorVar, $errorMark);
 			}
 				
 

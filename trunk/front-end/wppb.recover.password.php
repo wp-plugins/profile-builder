@@ -42,13 +42,24 @@ if(!function_exists('wppb_curpageurl_password_recovery2')){
 		}
 	
 		$questionPos = strpos($pageURL, '?');
-		$key = md5($user_login.'RMPBP'.$id.'PWRCVR');
+		
+		
+		$key = $wpdb->get_var($wpdb->prepare("SELECT user_activation_key FROM $wpdb->users WHERE user_login = %s", $user_login));
+		if ( empty($key) ) {
+			// Generate something random for a key...
+			$key = wp_generate_password(20, false);
+			do_action('wppb_retrieve_password_key', $user_login, $key);
+			// Now insert the new md5 key into the db
+			$wpdb->update($wpdb->users, array('user_activation_key' => $key), array('user_login' => $user_login));
+		}
+			
+		//$key = md5($user_login.'RMPBP'.$id.'PWRCVR');
 		
 		if($questionPos !== false){
-			$wpdb->update($wpdb->users, array('user_activation_key' => $key), array('user_login' => $user_login));
+			//$wpdb->update($wpdb->users, array('user_activation_key' => $key), array('user_login' => $user_login));
 			return $pageURL.'&loginName='.$user_login.'&key='.$key;
 		}else{
-			$wpdb->update($wpdb->users, array('user_activation_key' => $key), array('user_login' => $user_login));
+			//$wpdb->update($wpdb->users, array('user_activation_key' => $key), array('user_login' => $user_login));
 			return $pageURL.'?loginName='.$user_login.'&key='.$key;
 		}
     }
@@ -106,7 +117,7 @@ function wppb_front_end_password_recovery(){
 		if (is_email($postedData)){
 			if (email_exists($postedData)){
 				$recoverPasswordFilterArray['sentMessage1'] = __('A password reset email has been sent to ', 'profilebuilder').$postedData.'. <br/>'.__('Following the link sent in the email address will reset the password.', 'profilebuilder');
-				$recoverPasswordFilterArray['sentMessage1'] = apply_filters('wppb_recover_password_sent_message1', $recoverPasswordFilterArray['sentMessage1']);
+				$recoverPasswordFilterArray['sentMessage1'] = apply_filters('wppb_recover_password_sent_message1', $recoverPasswordFilterArray['sentMessage1'], $postedData);
 				$messageNo = '1';
 				$message = $recoverPasswordFilterArray['sentMessage1'];
 				
@@ -122,7 +133,7 @@ function wppb_front_end_password_recovery(){
 				$recoverPasswordFilterArray['userMailMessage1'] .= __('If this was a mistake, just ignore this email and nothing will happen.', 'profilebuilder').'<br/>';
 				$recoverPasswordFilterArray['userMailMessage1'] .= __('To reset your password, visit the following link:', 'profilebuilder');
 				$recoverPasswordFilterArray['userMailMessage1'] .= '<a href="'.wppb_curpageurl_password_recovery2($requestedUserLogin, $requestedUserID).'">'.wppb_curpageurl_password_recovery2($requestedUserLogin, $requestedUserID).'</a>';
-				$recoverPasswordFilterArray['userMailMessage1']  = apply_filters('wppb_recover_password_message_content_sent_to_user1', $recoverPasswordFilterArray['userMailMessage1']);
+				$recoverPasswordFilterArray['userMailMessage1']  = apply_filters('wppb_recover_password_message_content_sent_to_user1', $recoverPasswordFilterArray['userMailMessage1'], $requestedUserID, $requestedUserLogin);
 				
 				$recoverPasswordFilterArray['userMailMessageTitle1'] = __('Password Reset Feature from', 'profilebuilder').' "'.$blogname = wp_specialchars_decode(get_option('blogname'), ENT_QUOTES).'"';
 				$recoverPasswordFilterArray['userMailMessageTitle1'] = apply_filters('wppb_recover_password_message_title_sent_to_user1', $recoverPasswordFilterArray['userMailMessageTitle1']);
@@ -167,7 +178,7 @@ function wppb_front_end_password_recovery(){
 				$recoverPasswordFilterArray['userMailMessage1'] .= __('If this was a mistake, just ignore this email and nothing will happen.', 'profilebuilder').'<br/>';
 				$recoverPasswordFilterArray['userMailMessage1'] .= __('To reset your password, visit the following link:', 'profilebuilder');
 				$recoverPasswordFilterArray['userMailMessage1'] .= '<a href="'.wppb_curpageurl_password_recovery2($requestedUserLogin, $requestedUserID).'">'.wppb_curpageurl_password_recovery2($requestedUserLogin, $requestedUserID).'</a>';
-				$recoverPasswordFilterArray['userMailMessage1']  = apply_filters('wppb_recover_password_message_content_sent_to_user1', $recoverPasswordFilterArray['userMailMessage1']);
+				$recoverPasswordFilterArray['userMailMessage1']  = apply_filters('wppb_recover_password_message_content_sent_to_user1', $recoverPasswordFilterArray['userMailMessage1'], $requestedUserID, $requestedUserLogin);
 				
 				$recoverPasswordFilterArray['userMailMessageTitle1'] = __('Password Reset Feature from', 'profilebuilder').' "'.$blogname = wp_specialchars_decode(get_option('blogname'), ENT_QUOTES).'"';
 				$recoverPasswordFilterArray['userMailMessageTitle1'] = apply_filters('wppb_recover_password_message_title_sent_to_user1', $recoverPasswordFilterArray['userMailMessageTitle1']);
@@ -198,34 +209,37 @@ function wppb_front_end_password_recovery(){
 		if (($_POST['passw1'] == $_POST['passw2']) && (!empty($_POST['passw1']) && !empty($_POST['passw2']))){
 			$message2 = __('Your password has been successfully changed!', 'profilebuilder');
 			$messageNo2 = '1';
-			if ((isset($_GET['loginName'])) && (isset($_GET['finalAction']))){
-				$loginName = $_GET['loginName'];
-			}
+			
+			$userID = $_POST['userData'];
+			$new_pass = $_POST['passw1'];
+			
 			//update the new password and delete the key
-			$query2 = $wpdb->get_results( "SELECT * FROM $wpdb->users WHERE user_login='".$loginName."'");
-			wp_update_user( array( 'ID' => $query2[0]->ID, 'user_pass' => esc_attr( $_POST['passw1'] ) ) );
-			$wpdb->update($wpdb->users, array('user_activation_key' => ''), array('user_login' => $loginName));
+			do_action('wppb_password_reset', $userID, $new_pass);
+
+			wp_set_password($new_pass, $userID);
 			
+			$user_info = get_userdata($userID);
+
 			//send secondary mail to the user containing the username and the new password
-			$recoverPasswordFilterArray['userMailMessage2']  = __('You have successfully reset your password,', 'profilebuilder');
-			$recoverPasswordFilterArray['userMailMessage2'] .= ' <b>'.$loginName.'</b>';
-			$recoverPasswordFilterArray['userMailMessage2']  = apply_filters('wppb_recover_password_message_content_sent_to_user2', $recoverPasswordFilterArray['userMailMessage2']);
+			$recoverPasswordFilterArray['userMailMessage2']  = __('You have successfully reset your password to:', 'profilebuilder');
+			$recoverPasswordFilterArray['userMailMessage2'] .= ' '.$new_pass;
+			$recoverPasswordFilterArray['userMailMessage2']  = apply_filters('wppb_recover_password_message_content_sent_to_user2', $recoverPasswordFilterArray['userMailMessage2'], $loginName);
 			
-			$recoverPasswordFilterArray['userMailMessageTitle2'] = __('Password Successfully Reset for', 'profilebuilder') .' '.$query2[0]->user_login.' '. __('from', 'profilebuilder').' "'.$blogname = wp_specialchars_decode(get_option('blogname'), ENT_QUOTES).'"';
+			$recoverPasswordFilterArray['userMailMessageTitle2'] = __('Password Successfully Reset for', 'profilebuilder') .' '.$user_info->user_login.' '. __('from', 'profilebuilder').' "'.$blogname = wp_specialchars_decode(get_option('blogname'), ENT_QUOTES).'"';
 			$recoverPasswordFilterArray['userMailMessageTitle2'] = apply_filters('wppb_recover_password_message_title_sent_to_user2', $recoverPasswordFilterArray['userMailMessageTitle2']);
 			
 			//we add this filter to enable html encoding
 			add_filter('wp_mail_content_type',create_function('', 'return "text/html"; '));
 			//send mail to the user notifying him of the reset request
 			if (trim($recoverPasswordFilterArray['userMailMessageTitle2']) != '')
-				wp_mail($query2[0]->user_email, $recoverPasswordFilterArray['userMailMessageTitle2'], $recoverPasswordFilterArray['userMailMessage2']);
+				wp_mail($user_info->user_email, $recoverPasswordFilterArray['userMailMessageTitle2'], $recoverPasswordFilterArray['userMailMessage2']);
 			
 			//send email to admin
-			$recoverPasswordFilterArray['adminMailMessage']  = $loginName. ' '.__('has requested a password change via the password reset feature.');
+			$recoverPasswordFilterArray['adminMailMessage']  = $user_info->user_login. ' '.__('has requested a password change via the password reset feature.');
 			$recoverPasswordFilterArray['adminMailMessage'] .= '<br/>'.__('His/her new password is:','profilebuilder'). ' '.$_POST['passw1'];
 			$recoverPasswordFilterArray['adminMailMessage'] = apply_filters('wppb_recover_password_message_content_sent_to_admin', $recoverPasswordFilterArray['adminMailMessage']);
 
-			$recoverPasswordFilterArray['adminMailMessageTitle'] = __('Password Successfully Reset for', 'profilebuilder') .' '.$query2[0]->user_login.' '. __('from', 'profilebuilder').' "'.$blogname = wp_specialchars_decode(get_option('blogname'), ENT_QUOTES).'"';
+			$recoverPasswordFilterArray['adminMailMessageTitle'] = __('Password Successfully Reset for', 'profilebuilder') .' '.$user_info->user_login.' '. __('from', 'profilebuilder').' "'.$blogname = wp_specialchars_decode(get_option('blogname'), ENT_QUOTES).'"';
 			$recoverPasswordFilterArray['adminMailMessageTitle'] = apply_filters('wppb_recover_password_message_title_sent_to_admin', $recoverPasswordFilterArray['adminMailMessageTitle']);
 			
 			
@@ -257,16 +271,18 @@ function wppb_front_end_password_recovery(){
 			//this is the part that handles the actual recovery
 			if (isset($_GET['submited']) && isset($_GET['loginName']) && isset($_GET['key'])){
 				//get the login name and key and verify if they match the ones in the database
-				$query = $wpdb->get_results( "SELECT * FROM $wpdb->users WHERE user_login='".$_GET['loginName']."'");
-				$dbValue = $query[0]->user_activation_key;
-				$id = $query[0]->ID;
-				$localHashValue = md5($_GET['loginName'].'RMPBP'.$id.'PWRCVR');
-				if ($localHashValue == $_GET['key']){
+
+				$key = preg_replace('/[^a-z0-9]/i', '', $_GET['key']);
+				$login = $_GET['loginName'];
+
+				$user = $wpdb->get_row($wpdb->prepare("SELECT * FROM $wpdb->users WHERE user_activation_key = '".$key."' AND user_login = '".$login."'"));
+				
+				if ( !empty( $user ) ){
 					//check if the "finalAction" variable is not in the address bar, if it is, don't display the form anymore
 					if (isset($_GET['finalAction']) && ($_GET['finalAction'] == 'yes')){
 						if ($messageNo2 == '2'){
 							$recoverPasswordFilterArray['passwordChangedMessage2'] = '<p class="error">'. $message2 .'</p><!-- .error -->';
-							$recoverPasswordFilterArray['passwordChangedMessage2'] = apply_filters ('wppb_recover_password_password_changed_message2', $recoverPasswordFilterArray['passwordChangedMessage2']);
+							$recoverPasswordFilterArray['passwordChangedMessage2'] = apply_filters ('wppb_recover_password_password_changed_message2', $recoverPasswordFilterArray['passwordChangedMessage2'], $message2);
 							echo $recoverPasswordFilterArray['passwordChangedMessage2'];
 ?>
 							<form enctype="multipart/form-data" method="post" id="recover_password2" class="user-forms" action="<?php echo $url=wppb_curpageurl_password_recovery3();?>">
@@ -276,12 +292,12 @@ function wppb_front_end_password_recovery(){
 										<label for="passw1">'. __('Password', 'profilebuilder').'</label>
 										<input class="password" name="passw1" type="password" id="passw1" value="'.$_POST['passw1'].'" />
 									</p><!-- .passw1 -->
-									
+									<input type="hidden" name="userData" value="'.$user->ID.'"/>
 									<p class="passw2">
 										<label for="passw2">'. __('Repeat Password', 'profilebuilder').'</label>
 										<input class="password" name="passw2" type="password" id="passw2" value="'.$_POST['passw2'].'" />
 									</p><!-- .passw2 -->';
-								$recoverPasswordFilterArray['inputPassword'] = apply_filters('wppb_recover_password_input', $recoverPasswordFilterArray['inputPassword']);
+								$recoverPasswordFilterArray['inputPassword'] = apply_filters('wppb_recover_password_input', $recoverPasswordFilterArray['inputPassword'], $_POST['passw1'], $_POST['passw2'], $user->ID);
 								echo $recoverPasswordFilterArray['inputPassword'];
 ?>
 								<p class="form-submit">
@@ -293,12 +309,11 @@ function wppb_front_end_password_recovery(){
 <?php
 						}elseif ($messageNo2 == '1'){
 							$recoverPasswordFilterArray['passwordChangedMessage1'] = '<p class="success">'. $message2 .'</p><!-- .success -->';
-							$recoverPasswordFilterArray['passwordChangedMessage1'] = apply_filters ('wppb_recover_password_password_changed_message1', $recoverPasswordFilterArray['passwordChangedMessage1']);
+							$recoverPasswordFilterArray['passwordChangedMessage1'] = apply_filters ('wppb_recover_password_password_changed_message1', $recoverPasswordFilterArray['passwordChangedMessage1'], $message2);
 							echo $recoverPasswordFilterArray['passwordChangedMessage1'];
 						}
 							
 					}else{
-					
 ?>
 						<form enctype="multipart/form-data" method="post" id="recover_password2" class="user-forms" action="<?php echo $url=wppb_curpageurl_password_recovery3();?>">
 <?php
@@ -307,12 +322,12 @@ function wppb_front_end_password_recovery(){
 									<label for="passw1">'. __('Password', 'profilebuilder').'</label>
 									<input class="password" name="passw1" type="password" id="passw1" value="'.$_POST['passw1'].'" />
 								</p><!-- .passw1 -->
-								
+								<input type="hidden" name="userData" value="'.$user->ID.'"/>
 								<p class="passw2">
 									<label for="passw2">'. __('Repeat Password', 'profilebuilder').'</label>
 									<input class="password" name="passw2" type="password" id="passw2" value="'.$_POST['passw2'].'" />
 								</p><!-- .passw2 -->';
-							$recoverPasswordFilterArray['inputPassword'] = apply_filters('wppb_recover_password_input', $recoverPasswordFilterArray['inputPassword']);
+							$recoverPasswordFilterArray['inputPassword'] = apply_filters('wppb_recover_password_input', $recoverPasswordFilterArray['inputPassword'], $_POST['passw1'], $_POST['passw2'], $user->ID);
 							echo $recoverPasswordFilterArray['inputPassword'];
 ?>
 							<p class="form-submit">
@@ -324,8 +339,18 @@ function wppb_front_end_password_recovery(){
 <?php
 					}
 				}else{
-					$recoverPasswordFilterArray['invalidKeyMessage'] = '<p class="warning"><b>'. __('ERROR:', 'profilebuilder') .'</b> '. __('Invalid key!', 'profilebuilder') .'</p><!-- .warning -->';
-					echo $recoverPasswordFilterArray['invalidKeyMessage'] = apply_filters('wppb_recover_password_invalid_key_message', $recoverPasswordFilterArray['invalidKeyMessage']);
+					if ($messageNo2 == '1'){
+						$recoverPasswordFilterArray['passwordChangedMessage1'] = '<p class="success">'. $message2 .'</p><!-- .success -->';
+						$recoverPasswordFilterArray['passwordChangedMessage1'] = apply_filters ('wppb_recover_password_password_changed_message1', $recoverPasswordFilterArray['passwordChangedMessage1'], $message2);
+						echo $recoverPasswordFilterArray['passwordChangedMessage1'];
+					}elseif ($messageNo2 == '2'){
+						$recoverPasswordFilterArray['passwordChangedMessage2'] = '<p class="error">'. $message2 .'</p><!-- .error -->';
+						$recoverPasswordFilterArray['passwordChangedMessage2'] = apply_filters ('wppb_recover_password_password_changed_message2', $recoverPasswordFilterArray['passwordChangedMessage2'], $message2);
+						echo $recoverPasswordFilterArray['passwordChangedMessage2'];
+					}else{
+						$recoverPasswordFilterArray['invalidKeyMessage'] = '<p class="warning"><b>'. __('ERROR:', 'profilebuilder') .'</b> '. __('Invalid key!', 'profilebuilder') .'</p><!-- .warning -->';
+						echo $recoverPasswordFilterArray['invalidKeyMessage'] = apply_filters('wppb_recover_password_invalid_key_message', $recoverPasswordFilterArray['invalidKeyMessage']);
+					}
 				}
 				
 			}else{
@@ -350,7 +375,7 @@ function wppb_front_end_password_recovery(){
 								<label for="username_email">'. __('Username or E-mail', 'profilebuilder').'</label>
 								<input class="text-input" name="username_email" type="text" id="username_email" value="'.trim($username_email).'" />
 							</p><!-- .username_email -->';
-						$recoverPasswordFilterArray['input'] = apply_filters('wppb_recover_password_input', $recoverPasswordFilterArray['input']);
+						$recoverPasswordFilterArray['input'] = apply_filters('wppb_recover_password_input', $recoverPasswordFilterArray['input'], trim($username_email));
 						echo $recoverPasswordFilterArray['input'];
 					
 				

@@ -60,13 +60,12 @@ function wppb_front_end_login(){
 					<a href="'.wp_logout_url( get_permalink() ).'" title="'. __('Log out of this account', 'profilebuilder').'">'. __('Log out', 'profilebuilder').' &raquo;</a>
 				</p><!-- .alert-->';
 		
-			$loginFilterArray['loginMessage1'] = apply_filters('wppb_login_login_message1', $loginFilterArray['loginMessage1']);
-			echo $loginFilterArray['loginMessage1'];
+			$loginFilterArray['loginMessage1'] = apply_filters('wppb_login_login_message1', $loginFilterArray['loginMessage1'], $wppb_user->ID, $wppb_user->display_name);
+			echo $loginFilterArray['loginMessage1'];		
 		?>
 	
 	<?php elseif ( $wppb_login->ID ) : // Successful login ?>
 		<?php
-			//$wppb_login = get_userdata( $wppb_login->ID ); 
 			if($wppb_login->display_name == ''){ 
 				$wppb_login->display_name = $wppb_login->user_login;
 			}
@@ -79,18 +78,18 @@ function wppb_front_end_login(){
 						 __('You have successfully logged in as', 'profilebuilder').' <a href="'.$authorPostsUrl = get_author_posts_url( $wppb_login->ID ).'" title="'.$wppb_login->display_name.'">'.$wppb_login->display_name.'</a>.
 					</p><!-- .success-->';
 			
-				$loginFilterArray['loginMessage2'] = apply_filters('wppb_login_login_message2', $loginFilterArray['loginMessage2']);
+				$loginFilterArray['loginMessage2'] = apply_filters('wppb_login_login_message2', $loginFilterArray['loginMessage2'], $wppb_login->ID, $wppb_user->display_name);
 				echo $loginFilterArray['loginMessage2'];
 			?>
 			
 			
 				<?php 
 					$permaLnk2 = get_permalink();
-					$wppb_addons = wppb_plugin_dir . '/premium/addon/';
+					$wppb_addons = WPPB_PLUGIN_DIR . '/premium/addon/';
 					if (file_exists ( $wppb_addons.'addon.php' )){
 						//check to see if the redirecting addon is present and activated
-						$wppb_premium_addon_settings = get_option('wppb_premium_addon_settings'); //fetch the descriptions array
-						if ($wppb_premium_addon_settings['customRedirect'] == 'show'){
+						$wppb_addon_settings = get_option('wppb_addon_settings'); //fetch the descriptions array
+						if ($wppb_addon_settings['wppb_customRedirect'] == 'show'){
 							//check to see if the redirect location is not an empty string and is activated
 							$customRedirectSettings = get_option('customRedirectSettings');
 							if ((trim($customRedirectSettings['afterLoginTarget']) != '') && ($customRedirectSettings['afterLogin'] == 'yes')){
@@ -101,18 +100,27 @@ function wppb_front_end_login(){
 							}
 						}
 					}
-
 					$loginFilterArray['redirectMessage'] = '
-						<font color="black">'. __('You will soon be redirected automatically. If you see this page for more than 1 second, please click', 'profilebuilder').' <a href="'.$permaLnk2.'">'. __('here', 'profilebuilder').'</a>.<meta http-equiv="Refresh" content="1;url='.$permaLnk2.'" /></font><br/><br/>';
-					$loginFilterArray['redirectMessage'] = apply_filters('wppb_login_redirect_message', $loginFilterArray['redirectMessage']);
+						<font id="messageTextColor">'. __('You will soon be redirected automatically. If you see this page for more than 1 second, please click', 'profilebuilder').' <a href="'.$permaLnk2.'">'. __('here', 'profilebuilder').'</a>.<meta http-equiv="Refresh" content="1;url='.$permaLnk2.'" /></font><br/><br/>';
+					$loginFilterArray['redirectMessage'] = apply_filters('wppb_login_redirect_message', $loginFilterArray['redirectMessage'], $permaLnk2);
 					echo $loginFilterArray['redirectMessage'];
 				?>
 	<?php else : // Not logged in ?>
 
 		<?php if (!empty( $_POST['action'] )): ?>
 			<p class="error">
-				<?php if ( trim($_POST['user-name']) == '') echo '<strong>'. __('ERROR:','profilebuilder').'</strong> '. __('The username field is empty', 'profilebuilder').'. '; ?>
-				<?php if ( is_wp_error($wppb_login) ) echo $wppb_login->get_error_message();?>
+				<?php 
+				if ( trim($_POST['user-name']) == ''){
+					$loginFilterArray['emptyUsernameError'] = '<strong>'. __('ERROR:','profilebuilder').'</strong> '. __('The username field is empty', 'profilebuilder').'.'; 
+					$loginFilterArray['emptyUsernameError'] = apply_filters('wppb_login_empty_username_error_message', $loginFilterArray['emptyUsernameError']);
+					echo $loginFilterArray['emptyUsernameError'];
+				}	
+				if ( is_wp_error($wppb_login) ){
+					$loginFilterArray['wpError'] = $wppb_login->get_error_message();
+					$loginFilterArray['wpError'] = apply_filters('wppb_login_wp_error_message', $loginFilterArray['wpError'],$wppb_login);
+					echo $loginFilterArray['wpError'];
+				}
+				?>
 			</p><!-- .error -->
 		<?php endif; ?>
 		
@@ -120,20 +128,28 @@ function wppb_front_end_login(){
 		<?php do_action( 'wppb_before_login' ); ?> 
 		
 		<form action="<?php wppb_curpageurl(); ?>" method="post" class="sign-in">
-			<p class="login-form-username">
-				<label for="user-name"><?php _e('Username', 'profilebuilder'); ?></label>
-				<?php
-					if (isset($_POST['user-name']))
-						$userName = esc_html( $_POST['user-name'] );
-					else $userName = '';
-				?>
-				<?php echo '<input type="text" name="user-name" id="user-name" class="text-input" value="'.$userName.'" />'; ?>
-			</p><!-- .form-username -->
+		<?php
+			if (isset($_POST['user-name']))
+				$userName = esc_html( $_POST['user-name'] );
+			else $userName = '';
+			
+			$loginFilterArray['loginUsername'] = '
+				<p class="login-form-username">
+					<label for="user-name">'. __('Username', 'profilebuilder') .'</label>
+					<input type="text" name="user-name" id="user-name" class="text-input" value="'.$userName.'" />
+				</p><!-- .form-username -->';
+			$loginFilterArray['loginUsername'] = apply_filters('wppb_login_username', $loginFilterArray['loginUsername'], $userName);
+			echo $loginFilterArray['loginUsername'];
 
-			<p class="login-form-password">
-				<label for="password"><?php _e('Password', 'profilebuilder'); ?></label>
-				<input type="password" name="password" id="password" class="text-input" />
-			</p><!-- .form-password -->
+			$loginFilterArray['loginPassword'] = '
+				<p class="login-form-password">
+					<label for="password">'. __('Password', 'profilebuilder') .'</label>
+					<input type="password" name="password" id="password" class="text-input" />
+				</p><!-- .form-password -->';
+			$loginFilterArray['loginPassword'] = apply_filters('wppb_login_password', $loginFilterArray['loginPassword']);
+			echo $loginFilterArray['loginPassword'];
+				
+		?>
 			<p class="login-form-submit">
 				<input type="submit" name="submit" class="submit button" value="<?php _e('Log in', 'profilebuilder'); ?>" />
 				<?php
@@ -147,11 +163,12 @@ function wppb_front_end_login(){
 				<input type="hidden" name="action" value="log-in" />
 			</p><!-- .form-submit -->
 			<?php
+				$siteURL=get_option('siteurl').'/wp-login.php?action=lostpassword';
 				$loginFilterArray['loginURL'] = '
 					<p>
-						<a href="'.$siteURL=get_option('siteurl').'/wp-login.php?action=lostpassword">'. __('Lost password?', 'profilebuilder').'</a>
+						<a href="'.$siteURL.'">'. __('Lost password?', 'profilebuilder').'</a>
 					</p>';
-				$loginFilterArray['loginURL'] = apply_filters('wppb_login_url', $loginFilterArray['loginURL']);
+				$loginFilterArray['loginURL'] = apply_filters('wppb_login_url', $loginFilterArray['loginURL'], $siteURL);
 				echo $loginFilterArray['loginURL'];
 			?>
 			<?php wp_nonce_field('verify_true_login','login_nonce_field'); ?>
