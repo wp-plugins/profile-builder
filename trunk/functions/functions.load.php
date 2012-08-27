@@ -17,7 +17,7 @@ Original Author URI: http://valendesigns.com
 	$addonPresent = WPPB_PLUGIN_DIR . '/premium/addon/addon.php';
 	
 	register_setting( 'wppb_option_group', 'wppb_default_settings' );
-	register_setting( 'wppb_default_style', 'wppb_default_style' );
+	register_setting( 'wppb_general_settings', 'wppb_general_settings' );
 	register_setting( 'wppb_display_admin_settings', 'wppb_display_admin_settings' );
 	if (file_exists($premiumPresent)){
 		register_setting( 'wppb_profile_builder_pro_serial', 'wppb_profile_builder_pro_serial' );
@@ -26,6 +26,7 @@ Original Author URI: http://valendesigns.com
 		register_setting( 'wppb_addon_settings', 'wppb_addon_settings' );
 		register_setting( 'customRedirectSettings', 'customRedirectSettings' );
 		register_setting( 'customUserListingSettings', 'customUserListingSettings' );
+		register_setting( 'reCaptchaSettings', 'reCaptchaSettings' );
 	}
 	
 	
@@ -36,20 +37,21 @@ if (file_exists ( $wppb_premiumAdmin.'premium.functions.load.php' ))
 	include_once($wppb_premiumAdmin.'premium.functions.load.php');    
 
 function wppb_add_plugin_stylesheet() {
-		$wppb_showDefaultCss = get_option('wppb_default_style');
+		$wppb_generalSettings = get_option('wppb_general_settings');
+		
         $styleUrl_default = WPPB_PLUGIN_URL . '/assets/css/front.end.css';
         $styleUrl_white = WPPB_PLUGIN_URL . '/premium/assets/css/front.end.white.css';
         $styleUrl_black = WPPB_PLUGIN_URL . '/premium/assets/css/front.end.black.css';
         $styleFile_default = WPPB_PLUGIN_DIR . '/assets/css/front.end.css';
         $styleFile_white = WPPB_PLUGIN_DIR . '/premium/assets/css/front.end.white.css';
         $styleFile_black = WPPB_PLUGIN_DIR . '/premium/assets/css/front.end.black.css';
-        if ( (file_exists($styleFile_default)) && ($wppb_showDefaultCss == 'yes') ) {
+        if ( (file_exists($styleFile_default)) && ($wppb_generalSettings['extraFieldsLayout'] == 'yes') ) {
             wp_register_style('wppb_stylesheet', $styleUrl_default);
             wp_enqueue_style( 'wppb_stylesheet');
-        }elseif ( (file_exists($styleFile_white)) && ($wppb_showDefaultCss == 'white') ) {
+        }elseif ( (file_exists($styleFile_white)) && ($wppb_generalSettings['extraFieldsLayout'] == 'white') ) {
             wp_register_style('wppb_stylesheet', $styleUrl_white);
             wp_enqueue_style( 'wppb_stylesheet');
-        }elseif ( (file_exists($styleFile_black)) && ($wppb_showDefaultCss == 'black') ) {
+        }elseif ( (file_exists($styleFile_black)) && ($wppb_generalSettings['extraFieldsLayout'] == 'black') ) {
             wp_register_style('wppb_stylesheet', $styleUrl_black);
             wp_enqueue_style( 'wppb_stylesheet');
         }
@@ -64,7 +66,7 @@ function wppb_show_admin_bar($content){
 	if ($admintSettingsPresent != 'not_found'){
 		if ($current_user->ID != 0){
 			$capabilityName = $wpdb->prefix.'capabilities';
-			$userRole = ($current_user->data->$capabilityName);
+			$userRole = apply_filters ( 'wppb_user_role_value', $current_user->data->$capabilityName, $current_user, $wpdb, $capabilityName);
 			if ($userRole != NULL){
 				$currentRole = key($userRole);
 				$getSettings = $admintSettingsPresent[$currentRole];
@@ -110,8 +112,12 @@ if(!function_exists('wppb_curpageurl')){
 if ( is_admin() ){
 	/* include the css for the datepicker */
 	$wppb_premiumDatepicker = WPPB_PLUGIN_DIR . '/premium/assets/css/';
-	if (file_exists ( $wppb_premiumDatepicker.'datepicker.style.css' ))
-		wp_enqueue_style( 'profile-builder-admin-datepicker-style', WPPB_PLUGIN_URL.'/premium/assets/css/datepicker.style.css', false, PROFILE_BUILDER_VERSION);
+	if (file_exists ( $wppb_premiumDatepicker.'datepicker.style.css' )){
+		add_action('admin_enqueue_scripts', 'wppb_add_datepicker_style');
+		function wppb_add_datepicker_style(){
+			wp_enqueue_style( 'profile-builder-admin-datepicker-style', WPPB_PLUGIN_URL.'/premium/assets/css/datepicker.style.css', false, PROFILE_BUILDER_VERSION);
+		}
+	}
 
 
 
@@ -146,7 +152,7 @@ else if ( !is_admin() ){
 
 	/* include the menu file for the register screen */
 	include_once($wppb_plugin.'front-end/wppb.register.php');        		
-	add_shortcode('wppb-register', 'wppb_front_end_register');	
+	add_shortcode('wppb-register', 'wppb_front_end_register_handler');	
 	
 	/* include the menu file for the recover password screen */
 	include_once($wppb_plugin.'front-end/wppb.recover.password.php');        		
@@ -177,6 +183,7 @@ else if ( !is_admin() ){
 		if ($wppb_addonOptions['wppb_userListing'] == 'show'){
 		  //add shortcode for the user-listing functionality
 		  add_shortcode('wppb-list-users', 'wppb_list_all_users');
-		}
+		}else
+			add_shortcode('wppb-list-users', 'wppb_list_all_users_display_error');
 	}
 }
