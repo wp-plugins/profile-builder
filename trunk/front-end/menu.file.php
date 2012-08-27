@@ -57,31 +57,56 @@
 ?>
 
 <?php
-	function wppb_plugin_layout(){
+	function wppb_general_settings(){
 ?>		
-		<form method="post" action="options.php#plugin-layout">
-		<?php $wppb_showDefaultCss = get_option('wppb_default_style'); ?>
-		<?php settings_fields('wppb_default_style'); ?>
+		<form method="post" action="options.php#general-settings">
+		<?php $wppb_generalSettings = get_option('wppb_general_settings'); ?>
+		<?php settings_fields('wppb_general_settings'); ?>
 
-		<h2><?php _e('Plugin Layout', 'profilebuilder');?></h2>
-		<h3><?php _e('Plugin Layout', 'profilebuilder');?></h3>
-		<font size="2"><?php _e('Stylesheet used:', 'profilebuilder');?></font>
-		<select name="wppb_default_style" class="wppb_default_style">
-			<option value="yes" <?php if ($wppb_showDefaultCss == 'yes') echo 'selected';?>><?php _e('Default', 'profilebuilder');?></option>
+		<h2><?php _e('General Settings', 'profilebuilder');?></h2>
+		<h3><?php _e('General Settings', 'profilebuilder');?></h3>
+		<font id="generalSettingFont"><?php _e('Stylesheet Used on the Front-End:', 'profilebuilder');?></font>
+		<select name="wppb_general_settings[extraFieldsLayout]" class="wppb_general_settings">
+			<option value="yes" <?php if ($wppb_generalSettings['extraFieldsLayout'] == 'yes') echo 'selected';?>><?php _e('Default', 'profilebuilder');?></option>
 			<?php 
 				$wppb_premiumStyle = WPPB_PLUGIN_DIR . '/premium/';	
 				if (file_exists ( $wppb_premiumStyle.'premium.php' )){
 			?>
-					<option value="white" <?php if ($wppb_showDefaultCss == 'white') echo 'selected';?>><?php _e('White', 'profilebuilder');?></option>
-					<option value="black" <?php if ($wppb_showDefaultCss == 'black') echo 'selected';?>><?php _e('Black', 'profilebuilder');?></option>
+					<option value="white" <?php if ($wppb_generalSettings['extraFieldsLayout'] == 'white') echo 'selected';?>><?php _e('White', 'profilebuilder');?></option>
+					<option value="black" <?php if ($wppb_generalSettings['extraFieldsLayout'] == 'black') echo 'selected';?>><?php _e('Black', 'profilebuilder');?></option>
 			<?php
 				}
 			?>
-			<option value="no" <?php if ($wppb_showDefaultCss == 'no') echo 'selected';?>><?php _e('None', 'profilebuilder');?></option>
+			<option value="no" <?php if ($wppb_generalSettings['extraFieldsLayout'] == 'no') echo 'selected';?>><?php _e('None', 'profilebuilder');?></option>
 		</select>
+		<?php
+		if (!is_multisite()){
+		?>
+			<br/><br/>
+			<font id="generalSettingFont"><?php _e('"Email Confirmation" Feature Activated:', 'profilebuilder');?></font>
+			<select name="wppb_general_settings[emailConfirmation]" class="wppb_general_settings2">
+				<option value="yes" <?php if ($wppb_generalSettings['emailConfirmation'] == 'yes') echo 'selected';?>><?php _e('Yes', 'profilebuilder');?></option>
+				<option value="no" <?php if ($wppb_generalSettings['emailConfirmation'] == 'no') echo 'selected';?>><?php _e('No', 'profilebuilder');?></option>
+			</select>
+		<?php
+		}
+		?>
+			<br/><br/>
+			<font id="generalSettingFont"><?php _e('"Admin Approval" Feature Activated:', 'profilebuilder');?></font>
+			<select id="adminApprovalSelect" name="wppb_general_settings[adminApproval]" class="wppb_general_settings3">
+				<option value="yes" <?php if ($wppb_generalSettings['adminApproval'] == 'yes') echo 'selected';?>><?php _e('Yes', 'profilebuilder');?></option>
+				<option value="no" <?php if ($wppb_generalSettings['adminApproval'] == 'no') echo 'selected';?>><?php _e('No', 'profilebuilder');?></option>
+			</select>
 		<?php	
 			if (file_exists ( $wppb_premiumStyle.'premium.php' ))
-				echo '<div id="layoutNoticeDiv"><font size="1" id="layoutNotice"><b>'. __('NOTE:', 'profilebuilder') .'</b><br/>&rarr; '. __('The black stylesheet is intended for sites/blogs with a dark background.', 'profilebuilder') .'<br/>&rarr; '. __('The white stylesheet is intended for a sites/blogs with a light background color.', 'profilebuilder') .'</font></div>';
+				echo '<div id="layoutNoticeDiv">
+						<font size="1" id="layoutNotice">
+							<b>'. __('NOTE:', 'profilebuilder') .'</b><br/>
+							&rarr; '. __('The black stylesheet is intended for sites/blogs with a dark background.', 'profilebuilder') .'<br/>
+							&rarr; '. __('The white stylesheet is intended for a sites/blogs with a light background color.', 'profilebuilder') .'<br/>
+							&rarr; '. __('On single-site installations the "Email Confirmation" feature only works in the front-end, so make sure you also use the "Custom Redirects" feature.', 'profilebuilder') .'
+						</font>
+					</div>';
 		?>
 		<div align="right">
 			<input type="hidden" name="action" value="update" />
@@ -127,6 +152,15 @@
 					?>
 				
 		</table>
+		
+		<?php	
+				echo '<div id="layoutNoticeDiv">
+						<font size="1" id="layoutNotice">
+							<b>'. __('NOTE:', 'profilebuilder') .'</b><br/>
+							&rarr; '. __('If you added new roles (via another plugin) <u>after</u> Profile Builder was activated, please reactivate it, since the roles are initialized during plugin activation.', 'profilebuilder') .'
+						</font>
+					</div>';
+		?>
 		<div align="right">
 			<input type="hidden" name="action" value="update" />
 			<p class="submit">

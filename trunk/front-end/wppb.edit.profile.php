@@ -708,7 +708,7 @@ function wppb_front_end_profile_info() {
 					$errorMark = '<font color="red" title="'. __('This field is marked as required by the administrator.', 'profilebuilder') .'">*</font>';
 					if (isset($_POST['first_name'])){
 						if (trim($_POST['first_name']) == ''){
-							$errorMark = '<img src="'.WPPB_PLUGIN_URL . '/assets/images/pencil_delete.png" title="This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator)."/>';
+							$errorMark = '<img src="'.WPPB_PLUGIN_URL . '/assets/images/pencil_delete.png" title="'. __('This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator.', 'profilebuilder') .'"/>';
 							$errorVar = ' errorHolder';
 						}
 					}
@@ -728,7 +728,7 @@ function wppb_front_end_profile_info() {
 					$errorMark = '<font color="red" title="'. __('This field is marked as required by the administrator.', 'profilebuilder') .'">*</font>';
 					if (isset($_POST['last_name'])){
 						if (trim($_POST['last_name']) == ''){
-							$errorMark = '<img src="'.WPPB_PLUGIN_URL . '/assets/images/pencil_delete.png" title="This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator)."/>';
+							$errorMark = '<img src="'.WPPB_PLUGIN_URL . '/assets/images/pencil_delete.png" title="'. __('This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator.', 'profilebuilder') .'"/>';
 							$errorVar = ' errorHolder';
 						}
 					}
@@ -748,7 +748,7 @@ function wppb_front_end_profile_info() {
 					$errorMark = '<font color="red" title="'. __('This field is marked as required by the administrator.', 'profilebuilder') .'">*</font>';
 					if (isset($_POST['nickname'])){
 						if (trim($_POST['nickname']) == ''){
-							$errorMark = '<img src="'.WPPB_PLUGIN_URL . '/assets/images/pencil_delete.png" title="This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator)."/>';
+							$errorMark = '<img src="'.WPPB_PLUGIN_URL . '/assets/images/pencil_delete.png" title="'. __('This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator.', 'profilebuilder') .'"/>';
 							$errorVar = ' errorHolder';
 						}
 					}
@@ -768,7 +768,7 @@ function wppb_front_end_profile_info() {
 					$errorMark = '<font color="red" title="'. __('This field is marked as required by the administrator.', 'profilebuilder') .'">*</font>';
 					if (isset($_POST['display_name'])){
 						if (trim($_POST['display_name']) == ''){
-							$errorMark = '<img src="'.WPPB_PLUGIN_URL . '/assets/images/pencil_delete.png" title="This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator)."/>';
+							$errorMark = '<img src="'.WPPB_PLUGIN_URL . '/assets/images/pencil_delete.png" title="'. __('This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator.', 'profilebuilder') .'"/>';
 							$errorVar = ' errorHolder';
 						}
 					}
@@ -818,7 +818,7 @@ function wppb_front_end_profile_info() {
 					$errorMark = '<font color="red" title="'. __('This field is marked as required by the administrator.', 'profilebuilder') .'">*</font>';
 					if (isset($_POST['email'])){
 						if (trim($_POST['email']) == ''){
-							$errorMark = '<img src="'.WPPB_PLUGIN_URL . '/assets/images/pencil_delete.png" title="This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator)."/>';
+							$errorMark = '<img src="'.WPPB_PLUGIN_URL . '/assets/images/pencil_delete.png" title="'. __('This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator.', 'profilebuilder') .'"/>';
 							$errorVar = ' errorHolder';
 						}
 					}
@@ -838,7 +838,7 @@ function wppb_front_end_profile_info() {
 				if ($wppb_defaultOptions['websiteRequired'] == 'yes'){
 					$errorMark = '<font color="red" title="'. __('This field is marked as required by the administrator.', 'profilebuilder') .'">*</font>';
 					if ((trim($_POST['website']) == '') && isset($_POST['website'])){
-						$errorMark = '<img src="'.WPPB_PLUGIN_URL . '/assets/images/pencil_delete.png" title="This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator)."/>';
+						$errorMark = '<img src="'.WPPB_PLUGIN_URL . '/assets/images/pencil_delete.png" title="'. __('This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator.', 'profilebuilder') .'"/>';
 						$errorVar = ' errorHolder';
 					}
 				}					
@@ -856,7 +856,7 @@ function wppb_front_end_profile_info() {
 				if ($wppb_defaultOptions['aimRequired'] == 'yes'){
 					$errorMark = '<font color="red" title="'. __('This field is marked as required by the administrator.', 'profilebuilder') .'">*</font>';
 					if ((trim($_POST['aim']) == '') && isset($_POST['aim'])){
-						$errorMark = '<img src="'.WPPB_PLUGIN_URL . '/assets/images/pencil_delete.png" title="This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator)."/>';
+						$errorMark = '<img src="'.WPPB_PLUGIN_URL . '/assets/images/pencil_delete.png" title="'. __('This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator.', 'profilebuilder') .'"/>';
 						$errorVar = ' errorHolder';
 					}
 				}					
@@ -874,7 +874,7 @@ function wppb_front_end_profile_info() {
 				if ($wppb_defaultOptions['yahooRequired'] == 'yes'){
 					$errorMark = '<font color="red" title="'. __('This field is marked as required by the administrator.', 'profilebuilder') .'">*</font>';
 					if ((trim($_POST['yim']) == '') && isset($_POST['yim'])){
-						$errorMark = '<img src="'.WPPB_PLUGIN_URL . '/assets/images/pencil_delete.png" title="This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator)."/>';
+						$errorMark = '<img src="'.WPPB_PLUGIN_URL . '/assets/images/pencil_delete.png" title="'. __('This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator.', 'profilebuilder') .'"/>';
 						$errorVar = ' errorHolder';
 					}
 				}					
@@ -892,7 +892,7 @@ function wppb_front_end_profile_info() {
 				if ($wppb_defaultOptions['jabberRequired'] == 'yes'){
 					$errorMark = '<font color="red" title="'. __('This field is marked as required by the administrator.', 'profilebuilder') .'">*</font>';
 					if ((trim($_POST['jabber']) == '') && isset($_POST['jabber'])){
-						$errorMark = '<img src="'.WPPB_PLUGIN_URL . '/assets/images/pencil_delete.png" title="This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator)."/>';
+						$errorMark = '<img src="'.WPPB_PLUGIN_URL . '/assets/images/pencil_delete.png" title="'. __('This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator.', 'profilebuilder') .'"/>';
 						$errorVar = ' errorHolder';
 					}
 				}					
@@ -913,7 +913,7 @@ function wppb_front_end_profile_info() {
 				if ($wppb_defaultOptions['bioRequired'] == 'yes'){
 					$errorMark = '<font color="red" title="'. __('This field is marked as required by the administrator.', 'profilebuilder') .'">*</font>';
 					if ((trim($_POST['description']) == '') && isset($_POST['description'])){
-						$errorMark = '<img src="'.WPPB_PLUGIN_URL . '/assets/images/pencil_delete.png" title="This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator)."/>';
+						$errorMark = '<img src="'.WPPB_PLUGIN_URL . '/assets/images/pencil_delete.png" title="'. __('This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator.', 'profilebuilder') .'"/>';
 						$errorVar = ' errorHolder';
 					}
 				}					
