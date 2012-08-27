@@ -31,7 +31,8 @@ foreach ($allUserMeta as $userMeta) {
 }
 
 delete_option( 'wppb_default_settings' );	   	 			// Delete default settings from options table
-delete_option( 'wppb_default_style' );						// Delete "use default css or not" settings
+delete_option( 'wppb_default_style' );						// Delete "use default css or not" settings (old one; preserving backwards compatibility)
+delete_option( 'wppb_general_settings' );					// Delete the plugin general settings
 delete_option( 'wppb_display_admin_settings' ); 			// Delete display admin bar option
 delete_option( 'wppb_custom_fields' ); 						// Delete the default fields
 delete_option( 'wppb_profile_builder_pro_serial' ); 		// Delete the serial number associated with this instalation
@@ -43,3 +44,4 @@ delete_option( 'wppb_addon_settings_description' );			// Delete addon settings d
 delete_option( 'customRedirectSettings' ); 					// Delete the custom redirect settings
 delete_option( 'userListingSettings' ); 					// Delete the user-listing settings (old one; preserving backwards compatibility)
 delete_option( 'customUserListingSettings' ); 				// Delete the user-listing settings (since 1.1.21)
+delete_option( 'reCaptchaSettings' ); 						// Delete the public and private keys used by the reCAPTCHA addon (since 1.1.42)
