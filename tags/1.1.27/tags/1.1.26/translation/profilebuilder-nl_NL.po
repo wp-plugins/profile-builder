@@ -1,0 +1,906 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Profile Builder v1.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2011-08-11 17:27+0000\n"
+"Last-Translator: Pascal Frencken\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Language: Dutch\n"
+"X-Poedit-Country: NETHERLANDS\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#: front-end/menu.file.php:5
+#: front-end/menu.file.php:8
+#@ profilebuilder
+msgid "Profile Builder"
+msgstr "Profile Builder"
+
+#: front-end/menu.file.php:6
+#@ profilebuilder
+msgid "Welcome to Profile Builder!"
+msgstr "Welkom bij Profile Builder!"
+
+#: front-end/menu.file.php:8
+#@ profilebuilder
+msgid " lets you customize your website by adding a front-end menu for all your users, giving them a more flexible way to modify their user-information or to register new users."
+msgstr " stelt je in staat je website aan te passen door een front-end menu voor alle gebruikers toe te voegen, waarmee ze op een flexibele manier hun gebruikersinformatie kunnen wijzigen of zich als nieuwe gebruiker kunnen registreren."
+
+#: front-end/menu.file.php:9
+#@ profilebuilder
+msgid "Also, grants users with administrator rights to customize basic fields or to add new ones."
+msgstr "Ook geeft het beheerders de mogelijkheid om velden aan te passen of nieuwe toe te voegen."
+
+#: front-end/menu.file.php:10
+#@ profilebuilder
+msgid "To achieve this, just create a new page, and give it an intuitive name(e.g. Edit Profile)."
+msgstr "Hiervoor voeg je een nieuwe pagina toe, en geef je deze een duidelijke naam (bijv. Profiel Bewerken)."
+
+#: front-end/menu.file.php:11
+#@ profilebuilder
+msgid "Now all you need to do is add the following shortcode(for the previous example): "
+msgstr "Nu hoef je alleen de volgende shortcode toe te voegen: "
+
+#: front-end/menu.file.php:12
+#@ profilebuilder
+msgid "Publish your page and you are ready to go!"
+msgstr "Publiceer je pagina en je kunt aan de slag!"
+
+#: front-end/menu.file.php:13
+#@ profilebuilder
+msgid "You can use the following shortcodes:"
+msgstr "Je kunt de volgende shortcodes gebruiken:"
+
+#: front-end/menu.file.php:14
+#@ profilebuilder
+msgid "for a log-in form."
+msgstr "voor een inlog formulier."
+
+#: front-end/menu.file.php:15
+#@ profilebuilder
+msgid "to add a registration form."
+msgstr "voor het toevoegen van een inschrijfformulier."
+
+#: front-end/menu.file.php:16
+#@ profilebuilder
+msgid "to grant users a front-end acces to their personal information(requires user to be logged in)."
+msgstr "om gebruikers front-end toegang tot persoonlijke info te geven (gebruiker moet ingelogd zijn)."
+
+#: front-end/menu.file.php:19
+#@ profilebuilder
+msgid "Users with administrator rights have access to the following features:"
+msgstr "Gebruikers met beheerdersrechten hebben toegang tot de volgende functies:"
+
+#: front-end/menu.file.php:20
+#@ profilebuilder
+msgid "add a custom stylesheet/inherit values from the current theme or use one of the following built into this plugin: default, white or black."
+msgstr "voeg een aangepaste stylesheet toe / neem de waarden van het huidige thema over of gebruik een van de volgende stijlen ingebouwd in deze plugin: standaard, wit of zwart."
+
+#: front-end/menu.file.php:21
+#@ profilebuilder
+msgid "select whether to display or not the admin bar in the front end for a specific user-group registered to the site."
+msgstr "geef aan of de admin balk in de front-end getoond moet worden voor een specifieke gebruikersgroep."
+
+#: front-end/menu.file.php:22
+#@ profilebuilder
+msgid "select which information-field can users see/modify. The hidden fields' values remain unmodified."
+msgstr "geef aan welke informatievelden de gebruikers kunnen zien / wijzigen. De waarden van verborgen velden blijven ongewijzigd."
+
+#: front-end/menu.file.php:23
+#@ profilebuilder
+msgid "add custom fields to the existing ones, with several types to choose from: heading, text, textarea, select, checkbox, radio, and/or upload."
+msgstr "voeg velden toe aan de bestaande, waarbij gekozen kan worden uit de volgende typen: koptekst, tekst, textgebied, selectieveld, meerkeuzeveld, enkel keuzeveld en / of uploadveld."
+
+#: front-end/menu.file.php:24
+#@ profilebuilder
+msgid "add an avatar field."
+msgstr "voeg een avatar veld toe."
+
+#: front-end/menu.file.php:27
+#@ profilebuilder
+msgid "NOTE:"
+msgstr "LET OP:"
+
+#: front-end/menu.file.php:28
+#@ profilebuilder
+msgid "this plugin only adds/removes fields in the front-end."
+msgstr "deze plugin voegt slechts velden toe aan / verwijdert velden uit de front-end."
+
+#: front-end/menu.file.php:29
+#@ profilebuilder
+msgid "The default information-fields will still be visible(and thus modifiable)"
+msgstr "De standaard informatievelden zullen nog steeds zichtbaar (en dus aanpasbaar) zijn"
+
+#: front-end/menu.file.php:30
+#@ profilebuilder
+msgid "from the back-end, while custom fields will only be visible in the front-end."
+msgstr "in de back-end, terwijl de toegevoegde velden alleen zichtbaar zijn in de front-end."
+
+#: front-end/menu.file.php:44
+#: front-end/menu.file.php:45
+#: front-end/options.php:58
+#@ profilebuilder
+msgid "Plugin Layout"
+msgstr "Plugin Opmaak"
+
+#: front-end/menu.file.php:46
+#@ profilebuilder
+msgid "Stylesheet used:"
+msgstr "Gebruikte stylesheet:"
+
+#: front-end/menu.file.php:48
+#@ profilebuilder
+msgid "Default"
+msgstr "Standaard"
+
+#: front-end/menu.file.php:53
+#@ profilebuilder
+msgid "White"
+msgstr "Wit"
+
+#: front-end/menu.file.php:54
+#@ profilebuilder
+msgid "Black"
+msgstr "Zwart"
+
+#: front-end/menu.file.php:58
+#@ profilebuilder
+msgid "None"
+msgstr "Geen"
+
+#: front-end/menu.file.php:63
+#: front-end/menu.file.php:109
+#: front-end/menu.file.php:320
+#@ default
+msgid "Save Changes"
+msgstr "Wijzigingen Opslaan"
+
+#: front-end/menu.file.php:81
+#: front-end/menu.file.php:82
+#@ profilebuilder
+msgid "Show/Hide the Admin Bar on Front End"
+msgstr "Toon / Verberg de Admin Balk in de Front-end"
+
+#: front-end/menu.file.php:86
+#@ profilebuilder
+msgid "User-group"
+msgstr "Gebruikersgroep"
+
+#: front-end/menu.file.php:87
+#: front-end/menu.file.php:133
+#@ profilebuilder
+msgid "Visibility"
+msgstr "Zichtbaarheid"
+
+#: front-end/menu.file.php:98
+#: front-end/menu.file.php:148
+#: front-end/menu.file.php:161
+#: front-end/menu.file.php:174
+#: front-end/menu.file.php:187
+#: front-end/menu.file.php:200
+#: front-end/menu.file.php:219
+#: front-end/menu.file.php:232
+#: front-end/menu.file.php:248
+#: front-end/menu.file.php:261
+#: front-end/menu.file.php:274
+#: front-end/menu.file.php:293
+#: front-end/menu.file.php:307
+#@ profilebuilder
+msgid "Show"
+msgstr "Tonen"
+
+#: front-end/menu.file.php:99
+#: front-end/menu.file.php:149
+#: front-end/menu.file.php:162
+#: front-end/menu.file.php:175
+#: front-end/menu.file.php:188
+#: front-end/menu.file.php:201
+#: front-end/menu.file.php:220
+#: front-end/menu.file.php:233
+#: front-end/menu.file.php:249
+#: front-end/menu.file.php:262
+#: front-end/menu.file.php:275
+#: front-end/menu.file.php:294
+#: front-end/menu.file.php:308
+#@ profilebuilder
+msgid "Hide"
+msgstr "Verbergen"
+
+#: front-end/menu.file.php:127
+#: front-end/menu.file.php:128
+#: front-end/options.php:60
+#@ profilebuilder
+msgid "Default Profile Fields"
+msgstr "Standaard Profiel Velden"
+
+#: front-end/menu.file.php:132
+#@ profilebuilder
+msgid "Input Field Name"
+msgstr "Voer Veldnaam In"
+
+#: front-end/menu.file.php:139
+#@ profilebuilder
+msgid "Name:"
+msgstr "Naam:"
+
+#: front-end/menu.file.php:145
+#: front-end/wppb.edit.profile.php:678
+#: front-end/wppb.login.php:118
+#: front-end/wppb.register.php:460
+#: front-end/wppb.register.php:624
+#@ profilebuilder
+msgid "Username"
+msgstr "Gebruikersnaam"
+
+#: front-end/menu.file.php:158
+#: front-end/wppb.edit.profile.php:699
+#: front-end/wppb.register.php:650
+#@ profilebuilder
+msgid "First Name"
+msgstr "Voornaam"
+
+#: front-end/menu.file.php:171
+#: front-end/wppb.edit.profile.php:720
+#: front-end/wppb.register.php:675
+#@ profilebuilder
+msgid "Last Name"
+msgstr "Achternaam"
+
+#: front-end/menu.file.php:184
+#: front-end/wppb.edit.profile.php:741
+#: front-end/wppb.register.php:700
+#@ profilebuilder
+msgid "Nickname"
+msgstr "Bijnaam"
+
+#: front-end/menu.file.php:197
+#@ profilebuilder
+msgid "Display name publicly as..."
+msgstr "Toon naam publiekelijk als..."
+
+#: front-end/menu.file.php:210
+#@ profilebuilder
+msgid "Contact Info:"
+msgstr "Contact Informatie:"
+
+#: front-end/menu.file.php:216
+#: front-end/wppb.edit.profile.php:808
+#: front-end/wppb.register.php:461
+#: front-end/wppb.register.php:726
+#@ profilebuilder
+msgid "E-mail"
+msgstr "E-mail"
+
+#: front-end/menu.file.php:229
+#: front-end/wppb.edit.profile.php:828
+#: front-end/wppb.register.php:752
+#@ profilebuilder
+msgid "Website"
+msgstr "Website"
+
+#: front-end/menu.file.php:245
+#: front-end/wppb.edit.profile.php:847
+#: front-end/wppb.register.php:777
+#@ profilebuilder
+msgid "AIM"
+msgstr "AIM"
+
+#: front-end/menu.file.php:258
+#: front-end/wppb.edit.profile.php:866
+#: front-end/wppb.register.php:802
+#@ profilebuilder
+msgid "Yahoo IM"
+msgstr "Yahoo IM"
+
+#: front-end/menu.file.php:271
+#: front-end/wppb.edit.profile.php:885
+#: front-end/wppb.register.php:827
+#@ profilebuilder
+msgid "Jabber / Google Talk"
+msgstr "Jabber / Google Talk"
+
+#: front-end/menu.file.php:284
+#@ profilebuilder
+msgid "About Yourself:"
+msgstr "Over Jezelf:"
+
+#: front-end/menu.file.php:290
+#: front-end/wppb.edit.profile.php:908
+#: front-end/wppb.register.php:856
+#@ profilebuilder
+msgid "Biographical Info"
+msgstr "Biografie"
+
+#: front-end/menu.file.php:304
+#: front-end/wppb.edit.profile.php:919
+#@ profilebuilder
+msgid "New Password"
+msgstr "Nieuw Wachtwoord"
+
+#: front-end/options.php:57
+#@ profilebuilder
+msgid "Basic Information"
+msgstr "Basis Informatie"
+
+#: front-end/options.php:59
+#@ profilebuilder
+msgid "Show/Hide the Admin Bar on Front-end"
+msgstr "Toon / Verberg de Admin Balk"
+
+#: front-end/options.php:66
+#@ profilebuilder
+msgid "Extra Profile Fields"
+msgstr "Extra Profiel Velden"
+
+#: front-end/options.php:72
+#@ profilebuilder
+msgid "Register Your Version"
+msgstr "Registreer Je Versie"
+
+#: front-end/wppb.edit.profile.php:552
+#@ profilebuilder
+msgid "You must be logged in to edit your profile."
+msgstr "U moet ingelogd zijn om uw profiel te kunnen bewerken."
+
+#: front-end/wppb.edit.profile.php:562
+#@ profilebuilder
+msgid "The avatar was successfully deleted."
+msgstr "De avatar is succesvol verwijderd."
+
+#: front-end/wppb.edit.profile.php:584
+#@ profilebuilder
+msgid "The changes have been successfully saved."
+msgstr "De wijzigingen zijn succesvol opgeslagen."
+
+#: front-end/wppb.edit.profile.php:591
+#: front-end/wppb.edit.profile.php:601
+#: front-end/wppb.edit.profile.php:611
+#: front-end/wppb.edit.profile.php:620
+#: front-end/wppb.edit.profile.php:646
+#: front-end/wppb.edit.profile.php:654
+#@ profilebuilder
+msgid "NOT"
+msgstr "NIET"
+
+#: front-end/wppb.edit.profile.php:671
+#: front-end/wppb.register.php:609
+#@ profilebuilder
+msgid "Name"
+msgstr "Naam"
+
+#: front-end/wppb.edit.profile.php:743
+#: front-end/wppb.edit.profile.php:810
+#: front-end/wppb.register.php:626
+#: front-end/wppb.register.php:728
+#@ profilebuilder
+msgid "(required)"
+msgstr "(verplicht)"
+
+#: front-end/wppb.edit.profile.php:763
+#@ profilebuilder
+msgid "Display name publicly as"
+msgstr "Naam publiekelijk tonen als"
+
+#: front-end/wppb.edit.profile.php:790
+#: front-end/wppb.register.php:707
+#@ profilebuilder
+msgid "Contact Info"
+msgstr "Contact Informatie"
+
+#: front-end/wppb.edit.profile.php:892
+#: front-end/wppb.register.php:834
+#@ profilebuilder
+msgid "About Yourself"
+msgstr "Over Jezelf"
+
+#: front-end/wppb.edit.profile.php:924
+#: front-end/wppb.recover.password.php:281
+#: front-end/wppb.recover.password.php:312
+#: front-end/wppb.register.php:882
+#@ profilebuilder
+msgid "Repeat Password"
+msgstr "Herhaal Wachtwoord"
+
+#: front-end/wppb.edit.profile.php:941
+#@ profilebuilder
+msgid "Update"
+msgstr "Bijwerken"
+
+#: front-end/wppb.login.php:54
+#@ profilebuilder
+msgid "Log out of this account"
+msgstr "Gebruiker uitloggen"
+
+#: front-end/wppb.login.php:128
+#: front-end/wppb.recover.password.php:276
+#: front-end/wppb.recover.password.php:307
+#: front-end/wppb.register.php:877
+#@ profilebuilder
+msgid "Password"
+msgstr "Wachtwoord"
+
+#: front-end/wppb.login.php:132
+#@ profilebuilder
+msgid "Log in"
+msgstr "Inloggen"
+
+#: front-end/wppb.login.php:136
+#@ profilebuilder
+msgid "Remember me"
+msgstr "Onthoud gegevens"
+
+#: front-end/wppb.login.php:146
+#@ profilebuilder
+msgid "Lost password?"
+msgstr "Wachtwoord vergeten?"
+
+#: front-end/wppb.register.php:297
+#@ profilebuilder
+msgid "A username is required for registration."
+msgstr "Een gebruikersnaam is vereist voor registratie."
+
+#: front-end/wppb.register.php:299
+#@ profilebuilder
+msgid "Sorry, that username already exists!"
+msgstr "Sorry, die gebruikersnaam bestaat al!"
+
+#: front-end/wppb.register.php:301
+#@ profilebuilder
+msgid "You must enter a valid email address."
+msgstr "U moet een geldig e-mail adres invullen."
+
+#: front-end/wppb.register.php:303
+#@ profilebuilder
+msgid "Sorry, that email address is already used!"
+msgstr "Sorry, dat e-mail adres is al in gebruik!"
+
+#: front-end/wppb.register.php:306
+#@ profilebuilder
+msgid "You didn't complete one of the password-fields!"
+msgstr "Je hebt een van de wachtwoord-velden niet volledig ingevuld!"
+
+#: front-end/wppb.recover.password.php:243
+#: front-end/wppb.register.php:308
+#@ profilebuilder
+msgid "The entered passwords don't match!"
+msgstr "De ingevoerde wachtwoorden komen niet overeen!"
+
+#: front-end/wppb.register.php:586
+#@ profilebuilder
+msgid "Users can register themselves or you can manually create users here."
+msgstr "Gebruikers kunnen zich registreren of je kunt hier handmatig gebruikers aanmaken."
+
+#: front-end/wppb.register.php:591
+#@ profilebuilder
+msgid "Users cannot currently register themselves, but you can manually create users here."
+msgstr "Gebruikers kunnen zich op dit moment niet registreren, maar je kunt hier wel handmatig gebruikers aanmaken."
+
+#: front-end/wppb.register.php:596
+#@ profilebuilder
+msgid "Only an administrator can add new users."
+msgstr "Alleen een beheerder kan nieuwe gebruikers toevoegen."
+
+#: front-end/wppb.register.php:910
+#@ profilebuilder
+msgid "Add User"
+msgstr "Gebruiker Toevoegen"
+
+#: front-end/wppb.register.php:910
+#@ profilebuilder
+msgid "Register"
+msgstr "Registreren"
+
+#: front-end/options.php:69
+#@ profilebuilder
+msgid "Addons"
+msgstr "Addons"
+
+#: front-end/menu.file.php:17
+#@ profilebuilder
+msgid "to add a password recovery form."
+msgstr "om formulier toe te voegen om wachtwoord te achterhalen."
+
+#: front-end/menu.file.php:134
+#@ profilebuilder
+msgid "Required"
+msgstr "Verplicht"
+
+#: front-end/menu.file.php:152
+#: front-end/menu.file.php:165
+#: front-end/menu.file.php:178
+#: front-end/menu.file.php:191
+#: front-end/menu.file.php:204
+#: front-end/menu.file.php:223
+#: front-end/menu.file.php:236
+#: front-end/menu.file.php:252
+#: front-end/menu.file.php:265
+#: front-end/menu.file.php:278
+#: front-end/menu.file.php:297
+#: front-end/menu.file.php:311
+#@ profilebuilder
+msgid "Yes"
+msgstr "Ja"
+
+#: front-end/menu.file.php:153
+#: front-end/menu.file.php:166
+#: front-end/menu.file.php:179
+#: front-end/menu.file.php:192
+#: front-end/menu.file.php:205
+#: front-end/menu.file.php:224
+#: front-end/menu.file.php:237
+#: front-end/menu.file.php:253
+#: front-end/menu.file.php:266
+#: front-end/menu.file.php:279
+#: front-end/menu.file.php:298
+#: front-end/menu.file.php:312
+#@ profilebuilder
+msgid "No"
+msgstr "Nee"
+
+#: front-end/wppb.edit.profile.php:85
+#: front-end/wppb.register.php:41
+#@ profilebuilder
+msgid "The information size you were trying to submit was larger than"
+msgstr "De omvang van gegevens die u probeert te versturen was groter dan"
+
+#: front-end/wppb.edit.profile.php:86
+#: front-end/wppb.register.php:42
+#@ profilebuilder
+msgid "This is usually caused by a large file(s) trying to be uploaded."
+msgstr "Dit gebeurt meestal omdat u een te groot bestand probeert te uploaden."
+
+#: front-end/wppb.edit.profile.php:87
+#: front-end/wppb.register.php:43
+#@ profilebuilder
+msgid "Since it was also larger than"
+msgstr "Omdat het ook groter was dan"
+
+#: front-end/wppb.edit.profile.php:87
+#: front-end/wppb.register.php:43
+#@ profilebuilder
+msgid "no additional information is available."
+msgstr "geen extra informatie beschikbaar."
+
+#: front-end/wppb.edit.profile.php:569
+#@ profilebuilder
+msgid "The attachment"
+msgstr "De bijlage"
+
+#: front-end/wppb.edit.profile.php:569
+#@ profilebuilder
+msgid "was successfully deleted."
+msgstr "is succesvol verwijderd."
+
+#: front-end/wppb.edit.profile.php:591
+#@ profilebuilder
+msgid "The email address you entered is already registered to a different user."
+msgstr "Het ingetoetste e-mail adres is al geregistreerd bij een andere gebruiker."
+
+#: front-end/wppb.edit.profile.php:591
+#: front-end/wppb.edit.profile.php:601
+#@ profilebuilder
+msgid "The email address was"
+msgstr "E-mail adres was"
+
+#: front-end/wppb.edit.profile.php:591
+#: front-end/wppb.edit.profile.php:601
+#: front-end/wppb.edit.profile.php:611
+#: front-end/wppb.edit.profile.php:620
+#: front-end/wppb.edit.profile.php:646
+#: front-end/wppb.edit.profile.php:654
+#@ profilebuilder
+msgid "updated along with the rest of the information."
+msgstr "ge-update samen met de rest van de gegevens."
+
+#: front-end/wppb.edit.profile.php:601
+#@ profilebuilder
+msgid "The email address you entered is invalid."
+msgstr "Het ingetoetste e-mail adres is ongeldig."
+
+#: front-end/wppb.edit.profile.php:611
+#@ profilebuilder
+msgid "The passwords you entered do not match."
+msgstr "De ingetoetste wachtwoorden zijn niet gelijk."
+
+#: front-end/wppb.edit.profile.php:611
+#: front-end/wppb.edit.profile.php:620
+#@ profilebuilder
+msgid "The password was"
+msgstr "Wachtwoord was"
+
+#: front-end/wppb.edit.profile.php:620
+#@ profilebuilder
+msgid "You didn't complete both password fields."
+msgstr "U heeft beide wachtwoord velden niet ingevuld."
+
+#: front-end/wppb.edit.profile.php:627
+#@ profilebuilder
+msgid "Your profile was NOT updated!"
+msgstr "Uw profiel is NIET ge-update!"
+
+#: front-end/wppb.edit.profile.php:636
+#@ profilebuilder
+msgid "There was an error while trying to upload the following attachments:"
+msgstr "Foutmelding tijdens het uploaden van de volgende attachments:"
+
+#: front-end/wppb.edit.profile.php:646
+#@ profilebuilder
+msgid "Possible cause: the size was bigger than"
+msgstr "Mogelijke oorzaak: de grootte was groter dan"
+
+#: front-end/wppb.edit.profile.php:646
+#@ profilebuilder
+msgid "The listed attachements were"
+msgstr "De vermelde attachments waren"
+
+#: front-end/wppb.edit.profile.php:654
+#@ profilebuilder
+msgid "There was an error while trying to upload your avatar picture."
+msgstr "Foutmelding tijdens het uploaden van uw avatar afbeelding."
+
+#: front-end/wppb.edit.profile.php:654
+#@ profilebuilder
+msgid "Possible cause: size/incorrect file-type."
+msgstr "Mogelijke oorzaak: grootte/verkeerd bestand-type."
+
+#: front-end/wppb.edit.profile.php:654
+#@ profilebuilder
+msgid "The avatar was"
+msgstr "De avatar is"
+
+#: front-end/wppb.edit.profile.php:679
+#@ profilebuilder
+msgid "Usernames cannot be changed."
+msgstr "Gebruikersnaam kan niet gewijzigd worden."
+
+#: front-end/wppb.login.php:53
+#@ profilebuilder
+msgid "You are currently logged in as"
+msgstr "U bent momenteel ingelogd als"
+
+#: front-end/wppb.login.php:54
+#@ profilebuilder
+msgid "Log out"
+msgstr "Uitloggen"
+
+#: front-end/wppb.login.php:73
+#@ profilebuilder
+msgid "You have successfully logged in as"
+msgstr "U bent succesvol ingelogd als"
+
+#: front-end/wppb.login.php:100
+#@ profilebuilder
+msgid "You will soon be redirected automatically. If you see this page for more than 1 second, please click"
+msgstr "U wordt automatisch doorgestuurd. Als u deze pagina meer dan 1 seconde ziet, klik svp op"
+
+#: front-end/wppb.login.php:100
+#@ profilebuilder
+msgid "here"
+msgstr "hier"
+
+#: front-end/wppb.login.php:108
+#: front-end/wppb.recover.password.php:327
+#@ profilebuilder
+msgid "ERROR:"
+msgstr "FOUT:"
+
+#: front-end/wppb.login.php:108
+#@ profilebuilder
+msgid "The username field is empty"
+msgstr "Veld voor gebruikersnaam is leeg"
+
+#: front-end/wppb.recover.password.php:108
+#: front-end/wppb.recover.password.php:153
+#@ profilebuilder
+msgid "A password reset email has been sent to "
+msgstr "E-mail over wachtwoord resetten is gestuurd naar"
+
+#: front-end/wppb.recover.password.php:108
+#: front-end/wppb.recover.password.php:153
+#@ profilebuilder
+msgid "Following the link sent in the email address will reset the password."
+msgstr "Via de link in de gestuurde e-mail wordt uw wachtwoord ge-reset."
+
+#: front-end/wppb.recover.password.php:120
+#: front-end/wppb.recover.password.php:165
+#@ profilebuilder
+msgid "Someone requested that the password be reset for the following account: "
+msgstr "Iemand heeft gevraagd om wachtwoord te resetten voor account:"
+
+#: front-end/wppb.recover.password.php:122
+#: front-end/wppb.recover.password.php:167
+#@ profilebuilder
+msgid "If this was a mistake, just ignore this email and nothing will happen."
+msgstr "Als dit een fout was, kunt u deze e-mail negeren. Er zal niets gebeuren."
+
+#: front-end/wppb.recover.password.php:123
+#: front-end/wppb.recover.password.php:168
+#@ profilebuilder
+msgid "To reset your password, visit the following link:"
+msgstr "Om uw wachtwoord te resetten, ga naar de link:"
+
+#: front-end/wppb.recover.password.php:127
+#: front-end/wppb.recover.password.php:172
+#@ profilebuilder
+msgid "Password Reset Feature from"
+msgstr "Functie om wachtwoord te resetten van"
+
+#: front-end/wppb.recover.password.php:136
+#: front-end/wppb.recover.password.php:181
+#@ profilebuilder
+msgid "ERROR"
+msgstr "FOUT"
+
+#: front-end/wppb.recover.password.php:136
+#: front-end/wppb.recover.password.php:181
+#@ profilebuilder
+msgid "There was an error while trying to send the activation link to "
+msgstr "Foutmelding opgetreden tijdens verzenden van activatie link naar "
+
+#: front-end/wppb.recover.password.php:146
+#@ profilebuilder
+msgid "The email address entered wasn't found in the database!"
+msgstr "Het ingetoetste e-mail adres is niet in de database gevonden!"
+
+#: front-end/wppb.recover.password.php:146
+#@ profilebuilder
+msgid "Please check that you entered the correct email address."
+msgstr "Check svp of u het juiste e-mail adres heeft ingetoetst."
+
+#: front-end/wppb.recover.password.php:188
+#@ profilebuilder
+msgid "The username entered wasn't found in the database!"
+msgstr "De ingetoetste gebruikersnaam is niet in de database gevonden!"
+
+#: front-end/wppb.recover.password.php:188
+#@ profilebuilder
+msgid "Please check that you entered the correct username."
+msgstr "Check svp of u de juiste gebuikersnaam heeft ingetoetst."
+
+#: front-end/wppb.recover.password.php:199
+#@ profilebuilder
+msgid "Your password has been successfully changed!"
+msgstr "Uw wachtwoord is succesvol gewijzigd!"
+
+#: front-end/wppb.recover.password.php:210
+#@ profilebuilder
+msgid "You have successfully reset your password,"
+msgstr "U heeft uw wachtwoord succesvol ge-reset"
+
+#: front-end/wppb.recover.password.php:214
+#: front-end/wppb.recover.password.php:228
+#@ profilebuilder
+msgid "Password Successfully Reset for"
+msgstr "Wachtwoord is succesvol ge-reset voor"
+
+#: front-end/wppb.recover.password.php:214
+#: front-end/wppb.recover.password.php:228
+#@ profilebuilder
+msgid "from"
+msgstr "van"
+
+#: front-end/wppb.recover.password.php:224
+#@ default
+msgid "has requested a password change via the password reset feature."
+msgstr ""
+
+#: front-end/wppb.recover.password.php:225
+#@ profilebuilder
+msgid "His/her new password is:"
+msgstr "Zijn/haar nieuwe wachtwoord is:"
+
+#: front-end/wppb.recover.password.php:288
+#: front-end/wppb.recover.password.php:319
+#@ profilebuilder
+msgid "Reset Password"
+msgstr "Reset wachtwoord"
+
+#: front-end/wppb.recover.password.php:327
+#@ profilebuilder
+msgid "Invalid key!"
+msgstr "Ongeldige sleutel!"
+
+#: front-end/wppb.recover.password.php:341
+#@ profilebuilder
+msgid "Please enter your username or email address."
+msgstr "Svp uw gebruikersnaam of e-mail adres intypen."
+
+#: front-end/wppb.recover.password.php:341
+#@ profilebuilder
+msgid "You will receive a link to create a new password via email."
+msgstr "U zult een e-mail ontvangen om nieuw wachtwoord aan te maken."
+
+#: front-end/wppb.recover.password.php:350
+#@ profilebuilder
+msgid "Username or E-mail"
+msgstr "Gebruikersnaam of e-mail adres"
+
+#: front-end/wppb.recover.password.php:359
+#@ profilebuilder
+msgid "Get New Password"
+msgstr "Nieuw wachtwoord"
+
+#: front-end/wppb.register.php:44
+#@ profilebuilder
+msgid "The user was NOT created!"
+msgstr "Gebruikers is NIET aangemaakt!"
+
+#: front-end/wppb.register.php:311
+#@ profilebuilder
+msgid "You must agree to the terms and conditions before registering!"
+msgstr "U moet akkoord gaan met de voorwaarden voordat u registreert!"
+
+#: front-end/wppb.register.php:313
+#@ profilebuilder
+msgid "The account was NOT created!"
+msgstr "Account is NIET aangemaakt!"
+
+#: front-end/wppb.register.php:313
+#@ profilebuilder
+msgid "(Several required fields were left uncompleted)"
+msgstr "(Diverse verplichte velden zijn onvolledig ingevuld)"
+
+#: front-end/wppb.register.php:459
+#@ profilebuilder
+msgid "New subscriber on"
+msgstr "Nieuwe abonee op"
+
+#: front-end/wppb.register.php:464
+#@ default
+msgid "A new subscriber has (been) registered!"
+msgstr ""
+
+#: front-end/wppb.register.php:508
+#@ profilebuilder
+msgid "You are logged in as"
+msgstr "U bent ingelogd als"
+
+#: front-end/wppb.register.php:508
+#@ profilebuilder
+msgid "You don't need another account."
+msgstr "U heeft geen ander account nodig"
+
+#: front-end/wppb.register.php:508
+#@ profilebuilder
+msgid "Log out of this account."
+msgstr "Uitloggen van dit account"
+
+#: front-end/wppb.register.php:508
+#@ profilebuilder
+msgid "Logout"
+msgstr "Uitloggen"
+
+#: front-end/wppb.register.php:515
+#@ profilebuilder
+msgid "A user account has been created for"
+msgstr "Gebruikers account is gemaakt voor"
+
+#: front-end/wppb.register.php:540
+#@ profilebuilder
+msgid "Thank you for registering"
+msgstr "Bedankt voor registreren"
+
+#: front-end/wppb.register.php:567
+#@ profilebuilder
+msgid "An error occured while trying to send the notification email."
+msgstr "Fout opgetreden tijdens verzenden van notificatie e-mail."
+
+#: front-end/wppb.register.php:571
+#@ profilebuilder
+msgid "An email containing the username and password was successfully sent."
+msgstr "Een e-mail met gebruikersnaam en wachtwoord is succesvol verzonden."
+
+#: front-end/wppb.register.php:902
+#@ profilebuilder
+msgid "Send these credentials via email."
+msgstr "Verstuur deze gegevens via e-mail."
+

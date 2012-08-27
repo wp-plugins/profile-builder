@@ -1,0 +1,638 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Profile Builder\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-06-27 17:08+0200\n"
+"PO-Revision-Date: 2011-07-09 07:44+0100\n"
+"Last-Translator: \n"
+"Language-Team: Sébastien CEZARD\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-Language: French\n"
+"X-Poedit-Country: FRANCE\n"
+"X-Poedit-SearchPath-0: D:\\Repository\\profile-builder-beta\n"
+
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:5
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:8
+msgid "Profile Builder"
+msgstr "Profile Builder"
+
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:6
+msgid "Welcome to Profile Builder!"
+msgstr "Bienvenue dans Profile Builder !"
+
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:8
+msgid " lets you customize your website by adding a front-end menu for all your users, giving them a more flexible way to modify their user-information or to register new users."
+msgstr "vous permet de personnaliser votre site en y ajoutant un menu visible par les utilisateurs, leur permettant de modifier de manière plus flexible les informations les concernant ou encore, de permettre l'enregistrement de nouveaux utilisateurs."
+
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:9
+msgid "Also, grants users with administrator rights to customize basic fields."
+msgstr "Permet également aux utilisateurs possédant des droits d'administrateur de personnaliser les champs de base."
+
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:10
+msgid "To achieve this, just create a new page, and give it an intuitive name(e.g. Edit Profile)."
+msgstr "Pour terminer, créez simplement une nouvelle page et donnez-lui un nom évocateur (par exemple, \"Modifier le Profil\")."
+
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:11
+msgid "Now all you need to do is add the following shortcode(for the previous example): "
+msgstr "Tout ce qu'il vous reste à faire maintenant est d'ajouter le shortcode suivant (pour l'exemple précédent) :"
+
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:12
+msgid "Publish your page and you are ready to go!"
+msgstr "Publiez votre page et vous serez prêt !"
+
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:13
+msgid "You can use the following shortcodes:"
+msgstr "Vous pouvez utiliser les shortcodes suivant :"
+
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:14
+msgid "for a log-in form."
+msgstr "pour un formulaire de connexion."
+
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:15
+msgid "to add a registration form."
+msgstr "pour ajouter un formulaire d'enregistrement."
+
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:16
+msgid "to grant users a front-end acces to their personal information(requires user to be logged in)."
+msgstr "pour permettre aux utilisateurs l'accés à leurs informations personnelles (l'utilisateur doit être connecté)."
+
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:18
+msgid "Also, users with administrator rights have access to the following features:"
+msgstr "De plus, les utilisateurs ayant des droits d'administrateur ont accés aux fonctions suivantes:"
+
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:19
+msgid "add a custom stylesheet/inherit values from the current theme or use the default one, built into this plug-in."
+msgstr "ajoute une feuille de style personnalisée/hérite des valeurs du thème courant ou utilise les valeurs par défaut, définies dans le plugin."
+
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:20
+msgid "select whether to display or not the admin bar in the front end for a specific user-group registered to the site."
+msgstr "choisissez d'afficher ou non la Barre d'Administration sur le Front-End pour un groupe d'utilisateurs spécifique enregistré sur le site."
+
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:21
+msgid "select which information-field can the users see/modify. The hidden fields' values remain unmodified."
+msgstr "choisissez quel champ d'information peuvent voir/modifier les utilisateurs. Les valeurs des champs cachés ne peuvent être modifiées."
+
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:22
+msgid "add custom profile fields."
+msgstr "ajouter un champs des profil personnalisés."
+
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:24
+msgid "NOTE:"
+msgstr "NOTE:"
+
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:25
+msgid "this plugin only adds/removes fields in the front-end."
+msgstr "ce plugin ajoute/retire des champs uniquement sur le Front-End."
+
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:26
+msgid "The default information-fields will still be visible(and thus modifiable)"
+msgstr "Les champs d'informations par défaut seront encore visibles (donc modifiables)."
+
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:27
+msgid "from the back-end, while custom fields will only be visible in the front-end."
+msgstr "depuis le Back-End, alors que les champs personnalisés ne seront visibles que sur le Front-End."
+
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:41
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:42
+#: D:\Repository\profile-builder-beta/front-end/options.php:41
+msgid "Plugin Layout"
+msgstr "Apparence du Plugin"
+
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:48
+msgid "Use default stylesheet:"
+msgstr "Utiliser la feuille de style par défaut:"
+
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:51
+msgid "yes"
+msgstr "oui"
+
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:52
+msgid "no"
+msgstr "non"
+
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:61
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:108
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:276
+#: D:\Repository\profile-builder-beta/premium/premium.php:175
+msgid "Save Changes"
+msgstr "Sauvegarder les Modifications"
+
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:79
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:80
+msgid "Show/Hide the Admin Bar on Front End"
+msgstr "Afficher/Cacher la Barre d'Administration sur le Front-End"
+
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:84
+msgid "User-group"
+msgstr "Groupe d'Utilisateur"
+
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:85
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:132
+msgid "Visibility"
+msgstr "Visibilité"
+
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:97
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:148
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:157
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:166
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:175
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:184
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:201
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:210
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:222
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:231
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:240
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:257
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:267
+msgid "Show"
+msgstr "Afficher"
+
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:98
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:149
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:158
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:167
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:176
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:185
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:202
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:211
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:223
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:232
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:241
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:258
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:268
+msgid "Hide"
+msgstr "Cacher"
+
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:126
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:127
+#: D:\Repository\profile-builder-beta/front-end/options.php:43
+msgid "Default Profile Fields"
+msgstr "Champs de Profil par Défaut"
+
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:131
+msgid "Input Field Name"
+msgstr "Nom du Champ de Saisie"
+
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:138
+msgid "Name:"
+msgstr "Nom:"
+
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:145
+#: D:\Repository\profile-builder-beta/front-end/wppb.edit.profile.php:385
+#: D:\Repository\profile-builder-beta/front-end/wppb.login.php:76
+#: D:\Repository\profile-builder-beta/front-end/wppb.register.php:237
+msgid "Username"
+msgstr "Nom d'Utilisateur"
+
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:154
+#: D:\Repository\profile-builder-beta/front-end/wppb.edit.profile.php:394
+#: D:\Repository\profile-builder-beta/front-end/wppb.register.php:246
+msgid "First Name"
+msgstr "Prénom"
+
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:163
+#: D:\Repository\profile-builder-beta/front-end/wppb.edit.profile.php:403
+#: D:\Repository\profile-builder-beta/front-end/wppb.register.php:255
+msgid "Last Name"
+msgstr "Nom"
+
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:172
+#: D:\Repository\profile-builder-beta/front-end/wppb.edit.profile.php:412
+#: D:\Repository\profile-builder-beta/front-end/wppb.register.php:264
+msgid "Nickname"
+msgstr "Surnom"
+
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:181
+msgid "Display name publicly as..."
+msgstr "Afficher publiquement en tant que..."
+
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:191
+msgid "Contact Info:"
+msgstr "Info de Contact:"
+
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:198
+#: D:\Repository\profile-builder-beta/front-end/wppb.edit.profile.php:456
+#: D:\Repository\profile-builder-beta/front-end/wppb.register.php:277
+msgid "E-mail"
+msgstr "Courriel"
+
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:207
+#: D:\Repository\profile-builder-beta/front-end/wppb.edit.profile.php:465
+#: D:\Repository\profile-builder-beta/front-end/wppb.register.php:286
+msgid "Website"
+msgstr "Site Web"
+
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:219
+#: D:\Repository\profile-builder-beta/front-end/wppb.edit.profile.php:474
+#: D:\Repository\profile-builder-beta/front-end/wppb.register.php:295
+msgid "AIM"
+msgstr "AIM"
+
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:228
+#: D:\Repository\profile-builder-beta/front-end/wppb.edit.profile.php:483
+#: D:\Repository\profile-builder-beta/front-end/wppb.register.php:304
+msgid "Yahoo IM"
+msgstr "Yahoo IM"
+
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:237
+#: D:\Repository\profile-builder-beta/front-end/wppb.edit.profile.php:492
+#: D:\Repository\profile-builder-beta/front-end/wppb.register.php:313
+msgid "Jabber / Google Talk"
+msgstr "Jabber / Google Talk"
+
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:247
+msgid "About Yourself:"
+msgstr "À Propos de Vous:"
+
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:254
+#: D:\Repository\profile-builder-beta/front-end/wppb.edit.profile.php:505
+#: D:\Repository\profile-builder-beta/front-end/wppb.register.php:326
+msgid "Biographical Info"
+msgstr "Infos Biographiques"
+
+#: D:\Repository\profile-builder-beta/front-end/menu.file.php:264
+#: D:\Repository\profile-builder-beta/front-end/wppb.edit.profile.php:514
+msgid "New Password"
+msgstr "Nouveau Mot de Passe"
+
+#: D:\Repository\profile-builder-beta/front-end/options.php:40
+msgid "Basic Information"
+msgstr "Informations de Base"
+
+#: D:\Repository\profile-builder-beta/front-end/options.php:42
+msgid "Show/Hide the Admin Bar on Front-end"
+msgstr "Afficher/Cacher la Barre d'Administration sur le Front-End"
+
+#: D:\Repository\profile-builder-beta/front-end/options.php:46
+#: D:\Repository\profile-builder-beta/premium/premium.php:5
+#: D:\Repository\profile-builder-beta/premium/premium.php:6
+msgid "Extra Profile Fields"
+msgstr "Champs de Profil Supplémentaires"
+
+#: D:\Repository\profile-builder-beta/front-end/options.php:47
+msgid "Register Your Version"
+msgstr "Enregistrer Votre Version"
+
+#: D:\Repository\profile-builder-beta/front-end/wppb.edit.profile.php:269
+msgid "You must be logged in to edit your profile."
+msgstr "Vous devez être connecté(e) pour modifier votre profil."
+
+#: D:\Repository\profile-builder-beta/front-end/wppb.edit.profile.php:278
+msgid "The avatar was successfully deleted."
+msgstr "L'avatar a bien été supprimé."
+
+#: D:\Repository\profile-builder-beta/front-end/wppb.edit.profile.php:283
+msgid "The attachment \""
+msgstr "La pièce-jointe \""
+
+#: D:\Repository\profile-builder-beta/front-end/wppb.edit.profile.php:285
+msgid "\" was successfully deleted."
+msgstr "\" a bien été supprimée."
+
+#: D:\Repository\profile-builder-beta/front-end/wppb.edit.profile.php:298
+msgid "The changes have been successfully saved."
+msgstr "Les modifications ont été sauvegardés avec succés."
+
+#: D:\Repository\profile-builder-beta/front-end/wppb.edit.profile.php:303
+msgid "The email address you entered is already registered to a different user.<br/>The email address was "
+msgstr "L'adresse de courriel que vous avez entré est déjà attribuée à un autre utilisateur. <br/>L'adresse de courriel était "
+
+#: D:\Repository\profile-builder-beta/front-end/wppb.edit.profile.php:304
+#: D:\Repository\profile-builder-beta/front-end/wppb.edit.profile.php:314
+#: D:\Repository\profile-builder-beta/front-end/wppb.edit.profile.php:324
+#: D:\Repository\profile-builder-beta/front-end/wppb.edit.profile.php:333
+#: D:\Repository\profile-builder-beta/front-end/wppb.edit.profile.php:355
+#: D:\Repository\profile-builder-beta/front-end/wppb.edit.profile.php:363
+msgid "NOT"
+msgstr "PAS"
+
+#: D:\Repository\profile-builder-beta/front-end/wppb.edit.profile.php:305
+#: D:\Repository\profile-builder-beta/front-end/wppb.edit.profile.php:315
+#: D:\Repository\profile-builder-beta/front-end/wppb.edit.profile.php:325
+#: D:\Repository\profile-builder-beta/front-end/wppb.edit.profile.php:334
+#: D:\Repository\profile-builder-beta/front-end/wppb.edit.profile.php:356
+#: D:\Repository\profile-builder-beta/front-end/wppb.edit.profile.php:364
+msgid " updated along with the rest of the information."
+msgstr " mis à jour avec le reste des informations."
+
+#: D:\Repository\profile-builder-beta/front-end/wppb.edit.profile.php:313
+msgid "The email address you entered is invalid. <br/> The email address was "
+msgstr "L'adresse de courriel que vous avez entré n'est pas valide. <br/> L'adresse de courriel était "
+
+#: D:\Repository\profile-builder-beta/front-end/wppb.edit.profile.php:323
+msgid "The passwords you entered do not match. <br/> The password was "
+msgstr "Les mots de passe ne correspondent pas. <br/> Le mot de passe était "
+
+#: D:\Repository\profile-builder-beta/front-end/wppb.edit.profile.php:332
+msgid "You didn't complete both password fields. <br/> The password was "
+msgstr "Vous n'avez pas renseigné les champs des mots de passe. <br/> Le mot de passe était "
+
+#: D:\Repository\profile-builder-beta/front-end/wppb.edit.profile.php:344
+msgid "There was an error while trying to upload the following attachments:<br/>"
+msgstr "Une erreur est survenue lors de l'envoi des pièces-jointes suivantes:<br/>"
+
+#: D:\Repository\profile-builder-beta/front-end/wppb.edit.profile.php:352
+msgid "<br/>Possible cause: the size was bigger than "
+msgstr "<br/>Cause possible: la taille était supérieure à "
+
+#: D:\Repository\profile-builder-beta/front-end/wppb.edit.profile.php:354
+msgid "b.<br/>The listed attachements were "
+msgstr "b.<br/>Les pièces jointes listées étaient "
+
+#: D:\Repository\profile-builder-beta/front-end/wppb.edit.profile.php:362
+msgid "There was an error while trying to upload your avatar picture.<br/>Possible cause: size/incorrect file-type.<br/>The avatar was "
+msgstr "Une erreur est survenue lors de l'envoi de l'image. <br/>Cause possible: taille/type de fichier incorrect.<br/> L'avatar était "
+
+#: D:\Repository\profile-builder-beta/front-end/wppb.edit.profile.php:380
+#: D:\Repository\profile-builder-beta/front-end/wppb.register.php:231
+msgid "Name"
+msgstr "Nom"
+
+#: D:\Repository\profile-builder-beta/front-end/wppb.edit.profile.php:386
+msgid " Usernames cannot be changed."
+msgstr "Les noms d'utilisateur ne peuvent être modifiés."
+
+#: D:\Repository\profile-builder-beta/front-end/wppb.edit.profile.php:412
+#: D:\Repository\profile-builder-beta/front-end/wppb.edit.profile.php:456
+#: D:\Repository\profile-builder-beta/front-end/wppb.register.php:237
+#: D:\Repository\profile-builder-beta/front-end/wppb.register.php:277
+msgid " (required)"
+msgstr "(champ requis)"
+
+#: D:\Repository\profile-builder-beta/front-end/wppb.edit.profile.php:421
+msgid "Display name publicly as"
+msgstr "Apparaître publiquement en tant que"
+
+#: D:\Repository\profile-builder-beta/front-end/wppb.edit.profile.php:450
+#: D:\Repository\profile-builder-beta/front-end/wppb.register.php:271
+msgid "Contact Info"
+msgstr "Info de Contact"
+
+#: D:\Repository\profile-builder-beta/front-end/wppb.edit.profile.php:499
+#: D:\Repository\profile-builder-beta/front-end/wppb.register.php:320
+msgid "About Yourself"
+msgstr "À propos de vous"
+
+#: D:\Repository\profile-builder-beta/front-end/wppb.edit.profile.php:519
+#: D:\Repository\profile-builder-beta/front-end/wppb.register.php:340
+msgid "Repeat Password"
+msgstr "Entrez à nouveau le mot de passe"
+
+#: D:\Repository\profile-builder-beta/front-end/wppb.edit.profile.php:535
+msgid "Update"
+msgstr "Mise à jour"
+
+#: D:\Repository\profile-builder-beta/front-end/wppb.login.php:47
+#, php-format
+msgid "You are currently logged in as <a href=\"%1$s\" title=\"%2$s\">%2$s</a>."
+msgstr "Vous êtes actuellement connecté en tant que <a href=\"%1$s\" title=\"%2$s\">%2$s</a>."
+
+#: D:\Repository\profile-builder-beta/front-end/wppb.login.php:47
+#: D:\Repository\profile-builder-beta/front-end/wppb.register.php:169
+msgid "Log out of this account"
+msgstr "Se déconnecter de ce compte"
+
+#: D:\Repository\profile-builder-beta/front-end/wppb.login.php:47
+msgid "Log out &raquo;"
+msgstr "Se déconnecter &raquo;"
+
+#: D:\Repository\profile-builder-beta/front-end/wppb.login.php:60
+#, php-format
+msgid "You have successfully logged in as <a href=\"%1$s\" title=\"%2$s\">%2$s</a>."
+msgstr "Vous vous êtes connecté en tant que <a href=\"%1$s\" title=\"%2$s\">%2$s</a>."
+
+#: D:\Repository\profile-builder-beta/front-end/wppb.login.php:81
+#: D:\Repository\profile-builder-beta/front-end/wppb.register.php:335
+msgid "Password"
+msgstr "Mot de passe"
+
+#: D:\Repository\profile-builder-beta/front-end/wppb.login.php:85
+msgid "Log in"
+msgstr "Se connecter"
+
+#: D:\Repository\profile-builder-beta/front-end/wppb.login.php:87
+msgid "Remember me"
+msgstr "Se souvenir de moi"
+
+#: D:\Repository\profile-builder-beta/front-end/wppb.login.php:91
+msgid "Lost password?"
+msgstr "Mot de passe oublié ?"
+
+#: D:\Repository\profile-builder-beta/front-end/wppb.register.php:37
+msgid "A username is required for registration."
+msgstr "Un nom d'utilisateur est requis pour l'enregistrement."
+
+#: D:\Repository\profile-builder-beta/front-end/wppb.register.php:39
+msgid "Sorry, that username already exists!"
+msgstr "Désolé, ce nom d'utilisateur existe déjà !"
+
+#: D:\Repository\profile-builder-beta/front-end/wppb.register.php:42
+msgid "You must enter a valid email address."
+msgstr "Vous devez entrer une adresse de courriel valide."
+
+#: D:\Repository\profile-builder-beta/front-end/wppb.register.php:44
+msgid "Sorry, that email address is already used!"
+msgstr "Désolé, cette adresse de courriel est déjà utilisée !"
+
+#: D:\Repository\profile-builder-beta/front-end/wppb.register.php:47
+msgid "You didn't complete one of the password-fields!"
+msgstr "Vous n'avez pas renseigné un des champs de mot de passe !"
+
+#: D:\Repository\profile-builder-beta/front-end/wppb.register.php:49
+msgid "The entered passwords don't match!"
+msgstr "Les mots de passe ne correspondent pas !"
+
+#: D:\Repository\profile-builder-beta/front-end/wppb.register.php:169
+#, php-format
+msgid "You are logged in as <a href=\"%1$s\" title=\"%2$s\">%2$s</a>.  You don't need another account."
+msgstr "Vous êtes déjà connecté(e) en tant que <a href=\"%1$s\" title=\"%2$s\">%2$s</a>.  Vous n'avez pas besoin d'autre compte."
+
+#: D:\Repository\profile-builder-beta/front-end/wppb.register.php:169
+msgid "Logout &raquo;"
+msgstr "Se déconnecter &raquo;"
+
+#: D:\Repository\profile-builder-beta/front-end/wppb.register.php:179
+#, php-format
+msgid "A user account for %1$s has been created."
+msgstr "Un compte utilisateur pour %1$s a été créé."
+
+#: D:\Repository\profile-builder-beta/front-end/wppb.register.php:181
+#, php-format
+msgid "Thank you for registering, %1$s."
+msgstr "Merci de vous être enregistré(e), %1$s."
+
+#: D:\Repository\profile-builder-beta/front-end/wppb.register.php:209
+msgid "Users can register themselves or you can manually create users here."
+msgstr "Les utilisateurs peuvent s'enregistrer par eux-même ou bien vous pouvez en créer manuellement ici."
+
+#: D:\Repository\profile-builder-beta/front-end/wppb.register.php:213
+msgid "Users cannot currently register themselves, but you can manually create users here."
+msgstr "Aucun utilisateur ne peut actuellement s'enregistrer, mais vous pouvez en créer manuellement ici."
+
+#: D:\Repository\profile-builder-beta/front-end/wppb.register.php:217
+msgid "Only an administrator can add new users."
+msgstr "Seul un administrateur peut ajouter de nouveaux utilisateurs."
+
+#: D:\Repository\profile-builder-beta/front-end/wppb.register.php:359
+msgid " Send these credentials via email."
+msgstr " Envoyer ces informations par courriel."
+
+#: D:\Repository\profile-builder-beta/front-end/wppb.register.php:365
+msgid "Add User"
+msgstr "Ajouter un Utilisateur"
+
+#: D:\Repository\profile-builder-beta/front-end/wppb.register.php:365
+msgid "Register"
+msgstr "S'Enregistrer"
+
+#: D:\Repository\profile-builder-beta/premium/premium.php:7
+msgid "You can create as many extra fields as your project requires. To break your custom fields into sections (on the front-end), add a \""
+msgstr "Vous pouvez créer autant de champs que votre projet le requiert. Pour diviser vos champs personnalisés en différentes sections (sur le front-end), ajoutez un \""
+
+#: D:\Repository\profile-builder-beta/premium/premium.php:7
+msgid "heading"
+msgstr "titre"
+
+#: D:\Repository\profile-builder-beta/premium/premium.php:7
+msgid "\" custom field."
+msgstr "\" champ personnalisé."
+
+#: D:\Repository\profile-builder-beta/premium/premium.php:8
+msgid "All of the fields can be sorted and rearranged to your liking with "
+msgstr "Tous les champs peuvent être triés et réarrangés à votre guise avec "
+
+#: D:\Repository\profile-builder-beta/premium/premium.php:8
+msgid "Drag"
+msgstr "Glisser"
+
+#: D:\Repository\profile-builder-beta/premium/premium.php:8
+msgid "Drop"
+msgstr "Déposer"
+
+#: D:\Repository\profile-builder-beta/premium/premium.php:8
+msgid ". Don't worry about the order in which you create your custom fields, you can always reorder them."
+msgstr ". Ne vous inquiétez pas de l'ordre dans lequel vous créez vos champs personnalisés, vous pouvez les réordonner à tout moment."
+
+#: D:\Repository\profile-builder-beta/premium/premium.php:12
+#: D:\Repository\profile-builder-beta/premium/premium.php:20
+msgid "Title"
+msgstr "Titre"
+
+#: D:\Repository\profile-builder-beta/premium/premium.php:13
+#: D:\Repository\profile-builder-beta/premium/premium.php:21
+msgid "Key"
+msgstr "Touche"
+
+#: D:\Repository\profile-builder-beta/premium/premium.php:14
+#: D:\Repository\profile-builder-beta/premium/premium.php:22
+msgid "Type"
+msgstr "Type"
+
+#: D:\Repository\profile-builder-beta/premium/premium.php:15
+#: D:\Repository\profile-builder-beta/premium/premium.php:23
+msgid "Add Option"
+msgstr "Ajouter une Option"
+
+#: D:\Repository\profile-builder-beta/premium/premium.php:37
+#: D:\Repository\profile-builder-beta/premium/premium.php:137
+msgid "Edit"
+msgstr "Modifier"
+
+#: D:\Repository\profile-builder-beta/premium/premium.php:38
+#: D:\Repository\profile-builder-beta/premium/premium.php:138
+msgid "Delete"
+msgstr "Effacer"
+
+#: D:\Repository\profile-builder-beta/premium/premium.php:61
+msgid "Title:"
+msgstr "Titre:"
+
+#: D:\Repository\profile-builder-beta/premium/premium.php:61
+msgid "The title of the item."
+msgstr "Le titre de l'item."
+
+#: D:\Repository\profile-builder-beta/premium/premium.php:71
+msgid "Option Key:"
+msgstr "Touche d'Option:"
+
+#: D:\Repository\profile-builder-beta/premium/premium.php:71
+msgid "Unique alphanumeric key, underscores are acceptable."
+msgstr "Touche alphanumérique unique, les underscores sont acceptés."
+
+#: D:\Repository\profile-builder-beta/premium/premium.php:99
+msgid "Option Type:"
+msgstr "Type d'Option:"
+
+#: D:\Repository\profile-builder-beta/premium/premium.php:99
+msgid "Choose one of the supported option types."
+msgstr "Choisissez un des types d'option supporté."
+
+#: D:\Repository\profile-builder-beta/premium/premium.php:109
+msgid "Description:"
+msgstr "Description:"
+
+#: D:\Repository\profile-builder-beta/premium/premium.php:109
+msgid "Enter a detailed description of the option for end users to read(optional)."
+msgstr "Entrez une description détaillée des options à lire pour l'utilisateur final (optionnel)."
+
+#: D:\Repository\profile-builder-beta/premium/premium.php:119
+msgid "Options:"
+msgstr "Options:"
+
+#: D:\Repository\profile-builder-beta/premium/premium.php:119
+msgid "Enter a comma separated list of options. For example, you could have \"One,Two,Three\" or just a single value like \"Yes\" for a checkbox."
+msgstr "Entrez une liste d'options séparées par des virgules. Vous pouvez par exemple utiliser \"Un,Deux,Trois\" ou simplement une valeur unique comme \"Oui\" pour une case à cocher."
+
+#: D:\Repository\profile-builder-beta/premium/premium.php:127
+msgid "Cancel"
+msgstr "Annuler"
+
+#: D:\Repository\profile-builder-beta/premium/premium.php:128
+msgid "Save"
+msgstr "Enregistrer"
+
+#: D:\Repository\profile-builder-beta/premium/premium.php:158
+#: D:\Repository\profile-builder-beta/premium/premium.php:159
+msgid "Register your version of Profile Builder Pro"
+msgstr "Enregistrer votre version de Profile Builder Pro"
+
+#: D:\Repository\profile-builder-beta/premium/premium.php:160
+msgid "Now that you acquired a copy of Profile Builder Pro, you should take the time and register it with the serial number you received in the e-mail."
+msgstr "Maintenant que vous avez acquis une copie de Profile Builder Pro, vous devriez prendre le temps de l'enregistrer grâce au numéro de série que vous avez reçu par courriel."
+
+#: D:\Repository\profile-builder-beta/premium/premium.php:161
+msgid "If you register this version of Profile Builder, you'll receive information regarding eventual upgrades, patches, and - if needed - technical support."
+msgstr "Si vous avez enregistré cette version de Profile Builder, vous recevrez des informations concernant les mises à jour, patches et - au besoin - un support technique."
+
+#: D:\Repository\profile-builder-beta/premium/premium.php:162
+msgid "Serial Number:"
+msgstr "Numéro de Série:"
+
+#: D:\Repository\profile-builder-beta/premium/premium.php:167
+msgid "The serial number couldn't be validated or isn't valid!"
+msgstr "Le numéro de série n'a pu être validé ou bien il n'est pas valide !"
+
+#: D:\Repository\profile-builder-beta/premium/premium.php:169
+msgid "The serial number was successfully validated!"
+msgstr "Le numéro de série a été validé avec succés !"
+
+#: D:\Repository\profile-builder-beta/premium/premium.php:171
+msgid "(e.g. RMPB-15-SN-253a55baa4fbe7bf595b2aabb8d72985)"
+msgstr "(ex. : RMPB-15-SN-253a55baa4fbe7bf595b2aabb8d72985)"
+
+#: D:\Repository\profile-builder-beta/premium/functions/extra.fields.php:115
+#: D:\Repository\profile-builder-beta/premium/functions/extra.fields.php:118
+#: D:\Repository\profile-builder-beta/premium/functions/extra.fields.php:409
+#: D:\Repository\profile-builder-beta/premium/functions/extra.fields.php:412
+msgid "Current file"
+msgstr "Fichier actuel"
+
+#: D:\Repository\profile-builder-beta/premium/functions/extra.fields.php:138
+#: D:\Repository\profile-builder-beta/premium/functions/extra.fields.php:434
+msgid "Current avatar"
+msgstr "Avatar actuel"
+

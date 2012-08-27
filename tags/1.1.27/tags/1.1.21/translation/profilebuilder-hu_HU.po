@@ -1,0 +1,499 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Profile Builder\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-07-06 14:23+0200\n"
+"PO-Revision-Date: 2011-07-07 16:12+0200\n"
+"Last-Translator: Gabriel Barina <barinagabriel2007@yahoo.com>\n"
+"Language-Team: ReflectionMedia\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: C:\\Users\\Cristi\\Desktop\\free\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-SearchPath-0: C:\\Users\\Cristi\\Desktop\\free\n"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:5
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:8
+msgid "Profile Builder"
+msgstr "Profile Builder"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:6
+msgid "Welcome to Profile Builder!"
+msgstr "Üdv.a Profile Buliderben!"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:8
+msgid " lets you customize your website by adding a front-end menu for all your users, giving them a more flexible way to modify their user-information or to register new users."
+msgstr "testreszabhatod a weboldaladat egy új menü létrehozásával, amely minden felhasználónak biztosítja az adatai rugalmasabb szerkesztését."
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:9
+msgid "Also, grants users with administrator rights to customize basic fields or to add new ones."
+msgstr "Az adminisztrátor jogú felhasználók testreszabhatják az alap mezőket, vagy újakat adhatnak hozzá"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:10
+msgid "To achieve this, just create a new page, and give it an intuitive name(e.g. Edit Profile)."
+msgstr "Ennek elérése érdekében hozz létre egy új oldalt, és adj neki egy nevet (pl. Profil szerkesztése)"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:11
+msgid "Now all you need to do is add the following shortcode(for the previous example): "
+msgstr "Most mindössze annyit kell tennie, hogy a következő rövidkódot beilleszti (az előző példában):"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:12
+msgid "Publish your page and you are ready to go!"
+msgstr "Az oldal közzététele és már mehet is!"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:13
+msgid "You can use the following shortcodes:"
+msgstr "A következő rövidkódokat használhatod:"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:14
+msgid "for a log-in form."
+msgstr "bejelentkezési űrlaphoz."
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:15
+msgid "to add a registration form."
+msgstr "regisztrációs űrlap hozzáadásához."
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:16
+msgid "to grant users a front-end acces to their personal information(requires user to be logged in)."
+msgstr "a felhasználóknak lehetőséget biztosít a személyes adataik eléréséhez (bejelentkezés szükséges)."
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:18
+msgid "Users with administrator rights have access to the following features:"
+msgstr "Az adminisztrátor jogú felhasználók ezeket a funkciókat is elérhetik:"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:19
+msgid "add a custom stylesheet/inherit values from the current theme or use one of the following built into this plugin: default, white or black."
+msgstr "Saját stíluslap használata a jelenlegi témából, vagy a következő bővítménybe épített stíluslapok: szokásos, fehér, vagy fekete."
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:20
+msgid "select whether to display or not the admin bar in the front end for a specific user-group registered to the site."
+msgstr "Válaszd ki, hogy az admin sáv megjelenjen-e egy adott felhasználói csoportnak amely regisztrált az oldalra. "
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:21
+msgid "select which information-field can users see/modify. The hidden fields' values remain unmodified."
+msgstr "Válaszd ki, mely információs mezőket láthat/módosíthat a felhasználó. A rejtett mezők értéke változatlan marad."
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:22
+msgid "add custom fields to the existing ones, with several types to choose from: heading, text, textarea, select, checkbox, radio, and/or upload."
+msgstr "Egyéni mezők hozzáadása a meglévőkhöz, amit a következők közül lehet kiválasztani: heading, text, textarea, select, checkbox, radio, and/or upload."
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:23
+msgid "add an avatar field."
+msgstr "Avatar mező hozzáadása."
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:26
+msgid "NOTE:"
+msgstr "MEGJEGYZÉS:"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:27
+msgid "this plugin only adds/removes fields in the front-end."
+msgstr "Ez a bővítmény csak hozzáad/eltávolít mezőket a felhasználó elől. "
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:28
+msgid "The default information-fields will still be visible(and thus modifiable)"
+msgstr "Az alap információs mezők továbbra is láthatóak (és módosíthatóak)"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:29
+msgid "from the back-end, while custom fields will only be visible in the front-end."
+msgstr "Az egyedi mezők csak a felhasználók számára lesznek láthatók. "
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:43
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:44
+#: C:\Users\Cristi\Desktop\free/front-end/options.php:58
+msgid "Plugin Layout"
+msgstr "Bővítény megjelenítés"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:50
+msgid "Stylesheet used:"
+msgstr "Stíluslap használata:"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:53
+msgid "Default"
+msgstr "Szokásos"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:58
+msgid "White"
+msgstr "Fehér"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:59
+msgid "Black"
+msgstr "Fekete"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:63
+msgid "None"
+msgstr "Nincs"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:72
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:119
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:287
+msgid "Save Changes"
+msgstr "Módosítások mentése"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:90
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:91
+msgid "Show/Hide the Admin Bar on Front End"
+msgstr "Admin sáv elrejt/mutat a felhasználó előtt"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:95
+msgid "User-group"
+msgstr "Felhasználói csoport"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:96
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:143
+msgid "Visibility"
+msgstr "Láthatóság"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:108
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:159
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:168
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:177
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:186
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:195
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:212
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:221
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:233
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:242
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:251
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:268
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:278
+msgid "Show"
+msgstr "Mutat"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:109
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:160
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:169
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:178
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:187
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:196
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:213
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:222
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:234
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:243
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:252
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:269
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:279
+msgid "Hide"
+msgstr "Elrejt"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:137
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:138
+#: C:\Users\Cristi\Desktop\free/front-end/options.php:60
+msgid "Default Profile Fields"
+msgstr "Alap profil mezők"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:142
+msgid "Input Field Name"
+msgstr "Beviteli mező neve"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:149
+msgid "Name:"
+msgstr "Név:"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:156
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:385
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.login.php:76
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:244
+msgid "Username"
+msgstr "Felhasználónév"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:165
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:394
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:259
+msgid "First Name"
+msgstr "Keresztnév"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:174
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:403
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:273
+msgid "Last Name"
+msgstr "Vezetéknév"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:183
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:412
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:287
+msgid "Nickname"
+msgstr "Loginnév"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:192
+msgid "Display name publicly as..."
+msgstr "A nevem publikus megjelenítése, mint"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:202
+msgid "Contact Info:"
+msgstr "Kapcsolati adatok"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:209
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:457
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:305
+msgid "E-mail"
+msgstr "E-mail"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:218
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:467
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:320
+msgid "Website"
+msgstr "Weboldal"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:230
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:476
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:334
+msgid "AIM"
+msgstr "AIM"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:239
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:485
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:348
+msgid "Yahoo IM"
+msgstr "Yahoo IM"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:248
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:494
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:362
+msgid "Jabber / Google Talk"
+msgstr "Jabber / Google Talk"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:258
+msgid "About Yourself:"
+msgstr "Magadról:"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:265
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:507
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:380
+msgid "Biographical Info"
+msgstr "Életrajzi információk"
+
+#: C:\Users\Cristi\Desktop\free/front-end/menu.file.php:275
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:516
+msgid "New Password"
+msgstr "Új jelszó"
+
+#: C:\Users\Cristi\Desktop\free/front-end/options.php:57
+msgid "Basic Information"
+msgstr "Alapadatok"
+
+#: C:\Users\Cristi\Desktop\free/front-end/options.php:59
+msgid "Show/Hide the Admin Bar on Front-end"
+msgstr "Admin sáv elrejt/mutat a felhasználó előtt"
+
+#: C:\Users\Cristi\Desktop\free/front-end/options.php:63
+msgid "Extra Profile Fields"
+msgstr "Extra profil mezők"
+
+#: C:\Users\Cristi\Desktop\free/front-end/options.php:64
+msgid "Register Your Version"
+msgstr "Regisztráld a verziódat!"
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:269
+msgid "You must be logged in to edit your profile."
+msgstr "Be kell jelentkezned a profilod szerkesztéséhez!"
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:278
+msgid "The avatar was successfully deleted."
+msgstr "Az avatar sikeresen törölve."
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:283
+msgid "The attachment \""
+msgstr "A csatolmány \""
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:285
+msgid "\" was successfully deleted."
+msgstr "\" sikeresen törölve."
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:298
+msgid "The changes have been successfully saved."
+msgstr "A változások sikeresen mentve."
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:303
+msgid "The email address you entered is already registered to a different user.<br/>The email address was "
+msgstr "Az email címmel, amit megadtál már egy másik felhasználó regisztrált. <br/> Az email cím"
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:304
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:314
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:324
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:333
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:355
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:363
+msgid "NOT"
+msgstr "NEM"
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:305
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:315
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:325
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:334
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:356
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:364
+msgid " updated along with the rest of the information."
+msgstr "lett a többi információval együtt frissítve."
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:313
+msgid "The email address you entered is invalid. <br/> The email address was "
+msgstr "Az email cím, amit megadtál érvénytelen. <br/> Ez az email cím"
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:323
+msgid "The passwords you entered do not match. <br/> The password was "
+msgstr "Az általad megadott jelszavak nem egyeznek <br/> A jelszó"
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:332
+msgid "You didn't complete both password fields. <br/> The password was "
+msgstr "Nem töltötted ki mindkét jelszó mezőt. <br/> A jelszó"
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:344
+msgid "There was an error while trying to upload the following attachments:<br/>"
+msgstr "Hiba történt a következő csatolmányok feltöltésekor: <br/>"
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:352
+msgid "<br/>Possible cause: the size was bigger than "
+msgstr "<br/>Lehetséges okok: A mérete nagyobb volt, mint"
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:354
+msgid "b.<br/>The listed attachements were "
+msgstr "b.<br/>A felsorolt csatolmányok"
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:362
+msgid "There was an error while trying to upload your avatar picture.<br/>Possible cause: size/incorrect file-type.<br/>The avatar was "
+msgstr "Hiba történt az avatar kép feltöltésekor: <br/>Lehetséges okok: méret/helytelen fájltípus <br/> Az avatar"
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:380
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:233
+msgid "Name"
+msgstr "Név"
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:386
+msgid " Usernames cannot be changed."
+msgstr "A Felhasználónév nem változtatható."
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:414
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:459
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:246
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:307
+msgid "(required)"
+msgstr "(kötelező)"
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:422
+msgid "Display name publicly as"
+msgstr "Név megjelenítése publikusan, mint"
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:451
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:294
+msgid "Contact Info"
+msgstr "Kapcsolati információ"
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:501
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:369
+msgid "About Yourself"
+msgstr "Magadról"
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:521
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:403
+msgid "Repeat Password"
+msgstr "Jelszó, mégegyszer"
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.edit.profile.php:537
+msgid "Update"
+msgstr "Frissítés"
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.login.php:47
+#, php-format
+msgid "You are currently logged in as <a href=\"%1$s\" title=\"%2$s\">%2$s</a>."
+msgstr "Jelenleg be vagy jelentkezve, mint <a href=\"%1$s\" title=\"%2$s\">%2$s</a>."
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.login.php:47
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:171
+msgid "Log out of this account"
+msgstr "Kijelentkezés ebből a fiókból"
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.login.php:47
+msgid "Log out &raquo;"
+msgstr "Kijelentkezés &raquo;"
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.login.php:60
+#, php-format
+msgid "You have successfully logged in as <a href=\"%1$s\" title=\"%2$s\">%2$s</a>."
+msgstr "Sikeresen bejelentkeztél, mint <a href=\"%1$s\" title=\"%2$s\">%2$s</a>."
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.login.php:86
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:398
+msgid "Password"
+msgstr "Jelszó"
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.login.php:90
+msgid "Log in"
+msgstr "Bejelentkezés"
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.login.php:92
+msgid "Remember me"
+msgstr "Emlékezz rám!"
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.login.php:96
+msgid "Lost password?"
+msgstr "Elvesztett jelszó?"
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:39
+msgid "A username is required for registration."
+msgstr "Felhasználónév megadása kötelező a regisztrációhoz."
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:41
+msgid "Sorry, that username already exists!"
+msgstr "Bocs, de ez a felhasználónév foglalt!"
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:44
+msgid "You must enter a valid email address."
+msgstr "Valós email címet kell beírnod!"
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:46
+msgid "Sorry, that email address is already used!"
+msgstr "Bocs, de ez az email cím már használatban van!"
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:49
+msgid "You didn't complete one of the password-fields!"
+msgstr "Nem töltötted ki az egyik jelszó mezőt!"
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:51
+msgid "The entered passwords don't match!"
+msgstr "A beírt jelszavak nem egyeznek!"
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:171
+#, php-format
+msgid "You are logged in as <a href=\"%1$s\" title=\"%2$s\">%2$s</a>.  You don't need another account."
+msgstr "Be vagy jelentkezve, mint <a href=\"%1$s\" title=\"%2$s\">%2$s</a>. Nincs szükséged másik fiókra. "
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:171
+msgid "Logout &raquo;"
+msgstr "Kijelentkezés &raquo;"
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:181
+#, php-format
+msgid "A user account for %1$s has been created."
+msgstr "Felhasználói fiók a következőnek: %1$s elkészült. "
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:183
+#, php-format
+msgid "Thank you for registering, %1$s."
+msgstr "Kösz a regisztrációt, %1$s!"
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:211
+msgid "Users can register themselves or you can manually create users here."
+msgstr "A felhasználók önmagukat tudják regisztrálni, vagy sajátkezűleg készíthetsz felhasználókat itt."
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:215
+msgid "Users cannot currently register themselves, but you can manually create users here."
+msgstr "A felhasználók jelenleg nem tudják magukat regisztrálni, de te tudsz itt létrehozni új felhasználót."
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:219
+msgid "Only an administrator can add new users."
+msgstr "Csak egy adminisztrátor tud felhasználót hozzáadni."
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:422
+msgid " Send these credentials via email."
+msgstr "Hitelesítő adatok küldése emailben. "
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:428
+msgid "Add User"
+msgstr "Felhasználó hozzáadása"
+
+#: C:\Users\Cristi\Desktop\free/front-end/wppb.register.php:428
+msgid "Register"
+msgstr "Regisztráció"
+

@@ -1,0 +1,871 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Profile Builder v1.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2011-08-11 17:27+0000\n"
+"Last-Translator: Pascal Frencken\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Language: Dutch\n"
+"X-Poedit-Country: NETHERLANDS\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#: front-end/menu.file.php:5
+#: front-end/menu.file.php:8
+#@ profilebuilder
+msgid "Profile Builder"
+msgstr "Profile Builder"
+
+#: front-end/menu.file.php:6
+#@ profilebuilder
+msgid "Welcome to Profile Builder!"
+msgstr "Welkom bij Profile Builder!"
+
+#: front-end/menu.file.php:8
+#@ profilebuilder
+msgid " lets you customize your website by adding a front-end menu for all your users, giving them a more flexible way to modify their user-information or to register new users."
+msgstr " stelt je in staat je website aan te passen door een front-end menu voor alle gebruikers toe te voegen, waarmee ze op een flexibele manier hun gebruikersinformatie kunnen wijzigen of zich als nieuwe gebruiker kunnen registreren."
+
+#: front-end/menu.file.php:9
+#@ profilebuilder
+msgid "Also, grants users with administrator rights to customize basic fields or to add new ones."
+msgstr "Ook geeft het beheerders de mogelijkheid om velden aan te passen of nieuwe toe te voegen."
+
+#: front-end/menu.file.php:10
+#@ profilebuilder
+msgid "To achieve this, just create a new page, and give it an intuitive name(e.g. Edit Profile)."
+msgstr "Hiervoor voeg je een nieuwe pagina toe, en geef je deze een duidelijke naam (bijv. Profiel Bewerken)."
+
+#: front-end/menu.file.php:11
+#@ profilebuilder
+msgid "Now all you need to do is add the following shortcode(for the previous example): "
+msgstr "Nu hoef je alleen de volgende shortcode toe te voegen: "
+
+#: front-end/menu.file.php:12
+#@ profilebuilder
+msgid "Publish your page and you are ready to go!"
+msgstr "Publiceer je pagina en je kunt aan de slag!"
+
+#: front-end/menu.file.php:13
+#@ profilebuilder
+msgid "You can use the following shortcodes:"
+msgstr "Je kunt de volgende shortcodes gebruiken:"
+
+#: front-end/menu.file.php:14
+#@ profilebuilder
+msgid "for a log-in form."
+msgstr "voor een login formulier."
+
+#: front-end/menu.file.php:15
+#@ profilebuilder
+msgid "to add a registration form."
+msgstr "voor het toevoegen van een inschrijfformulier."
+
+#: front-end/menu.file.php:16
+#@ profilebuilder
+msgid "to grant users a front-end acces to their personal information(requires user to be logged in)."
+msgstr "om gebruikers front-end toegang tot hun persoonlijke informatie te geven (de gebruiker moet ingelogd zijn)."
+
+#: front-end/menu.file.php:18
+#@ profilebuilder
+msgid "Users with administrator rights have access to the following features:"
+msgstr "Gebruikers met beheerdersrechten hebben toegang tot de volgende functies:"
+
+#: front-end/menu.file.php:19
+#@ profilebuilder
+msgid "add a custom stylesheet/inherit values from the current theme or use one of the following built into this plugin: default, white or black."
+msgstr "voeg een aangepaste stylesheet toe / neem de waarden van het huidige thema over of gebruik een van de volgende stijlen ingebouwd in deze plugin: standaard, wit of zwart."
+
+#: front-end/menu.file.php:20
+#@ profilebuilder
+msgid "select whether to display or not the admin bar in the front end for a specific user-group registered to the site."
+msgstr "geef aan of de admin balk in de front-end getoond moet worden voor een specifieke gebruikersgroep."
+
+#: front-end/menu.file.php:21
+#@ profilebuilder
+msgid "select which information-field can users see/modify. The hidden fields' values remain unmodified."
+msgstr "geef aan welke informatievelden de gebruikers kunnen zien / wijzigen. De waarden van verborgen velden blijven ongewijzigd."
+
+#: front-end/menu.file.php:22
+#@ profilebuilder
+msgid "add custom fields to the existing ones, with several types to choose from: heading, text, textarea, select, checkbox, radio, and/or upload."
+msgstr "voeg velden toe aan de bestaande, waarbij gekozen kan worden uit de volgende typen: koptekst, tekst, textgebied, selectieveld, meerkeuzeveld, enkel keuzeveld en / of uploadveld."
+
+#: front-end/menu.file.php:23
+#@ profilebuilder
+msgid "add an avatar field."
+msgstr "voeg een avatar veld toe."
+
+#: front-end/menu.file.php:26
+#@ profilebuilder
+msgid "NOTE:"
+msgstr "LET OP:"
+
+#: front-end/menu.file.php:27
+#@ profilebuilder
+msgid "this plugin only adds/removes fields in the front-end."
+msgstr "deze plugin voegt slechts velden toe aan / verwijdert velden uit de front-end."
+
+#: front-end/menu.file.php:28
+#@ profilebuilder
+msgid "The default information-fields will still be visible(and thus modifiable)"
+msgstr "De standaard informatievelden zullen nog steeds zichtbaar (en dus aanpasbaar) zijn"
+
+#: front-end/menu.file.php:29
+#@ profilebuilder
+msgid "from the back-end, while custom fields will only be visible in the front-end."
+msgstr "in de back-end, terwijl de toegevoegde velden alleen zichtbaar zijn in de front-end."
+
+#: front-end/menu.file.php:43
+#: front-end/menu.file.php:44
+#: front-end/options.php:58
+#@ profilebuilder
+msgid "Plugin Layout"
+msgstr "Plugin Opmaak"
+
+#: front-end/menu.file.php:50
+#@ profilebuilder
+msgid "Stylesheet used:"
+msgstr "Gebruikte stylesheet:"
+
+#: front-end/menu.file.php:53
+#@ profilebuilder
+msgid "Default"
+msgstr "Standaard"
+
+#: front-end/menu.file.php:58
+#@ profilebuilder
+msgid "White"
+msgstr "Wit"
+
+#: front-end/menu.file.php:59
+#@ profilebuilder
+msgid "Black"
+msgstr "Zwart"
+
+#: front-end/menu.file.php:63
+#@ profilebuilder
+msgid "None"
+msgstr "Geen"
+
+#: front-end/menu.file.php:72
+#: front-end/menu.file.php:119
+#: front-end/menu.file.php:287
+#: premium/premium.php:177
+#@ default
+msgid "Save Changes"
+msgstr "Wijzigingen Opslaan"
+
+#: front-end/menu.file.php:90
+#: front-end/menu.file.php:91
+#@ profilebuilder
+msgid "Show/Hide the Admin Bar on Front End"
+msgstr "Toon / Verberg de Admin Balk in de Front-end"
+
+#: front-end/menu.file.php:95
+#@ profilebuilder
+msgid "User-group"
+msgstr "Gebruikersgroep"
+
+#: front-end/menu.file.php:96
+#: front-end/menu.file.php:143
+#@ profilebuilder
+msgid "Visibility"
+msgstr "Zichtbaarheid"
+
+#: front-end/menu.file.php:108
+#: front-end/menu.file.php:159
+#: front-end/menu.file.php:168
+#: front-end/menu.file.php:177
+#: front-end/menu.file.php:186
+#: front-end/menu.file.php:195
+#: front-end/menu.file.php:212
+#: front-end/menu.file.php:221
+#: front-end/menu.file.php:233
+#: front-end/menu.file.php:242
+#: front-end/menu.file.php:251
+#: front-end/menu.file.php:268
+#: front-end/menu.file.php:278
+#@ profilebuilder
+msgid "Show"
+msgstr "Tonen"
+
+#: front-end/menu.file.php:109
+#: front-end/menu.file.php:160
+#: front-end/menu.file.php:169
+#: front-end/menu.file.php:178
+#: front-end/menu.file.php:187
+#: front-end/menu.file.php:196
+#: front-end/menu.file.php:213
+#: front-end/menu.file.php:222
+#: front-end/menu.file.php:234
+#: front-end/menu.file.php:243
+#: front-end/menu.file.php:252
+#: front-end/menu.file.php:269
+#: front-end/menu.file.php:279
+#@ profilebuilder
+msgid "Hide"
+msgstr "Verbergen"
+
+#: front-end/menu.file.php:137
+#: front-end/menu.file.php:138
+#: front-end/options.php:60
+#@ profilebuilder
+msgid "Default Profile Fields"
+msgstr "Standaard Profiel Velden"
+
+#: front-end/menu.file.php:142
+#@ profilebuilder
+msgid "Input Field Name"
+msgstr "Voer Veldnaam In"
+
+#: front-end/menu.file.php:149
+#@ profilebuilder
+msgid "Name:"
+msgstr "Naam:"
+
+#: front-end/menu.file.php:156
+#: front-end/wppb.edit.profile.php:388
+#: front-end/wppb.login.php:94
+#: front-end/wppb.register.php:276
+#@ profilebuilder
+msgid "Username"
+msgstr "Gebruikersnaam"
+
+#: front-end/menu.file.php:165
+#: front-end/wppb.edit.profile.php:397
+#: front-end/wppb.register.php:291
+#@ profilebuilder
+msgid "First Name"
+msgstr "Voornaam"
+
+#: front-end/menu.file.php:174
+#: front-end/wppb.edit.profile.php:406
+#: front-end/wppb.register.php:305
+#@ profilebuilder
+msgid "Last Name"
+msgstr "Achternaam"
+
+#: front-end/menu.file.php:183
+#: front-end/wppb.edit.profile.php:415
+#: front-end/wppb.register.php:319
+#@ profilebuilder
+msgid "Nickname"
+msgstr "Bijnaam"
+
+#: front-end/menu.file.php:192
+#@ profilebuilder
+msgid "Display name publicly as..."
+msgstr "Toon naam publiekelijk als ..."
+
+#: front-end/menu.file.php:202
+#@ profilebuilder
+msgid "Contact Info:"
+msgstr "Contact Informatie:"
+
+#: front-end/menu.file.php:209
+#: front-end/wppb.edit.profile.php:460
+#: front-end/wppb.register.php:337
+#@ profilebuilder
+msgid "E-mail"
+msgstr "E-mail"
+
+#: front-end/menu.file.php:218
+#: front-end/wppb.edit.profile.php:470
+#: front-end/wppb.register.php:352
+#@ profilebuilder
+msgid "Website"
+msgstr "Website"
+
+#: front-end/menu.file.php:230
+#: front-end/wppb.edit.profile.php:479
+#: front-end/wppb.register.php:366
+#@ profilebuilder
+msgid "AIM"
+msgstr "AIM"
+
+#: front-end/menu.file.php:239
+#: front-end/wppb.edit.profile.php:488
+#: front-end/wppb.register.php:380
+#@ profilebuilder
+msgid "Yahoo IM"
+msgstr "Yahoo IM"
+
+#: front-end/menu.file.php:248
+#: front-end/wppb.edit.profile.php:497
+#: front-end/wppb.register.php:394
+#@ profilebuilder
+msgid "Jabber / Google Talk"
+msgstr "Jabber / Google Talk"
+
+#: front-end/menu.file.php:258
+#@ profilebuilder
+msgid "About Yourself:"
+msgstr "Over Jezelf:"
+
+#: front-end/menu.file.php:265
+#: front-end/wppb.edit.profile.php:510
+#: front-end/wppb.register.php:412
+#@ profilebuilder
+msgid "Biographical Info"
+msgstr "Biografie"
+
+#: front-end/menu.file.php:275
+#: front-end/wppb.edit.profile.php:519
+#@ profilebuilder
+msgid "New Password"
+msgstr "Nieuw Wachtwoord"
+
+#: front-end/options.php:57
+#@ profilebuilder
+msgid "Basic Information"
+msgstr "Basisinformatie"
+
+#: front-end/options.php:59
+#@ profilebuilder
+msgid "Show/Hide the Admin Bar on Front-end"
+msgstr "Toon / Verberg de Admin Balk"
+
+#: front-end/options.php:66
+#: premium/premium.php:5
+#: premium/premium.php:6
+#@ profilebuilder
+msgid "Extra Profile Fields"
+msgstr "Extra Profiel Velden"
+
+#: front-end/options.php:72
+#@ profilebuilder
+msgid "Register Your Version"
+msgstr "Registreer Je Versie"
+
+#: front-end/wppb.edit.profile.php:272
+#@ profilebuilder
+msgid "You must be logged in to edit your profile."
+msgstr "Je moet ingelogd zijn om je profiel te bewerken."
+
+#: front-end/wppb.edit.profile.php:281
+#@ profilebuilder
+msgid "The avatar was successfully deleted."
+msgstr "De avatar is succesvol verwijderd."
+
+#: front-end/wppb.edit.profile.php:286
+#@ profilebuilder
+msgid "The attachment \""
+msgstr "De bijlage \""
+
+#: front-end/wppb.edit.profile.php:288
+#@ profilebuilder
+msgid "\" was successfully deleted."
+msgstr "\" is succesvol verwijderd."
+
+#: front-end/wppb.edit.profile.php:301
+#@ profilebuilder
+msgid "The changes have been successfully saved."
+msgstr "De wijzigingen zijn succesvol opgeslagen."
+
+#: front-end/wppb.edit.profile.php:306
+#@ profilebuilder
+msgid "The email address you entered is already registered to a different user.<br/>The email address was "
+msgstr "Het e-mailadres dat je hebt ingevoerd is reeds geregistreerd voor een andere gebruiker.<br/> Het e-mailadres is "
+
+#: front-end/wppb.edit.profile.php:307
+#: front-end/wppb.edit.profile.php:317
+#: front-end/wppb.edit.profile.php:327
+#: front-end/wppb.edit.profile.php:336
+#: front-end/wppb.edit.profile.php:358
+#: front-end/wppb.edit.profile.php:366
+#@ profilebuilder
+msgid "NOT"
+msgstr "NIET"
+
+#: front-end/wppb.edit.profile.php:308
+#: front-end/wppb.edit.profile.php:318
+#: front-end/wppb.edit.profile.php:328
+#: front-end/wppb.edit.profile.php:337
+#: front-end/wppb.edit.profile.php:359
+#: front-end/wppb.edit.profile.php:367
+#@ profilebuilder
+msgid " updated along with the rest of the information."
+msgstr " bijgewerkt samen met de rest van de informatie."
+
+#: front-end/wppb.edit.profile.php:316
+#@ profilebuilder
+msgid "The email address you entered is invalid. <br/> The email address was "
+msgstr "Het e-mailadres dat je hebt ingevoerd is ongeldig. <br/> Het e-mailadres is "
+
+#: front-end/wppb.edit.profile.php:326
+#@ profilebuilder
+msgid "The passwords you entered do not match. <br/> The password was "
+msgstr "De ingevoerde wachtwoorden komen niet overeen. <br/> Het wachtwoord is "
+
+#: front-end/wppb.edit.profile.php:335
+#@ profilebuilder
+msgid "You didn't complete both password fields. <br/> The password was "
+msgstr "Je hebt niet beide wachtwoord velden ingevuld. <br/> Het wachtwoord is "
+
+#: front-end/wppb.edit.profile.php:347
+#@ profilebuilder
+msgid "There was an error while trying to upload the following attachments:<br/>"
+msgstr "Er is een fout opgetreden bij het uploaden van de volgende bijlagen: <br/>"
+
+#: front-end/wppb.edit.profile.php:355
+#@ profilebuilder
+msgid "<br/>Possible cause: the size was bigger than "
+msgstr "<br/>Mogelijke oorzaak: de bijlage is groter dan "
+
+#: front-end/wppb.edit.profile.php:357
+#@ profilebuilder
+msgid "b.<br/>The listed attachements were "
+msgstr "b. <br/> De genoemde bijlagen zijn "
+
+#: front-end/wppb.edit.profile.php:365
+#@ profilebuilder
+msgid "There was an error while trying to upload your avatar picture.<br/>Possible cause: size/incorrect file-type.<br/>The avatar was "
+msgstr "Er is een fout opgetreden tijdens het uploaden van je avatar.<br/> Mogelijke oorzaak: grootte / incorrect file-type.<br/> De avatar is "
+
+#: front-end/wppb.edit.profile.php:383
+#: front-end/wppb.register.php:265
+#@ profilebuilder
+msgid "Name"
+msgstr "Naam"
+
+#: front-end/wppb.edit.profile.php:389
+#@ default
+msgid " Usernames cannot be changed."
+msgstr "Gebruikersnamen kunnen niet worden gewijzigd."
+
+#: front-end/wppb.edit.profile.php:417
+#: front-end/wppb.edit.profile.php:462
+#: front-end/wppb.register.php:278
+#: front-end/wppb.register.php:339
+#@ profilebuilder
+msgid "(required)"
+msgstr "(verplicht)"
+
+#: front-end/wppb.edit.profile.php:425
+#@ profilebuilder
+msgid "Display name publicly as"
+msgstr "Naam publiekelijk tonen als"
+
+#: front-end/wppb.edit.profile.php:454
+#: front-end/wppb.register.php:326
+#@ profilebuilder
+msgid "Contact Info"
+msgstr "Contact Informatie"
+
+#: front-end/wppb.edit.profile.php:504
+#: front-end/wppb.register.php:401
+#@ profilebuilder
+msgid "About Yourself"
+msgstr "Over Jezelf"
+
+#: front-end/wppb.edit.profile.php:524
+#: front-end/wppb.register.php:435
+#@ profilebuilder
+msgid "Repeat Password"
+msgstr "Herhaal Wachtwoord"
+
+#: front-end/wppb.edit.profile.php:540
+#@ profilebuilder
+msgid "Update"
+msgstr "Bijwerken"
+
+#: front-end/wppb.login.php:47
+#, php-format
+#@ profilebuilder
+msgid "You are currently logged in as <a href=\"%1$s\" title=\"%2$s\">%2$s</a>."
+msgstr "Je bent momenteel ingelogd als <a href=\"%1$s\" title=\"%2$s\">%2$s</a>."
+
+#: front-end/wppb.login.php:47
+#: front-end/wppb.register.php:184
+#@ profilebuilder
+msgid "Log out of this account"
+msgstr "Gebruiker uitloggen"
+
+#: front-end/wppb.login.php:47
+#@ profilebuilder
+msgid "Log out &raquo;"
+msgstr "Uitloggen &raquo;"
+
+#: front-end/wppb.login.php:60
+#, php-format
+#@ profilebuilder
+msgid "You have successfully logged in as <a href=\"%1$s\" title=\"%2$s\">%2$s</a>."
+msgstr "Je bent succesvol ingelogd als <a href=\"%1$s\" title=\"%2$s\">%2$s</a>."
+
+#: front-end/wppb.login.php:104
+#: front-end/wppb.register.php:430
+#@ profilebuilder
+msgid "Password"
+msgstr "Wachtwoord"
+
+#: front-end/wppb.login.php:108
+#@ profilebuilder
+msgid "Log in"
+msgstr "Log in"
+
+#: front-end/wppb.login.php:110
+#@ profilebuilder
+msgid "Remember me"
+msgstr "Onthoud gegevens"
+
+#: front-end/wppb.login.php:114
+#@ profilebuilder
+msgid "Lost password?"
+msgstr "Wachtwoord vergeten?"
+
+#: front-end/wppb.register.php:39
+#@ profilebuilder
+msgid "A username is required for registration."
+msgstr "Een gebruikersnaam is vereist voor registratie."
+
+#: front-end/wppb.register.php:41
+#@ profilebuilder
+msgid "Sorry, that username already exists!"
+msgstr "Sorry, die gebruikersnaam bestaat al!"
+
+#: front-end/wppb.register.php:44
+#@ profilebuilder
+msgid "You must enter a valid email address."
+msgstr "Je moet een geldig e-mailadres invullen."
+
+#: front-end/wppb.register.php:46
+#@ profilebuilder
+msgid "Sorry, that email address is already used!"
+msgstr "Sorry, dat e-mailadres is al in gebruik!"
+
+#: front-end/wppb.register.php:49
+#@ profilebuilder
+msgid "You didn't complete one of the password-fields!"
+msgstr "Je hebt een van de wachtwoord-velden niet volledig ingevuld!"
+
+#: front-end/wppb.register.php:51
+#@ profilebuilder
+msgid "The entered passwords don't match!"
+msgstr "De ingevoerde wachtwoorden komen niet overeen!"
+
+#: front-end/wppb.register.php:184
+#, php-format
+#@ profilebuilder
+msgid "You are logged in as <a href=\"%1$s\" title=\"%2$s\">%2$s</a>.  You don't need another account."
+msgstr "Je bent ingelogd als <a href=\"%1$s\" title=\"%2$s\">%2$s</a>. Je hebt geen tweede gebruiker nodig."
+
+#: front-end/wppb.register.php:184
+#@ profilebuilder
+msgid "Logout &raquo;"
+msgstr "Uitloggen &raquo;"
+
+#: front-end/wppb.register.php:194
+#, php-format
+#@ profilebuilder
+msgid "A user account for %1$s has been created."
+msgstr "Er is een gebruiker voor %1$s aangemaakt."
+
+#: front-end/wppb.register.php:198
+#, php-format
+#@ profilebuilder
+msgid "Thank you for registering, %1$s."
+msgstr "Bedankt voor het registreren, %1$s."
+
+#: front-end/wppb.register.php:243
+#@ profilebuilder
+msgid "Users can register themselves or you can manually create users here."
+msgstr "Gebruikers kunnen zich registreren of je kunt hier handmatig gebruikers aanmaken."
+
+#: front-end/wppb.register.php:247
+#@ profilebuilder
+msgid "Users cannot currently register themselves, but you can manually create users here."
+msgstr "Gebruikers kunnen zich op dit moment niet registreren, maar je kunt hier wel handmatig gebruikers aanmaken."
+
+#: front-end/wppb.register.php:251
+#@ profilebuilder
+msgid "Only an administrator can add new users."
+msgstr "Alleen een beheerder kan nieuwe gebruikers toevoegen."
+
+#: front-end/wppb.register.php:454
+#@ profilebuilder
+msgid " Send these credentials via email."
+msgstr "Verstuur deze inloggegevens via e-mail."
+
+#: front-end/wppb.register.php:460
+#@ profilebuilder
+msgid "Add User"
+msgstr "Gebruiker Toevoegen"
+
+#: front-end/wppb.register.php:460
+#@ profilebuilder
+msgid "Register"
+msgstr "Registreren"
+
+#: front-end/options.php:69
+#@ profilebuilder
+msgid "Addons"
+msgstr "Addons"
+
+#: front-end/wppb.register.php:148
+#, php-format
+#@ default
+msgid "New subscriber on %s:"
+msgstr ""
+
+#: front-end/wppb.register.php:149
+#, php-format
+#@ default
+msgid "Username: %s"
+msgstr ""
+
+#: front-end/wppb.register.php:150
+#, php-format
+#@ default
+msgid "E-mail: %s"
+msgstr ""
+
+#: front-end/wppb.register.php:152
+#, php-format
+#@ default
+msgid "[%s] A new subscriber has (been) registered!"
+msgstr ""
+
+#: premium/functions/extra.fields.php:24
+#: premium/functions/extra.fields.php:30
+#: premium/functions/extra.fields.php:48
+#: premium/functions/extra.fields.php:65
+#: premium/functions/extra.fields.php:81
+#: premium/functions/extra.fields.php:96
+#: premium/functions/extra.fields.php:112
+#: premium/functions/extra.fields.php:136
+#: premium/functions/extra.fields.php:170
+#: premium/functions/extra.fields.php:180
+#: premium/functions/extra.fields.php:193
+#: premium/functions/extra.fields.php:209
+#: premium/functions/extra.fields.php:223
+#: premium/functions/extra.fields.php:243
+#: premium/functions/extra.fields.php:254
+#: premium/functions/extra.fields.php:264
+#: premium/functions/extra.fields.php:308
+#: premium/functions/extra.fields.php:316
+#: premium/functions/extra.fields.php:335
+#: premium/functions/extra.fields.php:357
+#: premium/functions/extra.fields.php:378
+#: premium/functions/extra.fields.php:397
+#: premium/functions/extra.fields.php:417
+#: premium/functions/extra.fields.php:442
+#@ profilebuilder
+msgid "item_title"
+msgstr "item_title"
+
+#: premium/functions/extra.fields.php:35
+#: premium/functions/extra.fields.php:56
+#: premium/functions/extra.fields.php:72
+#: premium/functions/extra.fields.php:89
+#: premium/functions/extra.fields.php:100
+#: premium/functions/extra.fields.php:115
+#: premium/functions/extra.fields.php:139
+#: premium/functions/extra.fields.php:183
+#: premium/functions/extra.fields.php:201
+#: premium/functions/extra.fields.php:216
+#: premium/functions/extra.fields.php:232
+#: premium/functions/extra.fields.php:247
+#: premium/functions/extra.fields.php:257
+#: premium/functions/extra.fields.php:267
+#: premium/functions/extra.fields.php:319
+#: premium/functions/extra.fields.php:345
+#: premium/functions/extra.fields.php:366
+#: premium/functions/extra.fields.php:387
+#: premium/functions/extra.fields.php:401
+#: premium/functions/extra.fields.php:420
+#: premium/functions/extra.fields.php:445
+#@ profilebuilder
+msgid "item_desc"
+msgstr "item_desc"
+
+#: premium/functions/extra.fields.php:117
+#: premium/functions/extra.fields.php:120
+#: premium/functions/extra.fields.php:422
+#: premium/functions/extra.fields.php:425
+#@ profilebuilder
+msgid "Current file"
+msgstr "Huidig bestand"
+
+#: premium/functions/extra.fields.php:141
+#: premium/functions/extra.fields.php:447
+#@ profilebuilder
+msgid "Current avatar"
+msgstr "Huidige avatar"
+
+#: premium/premium.php:7
+#@ profilebuilder
+msgid "You can create as many extra fields as your project requires. To break your custom fields into sections (on the front-end), add a \""
+msgstr "Je kunt zoveel extra velden toevoegen als je project vereist. Om de toegevoegde velden in secties op te delen (in de front-end), voeg een \""
+
+#: premium/premium.php:7
+#@ profilebuilder
+msgid "heading"
+msgstr "koptekst"
+
+#: premium/premium.php:7
+#@ profilebuilder
+msgid "\" custom field."
+msgstr "\" veld toe."
+
+#: premium/premium.php:8
+#@ profilebuilder
+msgid "All of the fields can be sorted and rearranged to your liking with "
+msgstr "Alle velden kunnen naar wens worden gesorteerd en gerangschikt met "
+
+#: premium/premium.php:8
+#@ profilebuilder
+msgid "Drag"
+msgstr "Slepen"
+
+#: premium/premium.php:8
+#@ profilebuilder
+msgid "Drop"
+msgstr "Loslaten"
+
+#: premium/premium.php:8
+#@ profilebuilder
+msgid ". Don't worry about the order in which you create your custom fields, you can always reorder them."
+msgstr ". Maak je geen zorgen over de volgorde waarin je je velden toevoegt, je kunt de volgorde altijd aanpassen."
+
+#: premium/premium.php:12
+#: premium/premium.php:20
+#@ profilebuilder
+msgid "Title"
+msgstr "Titel"
+
+#: premium/premium.php:13
+#: premium/premium.php:21
+#@ profilebuilder
+msgid "Key"
+msgstr "Sleutel"
+
+#: premium/premium.php:14
+#: premium/premium.php:22
+#@ profilebuilder
+msgid "Type"
+msgstr "Type"
+
+#: premium/premium.php:15
+#: premium/premium.php:23
+#@ profilebuilder
+msgid "Add Option"
+msgstr "Voeg Optie Toe"
+
+#: premium/premium.php:37
+#: premium/premium.php:137
+#@ profilebuilder
+msgid "Edit"
+msgstr "Bewerken"
+
+#: premium/premium.php:38
+#: premium/premium.php:138
+#@ profilebuilder
+msgid "Delete"
+msgstr "Verwijderen"
+
+#: premium/premium.php:61
+#@ profilebuilder
+msgid "Title:"
+msgstr "Titel:"
+
+#: premium/premium.php:61
+#@ profilebuilder
+msgid "The title of the item."
+msgstr "De titel van het item."
+
+#: premium/premium.php:71
+#@ profilebuilder
+msgid "Option Key:"
+msgstr "Option-toets:"
+
+#: premium/premium.php:71
+#@ profilebuilder
+msgid "Unique alphanumeric key, underscores are acceptable."
+msgstr "Unieke alfanumerieke code, onderstrepingstekens worden geaccepteerd."
+
+#: premium/premium.php:99
+#@ profilebuilder
+msgid "Option Type:"
+msgstr "Optie Type:"
+
+#: premium/premium.php:99
+#@ profilebuilder
+msgid "Choose one of the supported option types."
+msgstr "Kies een van de ondersteunde optie types."
+
+#: premium/premium.php:109
+#@ profilebuilder
+msgid "Description:"
+msgstr "Omschrijving:"
+
+#: premium/premium.php:109
+#@ profilebuilder
+msgid "Enter a detailed description of the option for end users to read(optional)."
+msgstr "Geef een gedetailleerde omschrijving van de optie voor eindgebruikers (optioneel)."
+
+#: premium/premium.php:119
+#@ profilebuilder
+msgid "Options:"
+msgstr "Opties:"
+
+#: premium/premium.php:119
+#@ profilebuilder
+msgid "Enter a comma separated list of options. For example, you could have \"One,Two,Three\" or just a single value like \"Yes\" for a checkbox."
+msgstr "Voer een door komma's gescheiden lijst van opties in. Je kunt bijvoorbeeld \"Een,Twee,Drie\" gebruiken, of gewoon een enkele waarde als \"Ja\" voor een checkbox."
+
+#: premium/premium.php:127
+#@ profilebuilder
+msgid "Cancel"
+msgstr "Annuleren"
+
+#: premium/premium.php:128
+#@ profilebuilder
+msgid "Save"
+msgstr "Opslaan"
+
+#: premium/premium.php:158
+#: premium/premium.php:159
+#@ profilebuilder
+msgid "Register your version of Profile Builder Pro"
+msgstr "Registreer jouw versie van Profile Builder Pro"
+
+#: premium/premium.php:160
+#@ profilebuilder
+msgid "Now that you acquired a copy of Profile Builder Pro, you should take the time and register it with the serial number you received in the e-mail."
+msgstr "Nu dat je Profile Builder Pro hebt aangeschaft, moet je het registreren met het serienummer dat je in de e-mail hebt ontvangen."
+
+#: premium/premium.php:161
+#@ profilebuilder
+msgid "If you register this version of Profile Builder, you'll receive information regarding eventual upgrades, patches, and - if needed - technical support."
+msgstr "Als je deze versie van Profile Builder registreert, ontvang je informatie over eventuele upgrades, patches, en - indien nodig - technische ondersteuning."
+
+#: premium/premium.php:162
+#@ profilebuilder
+msgid "Serial Number:"
+msgstr "Serienummer:"
+
+#: premium/premium.php:167
+#@ profilebuilder
+msgid "The serial number couldn't be validated or isn't valid!"
+msgstr "Het serienummer kon niet worden gevalideerd of is niet geldig!"
+
+#: premium/premium.php:169
+#@ profilebuilder
+msgid "The serial number was successfully validated!"
+msgstr "Het serienummer is succesvol gevalideerd!"
+
+#: premium/premium.php:172
+#@ profilebuilder
+msgid "(e.g. RMPB-15-SN-253a55baa4fbe7bf595b2aabb8d72985)"
+msgstr "(bijv. RMPB-15-SN-253a55baa4fbe7bf595b2aabb8d72985)"
+

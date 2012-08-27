@@ -1,0 +1,90 @@
+/*
+NOTES:
+The global Profile Builder class is: wppb_holder
+The id for the individual sections are: wppb_modify for [wppb-profile-info] 
+										wppb_login for [wppb-registered-login]
+										wppb_register for [wppb-register-new]
+
+*/
+/*    WPPB_MODIFY, WPPB_REGISTER, WPPB_LOGIN    */
+
+#wppb_modify p, #wppb_register p, #wppb_login p{
+	clear:both;
+}
+
+.wppb-rc-value{
+	font-size:12px;
+	margin-right:10px;
+	vertical-align:middle;
+}
+
+.wppb-max-upload{
+	font-size:11px;
+	display: block;
+    text-align: right;
+}
+
+.wppb-description-delimiter{
+	display:block;
+	font-size:12px;
+	font-weight:normal;
+	font-style:italic;
+	padding-left:15px;
+	margin-left:30%;
+}
+
+#wppb_modify p label, #wppb_register p label, #wppb_login p label{
+	width:30%;
+	float:left;
+	clear:left;
+	padding-right:15px;
+}
+#wppb_modify input[type=text], #wppb_modify input[type=password], #wppb_modify select, #wppb_modify textarea, #wppb_register input[type=text], #wppb_register input[type=password], #wppb_register select, #wppb_register textarea, #wppb_login input[type=text], #wppb_login input[type=password], #wppb_login select, #wppb_login textarea{
+	width:60%;
+	margin-bottom:5px;	
+}
+
+#wppb_modify input[type="checkbox"], #wppb_modify input[type="radio"], #wppb_register input[type="checkbox"], #wppb_register input[type="radio"], #wppb_login input[type="checkbox"], #wppb_login input[type="radio"]{
+	vertical-align:middle;
+	margin:5px;
+}
+
+
+#wppb_register .send-confirmation-email label{
+	width:auto;
+	float:none;
+}
+
+.changes-saved, .success{
+	color:green;
+}
+.semi-saved{
+	color:orange;
+}
+
+.warning, .error{
+	color:red;
+}
+
+.wppb-cattachment, .wppb-dattachment{
+	margin:0 5px;
+}
+
+.send-confirmation-email .wppb-description-delimiter{
+	display:inline;
+	margin:0;
+	padding:0;
+}
+
+#wppb_login .login-form-submit label{
+	float:none;
+}
+
+/*
+.avatar-border span{
+    background: none repeat scroll 0 0 #F1F1F1;
+    border: 5px solid #6EAB1D;
+    color: black;
+    display: inline-block;
+    padding: 5px;
+}*/
