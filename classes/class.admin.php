@@ -100,7 +100,11 @@ class PB_Admin{
 								'passwordRequired' => 'no' 
 							);
 		add_option( 'wppb_default_settings', $wppb_default_settings );    //set all fields visible on first activation of the plugin
-		add_option( 'wppb_default_style', 'yes');
+		$wppb_default_settings = array(
+						'extraFieldsLayout' => 'yes',
+						'emailConfirmation' => 'no'
+						);
+		add_option( 'wppb_general_settings', $wppb_default_settings);
 		$all_roles = $wp_roles->roles;
 		$editable_roles = apply_filters('editable_roles', $all_roles);
 
