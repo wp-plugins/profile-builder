@@ -924,7 +924,7 @@ div.file_wrap {
 	width:335px;
 }
 	
-#plugin-layout input[type="submit"], #show-hide-admin-bar input[type="submit"], #default-fields input[type="submit"], #register-profile-builder input[type="submit"] {
+#general-settings input[type="submit"], #show-hide-admin-bar input[type="submit"], #default-fields input[type="submit"], #register-profile-builder input[type="submit"] {
 	position:absolute; 
 	bottom:0; 
 	right:0; 
@@ -947,4 +947,38 @@ div.file_wrap {
 
 #show-hide-admin-bar table td{
 	font-size: 11px !important;
+}
+
+#framework_wrap #content .wppb_general_settings{
+	position:relative;
+	left:18px;
+	vertical-align:middle;
+	display:inline-block !important;
+	margin-bottom:0 !important;
+	width: 100px;
+	height: 25px;
+	font-size:11px;
+	*display:inline !important;
+	zoom:1;
+}
+#framework_wrap #content .wppb_general_settings2{
+	position:relative;
+	left:18px;
+	vertical-align:middle;
+	display:inline-block !important;
+	margin-bottom:0 !important;
+	width: 78px;
+	height: 25px;
+	font-size:11px;
+	*display:inline !important;
+	zoom:1;
+}
+#framework_wrap #content #generalSettingFont{
+	font-size:11px;
+}
+
+#content_wrap #wppb_buyNowButton{
+	position: relative;
+	left: -34px;
+	top:-42px;
 }
