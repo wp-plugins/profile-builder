@@ -355,3 +355,13 @@ text-decoration:none;
 #wppb-more-span a:hover{
 	text-decoration:underline;
 }
+#adduser .form-reCAPTCHA{
+	width:640px;
+	
+}
+#adduser .form-reCAPTCHA label.form-reCAPTCHA-label{
+	clear: left;
+    float: left;
+    padding-right: 15px;
+    width: 30%;
+}

@@ -965,7 +965,7 @@ div.file_wrap {
 	vertical-align:middle;
 }	
 	
-#plugin-layout input[type="submit"], #show-hide-admin-bar input[type="submit"], #default-fields input[type="submit"], #register-profile-builder input[type="submit"], #add-ons input[type="submit"], #wppb_customRedirect input[type="submit"], #wppb_userListing input[type="submit"], #disableLoginAndRegistration input[type="submit"]{
+#general-settings input[type="submit"], #show-hide-admin-bar input[type="submit"], #default-fields input[type="submit"], #register-profile-builder input[type="submit"], #add-ons input[type="submit"], #wppb_customRedirect input[type="submit"], #wppb_userListing input[type="submit"], #disableLoginAndRegistration input[type="submit"], #wppb_reCaptcha input[type="submit"]{
 	position:absolute; 
 	bottom:0; 
 	right:0; 
@@ -980,15 +980,44 @@ div.file_wrap {
 #addonHeader{
 	width:70%;
 }
-#framework_wrap #content .wppb_default_style{
+#framework_wrap #content .wppb_general_settings{
 	position:relative;
 	left:18px;
 	vertical-align:middle;
 	display:inline-block !important;
 	margin-bottom:0 !important;
 	width: 100px;
+	height: 25px;
+	font-size:11px;
 	*display:inline !important;
 	zoom:1;
+}
+#framework_wrap #content .wppb_general_settings2{
+	position:relative;
+	left:18px;
+	vertical-align:middle;
+	display:inline-block !important;
+	margin-bottom:0 !important;
+	width: 78px;
+	height: 25px;
+	font-size:11px;
+	*display:inline !important;
+	zoom:1;
+}
+#framework_wrap #content .wppb_general_settings3{
+	position:relative;
+	left:28px;
+	vertical-align:middle;
+	display:inline-block !important;
+	margin-bottom:0 !important;
+	width: 78px;
+	height: 25px;
+	font-size:11px;
+	*display:inline !important;
+	zoom:1;
+}
+#framework_wrap #content #generalSettingFont{
+	font-size:11px;
 }
 #framework_wrap #content .sortingTable{
     border: 0px !important;
@@ -1043,6 +1072,23 @@ div.file_wrap {
 	zoom:1;
 }	
 #framework_wrap #content #customRedirect .loginRedirectTarget{
+	vertical-align:left;
+	display:inline-block !important;
+	margin-bottom:0 !important;
+	width: 310px;
+	*display:inline !important;
+	zoom:1;
+}
+
+#framework_wrap #content .reCaptchaSettingsPubK{
+	vertical-align:left;
+	display:inline-block !important;
+	margin-bottom:0 !important;
+	width: 310px;
+	*display:inline !important;
+	zoom:1;
+}
+#framework_wrap #content .reCaptchaSettingsPriK{
 	vertical-align:left;
 	display:inline-block !important;
 	margin-bottom:0 !important;
