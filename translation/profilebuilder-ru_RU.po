@@ -1,0 +1,1480 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ProfileBuilder\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-07-09 09:18+0600\n"
+"PO-Revision-Date: 2012-07-09 09:31+0600\n"
+"Last-Translator: \n"
+"Language-Team: Reflection Media, Gabriel Barina\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: D:\\msdownld.tmp\\libsteam\\ajax\\profile-builder-pro\\\n"
+"X-Poedit-Language: Russian\n"
+"X-Poedit-SearchPath-0: D:\\msdownld.tmp\\libsteam\\ajax\\profile-builder-pro\n"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:25
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:28
+msgid "Profile Builder"
+msgstr "Profile Builder"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:26
+msgid "Welcome to Profile Builder!"
+msgstr "Добро пожаловать в Profile Builder!"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:28
+msgid " lets you customize your website by adding a front-end menu for all your users, giving them a more flexible way to modify their user-information or to register new users."
+msgstr " позволяет вам преобразить ваш сайт, добавляя меню вне админ-панели для всех ваших пользователей, которое позволяет им еще удобнее изменять свои данные, а вам привлечь новых пользователей, интегрируя формы регистрации напрямую в сайт."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:29
+msgid "Also, grants users with administrator rights to customize basic fields or to add new ones."
+msgstr "Кроме того, пользователи с правами администратора могут могут изменять базовые поля или добавлять новые (только в PRO-версии)."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:30
+msgid "To achieve this, just create a new page, and give it an intuitive name(e.g. Edit Profile)."
+msgstr "Чтобы начать использование плагина, создайте новую страницу и назовите её подходящим образом (например «Редактирование профиля»)."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:31
+msgid "Now all you need to do is add the following shortcode(for the previous example): "
+msgstr "После этого всё, что остается вам сделать — это добавить следующий шорткод (для примера выше): "
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:32
+msgid "Publish your page and you are ready to go!"
+msgstr "Опубликуйте свою страницу — теперь ваши пользователи могут редактировать информацию о себе прямо на сайте!"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:33
+msgid "You can use the following shortcodes:"
+msgstr "Вы можете использовать следующие шорткоды:"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:34
+msgid "for a log-in form."
+msgstr "для страницы с формой входа."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:35
+msgid "to add a registration form."
+msgstr "для страницы с формой регистрации."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:36
+msgid "to grant users a front-end acces to their personal information(requires user to be logged in)."
+msgstr "для страницы с формой редактирования данных пользователя (для этого он предварительно должен войти в систему)."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:37
+msgid "to add a password recovery form."
+msgstr "для страницы с формой восстановления пароля."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:39
+msgid "Users with administrator rights have access to the following features:"
+msgstr "Пользователи с правами администратора имеют доступ к следующим возможностям:"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:40
+msgid "add a custom stylesheet/inherit values from the current theme or use one of the following built into this plugin: default, white or black."
+msgstr "добавление своего набора стилей/стилей из текущей темы или использование встроенных тем: по умолчанию, белой или черной (последние две доступны только в PRO-версии)."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:41
+msgid "select whether to display or not the admin bar in the front end for a specific user-group registered to the site."
+msgstr "отключение или включение верхней админ-панели сайта для некоторых групп пользователей."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:42
+msgid "select which information-field can users see/modify. The hidden fields' values remain unmodified."
+msgstr "выбор разрешенной для изменения и просмотра информации. Скрытые поля нельзя изменять."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:43
+msgid "add custom fields to the existing ones, with several types to choose from: heading, text, textarea, select, checkbox, radio, and/or upload."
+msgstr "добавление своих полей в профиль пользователя, доступны несколько типов: heading, text, textarea, select, checkbox, radio и upload."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:44
+msgid "add an avatar field."
+msgstr "добавление поля «Аватар»."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:45
+msgid "create custom redirects."
+msgstr "создание своих перенаправлений."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:46
+msgid "front-end userlisting using the"
+msgstr "вывод списка пользователей с помощью шорткода"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:46
+msgid "shortcode."
+msgstr "."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:49
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:98
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:153
+msgid "NOTE:"
+msgstr "ПРИМЕЧАНИЕ:"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:50
+msgid "this plugin only adds/removes fields in the front-end."
+msgstr "этот плагин добавляет и убирает поля только на самом сайте, а не в админ-панели."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:51
+msgid "The default information-fields will still be visible(and thus modifiable)"
+msgstr "Все стандартные поля останутся на своих местах (их можно будет так же изменять)"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:52
+msgid "from the back-end, while custom fields will only be visible in the front-end."
+msgstr "в админ панели, но дополнительные поля будут доступны только на самом сайте."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:66
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:67
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/options.php:58
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.php:82
+msgid "General Settings"
+msgstr "Общие настройки"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:68
+msgid "Stylesheet Used on the Front-End:"
+msgstr "Используемый набор стилей на сайте:"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:70
+msgid "Default"
+msgstr "По умолчанию"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:75
+msgid "White"
+msgstr "Белый"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:76
+msgid "Black"
+msgstr "Черный"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:80
+msgid "None"
+msgstr "Никакой"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:86
+msgid "\"Email Confirmation\" Feature Activated:"
+msgstr "\"Подтверждение адрес эл. почты\" включено:"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:88
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:204
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:217
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:230
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:243
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:256
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:275
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:288
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:304
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:317
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:330
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:349
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:363
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.php:470
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.php:478
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.php:488
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.php:517
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.php:529
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.php:541
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.php:553
+msgid "Yes"
+msgstr "Да"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:89
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:205
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:218
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:231
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:244
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:257
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:276
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:289
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:305
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:318
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:331
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:350
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:364
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.php:471
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.php:479
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.php:489
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.php:518
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.php:530
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.php:542
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.php:554
+msgid "No"
+msgstr "Нет"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:99
+msgid "The black stylesheet is intended for sites/blogs with a dark background."
+msgstr "Черный набор стилей подойдет сайтам с темным фоном."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:100
+msgid "The white stylesheet is intended for a sites/blogs with a light background color."
+msgstr "Белый набор стилей подойдет сайтам со светлым фоном."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:101
+msgid "On single-site installations the \"Email Confirmation\" feature only works in the front-end, so make sure you also use the \"Custom Redirects\" feature."
+msgstr "На одиночных сайтах (не WPMU) функция \"Подтверждение адреса эл. почты\" работает только на сайте, поэтому не забудьте включить дополнение \"Пользовательские перенаправления\"."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:108
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:161
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:372
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/premium.php:252
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.php:38
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.php:414
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.php:568
+msgid "Save Changes"
+msgstr "Сохранить изменения"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:126
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:127
+msgid "Show/Hide the Admin Bar on Front End"
+msgstr "Включение/отключение админ-панели сайта"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:131
+msgid "User-group"
+msgstr "Группа пользователей"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:132
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:185
+msgid "Visibility"
+msgstr "Статус"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:141
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:200
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:213
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:226
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:239
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:252
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:271
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:284
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:300
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:313
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:326
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:345
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:359
+msgid "Show"
+msgstr "Показывать"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:142
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:201
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:214
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:227
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:240
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:253
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:272
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:285
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:301
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:314
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:327
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:346
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:360
+msgid "Hide"
+msgstr "Скрывать"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:154
+msgid "If you added new roles (via another plugin) <u>after</u> Profile Builder was activated, please reactivate it, since the roles are initialized during plugin activation."
+msgstr "Если вы добавили новые роли (например, с помощью других плагинов) <u>после активации</u> Profile Builder, пожалуйста, активируйте плагин заново, т.к. загрузка и обработка ролей происходит только после его активации."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:179
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:180
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/options.php:60
+msgid "Default Profile Fields"
+msgstr "Стандартные поля профиля"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:184
+msgid "Input Field Name"
+msgstr "Название поля"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:186
+msgid "Required"
+msgstr "Обязательное поле"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:191
+msgid "Name:"
+msgstr "Имя:"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:197
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:698
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.login.php:138
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:474
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:1239
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.functions.php:135
+msgid "Username"
+msgstr "Имя пользователя"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:210
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:718
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:1263
+msgid "First Name"
+msgstr "Имя"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:223
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:738
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:1287
+msgid "Last Name"
+msgstr "Фамилия"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:236
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:758
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:1311
+msgid "Nickname"
+msgstr "Псевдоним"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:249
+msgid "Display name publicly as..."
+msgstr "Отображать мое имя как..."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:262
+msgid "Contact Info:"
+msgstr "Контактные данные:"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:268
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:828
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:475
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:1338
+msgid "E-mail"
+msgstr "Адрес эл. почты"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:281
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:847
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:1362
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.functions.php:177
+msgid "Website"
+msgstr "Сайт"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:297
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:865
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:1386
+msgid "AIM"
+msgstr "AIM"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:310
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:883
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:1410
+msgid "Yahoo IM"
+msgstr "Yahoo IM"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:323
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:901
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:1434
+msgid "Jabber / Google Talk"
+msgstr "Jabber / Google Talk"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:336
+msgid "About Yourself:"
+msgstr "О себе:"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:342
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:922
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:1461
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.functions.php:183
+msgid "Biographical Info"
+msgstr "Биография"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/menu.file.php:356
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:932
+msgid "New Password"
+msgstr "Новый пароль"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/options.php:57
+msgid "Basic Information"
+msgstr "Основная информация"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/options.php:59
+msgid "Show/Hide the Admin Bar on Front-end"
+msgstr "Включение/отключение админ-панели сайта"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/options.php:66
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/premium.php:6
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/premium.php:7
+msgid "Extra Profile Fields"
+msgstr "Дополнительные поля профиля"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/options.php:69
+msgid "Addons"
+msgstr "Дополнения"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/options.php:72
+msgid "Register Your Version"
+msgstr "Зарегистрируйте свою версию"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:85
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:551
+msgid "The information size you were trying to submit was larger than"
+msgstr "Блок данных, которые вы попытались ввести, был больше"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:86
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:552
+msgid "This is usually caused by a large file(s) trying to be uploaded."
+msgstr "Обычно эта ошибка возникает при попытке загрузке больших (по объему) файлов."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:87
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:553
+msgid "Since it was also larger than"
+msgstr "Из-за того, что размер отправленных данных был больше"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:87
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:553
+msgid "no additional information is available."
+msgstr "дополнительная информация недоступна."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:559
+msgid "You must be logged in to edit your profile."
+msgstr "Вы должны войти, чтобы отредактировать свой профиль."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:569
+msgid "The avatar was successfully deleted."
+msgstr "Аватар был удален."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:576
+msgid "The attachment"
+msgstr "Вложение"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:576
+msgid "was successfully deleted."
+msgstr "было удалено."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:591
+msgid "The changes have been successfully saved."
+msgstr "Изменения были сохранены."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:598
+msgid "The email address you entered is already registered to a different user."
+msgstr "Введенный вами адрес электронной почты принадлежит другому пользователю."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:598
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:608
+msgid "The email address was"
+msgstr "Ваш адрес эл. почты"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:598
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:608
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:617
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:626
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:652
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:660
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:675
+msgid "NOT"
+msgstr "НЕ БЫЛ(-И)"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:598
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:608
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:617
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:626
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:652
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:660
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:675
+msgid "updated along with the rest of the information."
+msgstr "обновлен(-ы) вместе со всей другой информацией."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:608
+msgid "The email address you entered is invalid."
+msgstr "Введенный вами адрес эл. почты неверен."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:617
+msgid "The passwords you entered do not match."
+msgstr "Введенные вами пароли не совпадают."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:617
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:626
+msgid "The password was"
+msgstr "Пароль"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:626
+msgid "You didn't complete both password fields."
+msgstr "Вы не заполнили оба поля с паролем."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:633
+msgid "Your profile was NOT updated!"
+msgstr "Ваш профиль НЕ БЫЛ обновлен!"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:642
+msgid "There was an error while trying to upload the following attachments:"
+msgstr "Произошла ошибка при попытке загрузки следующих вложений:"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:652
+msgid "Possible cause: the size was bigger than"
+msgstr "Возможная причина: размер вложений был больше"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:652
+msgid "The listed attachements were"
+msgstr "Указанные вложения"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:660
+msgid "There was an error while trying to upload your avatar picture."
+msgstr "Произошла ошибка при загрузке вашей аватары."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:660
+msgid "Possible cause: size/incorrect file-type."
+msgstr "Возможная причина: крупный размер или неподходящий тип файла."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:660
+msgid "The avatar was"
+msgstr "Аватар"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:668
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:845
+msgid "There was an error while trying to upload the following attachment(s)"
+msgstr "Произошла ошибка при попытке загрузки следующих вложений:"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:675
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:852
+msgid "Only files with the following extension(s) can be uploaded:"
+msgstr "Могут быть загружены только файлы следующих расширений:"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:675
+msgid "This file was"
+msgstr "Файл"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:692
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:1218
+msgid "Name"
+msgstr "Имя"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:699
+msgid "Usernames cannot be changed."
+msgstr "Нельзя изменить имя пользователья."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:708
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:728
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:748
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:768
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:818
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:839
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:857
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:875
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:893
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:914
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/functions/extra.fields.php:41
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/functions/extra.fields.php:143
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/functions/extra.fields.php:209
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/functions/extra.fields.php:274
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/functions/extra.fields.php:339
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/functions/extra.fields.php:405
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/functions/extra.fields.php:459
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/functions/extra.fields.php:507
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/functions/extra.fields.php:570
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/functions/extra.fields.php:693
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/functions/extra.fields.php:753
+msgid "This field is marked as required by the administrator."
+msgstr "Это поле является обязательным для заполнения."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:711
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:731
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:751
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:771
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:821
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:841
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:859
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:877
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:895
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:916
+msgid "This field wasn't updated because you entered and empty string (It was marked as required by the administrator."
+msgstr "Это поле не было обновлено, так как вы очистили его (оно обязательно для заполнения)."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:779
+msgid "Display name publicly as"
+msgstr "Отображать мое имя как"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:811
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:1317
+msgid "Contact Info"
+msgstr "Контактные данные"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:830
+msgid "(required)"
+msgstr "(обязательно)"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:907
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:1440
+msgid "About Yourself"
+msgstr "О себе"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:937
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.recover.password.php:297
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.recover.password.php:327
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:1495
+msgid "Repeat Password"
+msgstr "Введите пароль повторно"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.edit.profile.php:968
+msgid "Update"
+msgstr "Обновить"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.login.php:59
+msgid "You are currently logged in as"
+msgstr "Вы вошли как"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.login.php:60
+msgid "Log out of this account"
+msgstr "Выйти из этого аккаунта"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.login.php:60
+msgid "Log out"
+msgstr "Выйти"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.login.php:78
+msgid "You have successfully logged in as"
+msgstr "Вы вошли как"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.login.php:104
+msgid "You will soon be redirected automatically. If you see this page for more than 1 second, please click"
+msgstr "В ближайшее время вы будете перенаправлены на другую страницу. Если прошло более 1 секунды, то нажмите на эту"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.login.php:104
+msgid "here"
+msgstr "ссылку"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.login.php:114
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.recover.password.php:351
+msgid "ERROR:"
+msgstr "ОШИБКА:"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.login.php:114
+msgid "The username field is empty"
+msgstr "Не заполнено поле «Имя пользователя»"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.login.php:146
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.recover.password.php:292
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.recover.password.php:322
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:1490
+msgid "Password"
+msgstr "Пароль"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.login.php:154
+msgid "Log in"
+msgstr "Войти"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.login.php:158
+msgid "Remember me"
+msgstr "Запомнить меня"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.login.php:170
+msgid "Lost password?"
+msgstr "Забыли пароль?"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.recover.password.php:119
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.recover.password.php:164
+msgid "A password reset email has been sent to "
+msgstr "Письмо со ссылкой на сброс пароля было отправлено на следующий адрес: "
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.recover.password.php:119
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.recover.password.php:164
+msgid "Following the link sent in the email address will reset the password."
+msgstr "Проследуя по ссылке в письме, вы сможете сбросить пароль."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.recover.password.php:131
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.recover.password.php:176
+msgid "Someone requested that the password be reset for the following account: "
+msgstr "Некто запросил сброс пароля для следующего аккаунта: "
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.recover.password.php:133
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.recover.password.php:178
+msgid "If this was a mistake, just ignore this email and nothing will happen."
+msgstr "Если вы считаете, что это ошибка, то просто проигнорируйте данное письмо, с аккаунтом ничего не случится."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.recover.password.php:134
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.recover.password.php:179
+msgid "To reset your password, visit the following link:"
+msgstr "Чтобы сбросить свой пароль, перейдите по следующей ссылке:"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.recover.password.php:138
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.recover.password.php:183
+msgid "Password Reset Feature from"
+msgstr "Запрос на сброс пароля от"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.recover.password.php:147
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.recover.password.php:192
+msgid "ERROR"
+msgstr "ОШИБКА"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.recover.password.php:147
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.recover.password.php:192
+msgid "There was an error while trying to send the activation link to "
+msgstr "Произошла ошибка при попытке отправки ссылки активации на "
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.recover.password.php:157
+msgid "The email address entered wasn't found in the database!"
+msgstr "Введенный вами адрес электронной почты не был найден в базе данных!"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.recover.password.php:157
+msgid "Please check that you entered the correct email address."
+msgstr "Пожалуйста, убедитесь, что вы ввели верный адрес эл. почты."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.recover.password.php:199
+msgid "The username entered wasn't found in the database!"
+msgstr "Введенное вами имя пользователя не было найдено в базе данных!"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.recover.password.php:199
+msgid "Please check that you entered the correct username."
+msgstr "Пожалуйста, убедитесь, что вы ввели верное имя пользователя."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.recover.password.php:210
+msgid "Your password has been successfully changed!"
+msgstr "Ваш пароль был изменен."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.recover.password.php:224
+msgid "You have successfully reset your password to:"
+msgstr "Вы сбросили пароль аккаунта"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.recover.password.php:228
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.recover.password.php:242
+msgid "Password Successfully Reset for"
+msgstr "Пароль был успешно сброшен для пользователя"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.recover.password.php:228
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.recover.password.php:242
+msgid "from"
+msgstr "от"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.recover.password.php:238
+msgid "has requested a password change via the password reset feature."
+msgstr "запросил смену пароля с помощью ссылки на сброс пароля."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.recover.password.php:239
+msgid "His/her new password is:"
+msgstr "Его/её новый пароль:"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.recover.password.php:257
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:842
+msgid "The entered passwords don't match!"
+msgstr "Введенные вами пароли не совпадают!"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.recover.password.php:304
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.recover.password.php:334
+msgid "Reset Password"
+msgstr "Сбросить пароль"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.recover.password.php:351
+msgid "Invalid key!"
+msgstr "Неверный ключ!"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.recover.password.php:366
+msgid "Please enter your username or email address."
+msgstr "Пожалуйста, введите свое имя пользователя или адрес эл. почты."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.recover.password.php:366
+msgid "You will receive a link to create a new password via email."
+msgstr "Вы получите ссылку на страницу создания нового пароля в сообщении по эл. почте."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.recover.password.php:375
+msgid "Username or E-mail"
+msgstr "Имя пользователя или адрес эл. почты"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.recover.password.php:384
+msgid "Get New Password"
+msgstr "Получить новый пароль"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:364
+#, php-format
+msgid ""
+"To activate your user, please click the following link:\n"
+"\n"
+"%s\n"
+"\n"
+"After you activate, you will receive *another email* with your login.\n"
+"\n"
+msgstr ""
+"Чтобы активировать вашу учётную запись, перейдите по ссылке:\n"
+"\n"
+"%s\n"
+"\n"
+"После активации вы получите еще одно письмо с вашим логином..\n"
+"\n"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:367
+#, php-format
+msgid "[%1$s] Activate %2$s"
+msgstr "[%1$s] Активация пользователя %2$s"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:390
+msgid "Invalid activation key!"
+msgstr "Неверный ключ активации!"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:394
+msgid "The user is already active!"
+msgstr "Пользователь уже активирован!"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:396
+msgid "The site is already active!"
+msgstr "Сайт уже активен!"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:412
+msgid "Could not create user!"
+msgstr "Не могу создать пользователя!"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:420
+msgid "That username is already activated!"
+msgstr "Извините, но это имя пользователя уже активировано!"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:436
+msgid "The user was successfully activated."
+msgstr "Пользователь был успешно активирован."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:438
+msgid "There was an error while trying to activate the user."
+msgstr "Произошла ошибка при попытке активации пользователя."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:473
+msgid "New subscriber on"
+msgstr "Новый пользователь на"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:478
+msgid "A new subscriber has (been) registered!"
+msgstr "Был зарегистрирован новый подписчик!"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:554
+msgid "The user was NOT created!"
+msgstr "Пользователь НЕ БЫЛ создан!"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:831
+msgid "A username is required for registration."
+msgstr "Для регистрации необходимо ввести имя пользователя."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:833
+msgid "Sorry, that username already exists!"
+msgstr "Извините, но это имя пользователя уже занято!"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:835
+msgid "You must enter a valid email address."
+msgstr "Вы должны ввести настоящий адрес эл. почты."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:837
+msgid "Sorry, that email address is already used!"
+msgstr "Извините, но этот адрес эл. почты уже используется!"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:840
+msgid "You didn't complete one of the password-fields!"
+msgstr "Вы не заполнили одно из полей с паролем!"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:852
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:858
+msgid "The account was NOT created!"
+msgstr "Аккаунт НЕ БЫЛ создан!"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:856
+msgid "You must agree to the terms and conditions before registering!"
+msgstr "Перед регистрацией вы должны принять пользовательское соглашение!"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:858
+msgid "(Several required fields were left uncompleted)"
+msgstr "(несколько обязательных полей не было заполнено)"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:872
+msgid "This username is already reserved to be used soon."
+msgstr "Введенное вами имя пользователя зарезервировано."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:872
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:876
+msgid "Please try a different one!"
+msgstr "Пожалуйста, попробуйте ввести другие данные."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:876
+msgid "This email address is already reserved to be used soon."
+msgstr "Введенный вами адрес эл. почты зарезервирован."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:1096
+msgid "You are logged in as"
+msgstr "Вы вошли как"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:1096
+msgid "You don't need another account."
+msgstr "Вам не нужен еще один аккаунт."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:1096
+msgid "Log out of this account."
+msgstr "Выйти из этого аккаунта."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:1096
+msgid "Logout"
+msgstr "Выйти"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:1104
+msgid "An email has been sent to "
+msgstr "Письмо было отправлено"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:1104
+msgid "with information on how to activate his/her account"
+msgstr "с информацией об активации его/её аккаунта"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:1109
+msgid "A user account has been created for"
+msgstr "Был создан новый аккаунт"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:1136
+msgid "An email has been sent to you with information on how to activate your account"
+msgstr "Вам было отправлено письмо с информацией об активации вашего аккаунта"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:1141
+msgid "Thank you for registering"
+msgstr "Спасибо за регистрацию"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:1169
+msgid "An error occured while trying to send the notification email."
+msgstr "Произошла ошибка при попытке отправки письма с уведомлением."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:1174
+msgid "An email containing activation instructions was successfully sent."
+msgstr "Письмо, содержащее инструкции по активации аккаунта отправлено на адрес эл. почты."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:1179
+msgid "An email containing the username and password was successfully sent."
+msgstr "Письмо, содержащее имя пользователя и пароль, отправлено на адрес эл. почты."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:1195
+msgid "Users can register themselves or you can manually create users here."
+msgstr "Здесь пользователи могут самостоятельно регистрироваться; вы тоже можете создать здесь нового пользователя."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:1200
+msgid "Users cannot currently register themselves, but you can manually create users here."
+msgstr "Пользователи не могут самостоятельно регистрироваться, но вы можете создать здесь нового пользователя."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:1205
+msgid "Only an administrator can add new users."
+msgstr "Только администратор имеет право на добавление новых пользователей."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:1228
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:1252
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:1276
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:1300
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:1351
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:1375
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:1399
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:1423
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:1450
+msgid "This field must be filled out before registering (It was marked as required by the administrator)"
+msgstr "Это поле должно быть заполнено перед регистрацией (оно обязательно для заполнения)"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:1249
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:1273
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:1297
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:1324
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:1348
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:1372
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:1396
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:1420
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:1447
+msgid "This field is marked as required by the administrator"
+msgstr "Это поле является обязательным для заполнения"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:1530
+msgid "Send these credentials via email."
+msgstr "Отправить данные регистрации на мой адрес эл. почты."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:1544
+msgid "Add User"
+msgstr "Добавить пользователя"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/front-end/wppb.register.php:1544
+msgid "Register"
+msgstr "Зарегистрироваться"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/premium.php:8
+msgid "You can create as many extra fields as your project requires. To break your custom fields into sections (on the front-end), add a \""
+msgstr "Вы можете создать столько дополнительных полей, сколько необходимо для вашего проекта. Чтобы разделять свои поля в блоки (на самом сайте), добавляйте дополнительное поле \""
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/premium.php:8
+msgid "heading"
+msgstr "heading"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/premium.php:8
+msgid "\" custom field."
+msgstr "\"."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/premium.php:9
+msgid "All of the fields can be sorted and rearranged to your liking with "
+msgstr "Все поля могут быть пересортированы по вашему вкусу с помощью "
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/premium.php:9
+msgid "Drag"
+msgstr "Drag"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/premium.php:9
+msgid "Drop"
+msgstr "Drop (зажатия и перетаскивания)"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/premium.php:9
+msgid ". Don't worry about the order in which you create your custom fields, you can always reorder them."
+msgstr ". Не стоит беспокоиться о порядке создания своих полей, вы всегда сможете его изменить."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/premium.php:13
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/premium.php:23
+msgid "Title"
+msgstr "Название"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/premium.php:14
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/premium.php:24
+msgid "Type"
+msgstr "Тип"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/premium.php:15
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/premium.php:25
+msgid "Meta-Key"
+msgstr "Мета-ключ"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/premium.php:16
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/premium.php:26
+msgid "ID"
+msgstr "ИД"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/premium.php:17
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/premium.php:27
+msgid "Req'd"
+msgstr "Обязательное"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/premium.php:18
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/premium.php:28
+msgid "Add Option"
+msgstr "Добавить поле"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/premium.php:40
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/premium.php:73
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/premium.php:206
+msgid "Edit"
+msgstr "Изменить"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/premium.php:41
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/premium.php:74
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/premium.php:207
+msgid "Delete"
+msgstr "Удалить"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/premium.php:101
+msgid "Title:"
+msgstr "Название:"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/premium.php:101
+msgid "The title of the item."
+msgstr "Название поля."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/premium.php:111
+msgid "Meta-Key:"
+msgstr "Мета-ключ:"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/premium.php:111
+msgid "Use this in conjuction with WordPress functions to display the value in the page of your choosing. Auto-completed but editable - in this case it must be uniqe.<br/>Changing this might take long in case of a very big user-count."
+msgstr "Вы можете использовать данный мета-ключ вместе с функциями WordPress, чтобы отображать значения данного поля в нужных вам местах. Мета-ключ создается автоматически, но вы можете отредактировать его имя, только учтите, что оно должно быть уникальным.<br/>При большом количестве пользователей на смену мета-ключа может уйти немало времени."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/premium.php:144
+msgid "Option Type:"
+msgstr "Тип поля:"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/premium.php:144
+msgid "Choose one of the supported option types."
+msgstr "Выберите один из поддерживаемых типов."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/premium.php:154
+msgid "Description:"
+msgstr "Описание:"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/premium.php:154
+msgid "Enter a detailed description of the option for end users to read(optional)."
+msgstr "Введите подробное описание поля для ваших пользователей (необязательно)."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/premium.php:155
+msgid "You can only insert links using standard HTML syntax:"
+msgstr "Вы можете вставлять ссылки, используя только стандартный синтаксис HTML:"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/premium.php:155
+msgid "address"
+msgstr "address"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/premium.php:155
+msgid "name"
+msgstr "name"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/premium.php:165
+msgid "Options:"
+msgstr "Опции:"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/premium.php:165
+msgid "Enter a comma separated list of options. For example, you could have \"One,Two,Three\" or just a single value like \"Yes\" for a checkbox."
+msgstr "Введите список опций, разделенный запятыми. Например, \"Один, два, три\" или просто одну величину \"Согласен\" для создания единственного поля с галочкой."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/premium.php:176
+msgid "ID:"
+msgstr "ИД:"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/premium.php:176
+msgid "This is the internal ID for this input. You can use this in conjuction with filters to target this element if needed.<br/>Can't be edited."
+msgstr "Это внешний индентификатор для этого поля. Вы можете использовать его вместе с фильтрами, чтобы показывать только это поле.<br/>Нельзя изменить."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/premium.php:187
+msgid "Required:"
+msgstr "Обязательное:"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/premium.php:187
+msgid "Check this box to make this field required."
+msgstr "Поставьте галочку, если вы хотите, чтобы поля было обязательным для заполнения."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/premium.php:194
+msgid "Cancel"
+msgstr "Отмена"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/premium.php:195
+msgid "Save"
+msgstr "Сохранить"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/premium.php:229
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/premium.php:230
+msgid "Register your version of Profile Builder Pro"
+msgstr "Регистрация вашей версии Profile Builder Pro"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/premium.php:231
+msgid "Now that you acquired a copy of Profile Builder Pro, you should take the time and register it with the serial number you received in the e-mail."
+msgstr "Теперь, получив копию Profile Builder Pro, вам необходимо потратить немного времени и зарегистрировать её с помощью серийного номера, указанного в письме, полученном вами после оплаты."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/premium.php:232
+msgid "If you register this version of Profile Builder, you'll receive information regarding eventual upgrades, patches, and - if needed - technical support."
+msgstr "Если вы зарегистрируете эту версию Profile Builder, то вы будете получать информацию о будущих обновлениях, исправлениях и — если вам потребуется — техническую поддержку."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/premium.php:233
+msgid "Serial Number:"
+msgstr "Серийный номер:"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/premium.php:239
+msgid "The serial number was successfully validated!"
+msgstr "Серийный номер был подтвержден!"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/premium.php:241
+msgid "The serial number couldn't be validated or isn't valid!"
+msgstr "Серийный номер невозможно подтвердить, либо он неверен."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/premium.php:243
+msgid "The serial number couldn't be validated because process timed out. This is possible due to the server being down. Please try again later!"
+msgstr "Серийный номер невозможно подтвердить, так как истекло время на ответ сервера. Это происходит в случае отключения сервера регистрации. Пожалуйста, повторите попытку позже!"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/premium.php:247
+msgid "(e.g. RMPB-15-SN-253a55baa4fbe7bf595b2aabb8d72985)"
+msgstr "(например: RMPB-15-SN-253a55baa4fbe7bf595b2aabb8d72985)"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.functions.php:4
+msgid "You need to activate the User-Listing feature from within the \"Addons\" tab!"
+msgstr "Вам нужно активировать функция Список пользователей во вкладке \"Дополнения\"!"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.functions.php:4
+msgid "You can find it in Profile Builder's menu."
+msgstr "Вы можете найти его в меню Profile Builder."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.functions.php:29
+msgid "You need to be logged in to view the userlisting!"
+msgstr "Вы должны войти, чтобы просмотреть список пользователей!"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.functions.php:80
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.functions.php:106
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.functions.php:124
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.functions.php:849
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.functions.php:937
+msgid "Search Users by All Fields"
+msgstr "Искать пользователей по всем полям"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.functions.php:124
+msgid "Leave Blank and Press Search to List All Users"
+msgstr "Оставьте поля пустыми и нажмите «Поиск», чтобы увидеть список всех пользователей"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.functions.php:128
+msgid "Search"
+msgstr "Поиск"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.functions.php:141
+msgid "First/Lastname"
+msgstr "Имя/Фамилия"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.functions.php:147
+msgid "Email"
+msgstr "Адрес эл. почты"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.functions.php:153
+msgid "Sign-up Date"
+msgstr "Дата регистрации"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.functions.php:159
+msgid "Firstname"
+msgstr "Имя"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.functions.php:165
+msgid "Lastname"
+msgstr "Фамилия"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.functions.php:171
+msgid "Display Name"
+msgstr "Публичное имя"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.functions.php:189
+msgid "Posts"
+msgstr "Число записей"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.functions.php:230
+msgid "Click here to see more information about this user"
+msgstr "Нажмите здесь, чтобы просмотреть более подробную информацию об этом пользователе"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.functions.php:230
+msgid "More..."
+msgstr "Подробнее..."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.functions.php:413
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.functions.php:651
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/functions/extra.fields.php:554
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/functions/extra.fields.php:587
+msgid "No uploaded attachment"
+msgstr "Нет загруженных вложений"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.functions.php:415
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.functions.php:653
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.functions.php:694
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/functions/extra.fields.php:558
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/functions/extra.fields.php:608
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/functions/extra.fields.php:611
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/functions/extra.fields.php:681
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/functions/extra.fields.php:713
+msgid "Click to see the current attachment"
+msgstr "Нажмите здесь, чтобы увидеть текущее вложение"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.functions.php:493
+msgid "Click here to go back"
+msgstr "Нажмите здесь, чтобы вернуться назад"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.functions.php:493
+msgid "Back"
+msgstr "Назад"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.functions.php:651
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.functions.php:653
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/functions/extra.fields.php:554
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/functions/extra.fields.php:558
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/functions/extra.fields.php:587
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/functions/extra.fields.php:608
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/functions/extra.fields.php:611
+msgid "Current file"
+msgstr "Текущий файл"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.functions.php:692
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/functions/extra.fields.php:678
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/functions/extra.fields.php:710
+msgid "Avatar"
+msgstr "Аватар"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.functions.php:748
+msgid "No results found!"
+msgstr "Ничего не найдено!"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.functions.php:836
+msgid "&laquo;&laquo; First"
+msgstr "&laquo;&laquo; Первая страница"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.functions.php:837
+msgid "&laquo; Prev"
+msgstr "&laquo; Пред."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.functions.php:838
+msgid "Next &raquo; "
+msgstr "След. &raquo; "
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.functions.php:839
+msgid "Last &raquo;&raquo;"
+msgstr "Последняя &raquo;&raquo;"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.php:9
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.php:10
+msgid "Activate/Deactivate Addons"
+msgstr "Активация/деактивация дополнений"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.php:14
+msgid "Name/Description"
+msgstr "Имя/Описание"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.php:15
+msgid "Status"
+msgstr "Статус"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.php:20
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.php:75
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.php:76
+msgid "User-Listing"
+msgstr "Список пользователей"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.php:22
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.php:29
+msgid "Active"
+msgstr "Активно"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.php:23
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.php:30
+msgid "Inactive"
+msgstr "Неактивно"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.php:27
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.php:451
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.php:452
+msgid "Custom Redirects"
+msgstr "Пользовательские перенаправления"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.php:78
+msgid "To create a page containing the users registered to this current site/blog, insert the following shortcode in a (blank) page: "
+msgstr "Чтобы создать страницу, отображающую список зарегистрированных пользователей на вашем сайте, вставьте следующий шорткод на (пустую) страницу:"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.php:79
+msgid "For instance, to create a userlisting shortcode listing only the editors and authors, visible to only the users currently logged in, you would use:"
+msgstr "Например, чтобы создать список, отображающий только редакторов и авторов в настоящее время находящихся на сайте, используйте следующий шорткод:"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.php:84
+msgid "These settings are applied to the front-end userlisting."
+msgstr "Эти настройки применяются к списку пользователей на сайте."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.php:90
+msgid "Number of Users/Page: "
+msgstr "Число пользователей на страницу:"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.php:107
+msgid "Default Sorting Order: "
+msgstr "Сортировка по умолчанию:"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.php:118
+msgid "\"All-Userlisting\" Template"
+msgstr "Шаблон \"Все пользователи\""
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.php:120
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.php:262
+msgid "With the userlisting templates you can customize the look, feel and information listed by the shortcode."
+msgstr "С помощью шаблона списка пользователей вы сможете изменить вид и информацию, выводимую шорткодом."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.php:121
+msgid "The \"All Users Listing\" template is used to list all users. It's displayed on each page access where the shortcode is present."
+msgstr "Шаблон \"Все пользователи\" используется для отображения всех пользователей. Он будет отображаться на каждой странице с шорткодом."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.php:125
+msgid "Avatar size: "
+msgstr "Размер аватара:"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.php:141
+msgid "Insert \"Sort By\" Field:"
+msgstr "Вставить поле \"Сортировать по\":"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.php:169
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.php:268
+msgid "Insert \"User-Meta\" Field:"
+msgstr "Вставить поле \"Данные пользователя\":"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.php:200
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.php:306
+msgid "Insert Extra Functions:"
+msgstr "Вставить дополнительные функции:"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.php:215
+msgid "Show/Hide Default \"All-Userlisting\" Code"
+msgstr "Показать/скрыть код шаблона \"Все пользователи\" по умолчанию"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.php:217
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.php:320
+msgid "If you wish to use a default userlisting, just copy the following code and paste it in the textarea below:"
+msgstr "Если вы хотите использовать отображение по умолчанию, то вставьте данный код в форму ниже:"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.php:260
+msgid "\"Single-Userlisting\" Template"
+msgstr "Шаблон \"Один пользователь\""
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.php:263
+msgid "The \"Single User Listing\" template is used to list an individual user. It's displayed when clickin on the \"more info\" link."
+msgstr "Шаблон \"Один пользователь\" используется для отображения отдельного пользователя. Он выводится при нажатии на ссылку \"Подробнее\"."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.php:318
+msgid "Show/Hide Default \"Single-Userlisting\" Code"
+msgstr "Показать/скрыть код шаблона \"Один пользователь\" по умолчанию"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.php:462
+msgid "Action"
+msgstr "Событие"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.php:463
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.php:508
+msgid "Redirect"
+msgstr "Перенаправлять?"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.php:464
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.php:509
+msgid "URL"
+msgstr "Ссылка перенаправления"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.php:468
+msgid "After Registration:"
+msgstr "После регистрации:"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.php:476
+msgid "After Login:"
+msgstr "После входа:"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.php:496
+msgid "When activated this feature will redirect the user on both the default Wordpress password recovery page and the \"Lost password?\" link used by Profile Builder on the front-end login page."
+msgstr "После активирования данной функции пользователя будет перенаправлять со стандартных страниц восстановления пароля Wordpress и ссылки \"Забыли пароль?\" в Profile Builder на страницу входа на самом сайте."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.php:507
+msgid "Requested WP Page"
+msgstr "Запрашиваемая страница WP"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.php:561
+msgid "Before login. Works best if used in conjuction with \"After logout\"."
+msgstr "Перед логином. Лучше всего работает вместе с событием \"После выхода\"."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.php:562
+msgid "After logout. Works best if used in conjuction with \"Before logout\"."
+msgstr "После выхода. Лучше всего работает вместе с событием \"Перед выходом\"."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/addon/addon.php:563
+msgid "Redirects every user-role EXCEPT the ones with administrator privilages (can manage options)."
+msgstr "Перенаправляет всех пользователей КРОМЕ администраторов (пользователей, способных изменить настройки плагина)."
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/functions/extra.fields.php:44
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/functions/extra.fields.php:146
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/functions/extra.fields.php:212
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/functions/extra.fields.php:277
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/functions/extra.fields.php:342
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/functions/extra.fields.php:408
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/functions/extra.fields.php:462
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/functions/extra.fields.php:510
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/functions/extra.fields.php:573
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/functions/extra.fields.php:696
+msgid "This field wasn't updated because you entered and empty string (It was marked as required by the administrator)"
+msgstr "Это поле не было обновлено, так как вы очистили его (оно обязательно для заполнения)"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/functions/extra.fields.php:551
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/functions/extra.fields.php:583
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/functions/extra.fields.php:671
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/functions/extra.fields.php:702
+msgid "max upload size"
+msgstr "максимальный размер загружаемого файла —"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/functions/extra.fields.php:557
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/functions/extra.fields.php:610
+msgid "Are you sure you want to delete this attachment?"
+msgstr "Вы точно хотите удалить это вложение?"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/functions/extra.fields.php:558
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/functions/extra.fields.php:611
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/functions/extra.fields.php:681
+msgid "Click to delete the current attachment"
+msgstr "Нажмите, чтобы удалить текущее вложение"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/functions/extra.fields.php:608
+msgid "The attachment can't be deleted (It was marked as required by the administrator)"
+msgstr "Это вложение не может быть удалено (вложение является обязательным)"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/functions/extra.fields.php:674
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/functions/extra.fields.php:706
+msgid "Current avatar"
+msgstr "Текущий аватар"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/functions/extra.fields.php:674
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/functions/extra.fields.php:706
+msgid "No uploaded avatar"
+msgstr "Аватар не загружен"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/functions/extra.fields.php:680
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/functions/extra.fields.php:730
+msgid "Are you sure you want to delete this avatar?"
+msgstr "Вы точно хотите удалить данный аватар?"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/functions/extra.fields.php:713
+msgid "The avatar image can't be deleted (It was marked as required by the administrator)."
+msgstr "Этот аватар не может быть удален (у пользователя обязательно должен быть аватар)"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/functions/extra.fields.php:731
+msgid "Click to see the current avatar"
+msgstr "Нажмите, чтобы увидеть текущий аватар"
+
+#: D:\msdownld.tmp\libsteam\ajax\profile-builder-pro/premium/functions/extra.fields.php:731
+msgid "Click to delete the avatar"
+msgstr "Нажмите, чтобы удалить аватар"
+
+#~ msgid "Plugin Layout"
+#~ msgstr "Оформление"
