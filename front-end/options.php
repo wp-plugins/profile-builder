@@ -25,14 +25,7 @@ Original Author URI: http://valendesigns.com
 	  ?>
 		  <div class="info basic-version-info">
 				<img src="<?php echo WPPB_PLUGIN_URL ?>/assets/images/ad_image.png" alt="Profile Builder Pro" />
-				<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-					<input type="hidden" name="cmd" value="_s-xclick">
-					<input type="hidden" name="hosted_button_id" value="3J62P8ZXKFJM4">
-					<input type="image" src="http://beta.cozmoslabs.com/wp-content/plugins/reflection-media-subscriber/includes/icons/buy_now_button.png" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-					<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-				</form>
-				<a href="http://www.cozmoslabs.com/wordpress-profile-builder/">Or Learn More</a>
-				
+				<a href="http://www.cozmoslabs.com/wordpress-profile-builder/" alt="Profile Builder Pro" title="Buy Profile Builder Pro"><img id="wppb_buyNowButton" src="<?php echo WPPB_PLUGIN_URL ?>/assets/images/buy_now_button.png"/></a>
 		  </div>
 	  <?php
 	  }
@@ -55,7 +48,7 @@ Original Author URI: http://valendesigns.com
         
           <ul class="options_tabs">
 			<li><a href="#profile-builder"><?php _e('Basic Information','profilebuilder');?></a><span></span></li>
-			<li><a href="#plugin-layout"><?php _e('Plugin Layout','profilebuilder');?></a><span></span></li>
+			<li><a href="#general-settings"><?php _e('General Settings','profilebuilder');?></a><span></span></li>
 			<li><a href="#show-hide-admin-bar"><?php _e('Show/Hide the Admin Bar on Front-end','profilebuilder');?></a><span></span></li>
 			<li><a href="#default-fields"><?php _e('Default Profile Fields','profilebuilder');?></a><span></span></li>
 			<?php 
@@ -88,8 +81,8 @@ Original Author URI: http://valendesigns.com
 			<?php wppb_basic_info(); ?>
 			</div>
 
-			<div id="plugin-layout" class="block">
-			<?php wppb_plugin_layout(); ?>
+			<div id="general-settings" class="block">
+			<?php wppb_general_settings(); ?>
 			</div>
             
 			

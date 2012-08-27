@@ -164,6 +164,7 @@ function wppb_front_end_login(){
 			</p><!-- .form-submit -->
 			<?php
 				$siteURL=get_option('siteurl').'/wp-login.php?action=lostpassword';
+				$siteURL = apply_filters('wppb_pre_login_url_filter', $siteURL);
 				$loginFilterArray['loginURL'] = '
 					<p>
 						<a href="'.$siteURL.'">'. __('Lost password?', 'profilebuilder').'</a>
