@@ -178,8 +178,8 @@ function wppb_add_meta_to_user_on_activation($user_id, $password, $meta){
 	}
 }
 
-//function used to add the values to the custom fields upon a wpmu signup or when email confirmation has been selected
-function wppb_add_custom_field_values($_POST, $meta){
+
+function wppb_add_custom_field_values($POST, $meta){
 	/* add the extra profile information */
 	$wppb_premium = WPPB_PLUGIN_DIR . '/premium/functions/';
 	if (file_exists ( $wppb_premium.'extra.fields.php' )){
@@ -188,11 +188,11 @@ function wppb_add_custom_field_values($_POST, $meta){
 		foreach ( $wppbFetchArray as $key => $value){
 			switch ($value['item_type']) {
 				case "input":{
-					$meta[$value['item_type'].$value['id']] = apply_filters('wppb_register_wpmu_input', esc_attr($_POST[$value['item_type'].$value['id']]));
+					$meta[$value['item_type'].$value['id']] = apply_filters('wppb_register_wpmu_input', esc_attr($POST[$value['item_type'].$value['id']]));
 					break;
 				}						
 				case "hiddenInput":{
-					$meta[$value['item_type'].$value['id']] = apply_filters('wppb_register_wpmu_hidden_input', esc_attr($_POST[$value['item_type'].$value['id']]));
+					$meta[$value['item_type'].$value['id']] = apply_filters('wppb_register_wpmu_hidden_input', esc_attr($POST[$value['item_type'].$value['id']]));
 					break;
 				}
 				case "checkbox":{
@@ -200,8 +200,8 @@ function wppb_add_custom_field_values($_POST, $meta){
 					$checkboxValue = explode(',', $value['item_options']);
 					foreach($checkboxValue as $thisValue){
 						$thisValue = str_replace(' ', '#@space@#', $thisValue); //we need to escape the space-codification we sent earlier in the post
-						if (isset($_POST[$thisValue.$value['id']])){
-							$localValue = str_replace('#@space@#', ' ', $_POST[$thisValue.$value['id']]);
+						if (isset($POST[$thisValue.$value['id']])){
+							$localValue = str_replace('#@space@#', ' ', $POST[$thisValue.$value['id']]);
 							$checkboxOption = $checkboxOption.$localValue.',';
 						}
 					}							
@@ -210,27 +210,27 @@ function wppb_add_custom_field_values($_POST, $meta){
 					break;
 				}
 				case "radio":{
-					$meta[$value['item_type'].$value['id']] = apply_filters('wppb_register_wpmu_radio', esc_attr($_POST[$value['item_type'].$value['id']]));
+					$meta[$value['item_type'].$value['id']] = apply_filters('wppb_register_wpmu_radio', esc_attr($POST[$value['item_type'].$value['id']]));
 					break;
 				}
 				case "select":{
-					$meta[$value['item_type'].$value['id']] = apply_filters('wppb_register_wpmu_select', esc_attr($_POST[$value['item_type'].$value['id']]));
+					$meta[$value['item_type'].$value['id']] = apply_filters('wppb_register_wpmu_select', esc_attr($POST[$value['item_type'].$value['id']]));
 					break;
 				}
 				case "countrySelect":{
-					$meta[$value['item_type'].$value['id']] = apply_filters('wppb_register_wpmu_country_select', esc_attr($_POST[$value['item_type'].$value['id']]));
+					$meta[$value['item_type'].$value['id']] = apply_filters('wppb_register_wpmu_country_select', esc_attr($POST[$value['item_type'].$value['id']]));
 					break;
 				}
 				case "timeZone":{
-					$meta[$value['item_type'].$value['id']] = apply_filters('wppb_register_wpmu_timezone_select', esc_attr($_POST[$value['item_type'].$value['id']]));
+					$meta[$value['item_type'].$value['id']] = apply_filters('wppb_register_wpmu_timezone_select', esc_attr($POST[$value['item_type'].$value['id']]));
 					break;
 				}
 				case "datepicker":{
-					$meta[$value['item_type'].$value['id']] = apply_filters('wppb_register_wpmu_datepicker', esc_attr($_POST[$value['item_type'].$value['id']]));
+					$meta[$value['item_type'].$value['id']] = apply_filters('wppb_register_wpmu_datepicker', esc_attr($POST[$value['item_type'].$value['id']]));
 					break;
 				}
 				case "textarea":{
-					$meta[$value['item_type'].$value['id']] = apply_filters('wppb_register_wpmu_textarea', esc_attr($_POST[$value['item_type'].$value['id']]));
+					$meta[$value['item_type'].$value['id']] = apply_filters('wppb_register_wpmu_textarea', esc_attr($POST[$value['item_type'].$value['id']]));
 					break;
 				}
 				case "upload":{
@@ -1517,17 +1517,21 @@ function wppb_front_end_register($atts){
 
 						if ($wppb_defaultOptions['password'] == 'show'){
 							$errorMark = '';
+							$errorVar = '';
+							$errorVar2 = '';
 							if ($wppb_defaultOptions['passwordRequired'] == 'yes'){
 								$errorMark = '<font color="red" title="This field is required for registration.">*</font>';
 								$errorMark2 = '<font color="red" title="This field is required for registration.">*</font>';
-								if ((trim($_POST['passw1']) == '') && isset ($_POST['passw1'])){
-									$errorMark = '<img src="'.WPPB_PLUGIN_URL . '/assets/images/pencil_delete.png" title="This field is required for registration."/>';
-									$errorVar = ' errorHolder';
-								}
-								if ((trim($_POST['passw2']) == '') && isset ($_POST['passw2'])){
-									$errorMark2 = '<img src="'.WPPB_PLUGIN_URL . '/assets/images/pencil_delete.png" title="This field is required for registration."/>';
-									$errorVar2 = ' errorHolder';
-								}
+								if (isset ($_POST['passw1']))
+									if (trim($_POST['passw1']) == ''){
+										$errorMark = '<img src="'.WPPB_PLUGIN_URL . '/assets/images/pencil_delete.png" title="This field is required for registration."/>';
+										$errorVar = ' errorHolder';
+									}
+								if (isset ($_POST['passw2']))
+									if (trim($_POST['passw2']) == ''){
+										$errorMark2 = '<img src="'.WPPB_PLUGIN_URL . '/assets/images/pencil_delete.png" title="This field is required for registration."/>';
+										$errorVar2 = ' errorHolder';
+									}
 							}
 							
 							$localVar1 = '';
@@ -1555,7 +1559,7 @@ function wppb_front_end_register($atts){
 								
 								//register_user_extra_fields($error, $_POST, $extraFieldsErrorHolder);
 								$page = 'register';
-								$returnedValue = wppb_extra_fields($current_user->id, $extraFieldsErrorHolder, $editProfileFilterArray, $page, $error, $_POST);
+								$returnedValue = wppb_extra_fields($current_user->id, $extraFieldsErrorHolder, $registerFilterArray, $page, $error, $_POST);
 								
 								//copy over extra fields to the rest of the fieldso on the edit profile
 								foreach($returnedValue as $key => $value)
