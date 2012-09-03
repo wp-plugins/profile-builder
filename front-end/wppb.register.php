@@ -179,7 +179,7 @@ function wppb_add_meta_to_user_on_activation($user_id, $password, $meta){
 }
 
 
-function wppb_add_custom_field_values($POST, $meta){
+function wppb_add_custom_field_values($_POST, $meta){
 	/* add the extra profile information */
 	$wppb_premium = WPPB_PLUGIN_DIR . '/premium/functions/';
 	if (file_exists ( $wppb_premium.'extra.fields.php' )){
