@@ -64,7 +64,7 @@ function wppb_front_end_login(){
 			echo $loginFilterArray['loginMessage1'];		
 		?>
 	
-	<?php elseif ( $wppb_login->ID ) : // Successful login ?>
+	<?php elseif ( isset($wppb_login->ID) ) : // Successful login ?>
 		<?php
 			if($wppb_login->display_name == ''){ 
 				$wppb_login->display_name = $wppb_login->user_login;
@@ -78,7 +78,7 @@ function wppb_front_end_login(){
 						 __('You have successfully logged in as', 'profilebuilder').' <a href="'.$authorPostsUrl = get_author_posts_url( $wppb_login->ID ).'" title="'.$wppb_login->display_name.'">'.$wppb_login->display_name.'</a>.
 					</p><!-- .success-->';
 			
-				$loginFilterArray['loginMessage2'] = apply_filters('wppb_login_login_message2', $loginFilterArray['loginMessage2'], $wppb_login->ID, $wppb_user->display_name);
+				$loginFilterArray['loginMessage2'] = apply_filters('wppb_login_login_message2', $loginFilterArray['loginMessage2'], $wppb_login->ID, $wppb_login->display_name);
 				echo $loginFilterArray['loginMessage2'];
 			?>
 			
