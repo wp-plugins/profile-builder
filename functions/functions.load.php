@@ -135,8 +135,7 @@ if ( is_admin() ){
 		add_action( 'edit_user_profile_update', 'save_profile_extra_fields_in_admin', 10 );
 	}
 
-}
-else if ( !is_admin() ){
+}else if ( !is_admin() ){
 	/* include the stylesheet */
 	add_action('wp_print_styles', 'wppb_add_plugin_stylesheet');		
 

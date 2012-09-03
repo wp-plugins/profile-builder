@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Profile Builder Pro v1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: \n"
-"PO-Revision-Date: 2011-08-18 13:04+0100\n"
-"Last-Translator: Martin Jurica <martin@jurica.info>\n"
+"POT-Creation-Date: 2012-09-03 14:30+0200\n"
+"PO-Revision-Date: 2012-09-03 14:30+0200\n"
+"Last-Translator: Gabriel Barina <barinagabriel2007@yahoo.com>\n"
 "Language-Team: Martin Jurica <martin@jurica.info>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,824 +18,1952 @@ msgstr ""
 "X-Textdomain-Support: yes\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#@ profilebuilder
-#: front-end/menu.file.php:5
-#: front-end/menu.file.php:8
+# @ profilebuilder
+#: front-end/menu.file.php:25
+#: front-end/menu.file.php:28
 msgid "Profile Builder"
 msgstr "Profile Builder"
 
-#@ profilebuilder
-#: front-end/menu.file.php:6
+# @ profilebuilder
+#: front-end/menu.file.php:26
 msgid "Welcome to Profile Builder!"
 msgstr "Vítá vás Profile Builder!"
 
-#@ profilebuilder
-#: front-end/menu.file.php:8
+# @ profilebuilder
+#: front-end/menu.file.php:28
 msgid " lets you customize your website by adding a front-end menu for all your users, giving them a more flexible way to modify their user-information or to register new users."
 msgstr " umožňuje přidat front-end menu pro všechny uživatele vašeho webu. To usnadňuje úpravu profilu a zjednodušuje registraci nových uživatelů."
 
-#@ profilebuilder
-#: front-end/menu.file.php:9
+# @ profilebuilder
+#: front-end/menu.file.php:29
 msgid "Also, grants users with administrator rights to customize basic fields or to add new ones."
 msgstr "Uživatelé s administrátorskými právy mohou upravovat stávající pole v profilu a vytvářet nová."
 
-#@ profilebuilder
-#: front-end/menu.file.php:10
+# @ profilebuilder
+#: front-end/menu.file.php:30
 msgid "To achieve this, just create a new page, and give it an intuitive name(e.g. Edit Profile)."
 msgstr "Pro úpravu profilu přímo na webu (ne v administraci) stačí vytvořit novu Stránku (a pojmenovat ji například Upravit profil)."
 
-#@ profilebuilder
-#: front-end/menu.file.php:11
+# @ profilebuilder
+#: front-end/menu.file.php:31
 msgid "Now all you need to do is add the following shortcode(for the previous example): "
 msgstr "Do vytvořené stránky (nebo widgetu) pak stačí umístit následující kód: "
 
-#@ profilebuilder
-#: front-end/menu.file.php:12
+# @ profilebuilder
+#: front-end/menu.file.php:32
 msgid "Publish your page and you are ready to go!"
 msgstr "Nyní vytvořenou stránku publikujte a jste hotovi."
 
-#@ profilebuilder
-#: front-end/menu.file.php:13
+# @ profilebuilder
+#: front-end/menu.file.php:33
 msgid "You can use the following shortcodes:"
 msgstr "K dispozici jsou následující kódy:"
 
-#@ profilebuilder
-#: front-end/menu.file.php:14
+# @ profilebuilder
+#: front-end/menu.file.php:34
 msgid "for a log-in form."
 msgstr " pro přihlašovací formulář."
 
-#@ profilebuilder
-#: front-end/menu.file.php:15
+# @ profilebuilder
+#: front-end/menu.file.php:35
 msgid "to add a registration form."
 msgstr " pro registrační formulář."
 
-#@ profilebuilder
-#: front-end/menu.file.php:16
+# @ profilebuilder
+#: front-end/menu.file.php:36
 msgid "to grant users a front-end acces to their personal information(requires user to be logged in)."
 msgstr "pro poskytnutí přístupu k vlastnímu profilu (pouze pro přihlášené uživatele)."
 
-#@ profilebuilder
-#: front-end/menu.file.php:18
+# @ profilebuilder
+#: front-end/menu.file.php:37
+#, fuzzy
+msgid "to add a password recovery form."
+msgstr " pro registrační formulář."
+
+# @ profilebuilder
+#: front-end/menu.file.php:39
 msgid "Users with administrator rights have access to the following features:"
 msgstr "Uživatelé s administrátorskými právy mohou také:"
 
-#@ profilebuilder
-#: front-end/menu.file.php:19
+# @ profilebuilder
+#: front-end/menu.file.php:40
 msgid "add a custom stylesheet/inherit values from the current theme or use one of the following built into this plugin: default, white or black."
 msgstr "přidat/zahrnout vlastní CSS styl z aktuální šablony nebo použít některý ze stylů Profile Builder (výchozí, bílý, černý)."
 
-#@ profilebuilder
-#: front-end/menu.file.php:20
+# @ profilebuilder
+#: front-end/menu.file.php:41
 msgid "select whether to display or not the admin bar in the front end for a specific user-group registered to the site."
 msgstr "zvolit, zda zobrazovat administrační menu ve front-endu - v závislosti na uživatelské skupině."
 
-#@ profilebuilder
-#: front-end/menu.file.php:21
+# @ profilebuilder
+#: front-end/menu.file.php:42
 msgid "select which information-field can users see/modify. The hidden fields' values remain unmodified."
 msgstr "určit, která pole mohou uživatelé vidět/upravovat. Obsah skrytých polí zůstane beze změny."
 
-#@ profilebuilder
-#: front-end/menu.file.php:22
+# @ profilebuilder
+#: front-end/menu.file.php:43
 msgid "add custom fields to the existing ones, with several types to choose from: heading, text, textarea, select, checkbox, radio, and/or upload."
 msgstr "přidat další uživatelská pole k již existujícím polím profilu. K dispozici jsou typy polí: nadpis, text, textarea, select, check-box, radio a upload."
 
-#@ profilebuilder
-#: front-end/menu.file.php:23
+# @ profilebuilder
+#: front-end/menu.file.php:44
 msgid "add an avatar field."
 msgstr "přidat pole pro avatar."
 
-#@ profilebuilder
-#: front-end/menu.file.php:26
+#: front-end/menu.file.php:45
+msgid "create custom redirects."
+msgstr ""
+
+#: front-end/menu.file.php:46
+msgid "front-end userlisting using the"
+msgstr ""
+
+#: front-end/menu.file.php:46
+msgid "shortcode."
+msgstr ""
+
+# @ profilebuilder
+#: front-end/menu.file.php:49
+#: front-end/menu.file.php:104
+#: front-end/menu.file.php:159
 msgid "NOTE:"
 msgstr "POZNÁMKA:"
 
-#@ profilebuilder
-#: front-end/menu.file.php:27
+# @ profilebuilder
+#: front-end/menu.file.php:50
 msgid "this plugin only adds/removes fields in the front-end."
 msgstr "tento plugin pouze přidává/odstraňuje pole ve front-endu."
 
-#@ profilebuilder
-#: front-end/menu.file.php:28
+# @ profilebuilder
+#: front-end/menu.file.php:51
 msgid "The default information-fields will still be visible(and thus modifiable)"
 msgstr "Výchozí pole budou i nadále dostupná (včetně možnosti úprav)"
 
-#@ profilebuilder
-#: front-end/menu.file.php:29
+# @ profilebuilder
+#: front-end/menu.file.php:52
 msgid "from the back-end, while custom fields will only be visible in the front-end."
 msgstr "v administraci. Vlastní pole budou přístupná ve front-endu (na webu)."
 
-#@ profilebuilder
-#: front-end/menu.file.php:43
-#: front-end/menu.file.php:44
-#: front-end/options.php:58
-msgid "Plugin Layout"
-msgstr "Nastavení vzhledu"
+#: front-end/menu.file.php:66
+#: front-end/menu.file.php:67
+#: front-end/options.php:51
+#: premium/addon/addon.php:89
+msgid "General Settings"
+msgstr ""
 
-#@ profilebuilder
-#: front-end/menu.file.php:50
-msgid "Stylesheet used:"
+# @ profilebuilder
+#: front-end/menu.file.php:68
+#, fuzzy
+msgid "Stylesheet Used on the Front-End:"
 msgstr "CSS styl:"
 
-#@ profilebuilder
-#: front-end/menu.file.php:53
+# @ profilebuilder
+#: front-end/menu.file.php:70
 msgid "Default"
 msgstr "Výchozí"
 
-#@ profilebuilder
-#: front-end/menu.file.php:58
+# @ profilebuilder
+#: front-end/menu.file.php:75
 msgid "White"
 msgstr "Bílý"
 
-#@ profilebuilder
-#: front-end/menu.file.php:59
+# @ profilebuilder
+#: front-end/menu.file.php:76
 msgid "Black"
 msgstr "Černý"
 
-#@ profilebuilder
-#: front-end/menu.file.php:63
+# @ profilebuilder
+#: front-end/menu.file.php:80
 msgid "None"
 msgstr "Žádný"
 
-#@ default
-#: front-end/menu.file.php:72
-#: front-end/menu.file.php:119
-#: front-end/menu.file.php:287
-#: premium/premium.php:177
+#: front-end/menu.file.php:86
+msgid "\"Email Confirmation\" Feature Activated:"
+msgstr ""
+
+#: front-end/menu.file.php:88
+#: front-end/menu.file.php:97
+#: front-end/menu.file.php:210
+#: front-end/menu.file.php:223
+#: front-end/menu.file.php:236
+#: front-end/menu.file.php:249
+#: front-end/menu.file.php:262
+#: front-end/menu.file.php:281
+#: front-end/menu.file.php:294
+#: front-end/menu.file.php:310
+#: front-end/menu.file.php:323
+#: front-end/menu.file.php:336
+#: front-end/menu.file.php:355
+#: front-end/menu.file.php:369
+#: premium/addon/addon.php:477
+#: premium/addon/addon.php:485
+#: premium/addon/addon.php:495
+#: premium/addon/addon.php:524
+#: premium/addon/addon.php:536
+#: premium/addon/addon.php:548
+#: premium/addon/addon.php:560
+msgid "Yes"
+msgstr ""
+
+# @ profilebuilder
+#: front-end/menu.file.php:89
+#: front-end/menu.file.php:98
+#: front-end/menu.file.php:211
+#: front-end/menu.file.php:224
+#: front-end/menu.file.php:237
+#: front-end/menu.file.php:250
+#: front-end/menu.file.php:263
+#: front-end/menu.file.php:282
+#: front-end/menu.file.php:295
+#: front-end/menu.file.php:311
+#: front-end/menu.file.php:324
+#: front-end/menu.file.php:337
+#: front-end/menu.file.php:356
+#: front-end/menu.file.php:370
+#: premium/addon/addon.php:478
+#: premium/addon/addon.php:486
+#: premium/addon/addon.php:496
+#: premium/addon/addon.php:525
+#: premium/addon/addon.php:537
+#: premium/addon/addon.php:549
+#: premium/addon/addon.php:561
+#, fuzzy
+msgid "No"
+msgstr "Žádný"
+
+#: front-end/menu.file.php:95
+msgid "\"Admin Approval\" Feature Activated:"
+msgstr ""
+
+#: front-end/menu.file.php:105
+msgid "The black stylesheet is intended for sites/blogs with a dark background."
+msgstr ""
+
+#: front-end/menu.file.php:106
+msgid "The white stylesheet is intended for a sites/blogs with a light background color."
+msgstr ""
+
+#: front-end/menu.file.php:107
+msgid "On single-site installations the \"Email Confirmation\" feature only works in the front-end, so make sure you also use the \"Custom Redirects\" feature."
+msgstr ""
+
+# @ default
+#: front-end/menu.file.php:114
+#: front-end/menu.file.php:167
+#: front-end/menu.file.php:378
+#: premium/premium.php:252
+#: premium/addon/addon.php:45
+#: premium/addon/addon.php:421
+#: premium/addon/addon.php:575
+#: premium/addon/addon.php:629
 msgid "Save Changes"
 msgstr "Uložit změny"
 
-#@ profilebuilder
-#: front-end/menu.file.php:90
-#: front-end/menu.file.php:91
+# @ profilebuilder
+#: front-end/menu.file.php:132
+#: front-end/menu.file.php:133
 msgid "Show/Hide the Admin Bar on Front End"
 msgstr "Administrační lišta ve front-endu"
 
-#@ profilebuilder
-#: front-end/menu.file.php:95
+# @ profilebuilder
+#: front-end/menu.file.php:137
 msgid "User-group"
 msgstr "Skupina"
 
-#@ profilebuilder
-#: front-end/menu.file.php:96
-#: front-end/menu.file.php:143
+# @ profilebuilder
+#: front-end/menu.file.php:138
+#: front-end/menu.file.php:191
 msgid "Visibility"
 msgstr "Viditelnost"
 
-#@ profilebuilder
-#: front-end/menu.file.php:108
-#: front-end/menu.file.php:159
-#: front-end/menu.file.php:168
-#: front-end/menu.file.php:177
-#: front-end/menu.file.php:186
-#: front-end/menu.file.php:195
-#: front-end/menu.file.php:212
-#: front-end/menu.file.php:221
-#: front-end/menu.file.php:233
-#: front-end/menu.file.php:242
-#: front-end/menu.file.php:251
-#: front-end/menu.file.php:268
-#: front-end/menu.file.php:278
+# @ profilebuilder
+#: front-end/menu.file.php:147
+#: front-end/menu.file.php:206
+#: front-end/menu.file.php:219
+#: front-end/menu.file.php:232
+#: front-end/menu.file.php:245
+#: front-end/menu.file.php:258
+#: front-end/menu.file.php:277
+#: front-end/menu.file.php:290
+#: front-end/menu.file.php:306
+#: front-end/menu.file.php:319
+#: front-end/menu.file.php:332
+#: front-end/menu.file.php:351
+#: front-end/menu.file.php:365
 msgid "Show"
 msgstr "Zobrazit"
 
-#@ profilebuilder
-#: front-end/menu.file.php:109
-#: front-end/menu.file.php:160
-#: front-end/menu.file.php:169
-#: front-end/menu.file.php:178
-#: front-end/menu.file.php:187
-#: front-end/menu.file.php:196
-#: front-end/menu.file.php:213
-#: front-end/menu.file.php:222
-#: front-end/menu.file.php:234
-#: front-end/menu.file.php:243
-#: front-end/menu.file.php:252
-#: front-end/menu.file.php:269
-#: front-end/menu.file.php:279
+# @ profilebuilder
+#: front-end/menu.file.php:148
+#: front-end/menu.file.php:207
+#: front-end/menu.file.php:220
+#: front-end/menu.file.php:233
+#: front-end/menu.file.php:246
+#: front-end/menu.file.php:259
+#: front-end/menu.file.php:278
+#: front-end/menu.file.php:291
+#: front-end/menu.file.php:307
+#: front-end/menu.file.php:320
+#: front-end/menu.file.php:333
+#: front-end/menu.file.php:352
+#: front-end/menu.file.php:366
 msgid "Hide"
 msgstr "Skrýt"
 
-#@ profilebuilder
-#: front-end/menu.file.php:137
-#: front-end/menu.file.php:138
-#: front-end/options.php:60
+#: front-end/menu.file.php:160
+msgid "If you added new roles (via another plugin) <u>after</u> Profile Builder was activated, please reactivate it, since the roles are initialized during plugin activation."
+msgstr ""
+
+# @ profilebuilder
+#: front-end/menu.file.php:185
+#: front-end/menu.file.php:186
+#: front-end/options.php:53
 msgid "Default Profile Fields"
 msgstr "Výchozí pole profilu"
 
-#@ profilebuilder
-#: front-end/menu.file.php:142
+# @ profilebuilder
+#: front-end/menu.file.php:190
 msgid "Input Field Name"
 msgstr "Název pole"
 
-#@ profilebuilder
-#: front-end/menu.file.php:149
+# @ profilebuilder
+#: front-end/menu.file.php:192
+#, fuzzy
+msgid "Required"
+msgstr "(vyžadováno)"
+
+# @ profilebuilder
+#: front-end/menu.file.php:197
 msgid "Name:"
 msgstr "Jméno:"
 
-#@ profilebuilder
-#: front-end/menu.file.php:156
-#: front-end/wppb.edit.profile.php:385
-#: front-end/wppb.login.php:76
-#: front-end/wppb.register.php:244
+# @ profilebuilder
+#: front-end/menu.file.php:203
+#: front-end/wppb.edit.profile.php:698
+#: front-end/wppb.login.php:138
+#: front-end/wppb.register.php:488
+#: front-end/wppb.register.php:1290
+#: premium/addon/addon.functions.php:135
 msgid "Username"
 msgstr "Uživatelské jméno"
 
-#@ profilebuilder
-#: front-end/menu.file.php:165
-#: front-end/wppb.edit.profile.php:394
-#: front-end/wppb.register.php:259
+# @ profilebuilder
+#: front-end/menu.file.php:216
+#: front-end/wppb.edit.profile.php:718
+#: front-end/wppb.register.php:1314
 msgid "First Name"
 msgstr "Křestní jméno"
 
-#@ profilebuilder
-#: front-end/menu.file.php:174
-#: front-end/wppb.edit.profile.php:403
-#: front-end/wppb.register.php:273
+# @ profilebuilder
+#: front-end/menu.file.php:229
+#: front-end/wppb.edit.profile.php:738
+#: front-end/wppb.register.php:1338
 msgid "Last Name"
 msgstr "Příjmení"
 
-#@ profilebuilder
-#: front-end/menu.file.php:183
-#: front-end/wppb.edit.profile.php:412
-#: front-end/wppb.register.php:287
+# @ profilebuilder
+#: front-end/menu.file.php:242
+#: front-end/wppb.edit.profile.php:758
+#: front-end/wppb.register.php:1362
 msgid "Nickname"
 msgstr "Přezdívka"
 
-#@ profilebuilder
-#: front-end/menu.file.php:192
+# @ profilebuilder
+#: front-end/menu.file.php:255
 msgid "Display name publicly as..."
 msgstr "Veřejně zobrazovat jako..."
 
-#@ profilebuilder
-#: front-end/menu.file.php:202
+# @ profilebuilder
+#: front-end/menu.file.php:268
 msgid "Contact Info:"
 msgstr "Kontaktní informace:"
 
-#@ profilebuilder
-#: front-end/menu.file.php:209
-#: front-end/wppb.edit.profile.php:457
-#: front-end/wppb.register.php:305
+# @ profilebuilder
+#: front-end/menu.file.php:274
+#: front-end/wppb.edit.profile.php:828
+#: front-end/wppb.register.php:489
+#: front-end/wppb.register.php:1389
 msgid "E-mail"
 msgstr "E-mail"
 
-#@ profilebuilder
-#: front-end/menu.file.php:218
-#: front-end/wppb.edit.profile.php:467
-#: front-end/wppb.register.php:320
+# @ profilebuilder
+#: front-end/menu.file.php:287
+#: front-end/wppb.edit.profile.php:847
+#: front-end/wppb.register.php:1413
+#: premium/addon/addon.functions.php:177
 msgid "Website"
 msgstr "Web"
 
-#@ profilebuilder
-#: front-end/menu.file.php:230
-#: front-end/wppb.edit.profile.php:476
-#: front-end/wppb.register.php:334
+# @ profilebuilder
+#: front-end/menu.file.php:303
+#: front-end/wppb.edit.profile.php:865
+#: front-end/wppb.register.php:1437
 msgid "AIM"
 msgstr "AIM (AOL Instant Messenger)"
 
-#@ profilebuilder
-#: front-end/menu.file.php:239
-#: front-end/wppb.edit.profile.php:485
-#: front-end/wppb.register.php:348
+# @ profilebuilder
+#: front-end/menu.file.php:316
+#: front-end/wppb.edit.profile.php:883
+#: front-end/wppb.register.php:1461
 msgid "Yahoo IM"
 msgstr "Yahoo IM"
 
-#@ profilebuilder
-#: front-end/menu.file.php:248
-#: front-end/wppb.edit.profile.php:494
-#: front-end/wppb.register.php:362
+# @ profilebuilder
+#: front-end/menu.file.php:329
+#: front-end/wppb.edit.profile.php:901
+#: front-end/wppb.register.php:1485
 msgid "Jabber / Google Talk"
 msgstr "Jabber / Google Talk"
 
-#@ profilebuilder
-#: front-end/menu.file.php:258
+# @ profilebuilder
+#: front-end/menu.file.php:342
 msgid "About Yourself:"
 msgstr "O vás:"
 
-#@ profilebuilder
-#: front-end/menu.file.php:265
-#: front-end/wppb.edit.profile.php:507
-#: front-end/wppb.register.php:380
+# @ profilebuilder
+#: front-end/menu.file.php:348
+#: front-end/wppb.edit.profile.php:922
+#: front-end/wppb.register.php:1512
+#: premium/addon/addon.functions.php:183
 msgid "Biographical Info"
 msgstr "Osobní informace"
 
-#@ profilebuilder
-#: front-end/menu.file.php:275
-#: front-end/wppb.edit.profile.php:516
+# @ profilebuilder
+#: front-end/menu.file.php:362
+#: front-end/wppb.edit.profile.php:932
 msgid "New Password"
 msgstr "Nové heslo"
 
-#@ profilebuilder
-#: front-end/options.php:57
+# @ profilebuilder
+#: front-end/options.php:50
 msgid "Basic Information"
 msgstr "Základní informace"
 
-#@ profilebuilder
-#: front-end/options.php:59
+# @ profilebuilder
+#: front-end/options.php:52
 msgid "Show/Hide the Admin Bar on Front-end"
 msgstr "Zobrazit/skrýt administrační lištu ve front-endu"
 
-#@ profilebuilder
-#: front-end/options.php:63
-#: premium/premium.php:5
+# @ profilebuilder
+#: front-end/options.php:59
 #: premium/premium.php:6
+#: premium/premium.php:7
 msgid "Extra Profile Fields"
 msgstr "Vlastní pole profilu"
 
-#@ profilebuilder
-#: front-end/options.php:64
+# @ profilebuilder
+#: front-end/options.php:62
+#, fuzzy
+msgid "Addons"
+msgstr "Přidat volbu"
+
+# @ profilebuilder
+#: front-end/options.php:65
 msgid "Register Your Version"
 msgstr "Registrace"
 
-#@ profilebuilder
-#: front-end/wppb.edit.profile.php:269
+#: front-end/wppb.edit.profile.php:85
+#: front-end/wppb.register.php:577
+msgid "The information size you were trying to submit was larger than"
+msgstr ""
+
+#: front-end/wppb.edit.profile.php:86
+#: front-end/wppb.register.php:578
+msgid "This is usually caused by a large file(s) trying to be uploaded."
+msgstr ""
+
+#: front-end/wppb.edit.profile.php:87
+#: front-end/wppb.register.php:579
+msgid "Since it was also larger than"
+msgstr ""
+
+#: front-end/wppb.edit.profile.php:87
+#: front-end/wppb.register.php:579
+msgid "no additional information is available."
+msgstr ""
+
+# @ profilebuilder
+#: front-end/wppb.edit.profile.php:559
 msgid "You must be logged in to edit your profile."
 msgstr "Pro úpravu profilu je nutné se přihlásit."
 
-#@ profilebuilder
-#: front-end/wppb.edit.profile.php:278
+# @ profilebuilder
+#: front-end/wppb.edit.profile.php:569
 msgid "The avatar was successfully deleted."
 msgstr "Avatar byl úspěšně odstraněn."
 
-#@ profilebuilder
-#: front-end/wppb.edit.profile.php:283
-msgid "The attachment \""
+# @ profilebuilder
+#: front-end/wppb.edit.profile.php:576
+#, fuzzy
+msgid "The attachment"
 msgstr "Příloha \""
 
-#@ profilebuilder
-#: front-end/wppb.edit.profile.php:285
-msgid "\" was successfully deleted."
+# @ profilebuilder
+#: front-end/wppb.edit.profile.php:576
+#, fuzzy
+msgid "was successfully deleted."
 msgstr "\"  byla úspěšně odstraněna."
 
-#@ profilebuilder
-#: front-end/wppb.edit.profile.php:298
+# @ profilebuilder
+#: front-end/wppb.edit.profile.php:591
 msgid "The changes have been successfully saved."
 msgstr "Změny byly úspěšně uloženy."
 
-#@ profilebuilder
-#: front-end/wppb.edit.profile.php:303
-msgid "The email address you entered is already registered to a different user.<br/>The email address was "
+# @ profilebuilder
+#: front-end/wppb.edit.profile.php:598
+#, fuzzy
+msgid "The email address you entered is already registered to a different user."
 msgstr "Zadaný e-mail má již zaregistrován jiný uživatel. <br/> E-mailová adresa"
 
-#@ profilebuilder
-#: front-end/wppb.edit.profile.php:304
-#: front-end/wppb.edit.profile.php:314
-#: front-end/wppb.edit.profile.php:324
-#: front-end/wppb.edit.profile.php:333
-#: front-end/wppb.edit.profile.php:355
-#: front-end/wppb.edit.profile.php:363
+#: front-end/wppb.edit.profile.php:598
+#: front-end/wppb.edit.profile.php:608
+msgid "The email address was"
+msgstr ""
+
+# @ profilebuilder
+#: front-end/wppb.edit.profile.php:598
+#: front-end/wppb.edit.profile.php:608
+#: front-end/wppb.edit.profile.php:617
+#: front-end/wppb.edit.profile.php:626
+#: front-end/wppb.edit.profile.php:652
+#: front-end/wppb.edit.profile.php:660
+#: front-end/wppb.edit.profile.php:675
 msgid "NOT"
 msgstr "NEBYLA"
 
-#@ profilebuilder
-#: front-end/wppb.edit.profile.php:305
-#: front-end/wppb.edit.profile.php:315
-#: front-end/wppb.edit.profile.php:325
-#: front-end/wppb.edit.profile.php:334
-#: front-end/wppb.edit.profile.php:356
-#: front-end/wppb.edit.profile.php:364
-msgid " updated along with the rest of the information."
+# @ profilebuilder
+#: front-end/wppb.edit.profile.php:598
+#: front-end/wppb.edit.profile.php:608
+#: front-end/wppb.edit.profile.php:617
+#: front-end/wppb.edit.profile.php:626
+#: front-end/wppb.edit.profile.php:652
+#: front-end/wppb.edit.profile.php:660
+#: front-end/wppb.edit.profile.php:675
+#, fuzzy
+msgid "updated along with the rest of the information."
 msgstr " aktualizována spolu s ostatními informacemi."
 
-#@ profilebuilder
-#: front-end/wppb.edit.profile.php:313
-msgid "The email address you entered is invalid. <br/> The email address was "
+# @ profilebuilder
+#: front-end/wppb.edit.profile.php:608
+#, fuzzy
+msgid "The email address you entered is invalid."
 msgstr "Zadaný e-mail není platný. <br/> Adresa "
 
-#@ profilebuilder
-#: front-end/wppb.edit.profile.php:323
-msgid "The passwords you entered do not match. <br/> The password was "
+# @ profilebuilder
+#: front-end/wppb.edit.profile.php:617
+#, fuzzy
+msgid "The passwords you entered do not match."
 msgstr "Zadaná hesla se neshodují. <br/> Zadané heslo "
 
-#@ profilebuilder
-#: front-end/wppb.edit.profile.php:332
-msgid "You didn't complete both password fields. <br/> The password was "
-msgstr "Nevyplnili jste obě pole pro heslo. <br/> Zadané heslo "
+# @ profilebuilder
+#: front-end/wppb.edit.profile.php:617
+#: front-end/wppb.edit.profile.php:626
+#, fuzzy
+msgid "The password was"
+msgstr "Nové heslo"
 
-#@ profilebuilder
-#: front-end/wppb.edit.profile.php:344
-msgid "There was an error while trying to upload the following attachments:<br/>"
+# @ profilebuilder
+#: front-end/wppb.edit.profile.php:626
+#, fuzzy
+msgid "You didn't complete both password fields."
+msgstr "Nebyla vyplněna obě pole hesla."
+
+#: front-end/wppb.edit.profile.php:633
+msgid "Your profile was NOT updated!"
+msgstr ""
+
+# @ profilebuilder
+#: front-end/wppb.edit.profile.php:642
+#, fuzzy
+msgid "There was an error while trying to upload the following attachments:"
 msgstr "Došlo k chybě při pokusu nahrát tyto přílohy: <br/>"
 
-#@ profilebuilder
-#: front-end/wppb.edit.profile.php:352
-msgid "<br/>Possible cause: the size was bigger than "
+# @ profilebuilder
+#: front-end/wppb.edit.profile.php:652
+#, fuzzy
+msgid "Possible cause: the size was bigger than"
 msgstr "<br/> Možná příčina: velikost byla větší než "
 
-#@ profilebuilder
-#: front-end/wppb.edit.profile.php:354
-msgid "b.<br/>The listed attachements were "
+# @ profilebuilder
+#: front-end/wppb.edit.profile.php:652
+#, fuzzy
+msgid "The listed attachements were"
 msgstr "B. <br/> Příloha (přílohy) "
 
-#@ profilebuilder
-#: front-end/wppb.edit.profile.php:362
-msgid "There was an error while trying to upload your avatar picture.<br/>Possible cause: size/incorrect file-type.<br/>The avatar was "
-msgstr "Došlo k chybě při pokusu nahrát avatar. <br/> Možná příčina: Velikost/nesprávný typu souboru. <br/> Ikona avataru "
+# @ profilebuilder
+#: front-end/wppb.edit.profile.php:660
+#, fuzzy
+msgid "There was an error while trying to upload your avatar picture."
+msgstr "Došlo k chybě při pokusu nahrát tyto přílohy: <br/>"
 
-#@ profilebuilder
-#: front-end/wppb.edit.profile.php:380
-#: front-end/wppb.register.php:233
+#: front-end/wppb.edit.profile.php:660
+msgid "Possible cause: size/incorrect file-type."
+msgstr ""
+
+#: front-end/wppb.edit.profile.php:660
+msgid "The avatar was"
+msgstr ""
+
+# @ profilebuilder
+#: front-end/wppb.edit.profile.php:668
+#: front-end/wppb.register.php:885
+#, fuzzy
+msgid "There was an error while trying to upload the following attachment(s)"
+msgstr "Došlo k chybě při pokusu nahrát tyto přílohy: <br/>"
+
+#: front-end/wppb.edit.profile.php:675
+#: front-end/wppb.register.php:892
+msgid "Only files with the following extension(s) can be uploaded:"
+msgstr ""
+
+#: front-end/wppb.edit.profile.php:675
+msgid "This file was"
+msgstr ""
+
+# @ profilebuilder
+#: front-end/wppb.edit.profile.php:692
+#: front-end/wppb.register.php:1269
 msgid "Name"
 msgstr "Jméno"
 
-#@ default
-#: front-end/wppb.edit.profile.php:386
-msgid " Usernames cannot be changed."
+# @ default
+#: front-end/wppb.edit.profile.php:699
+#, fuzzy
+msgid "Usernames cannot be changed."
 msgstr "Uživatelská jména nelze měnit."
 
-#@ profilebuilder
-#: front-end/wppb.edit.profile.php:414
-#: front-end/wppb.edit.profile.php:459
-#: front-end/wppb.register.php:246
-#: front-end/wppb.register.php:307
-msgid "(required)"
-msgstr "(vyžadováno)"
+#: front-end/wppb.edit.profile.php:708
+#: front-end/wppb.edit.profile.php:728
+#: front-end/wppb.edit.profile.php:748
+#: front-end/wppb.edit.profile.php:768
+#: front-end/wppb.edit.profile.php:818
+#: front-end/wppb.edit.profile.php:839
+#: front-end/wppb.edit.profile.php:857
+#: front-end/wppb.edit.profile.php:875
+#: front-end/wppb.edit.profile.php:893
+#: front-end/wppb.edit.profile.php:914
+msgid "This field is marked as required by the administrator."
+msgstr ""
 
-#@ profilebuilder
-#: front-end/wppb.edit.profile.php:422
+#: front-end/wppb.edit.profile.php:711
+#: front-end/wppb.edit.profile.php:731
+#: front-end/wppb.edit.profile.php:751
+#: front-end/wppb.edit.profile.php:771
+#: front-end/wppb.edit.profile.php:821
+#: front-end/wppb.edit.profile.php:841
+#: front-end/wppb.edit.profile.php:859
+#: front-end/wppb.edit.profile.php:877
+#: front-end/wppb.edit.profile.php:895
+#: front-end/wppb.edit.profile.php:916
+msgid "This field wasn't updated because you entered and empty string (It was marked as required by the administrator."
+msgstr ""
+
+# @ profilebuilder
+#: front-end/wppb.edit.profile.php:779
 msgid "Display name publicly as"
 msgstr "Veřejně zobrazovat jako"
 
-#@ profilebuilder
-#: front-end/wppb.edit.profile.php:451
-#: front-end/wppb.register.php:294
+# @ profilebuilder
+#: front-end/wppb.edit.profile.php:811
+#: front-end/wppb.register.php:1368
 msgid "Contact Info"
 msgstr "Kontaktní informace"
 
-#@ profilebuilder
-#: front-end/wppb.edit.profile.php:501
-#: front-end/wppb.register.php:369
+# @ profilebuilder
+#: front-end/wppb.edit.profile.php:830
+msgid "(required)"
+msgstr "(vyžadováno)"
+
+# @ profilebuilder
+#: front-end/wppb.edit.profile.php:907
+#: front-end/wppb.register.php:1491
 msgid "About Yourself"
 msgstr "O vás"
 
-#@ profilebuilder
-#: front-end/wppb.edit.profile.php:521
-#: front-end/wppb.register.php:403
+# @ profilebuilder
+#: front-end/wppb.edit.profile.php:937
+#: front-end/wppb.recover.password.php:332
+#: front-end/wppb.recover.password.php:362
+#: front-end/wppb.register.php:1550
 msgid "Repeat Password"
 msgstr "Heslo ještě jednou"
 
-#@ profilebuilder
-#: front-end/wppb.edit.profile.php:537
+# @ profilebuilder
+#: front-end/wppb.edit.profile.php:968
 msgid "Update"
 msgstr "Aktualizovat"
 
-#@ profilebuilder
-#: front-end/wppb.login.php:47
-#, php-format
-msgid "You are currently logged in as <a href=\"%1$s\" title=\"%2$s\">%2$s</a>."
+# @ profilebuilder
+#: front-end/wppb.login.php:59
+#, fuzzy
+msgid "You are currently logged in as"
 msgstr "Jste přihlášeni jako <a href=\"%1$s\" title=\"%2$s\">%2$s</a>."
 
-#@ profilebuilder
-#: front-end/wppb.login.php:47
-#: front-end/wppb.register.php:171
+# @ profilebuilder
+#: front-end/wppb.login.php:60
 msgid "Log out of this account"
 msgstr "Odhlásit se"
 
-#@ profilebuilder
-#: front-end/wppb.login.php:47
-msgid "Log out &raquo;"
+# @ profilebuilder
+#: front-end/wppb.login.php:60
+#, fuzzy
+msgid "Log out"
 msgstr "Odhlásit se &raquo;"
 
-#@ profilebuilder
-#: front-end/wppb.login.php:60
-#, php-format
-msgid "You have successfully logged in as <a href=\"%1$s\" title=\"%2$s\">%2$s</a>."
+# @ profilebuilder
+#: front-end/wppb.login.php:78
+#, fuzzy
+msgid "You have successfully logged in as"
 msgstr "Úspěšné přihlášení jako <a href=\"%1$s\" title=\"%2$s\">%2$s</a>."
 
-#@ profilebuilder
-#: front-end/wppb.login.php:86
-#: front-end/wppb.register.php:398
+#: front-end/wppb.login.php:104
+msgid "You will soon be redirected automatically. If you see this page for more than 1 second, please click"
+msgstr ""
+
+#: front-end/wppb.login.php:104
+#: front-end/wppb.register.php:1180
+msgid "here"
+msgstr ""
+
+#: front-end/wppb.login.php:114
+#: front-end/wppb.recover.password.php:386
+msgid "ERROR:"
+msgstr ""
+
+#: front-end/wppb.login.php:114
+msgid "The username field is empty"
+msgstr ""
+
+# @ profilebuilder
+#: front-end/wppb.login.php:146
+#: front-end/wppb.recover.password.php:327
+#: front-end/wppb.recover.password.php:357
+#: front-end/wppb.register.php:1545
 msgid "Password"
 msgstr "Heslo"
 
-#@ profilebuilder
-#: front-end/wppb.login.php:90
+# @ profilebuilder
+#: front-end/wppb.login.php:154
 msgid "Log in"
 msgstr "Přihlásit se"
 
-#@ profilebuilder
-#: front-end/wppb.login.php:92
+# @ profilebuilder
+#: front-end/wppb.login.php:158
 msgid "Remember me"
 msgstr "Pamatovat si mě"
 
-#@ profilebuilder
-#: front-end/wppb.login.php:96
+# @ profilebuilder
+#: front-end/wppb.login.php:170
 msgid "Lost password?"
 msgstr "Zapomněli jste heslo?"
 
-#@ profilebuilder
-#: front-end/wppb.register.php:39
-msgid "A username is required for registration."
-msgstr "Uživatelské jméno je nutné pro registraci."
+#: front-end/wppb.recover.password.php:108
+#: front-end/wppb.recover.password.php:175
+#: front-end/wppb.recover.password.php:226
+msgid "ERROR"
+msgstr ""
 
-#@ profilebuilder
-#: front-end/wppb.register.php:41
-msgid "Sorry, that username already exists!"
-msgstr "Omlouváme se, ale toto uživatelské jméno již existuje."
+#: front-end/wppb.recover.password.php:108
+msgid "Your account has to be confirmed by an administrator before you can use the \"Password Reset\" feature."
+msgstr ""
 
-#@ profilebuilder
-#: front-end/wppb.register.php:44
-msgid "You must enter a valid email address."
-msgstr "Musíte zadat platnou e-mailovou adresu."
+#: front-end/wppb.recover.password.php:147
+#: front-end/wppb.recover.password.php:198
+msgid "A password reset email has been sent to "
+msgstr ""
 
-#@ profilebuilder
-#: front-end/wppb.register.php:46
-msgid "Sorry, that email address is already used!"
-msgstr "Omlouváme se, ale tato e-mailová adresa je již zaregistrována."
+#: front-end/wppb.recover.password.php:147
+#: front-end/wppb.recover.password.php:198
+msgid "Following the link sent in the email address will reset the password."
+msgstr ""
 
-#@ profilebuilder
-#: front-end/wppb.register.php:49
-msgid "You didn't complete one of the password-fields!"
-msgstr "Nebyla vyplněna obě pole hesla."
+#: front-end/wppb.recover.password.php:159
+#: front-end/wppb.recover.password.php:210
+msgid "Someone requested that the password be reset for the following account: "
+msgstr ""
 
-#@ profilebuilder
-#: front-end/wppb.register.php:51
+#: front-end/wppb.recover.password.php:161
+#: front-end/wppb.recover.password.php:212
+msgid "If this was a mistake, just ignore this email and nothing will happen."
+msgstr ""
+
+#: front-end/wppb.recover.password.php:162
+#: front-end/wppb.recover.password.php:213
+msgid "To reset your password, visit the following link:"
+msgstr ""
+
+#: front-end/wppb.recover.password.php:166
+#: front-end/wppb.recover.password.php:217
+msgid "Password Reset Feature from"
+msgstr ""
+
+# @ profilebuilder
+#: front-end/wppb.recover.password.php:175
+#: front-end/wppb.recover.password.php:226
+#, fuzzy
+msgid "There was an error while trying to send the activation link to "
+msgstr "Došlo k chybě při pokusu nahrát tyto přílohy: <br/>"
+
+# @ profilebuilder
+#: front-end/wppb.recover.password.php:185
+#, fuzzy
+msgid "The email address entered wasn't found in the database!"
+msgstr "Zadaný e-mail není platný. <br/> Adresa "
+
+#: front-end/wppb.recover.password.php:185
+msgid "Please check that you entered the correct email address."
+msgstr ""
+
+#: front-end/wppb.recover.password.php:234
+msgid "The username entered wasn't found in the database!"
+msgstr ""
+
+#: front-end/wppb.recover.password.php:234
+msgid "Please check that you entered the correct username."
+msgstr ""
+
+# @ profilebuilder
+#: front-end/wppb.recover.password.php:245
+#, fuzzy
+msgid "Your password has been successfully changed!"
+msgstr "Změny byly úspěšně uloženy."
+
+#: front-end/wppb.recover.password.php:259
+msgid "You have successfully reset your password to:"
+msgstr ""
+
+# @ profilebuilder
+#: front-end/wppb.recover.password.php:263
+#: front-end/wppb.recover.password.php:277
+#, fuzzy
+msgid "Password Successfully Reset for"
+msgstr "\"  byla úspěšně odstraněna."
+
+#: front-end/wppb.recover.password.php:263
+#: front-end/wppb.recover.password.php:277
+msgid "from"
+msgstr ""
+
+#: front-end/wppb.recover.password.php:273
+msgid "has requested a password change via the password reset feature."
+msgstr ""
+
+#: front-end/wppb.recover.password.php:274
+msgid "His/her new password is:"
+msgstr ""
+
+# @ profilebuilder
+#: front-end/wppb.recover.password.php:292
+#: front-end/wppb.register.php:882
 msgid "The entered passwords don't match!"
 msgstr "Zadaná hesla se neshodují."
 
-#@ profilebuilder
-#: front-end/wppb.register.php:171
-#, php-format
-msgid "You are logged in as <a href=\"%1$s\" title=\"%2$s\">%2$s</a>.  You don't need another account."
-msgstr "Jste přihlášeni jako  <a href=\"%1$s\" title=\"%2$s\">%2$s</a>. Není třeba zakládat další účet..."
+# @ profilebuilder
+#: front-end/wppb.recover.password.php:339
+#: front-end/wppb.recover.password.php:369
+#, fuzzy
+msgid "Reset Password"
+msgstr "Heslo ještě jednou"
 
-#@ profilebuilder
-#: front-end/wppb.register.php:171
-msgid "Logout &raquo;"
-msgstr "Odhlásit se &raquo;"
+#: front-end/wppb.recover.password.php:386
+msgid "Invalid key!"
+msgstr ""
 
-#@ profilebuilder
-#: front-end/wppb.register.php:181
+# @ profilebuilder
+#: front-end/wppb.recover.password.php:401
+#, fuzzy
+msgid "Please enter your username or email address."
+msgstr "Musíte zadat platnou e-mailovou adresu."
+
+#: front-end/wppb.recover.password.php:401
+msgid "You will receive a link to create a new password via email."
+msgstr ""
+
+# @ profilebuilder
+#: front-end/wppb.recover.password.php:410
+#, fuzzy
+msgid "Username or E-mail"
+msgstr "Uživatelské jméno"
+
+# @ profilebuilder
+#: front-end/wppb.recover.password.php:419
+#, fuzzy
+msgid "Get New Password"
+msgstr "Nové heslo"
+
+#: front-end/wppb.register.php:373
 #, php-format
-msgid "A user account for %1$s has been created."
+msgid ""
+"To activate your user, please click the following link:\n"
+"\n"
+"%s\n"
+"\n"
+"After you activate, you will receive *another email* with your login.\n"
+"\n"
+msgstr ""
+
+#: front-end/wppb.register.php:375
+#, php-format
+msgid "[%1$s] Activate %2$s"
+msgstr ""
+
+#: front-end/wppb.register.php:405
+msgid "Invalid activation key!"
+msgstr ""
+
+#: front-end/wppb.register.php:409
+msgid "The user is already active!"
+msgstr ""
+
+#: front-end/wppb.register.php:424
+msgid "Could not create user!"
+msgstr ""
+
+# @ profilebuilder
+#: front-end/wppb.register.php:434
+#, fuzzy
+msgid "That username is already activated!"
+msgstr "Omlouváme se, ale toto uživatelské jméno již existuje."
+
+# @ profilebuilder
+#: front-end/wppb.register.php:450
+#, fuzzy
+msgid "The user was successfully activated."
+msgstr "Sériové číslo bylo úspěšně ověřeno! Děkujeme."
+
+# @ profilebuilder
+#: front-end/wppb.register.php:452
+#, fuzzy
+msgid "There was an error while trying to activate the user."
+msgstr "Došlo k chybě při pokusu nahrát tyto přílohy: <br/>"
+
+#: front-end/wppb.register.php:487
+msgid "New subscriber on"
+msgstr ""
+
+#: front-end/wppb.register.php:491
+msgid "The \"Admin Approval\" feature was activated at the time of registration, so please remember that you need to approve this user before he/she can log in!"
+msgstr ""
+
+#: front-end/wppb.register.php:494
+msgid "A new subscriber has (been) registered!"
+msgstr ""
+
+# @ profilebuilder
+#: front-end/wppb.register.php:512
+#, fuzzy
+msgid "A new account has been created for you."
 msgstr "Uživatelský účet pro %1$s byl vytvořen."
 
-#@ profilebuilder
-#: front-end/wppb.register.php:183
-#, php-format
-msgid "Thank you for registering, %1$s."
+#: front-end/wppb.register.php:515
+msgid "Welcome to"
+msgstr ""
+
+#: front-end/wppb.register.php:515
+msgid "Your username is:"
+msgstr ""
+
+# @ profilebuilder
+#: front-end/wppb.register.php:515
+#, fuzzy
+msgid "and password:"
+msgstr "Heslo"
+
+#: front-end/wppb.register.php:517
+msgid "Before you can access your account, an administrator needs to approve it. You will be notified via email."
+msgstr ""
+
+#: front-end/wppb.register.php:580
+msgid "The user was NOT created!"
+msgstr ""
+
+# @ profilebuilder
+#: front-end/wppb.register.php:871
+msgid "A username is required for registration."
+msgstr "Uživatelské jméno je nutné pro registraci."
+
+# @ profilebuilder
+#: front-end/wppb.register.php:873
+msgid "Sorry, that username already exists!"
+msgstr "Omlouváme se, ale toto uživatelské jméno již existuje."
+
+# @ profilebuilder
+#: front-end/wppb.register.php:875
+msgid "You must enter a valid email address."
+msgstr "Musíte zadat platnou e-mailovou adresu."
+
+# @ profilebuilder
+#: front-end/wppb.register.php:877
+msgid "Sorry, that email address is already used!"
+msgstr "Omlouváme se, ale tato e-mailová adresa je již zaregistrována."
+
+# @ profilebuilder
+#: front-end/wppb.register.php:880
+msgid "You didn't complete one of the password-fields!"
+msgstr "Nebyla vyplněna obě pole hesla."
+
+# @ profilebuilder
+#: front-end/wppb.register.php:892
+#: front-end/wppb.register.php:898
+#, fuzzy
+msgid "The account was NOT created!"
+msgstr "Uživatelský účet pro %1$s byl vytvořen."
+
+#: front-end/wppb.register.php:896
+msgid "You must agree to the terms and conditions before registering!"
+msgstr ""
+
+#: front-end/wppb.register.php:898
+msgid "(Several required fields were left uncompleted)"
+msgstr ""
+
+#: front-end/wppb.register.php:916
+msgid "This username is already reserved to be used soon."
+msgstr ""
+
+#: front-end/wppb.register.php:916
+#: front-end/wppb.register.php:920
+msgid "Please try a different one!"
+msgstr ""
+
+# @ profilebuilder
+#: front-end/wppb.register.php:920
+#, fuzzy
+msgid "This email address is already reserved to be used soon."
+msgstr "Omlouváme se, ale tato e-mailová adresa je již zaregistrována."
+
+#: front-end/wppb.register.php:1147
+msgid "You are logged in as"
+msgstr ""
+
+#: front-end/wppb.register.php:1147
+msgid "You don't need another account."
+msgstr ""
+
+# @ profilebuilder
+#: front-end/wppb.register.php:1147
+#, fuzzy
+msgid "Log out of this account."
+msgstr "Odhlásit se"
+
+# @ profilebuilder
+#: front-end/wppb.register.php:1147
+#, fuzzy
+msgid "Logout"
+msgstr "Odhlásit se &raquo;"
+
+#: front-end/wppb.register.php:1155
+msgid "An email has been sent to "
+msgstr ""
+
+#: front-end/wppb.register.php:1155
+msgid "with information on how to activate his/her account"
+msgstr ""
+
+# @ profilebuilder
+#: front-end/wppb.register.php:1160
+#, fuzzy
+msgid "A user account has been created for"
+msgstr "Uživatelský účet pro %1$s byl vytvořen."
+
+#: front-end/wppb.register.php:1180
+msgid "You will soon be redirected automatically. If you see this page for more than 3 seconds, please click"
+msgstr ""
+
+#: front-end/wppb.register.php:1187
+msgid "An email has been sent to you with information on how to activate your account"
+msgstr ""
+
+# @ profilebuilder
+#: front-end/wppb.register.php:1192
+#, fuzzy
+msgid "Thank you for registering"
 msgstr "Děkujeme za registraci, %1$s."
 
-#@ profilebuilder
-#: front-end/wppb.register.php:211
+#: front-end/wppb.register.php:1220
+msgid "An error occured while trying to send the notification email."
+msgstr ""
+
+#: front-end/wppb.register.php:1225
+msgid "An email containing activation instructions was successfully sent."
+msgstr ""
+
+#: front-end/wppb.register.php:1230
+msgid "An email containing the username and password was successfully sent."
+msgstr ""
+
+# @ profilebuilder
+#: front-end/wppb.register.php:1246
 msgid "Users can register themselves or you can manually create users here."
 msgstr "Uživatelé se mohou zaregistrovat sami, případně můžete manuálně vytvářet uživatele zde."
 
-#@ profilebuilder
-#: front-end/wppb.register.php:215
+# @ profilebuilder
+#: front-end/wppb.register.php:1251
 msgid "Users cannot currently register themselves, but you can manually create users here."
 msgstr "Uživatelé se nemohou sami zaregistrovat, ale můžete je ručně vytvářet zde."
 
-#@ profilebuilder
-#: front-end/wppb.register.php:219
+# @ profilebuilder
+#: front-end/wppb.register.php:1256
 msgid "Only an administrator can add new users."
 msgstr "Pouze administrátor může přidávat nové uživatele."
 
-#@ profilebuilder
-#: front-end/wppb.register.php:422
-msgid " Send these credentials via email."
+#: front-end/wppb.register.php:1279
+#: front-end/wppb.register.php:1303
+#: front-end/wppb.register.php:1327
+#: front-end/wppb.register.php:1351
+#: front-end/wppb.register.php:1402
+#: front-end/wppb.register.php:1426
+#: front-end/wppb.register.php:1450
+#: front-end/wppb.register.php:1474
+#: front-end/wppb.register.php:1501
+msgid "This field must be filled out before registering (It was marked as required by the administrator)"
+msgstr ""
+
+#: front-end/wppb.register.php:1300
+#: front-end/wppb.register.php:1324
+#: front-end/wppb.register.php:1348
+#: front-end/wppb.register.php:1375
+#: front-end/wppb.register.php:1399
+#: front-end/wppb.register.php:1423
+#: front-end/wppb.register.php:1447
+#: front-end/wppb.register.php:1471
+#: front-end/wppb.register.php:1498
+msgid "This field is marked as required by the administrator"
+msgstr ""
+
+#: front-end/wppb.register.php:1572
+msgid "Anti-Spam"
+msgstr ""
+
+# @ profilebuilder
+#: front-end/wppb.register.php:1593
+#, fuzzy
+msgid "Send these credentials via email."
 msgstr "Odeslat tyto přihlašovací údaje e-mailem."
 
-#@ profilebuilder
-#: front-end/wppb.register.php:428
+# @ profilebuilder
+#: front-end/wppb.register.php:1607
 msgid "Add User"
 msgstr "Přidat uživatele"
 
-#@ profilebuilder
-#: front-end/wppb.register.php:428
+# @ profilebuilder
+#: front-end/wppb.register.php:1607
 msgid "Register"
 msgstr "Registrovat"
 
-#@ profilebuilder
-#: premium/functions/extra.fields.php:25
-#: premium/functions/extra.fields.php:31
-#: premium/functions/extra.fields.php:46
-#: premium/functions/extra.fields.php:62
-#: premium/functions/extra.fields.php:78
-#: premium/functions/extra.fields.php:93
-#: premium/functions/extra.fields.php:109
-#: premium/functions/extra.fields.php:133
-#: premium/functions/extra.fields.php:167
-#: premium/functions/extra.fields.php:177
-#: premium/functions/extra.fields.php:188
-#: premium/functions/extra.fields.php:203
-#: premium/functions/extra.fields.php:217
-#: premium/functions/extra.fields.php:237
-#: premium/functions/extra.fields.php:248
-#: premium/functions/extra.fields.php:258
-#: premium/functions/extra.fields.php:302
-#: premium/functions/extra.fields.php:310
-#: premium/functions/extra.fields.php:326
-#: premium/functions/extra.fields.php:347
-#: premium/functions/extra.fields.php:368
-#: premium/functions/extra.fields.php:387
-#: premium/functions/extra.fields.php:407
-#: premium/functions/extra.fields.php:432
-msgid "item_title"
-msgstr "item_title"
-
-#@ profilebuilder
-#: premium/functions/extra.fields.php:36
-#: premium/functions/extra.fields.php:53
-#: premium/functions/extra.fields.php:69
-#: premium/functions/extra.fields.php:86
-#: premium/functions/extra.fields.php:97
-#: premium/functions/extra.fields.php:112
-#: premium/functions/extra.fields.php:136
-#: premium/functions/extra.fields.php:180
-#: premium/functions/extra.fields.php:195
-#: premium/functions/extra.fields.php:210
-#: premium/functions/extra.fields.php:226
-#: premium/functions/extra.fields.php:241
-#: premium/functions/extra.fields.php:251
-#: premium/functions/extra.fields.php:261
-#: premium/functions/extra.fields.php:313
-#: premium/functions/extra.fields.php:335
-#: premium/functions/extra.fields.php:356
-#: premium/functions/extra.fields.php:377
-#: premium/functions/extra.fields.php:391
-#: premium/functions/extra.fields.php:410
-#: premium/functions/extra.fields.php:435
-msgid "item_desc"
-msgstr "item_desc"
-
-#@ profilebuilder
-#: premium/functions/extra.fields.php:114
-#: premium/functions/extra.fields.php:117
-#: premium/functions/extra.fields.php:412
-#: premium/functions/extra.fields.php:415
-msgid "Current file"
-msgstr "Aktuální soubor"
-
-#@ profilebuilder
-#: premium/functions/extra.fields.php:138
-#: premium/functions/extra.fields.php:437
-msgid "Current avatar"
-msgstr "Aktuální avatar"
-
-#@ profilebuilder
-#: premium/premium.php:7
+# @ profilebuilder
+#: premium/premium.php:8
 msgid "You can create as many extra fields as your project requires. To break your custom fields into sections (on the front-end), add a \""
 msgstr "Můžete vytvořit libovolné množství vlastních polí. K jejich rozdělení do tématických celků (ve front-endu) použijte pole  \""
 
-#@ profilebuilder
-#: premium/premium.php:7
+# @ profilebuilder
+#: premium/premium.php:8
 msgid "heading"
 msgstr "záhlaví"
 
-#@ profilebuilder
-#: premium/premium.php:7
+# @ profilebuilder
+#: premium/premium.php:8
 msgid "\" custom field."
 msgstr "\"."
 
-#@ profilebuilder
-#: premium/premium.php:8
-msgid "All of the fields can be sorted and rearranged to your liking with "
+# @ profilebuilder
+#: premium/premium.php:9
+#, fuzzy
+msgid "All of the fields can be sorted and rearranged to your liking with"
 msgstr "Všechna pole lze třídit pomocí "
 
-#@ profilebuilder
-#: premium/premium.php:8
+# @ profilebuilder
+#: premium/premium.php:9
 msgid "Drag"
 msgstr "Drag"
 
-#@ profilebuilder
-#: premium/premium.php:8
+# @ profilebuilder
+#: premium/premium.php:9
 msgid "Drop"
 msgstr "Drop"
 
-#@ profilebuilder
-#: premium/premium.php:8
-msgid ". Don't worry about the order in which you create your custom fields, you can always reorder them."
+# @ profilebuilder
+#: premium/premium.php:9
+#, fuzzy
+msgid "Don't worry about the order in which you create your custom fields, you can always reorder them."
 msgstr ". Není proto třeba se starat o pořadí, ve kterém vytvoříte vlastní pole, můžete jej kdykoli změnit."
 
-#@ profilebuilder
-#: premium/premium.php:12
-#: premium/premium.php:20
+# @ profilebuilder
+#: premium/premium.php:13
+#: premium/premium.php:23
 msgid "Title"
 msgstr "Název"
 
-#@ profilebuilder
-#: premium/premium.php:13
-#: premium/premium.php:21
-msgid "Key"
-msgstr "Klíč"
-
-#@ profilebuilder
+# @ profilebuilder
 #: premium/premium.php:14
-#: premium/premium.php:22
+#: premium/premium.php:24
 msgid "Type"
 msgstr "Typ"
 
-#@ profilebuilder
 #: premium/premium.php:15
-#: premium/premium.php:23
+#: premium/premium.php:25
+msgid "Meta-Key"
+msgstr ""
+
+#: premium/premium.php:16
+#: premium/premium.php:26
+msgid "ID"
+msgstr ""
+
+#: premium/premium.php:17
+#: premium/premium.php:27
+msgid "Req'd"
+msgstr ""
+
+# @ profilebuilder
+#: premium/premium.php:18
+#: premium/premium.php:28
 msgid "Add Option"
 msgstr "Přidat volbu"
 
-#@ profilebuilder
-#: premium/premium.php:37
-#: premium/premium.php:137
+# @ profilebuilder
+#: premium/premium.php:40
+#: premium/premium.php:73
+#: premium/premium.php:206
 msgid "Edit"
 msgstr "Upravit"
 
-#@ profilebuilder
-#: premium/premium.php:38
-#: premium/premium.php:138
+# @ profilebuilder
+#: premium/premium.php:41
+#: premium/premium.php:74
+#: premium/premium.php:207
 msgid "Delete"
 msgstr "Odstranit"
 
-#@ profilebuilder
-#: premium/premium.php:61
+# @ profilebuilder
+#: premium/premium.php:101
 msgid "Title:"
 msgstr "Název:"
 
-#@ profilebuilder
-#: premium/premium.php:61
+# @ profilebuilder
+#: premium/premium.php:101
 msgid "The title of the item."
 msgstr "Název vlastního pole."
 
-#@ profilebuilder
-#: premium/premium.php:71
-msgid "Option Key:"
-msgstr "Klíč vlastního pole:"
+#: premium/premium.php:111
+msgid "Meta-Key:"
+msgstr ""
 
-#@ profilebuilder
-#: premium/premium.php:71
-msgid "Unique alphanumeric key, underscores are acceptable."
-msgstr "Unikátní alfanumerický klíč, můžete použít i podtržítka."
+#: premium/premium.php:111
+msgid "Use this in conjuction with WordPress functions to display the value in the page of your choosing. Auto-completed but editable - in this case it must be uniqe.<br/>Changing this might take long in case of a very big user-count."
+msgstr ""
 
-#@ profilebuilder
-#: premium/premium.php:99
+# @ profilebuilder
+#: premium/premium.php:144
 msgid "Option Type:"
 msgstr "Typ vlastního pole:"
 
-#@ profilebuilder
-#: premium/premium.php:99
+# @ profilebuilder
+#: premium/premium.php:144
 msgid "Choose one of the supported option types."
 msgstr "Vyberte jednu z nabízených možností."
 
-#@ profilebuilder
-#: premium/premium.php:109
+# @ profilebuilder
+#: premium/premium.php:154
 msgid "Description:"
 msgstr "Popis:"
 
-#@ profilebuilder
-#: premium/premium.php:109
+# @ profilebuilder
+#: premium/premium.php:154
 msgid "Enter a detailed description of the option for end users to read(optional)."
 msgstr "Zadejte podrobný popis vlastního pole pro uživatele (volitelné)."
 
-#@ profilebuilder
-#: premium/premium.php:119
+#: premium/premium.php:155
+msgid "You can only insert links using standard HTML syntax:"
+msgstr ""
+
+#: premium/premium.php:155
+msgid "address"
+msgstr ""
+
+# @ profilebuilder
+#: premium/premium.php:155
+#, fuzzy
+msgid "name"
+msgstr "Jméno"
+
+# @ profilebuilder
+#: premium/premium.php:165
 msgid "Options:"
 msgstr "Možnosti:"
 
-#@ profilebuilder
-#: premium/premium.php:119
+# @ profilebuilder
+#: premium/premium.php:165
 msgid "Enter a comma separated list of options. For example, you could have \"One,Two,Three\" or just a single value like \"Yes\" for a checkbox."
 msgstr "Zadejte čárkami oddělený seznam možností. Například \"Jedna, dva, tři\" nebo jen jednu hodnotu (např. \"Ano\" u check-boxu)."
 
-#@ profilebuilder
-#: premium/premium.php:127
+#: premium/premium.php:176
+msgid "ID:"
+msgstr ""
+
+#: premium/premium.php:176
+msgid "This is the internal ID for this input. You can use this in conjuction with filters to target this element if needed.<br/>Can't be edited."
+msgstr ""
+
+# @ profilebuilder
+#: premium/premium.php:187
+#, fuzzy
+msgid "Required:"
+msgstr "(vyžadováno)"
+
+#: premium/premium.php:187
+msgid "Check this box to make this field required."
+msgstr ""
+
+# @ profilebuilder
+#: premium/premium.php:194
 msgid "Cancel"
 msgstr "Zrušit"
 
-#@ profilebuilder
-#: premium/premium.php:128
+# @ profilebuilder
+#: premium/premium.php:195
 msgid "Save"
 msgstr "Uložit"
 
-#@ profilebuilder
-#: premium/premium.php:158
-#: premium/premium.php:159
+# @ profilebuilder
+#: premium/premium.php:229
+#: premium/premium.php:230
 msgid "Register your version of Profile Builder Pro"
 msgstr "Zaregistrujte si svou verzi Profile Builder Pro"
 
-#@ profilebuilder
-#: premium/premium.php:160
+# @ profilebuilder
+#: premium/premium.php:231
 msgid "Now that you acquired a copy of Profile Builder Pro, you should take the time and register it with the serial number you received in the e-mail."
 msgstr "Nyní, když jste získali svou kopii Profile Builder Pro, zvažte výhody registrace této kopie zadáním sériového čísla, které jste obdrželi v e-mailu."
 
-#@ profilebuilder
-#: premium/premium.php:161
+# @ profilebuilder
+#: premium/premium.php:232
 msgid "If you register this version of Profile Builder, you'll receive information regarding eventual upgrades, patches, and - if needed - technical support."
 msgstr "Pokud si zaregistrujete tuto verzi Profile Builder, budete dostávat informace o aktualizacích, nových verzích a získáte přístup k technické podpoře."
 
-#@ profilebuilder
-#: premium/premium.php:162
+# @ profilebuilder
+#: premium/premium.php:233
 msgid "Serial Number:"
 msgstr "Sériové číslo:"
 
-#@ profilebuilder
-#: premium/premium.php:167
-msgid "The serial number couldn't be validated or isn't valid!"
-msgstr "Sériové číslo nemůže být ověřeno nebo není platné!"
-
-#@ profilebuilder
-#: premium/premium.php:169
+# @ profilebuilder
+#: premium/premium.php:239
 msgid "The serial number was successfully validated!"
 msgstr "Sériové číslo bylo úspěšně ověřeno! Děkujeme."
 
-#@ profilebuilder
-#: premium/premium.php:172
+# @ profilebuilder
+#: premium/premium.php:241
+msgid "The serial number couldn't be validated or isn't valid!"
+msgstr "Sériové číslo nemůže být ověřeno nebo není platné!"
+
+#: premium/premium.php:243
+msgid "The serial number couldn't be validated because process timed out. This is possible due to the server being down. Please try again later!"
+msgstr ""
+
+# @ profilebuilder
+#: premium/premium.php:247
 msgid "(e.g. RMPB-15-SN-253a55baa4fbe7bf595b2aabb8d72985)"
 msgstr "(například RMPB-15-SN-253a55baa4fbe7bf595b2aabb8d72985)"
+
+#: premium/addon/addon.functions.php:4
+msgid "You need to activate the User-Listing feature from within the \"Addons\" tab!"
+msgstr ""
+
+#: premium/addon/addon.functions.php:4
+msgid "You can find it in Profile Builder's menu."
+msgstr ""
+
+# @ profilebuilder
+#: premium/addon/addon.functions.php:29
+#, fuzzy
+msgid "You need to be logged in to view the userlisting!"
+msgstr "Pro úpravu profilu je nutné se přihlásit."
+
+#: premium/addon/addon.functions.php:80
+#: premium/addon/addon.functions.php:106
+#: premium/addon/addon.functions.php:124
+#: premium/addon/addon.functions.php:912
+#: premium/addon/addon.functions.php:999
+msgid "Search Users by All Fields"
+msgstr ""
+
+#: premium/addon/addon.functions.php:124
+msgid "Leave Blank and Press Search to List All Users"
+msgstr ""
+
+#: premium/addon/addon.functions.php:128
+msgid "Search"
+msgstr ""
+
+# @ profilebuilder
+#: premium/addon/addon.functions.php:141
+#, fuzzy
+msgid "First/Lastname"
+msgstr "Křestní jméno"
+
+# @ profilebuilder
+#: premium/addon/addon.functions.php:147
+#, fuzzy
+msgid "Email"
+msgstr "E-mail"
+
+#: premium/addon/addon.functions.php:153
+msgid "Sign-up Date"
+msgstr ""
+
+# @ profilebuilder
+#: premium/addon/addon.functions.php:159
+#, fuzzy
+msgid "Firstname"
+msgstr "Křestní jméno"
+
+# @ profilebuilder
+#: premium/addon/addon.functions.php:165
+#, fuzzy
+msgid "Lastname"
+msgstr "Příjmení"
+
+# @ profilebuilder
+#: premium/addon/addon.functions.php:171
+#, fuzzy
+msgid "Display Name"
+msgstr "Křestní jméno"
+
+#: premium/addon/addon.functions.php:189
+msgid "Posts"
+msgstr ""
+
+#: premium/addon/addon.functions.php:231
+msgid "Click here to see more information about this user"
+msgstr ""
+
+#: premium/addon/addon.functions.php:231
+msgid "More..."
+msgstr ""
+
+# @ profilebuilder
+#: premium/addon/addon.functions.php:415
+#: premium/addon/addon.functions.php:691
+#, fuzzy
+msgid "No uploaded attachment"
+msgstr "Příloha \""
+
+#: premium/addon/addon.functions.php:417
+#: premium/addon/addon.functions.php:693
+#: premium/addon/addon.functions.php:747
+msgid "Click to see the current attachment"
+msgstr ""
+
+#: premium/addon/addon.functions.php:533
+msgid "Click here to go back"
+msgstr ""
+
+# @ profilebuilder
+#: premium/addon/addon.functions.php:533
+#, fuzzy
+msgid "Back"
+msgstr "Černý"
+
+# @ profilebuilder
+#: premium/addon/addon.functions.php:691
+#: premium/addon/addon.functions.php:693
+msgid "Current file"
+msgstr "Aktuální soubor"
+
+#: premium/addon/addon.functions.php:745
+msgid "Avatar"
+msgstr ""
+
+#: premium/addon/addon.functions.php:802
+msgid "No results found!"
+msgstr ""
+
+#: premium/addon/addon.functions.php:895
+msgid "&laquo;&laquo; First"
+msgstr ""
+
+#: premium/addon/addon.functions.php:896
+msgid "&laquo; Prev"
+msgstr ""
+
+# @ profilebuilder
+#: premium/addon/addon.functions.php:897
+#, fuzzy
+msgid "Next &raquo; "
+msgstr "Odhlásit se &raquo;"
+
+# @ profilebuilder
+#: premium/addon/addon.functions.php:898
+#, fuzzy
+msgid "Last &raquo;&raquo;"
+msgstr "Odhlásit se &raquo;"
+
+#: premium/addon/addon.functions.php:1250
+msgid "The reCAPTCHA wasn't entered correctly. Go back and try it again!"
+msgstr ""
+
+#: premium/addon/addon.php:9
+#: premium/addon/addon.php:10
+msgid "Activate/Deactivate Addons"
+msgstr ""
+
+# @ profilebuilder
+#: premium/addon/addon.php:14
+#, fuzzy
+msgid "Name/Description"
+msgstr "Popis:"
+
+#: premium/addon/addon.php:15
+msgid "Status"
+msgstr ""
+
+#: premium/addon/addon.php:20
+#: premium/addon/addon.php:82
+#: premium/addon/addon.php:83
+msgid "User-Listing"
+msgstr ""
+
+#: premium/addon/addon.php:22
+#: premium/addon/addon.php:29
+#: premium/addon/addon.php:36
+msgid "Active"
+msgstr ""
+
+#: premium/addon/addon.php:23
+#: premium/addon/addon.php:30
+#: premium/addon/addon.php:37
+msgid "Inactive"
+msgstr ""
+
+#: premium/addon/addon.php:27
+#: premium/addon/addon.php:458
+#: premium/addon/addon.php:459
+msgid "Custom Redirects"
+msgstr ""
+
+#: premium/addon/addon.php:34
+#: premium/addon/addon.php:600
+#: premium/addon/addon.php:601
+msgid "reCAPTCHA"
+msgstr ""
+
+#: premium/addon/addon.php:85
+msgid "To create a page containing the users registered to this current site/blog, insert the following shortcode in a (blank) page: "
+msgstr ""
+
+#: premium/addon/addon.php:86
+msgid "For instance, to create a userlisting shortcode listing only the editors and authors, visible to only the users currently logged in, you would use:"
+msgstr ""
+
+#: premium/addon/addon.php:91
+msgid "These settings are applied to the front-end userlisting."
+msgstr ""
+
+#: premium/addon/addon.php:97
+msgid "Number of Users/Page: "
+msgstr ""
+
+#: premium/addon/addon.php:114
+msgid "Default Sorting Order: "
+msgstr ""
+
+#: premium/addon/addon.php:125
+msgid "\"All-Userlisting\" Template"
+msgstr ""
+
+#: premium/addon/addon.php:127
+#: premium/addon/addon.php:269
+msgid "With the userlisting templates you can customize the look, feel and information listed by the shortcode."
+msgstr ""
+
+#: premium/addon/addon.php:128
+msgid "The \"All Users Listing\" template is used to list all users. It's displayed on each page access where the shortcode is present."
+msgstr ""
+
+#: premium/addon/addon.php:132
+msgid "Avatar size: "
+msgstr ""
+
+#: premium/addon/addon.php:148
+msgid "Insert \"Sort By\" Field:"
+msgstr ""
+
+#: premium/addon/addon.php:176
+#: premium/addon/addon.php:275
+msgid "Insert \"User-Meta\" Field:"
+msgstr ""
+
+#: premium/addon/addon.php:207
+#: premium/addon/addon.php:313
+msgid "Insert Extra Functions:"
+msgstr ""
+
+#: premium/addon/addon.php:222
+msgid "Show/Hide Default \"All-Userlisting\" Code"
+msgstr ""
+
+#: premium/addon/addon.php:224
+#: premium/addon/addon.php:327
+msgid "If you wish to use a default userlisting, just copy the following code and paste it in the textarea below:"
+msgstr ""
+
+#: premium/addon/addon.php:267
+msgid "\"Single-Userlisting\" Template"
+msgstr ""
+
+#: premium/addon/addon.php:270
+msgid "The \"Single User Listing\" template is used to list an individual user. It's displayed when clickin on the \"more info\" link."
+msgstr ""
+
+#: premium/addon/addon.php:325
+msgid "Show/Hide Default \"Single-Userlisting\" Code"
+msgstr ""
+
+#: premium/addon/addon.php:463
+msgid "Redirects on custom page requests:"
+msgstr ""
+
+# @ profilebuilder
+#: premium/addon/addon.php:469
+#, fuzzy
+msgid "Action"
+msgstr "Přidat volbu"
+
+#: premium/addon/addon.php:470
+#: premium/addon/addon.php:515
+msgid "Redirect"
+msgstr ""
+
+#: premium/addon/addon.php:471
+#: premium/addon/addon.php:516
+msgid "URL"
+msgstr ""
+
+#: premium/addon/addon.php:475
+msgid "After Registration:"
+msgstr ""
+
+#: premium/addon/addon.php:483
+msgid "After Login:"
+msgstr ""
+
+# @ profilebuilder
+#: premium/addon/addon.php:492
+#, fuzzy
+msgid "Recover Password (*)"
+msgstr "Heslo ještě jednou"
+
+#: premium/addon/addon.php:503
+msgid "When activated this feature will redirect the user on both the default Wordpress password recovery page and the \"Lost password?\" link used by Profile Builder on the front-end login page."
+msgstr ""
+
+#: premium/addon/addon.php:508
+msgid "Redirects on default WordPress page requests:"
+msgstr ""
+
+#: premium/addon/addon.php:514
+msgid "Requested WP Page"
+msgstr ""
+
+#: premium/addon/addon.php:521
+msgid "Default WP Login Page(*)"
+msgstr ""
+
+#: premium/addon/addon.php:533
+msgid "Default WP Logout Page(**)"
+msgstr ""
+
+#: premium/addon/addon.php:545
+msgid "Default WP Register Page"
+msgstr ""
+
+#: premium/addon/addon.php:557
+msgid "Default WP Dashboard (***)"
+msgstr ""
+
+#: premium/addon/addon.php:568
+msgid "Before login. Works best if used in conjuction with \"After logout\"."
+msgstr ""
+
+#: premium/addon/addon.php:569
+msgid "After logout. Works best if used in conjuction with \"Before login\"."
+msgstr ""
+
+#: premium/addon/addon.php:570
+msgid "Redirects every user-role EXCEPT the ones with administrator privilages (can manage options)."
+msgstr ""
+
+#: premium/addon/addon.php:605
+msgid "Adds a reCAPTCHA form on the registration page created in the front-end (only)."
+msgstr ""
+
+#: premium/addon/addon.php:606
+msgid "For this you must get a public and private key from Google:"
+msgstr ""
+
+# @ profilebuilder
+#: premium/addon/addon.php:612
+msgid "Key"
+msgstr "Klíč"
+
+#: premium/addon/addon.php:613
+msgid "Code"
+msgstr ""
+
+#: premium/addon/addon.php:617
+msgid "Public Key:"
+msgstr ""
+
+#: premium/addon/addon.php:621
+msgid "Private Key:"
+msgstr ""
+
+#: premium/addon/recaptcha.library.php:81
+msgid "Could not open socket!"
+msgstr ""
+
+#: premium/addon/recaptcha.library.php:110
+#: premium/addon/recaptcha.library.php:156
+msgid "To use reCAPTCHA you must get an API key from"
+msgstr ""
+
+#: premium/addon/recaptcha.library.php:161
+msgid "For security reasons, you must pass the remote ip to reCAPTCHA!"
+msgstr ""
+
+#: premium/addon/recaptcha.library.php:220
+msgid "To use reCAPTCHA Mailhide, you need to have the mcrypt php module installed!"
+msgstr ""
+
+#: premium/addon/recaptcha.library.php:237
+msgid "To use reCAPTCHA Mailhide, you have to sign up for a public and private key; you can do so at"
+msgstr ""
+
+# @ profilebuilder
+#: premium/classes/premium.class.admin.php:283
+#: premium/classes/premium.class.admin.php:426
+#, fuzzy
+msgid "You must give your option a title."
+msgstr "Pro úpravu profilu je nutné se přihlásit."
+
+#: premium/classes/premium.class.admin.php:287
+#: premium/classes/premium.class.admin.php:430
+msgid "You have entered an invalid meta-key format!"
+msgstr ""
+
+# @ profilebuilder
+#: premium/classes/premium.class.admin.php:291
+#: premium/classes/premium.class.admin.php:434
+#, fuzzy
+msgid "You must enter a valid meta-key."
+msgstr "Musíte zadat platnou e-mailovou adresu."
+
+#: premium/classes/premium.class.admin.php:297
+#: premium/classes/premium.class.admin.php:307
+#: premium/classes/premium.class.admin.php:444
+#: premium/classes/premium.class.admin.php:456
+msgid "That meta-key is already in use."
+msgstr ""
+
+#: premium/classes/premium.class.admin.php:314
+#: premium/classes/premium.class.admin.php:464
+msgid "There is already an avatar input-type. You can only have one avatar present."
+msgstr ""
+
+#: premium/classes/premium.class.admin.php:321
+#: premium/classes/premium.class.admin.php:471
+msgid "There is already an \"Agree to Terms and Conditions\" checkbox. You can only have one present."
+msgstr ""
+
+#: premium/classes/premium.class.admin.php:326
+#: premium/classes/premium.class.admin.php:476
+msgid "The textarea row value must be numeric."
+msgstr ""
+
+#: premium/classes/premium.class.admin.php:330
+#: premium/classes/premium.class.admin.php:480
+msgid "The maxlength attribute must be numeric."
+msgstr ""
+
+#: premium/classes/premium.class.admin.php:337
+#: premium/classes/premium.class.admin.php:487
+msgid "The value must be between 20 and 200!"
+msgstr ""
+
+#: premium/classes/premium.class.admin.php:342
+#: premium/classes/premium.class.admin.php:492
+msgid "The width component of the entered value must be numeric!"
+msgstr ""
+
+#: premium/classes/premium.class.admin.php:344
+#: premium/classes/premium.class.admin.php:494
+msgid "The height component of the entered value must be numeric!"
+msgstr ""
+
+#: premium/classes/premium.class.admin.php:346
+#: premium/classes/premium.class.admin.php:496
+msgid "The width component of the entered value must be between 20 and 200!"
+msgstr ""
+
+#: premium/classes/premium.class.admin.php:348
+#: premium/classes/premium.class.admin.php:498
+msgid "The height component of the entered value must be between 20 and 200!"
+msgstr ""
+
+#: premium/classes/premium.class.admin.php:350
+#: premium/classes/premium.class.admin.php:500
+msgid "The pair of values entered didn't have the right format (width,height)!"
+msgstr ""
+
+#: premium/classes/premium.class.admin.php:353
+#: premium/classes/premium.class.admin.php:503
+msgid "The entered avatar size must be numeric!"
+msgstr ""
+
+#: premium/classes/premium.class.admin.php:387
+#: premium/classes/premium.class.admin.php:563
+msgid "There was an error, please try again."
+msgstr ""
+
+#: premium/functions/extra.fields.php:67
+#: premium/functions/extra.fields.php:169
+#: premium/functions/extra.fields.php:235
+#: premium/functions/extra.fields.php:300
+#: premium/functions/extra.fields.php:365
+#: premium/functions/extra.fields.php:431
+#: premium/functions/extra.fields.php:485
+#: premium/functions/extra.fields.php:533
+#: premium/functions/extra.fields.php:596
+#: premium/functions/extra.fields.php:705
+msgid "This field wasn't updated because you entered and empty string (It was marked as required by the administrator)"
+msgstr ""
+
+#: premium/functions/extra.fields.php:574
+#: premium/functions/extra.fields.php:606
+#: premium/functions/extra.fields.php:680
+#: premium/functions/extra.fields.php:711
+msgid "max upload size"
+msgstr ""
+
+#: premium/functions/extra.fields.php:580
+#: premium/functions/extra.fields.php:616
+msgid "Are you sure you want to delete this attachment?"
+msgstr ""
+
+#: premium/functions/extra.fields.php:581
+#: premium/functions/extra.fields.php:617
+#: premium/functions/extra.fields.php:690
+msgid "Click to delete the current attachment"
+msgstr ""
+
+#: premium/functions/extra.fields.php:614
+msgid "The attachment can't be deleted (It was marked as required by the administrator)"
+msgstr ""
+
+# @ profilebuilder
+#: premium/functions/extra.fields.php:683
+#: premium/functions/extra.fields.php:715
+msgid "Current avatar"
+msgstr "Aktuální avatar"
+
+#: premium/functions/extra.fields.php:683
+#: premium/functions/extra.fields.php:715
+msgid "No uploaded avatar"
+msgstr ""
+
+#: premium/functions/extra.fields.php:689
+#: premium/functions/extra.fields.php:724
+msgid "Are you sure you want to delete this avatar?"
+msgstr ""
+
+#: premium/functions/extra.fields.php:722
+msgid "The avatar image can't be deleted (It was marked as required by the administrator)."
+msgstr ""
+
+# @ profilebuilder
+#: premium/functions/extra.fields.php:725
+#, fuzzy
+msgid "Click to see the current avatar"
+msgstr "Aktuální avatar"
+
+#: premium/functions/extra.fields.php:725
+msgid "Click to delete the avatar"
+msgstr ""
+
+#: premium/functions/premium.functions.load.php:15
+msgid "The user-validation has failed - the avatar was not deleted!"
+msgstr ""
+
+#: premium/functions/premium.functions.load.php:26
+msgid "The user-validation has failed - the attachment was not deleted!"
+msgstr ""
+
+#: premium/functions/premium.functions.load.php:511
+msgid "Do you want to"
+msgstr ""
+
+#: premium/functions/premium.functions.load.php:511
+msgid "the current user?"
+msgstr ""
+
+#: premium/functions/premium.functions.load.php:539
+#: premium/functions/premium.functions.load.php:543
+msgid "Your account on"
+msgstr ""
+
+#: premium/functions/premium.functions.load.php:539
+msgid "has been approved!"
+msgstr ""
+
+#: premium/functions/premium.functions.load.php:540
+msgid "An administrator has just approved your account on"
+msgstr ""
+
+#: premium/functions/premium.functions.load.php:543
+msgid "has been unapproved!"
+msgstr ""
+
+#: premium/functions/premium.functions.load.php:544
+msgid "An administrator has just unapproved your account on"
+msgstr ""
+
+#: premium/functions/premium.functions.load.php:608
+#: premium/functions/premium.functions.load.php:654
+msgid "Approve"
+msgstr ""
+
+#: premium/functions/premium.functions.load.php:609
+#: premium/functions/premium.functions.load.php:699
+msgid "Unapproved"
+msgstr ""
+
+#: premium/functions/premium.functions.load.php:620
+#: premium/functions/premium.functions.load.php:650
+msgid "Unapprove"
+msgstr ""
+
+#: premium/functions/premium.functions.load.php:621
+#: premium/functions/premium.functions.load.php:696
+msgid "Approved"
+msgstr ""
+
+#: premium/functions/premium.functions.load.php:649
+msgid "unapprove"
+msgstr ""
+
+#: premium/functions/premium.functions.load.php:653
+msgid "approve"
+msgstr ""
+
+#: premium/functions/premium.functions.load.php:657
+msgid "Are you sure you want to"
+msgstr ""
+
+#: premium/functions/premium.functions.load.php:657
+msgid "this user?"
+msgstr ""
+
+#: premium/functions/premium.functions.load.php:718
+msgid "<strong>ERROR</strong>: Your account has to be confirmed by an administrator before you can log in."
+msgstr ""
 
