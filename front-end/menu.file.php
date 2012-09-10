@@ -58,6 +58,8 @@
 
 <?php
 	function wppb_general_settings(){
+	
+		$wppb_premiumStyle = WPPB_PLUGIN_DIR . '/premium/';	
 ?>		
 		<form method="post" action="options.php#general-settings">
 		<?php $wppb_generalSettings = get_option('wppb_general_settings'); ?>
@@ -69,7 +71,6 @@
 		<select name="wppb_general_settings[extraFieldsLayout]" class="wppb_general_settings">
 			<option value="yes" <?php if ($wppb_generalSettings['extraFieldsLayout'] == 'yes') echo 'selected';?>><?php _e('Default', 'profilebuilder');?></option>
 			<?php 
-				$wppb_premiumStyle = WPPB_PLUGIN_DIR . '/premium/';	
 				if (file_exists ( $wppb_premiumStyle.'premium.php' )){
 			?>
 					<option value="white" <?php if ($wppb_generalSettings['extraFieldsLayout'] == 'white') echo 'selected';?>><?php _e('White', 'profilebuilder');?></option>
@@ -90,6 +91,7 @@
 			</select>
 		<?php
 		}
+		if (file_exists ( $wppb_premiumStyle.'premium.php' )){
 		?>
 			<br/><br/>
 			<font id="generalSettingFont"><?php _e('"Admin Approval" Feature Activated:', 'profilebuilder');?></font>
@@ -97,16 +99,16 @@
 				<option value="yes" <?php if ($wppb_generalSettings['adminApproval'] == 'yes') echo 'selected';?>><?php _e('Yes', 'profilebuilder');?></option>
 				<option value="no" <?php if ($wppb_generalSettings['adminApproval'] == 'no') echo 'selected';?>><?php _e('No', 'profilebuilder');?></option>
 			</select>
-		<?php	
-			if (file_exists ( $wppb_premiumStyle.'premium.php' ))
-				echo '<div id="layoutNoticeDiv">
-						<font size="1" id="layoutNotice">
-							<b>'. __('NOTE:', 'profilebuilder') .'</b><br/>
-							&rarr; '. __('The black stylesheet is intended for sites/blogs with a dark background.', 'profilebuilder') .'<br/>
-							&rarr; '. __('The white stylesheet is intended for a sites/blogs with a light background color.', 'profilebuilder') .'<br/>
-							&rarr; '. __('On single-site installations the "Email Confirmation" feature only works in the front-end, so make sure you also use the "Custom Redirects" feature.', 'profilebuilder') .'
-						</font>
-					</div>';
+		<?php
+			echo '<div id="layoutNoticeDiv">
+					<font size="1" id="layoutNotice">
+						<b>'. __('NOTE:', 'profilebuilder') .'</b><br/>
+						&rarr; '. __('The black stylesheet is intended for sites/blogs with a dark background.', 'profilebuilder') .'<br/>
+						&rarr; '. __('The white stylesheet is intended for a sites/blogs with a light background color.', 'profilebuilder') .'<br/>
+						&rarr; '. __('On single-site installations the "Email Confirmation" feature only works in the front-end, so make sure you also use the "Custom Redirects" feature.', 'profilebuilder') .'
+					</font>
+				</div>';
+			}
 		?>
 		<div align="right">
 			<input type="hidden" name="action" value="update" />

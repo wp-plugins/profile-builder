@@ -322,6 +322,19 @@ function wppb_add_custom_field_values($POST, $meta){
 	
 }
 
+//function to add new variables in the address. Checks whether the new variable has to start with a ? or an &
+function wppb_passed_arguments_check(){
+
+	$verifyLink = get_permalink();
+	$questionMarkPosition = strpos ( (string)$verifyLink , '?' );
+	if ($questionMarkPosition !== FALSE ) //we already have 1 "?"
+		$passedArgument = '&';
+	else $passedArgument = '?';
+	
+	return $passedArgument;
+}
+
+
 // function to add the new user to the signup table if email confirmation is selected as active or it is a wpmu installation
 function wppb_signup_user($user, $user_email, $meta = '') {
 	global $wpdb;
@@ -1566,13 +1579,14 @@ function wppb_front_end_register($atts){
 									$registerFilterArray2[$key] = $value;
 							}
 
-							$wppb_addon_settings = get_option('wppb_addon_settings');
-							if ($wppb_addon_settings['wppb_reCaptcha'] == 'show'){
-								$reCAPTCHAForm = wppb_add_recaptcha_to_registration_form();
-								$labelName = apply_filters('wppb_register_anti_spam_title', __('Anti-Spam', 'profilebuilder'));
-								$registerFilterArray2['reCAPTCHAForm'] = '<div class="form-reCAPTCHA"><label class="form-reCAPTCHA-label" for="'.$labelName.'">'.$labelName.'</label>'.$reCAPTCHAForm.'</div><!-- .form-reCAPTCHA -->';
+							if(function_exists('wppb_add_recaptcha_to_registration_form')){
+								$wppb_addon_settings = get_option('wppb_addon_settings');
+								if ($wppb_addon_settings['wppb_reCaptcha'] == 'show'){
+									$reCAPTCHAForm = wppb_add_recaptcha_to_registration_form();
+									$labelName = apply_filters('wppb_register_anti_spam_title', __('Anti-Spam', 'profilebuilder'));
+									$registerFilterArray2['reCAPTCHAForm'] = '<div class="form-reCAPTCHA"><label class="form-reCAPTCHA-label" for="'.$labelName.'">'.$labelName.'</label>'.$reCAPTCHAForm.'</div><!-- .form-reCAPTCHA -->';
+								}
 							}
-							
 							
 							// additional filter, just in case it is needed
 							$registerFilterArray2['extraRegistrationFilter'] = '';
