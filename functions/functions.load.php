@@ -61,34 +61,30 @@ function wppb_add_plugin_stylesheet() {
 function wppb_show_admin_bar($content){
 	global $current_user;
 	global $wpdb;
+	
+	$userRole = '';
 	$admintSettingsPresent = get_option('wppb_display_admin_settings','not_found');
-
+	
 	if ($admintSettingsPresent != 'not_found'){
 		if ($current_user->ID != 0){
-			$capabilityName = $wpdb->prefix.'capabilities';
-			$userRole = apply_filters ( 'wppb_user_role_value', $current_user->data->$capabilityName, $current_user, $wpdb, $capabilityName);
+				
+			$userRole = apply_filters ( 'wppb_user_role_value', $current_user->roles[0], $current_user->ID);
+			
 			if ($userRole != NULL){
-				$currentRole = key($userRole);
-				$getSettings = $admintSettingsPresent[$currentRole];
+				$getSettings = $admintSettingsPresent[$userRole];
 				if ($getSettings == 'show')
 					return true;
+					
 				elseif ($getSettings == 'hide')
 					return false;
-			}elseif ($userRole == NULL){ // this is for the WP v.3.3
-				$userRole = ($current_user->roles[0]);
-				if ($userRole != NULL){
-					$getSettings = $admintSettingsPresent[$userRole];
-					if ($getSettings == 'show')
-						return true;
-					elseif ($getSettings == 'hide')
-						return false;
-				}
+			
 			}else
 				return true;
 		}
-	}
-	else
+		
+	}else
 		return true;
+		
 }
 
 if(!function_exists('wppb_curpageurl')){
@@ -186,3 +182,47 @@ if ( is_admin() ){
 			add_shortcode('wppb-list-users', 'wppb_list_all_users_display_error');
 	}
 }
+
+
+//functions needed to add the wp_signups table for email confirmation
+function wppb_signup_schema($oldVal, $newVal){
+
+	// Declare these as global in case schema.php is included from a function.
+	global $wpdb, $wp_queries, $charset_collate;
+
+	if ($newVal['emailConfirmation'] == 'yes'){
+		/**
+		 * The database character collate.
+		 * @var string
+		 * @global string
+		 * @name $charset_collate
+		 */
+		$charset_collate = '';
+		
+		if ( ! empty( $wpdb->charset ) )
+			$charset_collate = "DEFAULT CHARACTER SET ".$wpdb->charset;
+		if ( ! empty( $wpdb->collate ) )
+			$charset_collate .= " COLLATE ".$wpdb->collate;
+		$tableName = $wpdb->prefix.'signups';
+
+		$sql = "
+			CREATE TABLE $tableName (
+				  domain varchar(200) NOT NULL default '',
+				  path varchar(100) NOT NULL default '',
+				  title longtext NOT NULL,
+				  user_login varchar(60) NOT NULL default '',
+				  user_email varchar(100) NOT NULL default '',
+				  registered datetime NOT NULL default '0000-00-00 00:00:00',
+				  activated datetime NOT NULL default '0000-00-00 00:00:00',
+				  active tinyint(1) NOT NULL default '0',
+				  activation_key varchar(50) NOT NULL default '',
+				  meta longtext,
+				  KEY activation_key (activation_key),
+				  KEY domain (domain)
+			) $charset_collate;";
+			
+		require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
+		$res = dbDelta($sql);
+	}
+}
+add_action( 'update_option_wppb_general_settings', 'wppb_signup_schema', 10, 2 );

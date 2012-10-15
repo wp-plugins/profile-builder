@@ -13,8 +13,8 @@ if(!function_exists('wppb_curpageurl_password_recovery')){
 			$pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
 		}
 	
-		$questionPos = strpos($pageURL, '?');
-		$submitedPos = strpos($pageURL, 'submited=yes');
+		$questionPos = strpos( (string)$pageURL, '?' );
+		$submitedPos = strpos( (string)$pageURL, 'submited=yes' );
 		
 		if ($submitedPos !== false)
 			return $pageURL;
@@ -41,7 +41,7 @@ if(!function_exists('wppb_curpageurl_password_recovery2')){
 			$pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
 		}
 	
-		$questionPos = strpos($pageURL, '?');
+		$questionPos = strpos( (string)$pageURL, '?' );
 		
 		
 		$key = $wpdb->get_var($wpdb->prepare("SELECT user_activation_key FROM $wpdb->users WHERE user_login = %s", $user_login));
@@ -78,8 +78,8 @@ if(!function_exists('wppb_curpageurl_password_recovery3')){
 			$pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
 		}
 	
-		$questionPos = strpos($pageURL, '?');
-		$finalActionPos = strpos($pageURL, 'finalAction=yes');
+		$questionPos = strpos( (string)$pageURL, '?' );
+		$finalActionPos = strpos( (string)$pageURL, 'finalAction=yes' );
 		
 		if ($finalActionPos !== false)
 			return $pageURL;

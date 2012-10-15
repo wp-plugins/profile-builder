@@ -255,7 +255,11 @@ a:hover strong {
 		margin-left:60px;
 		
 	}
-  
+	
+    #framework_wrap #content_wrap .pro-noserial-info {
+		padding: 20px;
+		background:#fffbcc;
+   }
   /* Content Inner */
   #framework_wrap #content {
     padding: 0;

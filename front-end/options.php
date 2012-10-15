@@ -20,6 +20,8 @@ Original Author URI: http://valendesigns.com
   <div id="content_wrap">
       
 	  <?php 
+	  global $current_user ;
+
 	  $wppb_premium = WPPB_PLUGIN_DIR . '/premium/';
 	  if (!file_exists ( $wppb_premium.'premium.php' )){
 	  ?>
@@ -28,6 +30,12 @@ Original Author URI: http://valendesigns.com
 				<a href="http://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=link&utm_campaign=ProfileBuilderFree" alt="Profile Builder Pro" title="Buy Profile Builder Pro"><img id="wppb_buyNowButton" src="<?php echo WPPB_PLUGIN_URL ?>/assets/images/buy_now_button.png"/></a>
 		  </div>
 	  <?php
+	  }	elseif ( ! get_user_meta($current_user->ID, 'wppb_dismiss_notification') ) {
+		  $wppb_profile_builder_pro_serial_status = get_option('wppb_profile_builder_pro_serial_status');
+		  if ($wppb_profile_builder_pro_serial_status == 'notFound')
+			echo '<div class="info pro-noserial-info" style="line-height:22px;">'.__("Your <strong>Profile Builder Pro</strong> serial number is invalid or missing. Please <a href='admin.php?page=ProfileBuilderOptionsAndSettings#register-profile-builder'>register your copy</a> of <b>Profile Builder</b> to receive access to automatic updates and support. Need a license key? <a href='http://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=PB&utm_medium=plugin&utm_campaign=PB-Purchase' target='_blank' class='button-primary'>Purchase one now</a>", "profilebuilder") .'</div>';
+		  elseif ($wppb_profile_builder_pro_serial_status == 'expired')
+		    echo '<div class="info pro-noserial-info" style="line-height:22px;">'.__("Your <strong>Profile Builder Pro</strong> 1 year licence has expired. Please <a href='http://www.cozmoslabs.com/downloads/profile-builder-pro-1-year/?utm_source=PB&utm_medium=plugin&utm_campaign=PB-Renewal'>Renew Your Licence</a> to receive access to automatic updates and priority support. <a href='http://www.cozmoslabs.com/downloads/profile-builder-pro-1-year/?utm_source=PB&utm_medium=plugin&utm_campaign=PB-Renewal' target='_blank' class='button-primary'>Purchase one now</a>", "profilebuilder") .'</div>';
 	  }
 	  ?>
       <div class="info top-info"></div>

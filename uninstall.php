@@ -22,7 +22,7 @@ foreach ($allUserMeta as $userMeta) {
 		$wpdb->query("DELETE FROM $wpdb->usermeta WHERE meta_key = '".$metaFieldName."'	AND meta_value = '".$metaFieldValue."'");
 	}
 
-	$foundAvatar = strpos ( $userMeta->meta_key , 'resized_avatar_' );
+	$foundAvatar = strpos ( (string)$userMeta->meta_key , 'resized_avatar_' );
 	if ( $foundAvatar !== FALSE ){
 		$metaFieldName = $userMeta->meta_key;
 		$metaFieldValue = $userMeta->meta_value;

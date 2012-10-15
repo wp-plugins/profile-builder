@@ -120,7 +120,7 @@ function wppb_add_meta_to_user_on_activation($user_id, $password, $meta){
 					if( !empty($meta[$value['item_type'].$value['id']] ) ){
 						$filename = $meta[$value['item_type'].$value['id']]; 
 						
-						$fileNameStartUpload = strpos ( $filename , '_attachment_' );
+						$fileNameStartUpload = strpos ( (string)$filename , '_attachment_' );
 						$originalUploadFilename = substr($filename, $fileNameStartUpload+12);
 						$newFileName = 'userID_'.$user_id.'_attachment_'.$originalUploadFilename;
 
@@ -140,7 +140,7 @@ function wppb_add_meta_to_user_on_activation($user_id, $password, $meta){
 					if( !empty($meta[$value['item_type'].$value['id']] ) ){
 						$filename = $meta[$value['item_type'].$value['id']];
 						
-						$fileNameStartAvatar = strpos ( $filename , 'originalAvatar_' );
+						$fileNameStartAvatar = strpos ( (string)$filename , 'originalAvatar_' );
 						$originalAvatarFilename = substr($filename, $fileNameStartAvatar+15);
 						$newFileName = 'userID_'.$user_id.'_originalAvatar_'.$originalAvatarFilename;
 						
@@ -597,7 +597,7 @@ function wppb_front_end_register($atts){
 	}
 	
 	/* If user registered, input info. */
-	if ( 'POST' == $_SERVER['REQUEST_METHOD'] && !empty( $_POST['action'] ) && $_POST['action'] == 'adduser' && wp_verify_nonce($_POST['register_nonce_field'],'verify_true_registration') ) {
+	if ( 'POST' == $_SERVER['REQUEST_METHOD'] && !empty( $_POST['action'] ) && $_POST['action'] == 'adduser' && wp_verify_nonce($_POST['register_nonce_field'],'verify_true_registration') && ($_POST['formName'] == 'register') ) {
 		//global $wp_roles;
 		
 		//get value sent in the shortcode as parameter, default to "subscriber" if not set
@@ -1184,7 +1184,7 @@ function wppb_front_end_register($atts){
 								$customRedirectSettings = get_option('customRedirectSettings');
 								if ((trim($customRedirectSettings['afterRegisterTarget']) != '') && ($customRedirectSettings['afterRegister'] == 'yes')){
 									$redirectLink = trim($customRedirectSettings['afterRegisterTarget']);
-									$findHttp = strpos($redirectLink, 'http');
+									$findHttp = strpos( (string)$redirectLink, 'http' );
 									if ($findHttp === false)
 										$redirectLink = 'http://'. $redirectLink;
 								}
@@ -1216,13 +1216,13 @@ function wppb_front_end_register($atts){
 								$customRedirectSettings = get_option('customRedirectSettings');
 								if ((trim($customRedirectSettings['afterRegisterTarget']) != '') && ($customRedirectSettings['afterRegister'] == 'yes')){
 									$redirectLink = trim($customRedirectSettings['afterRegisterTarget']);
-									$findHttp = strpos($redirectLink, 'http');
+									$findHttp = strpos( (string)$redirectLink, 'http' );
 									if ($findHttp === false)
 										$redirectLink = 'http://'. $redirectLink;
 								}
 							}
 						}
-						$registerFilterArray['redirectMessage2'] = '<font id="messageTextColor">You will soon be redirected automatically. If you see this page for more than 3 second, please click <a href="'.$redirectLink.'">here</a>.<meta http-equiv="Refresh" content="3;url='.$redirectLink.'" /></font><br/><br/>';	
+						$registerFilterArray['redirectMessage2'] = '<font id="messageTextColor">'. __('You will soon be redirected automatically. If you see this page for more than 3 seconds, please click', 'profilebuilder') .' <a href="'.$redirectLink.'">'.__('here', 'profilebuilder') .'</a>.<meta http-equiv="Refresh" content="3;url='.$redirectLink.'" /></font><br/><br/>';	
 						$registerFilterArray['redirectMessage2'] = apply_filters('wppb_register_redirect_after_creation2', $registerFilterArray['redirectMessage2'], $redirectLink);
 						echo $registerFilterArray['redirectMessage2'];
 					}
@@ -1620,6 +1620,7 @@ function wppb_front_end_register($atts){
 						<p class="form-submit">
 							<input name="adduser" type="submit" id="addusersub" class="submit button" value="<?php if ( current_user_can( 'create_users' ) ) _e('Add User', 'profilebuilder'); else _e('Register', 'profilebuilder'); ?>" />
 							<input name="action" type="hidden" id="action" value="adduser" />
+							<input type="hidden" name="formName" value="register" />
 						</p><!-- .form-submit -->
 <?php 
 						wp_nonce_field('verify_true_registration','register_nonce_field'); 

@@ -193,7 +193,7 @@ function wppb_front_end_profile_info() {
 			$_POST['website'] =  apply_filters('wppb_edit_profile_posted_website', $_POST['website']);
 			if ($wppb_defaultOptions['websiteRequired'] == 'yes'){
 				if ((trim($_POST['website']) != '') && isset($_POST['website'])){
-					$wppbPos = strpos($_POST['website'], 'http://');
+					$wppbPos = strpos( (string)$_POST['website'], 'http://' );
 					if($wppbPos !== FALSE){
 						wp_update_user( array( 'ID' => $current_user->id, 'user_url' => esc_attr( $_POST['website'] )));
 						$changesSaved = 'yes';
@@ -203,7 +203,7 @@ function wppb_front_end_profile_info() {
 					}
 				}
 			}else{
-				$wppbPos = strpos($_POST['website'], 'http://');
+				$wppbPos = strpos( (string)$_POST['website'], 'http://' );
 				$website = esc_attr( $_POST['website'] );
 				if($wppbPos !== FALSE){
 					if ($website == 'http://')
