@@ -47,6 +47,11 @@ The [Pro version](http://www.cozmoslabs.com/wordpress-profile-builder/) has the 
 * Select one of the 2 additional CSS styles: black or white
 * Access to support forums and documentation
 * 1 Year of Updates / Priority Support
+* Addons (e.g. custom redirects)
+* Fully Customizable User-Listing
+* Admin Approval
+* Email Confirmation
+* reCAPTCHA on registration form
 
 [Click here to find out more](http://www.cozmoslabs.com/wordpress-profile-builder/) or watch the video below:
 
