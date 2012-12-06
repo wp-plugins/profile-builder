@@ -102,7 +102,7 @@ function wppb_check_for_unapproved_user($data, $what){
 			require_once(ABSPATH . WPINC . '/ms-functions.php');
 			$userID = get_user_id_from_string( $data );
 		}else{
-			$user = get_userdatabylogin($data);
+			$user = get_user_by('login', $data);
 			$userID = $user->ID;
 		}
 		

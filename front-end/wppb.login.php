@@ -1,20 +1,4 @@
 <?php
-if(!function_exists('wppb_curpageurl')){
-    function wppb_curpageurl() {
-     $pageURL = 'http';
-     if ((isset($_SERVER["HTTPS"])) && ($_SERVER["HTTPS"] == "on")) {
-		$pageURL .= "s";
-	 }
-     $pageURL .= "://";
-     if ($_SERVER["SERVER_PORT"] != "80") {
-      $pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
-     } else {
-      $pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
-     }
-     return $pageURL;
-    }
-}
-
 /* wp_signon can only be executed before anything is outputed in the page because of that we're adding it to the init hook */
 global $wppb_login; 
 $wppb_login = false;
@@ -59,7 +43,7 @@ function wppb_front_end_login( $atts ){
 			$loginFilterArray['loginMessage1'] = '
 				<p class="alert">'.
 					__('You are currently logged in as', 'profilebuilder').' <a href="'.$authorPostsUrl = get_author_posts_url( $wppb_user->ID ).'" title="'.$wppb_user->display_name.'">'.$wppb_user->display_name.'</a>.
-					<a href="'.wp_logout_url( get_permalink() ).'" title="'. __('Log out of this account', 'profilebuilder').'">'. __('Log out', 'profilebuilder').' &raquo;</a>
+					<a href="'.wp_logout_url( $redirectTo = wppb_curpageurl() ).'" title="'. __('Log out of this account', 'profilebuilder').'">'. __('Log out', 'profilebuilder').' &raquo;</a>
 				</p><!-- .alert-->';
 		
 			$loginFilterArray['loginMessage1'] = apply_filters('wppb_login_login_message1', $loginFilterArray['loginMessage1'], $wppb_user->ID, $wppb_user->display_name);
@@ -89,20 +73,17 @@ function wppb_front_end_login( $atts ){
 					if (isset($_POST['button']) && isset($_POST['formName']) ){
 						if ($_POST['formName'] == 'login'){
 							if ($_POST['button'] == 'page'){
-								$permaLnk2 = get_permalink();
-								$wppb_addons = WPPB_PLUGIN_DIR . '/premium/addon/';
-								if (file_exists ( $wppb_addons.'addon.php' )){
-									//check to see if the redirecting addon is present and activated
-									$wppb_addon_settings = get_option('wppb_addon_settings'); //fetch the descriptions array
-									if ($wppb_addon_settings['wppb_customRedirect'] == 'show'){
-										//check to see if the redirect location is not an empty string and is activated
-										$customRedirectSettings = get_option('customRedirectSettings');
-										if ((trim($customRedirectSettings['afterLoginTarget']) != '') && ($customRedirectSettings['afterLogin'] == 'yes')){
-											$permaLnk2 = trim($customRedirectSettings['afterLoginTarget']);
-											$findHttp = strpos( (string)$permaLnk2, 'http' );
-											if ($findHttp === false)
-												$permaLnk2 = 'http://'. $permaLnk2;
-										}
+								$permaLnk2 = wppb_curpageurl();
+							
+								$wppb_addon_settings = get_option('wppb_addon_settings'); //fetch the descriptions array
+								if ($wppb_addon_settings['wppb_customRedirect'] == 'show'){
+									//check to see if the redirect location is not an empty string and is activated
+									$customRedirectSettings = get_option('customRedirectSettings');
+									if ((trim($customRedirectSettings['afterLoginTarget']) != '') && ($customRedirectSettings['afterLogin'] == 'yes')){
+										$permaLnk2 = trim($customRedirectSettings['afterLoginTarget']);
+										$findHttp = strpos( (string)$permaLnk2, 'http' );
+										if ($findHttp === false)
+											$permaLnk2 = 'http://'. $permaLnk2;
 									}
 								}
 								
@@ -112,7 +93,7 @@ function wppb_front_end_login( $atts ){
 								echo $loginFilterArray['redirectMessage'];
 
 							}elseif($_POST['button'] == 'widget'){
-								$permaLnk2 = get_permalink();
+								$permaLnk2 = wppb_curpageurl();
 								if ($redirect != ''){
 									$permaLnk2 = trim($redirect);
 									$findHttp = strpos( (string)$permaLnk2, 'http' );
@@ -122,7 +103,7 @@ function wppb_front_end_login( $atts ){
 									
 								$loginFilterArray['widgetRedirectMessage'] = '
 									<font id="messageTextColor">'. __('You will soon be redirected automatically. If you see this page for more than 1 second, please click', 'profilebuilder').' <a href="'.$permaLnk2.'">'. __('here', 'profilebuilder').'</a>.<meta http-equiv="Refresh" content="1;url='.$permaLnk2.'" /></font><br/><br/>';
-								$loginFilterArray['redirectMessage'] = apply_filters('wppb_login_widget_redirect_message', $loginFilterArray['widgetRedirectMessage'], $permaLnk2);
+								$loginFilterArray['widgetRedirectMessage'] = apply_filters('wppb_login_widget_redirect_message', $loginFilterArray['widgetRedirectMessage'], $permaLnk2);
 								echo $loginFilterArray['widgetRedirectMessage'];
 								
 							}

@@ -555,7 +555,7 @@ a:hover strong {
           font-size: 12px;
           margin-bottom: 9px !important;
           padding: 5px;
-          width: 310px;
+          width: 100%;
           display: block;
           color: #888;
           resize: none;
@@ -1122,8 +1122,8 @@ div.file_wrap {
 	color:grey;
 }
 #layoutNoticeDiv{
-	position: absolute;
-	bottom: 20px;
+	position: relative;
+	bottom: -50px;
 }
 .options_tabs{
 	margin:0;

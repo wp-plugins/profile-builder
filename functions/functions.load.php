@@ -13,28 +13,56 @@ Original Author URI: http://valendesigns.com
  /* whitelist options, you can add more register_settings changing the second parameter */
  
  function wppb_register_settings() {
-	$premiumPresent = WPPB_PLUGIN_DIR . '/premium/premium.php';
-	$addonPresent = WPPB_PLUGIN_DIR . '/premium/addon/addon.php';
-	
 	register_setting( 'wppb_option_group', 'wppb_default_settings' );
 	register_setting( 'wppb_general_settings', 'wppb_general_settings' );
 	register_setting( 'wppb_display_admin_settings', 'wppb_display_admin_settings' );
-	if (file_exists($premiumPresent)){
-		register_setting( 'wppb_profile_builder_pro_serial', 'wppb_profile_builder_pro_serial' );
-	}
-	if (file_exists($addonPresent)){
-		register_setting( 'wppb_addon_settings', 'wppb_addon_settings' );
-		register_setting( 'customRedirectSettings', 'customRedirectSettings' );
-		register_setting( 'customUserListingSettings', 'customUserListingSettings' );
-		register_setting( 'reCaptchaSettings', 'reCaptchaSettings' );
-	}
-	
+	register_setting( 'wppb_profile_builder_pro_serial', 'wppb_profile_builder_pro_serial' );
+	register_setting( 'wppb_addon_settings', 'wppb_addon_settings' );
+	register_setting( 'customRedirectSettings', 'customRedirectSettings' );
+	register_setting( 'customUserListingSettings', 'customUserListingSettings' );
+	register_setting( 'reCaptchaSettings', 'reCaptchaSettings' );
 	
 }
 
+
+// include files
+$wppb_premiumAddon = WPPB_PLUGIN_DIR . '/premium/addons/';
 $wppb_premiumAdmin = WPPB_PLUGIN_DIR . '/premium/functions/';	
-if (file_exists ( $wppb_premiumAdmin.'premium.functions.load.php' ))
+	
+if (file_exists ( $wppb_premiumAddon.'recaptcha.php' ))
+	include_once($wppb_premiumAddon.'recaptcha.php');
+if (file_exists ( $wppb_premiumAddon.'custom.redirects.php' ))
+	include_once($wppb_premiumAddon.'custom.redirects.php');	
+if (file_exists ( $wppb_premiumAddon.'userlisting.php' )){
+	include_once($wppb_premiumAddon.'userlisting.php');    
+
+	$wppb_addonOptions = get_option('wppb_addon_settings');
+	if ($wppb_addonOptions['wppb_userListing'] == 'show'){
+	  add_shortcode('wppb-list-users', 'wppb_list_all_users');
+	}else
+		add_shortcode('wppb-list-users', 'wppb_list_all_users_display_error');
+}
+if (file_exists ( $wppb_premiumAdmin.'premium.functions.load.php' )){
 	include_once($wppb_premiumAdmin.'premium.functions.load.php');    
+	add_filter('get_avatar', 'wppb_changeDefaultAvatar', 21, 5);
+}   
+if (file_exists ( $wppb_premiumAdmin.'admin.approval.php' )){
+	include_once($wppb_premiumAdmin.'admin.approval.php');    
+}
+if (file_exists ( $wppb_premiumAdmin.'login.widget.php' )){
+	include_once($wppb_premiumAdmin.'login.widget.php');    
+}
+if (file_exists ( $wppb_premiumAdmin.'register.version.php' ))
+	include_once($wppb_premiumAdmin.'register.version.php');	
+
+require_once(WPPB_PLUGIN_DIR.'/functions/basic.info.php');
+require_once(WPPB_PLUGIN_DIR.'/functions/general.settings.php');
+require_once(WPPB_PLUGIN_DIR.'/functions/admin.bar.php');
+require_once(WPPB_PLUGIN_DIR.'/functions/default.settings.php');
+
+
+
+
 
 function wppb_add_plugin_stylesheet() {
 		$wppb_generalSettings = get_option('wppb_general_settings');
@@ -88,20 +116,63 @@ function wppb_show_admin_bar($content){
 }
 
 if(!function_exists('wppb_curpageurl')){
-    function wppb_curpageurl() {
-     $pageURL = 'http';
-     if ((isset($_SERVER["HTTPS"])) && ($_SERVER["HTTPS"] == "on")) {
-		$pageURL .= "s";
-	 }
-     $pageURL .= "://";
-     if ($_SERVER["SERVER_PORT"] != "80") {
-      $pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
-     } else {
-      $pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
-     }
-     return $pageURL;
-    }
+	function wppb_curpageurl() {
+		$pageURL = 'http';
+		
+		if ((isset($_SERVER["HTTPS"])) && ($_SERVER["HTTPS"] == "on"))
+			$pageURL .= "s";
+			
+		$pageURL .= "://";
+		
+		if ($_SERVER["SERVER_PORT"] != "80")
+			$pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
+			
+		else
+			$pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
+		
+		return $pageURL;
+	}
 }
+
+
+//functions needed for the email-confirmation on single-sites
+function wppb_signup_schema($oldVal, $newVal){
+
+	// Declare these as global in case schema.php is included from a function.
+	global $wpdb, $wp_queries, $charset_collate;
+
+	if ($newVal['emailConfirmation'] == 'yes'){
+		
+		//The database character collate.
+		$charset_collate = '';
+		
+		if ( ! empty( $wpdb->charset ) )
+			$charset_collate = "DEFAULT CHARACTER SET ".$wpdb->charset;
+		if ( ! empty( $wpdb->collate ) )
+			$charset_collate .= " COLLATE ".$wpdb->collate;
+		$tableName = $wpdb->prefix.'signups';
+
+		$sql = "
+			CREATE TABLE $tableName (
+				  domain varchar(200) NOT NULL default '',
+				  path varchar(100) NOT NULL default '',
+				  title longtext NOT NULL,
+				  user_login varchar(60) NOT NULL default '',
+				  user_email varchar(100) NOT NULL default '',
+				  registered datetime NOT NULL default '0000-00-00 00:00:00',
+				  activated datetime NOT NULL default '0000-00-00 00:00:00',
+				  active tinyint(1) NOT NULL default '0',
+				  activation_key varchar(50) NOT NULL default '',
+				  meta longtext,
+				  KEY activation_key (activation_key),
+				  KEY domain (domain)
+			) $charset_collate;";
+			
+		require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
+		$res = dbDelta($sql);
+	}
+}
+add_action( 'update_option_wppb_general_settings', 'wppb_signup_schema', 10, 2 );
 
 
 
@@ -124,7 +195,7 @@ if ( is_admin() ){
 	/* display the same extra profile fields in the admin panel also */
 	$wppb_premium = WPPB_PLUGIN_DIR . '/premium/functions/';
 	if (file_exists ( $wppb_premium.'extra.fields.php' )){
-		include( $wppb_premium.'extra.fields.php' );
+		include_once( $wppb_premium.'extra.fields.php' );
 		add_action( 'show_user_profile', 'display_profile_extra_fields_in_admin', 10 );
 		add_action( 'edit_user_profile', 'display_profile_extra_fields_in_admin', 10 );
 		add_action( 'personal_options_update', 'save_profile_extra_fields_in_admin', 10 );
@@ -158,71 +229,4 @@ if ( is_admin() ){
 
 	/* Shortcodes used for the widget area. */
 	add_filter('widget_text', 'do_shortcode', 11);
-
-	/* check to see if the premium functions are present */
-	$wppb_premiumAdmin = WPPB_PLUGIN_DIR . '/premium/functions/';	
-	if (file_exists ( $wppb_premiumAdmin.'premium.functions.load.php' )){
-
-		include_once($wppb_premiumAdmin.'premium.functions.load.php');    
-
-		/* filter to set current users custom avatar */
-		add_filter('get_avatar', 'wppb_changeDefaultAvatar', 21, 5);
-	}
-
-	$wppb_premiumAddon = WPPB_PLUGIN_DIR . '/premium/addon/';	
-	if (file_exists ( $wppb_premiumAddon.'addon.functions.php' )){
-		//include the file containing the addon functions
-		include_once($wppb_premiumAddon.'addon.functions.php');    
-
-		$wppb_addonOptions = get_option('wppb_addon_settings');
-		if ($wppb_addonOptions['wppb_userListing'] == 'show'){
-		  //add shortcode for the user-listing functionality
-		  add_shortcode('wppb-list-users', 'wppb_list_all_users');
-		}else
-			add_shortcode('wppb-list-users', 'wppb_list_all_users_display_error');
-	}
 }
-
-
-//functions needed to add the wp_signups table for email confirmation
-function wppb_signup_schema($oldVal, $newVal){
-
-	// Declare these as global in case schema.php is included from a function.
-	global $wpdb, $wp_queries, $charset_collate;
-
-	if ($newVal['emailConfirmation'] == 'yes'){
-		/**
-		 * The database character collate.
-		 * @var string
-		 * @global string
-		 * @name $charset_collate
-		 */
-		$charset_collate = '';
-		
-		if ( ! empty( $wpdb->charset ) )
-			$charset_collate = "DEFAULT CHARACTER SET ".$wpdb->charset;
-		if ( ! empty( $wpdb->collate ) )
-			$charset_collate .= " COLLATE ".$wpdb->collate;
-		$tableName = $wpdb->prefix.'signups';
-
-		$sql = "
-			CREATE TABLE $tableName (
-				  domain varchar(200) NOT NULL default '',
-				  path varchar(100) NOT NULL default '',
-				  title longtext NOT NULL,
-				  user_login varchar(60) NOT NULL default '',
-				  user_email varchar(100) NOT NULL default '',
-				  registered datetime NOT NULL default '0000-00-00 00:00:00',
-				  activated datetime NOT NULL default '0000-00-00 00:00:00',
-				  active tinyint(1) NOT NULL default '0',
-				  activation_key varchar(50) NOT NULL default '',
-				  meta longtext,
-				  KEY activation_key (activation_key),
-				  KEY domain (domain)
-			) $charset_collate;";
-			
-		require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
-		$res = dbDelta($sql);
-	}
-}
-add_action( 'update_option_wppb_general_settings', 'wppb_signup_schema', 10, 2 );

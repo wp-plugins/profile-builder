@@ -113,9 +113,9 @@ class PB_Admin{
 		if ($admintSettingsPresent == 'not_found'){                    			 // if the field doesn't exists, then create it
 			$rolesArray = array();
 			foreach ( $editable_roles as $key => $data )
-				$rolesArray = array( $key => 'show' ) + $rolesArray;
+				$rolesArray = array( $data['name'] => 'show' ) + $rolesArray;
 			$rolesArray = array_reverse($rolesArray,true);
-			add_option( 'wppb_display_admin_settings', $rolesArray);
+			update_option( 'wppb_display_admin_settings', $rolesArray);
 		}
 	
   }
@@ -172,8 +172,8 @@ class PB_Admin{
 	}
   
 		function profile_builder_options_page() {
-		// Grab Options Page
-		include( WPPB_PLUGIN_DIR.'/front-end/options.php' );
+			// Grab Options Page
+			include( WPPB_PLUGIN_DIR.'/functions/options.php' );
 		}
 		 
 }

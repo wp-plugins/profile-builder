@@ -383,7 +383,7 @@ function wppb_signup_user_notification($user, $user_email, $key, $meta = '') {
 	$message_headers = "From: \"{$from_name}\" <{$admin_email}>\n" . "Content-Type: text/plain; charset=\"" . get_option('blog_charset') . "\"\n";
 	$siteURL = wppb_curpageurl().wppb_passed_arguments_check().'key='.$key;
 	
-	$message = sprintf(apply_filters( 'wppb_signup_user_notification_email', __( "To activate your user, please click the following link:\n\n%s\n\nAfter you activate, you will receive *another email* with your login.\n\n", "profilebuilder" ),$user, $user_email, $key, $meta), $siteURL);
+	$message = sprintf(apply_filters( 'wppb_signup_user_notification_email', __( "To activate your user, please click the following link:\n\n%s%s%s\n\nAfter you activate, you will receive *another email* with your login.\n\n", "profilebuilder" ),$user, $user_email, $key, $meta), '<a href="'.$siteURL.'">', $siteURL, '</a>.');
 	
 	$subject = sprintf(apply_filters( 'wppb_signup_user_notification_subject', __( '[%1$s] Activate %2$s', 'profilebuilder'), $user, $user_email, $key, $meta ), $from_name, $user);
 	
@@ -504,7 +504,7 @@ function wppb_notify_user_registration_email($bloginfo, $user_name, $email, $sen
 		$registerFilterArray['adminMessageOnRegistration'] .= '<br/>'. __('The "Admin Approval" feature was activated at the time of registration, so please remember that you need to approve this user before he/she can log in!', 'profilebuilder') ."\r\n";
 	$registerFilterArray['adminMessageOnRegistration'] = apply_filters('wppb_register_admin_message_content', $registerFilterArray['adminMessageOnRegistration'], $bloginfo, $user_name, $email);
 	
-	$registerFilterArray['adminMessageOnRegistrationTitle'] = '['. $bloginfo .'] '. __('A new subscriber has (been) registered!');
+	$registerFilterArray['adminMessageOnRegistrationTitle'] = '['. $bloginfo .'] '. __('A new subscriber has (been) registered!', 'profilebuilder');
 	$registerFilterArray['adminMessageOnRegistrationTitle'] = apply_filters ('wppb_register_admin_message_title', $registerFilterArray['adminMessageOnRegistrationTitle']);
 
 	if (trim($registerFilterArray['adminMessageOnRegistration']) != ''){
@@ -1149,6 +1149,7 @@ function wppb_front_end_register($atts){
 ?>
 	<div class="wppb_holder" id="wppb_register">
 <?php 	
+
 		if ( is_user_logged_in() && !current_user_can( 'create_users' ) ) :
 
 		global $user_ID; 
@@ -1175,7 +1176,6 @@ function wppb_front_end_register($atts){
 							echo $registerFilterArray['registrationMessage1'];
 						}
 						
-						$wppb_addons = WPPB_PLUGIN_DIR . '/premium/addon/';
 						if (file_exists ( $wppb_addons.'addon.php' )){
 							//check to see if the redirecting addon is present and activated
 							$wppb_addon_settings = get_option('wppb_addon_settings');
@@ -1207,7 +1207,7 @@ function wppb_front_end_register($atts){
 							echo $registerFilterArray['registrationMessage2'];
 						}
 						
-						$wppb_addons = WPPB_PLUGIN_DIR . '/premium/addon/';
+						$wppb_addons = WPPB_PLUGIN_DIR . '/premium/addons/';
 						if (file_exists ( $wppb_addons.'addon.php' )){
 							//check to see if the redirecting addon is present and activated
 							$wppb_addon_settings = get_option('wppb_addon_settings');
