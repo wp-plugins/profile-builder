@@ -36,6 +36,7 @@ delete_option( 'wppb_general_settings' );					// Delete the plugin general setti
 delete_option( 'wppb_display_admin_settings' ); 			// Delete display admin bar option
 delete_option( 'wppb_custom_fields' ); 						// Delete the default fields
 delete_option( 'wppb_profile_builder_pro_serial' ); 		// Delete the serial number associated with this instalation
+delete_option( 'wppb_profile_builder_hobbyist_serial' );  
 delete_option( 'serial_number_availability' ); 				// Delete the serial number status
 delete_option( 'wppb_premium_addon_settings' ); 			// Delete addon settings (old one; preserving backwards compatibility)
 delete_option( 'wppb_addon_settings' ); 					// Delete addon settings (since 1.1.21)

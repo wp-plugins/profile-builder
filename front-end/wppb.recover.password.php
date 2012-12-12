@@ -314,7 +314,7 @@ function wppb_front_end_password_recovery(){
 				$key = preg_replace('/[^a-z0-9]/i', '', $_GET['key']);
 				$login = $_GET['loginName'];
 
-				$user = $wpdb->get_row($wpdb->prepare("SELECT * FROM $wpdb->users WHERE user_activation_key = '".$key."' AND user_login = '".$login."'"));
+				$user = $wpdb->get_row($wpdb->prepare("SELECT * FROM $wpdb->users WHERE user_activation_key = %s AND user_login = %s", $key, $login));
 				
 				if ( !empty( $user ) ){
 					//check if the "finalAction" variable is not in the address bar, if it is, don't display the form anymore

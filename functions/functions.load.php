@@ -17,6 +17,7 @@ Original Author URI: http://valendesigns.com
 	register_setting( 'wppb_general_settings', 'wppb_general_settings' );
 	register_setting( 'wppb_display_admin_settings', 'wppb_display_admin_settings' );
 	register_setting( 'wppb_profile_builder_pro_serial', 'wppb_profile_builder_pro_serial' );
+	register_setting( 'wppb_profile_builder_hobbyist_serial', 'wppb_profile_builder_hobbyist_serial' );
 	register_setting( 'wppb_addon_settings', 'wppb_addon_settings' );
 	register_setting( 'customRedirectSettings', 'customRedirectSettings' );
 	register_setting( 'customUserListingSettings', 'customUserListingSettings' );

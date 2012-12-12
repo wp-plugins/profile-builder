@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ProfileBuilder\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-12-04 11:07+0200\n"
-"PO-Revision-Date: 2012-12-04 11:07+0200\n"
+"POT-Creation-Date: 2012-12-11 15:09+0200\n"
+"PO-Revision-Date: 2012-12-11 15:09+0200\n"
 "Last-Translator: Gabriel Barina <barinagabriel2007@yahoo.com>\n"
 "Language-Team: Reflection Media, Gabriel Barina\n"
 "MIME-Version: 1.0\n"
@@ -483,7 +483,7 @@ msgid "Get New Password"
 msgstr "Skicka lösenord"
 
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:386
-#, fuzzy, php-format
+#, php-format
 msgid ""
 "To activate your user, please click the following link:\n"
 "\n"
@@ -492,13 +492,6 @@ msgid ""
 "After you activate, you will receive *another email* with your login.\n"
 "\n"
 msgstr ""
-"För att aktivera ditt konto, var vänlig klicka på följande länk:\n"
-"\n"
-"%s\n"
-"\n"
-"Efter aktivering kommer du få ett *annat e-postmeddelande* med dina "
-"loginuppgifter.\n"
-"\n"
 
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:388
 #, php-format
@@ -814,6 +807,7 @@ msgstr ""
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/recaptcha.php:284
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:369
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/register.version.php:35
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/register.version.php:76
 msgid "Save Changes"
 msgstr "Spara Ändringar"
 
@@ -889,7 +883,10 @@ msgid "to add a password recovery form."
 msgstr "för att lägga till ett lösenordsåterställningsformulär."
 
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/basic.info.php:19
-msgid "Users with administrator rights have access to the following features:"
+#, fuzzy
+msgid ""
+"With the <strong>Pro</strong> version, users with administrator rights have "
+"access to the following features:"
 msgstr "Användare med administratörsroll har tillgång till följande:"
 
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/basic.info.php:20
@@ -959,7 +956,7 @@ msgstr "från backend, medan anpassade fält endast kommer att synas i frontend.
 
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:9
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:10
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/options.php:84
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/options.php:89
 msgid "Default Profile Fields"
 msgstr "Standardprofilfält"
 
@@ -1030,7 +1027,7 @@ msgstr "Nytt lösenord"
 
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/general.settings.php:10
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/general.settings.php:11
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/options.php:82
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/options.php:87
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:37
 msgid "General Settings"
 msgstr "Allmänna inställningar"
@@ -1083,15 +1080,16 @@ msgstr ""
 "endast i frontend, så se till att du också använder funktionen  \"Anpassad "
 "omdirigering\"."
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/options.php:59
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/options.php:64
+#, fuzzy
 msgid ""
-"Your <strong>Profile Builder Pro</strong> serial number is invalid or "
-"missing. Please <a href='admin.php?"
-"page=ProfileBuilderOptionsAndSettings#register-profile-builder'>register "
-"your copy</a> of <b>Profile Builder</b> to receive access to automatic "
-"updates and support. Need a license key? <a href='http://www.cozmoslabs.com/"
-"wordpress-profile-builder/?utm_source=PB&utm_medium=plugin&utm_campaign=PB-"
-"Purchase' target='_blank' class='button-primary'>Purchase one now</a>"
+"Your <strong>Profile Builder</strong> serial number is invalid or missing. "
+"Please <a href='admin.php?page=ProfileBuilderOptionsAndSettings#register-"
+"profile-builder'>register your copy</a> of <b>Profile Builder</b> to receive "
+"access to automatic updates and support. Need a license key? <a href='http://"
+"www.cozmoslabs.com/wordpress-profile-builder/?"
+"utm_source=PB&utm_medium=plugin&utm_campaign=PB-Purchase' target='_blank' "
+"class='button-primary'>Purchase one now</a>"
 msgstr ""
 "Ditt serienummer till <strong>Profile Builder Pro</strong> är felaktigt "
 "eller saknas. Var vänlig att <a href='admin.php?"
@@ -1102,10 +1100,11 @@ msgstr ""
 "utm_source=PB&utm_medium=plugin&utm_campaign=PB-Purchase' target='_blank' "
 "class='button-primary'>Köp en nu!</a>"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/options.php:61
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/options.php:66
+#, fuzzy
 msgid ""
-"Your <strong>Profile Builder Pro</strong> 1 year licence has expired. Please "
-"<a href='http://www.cozmoslabs.com/downloads/profile-builder-pro-1-year/?"
+"Your <strong>Profile Builder</strong> 1 year licence has expired. Please <a "
+"href='http://www.cozmoslabs.com/downloads/profile-builder-pro-1-year/?"
 "utm_source=PB&utm_medium=plugin&utm_campaign=PB-Renewal'>Renew Your Licence</"
 "a> to receive access to automatic updates and priority support. <a "
 "href='http://www.cozmoslabs.com/downloads/profile-builder-pro-1-year/?"
@@ -1120,25 +1119,25 @@ msgstr ""
 "year/?utm_source=PB&utm_medium=plugin&utm_campaign=PB-Renewal' "
 "target='_blank' class='button-primary'>Köp en nu!</a>"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/options.php:81
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/options.php:86
 msgid "Basic Information"
 msgstr "Allmän information"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/options.php:83
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/options.php:88
 msgid "Show/Hide the Admin Bar on Front-end"
 msgstr "Visa/Dölj administratörslisten i frontend"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/options.php:90
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/options.php:95
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/custom.fields.php:5
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/custom.fields.php:6
 msgid "Extra Profile Fields"
 msgstr "Extra profilfält"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/options.php:93
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/options.php:98
 msgid "Addons"
 msgstr "Tillägg"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/options.php:96
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/options.php:101
 msgid "Register Your Version"
 msgstr "Registrera din version"
 
@@ -1549,36 +1548,36 @@ msgstr "Nästa &raquo; "
 msgid "Last &raquo;&raquo;"
 msgstr "Sista &raquo;&raquo;"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:281
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:424
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:284
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:427
 msgid "You must give your option a title."
 msgstr "Du måste ge din valmöjlighet en titel."
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:285
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:428
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:288
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:431
 msgid "You have entered an invalid meta-key format!"
 msgstr "Du har skrivit in ett ogiltigt meta-nyckelformat!"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:289
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:432
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:292
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:435
 msgid "You must enter a valid meta-key."
 msgstr "Du måste skriva in en giltig meta-nyckel."
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:295
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:305
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:442
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:454
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:298
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:308
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:445
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:457
 msgid "That meta-key is already in use."
 msgstr "Den meta-nyckeln är redan använd."
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:312
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:462
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:315
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:465
 msgid ""
 "There is already an avatar input-type. You can only have one avatar present."
 msgstr "Det finns redan ett avatarfält. Du kan bara ha ett avatarfält aktivt."
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:319
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:469
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:322
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:472
 msgid ""
 "There is already an \"Agree to Terms and Conditions\" checkbox. You can only "
 "have one present."
@@ -1586,53 +1585,53 @@ msgstr ""
 "Det finns redan en \"Godkänn användaravtal\"kryssruta. Du kan bara ha en "
 "sådan aktiv."
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:324
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:474
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:327
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:477
 msgid "The textarea row value must be numeric."
 msgstr "Textradens innehåll måste vara siffror."
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:328
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:478
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:331
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:481
 msgid "The maxlength attribute must be numeric."
 msgstr "Maxlängden måste bestå av siffror."
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:335
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:485
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:338
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:488
 msgid "The value must be between 20 and 200!"
 msgstr "Värdet måste vara mellan 20 och 200!"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:340
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:490
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:343
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:493
 msgid "The width component of the entered value must be numeric!"
 msgstr "Breddkomponenten som skrivits in måste vara numerisk!"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:342
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:492
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:345
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:495
 msgid "The height component of the entered value must be numeric!"
 msgstr "Höjdkomponenten som skrivits in måste vara numersikt!"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:344
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:494
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:347
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:497
 msgid "The width component of the entered value must be between 20 and 200!"
 msgstr "Breddkomponenten av det inskrivna värdet måste vara mellan 20 och 200!"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:346
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:496
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:349
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:499
 msgid "The height component of the entered value must be between 20 and 200!"
 msgstr "Höjdkomponenten av det inskrivna värdet måste vara mellan 20 och 200!"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:348
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:498
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:351
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:501
 msgid "The pair of values entered didn't have the right format (width,height)!"
 msgstr "De två värdena som skrevs in har inte rätt format (bredd,höjd)!"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:351
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:501
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:354
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:504
 msgid "The entered avatar size must be numeric!"
 msgstr "Avatarstorleken måste vara numerisk!"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:385
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:561
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:388
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:564
 msgid "There was an error, please try again."
 msgstr "Ett fel uppstod, var vänlig att försök igen."
 
@@ -2038,6 +2037,7 @@ msgstr ""
 "registrera den med det serienumret du fick i e-postmeddelandet."
 
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/register.version.php:12
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/register.version.php:53
 msgid ""
 "If you register this version of Profile Builder, you'll receive information "
 "regarding eventual upgrades, patches, and - if needed - technical support."
@@ -2047,23 +2047,28 @@ msgstr ""
 "- teknisk support."
 
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/register.version.php:13
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/register.version.php:54
 msgid "Serial Number:"
 msgstr "Serienummer:"
 
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/register.version.php:17
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/register.version.php:58
 msgid "The serial number was successfully validated!"
 msgstr "Serienumret är validerat och godkänt!"
 
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/register.version.php:19
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/register.version.php:60
 msgid "The serial number entered couldn't be validated!"
 msgstr "Serienumret kunde inte valideras!"
 
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/register.version.php:21
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/register.version.php:62
 msgid "The serial number couldn't be validated because it is no longer valid!"
 msgstr ""
 "Serienumret kunde inte valideras därför att det inte längre är giltigt!"
 
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/register.version.php:23
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/register.version.php:64
 msgid ""
 "The serial number couldn't be validated because process timed out. This is "
 "possible due to the server being down. Please try again later!"
@@ -2073,6 +2078,26 @@ msgstr ""
 
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/register.version.php:29
 msgid "(e.g. RMPB-15-SN-253a55baa4fbe7bf595b2aabb8d72985)"
+msgstr "(ex: RMPB-15-SN-253a55baa4fbe7bf595b2aabb8d72985)"
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/register.version.php:50
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/register.version.php:51
+#, fuzzy
+msgid "Register your version of Profile Builder Hobbyist"
+msgstr "Registrera din version av Profile Builder Pro"
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/register.version.php:52
+#, fuzzy
+msgid ""
+"Now that you acquired a copy of Profile Builder Hobbyist, you should take "
+"the time and register it with the serial number you received in the e-mail."
+msgstr ""
+"Nu när du har fått en kopia av Profile Builder Pro bör du ta dig tiden att "
+"registrera den med det serienumret du fick i e-postmeddelandet."
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/register.version.php:70
+#, fuzzy
+msgid "(e.g. RMPBH-15-SN-253a55baa4fbe7bf595b2aabb8d72985)"
 msgstr "(ex: RMPB-15-SN-253a55baa4fbe7bf595b2aabb8d72985)"
 
 #~ msgid "Does not."

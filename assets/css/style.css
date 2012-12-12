@@ -986,11 +986,3 @@ div.file_wrap {
 	left: -34px;
 	top:-42px;
 }
-
-#layoutNotice{
-	color:grey;
-}
-#layoutNoticeDiv{
-	position: relative;
-	bottom: -50px;
-}
