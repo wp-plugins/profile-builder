@@ -94,7 +94,7 @@ This plugin only adds/removes fields in the front-end. The default information-f
 
 == Changelog ==
 = 1.1.35 =
-Added support for WP 3.5.
+Added support for WP 3.5
 
 = 1.1.34 =
 Separated some of the plugin's functions into separate files. Also fixed a few bugs.
