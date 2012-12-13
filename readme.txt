@@ -9,7 +9,7 @@ Requires at least: 3.1
 Tested up to: 3.5
 Stable tag: 1.1.36
 
-Simple to use profile plugin allowing front-end login, registration and edit profile by using shortcodes. 
+Simple to use profile plugin allowing front-end login, registration and edit profile by using shortcodes.
  
 == Description ==
 
