@@ -83,8 +83,15 @@ if (file_exists ( $wppb_premiumAdmin.'premium.class.admin.php' )){
 $wppb_premiumUpdate = WPPB_PLUGIN_DIR.'/premium/update/';
 if (file_exists ($wppb_premiumUpdate.'update-checker.php')){
 	require ($wppb_premiumUpdate.'update-checker.php');
-	$localSerial = get_option( 'wppb_profile_builder_pro_serial' );
-	$MyUpdateChecker = new PluginUpdateChecker('http://cozmoslabs.com/update_metadata.php?localSerialNumber='.$localSerial, __FILE__, 'profile-builder-pro-update');	
+	
+	if (file_exists ( WPPB_PLUGIN_DIR . '/premium/addons/addon.php' )){
+		$localSerial = get_option( 'wppb_profile_builder_pro_serial' );
+		$wppb_update = new wppb_PluginUpdateChecker('http://updatemetadata.cozmoslabs.com/?localSerialNumber='.$localSerial.'&uniqueproduct=RMPB', __FILE__, 'profile-builder-pro-update');
+	
+	}else{
+		$localSerial = get_option( 'wppb_profile_builder_hobbyist_serial' );
+		$wppb_update = new wppb_PluginUpdateChecker('http://updatemetadata.cozmoslabs.com/?localSerialNumber='.$localSerial.'&uniqueproduct=RMPBH', __FILE__, 'profile-builder-hobbyist-update');
+	}
 }
 
 
