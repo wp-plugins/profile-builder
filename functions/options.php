@@ -42,25 +42,30 @@ $arraySettingsPresent = get_option('wppb_custom_fields','not_found');
   
   <div id="content_wrap">
       
-	  <?php 
-	  global $current_user ;
+	<?php 
+	global $current_user ;
 
-	  $wppb_premium = WPPB_PLUGIN_DIR . '/premium/functions/';
-	  if (!file_exists ( $wppb_premium.'custom.fields.php' )){
-	  ?>
-		  <div class="info basic-version-info">
-				<img src="<?php echo WPPB_PLUGIN_URL ?>/assets/images/ad_image.png" alt="Profile Builder Pro" />
-				<a href="http://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=link&utm_campaign=ProfileBuilderFree" alt="Profile Builder Pro" title="Buy Profile Builder Pro"><img id="wppb_buyNowButton" src="<?php echo WPPB_PLUGIN_URL ?>/assets/images/buy_now_button.png"/></a>
-		  </div>
-	  <?php
-	  }	if ( ! get_user_meta($current_user->ID, 'wppb_dismiss_notification') ) {
-		  $wppb_profile_builder_pro_serial_status = get_option('wppb_profile_builder_pro_serial_status');
-		  if ($wppb_profile_builder_pro_serial_status == 'notFound')
-			echo '<div class="info pro-noserial-info" style="line-height:22px;">'.__("Your <strong>Profile Builder Pro</strong> serial number is invalid or missing. Please <a href='admin.php?page=ProfileBuilderOptionsAndSettings#register-profile-builder'>register your copy</a> of <b>Profile Builder</b> to receive access to automatic updates and support. Need a license key? <a href='http://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=PB&utm_medium=plugin&utm_campaign=PB-Purchase' target='_blank' class='button-primary'>Purchase one now</a>", "profilebuilder") .'</div>';
-		  elseif ($wppb_profile_builder_pro_serial_status == 'expired')
-		    echo '<div class="info pro-noserial-info" style="line-height:22px;">'.__("Your <strong>Profile Builder Pro</strong> 1 year licence has expired. Please <a href='http://www.cozmoslabs.com/downloads/profile-builder-pro-1-year/?utm_source=PB&utm_medium=plugin&utm_campaign=PB-Renewal'>Renew Your Licence</a> to receive access to automatic updates and priority support. <a href='http://www.cozmoslabs.com/downloads/profile-builder-pro-1-year/?utm_source=PB&utm_medium=plugin&utm_campaign=PB-Renewal' target='_blank' class='button-primary'>Purchase one now</a>", "profilebuilder") .'</div>';
-	  }
-	  ?>
+	$wppb_premium = WPPB_PLUGIN_DIR . '/premium/functions/';
+	if (!file_exists ( $wppb_premium.'custom.fields.php' )){
+	?>
+		<div class="info basic-version-info">
+			<img src="<?php echo WPPB_PLUGIN_URL ?>/assets/images/ad_image.png" alt="Profile Builder Pro" />
+			<a href="http://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=link&utm_campaign=ProfileBuilderFree" alt="Profile Builder Pro" title="Buy Profile Builder Pro"><img id="wppb_buyNowButton" src="<?php echo WPPB_PLUGIN_URL ?>/assets/images/buy_now_button.png"/></a>
+		</div>
+	<?php
+	}elseif ( ! get_user_meta($current_user->ID, 'wppb_dismiss_notification') ) {
+		
+		if (file_exists ( WPPB_PLUGIN_DIR . '/premium/addons/addon.php' ))
+			$wppb_profile_builder_pro_hobbyist_serial_status = get_option('wppb_profile_builder_pro_serial_status');
+		else
+			$wppb_profile_builder_pro_hobbyist_serial_status = get_option('wppb_profile_builder_hobbyist_serial_status');
+			
+		if ($wppb_profile_builder_pro_hobbyist_serial_status == 'notFound')
+			echo '<div class="info pro-noserial-info" style="line-height:22px;">'.__("Your <strong>Profile Builder</strong> serial number is invalid or missing. Please <a href='admin.php?page=ProfileBuilderOptionsAndSettings#register-profile-builder'>register your copy</a> of <b>Profile Builder</b> to receive access to automatic updates and support. Need a license key? <a href='http://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=PB&utm_medium=plugin&utm_campaign=PB-Purchase' target='_blank' class='button-primary'>Purchase one now</a>", "profilebuilder") .'</div>';
+			elseif ($wppb_profile_builder_pro_hobbyist_serial_status == 'expired')
+			echo '<div class="info pro-noserial-info" style="line-height:22px;">'.__("Your <strong>Profile Builder</strong> 1 year licence has expired. Please <a href='http://www.cozmoslabs.com/downloads/profile-builder-pro-1-year/?utm_source=PB&utm_medium=plugin&utm_campaign=PB-Renewal'>Renew Your Licence</a> to receive access to automatic updates and priority support. <a href='http://www.cozmoslabs.com/downloads/profile-builder-pro-1-year/?utm_source=PB&utm_medium=plugin&utm_campaign=PB-Renewal' target='_blank' class='button-primary'>Purchase one now</a>", "profilebuilder") .'</div>';
+	}
+	?>
       <div class="info top-info"></div>
       
 	  <?php $wppb_premium = WPPB_PLUGIN_DIR . '/premium/functions/';
@@ -133,7 +138,10 @@ $arraySettingsPresent = get_option('wppb_custom_fields','not_found');
 					wppb_custom_settings();
 					echo '</div>';
 					echo '<div id="register-profile-builder" class="block">';
-					wppb_register_profile_builder();
+					if (file_exists ( WPPB_PLUGIN_DIR . '/premium/addons/addon.php' ))
+						wppb_register_profile_builder_pro();
+					else
+						wppb_register_profile_builder_hobbyist();
 					echo '</div>';
 				}
 

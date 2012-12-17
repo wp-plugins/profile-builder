@@ -3,7 +3,7 @@
 Plugin Name: Profile Builder
 Plugin URI: http://www.cozmoslabs.com/2011/04/12/wordpress-profile-builder-a-front-end-user-registration-login-and-edit-profile-plugin/
 Description: Login, registration and edit profile shortcodes for the front-end. Also you can chose what fields should be displayed or add new (custom) ones both in the front-end and in the dashboard.
-Version: 1.1.34
+Version: 1.1.37
 Author: Reflection Media, Barina Gabriel
 Author URI: http://www.reflectionmedia.ro
 License: GPL2
@@ -54,7 +54,7 @@ function return_bytes($val) {
 } 
  
  
-define( 'PROFILE_BUILDER_VERSION', '1.1.34' );
+define( 'PROFILE_BUILDER_VERSION', '1.1.37' );
 define( 'WPPB_PLUGIN_DIR', WP_PLUGIN_DIR . '/' . dirname( plugin_basename( __FILE__ ) ) );
 define( 'WPPB_PLUGIN_URL', WP_PLUGIN_URL . '/' . dirname( plugin_basename( __FILE__ ) ) );
 define( 'WPPB_SERVER_MAX_UPLOAD_SIZE_BYTE', return_bytes( ini_get( 'upload_max_filesize') ) );
@@ -83,8 +83,15 @@ if (file_exists ( $wppb_premiumAdmin.'premium.class.admin.php' )){
 $wppb_premiumUpdate = WPPB_PLUGIN_DIR.'/premium/update/';
 if (file_exists ($wppb_premiumUpdate.'update-checker.php')){
 	require ($wppb_premiumUpdate.'update-checker.php');
-	$localSerial = get_option( 'wppb_profile_builder_pro_serial' );
-	$MyUpdateChecker = new PluginUpdateChecker('http://cozmoslabs.com/update_metadata.php?localSerialNumber='.$localSerial, __FILE__, 'profile-builder-pro-update');	
+	
+	if (file_exists ( WPPB_PLUGIN_DIR . '/premium/addons/addon.php' )){
+		$localSerial = get_option( 'wppb_profile_builder_pro_serial' );
+		$wppb_update = new wppb_PluginUpdateChecker('http://updatemetadata.cozmoslabs.com/?localSerialNumber='.$localSerial.'&uniqueproduct=RMPB', __FILE__, 'profile-builder-pro-update');
+	
+	}else{
+		$localSerial = get_option( 'wppb_profile_builder_hobbyist_serial' );
+		$wppb_update = new wppb_PluginUpdateChecker('http://updatemetadata.cozmoslabs.com/?localSerialNumber='.$localSerial.'&uniqueproduct=RMPBH', __FILE__, 'profile-builder-hobbyist-update');
+	}
 }
 
 

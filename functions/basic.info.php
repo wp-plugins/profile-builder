@@ -16,7 +16,7 @@ function wppb_basic_info(){
 	&rarr; <strong>[wppb-edit-profile]</strong> - <?php _e('to grant users a front-end acces to their personal information(requires user to be logged in).', 'profilebuilder');?><br/>
 	&rarr; <strong>[wppb-recover-password]</strong> - <?php _e('to add a password recovery form.', 'profilebuilder');?><br/><br/>
 	
-	<?php _e('Users with administrator rights have access to the following features:', 'profilebuilder');?><br/>
+	<?php _e('With the <strong>Pro</strong> version, users with administrator rights have access to the following features:', 'profilebuilder');?><br/>
 	&rarr; <?php _e('add a custom stylesheet/inherit values from the current theme or use one of the following built into this plugin: default, white or black.', 'profilebuilder');?><br/>
 	&rarr; <?php _e('select whether to display or not the admin bar in the front end for a specific user-group registered to the site.', 'profilebuilder');?><br/>
 	&rarr; <?php _e('select which information-field can users see/modify. The hidden fields\' values remain unmodified.', 'profilebuilder');?><br/>

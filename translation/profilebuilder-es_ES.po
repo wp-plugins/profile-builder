@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ProfileBuilder\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-12-04 11:07+0200\n"
-"PO-Revision-Date: 2012-12-04 11:07+0200\n"
+"POT-Creation-Date: 2012-12-11 15:09+0200\n"
+"PO-Revision-Date: 2012-12-11 15:09+0200\n"
 "Last-Translator: Gabriel Barina <barinagabriel2007@yahoo.com>\n"
 "Language-Team: Reflection Media, Gabriel Barina\n"
 "MIME-Version: 1.0\n"
@@ -827,6 +827,7 @@ msgstr ""
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/recaptcha.php:284
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:369
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/register.version.php:35
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/register.version.php:76
 msgid "Save Changes"
 msgstr "Guardar cambios"
 
@@ -903,7 +904,10 @@ msgid "to add a password recovery form."
 msgstr "para añadir un formulario de inscripción."
 
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/basic.info.php:19
-msgid "Users with administrator rights have access to the following features:"
+#, fuzzy
+msgid ""
+"With the <strong>Pro</strong> version, users with administrator rights have "
+"access to the following features:"
 msgstr ""
 "Los usuarios con derechos de administrador tienen acceso a las siguientes "
 "características:"
@@ -977,7 +981,7 @@ msgstr ""
 
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:9
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:10
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/options.php:84
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/options.php:89
 msgid "Default Profile Fields"
 msgstr "Campos de perfil predeterminado"
 
@@ -1050,7 +1054,7 @@ msgstr "Nueva contraseña"
 
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/general.settings.php:10
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/general.settings.php:11
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/options.php:82
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/options.php:87
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:37
 msgid "General Settings"
 msgstr ""
@@ -1101,21 +1105,21 @@ msgid ""
 "in the front-end, so make sure you also use the \"Custom Redirects\" feature."
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/options.php:59
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/options.php:64
 msgid ""
-"Your <strong>Profile Builder Pro</strong> serial number is invalid or "
-"missing. Please <a href='admin.php?"
-"page=ProfileBuilderOptionsAndSettings#register-profile-builder'>register "
-"your copy</a> of <b>Profile Builder</b> to receive access to automatic "
-"updates and support. Need a license key? <a href='http://www.cozmoslabs.com/"
-"wordpress-profile-builder/?utm_source=PB&utm_medium=plugin&utm_campaign=PB-"
-"Purchase' target='_blank' class='button-primary'>Purchase one now</a>"
+"Your <strong>Profile Builder</strong> serial number is invalid or missing. "
+"Please <a href='admin.php?page=ProfileBuilderOptionsAndSettings#register-"
+"profile-builder'>register your copy</a> of <b>Profile Builder</b> to receive "
+"access to automatic updates and support. Need a license key? <a href='http://"
+"www.cozmoslabs.com/wordpress-profile-builder/?"
+"utm_source=PB&utm_medium=plugin&utm_campaign=PB-Purchase' target='_blank' "
+"class='button-primary'>Purchase one now</a>"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/options.php:61
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/options.php:66
 msgid ""
-"Your <strong>Profile Builder Pro</strong> 1 year licence has expired. Please "
-"<a href='http://www.cozmoslabs.com/downloads/profile-builder-pro-1-year/?"
+"Your <strong>Profile Builder</strong> 1 year licence has expired. Please <a "
+"href='http://www.cozmoslabs.com/downloads/profile-builder-pro-1-year/?"
 "utm_source=PB&utm_medium=plugin&utm_campaign=PB-Renewal'>Renew Your Licence</"
 "a> to receive access to automatic updates and priority support. <a "
 "href='http://www.cozmoslabs.com/downloads/profile-builder-pro-1-year/?"
@@ -1123,25 +1127,25 @@ msgid ""
 "class='button-primary'>Purchase one now</a>"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/options.php:81
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/options.php:86
 msgid "Basic Information"
 msgstr "Información básica"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/options.php:83
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/options.php:88
 msgid "Show/Hide the Admin Bar on Front-end"
 msgstr "Mostrar/ocultar la barra de administración en el Front-end"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/options.php:90
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/options.php:95
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/custom.fields.php:5
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/custom.fields.php:6
 msgid "Extra Profile Fields"
 msgstr "Campos extra de perfil"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/options.php:93
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/options.php:98
 msgid "Addons"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/options.php:96
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/options.php:101
 msgid "Register Your Version"
 msgstr "Registra tu versión"
 
@@ -1536,90 +1540,90 @@ msgstr "Salir &raquo;"
 msgid "Last &raquo;&raquo;"
 msgstr "Salir &raquo;"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:281
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:424
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:284
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:427
 #, fuzzy
 msgid "You must give your option a title."
 msgstr "Debes estar conectado para editar tu perfil."
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:285
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:428
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:288
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:431
 msgid "You have entered an invalid meta-key format!"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:289
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:432
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:292
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:435
 #, fuzzy
 msgid "You must enter a valid meta-key."
 msgstr "Has de introducir una dirección de Email válida."
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:295
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:305
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:442
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:454
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:298
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:308
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:445
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:457
 msgid "That meta-key is already in use."
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:312
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:462
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:315
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:465
 msgid ""
 "There is already an avatar input-type. You can only have one avatar present."
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:319
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:469
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:322
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:472
 msgid ""
 "There is already an \"Agree to Terms and Conditions\" checkbox. You can only "
 "have one present."
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:324
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:474
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:327
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:477
 msgid "The textarea row value must be numeric."
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:328
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:478
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:331
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:481
 msgid "The maxlength attribute must be numeric."
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:335
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:485
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:338
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:488
 msgid "The value must be between 20 and 200!"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:340
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:490
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:343
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:493
 msgid "The width component of the entered value must be numeric!"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:342
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:492
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:345
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:495
 msgid "The height component of the entered value must be numeric!"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:344
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:494
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:347
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:497
 msgid "The width component of the entered value must be between 20 and 200!"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:346
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:496
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:349
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:499
 msgid "The height component of the entered value must be between 20 and 200!"
-msgstr ""
-
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:348
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:498
-msgid "The pair of values entered didn't have the right format (width,height)!"
 msgstr ""
 
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:351
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:501
+msgid "The pair of values entered didn't have the right format (width,height)!"
+msgstr ""
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:354
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:504
 msgid "The entered avatar size must be numeric!"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:385
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:561
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:388
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:564
 msgid "There was an error, please try again."
 msgstr ""
 
@@ -1997,30 +2001,36 @@ msgid ""
 msgstr ""
 
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/register.version.php:12
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/register.version.php:53
 msgid ""
 "If you register this version of Profile Builder, you'll receive information "
 "regarding eventual upgrades, patches, and - if needed - technical support."
 msgstr ""
 
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/register.version.php:13
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/register.version.php:54
 msgid "Serial Number:"
 msgstr ""
 
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/register.version.php:17
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/register.version.php:58
 #, fuzzy
 msgid "The serial number was successfully validated!"
 msgstr "El avatar ha sido eliminado."
 
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/register.version.php:19
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/register.version.php:60
 #, fuzzy
 msgid "The serial number entered couldn't be validated!"
 msgstr "El avatar ha sido eliminado."
 
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/register.version.php:21
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/register.version.php:62
 msgid "The serial number couldn't be validated because it is no longer valid!"
 msgstr ""
 
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/register.version.php:23
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/register.version.php:64
 msgid ""
 "The serial number couldn't be validated because process timed out. This is "
 "possible due to the server being down. Please try again later!"
@@ -2028,6 +2038,21 @@ msgstr ""
 
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/register.version.php:29
 msgid "(e.g. RMPB-15-SN-253a55baa4fbe7bf595b2aabb8d72985)"
+msgstr ""
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/register.version.php:50
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/register.version.php:51
+msgid "Register your version of Profile Builder Hobbyist"
+msgstr ""
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/register.version.php:52
+msgid ""
+"Now that you acquired a copy of Profile Builder Hobbyist, you should take "
+"the time and register it with the serial number you received in the e-mail."
+msgstr ""
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/register.version.php:70
+msgid "(e.g. RMPBH-15-SN-253a55baa4fbe7bf595b2aabb8d72985)"
 msgstr ""
 
 #~ msgid "Plugin Layout"
