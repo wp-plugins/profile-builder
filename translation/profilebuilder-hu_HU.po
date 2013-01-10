@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ProfileBuilder\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-12-11 15:09+0200\n"
-"PO-Revision-Date: 2012-12-11 15:09+0200\n"
+"POT-Creation-Date: 2013-01-10 11:28+0200\n"
+"PO-Revision-Date: 2013-01-10 11:28+0200\n"
 "Last-Translator: Gabriel Barina <barinagabriel2007@yahoo.com>\n"
 "Language-Team: Reflection Media, Gabriel Barina\n"
 "MIME-Version: 1.0\n"
@@ -15,49 +15,34 @@ msgstr ""
 "X-Poedit-SearchPath-0: C:\\Users\\Gabriel\\Desktop\\test\\profile-builder-"
 "pro\n"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:85
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:590
-msgid "The information size you were trying to submit was larger than"
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:83
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:585
+#, php-format
+msgid ""
+"The information size you were trying to submit was larger than %1$sb!<br/"
+">This is usually caused by a large file(s) trying to be uploaded.<br/>Since "
+"it was also larger than %2$sb no additional information is available.<br/"
+">The user was NOT created!"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:86
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:591
-msgid "This is usually caused by a large file(s) trying to be uploaded."
-msgstr ""
-
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:87
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:592
-msgid "Since it was also larger than"
-msgstr ""
-
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:87
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:592
-msgid "no additional information is available."
-msgstr ""
-
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:559
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:554
 msgid "You must be logged in to edit your profile."
 msgstr "Be kell jelentkezned a profilod szerkesztéséhez!"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:569
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:562
 msgid "The avatar was successfully deleted."
 msgstr "Az avatar sikeresen törölve."
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:576
-#, fuzzy
-msgid "The attachment"
-msgstr "A csatolmány \""
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:567
+#, fuzzy, php-format
+msgid "The attachment \"%1$s\" was successfully deleted."
+msgstr "Az avatar sikeresen törölve."
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:576
-#, fuzzy
-msgid "was successfully deleted."
-msgstr "\" sikeresen törölve."
-
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:591
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:580
 msgid "The changes have been successfully saved."
 msgstr "A változások sikeresen mentve."
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:598
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:586
 #, fuzzy
 msgid ""
 "The email address you entered is already registered to a different user."
@@ -65,129 +50,119 @@ msgstr ""
 "Az email címmel, amit megadtál már egy másik felhasználó regisztrált. <br/> "
 "Az email cím"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:598
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:608
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:586
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:594
 msgid "The email address was"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:598
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:608
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:617
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:626
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:652
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:660
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:675
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:586
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:594
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:602
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:610
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:640
 msgid "NOT"
 msgstr "NEM"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:598
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:608
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:617
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:626
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:652
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:660
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:675
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:586
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:594
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:602
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:610
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:640
 #, fuzzy
 msgid "updated along with the rest of the information."
 msgstr "lett a többi információval együtt frissítve."
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:608
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:594
 #, fuzzy
 msgid "The email address you entered is invalid."
 msgstr "Az email cím, amit megadtál érvénytelen. <br/> Ez az email cím"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:617
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:602
 #, fuzzy
 msgid "The passwords you entered do not match."
 msgstr "Az általad megadott jelszavak nem egyeznek <br/> A jelszó"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:617
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:626
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:602
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:610
 #, fuzzy
 msgid "The password was"
 msgstr "Új jelszó"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:626
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:610
 #, fuzzy
 msgid "You didn't complete both password fields."
 msgstr "Nem töltötted ki az egyik jelszó mezőt!"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:633
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:616
 msgid "Your profile was NOT updated!"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:642
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:625
 #, fuzzy
 msgid "There was an error while trying to upload the following attachments:"
 msgstr "Hiba történt a következő csatolmányok feltöltésekor: <br/>"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:652
-#, fuzzy
-msgid "Possible cause: the size was bigger than"
-msgstr "<br/>Lehetséges okok: A mérete nagyobb volt, mint"
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:633
+#, php-format
+msgid ""
+"Possible cause: the size was bigger than %1$sb. The listed attachements were "
+"%2$sNOT%3$s updated along with the rest of the information."
+msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:652
-#, fuzzy
-msgid "The listed attachements were"
-msgstr "b.<br/>A felsorolt csatolmányok"
-
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:660
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:640
 #, fuzzy
 msgid "There was an error while trying to upload your avatar picture."
 msgstr "Hiba történt a következő csatolmányok feltöltésekor: <br/>"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:660
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:640
 msgid "Possible cause: size/incorrect file-type."
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:660
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:640
 msgid "The avatar was"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:668
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:898
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:648
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:897
 #, fuzzy
 msgid "There was an error while trying to upload the following attachment(s)"
 msgstr "Hiba történt a következő csatolmányok feltöltésekor: <br/>"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:675
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:905
-msgid "Only files with the following extension(s) can be uploaded:"
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:655
+#, php-format
+msgid ""
+"Only files with the following extension(s) can be uploaded: %1$s<br/>This "
+"file was %2$sNOT%3$s updated along with the rest of the information."
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:675
-msgid "This file was"
-msgstr ""
-
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:692
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1282
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:670
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1277
 msgid "Name"
 msgstr "Név"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:698
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.login.php:150
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:501
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1303
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:676
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.login.php:122
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1298
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:27
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:497
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:498
 msgid "Username"
 msgstr "Felhasználónév"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:699
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:677
 #, fuzzy
 msgid "Usernames cannot be changed."
 msgstr "A Felhasználónév nem változtatható."
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:708
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:728
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:748
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:768
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:818
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:839
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:857
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:875
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:893
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:914
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:686
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:706
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:726
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:746
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:796
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:817
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:835
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:853
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:871
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:892
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:64
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:166
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:232
@@ -202,299 +177,291 @@ msgstr "A Felhasználónév nem változtatható."
 msgid "This field is marked as required by the administrator."
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:711
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:731
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:751
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:771
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:821
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:841
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:859
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:877
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:895
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:916
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:689
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:709
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:729
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:749
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:799
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:819
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:837
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:855
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:873
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:894
 msgid ""
 "This field wasn't updated because you entered and empty string (It was "
 "marked as required by the administrator."
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:718
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1327
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:696
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1322
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:40
 msgid "First Name"
 msgstr "Keresztnév"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:738
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1351
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:716
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1346
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:53
 msgid "Last Name"
 msgstr "Vezetéknév"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:758
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1375
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:736
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1370
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:66
 msgid "Nickname"
 msgstr "Loginnév"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:779
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:757
 msgid "Display name publicly as"
 msgstr "Név megjelenítése publikusan, mint"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:811
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1381
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:789
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1376
 msgid "Contact Info"
 msgstr "Kapcsolati információ"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:828
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:502
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1402
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:806
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1397
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:98
 msgid "E-mail"
 msgstr "E-mail"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:830
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:808
 msgid "(required)"
 msgstr "(kötelező)"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:847
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1426
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:825
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1421
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:111
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:539
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:540
 msgid "Website"
 msgstr "Weboldal"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:865
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1450
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:843
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1445
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:127
 msgid "AIM"
 msgstr "AIM"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:883
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1474
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:861
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1469
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:140
 msgid "Yahoo IM"
 msgstr "Yahoo IM"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:901
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1498
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:879
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1493
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:153
 msgid "Jabber / Google Talk"
 msgstr "Jabber / Google Talk"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:907
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1504
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:885
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1499
 msgid "About Yourself"
 msgstr "Magadról"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:922
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1525
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:900
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1520
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:172
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:545
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:546
 msgid "Biographical Info"
 msgstr "Életrajzi információk"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:932
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:910
 msgid "New Password"
 msgstr "Új jelszó"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:937
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:336
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:366
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1563
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:915
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:328
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:358
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1558
 msgid "Repeat Password"
 msgstr "Jelszó, mégegyszer"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:968
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:946
 msgid "Update"
 msgstr "Frissítés"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.login.php:45
-#, fuzzy
-msgid "You are currently logged in as"
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.login.php:41
+#, fuzzy, php-format
+msgid "You are currently logged in as %1$s. %2$s"
 msgstr ""
 "Jelenleg be vagy jelentkezve, mint <a href=\"%1$s\" title=\"%2$s\">%2$s</a>."
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.login.php:46
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.login.php:41
 msgid "Log out of this account"
 msgstr "Kijelentkezés ebből a fiókból"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.login.php:46
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.login.php:41
 #, fuzzy
 msgid "Log out"
 msgstr "Kijelentkezés &raquo;"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.login.php:64
-#, fuzzy
-msgid "You have successfully logged in as"
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.login.php:49
+#, fuzzy, php-format
+msgid "You have successfully logged in as %1$s"
 msgstr ""
 "Sikeresen bejelentkeztél, mint <a href=\"%1$s\" title=\"%2$s\">%2$s</a>."
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.login.php:91
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.login.php:105
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.login.php:69
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.login.php:81
+#, php-format
 msgid ""
 "You will soon be redirected automatically. If you see this page for more "
-"than 1 second, please click"
+"than 1 second, please click %1$s"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.login.php:91
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.login.php:105
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1193
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1225
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.login.php:69
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.login.php:81
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1191
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1221
 msgid "here"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.login.php:123
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:390
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.login.php:96
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:382
 msgid "ERROR:"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.login.php:123
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.login.php:96
 msgid "The username field is empty"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.login.php:158
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:331
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:361
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1558
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.login.php:130
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:323
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:353
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1553
 msgid "Password"
 msgstr "Jelszó"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.login.php:166
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.login.php:138
 msgid "Log in"
 msgstr "Bejelentkezés"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.login.php:170
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.login.php:142
 msgid "Remember me"
 msgstr "Emlékezz rám!"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.login.php:185
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.login.php:157
 msgid "Lost password?"
 msgstr "Elvesztett jelszó?"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:111
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:179
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:230
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:113
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:177
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:224
 msgid "ERROR"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:111
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:113
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/admin.approval.php:248
 msgid ""
 "Your account has to be confirmed by an administrator before you can use the "
 "\"Password Reset\" feature."
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:151
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:202
-msgid "A password reset email has been sent to "
-msgstr ""
-
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:151
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:202
-msgid "Following the link sent in the email address will reset the password."
-msgstr ""
-
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:163
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:214
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:153
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:200
+#, php-format
 msgid ""
-"Someone requested that the password be reset for the following account: "
+"A password reset email has been sent to %1$s.<br/>Following the link sent in "
+"the email address will reset the password."
 msgstr ""
 
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:165
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:216
-msgid "If this was a mistake, just ignore this email and nothing will happen."
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:212
+#, php-format
+msgid ""
+"Someone requested that the password be reset for the following account: <b>"
+"%1$s</b><br/>If this was a mistake, just ignore this email and nothing will "
+"happen.<br/>To reset your password, visit the following link:%2$s"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:166
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:217
-msgid "To reset your password, visit the following link:"
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:168
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:215
+#, php-format
+msgid "Password Reset Feature from \"%1$s\""
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:170
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:221
-msgid "Password Reset Feature from"
-msgstr ""
-
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:179
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:230
-#, fuzzy
-msgid "There was an error while trying to send the activation link to "
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:177
+#, fuzzy, php-format
+msgid "There was an error while trying to send the activation link to %1$s!"
 msgstr "Hiba történt a következő csatolmányok feltöltésekor: <br/>"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:189
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:187
 #, fuzzy
 msgid "The email address entered wasn't found in the database!"
 msgstr "Az email cím, amit megadtál érvénytelen. <br/> Ez az email cím"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:189
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:187
 msgid "Please check that you entered the correct email address."
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:238
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:224
+#, fuzzy
+msgid "There was an error while trying to send the activation link to "
+msgstr "Hiba történt a következő csatolmányok feltöltésekor: <br/>"
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:232
 msgid "The username entered wasn't found in the database!"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:238
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:232
 msgid "Please check that you entered the correct username."
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:249
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:243
 #, fuzzy
 msgid "Your password has been successfully changed!"
 msgstr "A változások sikeresen mentve."
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:263
-msgid "You have successfully reset your password to:"
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:257
+#, fuzzy, php-format
+msgid "You have successfully reset your password to: %1$s"
 msgstr ""
+"Sikeresen bejelentkeztél, mint <a href=\"%1$s\" title=\"%2$s\">%2$s</a>."
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:267
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:281
-#, fuzzy
-msgid "Password Successfully Reset for"
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:260
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:273
+#, fuzzy, php-format
+msgid "Password Successfully Reset for %1$s on \"%2$s\""
 msgstr "\" sikeresen törölve."
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:267
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:281
-msgid "from"
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:270
+#, php-format
+msgid ""
+"%1$s has requested a password change via the password reset feature.<br/>His/"
+"her new password is:%2$s"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:277
-msgid "has requested a password change via the password reset feature."
-msgstr ""
-
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:278
-msgid "His/her new password is:"
-msgstr ""
-
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:296
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:895
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:288
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:894
 msgid "The entered passwords don't match!"
 msgstr "A beírt jelszavak nem egyeznek!"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:343
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:373
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:335
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:365
 #, fuzzy
 msgid "Reset Password"
 msgstr "Jelszó, mégegyszer"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:390
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:382
 msgid "Invalid key!"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:405
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:397
 #, fuzzy
 msgid "Please enter your username or email address."
 msgstr "Valós email címet kell beírnod!"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:405
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:397
 msgid "You will receive a link to create a new password via email."
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:414
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:405
 #, fuzzy
 msgid "Username or E-mail"
 msgstr "Felhasználónév"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:423
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:414
 #, fuzzy
 msgid "Get New Password"
 msgstr "Új jelszó"
@@ -542,164 +509,157 @@ msgstr "Az avatar sikeresen törölve."
 msgid "There was an error while trying to activate the user."
 msgstr "Hiba történt a következő csatolmányok feltöltésekor: <br/>"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:500
-msgid "New subscriber on"
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:499
+#, php-format
+msgid "New subscriber on %1$s.<br/><br/>Username:%2$s<br/>E-mail:%3$s<br/>"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:504
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:501
 msgid ""
 "The \"Admin Approval\" feature was activated at the time of registration, so "
 "please remember that you need to approve this user before he/she can log in!"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:507
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:504
 msgid "A new subscriber has (been) registered!"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:525
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:522
 #, fuzzy
 msgid "A new account has been created for you."
 msgstr "Felhasználói fiók a következőnek: %1$s elkészült. "
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:528
-msgid "Welcome to"
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:525
+#, php-format
+msgid "Welcome to %1$s!<br/><br/> Your username is:%2$s and password:%3$s"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:528
-msgid "Your username is:"
-msgstr ""
-
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:528
-#, fuzzy
-msgid "and password:"
-msgstr "Jelszó"
-
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:530
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:527
 msgid ""
 "Before you can access your account, an administrator needs to approve it. "
 "You will be notified via email."
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:593
-msgid "The user was NOT created!"
-msgstr ""
-
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:884
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:883
 msgid "A username is required for registration."
 msgstr "Felhasználónév megadása kötelező a regisztrációhoz."
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:886
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:885
 msgid "Sorry, that username already exists!"
 msgstr "Bocs, de ez a felhasználónév foglalt!"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:888
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:887
 msgid "You must enter a valid email address."
 msgstr "Valós email címet kell beírnod!"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:890
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:889
 msgid "Sorry, that email address is already used!"
 msgstr "Bocs, de ez az email cím már használatban van!"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:893
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:892
 msgid "You didn't complete one of the password-fields!"
 msgstr "Nem töltötted ki az egyik jelszó mezőt!"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:905
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:911
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:904
+msgid "Only files with the following extension(s) can be uploaded:"
+msgstr ""
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:904
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:910
 #, fuzzy
 msgid "The account was NOT created!"
 msgstr "Felhasználói fiók a következőnek: %1$s elkészült. "
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:909
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:908
 msgid "You must agree to the terms and conditions before registering!"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:911
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:910
 msgid "(Several required fields were left uncompleted)"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:929
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:928
 msgid "This username is already reserved to be used soon."
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:929
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:933
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:928
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:932
 msgid "Please try a different one!"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:933
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:932
 #, fuzzy
 msgid "This email address is already reserved to be used soon."
 msgstr "Bocs, de ez az email cím már használatban van!"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1161
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1160
 msgid "You are logged in as"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1161
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1160
 msgid "You don't need another account."
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1161
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1160
 #, fuzzy
 msgid "Log out of this account."
 msgstr "Kijelentkezés ebből a fiókból"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1161
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1160
 #, fuzzy
 msgid "Logout"
 msgstr "Kijelentkezés &raquo;"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1169
-msgid "An email has been sent to "
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1168
+#, php-format
+msgid ""
+"An email has been sent to %1$s with information on how to activate his/her "
+"account."
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1169
-msgid "with information on how to activate his/her account"
-msgstr ""
-
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1174
-#, fuzzy
-msgid "A user account has been created for"
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1172
+#, fuzzy, php-format
+msgid "A user account has been created for %1$s."
 msgstr "Felhasználói fiók a következőnek: %1$s elkészült. "
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1193
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1225
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1191
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1221
+#, php-format
 msgid ""
 "You will soon be redirected automatically. If you see this page for more "
-"than 3 seconds, please click"
+"than 3 seconds, please click %1$s.%2$s"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1200
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1197
 msgid ""
 "An email has been sent to you with information on how to activate your "
-"account"
+"account."
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1205
-#, fuzzy
-msgid "Thank you for registering"
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1201
+#, fuzzy, php-format
+msgid "Thank you for registering %1$s."
 msgstr "Kösz a regisztrációt, %1$s!"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1233
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1228
 msgid "An error occured while trying to send the notification email."
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1238
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1233
 msgid "An email containing activation instructions was successfully sent."
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1243
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1238
 msgid "An email containing the username and password was successfully sent."
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1259
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1254
 msgid "Users can register themselves or you can manually create users here."
 msgstr ""
 "A felhasználók önmagukat tudják regisztrálni, vagy sajátkezűleg készíthetsz "
 "felhasználókat itt."
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1264
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1259
 msgid ""
 "Users cannot currently register themselves, but you can manually create "
 "users here."
@@ -707,50 +667,50 @@ msgstr ""
 "A felhasználók jelenleg nem tudják magukat regisztrálni, de te tudsz itt "
 "létrehozni új felhasználót."
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1269
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1264
 msgid "Only an administrator can add new users."
 msgstr "Csak egy adminisztrátor tud felhasználót hozzáadni."
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1292
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1316
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1340
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1364
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1415
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1439
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1463
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1487
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1514
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1287
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1311
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1335
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1359
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1410
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1434
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1458
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1482
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1509
 msgid ""
 "This field must be filled out before registering (It was marked as required "
 "by the administrator)"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1313
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1337
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1361
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1388
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1412
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1436
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1460
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1484
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1511
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1308
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1332
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1356
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1383
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1407
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1431
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1455
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1479
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1506
 msgid "This field is marked as required by the administrator"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1586
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1581
 msgid "Anti-Spam"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1607
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1602
 #, fuzzy
 msgid "Send these credentials via email."
 msgstr "Hitelesítő adatok küldése emailben. "
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1621
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1616
 msgid "Add User"
 msgstr "Felhasználó hozzáadása"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1621
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1616
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/login.widget.php:43
 msgid "Register"
 msgstr "Regisztráció"
@@ -769,7 +729,12 @@ msgstr "Felhasználói csoport"
 msgid "Visibility"
 msgstr "Láthatóság"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/admin.bar.php:28
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/admin.bar.php:30
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/general.settings.php:14
+msgid "Default"
+msgstr "Szokásos"
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/admin.bar.php:31
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:30
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:43
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:56
@@ -785,7 +750,7 @@ msgstr "Láthatóság"
 msgid "Show"
 msgstr "Mutat"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/admin.bar.php:29
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/admin.bar.php:32
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:31
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:44
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:57
@@ -801,26 +766,13 @@ msgstr "Mutat"
 msgid "Hide"
 msgstr "Elrejt"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/admin.bar.php:40
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/basic.info.php:29
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/general.settings.php:47
-msgid "NOTE:"
-msgstr "MEGJEGYZÉS:"
-
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/admin.bar.php:41
-msgid ""
-"If you added new roles (via another plugin) <u>after</u> Profile Builder was "
-"activated, please reactivate it, since the roles are initialized during "
-"plugin activation."
-msgstr ""
-
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/admin.bar.php:48
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/admin.bar.php:43
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:202
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/general.settings.php:58
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/addon.php:45
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:1
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:147
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/recaptcha.php:284
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:369
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:370
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/register.version.php:35
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/register.version.php:76
 msgid "Save Changes"
@@ -953,6 +905,11 @@ msgstr ""
 msgid "shortcode."
 msgstr ""
 
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/basic.info.php:29
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/general.settings.php:47
+msgid "NOTE:"
+msgstr "MEGJEGYZÉS:"
+
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/basic.info.php:30
 msgid "this plugin only adds/removes fields in the front-end."
 msgstr "Ez a bővítmény csak hozzáad/eltávolít mezőket a felhasználó elől. "
@@ -1000,7 +957,13 @@ msgstr "Név:"
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:193
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/general.settings.php:31
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/general.settings.php:41
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:1
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:49
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:57
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:67
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:96
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:108
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:120
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:132
 msgid "Yes"
 msgstr ""
 
@@ -1018,7 +981,13 @@ msgstr ""
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:194
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/general.settings.php:32
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/general.settings.php:42
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:1
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:50
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:58
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:68
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:97
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:109
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:121
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:133
 #, fuzzy
 msgid "No"
 msgstr "Nincs"
@@ -1043,7 +1012,7 @@ msgstr "Új jelszó"
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/general.settings.php:10
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/general.settings.php:11
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/options.php:87
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:37
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:38
 msgid "General Settings"
 msgstr ""
 
@@ -1051,10 +1020,6 @@ msgstr ""
 #, fuzzy
 msgid "Stylesheet Used on the Front-End:"
 msgstr "Stíluslap használata:"
-
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/general.settings.php:14
-msgid "Default"
-msgstr "Szokásos"
 
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/general.settings.php:18
 msgid "White"
@@ -1094,25 +1059,20 @@ msgid ""
 msgstr ""
 
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/options.php:64
+#, php-format
 msgid ""
 "Your <strong>Profile Builder</strong> serial number is invalid or missing. "
-"Please <a href='admin.php?page=ProfileBuilderOptionsAndSettings#register-"
-"profile-builder'>register your copy</a> of <b>Profile Builder</b> to receive "
-"access to automatic updates and support. Need a license key? <a href='http://"
-"www.cozmoslabs.com/wordpress-profile-builder/?"
-"utm_source=PB&utm_medium=plugin&utm_campaign=PB-Purchase' target='_blank' "
-"class='button-primary'>Purchase one now</a>"
+"Please %1$sregister your copy%2$s of <b>Profile Builder</b> to receive "
+"access to automatic updates and support. Need a license key? %3$sPurchase "
+"one now%4$s"
 msgstr ""
 
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/options.php:66
+#, php-format
 msgid ""
-"Your <strong>Profile Builder</strong> 1 year licence has expired. Please <a "
-"href='http://www.cozmoslabs.com/downloads/profile-builder-pro-1-year/?"
-"utm_source=PB&utm_medium=plugin&utm_campaign=PB-Renewal'>Renew Your Licence</"
-"a> to receive access to automatic updates and priority support. <a "
-"href='http://www.cozmoslabs.com/downloads/profile-builder-pro-1-year/?"
-"utm_source=PB&utm_medium=plugin&utm_campaign=PB-Renewal' target='_blank' "
-"class='button-primary'>Purchase one now</a>"
+"Your <strong>Profile Builder</strong> 1 year licence has expired. Please "
+"%1$sRenew Your Licence%2$s to receive access to automatic updates and "
+"priority support. %3$sPurchase one now%4$s"
 msgstr ""
 
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/options.php:86
@@ -1169,7 +1129,8 @@ msgid "Inactive"
 msgstr ""
 
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/addon.php:27
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:1
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:30
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:31
 msgid "Custom Redirects"
 msgstr ""
 
@@ -1179,75 +1140,77 @@ msgstr ""
 msgid "reCAPTCHA"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:1
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:35
 msgid "Redirects on custom page requests:"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:1
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:41
 msgid "Action"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:1
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:42
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:87
 msgid "Redirect"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:1
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:43
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:88
 msgid "URL"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:1
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:47
 msgid "After Registration:"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:1
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:55
 msgid "After Login:"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:1
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:64
 #, fuzzy
 msgid "Recover Password (*)"
 msgstr "Jelszó, mégegyszer"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:1
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:75
 msgid ""
 "When activated this feature will redirect the user on both the default "
 "Wordpress password recovery page and the \"Lost password?\" link used by "
 "Profile Builder on the front-end login page."
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:1
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:80
 msgid "Redirects on default WordPress page requests:"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:1
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:86
 msgid "Requested WP Page"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:1
-msgid "Default WP Login Page(*)"
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:93
+msgid "Default WP Login Page (*)"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:1
-msgid "Default WP Logout Page(**)"
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:105
+msgid "Default WP Logout Page (**)"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:1
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:117
 msgid "Default WP Register Page"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:1
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:129
 msgid "Default WP Dashboard (***)"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:1
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:140
 msgid "Before login. Works best if used in conjuction with \"After logout\"."
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:1
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:141
 msgid "After logout. Works best if used in conjuction with \"Before login\"."
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:1
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:142
 msgid ""
 "Redirects every user-role EXCEPT the ones with administrator privilages (can "
 "manage options)."
@@ -1258,7 +1221,6 @@ msgid "Could not open socket!"
 msgstr ""
 
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/recaptcha.php:76
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/recaptcha.php:120
 msgid "To use reCAPTCHA you must get an API key from"
 msgstr ""
 
@@ -1303,7 +1265,7 @@ msgstr ""
 msgid "Private Key:"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/recaptcha.php:311
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/recaptcha.php:312
 msgid "The reCAPTCHA wasn't entered correctly. Go back and try it again!"
 msgstr ""
 
@@ -1319,160 +1281,171 @@ msgid ""
 "authors, visible to only the users currently logged in, you would use:"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:39
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:35
+msgid ""
+"You can also create a userlisting page that displays users having a certain "
+"meta-value within a certain (extra) meta-field like so:"
+msgstr ""
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:35
+msgid ""
+"Remember though, that the field-value combination must exist in the database."
+msgstr ""
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:40
 msgid "These settings are applied to the front-end userlisting."
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:45
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:46
 msgid "Number of Users/Page: "
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:62
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:63
 msgid "Default Sorting Order: "
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:73
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:74
 msgid "\"All-Userlisting\" Template"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:75
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:217
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:76
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:218
 msgid ""
 "With the userlisting templates you can customize the look, feel and "
 "information listed by the shortcode."
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:76
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:77
 msgid ""
 "The \"All Users Listing\" template is used to list all users. It's displayed "
 "on each page access where the shortcode is present."
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:80
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:81
 msgid "Avatar size: "
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:96
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:97
 msgid "Insert \"Sort By\" Field:"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:124
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:223
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:125
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:224
 msgid "Insert \"User-Meta\" Field:"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:155
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:261
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:156
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:262
 msgid "Insert Extra Functions:"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:170
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:171
 msgid "Show/Hide Default \"All-Userlisting\" Code"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:172
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:275
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:173
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:276
 msgid ""
 "If you wish to use a default userlisting, just copy the following code and "
 "paste it in the textarea below:"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:215
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:216
 msgid "\"Single-Userlisting\" Template"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:218
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:219
 msgid ""
 "The \"Single User Listing\" template is used to list an individual user. "
 "It's displayed when clickin on the \"more info\" link."
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:273
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:274
 msgid "Show/Hide Default \"Single-Userlisting\" Code"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:379
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:380
 msgid ""
 "You need to activate the User-Listing feature from within the \"Addons\" tab!"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:379
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:380
 msgid "You can find it in Profile Builder's menu."
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:404
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:405
 #, fuzzy
 msgid "You need to be logged in to view the userlisting!"
 msgstr "Be kell jelentkezned a profilod szerkesztéséhez!"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:442
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:468
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:486
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:1327
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:1413
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:443
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:469
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:487
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:1328
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:1414
 msgid "Search Users by All Fields"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:486
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:487
 msgid "Leave Blank and Press Search to List All Users"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:490
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:491
 msgid "Search"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:503
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:504
 #, fuzzy
 msgid "First/Lastname"
 msgstr "Keresztnév"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:509
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:510
 #, fuzzy
 msgid "Email"
 msgstr "E-mail"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:515
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:516
 msgid "Sign-up Date"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:521
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:522
 #, fuzzy
 msgid "Firstname"
 msgstr "Keresztnév"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:527
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:528
 #, fuzzy
 msgid "Lastname"
 msgstr "Vezetéknév"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:533
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:534
 #, fuzzy
 msgid "Display Name"
 msgstr "Keresztnév"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:551
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:552
 msgid "Posts"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:593
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:594
 msgid "Click here to see more information about this user"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:593
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:594
 msgid "More..."
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:794
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:1101
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:795
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:1102
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:577
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:610
 #, fuzzy
 msgid "No uploaded attachment"
 msgstr "A csatolmány \""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:796
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:1103
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:1159
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:797
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:1104
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:1160
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:581
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:614
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:617
@@ -1481,17 +1454,17 @@ msgstr "A csatolmány \""
 msgid "Click to see the current attachment"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:922
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:923
 msgid "Click here to go back"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:922
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:923
 #, fuzzy
 msgid "Back"
 msgstr "Fekete"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:1101
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:1103
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:1102
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:1104
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:577
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:581
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:610
@@ -1500,118 +1473,118 @@ msgstr "Fekete"
 msgid "Current file"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:1157
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:1158
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:687
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:719
 msgid "Avatar"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:1214
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:1215
 msgid "No results found!"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:1310
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:1311
 msgid "&laquo;&laquo; First"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:1311
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:1312
 msgid "&laquo; Prev"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:1312
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:1313
 #, fuzzy
 msgid "Next &raquo; "
 msgstr "Kijelentkezés &raquo;"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:1313
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:1314
 #, fuzzy
 msgid "Last &raquo;&raquo;"
 msgstr "Kijelentkezés &raquo;"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:284
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:427
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:286
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:429
 #, fuzzy
 msgid "You must give your option a title."
 msgstr "Be kell jelentkezned a profilod szerkesztéséhez!"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:288
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:431
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:290
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:433
 msgid "You have entered an invalid meta-key format!"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:292
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:435
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:294
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:437
 #, fuzzy
 msgid "You must enter a valid meta-key."
 msgstr "Valós email címet kell beírnod!"
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:298
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:308
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:445
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:457
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:300
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:310
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:447
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:459
 msgid "That meta-key is already in use."
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:315
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:465
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:317
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:467
 msgid ""
 "There is already an avatar input-type. You can only have one avatar present."
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:322
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:472
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:324
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:474
 msgid ""
 "There is already an \"Agree to Terms and Conditions\" checkbox. You can only "
 "have one present."
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:327
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:477
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:329
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:479
 msgid "The textarea row value must be numeric."
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:331
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:481
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:333
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:483
 msgid "The maxlength attribute must be numeric."
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:338
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:488
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:340
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:490
 msgid "The value must be between 20 and 200!"
-msgstr ""
-
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:343
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:493
-msgid "The width component of the entered value must be numeric!"
 msgstr ""
 
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:345
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:495
-msgid "The height component of the entered value must be numeric!"
+msgid "The width component of the entered value must be numeric!"
 msgstr ""
 
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:347
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:497
-msgid "The width component of the entered value must be between 20 and 200!"
+msgid "The height component of the entered value must be numeric!"
 msgstr ""
 
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:349
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:499
-msgid "The height component of the entered value must be between 20 and 200!"
+msgid "The width component of the entered value must be between 20 and 200!"
 msgstr ""
 
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:351
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:501
+msgid "The height component of the entered value must be between 20 and 200!"
+msgstr ""
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:353
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:503
 msgid "The pair of values entered didn't have the right format (width,height)!"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:354
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:504
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:356
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:506
 msgid "The entered avatar size must be numeric!"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:388
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:564
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:390
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:566
 msgid "There was an error, please try again."
 msgstr ""
 
@@ -1624,24 +1597,23 @@ msgid "the current user?"
 msgstr ""
 
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/admin.approval.php:48
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/admin.approval.php:58
-msgid "Your account on"
-msgstr ""
-
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/admin.approval.php:48
-msgid "has been approved!"
-msgstr ""
+#, fuzzy, php-format
+msgid "Your account on %1$s has been approved!"
+msgstr "Felhasználói fiók a következőnek: %1$s elkészült. "
 
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/admin.approval.php:49
-msgid "An administrator has just approved your account on"
+#, php-format
+msgid "An administrator has just approved your account on %1$s (%2$s)."
 msgstr ""
 
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/admin.approval.php:58
-msgid "has been unapproved!"
-msgstr ""
+#, fuzzy, php-format
+msgid "Your account on %1$s has been unapproved!"
+msgstr "Felhasználói fiók a következőnek: %1$s elkészült. "
 
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/admin.approval.php:59
-msgid "An administrator has just unapproved your account on"
+#, php-format
+msgid "An administrator has just unapproved your account on %1$s (%2$s)."
 msgstr ""
 
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/admin.approval.php:126
@@ -1673,11 +1645,8 @@ msgid "approve"
 msgstr ""
 
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/admin.approval.php:175
-msgid "Are you sure you want to"
-msgstr ""
-
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/admin.approval.php:175
-msgid "this user?"
+#, php-format
+msgid "Are you sure you want to %1$s this user?"
 msgstr ""
 
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/admin.approval.php:236
@@ -1932,6 +1901,11 @@ msgstr ""
 
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/login.widget.php:51
 #, fuzzy
+msgid "Lost Password"
+msgstr "Elvesztett jelszó?"
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/login.widget.php:51
+#, fuzzy
 msgid "Lost Your Password?"
 msgstr "Elvesztett jelszó?"
 
@@ -1941,15 +1915,15 @@ msgid "Login"
 msgstr "Bejelentkezés"
 
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/login.widget.php:89
-msgid "After login redirect URL:"
+msgid "After login redirect URL (optional):"
 msgstr ""
 
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/login.widget.php:94
-msgid "Register page URL (optional)"
+msgid "Register page URL (optional):"
 msgstr ""
 
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/login.widget.php:99
-msgid "Password Recovery page URL (optional)"
+msgid "Password Recovery page URL (optional):"
 msgstr ""
 
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/premium.functions.load.php:14
@@ -1960,21 +1934,21 @@ msgstr ""
 msgid "The user-validation has failed - the attachment was not deleted!"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/premium.functions.load.php:473
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/premium.functions.load.php:356
 #, php-format
 msgid ""
-"Your <strong>Profile Builder Pro</strong> serial number is invalid or "
-"missing. Please %sregister your copy%s of Profile Builder to receive access "
-"to automatic updates and support. Need a license key? %sPurchase one now%s "
-"%sDismiss%s"
+"Your <strong>Profile Builder</strong> serial number is invalid or missing. "
+"Please %1$sregister your copy%2$s of Profile Builder to receive access to "
+"automatic updates and support. Need a license key? %3$sPurchase one now%4$s "
+"%5$sDismiss%6$s"
 msgstr ""
 
-#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/premium.functions.load.php:477
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/premium.functions.load.php:360
 #, php-format
 msgid ""
-"Your <strong>Profile Builder Pro</strong> 1 year licence has expired. Please "
-"%sRenew Your Licence%s to receive access to automatic updates and priority "
-"support. %sPurchase one now%s %sDismiss%s"
+"Your <strong>Profile Builder</strong> 1 year licence has expired. Please "
+"%1$sRenew Your Licence%2$s to receive access to automatic updates and "
+"priority support. %3$sPurchase one now%4$s %5$sDismiss%6$s"
 msgstr ""
 
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/register.version.php:9
@@ -2042,6 +2016,26 @@ msgstr ""
 #: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/register.version.php:70
 msgid "(e.g. RMPBH-15-SN-253a55baa4fbe7bf595b2aabb8d72985)"
 msgstr ""
+
+#, fuzzy
+#~ msgid "The attachment"
+#~ msgstr "A csatolmány \""
+
+#, fuzzy
+#~ msgid "was successfully deleted."
+#~ msgstr "\" sikeresen törölve."
+
+#, fuzzy
+#~ msgid "Possible cause: the size was bigger than"
+#~ msgstr "<br/>Lehetséges okok: A mérete nagyobb volt, mint"
+
+#, fuzzy
+#~ msgid "The listed attachements were"
+#~ msgstr "b.<br/>A felsorolt csatolmányok"
+
+#, fuzzy
+#~ msgid "and password:"
+#~ msgstr "Jelszó"
 
 #~ msgid "Plugin Layout"
 #~ msgstr "Bővítény megjelenítés"
