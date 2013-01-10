@@ -21,27 +21,22 @@ function wppb_display_admin_settings(){
 		</thead>
 			<tbody>
 				<?php
-				foreach($wppb_showAdminBar as $key => $data){
-					echo'<tr> 
-							<td id="manage-columnCell">'.$wp_roles->roles[$key]['name'].'</td>
+				foreach ($wp_roles->roles as $role) {
+					$key = $role['name'];
+					$setting_exists = !empty($wppb_showAdminBar[$key]);
+					echo'<tr>
+							<td id="manage-columnCell">'.$key.'</td>
 							<td id="manage-columnCell">
-								<input type="radio" name="wppb_display_admin_settings['.$key.']" value="show"';if ($wppb_showAdminBar[$key] == 'show') echo ' checked';echo'/><font size="1">'; _e('Show', 'profilebuilder'); echo'</font><span style="padding-left:20px"></span>
-								<input type="radio" name="wppb_display_admin_settings['.$key.']" value="hide"';if ($wppb_showAdminBar[$key] == 'hide') echo ' checked';echo'/><font size="1">'; _e('Hide', 'profilebuilder'); echo'</font>
-							</td> 
+								<input type="radio" name="wppb_display_admin_settings['.$key.']" value="default" ';if (!$setting_exists || $wppb_showAdminBar[$key] == 'default') echo ' checked';echo'/><font size="1">'; _e('Default', 'profilebuilder'); echo'</font><span style="padding-left:20px"></span>
+								<input type="radio" name="wppb_display_admin_settings['.$key.']" value="show"';if ($setting_exists && $wppb_showAdminBar[$key] == 'show') echo ' checked';echo'/><font size="1">'; _e('Show', 'profilebuilder'); echo'</font><span style="padding-left:20px"></span>
+								<input type="radio" name="wppb_display_admin_settings['.$key.']" value="hide"';if ($setting_exists && $wppb_showAdminBar[$key] == 'hide') echo ' checked';echo'/><font size="1">'; _e('Hide', 'profilebuilder'); echo'</font>
+							</td>
 						</tr>';
 				}
 				?>
 			
 	</table>
-	
-	<?php	
-			echo '<div id="layoutNoticeDiv">
-					<font size="1" id="layoutNotice">
-						<b>'. __('NOTE:', 'profilebuilder') .'</b><br/>
-						&rarr; '. __('If you added new roles (via another plugin) <u>after</u> Profile Builder was activated, please reactivate it, since the roles are initialized during plugin activation.', 'profilebuilder') .'
-					</font>
-				</div>';
-	?>
+
 	<div align="right">
 		<input type="hidden" name="action" value="update" />
 		<p class="submit">

@@ -89,32 +89,31 @@ function wppb_add_plugin_stylesheet() {
 
 function wppb_show_admin_bar($content){
 	global $current_user;
-	global $wpdb;
-	
-	$userRole = '';
+
 	$admintSettingsPresent = get_option('wppb_display_admin_settings','not_found');
+
+	if ($admintSettingsPresent != 'not_found' && $current_user->ID)
 	
-	if ($admintSettingsPresent != 'not_found'){
-		if ($current_user->ID != 0){
+		foreach ($current_user->roles as $role_key) {
+		
+			if (empty($GLOBALS['wp_roles']->roles[$role_key]))
+				continue;
 				
-			$userRole = apply_filters ( 'wppb_user_role_value', $current_user->roles[0], $current_user->ID);
+			$role = $GLOBALS['wp_roles']->roles[$role_key];
 			
-			if ($userRole != NULL){
-				$getSettings = $admintSettingsPresent[$userRole];
-				if ($getSettings == 'show')
+			if (isset($admintSettingsPresent[$role['name']])) {
+			
+				if ($admintSettingsPresent[$role['name']] == 'show')
 					return true;
 					
-				elseif ($getSettings == 'hide')
+				if ($admintSettingsPresent[$role['name']] == 'hide')
 					return false;
-			
-			}else
-				return true;
+			}
 		}
 		
-	}else
-		return true;
-		
+	return $content;
 }
+
 
 if(!function_exists('wppb_curpageurl')){
 	function wppb_curpageurl() {
