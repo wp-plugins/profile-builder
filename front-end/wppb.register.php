@@ -424,7 +424,7 @@ function wppb_activate_signup($key) {
 	$meta = unserialize($signup->meta);
 	$user_login = $wpdb->escape($signup->user_login);
 	$user_email = $wpdb->escape($signup->user_email);
-	$password = $meta['user_pass'];
+	$password = base64_decode($meta['user_pass']);
 
 	$user_id = username_exists($user_login);
 
@@ -496,10 +496,7 @@ function wppb_create_user( $user_name, $password, $email) {
 //send an email to the admin regarding each and every new subscriber, and - if selected - to the user himself
 function wppb_notify_user_registration_email($bloginfo, $user_name, $email, $send_credentials_via_email, $passw1, $adminApproval){
 
-	$registerFilterArray['adminMessageOnRegistration']  = ''; 
-	$registerFilterArray['adminMessageOnRegistration']  = __('New subscriber on', 'profilebuilder') .' '.$bloginfo . '<br/><br/>';//"\r\n\r\n";
-	$registerFilterArray['adminMessageOnRegistration'] .= __('Username', 'profilebuilder') .': '. $user_name . '<br/>';
-	$registerFilterArray['adminMessageOnRegistration'] .= __('E-mail', 'profilebuilder') .': '. $email . '<br/>';
+	$registerFilterArray['adminMessageOnRegistration']  = sprintf(__( 'New subscriber on %1$s.<br/><br/>Username:%2$s<br/>E-mail:%3$s<br/>', 'profilebuilder'), $bloginfo, $user_name, $email);
 	if ($adminApproval == 'yes')
 		$registerFilterArray['adminMessageOnRegistration'] .= '<br/>'. __('The "Admin Approval" feature was activated at the time of registration, so please remember that you need to approve this user before he/she can log in!', 'profilebuilder') ."\r\n";
 	$registerFilterArray['adminMessageOnRegistration'] = apply_filters('wppb_register_admin_message_content', $registerFilterArray['adminMessageOnRegistration'], $bloginfo, $user_name, $email);
@@ -525,7 +522,7 @@ function wppb_notify_user_registration_email($bloginfo, $user_name, $email, $sen
 		$registerFilterArray['userMessageSubject'] = __('A new account has been created for you.', 'profilebuilder');
 		$registerFilterArray['userMessageSubject'] = apply_filters('wppb_register_subject_email_content', $registerFilterArray['userMessageSubject']);
 		
-		$registerFilterArray['userMessageContent'] = __('Welcome to', 'profilebuilder') .' '. $registerFilterArray['userMessageFrom'] .'!<br/><br/>'. __('Your username is:', 'profilebuilder') . $user_name .' '. __('and password:', 'profilebuilder') .$passw1;
+		$registerFilterArray['userMessageContent'] = sprintf(__( 'Welcome to %1$s!<br/><br/> Your username is:%2$s and password:%3$s', 'profilebuilder'), $registerFilterArray['userMessageFrom'], $user_name, $passw1);
 		if ($adminApproval == 'yes')
 			$registerFilterArray['userMessageContent'] .= '<br/>'. __('Before you can access your account, an administrator needs to approve it. You will be notified via email.', 'profilebuilder');
 		$registerFilterArray['userMessageContent'] = apply_filters('wppb_register_email_content', $registerFilterArray['userMessageContent'], $registerFilterArray['userMessageFrom'], $user_name, $passw1);
@@ -585,15 +582,8 @@ function wppb_front_end_register($atts){
 	
 	//fallback if the file was largen then post_max_size, case in which no errors can be saved in $_FILES[fileName]['error']	
 	if (empty($_FILES) && empty($_POST) && isset($_SERVER['REQUEST_METHOD']) && strtolower($_SERVER['REQUEST_METHOD']) == 'post') {
-		$registerFilterArray['noPostError'] = '
-		<p class="error">'.
-		 __('The information size you were trying to submit was larger than', 'profilebuilder') .' '. WPPB_SERVER_MAX_UPLOAD_SIZE_MEGA .'b!<br/>'.
-		 __('This is usually caused by a large file(s) trying to be uploaded.', 'profilebuilder') .'<br/>'.
-		 __('Since it was also larger than', 'profilebuilder') .' '. WPPB_SERVER_MAX_POST_SIZE_MEGA .'b, '. __('no additional information is available.', 'profilebuilder'). '<br/>'.
-		 __('The user was NOT created!', 'profilebuilder') .
-		'</p>';
-		$registerFilterArray['noPostError'] = apply_filters('wppb_register_no_post_error_message', $registerFilterArray['noPostError']);
-		echo $registerFilterArray['noPostError'];
+		$registerFilterArray['noPostError'] = '<p class="error">' . sprintf(__( 'The information size you were trying to submit was larger than %1$sb!<br/>This is usually caused by a large file(s) trying to be uploaded.<br/>Since it was also larger than %2$sb no additional information is available.<br/>The user was NOT created!', 'profilebuilder'), WPPB_SERVER_MAX_UPLOAD_SIZE_MEGA, WPPB_SERVER_MAX_POST_SIZE_MEGA) . '</p>';
+		echo  $registerFilterArray['noPostError'] = apply_filters('wppb_register_no_post_error_message', $registerFilterArray['noPostError'], WPPB_SERVER_MAX_UPLOAD_SIZE_MEGA, WPPB_SERVER_MAX_POST_SIZE_MEGA);
 	}
 	
 	/* If user registered, input info. */
@@ -873,6 +863,15 @@ function wppb_front_end_register($atts){
 						}
 						break;
 					}
+					case "agreeToTerms":{
+						if (isset($value['item_required'])){
+							if ($value['item_required'] == 'yes'){
+								if ($_POST[$value['item_type'].$value['id']] == NULL)
+									array_push($extraFieldsErrorHolder, $value['id']);
+							}
+						}
+						break;
+					}
 				}
 			}
 		}
@@ -940,7 +939,7 @@ function wppb_front_end_register($atts){
 						$multisite_message = true;
 
 						$meta = array(
-							'user_pass' => $userdata['user_pass'],
+							'user_pass' => base64_encode($userdata['user_pass']),
 							'first_name' => $userdata['first_name'],
 							'last_name' => $userdata['last_name'],
 							'nickname' => $userdata['nickname'],
@@ -1164,16 +1163,14 @@ function wppb_front_end_register($atts){
 			
 		elseif ( $new_user != 'no' ) :
 					if ( current_user_can( 'create_users' ) ){
+					
 						if ($multisite_message){
-							$registerFilterArray['wpmuRegistrationMessage1'] = '
-								<p class="success">'. __('An email has been sent to ', 'profilebuilder') .' '. $userdata['user_email'] .' '. __('with information on how to activate his/her account', 'profilebuilder') .'.</p><!-- .success -->';
-							$registerFilterArray['registrationMessage1'] = apply_filters('wppb_wpmu_register_account_created1', $registerFilterArray['wpmuRegistrationMessage1'], $registered_name, $userdata['user_email']);
-							echo $registerFilterArray['wpmuRegistrationMessage1'];
+							$registerFilterArray['wpmuRegistrationMessage1'] = '<p class="success">' . sprintf(__( 'An email has been sent to %1$s with information on how to activate his/her account.', 'profilebuilder'), $userdata['user_email']) . '</p><!-- .success -->';
+							echo $registerFilterArray['registrationMessage1'] = apply_filters('wppb_wpmu_register_account_created1', $registerFilterArray['wpmuRegistrationMessage1'], $registered_name, $userdata['user_email']);
+						
 						}else{
-							$registerFilterArray['registrationMessage1'] = '
-								<p class="success">'. __('A user account has been created for', 'profilebuilder') .' '. $registered_name. '.</p><!-- .success -->';
-							$registerFilterArray['registrationMessage1'] = apply_filters('wppb_register_account_created1', $registerFilterArray['registrationMessage1'], $registered_name);
-							echo $registerFilterArray['registrationMessage1'];
+							$registerFilterArray['registrationMessage1'] = '<p class="success">' . sprintf(__( 'A user account has been created for %1$s.', 'profilebuilder'), $registered_name) . '</p><!-- .success -->';
+							echo $registerFilterArray['registrationMessage1'] = apply_filters('wppb_register_account_created1', $registerFilterArray['registrationMessage1'], $registered_name);
 						}
 						
 						if (file_exists ( $wppb_addons.'addon.php' )){
@@ -1190,21 +1187,19 @@ function wppb_front_end_register($atts){
 								}
 							}
 						}
-						$registerFilterArray['redirectMessage1'] = '<font id="messageTextColor">'. __('You will soon be redirected automatically. If you see this page for more than 3 seconds, please click', 'profilebuilder'). ' <a href="'.$redirectLink.'">'.__('here', 'profilebuilder').'</a>.<meta http-equiv="Refresh" content="3;url='.$redirectLink.'" /></font><br/><br/>';	
-						$registerFilterArray['redirectMessage1'] = apply_filters('wppb_register_redirect_after_creation1', $registerFilterArray['redirectMessage1'], $redirectLink);
-						echo $registerFilterArray['redirectMessage1'];			
+						
+						$registerFilterArray['redirectMessage1'] = '<font id="messageTextColor">' . sprintf(__( 'You will soon be redirected automatically. If you see this page for more than 3 seconds, please click %1$s.%2$s', 'profilebuilder'), '<a href="'.$redirectLink.'">'.__('here', 'profilebuilder').'</a>', '<meta http-equiv="Refresh" content="3;url='.$redirectLink.'" />') . '</font><br/><br/>';
+						echo $registerFilterArray['redirectMessage1'] = apply_filters('wppb_register_redirect_after_creation1', $registerFilterArray['redirectMessage1'], $redirectLink);		
 						
 					}else{
+					
 						if ($multisite_message){
-							$registerFilterArray['wpmuRegistrationMessage2'] = '
-								<p class="success">'. __('An email has been sent to you with information on how to activate your account', 'profilebuilder') .'.</p><!-- .success -->';
-							$registerFilterArray['wpmuRegistrationMessage2'] = apply_filters('wppb_register_account_created2', $registerFilterArray['wpmuRegistrationMessage2'], $registered_name);
-							echo $registerFilterArray['wpmuRegistrationMessage2'];
+							$registerFilterArray['wpmuRegistrationMessage2'] = '<p class="success">'. __('An email has been sent to you with information on how to activate your account.', 'profilebuilder') .'</p><!-- .success -->';
+							echo $registerFilterArray['wpmuRegistrationMessage2'] = apply_filters('wppb_register_account_created2', $registerFilterArray['wpmuRegistrationMessage2'], $registered_name);
+						
 						}else{
-							$registerFilterArray['registrationMessage2'] = '
-								<p class="success">'. __('Thank you for registering', 'profilebuilder') .' '. $registered_name .'.</p><!-- .success -->';
-							$registerFilterArray['registrationMessage2'] = apply_filters('wppb_register_account_created2', $registerFilterArray['registrationMessage2'], $registered_name);
-							echo $registerFilterArray['registrationMessage2'];
+							$registerFilterArray['registrationMessage2'] = '<p class="success">' . sprintf(__( 'Thank you for registering %1$s.', 'profilebuilder'), $registered_name) .'</p><!-- .success -->';
+							echo $registerFilterArray['registrationMessage2'] = apply_filters('wppb_register_account_created2', $registerFilterArray['registrationMessage2'], $registered_name);
 						}
 						
 						$wppb_addons = WPPB_PLUGIN_DIR . '/premium/addons/';
@@ -1222,9 +1217,9 @@ function wppb_front_end_register($atts){
 								}
 							}
 						}
-						$registerFilterArray['redirectMessage2'] = '<font id="messageTextColor">'. __('You will soon be redirected automatically. If you see this page for more than 3 seconds, please click', 'profilebuilder') .' <a href="'.$redirectLink.'">'.__('here', 'profilebuilder') .'</a>.<meta http-equiv="Refresh" content="3;url='.$redirectLink.'" /></font><br/><br/>';	
-						$registerFilterArray['redirectMessage2'] = apply_filters('wppb_register_redirect_after_creation2', $registerFilterArray['redirectMessage2'], $redirectLink);
-						echo $registerFilterArray['redirectMessage2'];
+						
+						$registerFilterArray['redirectMessage2'] = '<font id="messageTextColor">' . sprintf(__( 'You will soon be redirected automatically. If you see this page for more than 3 seconds, please click %1$s.%2$s', 'profilebuilder'), '<a href="'.$redirectLink.'">'.__('here', 'profilebuilder').'</a>', '<meta http-equiv="Refresh" content="3;url='.$redirectLink.'" />') . '</font><br/><br/>';
+						echo $registerFilterArray['redirectMessage2'] = apply_filters('wppb_register_redirect_after_creation2', $registerFilterArray['redirectMessage2'], $redirectLink);
 					}
 
 			

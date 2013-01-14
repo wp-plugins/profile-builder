@@ -94,7 +94,7 @@ This plugin only adds/removes fields in the front-end. The default information-f
 
 == Changelog ==
 = 1.1.39 =
-Security issue fixed regarding the Email "Confirmation" feature
+Security issue fixed regarding the "Email Confirmation" feature
 
 = 1.1.38 =
 Added a fix (suggested by http://wordpress.org/support/profile/maximinime) regarding the admin bar not displaying properly in some instances.
