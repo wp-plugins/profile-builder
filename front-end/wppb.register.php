@@ -1123,7 +1123,7 @@ function wppb_front_end_register($atts){
 					$multisite_message = true;
 
 					$meta = array(
-						'user_pass' => $userdata['user_pass'],
+						'user_pass' => base64_encode($userdata['user_pass']),
 						'first_name' => $userdata['first_name'],
 						'last_name' => $userdata['last_name'],
 						'nickname' => $userdata['nickname'],
