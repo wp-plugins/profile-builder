@@ -950,11 +950,12 @@ function wppb_front_end_profile_info() {
 				<?php wp_nonce_field('verify_edit_user','edit_nonce_field'); ?>
 				</form><!-- #edituser -->
 			
-<?php 
-		}
+<?php 		
+			//use this action hook to add extra content after the edit profile form.
+			do_action( 'wppb_after_edit_profile_fields' ); 
 		
-		//use this action hook to add extra content after the edit profile form.
-		do_action( 'wppb_after_edit_profile_fields' ); ?>
+		}
+?>
 			
 	</div>	
 	
