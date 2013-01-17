@@ -657,12 +657,10 @@ function wppb_front_end_profile_info() {
 					$previousError = 'yes';
 				}
 			}
-		}
- 
-		/* use this action hook to add extra content before the edit profile form. */
-		do_action( 'wppb_before_edit_profile_fields' );
+	 
+			/* use this action hook to add extra content before the edit profile form. */
+			do_action( 'wppb_before_edit_profile_fields' );
 		
-		if ( is_user_logged_in() ){
 ?>
 	
 			<form enctype="multipart/form-data" method="post" id="edituser" class="user-forms" action="<?php the_permalink(); ?>">
