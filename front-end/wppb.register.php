@@ -380,17 +380,14 @@ function wppb_signup_user_notification($user, $user_email, $key, $meta = '') {
 		
 	$from_name = get_site_option( 'site_name' ) == '' ? 'WordPress' : esc_html( get_site_option( 'site_name' ) );
 	$from_name = apply_filters ('wppb_signup_user_notification_email_from_field', $from_name);
-	$message_headers = "From: \"{$from_name}\" <{$admin_email}>\n" . "Content-Type: text/plain; charset=\"" . get_option('blog_charset') . "\"\n";
+	$message_headers = apply_filters ("wppb_signup_user_notification_from", "From: \"{$from_name}\" <{$admin_email}>\n" . "Content-Type: text/plain; charset=\"" . get_option('blog_charset') . "\"\n");
+
 	$siteURL = wppb_curpageurl().wppb_passed_arguments_check().'key='.$key;
 	
+	$subject = sprintf(apply_filters( 'wppb_signup_user_notification_subject', __( '[%1$s] Activate %2$s', 'profilebuilder'), $user, $user_email, $key, $meta ), $from_name, $user);
 	$message = sprintf(apply_filters( 'wppb_signup_user_notification_email', __( "To activate your user, please click the following link:\n\n%s%s%s\n\nAfter you activate, you will receive *another email* with your login.\n\n", "profilebuilder" ),$user, $user_email, $key, $meta), '<a href="'.$siteURL.'">', $siteURL, '</a>.');
 	
-	$subject = sprintf(apply_filters( 'wppb_signup_user_notification_subject', __( '[%1$s] Activate %2$s', 'profilebuilder'), $user, $user_email, $key, $meta ), $from_name, $user);
-	
-	//we add this filter to enable html encoding
-	add_filter('wp_mail_content_type',create_function('', 'return "text/html"; '));
-	
-	$val = wp_mail($user_email, $subject, $message, $message_headers);
+	wppb_mail( $user_email, $subject, $message, $from_name, '', $user, '', $user_email, 'register_w_email_confirmation', $siteURL, $meta );
 	
 	return true;
 }
@@ -501,15 +498,11 @@ function wppb_notify_user_registration_email($bloginfo, $user_name, $email, $sen
 		$registerFilterArray['adminMessageOnRegistration'] .= '<br/>'. __('The "Admin Approval" feature was activated at the time of registration, so please remember that you need to approve this user before he/she can log in!', 'profilebuilder') ."\r\n";
 	$registerFilterArray['adminMessageOnRegistration'] = apply_filters('wppb_register_admin_message_content', $registerFilterArray['adminMessageOnRegistration'], $bloginfo, $user_name, $email);
 	
-	$registerFilterArray['adminMessageOnRegistrationTitle'] = '['. $bloginfo .'] '. __('A new subscriber has (been) registered!', 'profilebuilder');
-	$registerFilterArray['adminMessageOnRegistrationTitle'] = apply_filters ('wppb_register_admin_message_title', $registerFilterArray['adminMessageOnRegistrationTitle']);
+	$registerFilterArray['adminMessageOnRegistrationSubject'] = '['. $bloginfo .'] '. __('A new subscriber has (been) registered!', 'profilebuilder');
+	$registerFilterArray['adminMessageOnRegistrationSubject'] = apply_filters ('wppb_register_admin_message_title', $registerFilterArray['adminMessageOnRegistrationSubject']);
 
-	if (trim($registerFilterArray['adminMessageOnRegistration']) != ''){
-		//we add this filter to enable html encoding
-		add_filter('wp_mail_content_type',create_function('', 'return "text/html"; '));
-	
-		wp_mail(get_option('admin_email'), $registerFilterArray['adminMessageOnRegistrationTitle'], $registerFilterArray['adminMessageOnRegistration']);
-	}
+	if (trim($registerFilterArray['adminMessageOnRegistration']) != '')
+		wppb_mail(get_option('admin_email'), $registerFilterArray['adminMessageOnRegistrationSubject'], $registerFilterArray['adminMessageOnRegistration'], $blogInfo, '', $user_name, $passw1, $email, 'register_w_o_admin_approval_admin_email', $adminApproval, '' );
 
 	
 	//send an email to the newly registered user, if this option was selected
@@ -527,10 +520,8 @@ function wppb_notify_user_registration_email($bloginfo, $user_name, $email, $sen
 			$registerFilterArray['userMessageContent'] .= '<br/>'. __('Before you can access your account, an administrator needs to approve it. You will be notified via email.', 'profilebuilder');
 		$registerFilterArray['userMessageContent'] = apply_filters('wppb_register_email_content', $registerFilterArray['userMessageContent'], $registerFilterArray['userMessageFrom'], $user_name, $passw1);
 		
-		//we add this filter to enable html encoding
-		add_filter('wp_mail_content_type',create_function('', 'return "text/html"; '));
+		$messageSent = wppb_mail( $email, $registerFilterArray['userMessageSubject'], $registerFilterArray['userMessageContent'], $registerFilterArray['userMessageFrom'], '', $user_name, $passw1, $email, 'register_w_o_admin_approval', $adminApproval, '' );
 		
-		$messageSent = wp_mail( $email, $registerFilterArray['userMessageSubject'], $registerFilterArray['userMessageContent']);
 		if( $messageSent == TRUE)
 			return 2; 
 		else
@@ -590,15 +581,12 @@ function wppb_front_end_register($atts){
 	if ( 'POST' == $_SERVER['REQUEST_METHOD'] && !empty( $_POST['action'] ) && $_POST['action'] == 'adduser' && wp_verify_nonce($_POST['register_nonce_field'],'verify_true_registration') && ($_POST['formName'] == 'register') ) {
 		//global $wp_roles;
 		
-		//get value sent in the shortcode as parameter, default to "subscriber" if not set
-		extract(shortcode_atts(array('role' => 'subscriber'), $atts));
+		//get value sent in the shortcode as parameter, use default if not set
+		$default_role = get_option( 'default_role' );
+		extract(shortcode_atts(array('role' => $default_role), $atts));
 
 		//check if the specified role exists in the database, else fall back to the "safe-zone"
-		$found = get_role($role);
-		
-		if ($found != null)
-			$aprovedRole = $role;
-		else $aprovedRole = get_option( 'default_role' );
+		$aprovedRole = ( ($role == $default_role) || get_role($role) ) ? $role : $default_role;
 	
 		/* preset the values in case some are not submitted */
 		$user_pass = '';
@@ -1571,7 +1559,7 @@ function wppb_front_end_register($atts){
 								
 								//copy over extra fields to the rest of the fieldso on the edit profile
 								foreach($returnedValue as $key => $value)
-									$registerFilterArray2[$key] = $value;
+									$registerFilterArray2[$key] = apply_filters('wppb_register_content_'.$key, $value);
 							}
 
 							if(function_exists('wppb_add_recaptcha_to_registration_form')){

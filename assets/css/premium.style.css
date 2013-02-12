@@ -369,9 +369,9 @@ a:hover strong {
           background-image: -moz-linear-gradient(top, #f9f9f9, #f1f1f1);
           background-image: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#f1f1f1));
         }
-        tbody tr:hover {
+        /*tbody tr:hover {
           cursor: pointer;
-        }
+        }*/
         tbody tr.inline-edit-option {
         }
           tbody tr.inline-edit-option td {
@@ -970,7 +970,7 @@ div.file_wrap {
 	vertical-align:middle;
 }	
 	
-#general-settings input[type="submit"], #show-hide-admin-bar input[type="submit"], #default-fields input[type="submit"], #register-profile-builder input[type="submit"], #add-ons input[type="submit"], #wppb_customRedirect input[type="submit"], #wppb_userListing input[type="submit"], #disableLoginAndRegistration input[type="submit"], #wppb_reCaptcha input[type="submit"]{
+#general-settings input[type="submit"], #show-hide-admin-bar input[type="submit"], #default-fields input[type="submit"], #register-profile-builder input[type="submit"], #add-ons input[type="submit"], #wppb_customRedirect input[type="submit"], #wppb_userListing input[type="submit"], #disableLoginAndRegistration input[type="submit"], #wppb_reCaptcha input[type="submit"], #wppb_emailCustomizer input[type="submit"], #wppb_emailCustomizerAdmin input[type="submit"]{
 	position:absolute; 
 	bottom:0; 
 	right:0; 
@@ -1200,6 +1200,9 @@ div.file_wrap {
 #framework_wrap #content #singleSlug{
 	width:100%;
 }
+#framework_wrap #content #sortingCriteriaSelect{
+	width:100%;
+}
 #framework_wrap #content #sortingOrderSelect{
 	width:120px;
 }
@@ -1209,3 +1212,59 @@ div.file_wrap {
 #framework_wrap #content #insertExtraFunction{
 	width:100%;
 }
+
+/*STYLE EMAIL CUSTOMIZER*/
+
+#framework_wrap #content .emailCustomizer  table	{ border:0;  }
+#framework_wrap #content .emailCustomizerAdmin  table	{ border:0;  }
+#framework_wrap #content .emailCustomizer table table.mceLayout					{ border-left:1px solid #DFDFDF; border-right:1px solid #DFDFDF;   }
+#framework_wrap #content .emailCustomizer table table.mceLayout	iframe			{ min-height:400px;   }
+#framework_wrap #content .emailCustomizer .wp-editor-area						{ border-radius:0 0 3px 3px; -moz-border-radius:0 0 3px 3px; -webkit-border-radius:0 0 3px 3px; -o-border-radius:0 0 3px 3px; -ms-border-radius:0 0 3px 3px;   }
+
+/*.emailCustomizerAdmin	.emailCustomizerAdminRow  td													{ border:0; }*/
+
+.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+.clearfix       { * clear:both;    }
+
+
+.labelAction				{ color:#333333; position: relative; font-size: 14px; font-family: Arial; background:none #EAF3FA; padding:20px 90px 20px 10px; border-top:1px solid #dfdfdf; }
+.labelAction.yellow			{ border-bottom: 1px solid #dfdfdf; padding:20px 10px; }
+.labelAction.blue			{ border-bottom: 0; padding: 20px 10px;  }
+
+.arrow 						{ position: absolute; width:13px; height:9px; bottom:-9px; * bottom:-8px; left:20px; }
+.yellow  .arrow 			{ background:url(../images/arrow.png) 0px bottom no-repeat transparent; }
+.yellow 					{ background:none #fffbcc; }
+.blue	 					{ background:none #eaf3fa; }
+
+p.blueTxt					{ color:#21759b!important; font-size: 13px!important; padding: 15px 0 10px!important; margin-bottom: 10px!important; border-bottom: 1px solid #eeeeee; font-family: Arial; font-weight: bold;   }
+
+.wrapElement				{ border-left:1px solid #dfdfdf; border-right:1px solid #dfdfdf; }
+
+table.toggleElement			{ padding-bottom:25px; margin-bottom: 0; padding-top: 10px; }
+table.toggleElement	 tr td	{ border-bottom:0;  }
+table.commonSettings2	 tr td	{ border-bottom:0;  }
+table.commonSettings2			{ padding-bottom:25px; margin-bottom: 0; padding-top: 10px; }
+
+.emailCustomizer a.button_emailCustomizer	{ position: absolute; right:10px; top:17px; }
+.emailCustomizer .mceToolbar					{ width:98%!important; }
+.emailCustomizer .wp-editor-container	{ border:0;  }
+.emailCustomizer a.button_emailCustomizer:hover,
+.emailCustomizer a.button_emailCustomizer:active,
+.emailCustomizer a.button_emailCustomizer:focus 	{ color:#333333;  }
+
+table td.textDescriptive	{ padding:0 10px; }
+.TableHeader	 			{ color:#0f0f0f; font-size:11px; font-family: Arial; padding:10px; border:1px solid #dfdfdf; border-radius:5px 5px 0 0; -moz-border-radius:5px 5px 0 0; -webkit-border-radius:5px 5px 0 0; -o-border-radius:5px 5px 0 0; -ms-border-radius:5px 5px 0 0;  border-bottom: 0; background: none #f4f4f4;  }
+.TableHeader.downFooter		{ border-bottom: 1px solid #dfdfdf; border-top: 1px solid #dfdfdf; border-radius: 0 0 5px 5px; -moz-border-radius: 0 0 5px 5px; -webkit-border-radius: 0 0 5px 5px; -o-border-radius: 0 0 5px 5px; -ms-border-radius: 0 0 5px 5px; }
+.emailCustomizer .toggleElement .emailCustomizerUserCell1, .emailCustomizer .commonSettings2 .emailCustomizerAdminCell1{
+	width:30%;
+}
+
+.emailCustomizer .toggleElement .emailCustomizerUserCell2, .emailCustomizer .commonSettings2 .emailCustomizerAdminCell2{
+	width:70%;
+}
+
+span .selectable{
+	cursor: text;
+}
+
+/*END STYLE EMAIL CUSTOMIZER*/
