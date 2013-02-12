@@ -3,7 +3,7 @@
 Plugin Name: Profile Builder
 Plugin URI: http://www.cozmoslabs.com/2011/04/12/wordpress-profile-builder-a-front-end-user-registration-login-and-edit-profile-plugin/
 Description: Login, registration and edit profile shortcodes for the front-end. Also you can chose what fields should be displayed or add new (custom) ones both in the front-end and in the dashboard.
-Version: 1.1.41
+Version: 1.1.42
 Author: Reflection Media, Barina Gabriel
 Author URI: http://www.reflectionmedia.ro
 License: GPL2
@@ -54,12 +54,19 @@ function return_bytes($val) {
 } 
  
  
-define( 'PROFILE_BUILDER_VERSION', '1.1.41' );
+define( 'PROFILE_BUILDER_VERSION', '1.1.42' );
 define( 'WPPB_PLUGIN_DIR', WP_PLUGIN_DIR . '/' . dirname( plugin_basename( __FILE__ ) ) );
-define( 'WPPB_PLUGIN_URL', WP_PLUGIN_URL . '/' . dirname( plugin_basename( __FILE__ ) ) );
-define( 'WPPB_SERVER_MAX_UPLOAD_SIZE_BYTE', return_bytes( ini_get( 'upload_max_filesize') ) );
+
+if (file_exists ( WPPB_PLUGIN_DIR . '/premium/addons/addon.php' ))
+	define( 'WPPB_PLUGIN_URL', plugins_url( 'profile-builder-pro' ) );
+elseif (file_exists ( WPPB_PLUGIN_DIR . '/premium/functions/premium.functions.load.php' ))
+	define( 'WPPB_PLUGIN_URL', plugins_url( 'profile-builder-hobbyist' ) );
+else
+	define( 'WPPB_PLUGIN_URL', plugins_url( 'profile-builder' ) );
+
+define( 'WPPB_SERVER_MAX_UPLOAD_SIZE_BYTE', wppb_return_bytes( ini_get( 'upload_max_filesize') ) );
 define( 'WPPB_SERVER_MAX_UPLOAD_SIZE_MEGA', ini_get( 'upload_max_filesize') );
-define( 'WPPB_SERVER_MAX_POST_SIZE_BYTE', return_bytes( ini_get( 'post_max_size') ) );
+define( 'WPPB_SERVER_MAX_POST_SIZE_BYTE', wppb_return_bytes( ini_get( 'post_max_size') ) );
 define( 'WPPB_SERVER_MAX_POST_SIZE_MEGA', ini_get( 'post_max_size') );
 define( 'WPPB_TRANSLATE_DIR', WPPB_PLUGIN_DIR.'/translation' );
 define( 'WPPB_TRANSLATE_DOMAIN', 'profilebuilder' );

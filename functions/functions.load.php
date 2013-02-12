@@ -22,7 +22,7 @@ Original Author URI: http://valendesigns.com
 	register_setting( 'customRedirectSettings', 'customRedirectSettings' );
 	register_setting( 'customUserListingSettings', 'customUserListingSettings' );
 	register_setting( 'reCaptchaSettings', 'reCaptchaSettings' );
-	
+	register_setting( 'emailCustomizer', 'emailCustomizer' );
 }
 
 
@@ -33,9 +33,21 @@ $wppb_premiumAdmin = WPPB_PLUGIN_DIR . '/premium/functions/';
 if (file_exists ( $wppb_premiumAddon.'recaptcha.php' ))
 	include_once($wppb_premiumAddon.'recaptcha.php');
 if (file_exists ( $wppb_premiumAddon.'custom.redirects.php' ))
-	include_once($wppb_premiumAddon.'custom.redirects.php');	
+	include_once($wppb_premiumAddon.'custom.redirects.php');
+if (file_exists ( $wppb_premiumAddon.'email.customizer.php' ))
+	include_once($wppb_premiumAddon.'email.customizer.php');
+else{
+	// simple wp_mail "prototype"
+	function wppb_mail($to, $subject, $message, $blogInfo, $userID, $userName, $password, $userEmail, $function, $extraData1, $extraData2){
+	
+		//we add this filter to enable html encoding
+		add_filter('wp_mail_content_type',create_function('', 'return "text/html"; '));
+		
+		return $sent = wp_mail( $to , $subject, $message);
+	}
+}
 if (file_exists ( $wppb_premiumAddon.'userlisting.php' )){
-	include_once($wppb_premiumAddon.'userlisting.php');    
+	include_once($wppb_premiumAddon.'userlisting.php');  
 
 	$wppb_addonOptions = get_option('wppb_addon_settings');
 	if ($wppb_addonOptions['wppb_userListing'] == 'show'){
@@ -89,31 +101,32 @@ function wppb_add_plugin_stylesheet() {
 
 function wppb_show_admin_bar($content){
 	global $current_user;
-
-	$admintSettingsPresent = get_option('wppb_display_admin_settings','not_found');
-
-	if ($admintSettingsPresent != 'not_found' && $current_user->ID)
+	global $wpdb;
 	
-		foreach ($current_user->roles as $role_key) {
-		
-			if (empty($GLOBALS['wp_roles']->roles[$role_key]))
-				continue;
+	$userRole = '';
+	$admintSettingsPresent = get_option('wppb_display_admin_settings','not_found');
+	
+	if ($admintSettingsPresent != 'not_found'){
+		if ($current_user->ID != 0){
 				
-			$role = $GLOBALS['wp_roles']->roles[$role_key];
+			$userRole = apply_filters ( 'wppb_user_role_value', $current_user->roles[0], $current_user->ID);
 			
-			if (isset($admintSettingsPresent[$role['name']])) {
-			
-				if ($admintSettingsPresent[$role['name']] == 'show')
+			if ($userRole != NULL){
+				$getSettings = $admintSettingsPresent[$userRole];
+				if ($getSettings == 'show')
 					return true;
 					
-				if ($admintSettingsPresent[$role['name']] == 'hide')
+				elseif ($getSettings == 'hide')
 					return false;
-			}
+			
+			}else
+				return true;
 		}
 		
-	return $content;
+	}else
+		return true;
+		
 }
-
 
 if(!function_exists('wppb_curpageurl')){
 	function wppb_curpageurl() {
@@ -230,3 +243,31 @@ if ( is_admin() ){
 	/* Shortcodes used for the widget area. */
 	add_filter('widget_text', 'do_shortcode', 11);
 }
+
+function wppb_website_email($sender_email){
+	$wppb_addonOptions = get_option('wppb_addon_settings');
+	
+	if (($wppb_addonOptions['wppb_emailCustomizer'] == 'show') || ($wppb_addonOptions['wppb_emailCustomizerAdmin'] == 'show')){
+		$emailCustomizer = get_option('emailCustomizer');
+		
+		$sender_email = str_replace( '%%reply_to%%', $sender_email, $emailCustomizer['from'] );
+		
+	}
+
+    return $sender_email = apply_filters('website_email_filter', $sender_email);
+}
+add_filter('wp_mail_from','wppb_website_email');
+ 
+function wppb_website_name($site_name){
+	$wppb_addonOptions = get_option('wppb_addon_settings');
+	
+	if (($wppb_addonOptions['wppb_emailCustomizer'] == 'show') || ($wppb_addonOptions['wppb_emailCustomizerAdmin'] == 'show')){
+		$emailCustomizer = get_option('emailCustomizer');
+		
+		$site_name = str_replace( '%%site_name%%', $site_name, $emailCustomizer['from_name'] );
+		
+	}
+
+    return $site_name = apply_filters('website_email_filter', $site_name);
+}
+add_filter('wp_mail_from_name','wppb_website_name');

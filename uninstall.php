@@ -19,14 +19,16 @@ foreach ($allUserMeta as $userMeta) {
 	if (in_array($userMeta->meta_key, $customFieldNames)){
 		$metaFieldName = $userMeta->meta_key;
 		$metaFieldValue = $userMeta->meta_value;
-		$wpdb->query("DELETE FROM $wpdb->usermeta WHERE meta_key = '".$metaFieldName."'	AND meta_value = '".$metaFieldValue."'");
+		delete_user_meta( $userMeta->user_id, $metaFieldName, $metaFieldValue );
+		//$wpdb->query("DELETE FROM $wpdb->usermeta WHERE meta_key = '".$metaFieldName."' AND meta_value = '".$metaFieldValue."'");
 	}
 
 	$foundAvatar = strpos ( (string)$userMeta->meta_key , 'resized_avatar_' );
 	if ( $foundAvatar !== FALSE ){
 		$metaFieldName = $userMeta->meta_key;
 		$metaFieldValue = $userMeta->meta_value;
-		$wpdb->query("DELETE FROM $wpdb->usermeta WHERE meta_key = '".$metaFieldName."'	AND meta_value = '".$metaFieldValue."'");
+		delete_user_meta( $userMeta->user_id, $metaFieldName, $metaFieldValue );
+		//$wpdb->query("DELETE FROM $wpdb->usermeta WHERE meta_key = '".$metaFieldName."' AND meta_value = '".$metaFieldValue."'");
 	}
 }
 
@@ -46,3 +48,4 @@ delete_option( 'customRedirectSettings' ); 					// Delete the custom redirect se
 delete_option( 'userListingSettings' ); 					// Delete the user-listing settings (old one; preserving backwards compatibility)
 delete_option( 'customUserListingSettings' ); 				// Delete the user-listing settings (since 1.1.21)
 delete_option( 'reCaptchaSettings' ); 						// Delete the public and private keys used by the reCAPTCHA addon (since 1.1.42)
+delete_option( 'emailCustomizer' ); 						// Delete the email-customizer settings
