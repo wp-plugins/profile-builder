@@ -104,15 +104,18 @@ function wppb_show_admin_bar($content){
 	global $wpdb;
 	
 	$userRole = '';
-	$admintSettingsPresent = get_option('wppb_display_admin_settings','not_found');
+	$adminSettingsPresent = get_option('wppb_display_admin_settings','not_found');
 	
-	if ($admintSettingsPresent != 'not_found'){
+	if ($adminSettingsPresent != 'not_found'){
+		foreach($adminSettingsPresent as $key => $value)
+			$adminSettingsPresentToLower[strtolower($key)] = $value;
+		
 		if ($current_user->ID != 0){
 				
-			$userRole = apply_filters ( 'wppb_user_role_value', $current_user->roles[0], $current_user->ID);
+			$userRole = apply_filters ( 'wppb_user_role_value', strtolower($current_user->roles[0]), $current_user->ID);
 			
 			if ($userRole != NULL){
-				$getSettings = $admintSettingsPresent[$userRole];
+				$getSettings = $adminSettingsPresentToLower[$userRole];
 				if ($getSettings == 'show')
 					return true;
 					
