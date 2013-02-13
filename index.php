@@ -37,7 +37,7 @@ Original Author URI: http://valendesigns.com
  *
  */
 
-function return_bytes($val) {
+function wppb_return_bytes($val) {
     $val = trim($val);
     $last = strtolower($val[strlen($val)-1]);
     switch($last) {
