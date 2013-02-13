@@ -54,7 +54,7 @@ function wppb_return_bytes($val) {
 } 
  
  
-define( 'PROFILE_BUILDER_VERSION', '1.1.42' );
+define( 'PROFILE_BUILDER_VERSION', '1.1.43' );
 define( 'WPPB_PLUGIN_DIR', WP_PLUGIN_DIR . '/' . dirname( plugin_basename( __FILE__ ) ) );
 
 if (file_exists ( WPPB_PLUGIN_DIR . '/premium/addons/addon.php' ))
