@@ -3,7 +3,7 @@
 Plugin Name: Profile Builder
 Plugin URI: http://www.cozmoslabs.com/2011/04/12/wordpress-profile-builder-a-front-end-user-registration-login-and-edit-profile-plugin/
 Description: Login, registration and edit profile shortcodes for the front-end. Also you can chose what fields should be displayed or add new (custom) ones both in the front-end and in the dashboard.
-Version: 1.1.42
+Version: 1.1.44
 Author: Reflection Media, Barina Gabriel
 Author URI: http://www.reflectionmedia.ro
 License: GPL2
@@ -37,7 +37,7 @@ Original Author URI: http://valendesigns.com
  *
  */
 
-function return_bytes($val) {
+function wppb_return_bytes($val) {
     $val = trim($val);
     $last = strtolower($val[strlen($val)-1]);
     switch($last) {
@@ -54,7 +54,7 @@ function return_bytes($val) {
 } 
  
  
-define( 'PROFILE_BUILDER_VERSION', '1.1.42' );
+define( 'PROFILE_BUILDER_VERSION', '1.1.44' );
 define( 'WPPB_PLUGIN_DIR', WP_PLUGIN_DIR . '/' . dirname( plugin_basename( __FILE__ ) ) );
 
 if (file_exists ( WPPB_PLUGIN_DIR . '/premium/addons/addon.php' ))
