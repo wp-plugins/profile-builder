@@ -1089,11 +1089,12 @@ function wppb_front_end_register($atts){
 					}
 
 					// if admin approval is activated, then block the user untill he gets approved
-					$wppb_generalSettings = get_option('wppb_general_settings');
-					if($wppb_generalSettings['adminApproval'] == 'yes'){
-						wp_set_object_terms( $new_user, array( 'unapproved' ), 'user_status', false);
-						clean_object_term_cache( $new_user, 'user_status' );
-					}
+					$wppb_generalSettings = get_option('wppb_general_settings', 'not_found');
+					if ($wppb_generalSettings != 'not_found')
+						if($wppb_generalSettings['adminApproval'] == 'yes'){
+							wp_set_object_terms( $new_user, array( 'unapproved' ), 'user_status', false);
+							clean_object_term_cache( $new_user, 'user_status' );
+						}
 					
 					// send an email to the admin, and - if selected - to the user also.
 					$bloginfo = get_bloginfo( 'name' );
@@ -1161,7 +1162,9 @@ function wppb_front_end_register($atts){
 							echo $registerFilterArray['registrationMessage1'] = apply_filters('wppb_register_account_created1', $registerFilterArray['registrationMessage1'], $registered_name);
 						}
 						
-						if (file_exists ( $wppb_addons.'addon.php' )){
+						$redirectLink = wppb_curpageurl();
+						
+						if (file_exists ( WPPB_PLUGIN_DIR . '/premium/addons/addon.php' )){
 							//check to see if the redirecting addon is present and activated
 							$wppb_addon_settings = get_option('wppb_addon_settings');
 							if ($wppb_addon_settings['wppb_customRedirect'] == 'show'){
@@ -1190,8 +1193,9 @@ function wppb_front_end_register($atts){
 							echo $registerFilterArray['registrationMessage2'] = apply_filters('wppb_register_account_created2', $registerFilterArray['registrationMessage2'], $registered_name);
 						}
 						
-						$wppb_addons = WPPB_PLUGIN_DIR . '/premium/addons/';
-						if (file_exists ( $wppb_addons.'addon.php' )){
+						$redirectLink = wppb_curpageurl();
+						
+						if (file_exists ( WPPB_PLUGIN_DIR . '/premium/addons/addon.php' )){
 							//check to see if the redirecting addon is present and activated
 							$wppb_addon_settings = get_option('wppb_addon_settings');
 							if ($wppb_addon_settings['wppb_customRedirect'] == 'show'){
@@ -1513,6 +1517,7 @@ function wppb_front_end_register($atts){
 
 						if ($wppb_defaultOptions['password'] == 'show'){
 							$errorMark = '';
+							$errorMark2 = '';
 							$errorVar = '';
 							$errorVar2 = '';
 							if ($wppb_defaultOptions['passwordRequired'] == 'yes'){
