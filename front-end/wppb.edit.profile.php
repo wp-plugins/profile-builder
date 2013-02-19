@@ -944,7 +944,7 @@ function wppb_front_end_profile_info() {
 				
 				<p class="form-submit">
 					<input name="updateuser" type="submit" id="updateuser" class="submit button" value="<?php _e('Update', 'profilebuilder'); ?>" />
-					<?php// wp_nonce_field( 'update-user' ) ?>
+					<?php // wp_nonce_field( 'update-user' ) ?>
 					<input name="action" type="hidden" id="action" value="update-user" />
 				</p><!-- .form-submit -->
 				<?php wp_nonce_field('verify_edit_user','edit_nonce_field'); ?>

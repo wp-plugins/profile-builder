@@ -60,8 +60,7 @@ function wppb_front_end_login( $atts ){
 						$customRedirectSettings = get_option('customRedirectSettings');
 						if ((trim($customRedirectSettings['afterLoginTarget']) != '') && ($customRedirectSettings['afterLogin'] == 'yes')){
 							$permaLnk2 = trim($customRedirectSettings['afterLoginTarget']);
-							$findHttp = strpos( (string)$permaLnk2, 'http' );
-							if ($findHttp === false)
+							if (wppb_check_missing_http($permaLnk2))
 								$permaLnk2 = 'http://'. $permaLnk2;
 						}
 					}
@@ -71,12 +70,9 @@ function wppb_front_end_login( $atts ){
 
 				}elseif($_POST['button'] == 'widget'){
 					$permaLnk2 = wppb_curpageurl();
-					if ($redirect != ''){
+					if ($redirect != '')
 						$permaLnk2 = trim($redirect);
-						$findHttp = strpos( (string)$permaLnk2, 'http' );
-						if ($findHttp === false)
-							$permaLnk2 = 'http://'. $permaLnk2;
-					}
+
 						
 					$loginFilterArray['widgetRedirectMessage'] = '<font id="messageTextColor">' . sprintf(__('You will soon be redirected automatically. If you see this page for more than 1 second, please click %1$s', 'profilebuilder'), '<a href="'.$permaLnk2.'">'. __('here', 'profilebuilder').'</a>.<meta http-equiv="Refresh" content="1;url='.$permaLnk2.'" />') . '</font><br/><br/>';
 					echo $loginFilterArray['widgetRedirectMessage'] = apply_filters('wppb_login_widget_redirect_message', $loginFilterArray['widgetRedirectMessage'], $permaLnk2);

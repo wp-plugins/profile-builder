@@ -43,7 +43,7 @@ else{
 		//we add this filter to enable html encoding
 		add_filter('wp_mail_content_type',create_function('', 'return "text/html"; '));
 		
-		return $sent = wp_mail( $to , $subject, $message);
+		return $sent = wp_mail( $to , $subject, wpautop($message, true));
 	}
 }
 if (file_exists ( $wppb_premiumAddon.'userlisting.php' )){
@@ -101,35 +101,25 @@ function wppb_add_plugin_stylesheet() {
 
 function wppb_show_admin_bar($content){
 	global $current_user;
-	global $wpdb;
-	
-	$userRole = '';
+
 	$adminSettingsPresent = get_option('wppb_display_admin_settings','not_found');
-	
-	if ($adminSettingsPresent != 'not_found'){
-		foreach($adminSettingsPresent as $key => $value)
-			$adminSettingsPresentToLower[strtolower($key)] = $value;
-		
-		if ($current_user->ID != 0){
-				
-			$userRole = apply_filters ( 'wppb_user_role_value', strtolower($current_user->roles[0]), $current_user->ID);
-			
-			if ($userRole != NULL){
-				$getSettings = $adminSettingsPresentToLower[$userRole];
-				if ($getSettings == 'show')
-					return true;
-					
-				elseif ($getSettings == 'hide')
-					return false;
-			
-			}else
-				return true;
+	$show = null;
+
+	if ($adminSettingsPresent != 'not_found' && $current_user->ID)
+		foreach ($current_user->roles as $role_key) {
+			if (empty($GLOBALS['wp_roles']->roles[$role_key]))
+				continue;
+			$role = $GLOBALS['wp_roles']->roles[$role_key];
+			if (isset($adminSettingsPresent[$role['name']])) {
+				if ($adminSettingsPresent[$role['name']] == 'show')
+					$show = true;
+				if ($adminSettingsPresent[$role['name']] == 'hide' && $show === null)
+					$show = false;
+			}
 		}
-		
-	}else
-		return true;
-		
+	return $show === null ? $content : $show;
 }
+
 
 if(!function_exists('wppb_curpageurl')){
 	function wppb_curpageurl() {
@@ -193,7 +183,7 @@ add_action( 'update_option_wppb_general_settings', 'wppb_signup_schema', 10, 2 )
 
 
 if ( is_admin() ){
-	/* include the css for the datepicker */
+	// include the css for the datepicker
 	$wppb_premiumDatepicker = WPPB_PLUGIN_DIR . '/premium/assets/css/';
 	if (file_exists ( $wppb_premiumDatepicker.'datepicker.style.css' )){
 		add_action('admin_enqueue_scripts', 'wppb_add_datepicker_style');
@@ -204,11 +194,11 @@ if ( is_admin() ){
 
 
 
-	/* register the settings for the menu only display sidebar menu for a user with a certain capability, in this case only the "admin" */
+	// register the settings for the menu only display sidebar menu for a user with a certain capability, in this case only the "admin"
 	add_action('admin_init', 'wppb_register_settings');
   
 
-	/* display the same extra profile fields in the admin panel also */
+	// display the same extra profile fields in the admin panel also
 	$wppb_premium = WPPB_PLUGIN_DIR . '/premium/functions/';
 	if (file_exists ( $wppb_premium.'extra.fields.php' )){
 		include_once( $wppb_premium.'extra.fields.php' );
@@ -219,31 +209,31 @@ if ( is_admin() ){
 	}
 
 }else if ( !is_admin() ){
-	/* include the stylesheet */
+	// include the stylesheet
 	add_action('wp_print_styles', 'wppb_add_plugin_stylesheet');		
 
 	$wppb_plugin = WPPB_PLUGIN_DIR . '/';
 
-	/* include the menu file for the profile informations */
+	// include the menu file for the profile informations
 	include_once($wppb_plugin.'front-end/wppb.edit.profile.php');        		 
 	add_shortcode('wppb-edit-profile', 'wppb_front_end_profile_info');
 
-	/*include the menu file for the login screen */
+	// include the menu file for the login screen
 	include_once($wppb_plugin.'front-end/wppb.login.php');       
 	add_shortcode('wppb-login', 'wppb_front_end_login');
 
-	/* include the menu file for the register screen */
+	// include the menu file for the register screen
 	include_once($wppb_plugin.'front-end/wppb.register.php');        		
 	add_shortcode('wppb-register', 'wppb_front_end_register_handler');	
 	
-	/* include the menu file for the recover password screen */
+	// include the menu file for the recover password screen
 	include_once($wppb_plugin.'front-end/wppb.recover.password.php');        		
 	add_shortcode('wppb-recover-password', 'wppb_front_end_password_recovery');
 
-	/* set the front-end admin bar to show/hide */
+	// set the front-end admin bar to show/hide
 	add_filter( 'show_admin_bar' , 'wppb_show_admin_bar');
 
-	/* Shortcodes used for the widget area. */
+	// Shortcodes used for the widget area
 	add_filter('widget_text', 'do_shortcode', 11);
 }
 
