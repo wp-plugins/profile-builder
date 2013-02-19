@@ -1172,8 +1172,7 @@ function wppb_front_end_register($atts){
 								$customRedirectSettings = get_option('customRedirectSettings');
 								if ((trim($customRedirectSettings['afterRegisterTarget']) != '') && ($customRedirectSettings['afterRegister'] == 'yes')){
 									$redirectLink = trim($customRedirectSettings['afterRegisterTarget']);
-									$findHttp = strpos( (string)$redirectLink, 'http' );
-									if ($findHttp === false)
+									if (wppb_check_missing_http($redirectLink))
 										$redirectLink = 'http://'. $redirectLink;
 								}
 							}
@@ -1203,8 +1202,7 @@ function wppb_front_end_register($atts){
 								$customRedirectSettings = get_option('customRedirectSettings');
 								if ((trim($customRedirectSettings['afterRegisterTarget']) != '') && ($customRedirectSettings['afterRegister'] == 'yes')){
 									$redirectLink = trim($customRedirectSettings['afterRegisterTarget']);
-									$findHttp = strpos( (string)$redirectLink, 'http' );
-									if ($findHttp === false)
+									if (wppb_check_missing_http($redirectLink))
 										$redirectLink = 'http://'. $redirectLink;
 								}
 							}
