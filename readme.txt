@@ -86,11 +86,11 @@ This plugin only adds/removes fields in the front-end. The default information-f
 
 
 == Screenshots ==
-1. General Settings: screenshot1.jpg
-2. Show/Hide Admin Bar: screenshot3.jpg
-3. Select Default User Fields: screenshot4
-4. Register Page: screenshot6.jpg
-5. Logged in Page: screenshot7.jpg
+1. General Settings
+2. Show/Hide Admin Bar
+3. Select Default User Fields
+4. Register Page
+5. Logged in Page
 
 == Changelog ==
 = 1.1.46 =
