@@ -89,8 +89,8 @@ This plugin only adds/removes fields in the front-end. The default information-f
 1. General Settings
 2. Show/Hide Admin Bar
 3. Select Default User Fields
-4. Register Page
-5. Logged in Page
+4. Logged in Page
+5. Register Page
 
 == Changelog ==
 = 1.1.46 =
