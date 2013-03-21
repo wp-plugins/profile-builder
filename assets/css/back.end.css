@@ -1,0 +1,3 @@
+.users_page_unconfirmed_emails #separatorID, .users_page_unconfirmed_emails .unconfirmedEmailUsers, .users_page_unconfirmed_emails #unconfirmedEmailNo{
+	display:none;
+}
