@@ -15,8 +15,6 @@ function wppb_save_the_password(){
 	global $changesSavedNoMatchingPass;
 	global $changesSavedNoPass;
 	
-	/* Load registration file. */
-	require_once(ABSPATH . WPINC . '/registration.php');
 	/* Get user info. */
 	global $current_user;
 
@@ -61,10 +59,9 @@ function wppb_front_end_profile_info() {
 	$uploadExt = array();
 	$uploadSize = array();
 	$editFilterArray = array();
+	$error = null;
 	
 	
-	/* Load registration file. */
-		require_once(ABSPATH . WPINC . '/registration.php');
 	/* Get user info. */
 		global $current_user;
 		
@@ -134,7 +131,7 @@ function wppb_front_end_profile_info() {
 		if ($wppb_defaultOptions['firstname'] == 'show'){
 			$_POST['first_name'] =  apply_filters('wppb_edit_profile_posted_first_name', $_POST['first_name']);
 			if ($wppb_defaultOptions['firstnameRequired'] == 'yes'){
-				if ((trim($_POST['first_name']) != '') && isset($_POST['first_name'])){
+				if (isset($_POST['first_name']) && (trim($_POST['first_name']) != '')){
 					wp_update_user( array( 'ID' => $current_user->id, 'first_name' => esc_attr( $_POST['first_name'] )));
 					$changesSaved = 'yes';
 				}
@@ -147,7 +144,7 @@ function wppb_front_end_profile_info() {
 		if ($wppb_defaultOptions['lastname'] == 'show'){
 			$_POST['last_name'] =  apply_filters('wppb_edit_profile_posted_last_name', $_POST['last_name']);
 			if ($wppb_defaultOptions['lastnameRequired'] == 'yes'){
-				if ((trim($_POST['last_name']) != '') && isset($_POST['last_name'])){
+				if (isset($_POST['last_name']) && (trim($_POST['last_name']) != '')){
 					wp_update_user( array( 'ID' => $current_user->id, 'last_name' => esc_attr( $_POST['last_name'] )));
 					$changesSaved = 'yes';
 				}
@@ -160,7 +157,7 @@ function wppb_front_end_profile_info() {
 		if ($wppb_defaultOptions['nickname'] == 'show'){
 			$_POST['nickname'] =  apply_filters('wppb_edit_profile_posted_nickname', $_POST['nickname']);
 			if ($wppb_defaultOptions['nicknameRequired'] == 'yes'){
-				if ((trim($_POST['nickname']) != '') && isset($_POST['nickname'])){
+				if (isset($_POST['nickname']) && (trim($_POST['nickname']) != '')){
 					wp_update_user( array( 'ID' => $current_user->id, 'nickname' => esc_attr( $_POST['nickname'] )));
 					$changesSaved = 'yes';
 				}
@@ -174,7 +171,7 @@ function wppb_front_end_profile_info() {
 		if ($wppb_defaultOptions['dispname'] == 'show'){
 			$_POST['display_name'] =  apply_filters('wppb_edit_profile_posted_display_name', $_POST['display_name']);
 			if ($wppb_defaultOptions['dispnameRequired'] == 'yes'){
-				if ((trim($_POST['display_name']) != '') && isset($_POST['display_name'])){
+				if (isset($_POST['display_name']) && (trim($_POST['display_name']) != '')){
 					wp_update_user( array( 'ID' => $current_user->id, 'display_name' => esc_attr( $_POST['display_name'] )));
 					$changesSaved = 'yes';
 				}
@@ -187,7 +184,7 @@ function wppb_front_end_profile_info() {
 		if ($wppb_defaultOptions['website'] == 'show'){
 			$_POST['website'] =  apply_filters('wppb_edit_profile_posted_website', $_POST['website']);
 			if ($wppb_defaultOptions['websiteRequired'] == 'yes'){
-				if ((trim($_POST['website']) != '') && isset($_POST['website'])){
+				if (isset($_POST['website']) && (trim($_POST['website']) != '')){
 					$wppbPos = strpos( (string)$_POST['website'], 'http://' );
 					if($wppbPos !== FALSE){
 						wp_update_user( array( 'ID' => $current_user->id, 'user_url' => esc_attr( $_POST['website'] )));
@@ -217,7 +214,7 @@ function wppb_front_end_profile_info() {
 		if ($wppb_defaultOptions['aim'] == 'show'){
 			$_POST['aim'] =  apply_filters('wppb_edit_profile_posted_aim', $_POST['aim']);
 			if ($wppb_defaultOptions['aimRequired'] == 'yes'){
-				if ((trim($_POST['aim']) != '') && isset($_POST['aim'])){
+				if (isset($_POST['aim']) && (trim($_POST['aim']) != '')){
 					update_user_meta( $current_user->id, 'aim', esc_attr( $_POST['aim'] ) );
 					$changesSaved = 'yes';
 				}
@@ -230,7 +227,7 @@ function wppb_front_end_profile_info() {
 		if ($wppb_defaultOptions['yahoo'] == 'show'){
 			$_POST['yim'] =  apply_filters('wppb_edit_profile_posted_yahoo', $_POST['yim']);
 			if ($wppb_defaultOptions['yahooRequired'] == 'yes'){
-				if ((trim($_POST['yim']) != '') && isset($_POST['yim'])){
+				if (isset($_POST['yim']) && (trim($_POST['yim']) != '')){
 					update_user_meta( $current_user->id, 'yim', esc_attr( $_POST['yim'] ) );
 					$changesSaved = 'yes';
 				}
@@ -243,7 +240,7 @@ function wppb_front_end_profile_info() {
 		if ($wppb_defaultOptions['jabber'] == 'show'){
 			$_POST['jabber'] =  apply_filters('wppb_edit_profile_posted_jabber', $_POST['jabber']);
 			if ($wppb_defaultOptions['jabberRequired'] == 'yes'){
-				if ((trim($_POST['jabber']) != '') && isset($_POST['jabber'])){
+				if (isset($_POST['jabber']) && (trim($_POST['jabber']) != '')){
 					update_user_meta( $current_user->id, 'jabber', esc_attr( $_POST['jabber'] ) );
 					$changesSaved = 'yes';
 				}
@@ -256,7 +253,7 @@ function wppb_front_end_profile_info() {
 		if ($wppb_defaultOptions['bio'] == 'show'){
 			$_POST['description'] =  apply_filters('wppb_edit_profile_posted_bio', $_POST['description']);
 			if ($wppb_defaultOptions['bioRequired'] == 'yes'){
-				if ((trim($_POST['description']) != '') && isset($_POST['description'])){
+				if (isset($_POST['description']) && (trim($_POST['description']) != '')){
 					update_user_meta( $current_user->id, 'description', esc_attr( $_POST['description'] ) );
 					$changesSaved = 'yes';
 				}
@@ -815,7 +812,7 @@ function wppb_front_end_profile_info() {
 					$errorMark = '';
 					if ($wppb_defaultOptions['websiteRequired'] == 'yes'){
 						$errorMark = '<font color="red" title="'. __('This field is marked as required by the administrator.', 'profilebuilder') .'">*</font>';
-						if ((trim($_POST['website']) == '') && isset($_POST['website'])){
+						if (isset($_POST['website']) && (trim($_POST['website']) == '')){
 							$errorMark = '<img src="'.WPPB_PLUGIN_URL . '/assets/images/pencil_delete.png" title="'. __('This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator.', 'profilebuilder') .'"/>';
 							$errorVar = ' errorHolder';
 						}
@@ -833,7 +830,7 @@ function wppb_front_end_profile_info() {
 					$errorMark = '';
 					if ($wppb_defaultOptions['aimRequired'] == 'yes'){
 						$errorMark = '<font color="red" title="'. __('This field is marked as required by the administrator.', 'profilebuilder') .'">*</font>';
-						if ((trim($_POST['aim']) == '') && isset($_POST['aim'])){
+						if (isset($_POST['aim']) && (trim($_POST['aim']) == '')){
 							$errorMark = '<img src="'.WPPB_PLUGIN_URL . '/assets/images/pencil_delete.png" title="'. __('This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator.', 'profilebuilder') .'"/>';
 							$errorVar = ' errorHolder';
 						}
@@ -851,7 +848,7 @@ function wppb_front_end_profile_info() {
 					$errorMark = '';
 					if ($wppb_defaultOptions['yahooRequired'] == 'yes'){
 						$errorMark = '<font color="red" title="'. __('This field is marked as required by the administrator.', 'profilebuilder') .'">*</font>';
-						if ((trim($_POST['yim']) == '') && isset($_POST['yim'])){
+						if (isset($_POST['yim']) && (trim($_POST['yim']) == '')){
 							$errorMark = '<img src="'.WPPB_PLUGIN_URL . '/assets/images/pencil_delete.png" title="'. __('This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator.', 'profilebuilder') .'"/>';
 							$errorVar = ' errorHolder';
 						}
@@ -869,7 +866,7 @@ function wppb_front_end_profile_info() {
 					$errorMark = '';
 					if ($wppb_defaultOptions['jabberRequired'] == 'yes'){
 						$errorMark = '<font color="red" title="'. __('This field is marked as required by the administrator.', 'profilebuilder') .'">*</font>';
-						if ((trim($_POST['jabber']) == '') && isset($_POST['jabber'])){
+						if (isset($_POST['jabber']) && (trim($_POST['jabber']) == '')){
 							$errorMark = '<img src="'.WPPB_PLUGIN_URL . '/assets/images/pencil_delete.png" title="'. __('This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator.', 'profilebuilder') .'"/>';
 							$errorVar = ' errorHolder';
 						}
@@ -890,7 +887,7 @@ function wppb_front_end_profile_info() {
 					$errorMark = '';
 					if ($wppb_defaultOptions['bioRequired'] == 'yes'){
 						$errorMark = '<font color="red" title="'. __('This field is marked as required by the administrator.', 'profilebuilder') .'">*</font>';
-						if ((trim($_POST['description']) == '') && isset($_POST['description'])){
+						if (isset($_POST['description']) && (trim($_POST['description']) == '')){
 							$errorMark = '<img src="'.WPPB_PLUGIN_URL . '/assets/images/pencil_delete.png" title="'. __('This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator.', 'profilebuilder') .'"/>';
 							$errorVar = ' errorHolder';
 						}

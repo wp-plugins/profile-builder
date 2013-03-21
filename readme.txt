@@ -7,7 +7,7 @@ custom registration, custom registration form, custom registration page, extra u
 front-end register, front-end registration, frontend edit profile, edit profile
 Requires at least: 3.1
 Tested up to: 3.5
-Stable tag: 1.1.46
+Stable tag: 1.1.47
 
 Simple to use profile plugin allowing front-end login, registration and edit profile by using shortcodes.
  
@@ -93,6 +93,11 @@ This plugin only adds/removes fields in the front-end. The default information-f
 5. Logged in Page
 
 == Changelog ==
+= 1.1.47 =
+Improved the "Email Confirmation" feature and a few other functions.
+Added new options for the "Userlisting" feature (available in the Pro version of Profile Buildeer).
+Added translations: persian (thanks to Ali Mirzaei, info@alimir.ir)
+
 = 1.1.46 =
 Improved a few existing functions.
 

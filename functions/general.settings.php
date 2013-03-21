@@ -42,15 +42,36 @@ function wppb_general_settings(){
 			<option value="no" <?php if ($wppb_generalSettings['adminApproval'] == 'no') echo 'selected';?>><?php _e('No', 'profilebuilder');?></option>
 		</select>
 	<?php
-		echo '<div id="layoutNoticeDiv">
+		$generalInfoNotes = 
+		'<div id="layoutNoticeDiv">
+			<font size="1" id="layoutNotice">
+				<b>'. __('NOTE:', 'profilebuilder') .'</b><br/>
+				&rarr; '. __('The black stylesheet is intended for sites/blogs with a dark background.', 'profilebuilder') .'<br/>
+				&rarr; '. __('The white stylesheet is intended for a sites/blogs with a light background color.', 'profilebuilder') .'<br/>
+				&rarr; '. __('On single-site installations the "Email Confirmation" feature only works in the front-end, so make sure you also use the "Custom Redirects" feature.', 'profilebuilder') .'<br/>
+				&rarr; '. __('The "Email Confirmation" feature is active (by default) on WPMU installations.', 'profilebuilder');
+				if (is_multisite() || ($wppb_generalSettings['emailConfirmation'] == 'yes'))
+					$generalInfoNotes .= '<br/>&rarr; '.sprintf(__( 'You can find a list of unconfirmed email addresses %1$shere%2$s.', 'profilebuilder'), '<a href="'.get_bloginfo('url').'/wp-admin/users.php?page=unconfirmed_emails">', '</a>');
+		$generalInfoNotes .= 
+			'</font>
+		</div>';
+			
+			
+		}else{
+			$generalInfoNotes = 
+			'<div id="layoutNoticeDiv">
 				<font size="1" id="layoutNotice">
 					<b>'. __('NOTE:', 'profilebuilder') .'</b><br/>
-					&rarr; '. __('The black stylesheet is intended for sites/blogs with a dark background.', 'profilebuilder') .'<br/>
-					&rarr; '. __('The white stylesheet is intended for a sites/blogs with a light background color.', 'profilebuilder') .'<br/>
-					&rarr; '. __('On single-site installations the "Email Confirmation" feature only works in the front-end, so make sure you also use the "Custom Redirects" feature.', 'profilebuilder') .'
-				</font>
+					&rarr; '. __('On single-site installations the "Email Confirmation" feature only works in the front-end.', 'profilebuilder') .'<br/>
+					&rarr; '. __('The "Email Confirmation" feature is active (by default) on WPMU installations.', 'profilebuilder');
+					if (is_multisite() || ($wppb_generalSettings['emailConfirmation'] == 'yes'))
+						$generalInfoNotes .= '<br/>&rarr; '.sprintf(__( 'You can find a list of unconfirmed email addresses %1$shere%2$s.', 'profilebuilder'), '<a href="'.get_bloginfo('url').'/wp-admin/users.php?page=unconfirmed_emails">', '</a>');
+			$generalInfoNotes .= 
+				'</font>
 			</div>';
 		}
+		
+		echo $generalInfoNotes;
 	?>
 	<div align="right">
 		<input type="hidden" name="action" value="update" />

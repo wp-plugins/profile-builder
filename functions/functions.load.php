@@ -71,6 +71,8 @@ if (file_exists ( $wppb_premiumAdmin.'register.version.php' ))
 require_once(WPPB_PLUGIN_DIR.'/functions/basic.info.php');
 require_once(WPPB_PLUGIN_DIR.'/functions/general.settings.php');
 require_once(WPPB_PLUGIN_DIR.'/functions/admin.bar.php');
+require_once(WPPB_PLUGIN_DIR.'/classes/class.email.confirmation.php');
+require_once(WPPB_PLUGIN_DIR.'/functions/email.confirmation.php');
 require_once(WPPB_PLUGIN_DIR.'/functions/default.settings.php');
 
 
@@ -141,48 +143,12 @@ if(!function_exists('wppb_curpageurl')){
 }
 
 
-//functions needed for the email-confirmation on single-sites
-function wppb_signup_schema($oldVal, $newVal){
-
-	// Declare these as global in case schema.php is included from a function.
-	global $wpdb, $wp_queries, $charset_collate;
-
-	if ($newVal['emailConfirmation'] == 'yes'){
-		
-		//The database character collate.
-		$charset_collate = '';
-		
-		if ( ! empty( $wpdb->charset ) )
-			$charset_collate = "DEFAULT CHARACTER SET ".$wpdb->charset;
-		if ( ! empty( $wpdb->collate ) )
-			$charset_collate .= " COLLATE ".$wpdb->collate;
-		$tableName = $wpdb->prefix.'signups';
-
-		$sql = "
-			CREATE TABLE $tableName (
-				  domain varchar(200) NOT NULL default '',
-				  path varchar(100) NOT NULL default '',
-				  title longtext NOT NULL,
-				  user_login varchar(60) NOT NULL default '',
-				  user_email varchar(100) NOT NULL default '',
-				  registered datetime NOT NULL default '0000-00-00 00:00:00',
-				  activated datetime NOT NULL default '0000-00-00 00:00:00',
-				  active tinyint(1) NOT NULL default '0',
-				  activation_key varchar(50) NOT NULL default '',
-				  meta longtext,
-				  KEY activation_key (activation_key),
-				  KEY domain (domain)
-			) $charset_collate;";
-			
-		require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
-		$res = dbDelta($sql);
-	}
-}
-add_action( 'update_option_wppb_general_settings', 'wppb_signup_schema', 10, 2 );
-
-
-
 if ( is_admin() ){
+	add_action('admin_enqueue_scripts', 'wppb_add_backend_style');
+	function wppb_add_backend_style(){
+		wp_enqueue_style( 'profile-builder-back-end-style', WPPB_PLUGIN_URL.'/assets/css/back.end.css', false, PROFILE_BUILDER_VERSION);
+	}
+
 	// include the css for the datepicker
 	$wppb_premiumDatepicker = WPPB_PLUGIN_DIR . '/premium/assets/css/';
 	if (file_exists ( $wppb_premiumDatepicker.'datepicker.style.css' )){
@@ -212,22 +178,20 @@ if ( is_admin() ){
 	// include the stylesheet
 	add_action('wp_print_styles', 'wppb_add_plugin_stylesheet');		
 
-	$wppb_plugin = WPPB_PLUGIN_DIR . '/';
-
 	// include the menu file for the profile informations
-	include_once($wppb_plugin.'front-end/wppb.edit.profile.php');        		 
+	include_once(WPPB_PLUGIN_DIR.'/front-end/wppb.edit.profile.php');        		 
 	add_shortcode('wppb-edit-profile', 'wppb_front_end_profile_info');
 
 	// include the menu file for the login screen
-	include_once($wppb_plugin.'front-end/wppb.login.php');       
+	include_once(WPPB_PLUGIN_DIR.'/front-end/wppb.login.php');       
 	add_shortcode('wppb-login', 'wppb_front_end_login');
 
 	// include the menu file for the register screen
-	include_once($wppb_plugin.'front-end/wppb.register.php');        		
+	include_once(WPPB_PLUGIN_DIR.'/front-end/wppb.register.php');        		
 	add_shortcode('wppb-register', 'wppb_front_end_register_handler');	
 	
 	// include the menu file for the recover password screen
-	include_once($wppb_plugin.'front-end/wppb.recover.password.php');        		
+	include_once(WPPB_PLUGIN_DIR.'/front-end/wppb.recover.password.php');        		
 	add_shortcode('wppb-recover-password', 'wppb_front_end_password_recovery');
 
 	// set the front-end admin bar to show/hide
