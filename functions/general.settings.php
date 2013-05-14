@@ -41,6 +41,7 @@ function wppb_general_settings(){
 			<option value="yes" <?php if ($wppb_generalSettings['adminApproval'] == 'yes') echo 'selected';?>><?php _e('Yes', 'profilebuilder');?></option>
 			<option value="no" <?php if ($wppb_generalSettings['adminApproval'] == 'no') echo 'selected';?>><?php _e('No', 'profilebuilder');?></option>
 		</select>
+		
 	<?php
 		$generalInfoNotes = 
 		'<div id="layoutNoticeDiv">
@@ -70,6 +71,15 @@ function wppb_general_settings(){
 				'</font>
 			</div>';
 		}
+		
+		?>
+		<br/><br/>
+			<font id="generalSettingFont"><?php _e('Allow Users to Log in With:', 'profilebuilder');?></font>
+			<select name="wppb_general_settings[loginWith]" class="wppb_general_settings4">
+				<option value="username" <?php if ($wppb_generalSettings['loginWith'] == 'username') echo 'selected';?>><?php _e('Username', 'profilebuilder');?></option>
+				<option value="email" <?php if ($wppb_generalSettings['loginWith'] == 'email') echo 'selected';?>><?php _e('Email', 'profilebuilder');?></option>
+			</select>
+		<?php
 		
 		echo $generalInfoNotes;
 	?>

@@ -72,11 +72,18 @@ require_once(WPPB_PLUGIN_DIR.'/functions/basic.info.php');
 require_once(WPPB_PLUGIN_DIR.'/functions/general.settings.php');
 require_once(WPPB_PLUGIN_DIR.'/functions/admin.bar.php');
 require_once(WPPB_PLUGIN_DIR.'/classes/class.email.confirmation.php');
+require_once(WPPB_PLUGIN_DIR.'/classes/class.bulk.approve.unapprove.php');
 require_once(WPPB_PLUGIN_DIR.'/functions/email.confirmation.php');
 require_once(WPPB_PLUGIN_DIR.'/functions/default.settings.php');
 
 
-
+// WPML support
+function wppb_icl_t($context, $name, $value){  
+if(function_exists('icl_t'))
+	return icl_t($context, $name, $value);
+else
+	return $value;
+}
 
 
 function wppb_add_plugin_stylesheet() {

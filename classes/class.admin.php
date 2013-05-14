@@ -101,8 +101,9 @@ class PB_Admin{
 							);
 		add_option( 'wppb_default_settings', $wppb_default_settings );    //set all fields visible on first activation of the plugin
 		$wppb_default_settings = array(
-						'extraFieldsLayout' => 'yes',
-						'emailConfirmation' => 'no'
+						'extraFieldsLayout' =>	'yes',
+						'emailConfirmation' =>	'no',
+						'loginWith'			=>	'username'
 						);
 		add_option( 'wppb_general_settings', $wppb_default_settings);
 		$all_roles = $wp_roles->roles;

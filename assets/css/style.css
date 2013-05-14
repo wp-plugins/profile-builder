@@ -977,6 +977,18 @@ div.file_wrap {
 	*display:inline !important;
 	zoom:1;
 }
+#framework_wrap #content .wppb_general_settings4{
+	position:relative;
+	left:20px;
+	vertical-align:middle;
+	display:inline-block !important;
+	margin-bottom:0 !important;
+	width: 112px;
+	height: 25px;
+	font-size:11px;
+	*display:inline !important;
+	zoom:1;
+}
 #framework_wrap #content #generalSettingFont{
 	font-size:11px;
 }

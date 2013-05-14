@@ -33,6 +33,24 @@ function signup_password_random_password_filter($password) {
 	return $password;
 }
 
+function wppb_generate_random_username($sentEmail){
+	$email = '';
+	
+	for($i=0;$i<strlen($sentEmail);$i++){
+		if ($sentEmail[$i] == '@')
+			break;
+		else
+			$email .= $sentEmail[$i];
+	}
+	
+    $username = 'pb_user_'.$email.mktime(date("H"), date("i"), date("s"), date("n"), date("j"), date("Y"));
+
+	while (username_exists($username)){
+		 $username = 'pb_user_'.$email.mktime(date("H"), date("i"), date("s"), date("n"), date("j"), date("Y"));
+    }
+	
+    return $username;
+}
 
 function wppb_add_custom_field_values($POST, $meta){
 	/* add the extra profile information */
@@ -52,6 +70,7 @@ function wppb_add_custom_field_values($POST, $meta){
 				}
 				case "checkbox":{
 					$checkboxOption = '';
+					$value['item_options'] = wppb_icl_t('plugin profile-builder-pro', 'custom_field_'.$id.'_options_translation', $value['item_options']);
 					$checkboxValue = explode(',', $value['item_options']);
 					foreach($checkboxValue as $thisValue){
 						$thisValue = str_replace(' ', '#@space@#', $thisValue); //we need to escape the space-codification we sent earlier in the post
@@ -186,7 +205,8 @@ function wppb_add_custom_field_values($POST, $meta){
  */
 function wppb_activate_signup($key) {
 	global $wpdb;
-	$bloginfo = get_bloginfo( 'name' );	
+	$bloginfo = get_bloginfo( 'name' );
+	$wppb_generalSettings = get_option('wppb_general_settings');
 
 	if ( is_multisite() )
 		$signup = $wpdb->get_row( $wpdb->prepare("SELECT * FROM $wpdb->signups WHERE activation_key = %s", $key) );
@@ -201,7 +221,10 @@ function wppb_activate_signup($key) {
 			return $activateUserErrorMessage2 = apply_filters('wppb_register_activate_user_error_message2', '<p class="error">'. __('The user is already active!', 'profilebuilder') .'</p>');
 
 	$meta = unserialize($signup->meta);
-	$user_login = $wpdb->escape($signup->user_login);
+	if (isset($wppb_generalSettings['loginWith']) && ($wppb_generalSettings['loginWith'] == 'email'))
+		$user_login = $wpdb->escape($signup->user_email);
+	else
+		$user_login = $wpdb->escape($signup->user_login);
 	$user_email = $wpdb->escape($signup->user_email);
 	$password = base64_decode($meta['user_pass']);
 
@@ -261,6 +284,9 @@ function wppb_front_end_register($atts){
 	//get required and shown fields
 	$wppb_defaultOptions = get_option('wppb_default_settings');
 	
+	//get "login with" setting
+	$wppb_generalSettings = get_option('wppb_general_settings');
+	
 	$wppb_shortcode_on_front = true;
 	$agreed = true;
 	$new_user = 'no';
@@ -286,6 +312,7 @@ function wppb_front_end_register($atts){
 
 	/* Check if users can register. */
 	$registration = get_option( 'users_can_register' );
+	$registration = apply_filters ( 'wppb_register_setting_override', $registration);
 	
 	
 	//fallback if the file was largen then post_max_size, case in which no errors can be saved in $_FILES[fileName]['error']	
@@ -309,9 +336,16 @@ function wppb_front_end_register($atts){
 		$user_pass = '';
 		if (isset($_POST['passw1']))
 			$user_pass = esc_attr( $_POST['passw1'] );
-		$user_name = '';
-		if (isset($_POST['user_name']))
-			$user_name = trim ($_POST['user_name']);
+		$email = '';
+		if (isset($_POST['email']))
+			$email = trim ($_POST['email']);
+		if (isset($wppb_generalSettings['loginWith']) && ($wppb_generalSettings['loginWith'] == 'email')){
+			$user_name = wppb_generate_random_username($email);
+		}else{
+			$user_name = '';
+			if (isset($_POST['user_name']))
+				$user_name = trim ($_POST['user_name']);
+		}
 		$first_name = '';
 		if (isset($_POST['first_name']))
 			$first_name = trim ($_POST['first_name']);
@@ -319,11 +353,16 @@ function wppb_front_end_register($atts){
 		if (isset($_POST['last_name']))
 			$last_name = trim ($_POST['last_name']);
 		$nickname = '';
-		if (isset($_POST['nickname']))
+		if (isset($_POST['nickname'])){
+			//the field is filled by the user upon registration
 			$nickname = trim ($_POST['nickname']);
-		$email = '';
-		if (isset($_POST['email']))
-			$email = trim ($_POST['email']);
+		}elseif (isset($wppb_generalSettings['loginWith']) && ($wppb_generalSettings['loginWith'] == 'email')){
+			//in case the nickname field is hidden, and the login with email is active
+			$nickname = $email;
+		}else{
+			//in case the nickname field is hidden, but login is done with username
+			$nickname = $user_name;
+		}
 		$website = '';
 		if (isset($_POST['website']))
 			$website = trim ($_POST['website']);
@@ -450,6 +489,7 @@ function wppb_front_end_register($atts){
 					}
 					case "checkbox":{
 						$checkboxOption = '';
+						$value['item_options'] = wppb_icl_t('plugin profile-builder-pro', 'custom_field_'.$id.'_options_translation', $value['item_options']);
 						$checkboxValue = explode(',', $value['item_options']);
 						foreach($checkboxValue as $thisValue){
 							$thisValue = str_replace(' ', '#@space@#', $thisValue); //we need to escape the space-codification we sent earlier in the post
@@ -584,11 +624,15 @@ function wppb_front_end_register($atts){
 		/* END check if all the required fields were completed */
 		if ($registerFilterArray['extraError'] != '')
 			$error = $registerFilterArray['extraError'];
-		elseif ( !$userdata['user_login'] )
-			$error = apply_filters('wppb_register_userlogin_error1', __('A username is required for registration.', 'profilebuilder'));
-		elseif ( username_exists($userdata['user_login']) )
-			$error = apply_filters('wppb_register_userlogin_error2', __('Sorry, that username already exists!', 'profilebuilder'));
-		elseif ( !is_email($userdata['user_email'], true) )
+		elseif ( !$userdata['user_login'] ){
+			if (isset($wppb_generalSettings['loginWith']) && ($wppb_generalSettings['loginWith'] == 'email')){
+			}else
+				$error = apply_filters('wppb_register_userlogin_error1', __('A username is required for registration.', 'profilebuilder'));
+		}elseif ( username_exists($userdata['user_login']) ){
+			if (isset($wppb_generalSettings['loginWith']) && ($wppb_generalSettings['loginWith'] == 'email')){
+			}else
+				$error = apply_filters('wppb_register_userlogin_error2', __('Sorry, that username already exists!', 'profilebuilder'));
+		}elseif ( !is_email($userdata['user_email'], true) )
 			$error = apply_filters('wppb_register_useremail_error1', __('You must enter a valid email address.', 'profilebuilder'));
 		elseif ( email_exists($userdata['user_email']) )
 			$error = apply_filters('wppb_register_useremail_error2', __('Sorry, that email address is already used!', 'profilebuilder'));
@@ -684,6 +728,7 @@ function wppb_front_end_register($atts){
 								}
 								case "checkbox":{
 									$checkboxOption = '';
+									$value['item_options'] = wppb_icl_t('plugin profile-builder-pro', 'custom_field_'.$id.'_options_translation', $value['item_options']);
 									$checkboxValue = explode(',', $value['item_options']);
 									foreach($checkboxValue as $thisValue){
 										$thisValue = str_replace(' ', '#@space@#', $thisValue); //we need to escape the space-codification we sent earlier in the post
@@ -996,16 +1041,43 @@ function wppb_front_end_register($atts){
 									}
 								}
 							}
-						
-							$localVar = '';
-							if (isset($_POST['user_name']))
-								$localVar = $_POST['user_name'];
-							$registerFilterArray2['name2'] = '
-								<p class="form-username'.$errorVar.'">
-									<label for="user_name">'. __('Username', 'profilebuilder') .$errorMark.'</label>
-									<input class="text-input" name="user_name" type="text" id="user_name" value="'.trim($localVar).'" />
-								</p><!-- .form-username -->';
-							$registerFilterArray2['name2'] = apply_filters('wppb_register_content_name2', $registerFilterArray2['name2'], trim($localVar), $errorVar, $errorMark);
+							
+							if (isset($wppb_generalSettings['loginWith']) && ($wppb_generalSettings['loginWith'] == 'email')){
+								if ($wppb_defaultOptions['email'] == 'show'){
+									$errorVar = '';
+									$errorMark = '';
+									if ($wppb_defaultOptions['emailRequired'] == 'yes'){
+										$errorMark = '<font color="red" title="'.__('This field is marked as required by the administrator', 'profilebuilder').'">*</font>';
+										if (isset($_POST['email'])){
+											if ( (trim($_POST['email']) == '') || (!is_email(trim($_POST['email']))) ){
+												$errorMark = '<img src="'.WPPB_PLUGIN_URL . '/assets/images/pencil_delete.png" title="This field is required for registration."/>';
+												$errorVar = ' errorHolder';
+											}
+										}
+									}
+									
+									$localVar = '';
+									if (isset($_POST['email']))
+										$localVar = $_POST['email'];
+									$registerFilterArray2['name2'] = '
+										<p class="form-email'.$errorVar.'">
+											<label for="email">'. __('E-mail', 'profilebuilder') .$errorMark.'</label>
+											<input class="text-input" name="email" type="text" id="email" value="'.trim($localVar).'" />
+										</p><!-- .form-email -->';
+									$registerFilterArray2['name2'] = apply_filters('wppb_register_content_name2_with_email', $registerFilterArray2['name2'], trim($localVar), $errorVar, $errorMark);
+								}
+								
+							}else{
+								$localVar = '';
+								if (isset($_POST['user_name']))
+									$localVar = $_POST['user_name'];
+								$registerFilterArray2['name2'] = '
+									<p class="form-username'.$errorVar.'">
+										<label for="user_name">'. __('Username', 'profilebuilder') .$errorMark.'</label>
+										<input class="text-input" name="user_name" type="text" id="user_name" value="'.trim($localVar).'" />
+									</p><!-- .form-username -->';
+								$registerFilterArray2['name2'] = apply_filters('wppb_register_content_name2', $registerFilterArray2['name2'], trim($localVar), $errorVar, $errorMark);
+							}
 						}
 						
 						if ($wppb_defaultOptions['firstname'] == 'show'){
@@ -1083,28 +1155,31 @@ function wppb_front_end_register($atts){
 						$registerFilterArray2['info1'] = '<p class="registerContactInfoHeading"><strong>'. __('Contact Info', 'profilebuilder') .'</strong></p>';
 						$registerFilterArray2['info1'] = apply_filters('wppb_register_content_info1', $registerFilterArray2['info1']);		
 
-						if ($wppb_defaultOptions['email'] == 'show'){
-							$errorVar = '';
-							$errorMark = '';
-							if ($wppb_defaultOptions['emailRequired'] == 'yes'){
-								$errorMark = '<font color="red" title="'.__('This field is marked as required by the administrator', 'profilebuilder').'">*</font>';
-								if (isset($_POST['email'])){
-									if (trim($_POST['email']) == ''){
-										$errorMark = '<img src="'.WPPB_PLUGIN_URL . '/assets/images/pencil_delete.png" title="This field is required for registration."/>';
-										$errorVar = ' errorHolder';
+						if (isset($wppb_generalSettings['loginWith']) && ($wppb_generalSettings['loginWith'] == 'email')){
+						}else{
+							if ($wppb_defaultOptions['email'] == 'show'){
+								$errorVar = '';
+								$errorMark = '';
+								if ($wppb_defaultOptions['emailRequired'] == 'yes'){
+									$errorMark = '<font color="red" title="'.__('This field is marked as required by the administrator', 'profilebuilder').'">*</font>';
+									if (isset($_POST['email'])){
+										if ( (trim($_POST['email']) == '') || (!is_email(trim($_POST['email']))) ){
+											$errorMark = '<img src="'.WPPB_PLUGIN_URL . '/assets/images/pencil_delete.png" title="This field is required for registration."/>';
+											$errorVar = ' errorHolder';
+										}
 									}
 								}
+								
+								$localVar = '';
+								if (isset($_POST['email']))
+									$localVar = $_POST['email'];
+								$registerFilterArray2['info2'] = '
+									<p class="form-email'.$errorVar.'">
+										<label for="email">'. __('E-mail', 'profilebuilder') .$errorMark.'</label>
+										<input class="text-input" name="email" type="text" id="email" value="'.trim($localVar).'" />
+									</p><!-- .form-email -->';
+								$registerFilterArray2['info2'] = apply_filters('wppb_register_content_info2', $registerFilterArray2['info2'], trim($localVar), $errorVar, $errorMark);
 							}
-							
-							$localVar = '';
-							if (isset($_POST['email']))
-								$localVar = $_POST['email'];
-							$registerFilterArray2['info2'] = '
-								<p class="form-email'.$errorVar.'">
-									<label for="email">'. __('E-mail', 'profilebuilder') .$errorMark.'</label>
-									<input class="text-input" name="email" type="text" id="email" value="'.trim($localVar).'" />
-								</p><!-- .form-email -->';
-							$registerFilterArray2['info2'] = apply_filters('wppb_register_content_info2', $registerFilterArray2['info2'], trim($localVar), $errorVar, $errorMark);
 						}
 
 						if ($wppb_defaultOptions['website'] == 'show'){
