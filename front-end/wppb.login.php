@@ -6,17 +6,37 @@ $wppb_login = false;
 function wppb_signon(){	
 	global $error;
 	global $wppb_login;
+	global $wpdb;
+	
+	$wppb_generalSettings = get_option('wppb_general_settings');
 
 	if ( 'POST' == $_SERVER['REQUEST_METHOD'] && !empty( $_POST['action'] ) && $_POST['action'] == 'log-in' && wp_verify_nonce($_POST['login_nonce_field'],'verify_true_login') && ($_POST['formName'] == 'login') ){
 		if (isset($_POST['remember-me']))
 			$remember = $_POST['remember-me'];
 		else $remember = false;
-		$wppb_login = wp_signon( array( 'user_login' => $_POST['user-name'], 'user_password' => $_POST['password'], 'remember' => $_POST['remember-me'] ), false );
+		
+		$username = trim($_POST['user-name']);
+		if (isset($wppb_generalSettings['loginWith']) && ($wppb_generalSettings['loginWith'] == 'email')){
+			// if this setting is active, the posted username is, in fact the user's email
+			$result = mysql_query("SELECT user_login FROM $wpdb->users WHERE user_email='".$username."' LIMIT 1");
+			$result=mysql_fetch_row($result);
+			$username = $result[0];
+		}
+		
+		$wppb_login = wp_signon( array( 'user_login' => $username, 'user_password' => trim($_POST['password']), 'remember' => trim($_POST['remember-me']) ), false );
 		
 	}elseif (isset($_GET['userName']) && isset($_GET['passWord'])){
 		$remember = true;
-		$username = $_GET['userName'];
-		$password = base64_decode($_GET['passWord']);
+		$username = trim($_GET['userName']);
+		$password = base64_decode(trim($_GET['passWord']));
+		
+		if (isset($wppb_generalSettings['loginWith']) && ($wppb_generalSettings['loginWith'] == 'email')){
+			// if this setting is active, the posted username is, in fact the user's email
+			$result = mysql_query("SELECT user_login FROM $wpdb->users WHERE user_email='".$username."' LIMIT 1");
+			$result=mysql_fetch_row($result);
+			$username = $result[0];
+		}
+		
 		$wppb_login = wp_signon( array( 'user_login' => $username, 'user_password' => $password, 'remember' => $remember ), false );
 	}
 }
@@ -26,6 +46,8 @@ function wppb_front_end_login( $atts ){
 	$loginFilterArray = array();
 	ob_start();
 	global $wppb_login;
+	
+	$wppb_generalSettings = get_option('wppb_general_settings');
 
 	extract(shortcode_atts(array('display' => true, 'redirect' => '', 'submit' => 'page'), $atts));
 	
@@ -34,20 +56,27 @@ function wppb_front_end_login( $atts ){
 	if ( is_user_logged_in() ){  // Already logged in 
 		global $user_ID; 
 		$wppb_user = get_userdata( $user_ID );
-		if($wppb_user->display_name == ''){ 
-			$wppb_user->display_name = $wppb_user->user_login;
-		}
 		
-		$loginFilterArray['loginMessage1'] = '<p class="alert">'. sprintf(__('You are currently logged in as %1$s. %2$s', 'profilebuilder'), '<a href="'.$authorPostsUrl = get_author_posts_url( $wppb_user->ID ).'" title="'.$wppb_user->display_name.'">'.$wppb_user->display_name.'</a>', '<a href="'.wp_logout_url( $redirectTo = wppb_curpageurl() ).'" title="'. __('Log out of this account', 'profilebuilder').'">'. __('Log out', 'profilebuilder').' &raquo;</a>') . '</p><!-- .alert-->';
-		echo $loginFilterArray['loginMessage1'] = apply_filters('wppb_login_login_message1', $loginFilterArray['loginMessage1'], $wppb_user->ID, $wppb_user->display_name);	
+		if (isset($wppb_generalSettings['loginWith']) && ($wppb_generalSettings['loginWith'] == 'email'))
+			$display_name = $wppb_user->user_email;
+		elseif($wppb_user->display_name == '')
+			$display_name = $wppb_user->user_login;
+		else
+			$display_name = $wppb_user->display_name;
+		
+		$loginFilterArray['loginMessage1'] = '<p class="alert">'. sprintf(__('You are currently logged in as %1$s. %2$s', 'profilebuilder'), '<a href="'.$authorPostsUrl = get_author_posts_url( $wppb_user->ID ).'" title="'.$display_name.'">'.$display_name.'</a>', '<a href="'.wp_logout_url( $redirectTo = wppb_curpageurl() ).'" title="'. __('Log out of this account', 'profilebuilder').'">'. __('Log out', 'profilebuilder').' &raquo;</a>') . '</p><!-- .alert-->';
+		echo $loginFilterArray['loginMessage1'] = apply_filters('wppb_login_login_message1', $loginFilterArray['loginMessage1'], $wppb_user->ID, $display_name);	
 	
 	}elseif ( isset($wppb_login->ID) ){ // Successful login
-		if($wppb_login->display_name == ''){ 
-			$wppb_login->display_name = $wppb_login->user_login;
-		}
+		if (isset($wppb_generalSettings['loginWith']) && ($wppb_generalSettings['loginWith'] == 'email'))	
+			$display_name = $wppb_login->user_email;
+		elseif($wppb_login->display_name == '')
+			$display_name = $wppb_login->user_login;
+		else
+			$display_name = $wppb_login->display_name;
 
-		$loginFilterArray['loginMessage2'] = '<p class="success">'. sprintf(__('You have successfully logged in as %1$s', 'profilebuilder'), '<a href="'.$authorPostsUrl = get_author_posts_url( $wppb_login->ID ).'" title="'.$wppb_login->display_name.'">'.$wppb_login->display_name.'</a>') . '</p><!-- .success-->';
-		echo $loginFilterArray['loginMessage2'] = apply_filters('wppb_login_login_message2', $loginFilterArray['loginMessage2'], $wppb_login->ID, $wppb_login->display_name);
+		$loginFilterArray['loginMessage2'] = '<p class="success">'. sprintf(__('You have successfully logged in as %1$s', 'profilebuilder'), '<a href="'.$authorPostsUrl = get_author_posts_url( $wppb_login->ID ).'" title="'.$display_name.'">'.$display_name.'</a>') . '</p><!-- .success-->';
+		echo $loginFilterArray['loginMessage2'] = apply_filters('wppb_login_login_message2', $loginFilterArray['loginMessage2'], $wppb_login->ID, $display_name);
 		
 		if (isset($_POST['button']) && isset($_POST['formName']) ){
 			if ($_POST['formName'] == 'login'){
@@ -89,8 +118,15 @@ function wppb_front_end_login( $atts ){
 				<p class="error">
 					<?php 
 					if ( trim($_POST['user-name']) == ''){
-						$loginFilterArray['emptyUsernameError'] = '<strong>'. __('ERROR:','profilebuilder').'</strong> '. __('The username field is empty', 'profilebuilder').'.'; 
-						$loginFilterArray['emptyUsernameError'] = apply_filters('wppb_login_empty_username_error_message', $loginFilterArray['emptyUsernameError']);
+						if (isset($wppb_generalSettings['loginWith']) && ($wppb_generalSettings['loginWith'] == 'email')){
+							$loginFilterArray['emptyUsernameError'] = '<strong>'. __('ERROR:','profilebuilder').'</strong> '. __('The email field is empty', 'profilebuilder').'.'; 
+							$loginFilterArray['emptyUsernameError'] = apply_filters('wppb_login_empty_email_as_username_error_message', $loginFilterArray['emptyUsernameError']);
+							
+						}else{
+							$loginFilterArray['emptyUsernameError'] = '<strong>'. __('ERROR:','profilebuilder').'</strong> '. __('The username field is empty', 'profilebuilder').'.'; 
+							$loginFilterArray['emptyUsernameError'] = apply_filters('wppb_login_empty_username_error_message', $loginFilterArray['emptyUsernameError']);
+						}
+						
 						echo $loginFilterArray['emptyUsernameError'];
 					}	
 					if ( is_wp_error($wppb_login) ){
@@ -113,9 +149,14 @@ function wppb_front_end_login( $atts ){
 				$userName = esc_html( $_POST['user-name'] );
 			else $userName = '';
 			
+			if (isset($wppb_generalSettings['loginWith']) && ($wppb_generalSettings['loginWith'] == 'email'))
+				$loginWith = __('Email', 'profilebuilder');
+			else
+				$loginWith = __('Username', 'profilebuilder');
+			
 			$loginFilterArray['loginUsername'] = '
 				<p class="login-form-username">
-					<label for="user-name">'. __('Username', 'profilebuilder') .'</label>
+					<label for="user-name">'. $loginWith .'</label>
 					<input type="text" name="user-name" id="user-name" class="text-input" value="'.$userName.'" />
 				</p><!-- .form-username -->';
 			$loginFilterArray['loginUsername'] = apply_filters('wppb_login_username', $loginFilterArray['loginUsername'], $userName);

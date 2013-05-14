@@ -29,7 +29,7 @@ if(!class_exists('WP_List_Table')){
  * finally call $yourInstance->display() to render the table to the page.
  * 
  */
-class wpp_list_unfonfirmed_email_table extends WP_List_Table {
+class wpp_list_approved_unapproved_users extends WP_List_Table {
     
     /** ************************************************************************
      * REQUIRED. Set up a constructor that references the parent constructor. We 
@@ -73,8 +73,13 @@ class wpp_list_unfonfirmed_email_table extends WP_List_Table {
     function column_default($item, $column_name){
         switch($column_name){
             case 'email':
+				return $item[$column_name];
+			case 'role':
+				return $item[$column_name];
             case 'registered':
                 return $item[$column_name];
+			case 'user_status':
+				return $item[$column_name];
             default:
                 return print_r($item,true); //Show the whole array for troubleshooting purposes
         }
@@ -98,20 +103,28 @@ class wpp_list_unfonfirmed_email_table extends WP_List_Table {
      * @return string Text to be placed inside the column <td>
      **************************************************************************/
     function column_username($item){
+		global $current_user;
 		
 		$GRavatar = get_avatar( $item['email'], 32, '' );
+		$user = get_user_by( 'email', $item['email'] );
+		$currentUser =  wp_get_current_user();
+		$wppb_nonce = wp_create_nonce( '_nonce_'.$current_user->ID.$user->ID);
 		
-        //Build row actions
-        $actions = array(
-            'delete'    => sprintf('<a href="javascript:confirmECAction(\'%s\',\'%s\',\'%s\',\''.__('delete this user from the _signups table?', 'profilebuilder').'\')">'. __('Delete', 'profilebuilder') .'</a>',wppb_curpageurl(),'delete',$item['ID']),
-            'confirm'    => sprintf('<a href="javascript:confirmECAction(\'%s\',\'%s\',\'%s\',\''.__('confirm this email yourself?', 'profilebuilder').'\')">'. __('Confirm Email', 'profilebuilder') .'</a>',wppb_curpageurl(),'confirm',$item['ID'])/* ,
-            'resend'    => sprintf('<a href="javascript:confirmECAction(\'%s\',\'%s\',\'%s\',\''.__('resend the activation link?', 'profilebuilder').'\')">'. __('Resend Activation Email', 'profilebuilder') .'</a>',wppb_curpageurl(),'resend',$item['ID']) */
-        );
-        
+        //Build row actions (approve/unapprove), but only for the users different from the currently logged in one
+		if ($current_user->ID != $user->ID){
+			if (!wp_get_object_terms( $user->ID, 'user_status' ))
+				$actions = array('unapproved' => sprintf('<a href="javascript:confirmAUAction(\'%s\',\'%s\',\'%s\',\'%s\',\''.__('unapprove this user?', 'profilebuilder').'\')">'. __('Unapprove', 'profilebuilder') .'</a>', wppb_curpageurl(), 'unapprove', $user->ID, $wppb_nonce));
+			else
+				$actions = array('approved'	=> sprintf('<a href="javascript:confirmAUAction(\'%s\',\'%s\',\'%s\',\'%s\',\''.__('approve this user?', 'profilebuilder').'\')">'. __('Approve', 'profilebuilder') .'</a>', wppb_curpageurl(), 'approve', $user->ID, $wppb_nonce));
+        }else
+			$actions = array();
+		
+		$edit_link = esc_url( add_query_arg( 'wp_http_referer', urlencode( stripslashes( $_SERVER['REQUEST_URI'] ) ), get_edit_user_link( $user->ID ) ) );
+		
         //Return the user row
         return sprintf('%1$s <strong>%2$s</strong> %3$s',
             /*$1%s*/ $GRavatar,
-            /*$2%s*/ $item['username'],
+            /*$2%s*/ '<a href="'.$edit_link.'">'.$item['username'].'</a>',
             /*$3%s*/ $this->row_actions($actions)
         );
     }
@@ -152,7 +165,9 @@ class wpp_list_unfonfirmed_email_table extends WP_List_Table {
             'cb'        	=> '<input type="checkbox" />', //Render a checkbox instead of text
             'username'     	=> __('Username', 'profilebuilder'),
             'email'    		=> __('E-mail', 'profilebuilder'),
-            'registered'  	=> __('Registered', 'profilebuilder')
+            'role'    		=> __('Role', 'profilebuilder'),
+            'registered'  	=> __('Registered', 'profilebuilder'),
+			'user_status'	=> __('User-status', 'profilebuilder')
         );
         return $columns;
     }
@@ -175,7 +190,9 @@ class wpp_list_unfonfirmed_email_table extends WP_List_Table {
         $sortable_columns = array(
             'username'     	=> array('username',false),     //true means it's already sorted
             'email'    		=> array('email',false),
-            'registered'  	=> array('registered',false)
+            'role'    		=> array('role',false),
+            'registered'  	=> array('registered',false),
+            'user_status'  	=> array('user_status',false)
         );
         return $sortable_columns;
     }
@@ -197,8 +214,8 @@ class wpp_list_unfonfirmed_email_table extends WP_List_Table {
      **************************************************************************/
     function get_bulk_actions() {
         $actions = array(
-            'delete'    => __('Delete', 'profilebuilder'),
-			'confirm'	=> __('Confirm Email', 'profilebuilder')
+            'approved'		=> __('Approve', 'profilebuilder'),
+			'unapproved'	=> __('Unapprove', 'profilebuilder')
         );
         return $actions;
     }
@@ -216,54 +233,31 @@ class wpp_list_unfonfirmed_email_table extends WP_List_Table {
 		global $wpdb;
 		
 		if (current_user_can('delete_users')){
-			$iterator = 0;
-			$bulkResult = mysql_query("SELECT * FROM ".$wpdb->prefix."signups WHERE active=0");			
-		
-			//Detect when a bulk action is being triggered...
-			if( 'delete'===$this->current_action() ) {	
-				while ($bulkRow=mysql_fetch_row($bulkResult)){
-					if (in_array((string)$iterator, $_GET['user'])){
-						$bulkResult1 = mysql_query("DELETE FROM ".$wpdb->prefix."signups WHERE user_login='".$bulkRow[3]."' AND user_email='".$bulkRow[4]."'");
-						if (!$bulkResult1){
-							$message = $bulkRow[3] . __("couldn't be deleted.", "profilebuilder");
-							?>
-							<script type="text/javascript">
-								confirmECActionBulk('<?php echo get_bloginfo('url').'/wp-admin/users.php?page=unconfirmed_emails';?>', '<?php echo $message;?>');
-							</script>
-							<?php
-						}
-					}
-					$iterator++;
-				}
+			$wppb_nonce = wp_create_nonce( '_nonce_'.$current_user->ID.'_bulk');
+			if (isset($_GET['user']))
+				$users = implode(',', $_GET['user']);
 				
-				$message = __("All users have been successfully deleted.", "profilebuilder");
+			//Detect when a bulk action is being triggered...
+			if( 'approved'===$this->current_action() ) {
 				?>
 				<script type="text/javascript">
-					confirmECActionBulk('<?php echo get_bloginfo('url').'/wp-admin/users.php?page=unconfirmed_emails';?>', '<?php echo $message;?>');
+					confirmAUActionBulk('<?php echo get_bloginfo('url').'/wp-admin/users.php?page=admin_approval';?>', '<?php _e("Do you want to bulk approve the selected users?", "profilebuilder");?>', '<?php echo $wppb_nonce;?>', '<?php echo $users;?>', 'bulkApporve');
 				</script>
 				<?php
+	
 			
-			}elseif( 'confirm'===$this->current_action() ) {
-				while ($bulkRow=mysql_fetch_row($bulkResult)){
-					if (in_array((string)$iterator, $_GET['user'])){
-						$ret = wppb_manual_activate_signup($bulkRow[8]);
-					}
-					$iterator++;
-				}
-				
-				$message = __("The selected users have been activated.", "profilebuilder");
+			}elseif( 'unapproved'===$this->current_action() ) {
 				?>
 				<script type="text/javascript">
-					confirmECActionBulk('<?php echo get_bloginfo('url').'/wp-admin/users.php?page=unconfirmed_emails';?>', '<?php echo $message;?>');
+					confirmAUActionBulk('<?php echo get_bloginfo('url').'/wp-admin/users.php?page=admin_approval';?>', '<?php _e("Do you want to bulk unapprove the selected users?", "profilebuilder");?>', '<?php echo $wppb_nonce;?>', '<?php echo $users;?>', 'bulkUnapporve');
 				</script>
 				<?php
 			}
 			
 		}else{
-			$message = __("Sorry, but you don't have permission to do that!", "profilebuilder");
 			?>
 			<script type="text/javascript">
-				confirmECActionBulk('<?php echo get_bloginfo('url').'/wp-admin/';?>', '<?php echo $message;?>');
+				alert('<?php _e("Sorry, but you don't have permission to do that!", "profilebuilder");?>')
 			</script>
 			<?php
 		}
@@ -292,10 +286,29 @@ class wpp_list_unfonfirmed_email_table extends WP_List_Table {
 		$this->dataArray = array();
 		$iterator = 0;
 		
-		$result = mysql_query("SELECT * FROM ".$wpdb->prefix."signups WHERE active=0");
+		//$result = mysql_query("SELECT * FROM $wpdb->users AS t1 LEFT OUTER JOIN $wpdb->term_relationships AS t2 ON t1.ID = t2.object_id");
+		$result = mysql_query("SELECT * FROM $wpdb->users");
 		if($result)
 			while ($row=mysql_fetch_row($result)){
-				$tempArray = array('ID' => $iterator, 'username' => $row[3], 'email' => $row[4], 'registered'  => $row[5]);
+				if (!wp_get_object_terms( $row[0], 'user_status' ))
+					$status = __('Approved', 'profilebuilder');
+				else
+					$status = __('Unapproved', 'profilebuilder');
+				
+				
+				$user = get_userdata( $row[0] );
+				$capabilities = $user->{$wpdb->prefix . 'capabilities'};
+
+				if ( !isset( $wp_roles ) )
+					$wp_roles = new WP_Roles();
+
+				foreach ( $wp_roles->role_names as $thisRole => $name ){
+					if (is_array($capabilities) && ( array_key_exists( $thisRole, $capabilities ) ))
+						$role = $name;
+				}
+				
+				
+				$tempArray = array('ID' => $iterator, 'username' => $row[3], 'email' => $row[4], 'role'	=> print_r($role,true), 'registered'  => $row[6], 'user_status' => $status);
 
 				array_push($this->dataArray, $tempArray);
 				$iterator++;
@@ -304,7 +317,7 @@ class wpp_list_unfonfirmed_email_table extends WP_List_Table {
         /**
          * First, lets decide how many records per page to show
          */
-        $per_page = apply_filters('wppb_email_confirmation_user_per_page_number', 20);
+        $per_page = apply_filters('wppb_admin_approval_user_per_page_number', 20);
         
         
         /**
@@ -415,20 +428,20 @@ class wpp_list_unfonfirmed_email_table extends WP_List_Table {
  *******************************************************************************
  * Now we just need to define an admin page.
  */
-function wppb_add_ec_submenu_page() {
+function wppb_add_au_submenu_page() {
 	if (is_multisite()){
-		add_submenu_page( 'users.php', 'Unconfirmed Email Address', 'Unconfirmed Email Address', 'manage_options', 'unconfirmed_emails', 'wppb_unconfirmed_email_address_custom_menu_page' );
-		remove_submenu_page( 'users.php', 'unconfirmed_emails' ); //hide the page in the admin menu
+		add_submenu_page( 'users.php', 'Admin Approval', 'Admin Approval', 'manage_options', 'admin_approval', 'wppb_approved_unapproved_users_custom_menu_page' );
+		remove_submenu_page( 'users.php', 'admin_approval' ); //hide the page in the admin menu
 	
-	}else{
+	}else{/*
 		$wppb_generalSettings = get_option('wppb_general_settings', 'not_found');
 		if($wppb_generalSettings != 'not_found')
-			if(!empty($wppb_generalSettings['emailConfirmation']) && ($wppb_generalSettings['emailConfirmation'] == 'yes'))
-				add_submenu_page( 'users.php', 'Unconfirmed Email Address', 'Unconfirmed Email Address', 'manage_options', 'unconfirmed_emails', 'wppb_unconfirmed_email_address_custom_menu_page' );
-				remove_submenu_page( 'users.php', 'unconfirmed_emails' ); //hide the page in the admin menu
+			if(!empty($wppb_generalSettings['emailConfirmation']) && ($wppb_generalSettings['emailConfirmation'] == 'yes'))*/
+				add_submenu_page( 'users.php', 'Admin Approval', 'Admin Approval', 'manage_options', 'admin_approval', 'wppb_approved_unapproved_users_custom_menu_page' );
+				remove_submenu_page( 'users.php', 'admin_approval' ); //hide the page in the admin menu
 	}
 }
-add_action('admin_menu', 'wppb_add_ec_submenu_page');
+add_action('admin_menu', 'wppb_add_au_submenu_page');
 
 
 
@@ -440,17 +453,17 @@ add_action('admin_menu', 'wppb_add_ec_submenu_page');
  * so we've instead called those methods explicitly. It keeps things flexible, and
  * it's the way the list tables are used in the WordPress core.
  */
-function wppb_unconfirmed_email_address_custom_menu_page(){
+function wppb_approved_unapproved_users_custom_menu_page(){
     
     //Create an instance of our package class...
-    $listTable = new wpp_list_unfonfirmed_email_table();
+    $listTable = new wpp_list_approved_unapproved_users();
     //Fetch, prepare, sort, and filter our data...
     $listTable->prepare_items();
     
     ?>
     <div class="wrap">
         
-        <div class="wrap"><div id="icon-users" class="icon32"></div><h2><?php _e('Users with Unconfirmed Email Address', 'profilebuilder');?></h2></div>
+        <div class="wrap"><div id="icon-users" class="icon32"></div><h2><?php _e('Admin Approval', 'profilebuilder');?></h2></div>
 		
 		<ul class="subsubsub">
 			<li class="all"><a href="users.php"><?php _e('All Users', 'profilebuilder');?></a></li>

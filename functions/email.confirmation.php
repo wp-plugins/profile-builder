@@ -40,12 +40,12 @@ add_action( 'update_option_wppb_general_settings', 'wppb_signup_schema', 10, 2 )
 
 
 //function to add new tab in the default WP userlisting with all the users who didn't confirm their account yet
-function wppb_add_peding_users_header_script(){
+function wppb_add_pending_users_header_script(){
 ?>
 	<script type="text/javascript">	
 		jQuery(document).ready(function() {
 			jQuery.post( ajaxurl ,  { action:"wppb_get_unconfirmed_email_number"}, function(response) {
-				jQuery('.wrap ul.subsubsub').append('<span id="separatorID">|</span> <li class="listUsersWithUncofirmedEmail"><a class="unconfirmedEmailUsers" href="?page=unconfirmed_emails"><?php _e('Users with Unconfirmed Email Address', 'profilebuilder');?></a> <font id="unconfirmedEmailNo" color="grey">('+response.number+')</font></li>');	
+				jQuery('.wrap ul.subsubsub').append('<span id="separatorID"> |</span> <li class="listUsersWithUncofirmedEmail"><a class="unconfirmedEmailUsers" href="?page=unconfirmed_emails"><?php _e('Users with Unconfirmed Email Address', 'profilebuilder');?></a> <font id="unconfirmedEmailNo" color="grey">('+response.number+')</font></li>');	
 			});			
 		});
 		
@@ -489,10 +489,11 @@ add_action( 'wp_ajax_wppb_handle_email_confirmation_cases', 'wppb_handle_email_c
 if (is_multisite()){
 			
 	if (strpos($_SERVER['SCRIPT_NAME'], 'users.php')){  //global $pagenow doesn't seem to work
-		add_action( 'admin_head', 'wppb_add_peding_users_header_script' );
+		add_action( 'admin_head', 'wppb_add_pending_users_header_script' );
 
 	}
-	add_action( 'user_register', 'wppb_update_user_status_on_admin_registration' );
+	if (file_exists ( WPPB_PLUGIN_DIR . '/premium/functions/admin.approval.php' ))
+		add_action( 'user_register', 'wppb_update_user_status_on_admin_registration' );
 	
 }else{
 	$wppb_generalSettings = get_option('wppb_general_settings', 'not_found');
@@ -501,10 +502,11 @@ if (is_multisite()){
 			global $pagenow;
 			
 			if ($pagenow == 'users.php'){
-				add_action( 'admin_head', 'wppb_add_peding_users_header_script' );
+				add_action( 'admin_head', 'wppb_add_pending_users_header_script' );
 
 			}
-			add_action( 'user_register', 'wppb_update_user_status_on_admin_registration' );
+			if (file_exists ( WPPB_PLUGIN_DIR . '/premium/functions/admin.approval.php' ))
+				add_action( 'user_register', 'wppb_update_user_status_on_admin_registration' );
 		}
 }
 	

@@ -45,6 +45,9 @@ function wppb_front_end_profile_info() {
 	
 	global $wppb_shortcode_on_front;
 	
+	//get "login with" setting
+	$wppb_generalSettings = get_option('wppb_general_settings');
+	
 	$wppb_shortcode_on_front = true;
 	ob_start();
 	get_currentuserinfo();
@@ -86,14 +89,244 @@ function wppb_front_end_profile_info() {
 		//variable to control whether the user submitted data or not
 		
 		$allRequiredCompleted = apply_filters('wppb_edit_profile_all_required_completed', $allRequiredCompleted);
+		
+		if ($wppb_defaultOptions['firstname'] == 'show'){
+			$_POST['first_name'] =  apply_filters('wppb_edit_profile_posted_first_name_check', $_POST['first_name']);
+			if ($wppb_defaultOptions['firstnameRequired'] == 'yes'){
+				if (isset($_POST['first_name']) && (trim($_POST['first_name']) == '')){
+					$allRequiredCompleted = 'no'; 
+				}
+			}
+		}
+		
+		if ($wppb_defaultOptions['lastname'] == 'show'){
+			$_POST['last_name'] =  apply_filters('wppb_edit_profile_posted_last_name_check', $_POST['last_name']);
+			if ($wppb_defaultOptions['lastnameRequired'] == 'yes'){
+				if (isset($_POST['last_name']) && (trim($_POST['last_name']) == '')){
+					$allRequiredCompleted = 'no';
+				}
+			}
+		}
+		
+		if ($wppb_defaultOptions['nickname'] == 'show'){
+			$_POST['nickname'] =  apply_filters('wppb_edit_profile_posted_nickname_check', $_POST['nickname']);
+			if ($wppb_defaultOptions['nicknameRequired'] == 'yes'){
+				if (isset($_POST['nickname']) && (trim($_POST['nickname']) == '')){
+					$allRequiredCompleted = 'no';
+				}
+			}
+		}
+			
+		if ($wppb_defaultOptions['dispname'] == 'show'){
+			$_POST['display_name'] =  apply_filters('wppb_edit_profile_posted_display_name_check', $_POST['display_name']);
+			if ($wppb_defaultOptions['dispnameRequired'] == 'yes'){
+				if (isset($_POST['display_name']) && (trim($_POST['display_name']) == '')){
+					$allRequiredCompleted = 'no'; 
+				}
+			}
+		}
+			
+		if ($wppb_defaultOptions['website'] == 'show'){
+			$_POST['website'] =  apply_filters('wppb_edit_profile_posted_website_check', $_POST['website']);
+			if ($wppb_defaultOptions['websiteRequired'] == 'yes'){
+				if (isset($_POST['website']) && (trim($_POST['website']) == '')){
+					$allRequiredCompleted = 'no'; 
+				}
+			}
+		}
+		
+		if ($wppb_defaultOptions['aim'] == 'show'){
+			$_POST['aim'] =  apply_filters('wppb_edit_profile_posted_aim_check', $_POST['aim']);
+			if ($wppb_defaultOptions['aimRequired'] == 'yes'){
+				if (isset($_POST['aim']) && (trim($_POST['aim']) == '')){
+					$allRequiredCompleted = 'no'; 
+				}
+			}
+		}
+			
+		if ($wppb_defaultOptions['yahoo'] == 'show'){
+			$_POST['yim'] =  apply_filters('wppb_edit_profile_posted_yahoo_check', $_POST['yim']);
+			if ($wppb_defaultOptions['yahooRequired'] == 'yes'){
+				if (isset($_POST['yim']) && (trim($_POST['yim']) == '')){
+					$allRequiredCompleted = 'no'; 
+				}
+			}
+		}
+			
+		if ($wppb_defaultOptions['jabber'] == 'show'){
+			$_POST['jabber'] =  apply_filters('wppb_edit_profile_posted_jabber_check', $_POST['jabber']);
+			if ($wppb_defaultOptions['jabberRequired'] == 'yes'){
+				if (isset($_POST['jabber']) && (trim($_POST['jabber']) == '')){
+					$allRequiredCompleted = 'no'; 
+				}
+			}
+		}
+			
+		if ($wppb_defaultOptions['bio'] == 'show'){
+			$_POST['description'] =  apply_filters('wppb_edit_profile_posted_bio_check', $_POST['description']);
+			if ($wppb_defaultOptions['bioRequired'] == 'yes'){
+				if (isset($_POST['description']) && (trim($_POST['description']) == '')){
+					$allRequiredCompleted = 'no'; 
+				}
+			}
+		}
+	
+		/* also check the extra profile information */
+		$wppb_premium = WPPB_PLUGIN_DIR . '/premium/functions/';
+		if (file_exists ( $wppb_premium.'extra.fields.php' )){
+			$wppbFetchArray = get_option('wppb_custom_fields');
+			foreach ( $wppbFetchArray as $key => $value){
+				switch ($value['item_type']) {
+					case "input":{
+						$_POST[$value['item_type'].$value['id']] = apply_filters('wppb_edit_profile_input_custom_field_'.$value['id'].'_check', $_POST[$value['item_type'].$value['id']]);
+						if (isset($value['item_required'])){
+							if ($value['item_required'] == 'yes'){
+								if (trim($_POST[$value['item_type'].$value['id']]) == ''){
+									array_push($extraFieldsErrorHolder, $value['id']);
+									$allRequiredCompleted = 'no';
+								}
+							}
+						}
+						break;
+					}
+					case "checkbox":{
+						$checkboxOption = '';
+						$checkboxValue = explode(',', $value['item_options']);
+						foreach($checkboxValue as $thisValue){
+							$thisValue = str_replace(' ', '#@space@#', $thisValue); //we need to escape the space-codification we sent earlier in the post
+							if (isset($_POST[$thisValue.$value['id']])){
+								$localValue = str_replace('#@space@#', ' ', $_POST[$thisValue.$value['id']]);
+								$checkboxOption = $checkboxOption.$localValue.',';
+							}
+						}
+						
+						if (isset($value['item_required'])){
+							if ($value['item_required'] == 'yes'){
+								if (trim($checkboxOption) == ''){
+									array_push($extraFieldsErrorHolder, $value['id']);
+									$allRequiredCompleted = 'no';
+								}
+							}
+						}
+							
+						break;
+					}
+					case "radio":{
+						if (isset($value['item_required'])){
+							if ($value['item_required'] == 'yes'){
+								if (trim($_POST[$value['item_type'].$value['id']]) == ''){
+									array_push($extraFieldsErrorHolder, $value['id']);
+									$allRequiredCompleted = 'no';
+								}
+							}
+						}
+						break;
+					}
+					case "select":{
+						if (isset($value['item_required'])){
+							if ($value['item_required'] == 'yes'){
+								if (trim($_POST[$value['item_type'].$value['id']]) == ''){
+									array_push($extraFieldsErrorHolder, $value['id']);
+									$allRequiredCompleted = 'no';
+								}
+							}
+						}
+						break;
+					}
+					case "countrySelect":{
+						if (isset($value['item_required'])){
+							if ($value['item_required'] == 'yes'){
+								if (trim($_POST[$value['item_type'].$value['id']]) == ''){
+									array_push($extraFieldsErrorHolder, $value['id']);
+									$allRequiredCompleted = 'no';
+								}
+							}
+						}
+						
+						break;
+					}
+					case "timeZone":{
+						if (isset($value['item_required'])){
+							if ($value['item_required'] == 'yes'){
+								if (trim($_POST[$value['item_type'].$value['id']]) == ''){
+									array_push($extraFieldsErrorHolder, $value['id']);
+									$allRequiredCompleted = 'no';
+								}
+							}
+						}
+						
+						break;
+					}
+					case "datepicker":{
+						if (isset($value['item_required'])){
+							if ($value['item_required'] == 'yes'){
+								if (trim($_POST[$value['item_type'].$value['id']]) == ''){
+									array_push($extraFieldsErrorHolder, $value['id']);
+									$allRequiredCompleted = 'no'; 
+								}
+							}
+						}
+						
+						break;
+					}
+					case "textarea":{
+						if (isset($value['item_required'])){
+							if ($value['item_required'] == 'yes'){
+								if (trim($_POST[$value['item_type'].$value['id']]) == ''){
+									array_push($extraFieldsErrorHolder, $value['id']);
+									$allRequiredCompleted = 'no';
+								}
+							}
+						}
+						
+						break;
+					}
+					case "upload":{							
+						if ( (basename( $_FILES[$uploadedfile]['name']) == '')){
+							array_push($extraFieldsErrorHolder, $value['id']);
+							$allRequiredCompleted = 'no'; 
+						}
+						break;
+					}
+					case "avatar":{							
+						if ( (basename( $_FILES[$uploadedfile]['name']) == '')){
+							array_push($extraFieldsErrorHolder, $value['id']);
+							$allRequiredCompleted = 'no'; 
+						}
+						break;
+					}
+				}
+			}
+		}		
+		
+		
+		$allRequiredCompleted = apply_filters('wppb_edit_profile_all_required_completed_after_check', $allRequiredCompleted);
 	}
 		
 	/* If profile was saved, update profile. */
 	if ( ('POST' == $_SERVER['REQUEST_METHOD']) && (!empty( $_POST['action'] )) && ($_POST['action'] == 'update-user') && (wp_verify_nonce($_POST['edit_nonce_field'],'verify_edit_user')) && ($allRequiredCompleted == 'yes') ) { 
 		
-		$_POST['email'] =  apply_filters('wppb_edit_profile_posted_email', $_POST['email']);
-		if ($wppb_defaultOptions['emailRequired'] == 'yes'){
-			if ((trim($_POST['email']) != '') && isset($_POST['email'])){
+		if (isset($wppb_generalSettings['loginWith']) && ($wppb_generalSettings['loginWith'] == 'email')){
+		}else{
+			$_POST['email'] =  apply_filters('wppb_edit_profile_posted_email', $_POST['email']);
+			if ($wppb_defaultOptions['emailRequired'] == 'yes'){
+				if ((trim($_POST['email']) != '') && isset($_POST['email'])){
+					if (email_exists( $_POST['email'] ) !=  FALSE)
+						$thisEmail = email_exists( $_POST['email'] );
+					else $thisEmail = $current_user->id;
+					
+					if ( !empty( $_POST['email'] ) &&  is_email( $_POST['email'] )){                  				// if the user entered a valid email address
+						if (($thisEmail ==  $current_user->id)){            										// if the entered email address is not already registered to some other user
+							wp_update_user( array( 'ID' => $current_user->id, 'user_email' => esc_attr( $_POST['email'] )));	
+							$changesSaved = 'yes';
+						}else{
+							$changesSavedNoEmailExist = 'yes';
+						}
+					}else{
+						$changesSavedNoEmail = 'yes';
+					}
+				}
+			}else{	
 				if (email_exists( $_POST['email'] ) !=  FALSE)
 					$thisEmail = email_exists( $_POST['email'] );
 				else $thisEmail = $current_user->id;
@@ -109,23 +342,7 @@ function wppb_front_end_profile_info() {
 					$changesSavedNoEmail = 'yes';
 				}
 			}
-		}else{	
-			if (email_exists( $_POST['email'] ) !=  FALSE)
-				$thisEmail = email_exists( $_POST['email'] );
-			else $thisEmail = $current_user->id;
-			
-			if ( !empty( $_POST['email'] ) &&  is_email( $_POST['email'] )){                  				// if the user entered a valid email address
-				if (($thisEmail ==  $current_user->id)){            										// if the entered email address is not already registered to some other user
-					wp_update_user( array( 'ID' => $current_user->id, 'user_email' => esc_attr( $_POST['email'] )));	
-					$changesSaved = 'yes';
-				}else{
-					$changesSavedNoEmailExist = 'yes';
-				}
-			}else{
-				$changesSavedNoEmail = 'yes';
-			}
 		}
-		
 
 		/* Update user information. */
 		if ($wppb_defaultOptions['firstname'] == 'show'){
@@ -262,7 +479,7 @@ function wppb_front_end_profile_info() {
 				$changesSaved = 'yes';
 			}
 		}
-	
+		
 		/* update the extra profile information */
 		$wppb_premium = WPPB_PLUGIN_DIR . '/premium/functions/';
 		if (file_exists ( $wppb_premium.'extra.fields.php' )){
@@ -291,6 +508,7 @@ function wppb_front_end_profile_info() {
 					}
 					case "checkbox":{
 						$checkboxOption = '';
+						$value['item_options'] = wppb_icl_t('plugin profile-builder-pro', 'custom_field_'.$id.'_options_translation', $value['item_options']);
 						$checkboxValue = explode(',', $value['item_options']);
 						foreach($checkboxValue as $thisValue){
 							$thisValue = str_replace(' ', '#@space@#', $thisValue); //we need to escape the space-codification we sent earlier in the post
@@ -578,39 +796,27 @@ function wppb_front_end_profile_info() {
 				echo $editProfileFilterArray['allChangesSaved'] = apply_filters('wppb_edit_profile_all_changes_saved', $editProfileFilterArray['allChangesSaved']);
 				
 			}elseif (($changesSaved == 'yes') && ($changesSavedNoEmailExist == 'yes') && ($previousError == 'no')){
-				$editProfileFilterArray['allChangesSavedExceptExistingEmail'] = '
-					<p class="semi-saved"> '.
-						__('The email address you entered is already registered to a different user.', 'profilebuilder') .'<br/>'. __('The email address was', 'profilebuilder') .' <span class="error">'. __('NOT', 'profilebuilder') .'</span> '. __('updated along with the rest of the information.', 'profilebuilder') .'
-					</p>';
+				$editProfileFilterArray['allChangesSavedExceptExistingEmail'] = '<p class="semi-saved">'. sprintf(__( 'The email address you entered is already registered to a different user.%1$sThe email address was %2$sNOT%3$s updated along with the rest of the information.', 'profilebuilder'), '<br/>', '<span class="error">', '</span>') .'</p>';
 				echo $editProfileFilterArray['allChangesSavedExceptExistingEmail'] = apply_filters('wppb_edit_profile_all_changes_saved_except_existing_email', $editProfileFilterArray['allChangesSavedExceptExistingEmail']);
 				$previousError = 'yes';
 				
 			}elseif (($changesSaved == 'yes') && ($changesSavedNoEmail == 'yes') && ($previousError == 'no')){
-				$editProfileFilterArray['allChangesSavedExceptInvalidEmail'] = '
-					<p class="semi-saved"> '.
-						__('The email address you entered is invalid.', 'profilebuilder') .'<br/>'. __('The email address was', 'profilebuilder') .' <span class="error">'. __('NOT', 'profilebuilder') .'</span> '. __('updated along with the rest of the information.', 'profilebuilder') .'
-					</p>';
+				$editProfileFilterArray['allChangesSavedExceptInvalidEmail'] = '<p class="semi-saved">'. sprintf(__( 'The email address you entered is invalid.%1$sThe email address was %2$sNOT%3$s updated along with the rest of the information.', 'profilebuilder'), '<br/>', '<span class="error">', '</span>') .'</p>';
 				echo $editProfileFilterArray['allChangesSavedExceptInvalidEmail'] = apply_filters('wppb_edit_profile_all_changes_saved_except_invalid_email', $editProfileFilterArray['allChangesSavedExceptInvalidEmail']);
 				$previousError = 'yes';
 				
 			}elseif (($changesSaved == 'yes') && ($changesSavedNoMatchingPass == 'yes') && ($previousError == 'no')){
-				$editProfileFilterArray['allChangesSavedMismatchedPass'] = '
-					<p class="semi-saved">'.
-						__('The passwords you entered do not match.', 'profilebuilder') .'<br/>'. __('The password was', 'profilebuilder') .' <span class="error">'. __('NOT', 'profilebuilder') .'</span> '. __('updated along with the rest of the information.', 'profilebuilder') .'
-					</p>';
+				$editProfileFilterArray['allChangesSavedMismatchedPass'] = '<p class="semi-saved">'. sprintf(__( 'The passwords you entered do not match.%1$sThe password was %2$sNOT%3$s updated along with the rest of the information.', 'profilebuilder'), '<br/>', '<span class="error">', '</span>') .'</p>';
 				echo $editProfileFilterArray['allChangesSavedMismatchedPass'] = apply_filters('wppb_edit_profile_all_changes_saved_except_mismatch_password', $editProfileFilterArray['allChangesSavedMismatchedPass']);
 				$previousError = 'yes';
 				
 			}elseif (($changesSaved == 'yes') && ($changesSavedNoPass == 'yes') && ($previousError == 'no')){
-				$editProfileFilterArray['allChangesSavedUncompletedPass'] = '
-					<p class="semi-saved">'.
-						__('You didn\'t complete both password fields.', 'profilebuilder') .'<br/>'. __('The password was', 'profilebuilder') .' <span class="error">'. __('NOT', 'profilebuilder') .'</span> '. __('updated along with the rest of the information.', 'profilebuilder') .'
-					</p>';
+				$editProfileFilterArray['allChangesSavedUncompletedPass'] = '<p class="semi-saved">'. sprintf(__( 'You didn\'t complete both password fields.%1$sThe password was %2$sNOT%3$s updated along with the rest of the information.', 'profilebuilder'), '<br/>', '<span class="error">', '</span>') .'</p>';
 				echo $editProfileFilterArray['allChangesSavedUncompletedPass'] = apply_filters('wppb_edit_profile_all_changes_saved_except_uncompleted_password', $editProfileFilterArray['allChangesSavedUncompletedPass']);
 				$previousError = 'yes';
 				
 			}elseif ($allRequiredCompleted == 'no'){
-				$editProfileFilterArray['errorSavingChanges'] = '<p class="error">'.$errorMessage.'<br/>'. __('Your profile was NOT updated!', 'profilebuilder').'</p><!-- .error -->';
+				$editProfileFilterArray['errorSavingChanges'] = '<p class="error">'.$errorMessage.'<br/>'. __('Your profile was NOT updated, since not all required fields were completed!', 'profilebuilder').'</p><!-- .error -->';
 				echo $editProfileFilterArray['errorSavingChanges'] = apply_filters('wppb_edit_profile_error_saving_changes', $editProfileFilterArray['errorSavingChanges']);
 			}
 			
@@ -667,15 +873,26 @@ function wppb_front_end_profile_info() {
 				$editProfileFilterArray2['contentName1'] = '<p class="nameHeader"><strong>'. __('Name', 'profilebuilder') .'</strong></p>';
 				$editProfileFilterArray2['contentName1'] = apply_filters('wppb_edit_profile_content_name1', $editProfileFilterArray2['contentName1']);
 			
-				if ($wppb_defaultOptions['username'] == 'show'){
-					$editProfileFilterArray2['contentName2'] = '
-						<p class="username">
-							<label for="user_login">'. __('Username', 'profilebuilder') .'</label>
-							<input class="text-input" name="user_login" type="text" id="user_login" value="'. get_the_author_meta( 'user_login', $current_user->id ) .'" disabled="disabled"/> <span class="wppb-description-delimiter"> '. __('Usernames cannot be changed.', 'profilebuilder') .'</span>
-						</p><!-- .first_name -->';
-					$editProfileFilterArray2['contentName2'] = apply_filters('wppb_edit_profile_content_name2', $editProfileFilterArray2['contentName2'], $current_user->id);
+				if (isset($wppb_generalSettings['loginWith']) && ($wppb_generalSettings['loginWith'] == 'email')){
+					if ($wppb_defaultOptions['email'] == 'show'){
+						$editProfileFilterArray2['contentName2'] = '
+							<p class="email">
+								<label for="email">'. __('Email', 'profilebuilder') .'</label>
+								<input class="text-input" name="email" type="text" id="email" value="'. get_the_author_meta( 'user_email', $current_user->id ) .'" disabled="disabled"/> <span class="wppb-description-delimiter"> '. __('The email cannot be changed.', 'profilebuilder') .'</span>
+							</p><!-- .first_name -->';
+						$editProfileFilterArray2['contentName2'] = apply_filters('wppb_edit_profile_content_name2_with_email', $editProfileFilterArray2['contentName2'], $current_user->id);
+					}
+				}else{
+					if ($wppb_defaultOptions['username'] == 'show'){
+						$editProfileFilterArray2['contentName2'] = '
+							<p class="username">
+								<label for="user_login">'. __('Username', 'profilebuilder') .'</label>
+								<input class="text-input" name="user_login" type="text" id="user_login" value="'. get_the_author_meta( 'user_login', $current_user->id ) .'" disabled="disabled"/> <span class="wppb-description-delimiter"> '. __('The usernames cannot be changed.', 'profilebuilder') .'</span>
+							</p><!-- .first_name -->';
+						$editProfileFilterArray2['contentName2'] = apply_filters('wppb_edit_profile_content_name2', $editProfileFilterArray2['contentName2'], $current_user->id);
+					}
 				}
-
+					
 				if ($wppb_defaultOptions['firstname'] == 'show'){
 					$errorVar = '';
 					$errorMark = '';
@@ -785,27 +1002,30 @@ function wppb_front_end_profile_info() {
 
 				$editProfileFilterArray2['contentInfo1'] = '<p class="contactInfoHeader"><strong>'. __('Contact Info', 'profilebuilder') .'</strong></p>';
 				$editProfileFilterArray2['contentInfo1'] = apply_filters('wppb_edit_profile_content_info1', $editProfileFilterArray2['contentInfo1']);			
-					
-				if ($wppb_defaultOptions['email'] == 'show'){
-					$errorVar = '';
-					$errorMark = '';
-					if ($wppb_defaultOptions['emailRequired'] == 'yes'){
-						$errorMark = '<font color="red" title="'. __('This field is marked as required by the administrator.', 'profilebuilder') .'">*</font>';
-						if (isset($_POST['email'])){
-							if (trim($_POST['email']) == ''){
-								$errorMark = '<img src="'.WPPB_PLUGIN_URL . '/assets/images/pencil_delete.png" title="'. __('This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator.', 'profilebuilder') .'"/>';
-								$errorVar = ' errorHolder';
+				
+				if (isset($wppb_generalSettings['loginWith']) && ($wppb_generalSettings['loginWith'] == 'email')){
+				}else{
+					if ($wppb_defaultOptions['email'] == 'show'){
+						$errorVar = '';
+						$errorMark = '';
+						if ($wppb_defaultOptions['emailRequired'] == 'yes'){
+							$errorMark = '<font color="red" title="'. __('This field is marked as required by the administrator.', 'profilebuilder') .'">*</font>';
+							if (isset($_POST['email'])){
+								if (trim($_POST['email']) == ''){
+									$errorMark = '<img src="'.WPPB_PLUGIN_URL . '/assets/images/pencil_delete.png" title="'. __('This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator.', 'profilebuilder') .'"/>';
+									$errorVar = ' errorHolder';
+								}
 							}
-						}
-					}					
-					$editProfileFilterArray2['contentInfo2'] = '
-						<p class="form-email'.$errorVar.'">
-							<label for="email">'. __('E-mail', 'profilebuilder') .$errorMark.'</label>
-							<input class="text-input" name="email" type="text" id="email" value="'. get_the_author_meta( 'user_email', $current_user->id ) .'" />
-							<span class="wppb-description-delimiter">'. __('(required)', 'profilebuilder') .'</span>
-						</p><!-- .form-email -->';
-					$editProfileFilterArray2['contentInfo2'] = apply_filters('wppb_edit_profile_content_info2', $editProfileFilterArray2['contentInfo2'], $current_user->id, $errorVar, $errorMark);
-				}
+						}					
+						$editProfileFilterArray2['contentInfo2'] = '
+							<p class="form-email'.$errorVar.'">
+								<label for="email">'. __('E-mail', 'profilebuilder') .$errorMark.'</label>
+								<input class="text-input" name="email" type="text" id="email" value="'. get_the_author_meta( 'user_email', $current_user->id ) .'" />
+								<span class="wppb-description-delimiter">'. __('(required)', 'profilebuilder') .'</span>
+							</p><!-- .form-email -->';
+						$editProfileFilterArray2['contentInfo2'] = apply_filters('wppb_edit_profile_content_info2', $editProfileFilterArray2['contentInfo2'], $current_user->id, $errorVar, $errorMark);
+					}
+				}	
 					
 				if ($wppb_defaultOptions['website'] == 'show'){
 					$errorVar = '';
