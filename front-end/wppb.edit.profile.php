@@ -281,17 +281,27 @@ function wppb_front_end_profile_info() {
 						
 						break;
 					}
-					case "upload":{							
-						if ( (basename( $_FILES[$uploadedfile]['name']) == '')){
-							array_push($extraFieldsErrorHolder, $value['id']);
-							$allRequiredCompleted = 'no'; 
+					case "upload":{
+						if (isset($value['item_required'])){
+							if ($value['item_required'] == 'yes'){
+								$uploadedfile = $value['item_type'].$value['id'];
+								if ( (basename( $_FILES[$uploadedfile]['name']) == '')){
+									array_push($extraFieldsErrorHolder, $value['id']);
+									$allRequiredCompleted = 'no'; 
+								}
+							}
 						}
 						break;
 					}
-					case "avatar":{							
-						if ( (basename( $_FILES[$uploadedfile]['name']) == '')){
-							array_push($extraFieldsErrorHolder, $value['id']);
-							$allRequiredCompleted = 'no'; 
+					case "avatar":{
+						if (isset($value['item_required'])){
+							if ($value['item_required'] == 'yes'){
+								$uploadedfile = $value['item_type'].$value['id'];
+								if ( (basename( $_FILES[$uploadedfile]['name']) == '')){
+									array_push($extraFieldsErrorHolder, $value['id']);
+									$allRequiredCompleted = 'no'; 
+								}
+							}
 						}
 						break;
 					}
