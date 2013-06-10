@@ -6,8 +6,8 @@ Tags: registration, profile, user registration, custom field registration, custo
 custom registration, custom registration form, custom registration page, extra user fields, registration page, user custom fields, user listing, user login, user registration form, front-end login, 
 front-end register, front-end registration, frontend edit profile, edit profile
 Requires at least: 3.1
-Tested up to: 3.5
-Stable tag: 1.1.48
+Tested up to: 3.5.1
+Stable tag: 1.1.54
 
 Simple to use profile plugin allowing front-end login, registration and edit profile by using shortcodes.
  
@@ -93,6 +93,24 @@ This plugin only adds/removes fields in the front-end. The default information-f
 5. Logged in Page
 
 == Changelog ==
+= 1.1.54 =
+Minor changes in the plugin's readme file.
+
+= 1.1.53 =
+Minor changes in the plugin's readme file.
+
+= 1.1.52 =
+Minor changes in the plugin's readme file.
+
+= 1.1.51 =
+Minor changes in the plugin's readme file.
+
+= 1.1.50 =
+Improved the userlisting feature in the Pro version.
+
+= 1.1.49 =
+Fixed "Edit Profile" bug and impred the "Admin Approval" default listing (in the paid versions).
+
 = 1.1.48 =
 Improved a few existing features (like WPML compatibility), and added a new feature: login with email address.
 

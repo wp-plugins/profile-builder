@@ -286,7 +286,6 @@ class wpp_list_approved_unapproved_users extends WP_List_Table {
 		$this->dataArray = array();
 		$iterator = 0;
 		
-		//$result = mysql_query("SELECT * FROM $wpdb->users AS t1 LEFT OUTER JOIN $wpdb->term_relationships AS t2 ON t1.ID = t2.object_id");
 		$result = mysql_query("SELECT * FROM $wpdb->users");
 		if($result)
 			while ($row=mysql_fetch_row($result)){

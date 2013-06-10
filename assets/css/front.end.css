@@ -305,6 +305,18 @@ The global Profile Builder class is: wppb_holder
     text-decoration: none;
 	border-color: #BBBBBB;
 }
+#content .clearResults{
+    font-size: 12px !important;
+    line-height: 13px;
+    padding: 3px 8px;
+    text-decoration: none;
+	color:#000;
+	opacity:0.5;
+}
+#content .clearResults:hover{
+	text-decoration:underline;
+	opacity:1;
+}
 #userListingForm{
 	height:30px;
 }
