@@ -84,7 +84,7 @@ function wppb_front_end_profile_info() {
 		echo $editProfileFilterArray['noPost'] = apply_filters('wppb_edit_profile_no_post_error', $editProfileFilterArray['noPost']);
 	}
 	
-	// a way to catch the user before updating his/her profile without completing a required field
+	//a way to catch the user before updating his/her profile without completing a required field
 	if ( 'POST' == $_SERVER['REQUEST_METHOD'] && !empty( $_POST['action'] ) && $_POST['action'] == 'update-user' && wp_verify_nonce($_POST['edit_nonce_field'],'verify_edit_user') ) {	
 		//variable to control whether the user submitted data or not
 		
@@ -281,17 +281,27 @@ function wppb_front_end_profile_info() {
 						
 						break;
 					}
-					case "upload":{							
-						if ( (basename( $_FILES[$uploadedfile]['name']) == '')){
-							array_push($extraFieldsErrorHolder, $value['id']);
-							$allRequiredCompleted = 'no'; 
+					case "upload":{
+						if (isset($value['item_required'])){
+							if ($value['item_required'] == 'yes'){
+								$uploadedfile = $value['item_type'].$value['id'];
+								if ( (basename( $_FILES[$uploadedfile]['name']) == '')){
+									array_push($extraFieldsErrorHolder, $value['id']);
+									$allRequiredCompleted = 'no'; 
+								}
+							}
 						}
 						break;
 					}
-					case "avatar":{							
-						if ( (basename( $_FILES[$uploadedfile]['name']) == '')){
-							array_push($extraFieldsErrorHolder, $value['id']);
-							$allRequiredCompleted = 'no'; 
+					case "avatar":{
+						if (isset($value['item_required'])){
+							if ($value['item_required'] == 'yes'){
+								$uploadedfile = $value['item_type'].$value['id'];
+								if ( (basename( $_FILES[$uploadedfile]['name']) == '')){
+									array_push($extraFieldsErrorHolder, $value['id']);
+									$allRequiredCompleted = 'no'; 
+								}
+							}
 						}
 						break;
 					}

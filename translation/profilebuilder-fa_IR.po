@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Profile Builder\n"
-"POT-Creation-Date: 2013-05-14 14:34+0200\n"
-"PO-Revision-Date: 2013-05-14 14:34+0200\n"
+"POT-Creation-Date: 2013-06-06 16:36+0200\n"
+"PO-Revision-Date: 2013-06-06 16:36+0200\n"
 "Last-Translator: Gabriel Barina <barinagabriel2007@yahoo.com>\n"
 "Language-Team: Alimir.ir <info@alimir.ir | alimir71@yahoo.com>\n"
 "Language: Persian\n"
@@ -37,20 +37,22 @@ msgstr ""
 
 #: ../classes/class.bulk.approve.unapprove.php:166
 #: ../classes/class.email.confirmation.php:153
-#: ../front-end/wppb.edit.profile.php:889 ../front-end/wppb.login.php:155
+#: ../front-end/wppb.edit.profile.php:899 ../front-end/wppb.login.php:155
 #: ../front-end/wppb.register.php:1076 ../functions/default.settings.php:27
-#: ../functions/general.settings.php:79 ../premium/addons/userlisting.php:525
+#: ../functions/general.settings.php:79 ../premium/addons/userlisting.php:70
+#: ../premium/addons/userlisting.php:356 ../premium/addons/userlisting.php:568
 msgid "Username"
 msgstr "نام کاربری"
 
 #: ../classes/class.bulk.approve.unapprove.php:167
 #: ../classes/class.email.confirmation.php:154
-#: ../front-end/wppb.edit.profile.php:1022 ../front-end/wppb.register.php:1064
+#: ../front-end/wppb.edit.profile.php:1032 ../front-end/wppb.register.php:1064
 #: ../front-end/wppb.register.php:1178 ../functions/default.settings.php:98
 msgid "E-mail"
 msgstr "ایمیل"
 
 #: ../classes/class.bulk.approve.unapprove.php:168
+#: ../premium/addons/userlisting.php:225
 msgid "Role"
 msgstr ""
 
@@ -77,20 +79,20 @@ msgstr ""
 msgid "Sorry, but you don't have permission to do that!"
 msgstr ""
 
-#: ../classes/class.bulk.approve.unapprove.php:294
+#: ../classes/class.bulk.approve.unapprove.php:293
 msgid "Approved"
 msgstr ""
 
-#: ../classes/class.bulk.approve.unapprove.php:296
+#: ../classes/class.bulk.approve.unapprove.php:295
 msgid "Unapproved"
 msgstr ""
 
-#: ../classes/class.bulk.approve.unapprove.php:466
+#: ../classes/class.bulk.approve.unapprove.php:465
 #: ../premium/functions/admin.approval.php:8
 msgid "Admin Approval"
 msgstr ""
 
-#: ../classes/class.bulk.approve.unapprove.php:469
+#: ../classes/class.bulk.approve.unapprove.php:468
 #: ../classes/class.email.confirmation.php:456
 #, fuzzy
 msgid "All Users"
@@ -148,24 +150,24 @@ msgstr ""
 "هایی با حجم بالا باشد.<br/>تا زمانی که آن بیش از %2$sb باشد،  اطلاعات اضافی "
 "در دسترس نخواهند بود..<br/>کاربر ساخته نشد!"
 
-#: ../front-end/wppb.edit.profile.php:769
+#: ../front-end/wppb.edit.profile.php:779
 msgid "You must be logged in to edit your profile."
 msgstr "برای ویرایش نمایه باید وارد شوید."
 
-#: ../front-end/wppb.edit.profile.php:777
+#: ../front-end/wppb.edit.profile.php:787
 msgid "The avatar was successfully deleted."
 msgstr " تصویر نمایه شما با موفقیت حذف شد."
 
-#: ../front-end/wppb.edit.profile.php:782
+#: ../front-end/wppb.edit.profile.php:792
 #, php-format
 msgid "The attachment \"%1$s\" was successfully deleted."
 msgstr "ضمیمه  \"%1$s\" با موفقیت حذف شد."
 
-#: ../front-end/wppb.edit.profile.php:795
+#: ../front-end/wppb.edit.profile.php:805
 msgid "The changes have been successfully saved."
 msgstr "تغییرات با موفقیت ذخیره شد."
 
-#: ../front-end/wppb.edit.profile.php:799
+#: ../front-end/wppb.edit.profile.php:809
 #, fuzzy, php-format
 msgid ""
 "The email address you entered is already registered to a different user."
@@ -175,7 +177,7 @@ msgstr ""
 "علت: حج این فایل بیش از %1$sb است. فهرست پیوست ها  %2$s نتوانست %3$s با این "
 "مشخصه ها به روز رسانی شود.."
 
-#: ../front-end/wppb.edit.profile.php:804
+#: ../front-end/wppb.edit.profile.php:814
 #, fuzzy, php-format
 msgid ""
 "The email address you entered is invalid.%1$sThe email address was %2$sNOT"
@@ -184,7 +186,7 @@ msgstr ""
 "علت: حج این فایل بیش از %1$sb است. فهرست پیوست ها  %2$s نتوانست %3$s با این "
 "مشخصه ها به روز رسانی شود.."
 
-#: ../front-end/wppb.edit.profile.php:809
+#: ../front-end/wppb.edit.profile.php:819
 #, fuzzy, php-format
 msgid ""
 "The passwords you entered do not match.%1$sThe password was %2$sNOT%3$s "
@@ -193,7 +195,7 @@ msgstr ""
 "علت: حج این فایل بیش از %1$sb است. فهرست پیوست ها  %2$s نتوانست %3$s با این "
 "مشخصه ها به روز رسانی شود.."
 
-#: ../front-end/wppb.edit.profile.php:814
+#: ../front-end/wppb.edit.profile.php:824
 #, fuzzy, php-format
 msgid ""
 "You didn't complete both password fields.%1$sThe password was %2$sNOT%3$s "
@@ -202,16 +204,16 @@ msgstr ""
 "علت: حج این فایل بیش از %1$sb است. فهرست پیوست ها  %2$s نتوانست %3$s با این "
 "مشخصه ها به روز رسانی شود.."
 
-#: ../front-end/wppb.edit.profile.php:819
+#: ../front-end/wppb.edit.profile.php:829
 msgid ""
 "Your profile was NOT updated, since not all required fields were completed!"
 msgstr ""
 
-#: ../front-end/wppb.edit.profile.php:828
+#: ../front-end/wppb.edit.profile.php:838
 msgid "There was an error while trying to upload the following attachments:"
 msgstr "در آپلود ضمیمه های زیرین خطایی به وجود آمده است:"
 
-#: ../front-end/wppb.edit.profile.php:836
+#: ../front-end/wppb.edit.profile.php:846
 #, php-format
 msgid ""
 "Possible cause: the size was bigger than %1$sb. The listed attachements were "
@@ -220,31 +222,31 @@ msgstr ""
 "علت: حج این فایل بیش از %1$sb است. فهرست پیوست ها  %2$s نتوانست %3$s با این "
 "مشخصه ها به روز رسانی شود.."
 
-#: ../front-end/wppb.edit.profile.php:843
+#: ../front-end/wppb.edit.profile.php:853
 msgid "There was an error while trying to upload your avatar picture."
 msgstr "در بارگذاری تصویر نمایه شما خطایی رخ داده است."
 
-#: ../front-end/wppb.edit.profile.php:843
+#: ../front-end/wppb.edit.profile.php:853
 msgid "Possible cause: size/incorrect file-type."
 msgstr "علت : حجم یا نامعتبر بودن فرمت فایل."
 
-#: ../front-end/wppb.edit.profile.php:843
+#: ../front-end/wppb.edit.profile.php:853
 msgid "The avatar was"
 msgstr "نمایه ی شما"
 
-#: ../front-end/wppb.edit.profile.php:843
+#: ../front-end/wppb.edit.profile.php:853
 msgid "NOT"
 msgstr "نتوانست"
 
-#: ../front-end/wppb.edit.profile.php:843
+#: ../front-end/wppb.edit.profile.php:853
 msgid "updated along with the rest of the information."
 msgstr "با اطلاعات وارد شده به روز رسانی شود."
 
-#: ../front-end/wppb.edit.profile.php:851 ../front-end/wppb.register.php:646
+#: ../front-end/wppb.edit.profile.php:861 ../front-end/wppb.register.php:646
 msgid "There was an error while trying to upload the following attachment(s)"
 msgstr "خطایی در بارگذاری فایل های پیوستی زیرین، رخ داده است"
 
-#: ../front-end/wppb.edit.profile.php:858
+#: ../front-end/wppb.edit.profile.php:868
 #, php-format
 msgid ""
 "Only files with the following extension(s) can be uploaded: %1$s<br/>This "
@@ -253,36 +255,38 @@ msgstr ""
 "فایل ها تنها با مشخصه های زیر میتوانند بارگذاری شوند: %1$s<br/>این فایل %2$s "
 "نتوانست %3$s با این مشخصات به روز رسانی شود.."
 
-#: ../front-end/wppb.edit.profile.php:873 ../front-end/wppb.register.php:1029
+#: ../front-end/wppb.edit.profile.php:883 ../front-end/wppb.register.php:1029
+#: ../premium/addons/userlisting.php:351
 msgid "Name"
 msgstr "مشخصات"
 
-#: ../front-end/wppb.edit.profile.php:880 ../front-end/wppb.login.php:153
-#: ../functions/general.settings.php:80 ../premium/addons/userlisting.php:537
+#: ../front-end/wppb.edit.profile.php:890 ../front-end/wppb.login.php:153
+#: ../functions/general.settings.php:80 ../premium/addons/userlisting.php:71
+#: ../premium/addons/userlisting.php:580
 #, fuzzy
 msgid "Email"
 msgstr "ایمیل"
 
-#: ../front-end/wppb.edit.profile.php:881
+#: ../front-end/wppb.edit.profile.php:891
 #, fuzzy
 msgid "The email cannot be changed."
 msgstr "نام کاربری ثابت است و قابلیت ویرایش را ندارد."
 
-#: ../front-end/wppb.edit.profile.php:890
+#: ../front-end/wppb.edit.profile.php:900
 #, fuzzy
 msgid "The usernames cannot be changed."
 msgstr "نام کاربری ثابت است و قابلیت ویرایش را ندارد."
 
-#: ../front-end/wppb.edit.profile.php:900
-#: ../front-end/wppb.edit.profile.php:920
-#: ../front-end/wppb.edit.profile.php:940
-#: ../front-end/wppb.edit.profile.php:960
-#: ../front-end/wppb.edit.profile.php:1012
-#: ../front-end/wppb.edit.profile.php:1034
-#: ../front-end/wppb.edit.profile.php:1052
-#: ../front-end/wppb.edit.profile.php:1070
-#: ../front-end/wppb.edit.profile.php:1088
-#: ../front-end/wppb.edit.profile.php:1109
+#: ../front-end/wppb.edit.profile.php:910
+#: ../front-end/wppb.edit.profile.php:930
+#: ../front-end/wppb.edit.profile.php:950
+#: ../front-end/wppb.edit.profile.php:970
+#: ../front-end/wppb.edit.profile.php:1022
+#: ../front-end/wppb.edit.profile.php:1044
+#: ../front-end/wppb.edit.profile.php:1062
+#: ../front-end/wppb.edit.profile.php:1080
+#: ../front-end/wppb.edit.profile.php:1098
+#: ../front-end/wppb.edit.profile.php:1119
 #: ../premium/functions/extra.fields.php:68
 #: ../premium/functions/extra.fields.php:174
 #: ../premium/functions/extra.fields.php:243
@@ -297,16 +301,16 @@ msgstr "نام کاربری ثابت است و قابلیت ویرایش را ن
 msgid "This field is marked as required by the administrator."
 msgstr "پر کردن این کادر توسط مدیریت الزامی علامتگذاری شده است."
 
-#: ../front-end/wppb.edit.profile.php:903
-#: ../front-end/wppb.edit.profile.php:923
-#: ../front-end/wppb.edit.profile.php:943
-#: ../front-end/wppb.edit.profile.php:963
-#: ../front-end/wppb.edit.profile.php:1015
-#: ../front-end/wppb.edit.profile.php:1036
-#: ../front-end/wppb.edit.profile.php:1054
-#: ../front-end/wppb.edit.profile.php:1072
-#: ../front-end/wppb.edit.profile.php:1090
-#: ../front-end/wppb.edit.profile.php:1111
+#: ../front-end/wppb.edit.profile.php:913
+#: ../front-end/wppb.edit.profile.php:933
+#: ../front-end/wppb.edit.profile.php:953
+#: ../front-end/wppb.edit.profile.php:973
+#: ../front-end/wppb.edit.profile.php:1025
+#: ../front-end/wppb.edit.profile.php:1046
+#: ../front-end/wppb.edit.profile.php:1064
+#: ../front-end/wppb.edit.profile.php:1082
+#: ../front-end/wppb.edit.profile.php:1100
+#: ../front-end/wppb.edit.profile.php:1121
 msgid ""
 "This field wasn't updated because you entered and empty string (It was "
 "marked as required by the administrator."
@@ -314,74 +318,79 @@ msgstr ""
 "این کادر به دلیل خالی بودن قابیلت به روز رسانی را ندارید (پر کردن این کادر "
 "توسط مدیریت الزامی علامتگذاری شده است)."
 
-#: ../front-end/wppb.edit.profile.php:910 ../front-end/wppb.register.php:1101
-#: ../functions/default.settings.php:40
+#: ../front-end/wppb.edit.profile.php:920 ../front-end/wppb.register.php:1101
+#: ../functions/default.settings.php:40 ../premium/addons/userlisting.php:364
 msgid "First Name"
 msgstr "نام"
 
-#: ../front-end/wppb.edit.profile.php:930 ../front-end/wppb.register.php:1125
-#: ../functions/default.settings.php:53
+#: ../front-end/wppb.edit.profile.php:940 ../front-end/wppb.register.php:1125
+#: ../functions/default.settings.php:53 ../premium/addons/userlisting.php:372
 msgid "Last Name"
 msgstr "نام خانوادگی"
 
-#: ../front-end/wppb.edit.profile.php:950 ../front-end/wppb.register.php:1149
-#: ../functions/default.settings.php:66
+#: ../front-end/wppb.edit.profile.php:960 ../front-end/wppb.register.php:1149
+#: ../functions/default.settings.php:66 ../premium/addons/userlisting.php:380
 msgid "Nickname"
 msgstr "لقب"
 
-#: ../front-end/wppb.edit.profile.php:971
+#: ../front-end/wppb.edit.profile.php:981
+#: ../premium/addons/userlisting.php:388
 msgid "Display name publicly as"
 msgstr "نمایش عمومی نام"
 
-#: ../front-end/wppb.edit.profile.php:1003 ../front-end/wppb.register.php:1155
+#: ../front-end/wppb.edit.profile.php:1013 ../front-end/wppb.register.php:1155
+#: ../premium/addons/userlisting.php:396
 msgid "Contact Info"
 msgstr "اطلاعات تماس"
 
-#: ../front-end/wppb.edit.profile.php:1024
+#: ../front-end/wppb.edit.profile.php:1034
 msgid "(required)"
 msgstr "(لازم)"
 
-#: ../front-end/wppb.edit.profile.php:1042 ../front-end/wppb.register.php:1203
-#: ../functions/default.settings.php:111 ../premium/addons/userlisting.php:567
+#: ../front-end/wppb.edit.profile.php:1052 ../front-end/wppb.register.php:1203
+#: ../functions/default.settings.php:111 ../premium/addons/userlisting.php:72
+#: ../premium/addons/userlisting.php:401 ../premium/addons/userlisting.php:610
 msgid "Website"
 msgstr "وبسایت"
 
-#: ../front-end/wppb.edit.profile.php:1060 ../front-end/wppb.register.php:1227
+#: ../front-end/wppb.edit.profile.php:1070 ../front-end/wppb.register.php:1227
 #: ../functions/default.settings.php:127
 msgid "AIM"
 msgstr ""
 
-#: ../front-end/wppb.edit.profile.php:1078 ../front-end/wppb.register.php:1251
+#: ../front-end/wppb.edit.profile.php:1088 ../front-end/wppb.register.php:1251
 #: ../functions/default.settings.php:140
 msgid "Yahoo IM"
 msgstr ""
 
-#: ../front-end/wppb.edit.profile.php:1096 ../front-end/wppb.register.php:1275
+#: ../front-end/wppb.edit.profile.php:1106 ../front-end/wppb.register.php:1275
 #: ../functions/default.settings.php:153
 msgid "Jabber / Google Talk"
 msgstr ""
 
-#: ../front-end/wppb.edit.profile.php:1102 ../front-end/wppb.register.php:1281
+#: ../front-end/wppb.edit.profile.php:1112 ../front-end/wppb.register.php:1281
+#: ../premium/addons/userlisting.php:409
 msgid "About Yourself"
 msgstr "درباره"
 
-#: ../front-end/wppb.edit.profile.php:1117 ../front-end/wppb.register.php:1302
-#: ../functions/default.settings.php:172 ../premium/addons/userlisting.php:573
+#: ../front-end/wppb.edit.profile.php:1127 ../front-end/wppb.register.php:1302
+#: ../functions/default.settings.php:172 ../premium/addons/userlisting.php:73
+#: ../premium/addons/userlisting.php:414 ../premium/addons/userlisting.php:616
 msgid "Biographical Info"
 msgstr "زندگی نامه"
 
-#: ../front-end/wppb.edit.profile.php:1127
+#: ../front-end/wppb.edit.profile.php:1137
 msgid "New Password"
 msgstr " رمز عبور جدید"
 
-#: ../front-end/wppb.edit.profile.php:1132
+#: ../front-end/wppb.edit.profile.php:1142
 #: ../front-end/wppb.recover.password.php:328
 #: ../front-end/wppb.recover.password.php:358
 #: ../front-end/wppb.register.php:1341
 msgid "Repeat Password"
 msgstr "تکرار رمز عبور"
 
-#: ../front-end/wppb.edit.profile.php:1163
+#: ../front-end/wppb.edit.profile.php:1173
 msgid "Update"
 msgstr "به روز رسانی"
 
@@ -800,7 +809,7 @@ msgstr "پنهان"
 #: ../premium/addons/custom.redirects.php:147
 #: ../premium/addons/email.customizer.php:377
 #: ../premium/addons/email.customizer.php:650
-#: ../premium/addons/recaptcha.php:284 ../premium/addons/userlisting.php:405
+#: ../premium/addons/recaptcha.php:284 ../premium/addons/userlisting.php:440
 #: ../premium/functions/register.version.php:35
 #: ../premium/functions/register.version.php:76
 msgid "Save Changes"
@@ -1019,7 +1028,7 @@ msgstr ""
 
 #: ../functions/email.confirmation.php:129
 #: ../premium/functions/admin.approval.php:84
-#: ../premium/functions/admin.approval.php:132
+#: ../premium/functions/admin.approval.php:136
 msgid "You either don't have permission for that action or there was an error!"
 msgstr ""
 
@@ -1085,7 +1094,7 @@ msgstr ""
 "طریق ایمیل به شما اطلاع رسانی خواهد شد."
 
 #: ../functions/general.settings.php:10 ../functions/general.settings.php:11
-#: ../functions/options.php:87 ../premium/addons/userlisting.php:39
+#: ../functions/options.php:87 ../premium/addons/userlisting.php:40
 msgid "General Settings"
 msgstr "تنظیمات عمومی"
 
@@ -1201,8 +1210,8 @@ msgstr ""
 msgid "Status"
 msgstr ""
 
-#: ../premium/addons/addon.php:20 ../premium/addons/userlisting.php:31
-#: ../premium/addons/userlisting.php:32
+#: ../premium/addons/addon.php:20 ../premium/addons/userlisting.php:32
+#: ../premium/addons/userlisting.php:33
 msgid "User-Listing"
 msgstr ""
 
@@ -1325,13 +1334,13 @@ msgstr ""
 "طریق ایمیل به شما اطلاع رسانی خواهد شد."
 
 #: ../premium/addons/email.customizer.php:12
-#: ../premium/functions/admin.approval.php:145
+#: ../premium/functions/admin.approval.php:149
 #, php-format
 msgid "Your account on %1$s has been approved!"
 msgstr ""
 
 #: ../premium/addons/email.customizer.php:13
-#: ../premium/functions/admin.approval.php:146
+#: ../premium/functions/admin.approval.php:150
 #, php-format
 msgid "An administrator has just approved your account on %1$s (%2$s)."
 msgstr ""
@@ -1354,13 +1363,13 @@ msgstr ""
 "\n"
 
 #: ../premium/addons/email.customizer.php:16
-#: ../premium/functions/admin.approval.php:152
+#: ../premium/functions/admin.approval.php:156
 #, php-format
 msgid "Your account on %1$s has been unapproved!"
 msgstr ""
 
 #: ../premium/addons/email.customizer.php:17
-#: ../premium/functions/admin.approval.php:153
+#: ../premium/functions/admin.approval.php:157
 #, php-format
 msgid "An administrator has just unapproved your account on %1$s (%2$s)."
 msgstr ""
@@ -1580,182 +1589,230 @@ msgstr ""
 msgid "The reCAPTCHA wasn't entered correctly. Go back and try it again!"
 msgstr ""
 
-#: ../premium/addons/userlisting.php:34
+#: ../premium/addons/userlisting.php:35
 msgid ""
 "To create a page containing the users registered to this current site/blog, "
 "insert the following shortcode in a (blank) page: "
 msgstr ""
 
-#: ../premium/addons/userlisting.php:35
+#: ../premium/addons/userlisting.php:36
 msgid ""
 "For instance, to create a userlisting shortcode listing only the editors and "
 "authors, visible to only the users currently logged in, you would use:"
 msgstr ""
 
-#: ../premium/addons/userlisting.php:36
+#: ../premium/addons/userlisting.php:37
 msgid ""
 "You can also create a userlisting page that displays users having a certain "
 "meta-value within a certain (extra) meta-field like so:"
 msgstr ""
 
-#: ../premium/addons/userlisting.php:36
+#: ../premium/addons/userlisting.php:37
 msgid ""
 "Remember though, that the field-value combination must exist in the database."
 msgstr ""
 
-#: ../premium/addons/userlisting.php:41
+#: ../premium/addons/userlisting.php:42
 msgid "These settings are applied to the front-end userlisting."
 msgstr ""
 
-#: ../premium/addons/userlisting.php:47
+#: ../premium/addons/userlisting.php:48
 msgid "Number of Users/Page: "
 msgstr ""
 
-#: ../premium/addons/userlisting.php:64
+#: ../premium/addons/userlisting.php:65
 msgid "Default Sorting Criteria: "
 msgstr ""
 
-#: ../premium/addons/userlisting.php:93
+#: ../premium/addons/userlisting.php:74
+msgid "Registration Date"
+msgstr ""
+
+#: ../premium/addons/userlisting.php:75 ../premium/addons/userlisting.php:592
+#, fuzzy
+msgid "Firstname"
+msgstr "نام"
+
+#: ../premium/addons/userlisting.php:76 ../premium/addons/userlisting.php:598
+#, fuzzy
+msgid "Lastname"
+msgstr "نام خانوادگی"
+
+#: ../premium/addons/userlisting.php:77 ../premium/addons/userlisting.php:604
+#, fuzzy
+msgid "Display Name"
+msgstr "نام"
+
+#: ../premium/addons/userlisting.php:78
+msgid "Number of Posts"
+msgstr ""
+
+#: ../premium/addons/userlisting.php:79 ../premium/addons/userlisting.php:627
+msgid "Aim"
+msgstr ""
+
+#: ../premium/addons/userlisting.php:80 ../premium/addons/userlisting.php:632
+msgid "Yim"
+msgstr ""
+
+#: ../premium/addons/userlisting.php:81 ../premium/addons/userlisting.php:637
+msgid "Jabber"
+msgstr ""
+
+#: ../premium/addons/userlisting.php:83 ../premium/addons/userlisting.php:152
+msgid "Custom Fields"
+msgstr ""
+
+#: ../premium/addons/userlisting.php:99
 msgid "Default Sorting Order: "
 msgstr ""
 
-#: ../premium/addons/userlisting.php:104
+#: ../premium/addons/userlisting.php:102
+msgid "Ascending"
+msgstr ""
+
+#: ../premium/addons/userlisting.php:103
+msgid "Descending"
+msgstr ""
+
+#: ../premium/addons/userlisting.php:110
 msgid "\"All-Userlisting\" Template"
 msgstr ""
 
-#: ../premium/addons/userlisting.php:106 ../premium/addons/userlisting.php:250
+#: ../premium/addons/userlisting.php:112 ../premium/addons/userlisting.php:264
 msgid ""
 "With the userlisting templates you can customize the look, feel and "
 "information listed by the shortcode."
 msgstr ""
 
-#: ../premium/addons/userlisting.php:107
+#: ../premium/addons/userlisting.php:113
 msgid ""
 "The \"All Users Listing\" template is used to list all users. It's displayed "
 "on each page access where the shortcode is present."
 msgstr ""
 
-#: ../premium/addons/userlisting.php:111
-msgid "Avatar size: "
+#: ../premium/addons/userlisting.php:117 ../premium/addons/userlisting.php:270
+msgid "Avatar/Gravatar Size: "
 msgstr ""
 
-#: ../premium/addons/userlisting.php:127
+#: ../premium/addons/userlisting.php:133
 msgid "Insert \"Sort By\" Field:"
 msgstr ""
 
-#: ../premium/addons/userlisting.php:154 ../premium/addons/userlisting.php:256
+#: ../premium/addons/userlisting.php:138 ../premium/addons/userlisting.php:292
+#, fuzzy
+msgid "Default WordPress Fields"
+msgstr "فیلدهای پیشفرض نمایه"
+
+#: ../premium/addons/userlisting.php:164 ../premium/addons/userlisting.php:287
 msgid "Insert \"User-Meta\" Field:"
 msgstr ""
 
-#: ../premium/addons/userlisting.php:188 ../premium/addons/userlisting.php:297
+#: ../premium/addons/userlisting.php:202 ../premium/addons/userlisting.php:332
 msgid "Insert Extra Functions:"
 msgstr ""
 
-#: ../premium/addons/userlisting.php:203
+#: ../premium/addons/userlisting.php:217
 msgid "Show/Hide Default \"All-Userlisting\" Code"
 msgstr ""
 
-#: ../premium/addons/userlisting.php:205 ../premium/addons/userlisting.php:311
+#: ../premium/addons/userlisting.php:219 ../premium/addons/userlisting.php:346
 msgid ""
 "If you wish to use a default userlisting, just copy the following code and "
 "paste it in the textarea below:"
 msgstr ""
 
-#: ../premium/addons/userlisting.php:248
+#: ../premium/addons/userlisting.php:228
+msgid "More"
+msgstr ""
+
+#: ../premium/addons/userlisting.php:262
 msgid "\"Single-Userlisting\" Template"
 msgstr ""
 
-#: ../premium/addons/userlisting.php:251
+#: ../premium/addons/userlisting.php:265
 msgid ""
 "The \"Single User Listing\" template is used to list an individual user. "
 "It's displayed when clickin on the \"more info\" link."
 msgstr ""
 
-#: ../premium/addons/userlisting.php:309
+#: ../premium/addons/userlisting.php:344
 msgid "Show/Hide Default \"Single-Userlisting\" Code"
 msgstr ""
 
-#: ../premium/addons/userlisting.php:415
+#: ../premium/addons/userlisting.php:450
 msgid ""
 "You need to activate the User-Listing feature from within the \"Addons\" tab!"
 msgstr ""
 
-#: ../premium/addons/userlisting.php:415
+#: ../premium/addons/userlisting.php:450
 msgid "You can find it in Profile Builder's menu."
 msgstr ""
 
-#: ../premium/addons/userlisting.php:445
+#: ../premium/addons/userlisting.php:480
 #, fuzzy
 msgid "You need to be logged in to view the userlisting!"
 msgstr "برای ویرایش نمایه باید وارد شوید."
 
-#: ../premium/addons/userlisting.php:477 ../premium/addons/userlisting.php:492
-#: ../premium/addons/userlisting.php:1641
-#: ../premium/addons/userlisting.php:1730
+#: ../premium/addons/userlisting.php:519 ../premium/addons/userlisting.php:534
+#: ../premium/addons/userlisting.php:1747
+#: ../premium/addons/userlisting.php:1782
+#: ../premium/classes/userlisting.class.php:418
 msgid "Search Users by All Fields"
 msgstr ""
 
-#: ../premium/addons/userlisting.php:514
+#: ../premium/addons/userlisting.php:556
 msgid "Leave Blank and Press Search to List All Users"
 msgstr ""
 
-#: ../premium/addons/userlisting.php:518
+#: ../premium/addons/userlisting.php:560
 msgid "Search"
 msgstr ""
 
-#: ../premium/addons/userlisting.php:531
+#: ../premium/addons/userlisting.php:561
+msgid "Clear Results"
+msgstr ""
+
+#: ../premium/addons/userlisting.php:574
 #, fuzzy
 msgid "First/Lastname"
 msgstr "نام"
 
-#: ../premium/addons/userlisting.php:543
+#: ../premium/addons/userlisting.php:586
 msgid "Sign-up Date"
 msgstr ""
 
-#: ../premium/addons/userlisting.php:549
-#, fuzzy
-msgid "Firstname"
-msgstr "نام"
-
-#: ../premium/addons/userlisting.php:555
-#, fuzzy
-msgid "Lastname"
-msgstr "نام خانوادگی"
-
-#: ../premium/addons/userlisting.php:561
-#, fuzzy
-msgid "Display Name"
-msgstr "نام"
-
-#: ../premium/addons/userlisting.php:579
+#: ../premium/addons/userlisting.php:622
 msgid "Posts"
 msgstr ""
 
-#: ../premium/addons/userlisting.php:624
+#: ../premium/addons/userlisting.php:687
 msgid "Click here to see more information about this user"
 msgstr ""
 
-#: ../premium/addons/userlisting.php:624
+#: ../premium/addons/userlisting.php:687
 msgid "More..."
 msgstr ""
 
-#: ../premium/addons/userlisting.php:626
+#: ../premium/addons/userlisting.php:689
 msgid "Click here to see more information about this user."
 msgstr ""
 
-#: ../premium/addons/userlisting.php:829 ../premium/addons/userlisting.php:939
-#: ../premium/addons/userlisting.php:1251
-#: ../premium/addons/userlisting.php:1417
+#: ../premium/addons/userlisting.php:912
+#: ../premium/addons/userlisting.php:1022
+#: ../premium/addons/userlisting.php:1385
+#: ../premium/addons/userlisting.php:1551
 #: ../premium/functions/extra.fields.php:600
 #: ../premium/functions/extra.fields.php:633
 msgid "No uploaded attachment"
 msgstr ""
 
-#: ../premium/addons/userlisting.php:831 ../premium/addons/userlisting.php:941
-#: ../premium/addons/userlisting.php:1253
-#: ../premium/addons/userlisting.php:1309
-#: ../premium/addons/userlisting.php:1419
-#: ../premium/addons/userlisting.php:1475
+#: ../premium/addons/userlisting.php:914
+#: ../premium/addons/userlisting.php:1024
+#: ../premium/addons/userlisting.php:1387
+#: ../premium/addons/userlisting.php:1443
+#: ../premium/addons/userlisting.php:1553
+#: ../premium/addons/userlisting.php:1609
 #: ../premium/functions/extra.fields.php:604
 #: ../premium/functions/extra.fields.php:637
 #: ../premium/functions/extra.fields.php:640
@@ -1764,19 +1821,19 @@ msgstr ""
 msgid "Click to see the current attachment"
 msgstr ""
 
-#: ../premium/addons/userlisting.php:1070
-#: ../premium/addons/userlisting.php:1072
+#: ../premium/addons/userlisting.php:1166
+#: ../premium/addons/userlisting.php:1168
 msgid "Click here to go back"
 msgstr ""
 
-#: ../premium/addons/userlisting.php:1070
+#: ../premium/addons/userlisting.php:1166
 msgid "Back"
 msgstr ""
 
-#: ../premium/addons/userlisting.php:1251
-#: ../premium/addons/userlisting.php:1253
-#: ../premium/addons/userlisting.php:1417
-#: ../premium/addons/userlisting.php:1419
+#: ../premium/addons/userlisting.php:1385
+#: ../premium/addons/userlisting.php:1387
+#: ../premium/addons/userlisting.php:1551
+#: ../premium/addons/userlisting.php:1553
 #: ../premium/functions/extra.fields.php:600
 #: ../premium/functions/extra.fields.php:604
 #: ../premium/functions/extra.fields.php:633
@@ -1785,30 +1842,30 @@ msgstr ""
 msgid "Current file"
 msgstr ""
 
-#: ../premium/addons/userlisting.php:1307
-#: ../premium/addons/userlisting.php:1473
+#: ../premium/addons/userlisting.php:1441
+#: ../premium/addons/userlisting.php:1607
 #: ../premium/functions/extra.fields.php:712
 #: ../premium/functions/extra.fields.php:744
 msgid "Avatar"
 msgstr ""
 
-#: ../premium/addons/userlisting.php:1532
+#: ../premium/addons/userlisting.php:1666
 msgid "No results found!"
 msgstr ""
 
-#: ../premium/addons/userlisting.php:1628
+#: ../premium/addons/userlisting.php:1769
 msgid "&laquo;&laquo; First"
 msgstr ""
 
-#: ../premium/addons/userlisting.php:1629
+#: ../premium/addons/userlisting.php:1770
 msgid "&laquo; Prev"
 msgstr ""
 
-#: ../premium/addons/userlisting.php:1630
+#: ../premium/addons/userlisting.php:1771
 msgid "Next &raquo; "
 msgstr ""
 
-#: ../premium/addons/userlisting.php:1631
+#: ../premium/addons/userlisting.php:1772
 msgid "Last &raquo;&raquo;"
 msgstr ""
 
@@ -1916,24 +1973,24 @@ msgstr "کاربر با موفقیت فعال سازی شد."
 msgid "User successfully unapproved!"
 msgstr "کاربر با موفقیت فعال سازی شد."
 
-#: ../premium/functions/admin.approval.php:114
+#: ../premium/functions/admin.approval.php:116
 #, fuzzy
 msgid "Users successfully approved!"
 msgstr "کاربر با موفقیت فعال سازی شد."
 
-#: ../premium/functions/admin.approval.php:127
+#: ../premium/functions/admin.approval.php:131
 #, fuzzy
 msgid "Users successfully unapproved!"
 msgstr "کاربر با موفقیت فعال سازی شد."
 
-#: ../premium/functions/admin.approval.php:174
+#: ../premium/functions/admin.approval.php:178
 #, fuzzy
 msgid ""
 "<strong>ERROR</strong>: Your account has to be confirmed by an administrator "
 "before you can log in."
 msgstr "پیش از تأیید مدیر، قابلیت بازیابی رمز عبور را نخواهید داشت."
 
-#: ../premium/functions/admin.approval.php:186
+#: ../premium/functions/admin.approval.php:190
 #, fuzzy
 msgid ""
 "Your account has to be confirmed by an administrator before you can use the "

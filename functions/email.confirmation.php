@@ -311,11 +311,11 @@ function wppb_signup_user($user, $user_email, $meta = '') {
 /**
  * Notify user of signup success.
  *
- * Filter 'wppb_signup_user_notification' to bypass this function or
+ * Filter 'wppb_signup_user_notification_filter' to bypass this function or
  * replace it with your own notification behavior.
  *
- * Filter 'wppb_signup_user_notification' and
- * 'wppb_signup_user_notification' to change the content
+ * Filter 'wppb_signup_user_notification_email' and
+ * 'wppb_signup_user_notification_subject' to change the content
  * and subject line of the email sent to newly registered users.
  *
  * @param string $user The user's login name.
