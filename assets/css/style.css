@@ -989,10 +989,37 @@ div.file_wrap {
 	*display:inline !important;
 	zoom:1;
 }
+#framework_wrap #content .wppb_general_settings5{
+	position:relative;
+	left:20px;
+	vertical-align:middle;
+	display:inline-block !important;
+	margin-bottom:0 !important;
+	width: 176px;
+	height: 25px;
+	font-size:11px;
+	*display:inline !important;
+	zoom:1;
+}
+#framework_wrap #content #general_settings_registration_section{
+	border-top: 1px solid #CCCCCC;
+	border-bottom: 1px solid #CCCCCC;
+	margin-bottom: 14px;
+	margin-top: 14px;
+	padding-top: 14px;
+}
+#framework_wrap #content #general_settings_login_with_section{
+	border-top: 1px solid #CCCCCC;
+	margin-top: 14px;
+	padding-top: 14px;
+}
 #framework_wrap #content #generalSettingFont{
 	font-size:11px;
 }
-
+#framework_wrap #content #registration_note{
+	color: grey;
+	font-size:10px;
+}
 #content_wrap #wppb_buyNowButton{
 	position: relative;
 	left: -34px;

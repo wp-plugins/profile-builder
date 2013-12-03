@@ -103,9 +103,9 @@ class wpp_list_unfonfirmed_email_table extends WP_List_Table {
 		
         //Build row actions
         $actions = array(
-            'delete'    => sprintf('<a href="javascript:confirmECAction(\'%s\',\'%s\',\'%s\',\''.__('delete this user from the _signups table?', 'profilebuilder').'\')">'. __('Delete', 'profilebuilder') .'</a>',wppb_curpageurl(),'delete',$item['ID']),
-            'confirm'    => sprintf('<a href="javascript:confirmECAction(\'%s\',\'%s\',\'%s\',\''.__('confirm this email yourself?', 'profilebuilder').'\')">'. __('Confirm Email', 'profilebuilder') .'</a>',wppb_curpageurl(),'confirm',$item['ID'])/* ,
-            'resend'    => sprintf('<a href="javascript:confirmECAction(\'%s\',\'%s\',\'%s\',\''.__('resend the activation link?', 'profilebuilder').'\')">'. __('Resend Activation Email', 'profilebuilder') .'</a>',wppb_curpageurl(),'resend',$item['ID']) */
+            'delete'    => sprintf( '<a href="javascript:confirmECAction( \'%s\', \'%s\', \'%s\', \'' . __( 'delete this user from the _signups table?', 'profilebuilder' ) . '\' )">' . __( 'Delete', 'profilebuilder' ) . '</a>', wppb_curpageurl(), 'delete', $item['ID'] ),
+            'confirm'   => sprintf( '<a href="javascript:confirmECAction( \'%s\', \'%s\', \'%s\', \'' . __( 'confirm this email yourself?', 'profilebuilder' ) . '\' )">' . __( 'Confirm Email', 'profilebuilder' ) . '</a>', wppb_curpageurl(), 'confirm', $item['ID'] ),
+            'resend'    => sprintf( '<a href="javascript:confirmECAction( \'%s\', \'%s\', \'%s\', \'' . __( 'resend the activation link?', 'profilebuilder' ) . '\' )">' . __( 'Resend Activation Email', 'profilebuilder' ) . '</a>', wppb_curpageurl(), 'resend', $item['ID'] )
         );
         
         //Return the user row
@@ -150,10 +150,11 @@ class wpp_list_unfonfirmed_email_table extends WP_List_Table {
     function get_columns(){
         $columns = array(
             'cb'        	=> '<input type="checkbox" />', //Render a checkbox instead of text
-            'username'     	=> __('Username', 'profilebuilder'),
-            'email'    		=> __('E-mail', 'profilebuilder'),
-            'registered'  	=> __('Registered', 'profilebuilder')
+            'username'     	=> __( 'Username', 'profilebuilder' ),
+            'email'    		=> __( 'E-mail', 'profilebuilder' ),
+            'registered'  	=> __( 'Registered', 'profilebuilder' )
         );
+		
         return $columns;
     }
     
@@ -177,6 +178,7 @@ class wpp_list_unfonfirmed_email_table extends WP_List_Table {
             'email'    		=> array('email',false),
             'registered'  	=> array('registered',false)
         );
+		
         return $sortable_columns;
     }
     
@@ -197,9 +199,11 @@ class wpp_list_unfonfirmed_email_table extends WP_List_Table {
      **************************************************************************/
     function get_bulk_actions() {
         $actions = array(
-            'delete'    => __('Delete', 'profilebuilder'),
-			'confirm'	=> __('Confirm Email', 'profilebuilder')
+            'delete'    => __( 'Delete', 'profilebuilder' ),
+			'confirm'	=> __( 'Confirm Email', 'profilebuilder' ),
+			'resend'	=> __( 'Resend Activation Email', 'profilebuilder' )
         );
+		
         return $actions;
     }
     
@@ -211,63 +215,62 @@ class wpp_list_unfonfirmed_email_table extends WP_List_Table {
      * 
      * @see $this->prepare_items()
      **************************************************************************/
-    function process_bulk_action() {
+		
+	function wppb_process_bulk_action_message( $message, $url ){
+		
+		echo "<script type=\"text/javascript\">confirmECActionBulk( '".$url."', '".$message."' )</script>";
+	}	
+
+
+	 
+    function wppb_process_bulk_action() {
 		global $current_user;
 		global $wpdb;
 		
-		if (current_user_can('delete_users')){
+		if ( current_user_can( 'delete_users' ) ){
 			$iterator = 0;
-			$bulkResult = mysql_query("SELECT * FROM ".$wpdb->prefix."signups WHERE active=0");			
+			$results = $wpdb->get_results("SELECT * FROM ".$wpdb->prefix."signups WHERE active = 0");		
 		
 			//Detect when a bulk action is being triggered...
-			if( 'delete'===$this->current_action() ) {	
-				while ($bulkRow=mysql_fetch_row($bulkResult)){
-					if (in_array((string)$iterator, $_GET['user'])){
-						$bulkResult1 = mysql_query("DELETE FROM ".$wpdb->prefix."signups WHERE user_login='".$bulkRow[3]."' AND user_email='".$bulkRow[4]."'");
-						if (!$bulkResult1){
-							$message = $bulkRow[3] . __("couldn't be deleted.", "profilebuilder");
-							?>
-							<script type="text/javascript">
-								confirmECActionBulk('<?php echo get_bloginfo('url').'/wp-admin/users.php?page=unconfirmed_emails';?>', '<?php echo $message;?>');
-							</script>
-							<?php
-						}
+			if( 'delete' === $this->current_action() ) {
+				foreach ( $results as $result ){
+					if ( in_array( (string)$iterator, $_GET['user'] ) ){
+						$sql_result = $wpdb->delete( $wpdb->prefix.'signups', array( 'user_login' => $result->user_login, 'user_email' => $result->user_email ) );
+						if ( !$sql_result )
+							$this->wppb_process_bulk_action_message( sprintf( __( "%s couldn't be deleted", "profilebuilder" ), $result->user_login ), get_bloginfo('url').'/wp-admin/users.php?page=unconfirmed_emails' );
 					}
 					$iterator++;
 				}
 				
-				$message = __("All users have been successfully deleted.", "profilebuilder");
-				?>
-				<script type="text/javascript">
-					confirmECActionBulk('<?php echo get_bloginfo('url').'/wp-admin/users.php?page=unconfirmed_emails';?>', '<?php echo $message;?>');
-				</script>
-				<?php
+				$this->wppb_process_bulk_action_message( __( 'All users have been successfully deleted', 'profilebuilder' ), get_bloginfo('url').'/wp-admin/users.php?page=unconfirmed_emails' );
 			
-			}elseif( 'confirm'===$this->current_action() ) {
-				while ($bulkRow=mysql_fetch_row($bulkResult)){
-					if (in_array((string)$iterator, $_GET['user'])){
-						$ret = wppb_manual_activate_signup($bulkRow[8]);
-					}
+			}elseif( 'confirm' === $this->current_action() ) {
+				foreach ( $results as $result ){
+					if ( in_array( (string)$iterator, $_GET['user'] ) )
+						wppb_manual_activate_signup( $result->activation_key );
+
 					$iterator++;
 				}
+
+				$this->wppb_process_bulk_action_message( __( 'The selected users have been activated', 'profilebuilder' ), get_bloginfo('url').'/wp-admin/users.php?page=unconfirmed_emails' );
 				
-				$message = __("The selected users have been activated.", "profilebuilder");
-				?>
-				<script type="text/javascript">
-					confirmECActionBulk('<?php echo get_bloginfo('url').'/wp-admin/users.php?page=unconfirmed_emails';?>', '<?php echo $message;?>');
-				</script>
-				<?php
+			}elseif( 'resend' === $this->current_action() ) {
+				foreach ( $results as $result ){
+					if (in_array((string)$iterator, $_GET['user'])){
+						$sql_result = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM " . $wpdb->prefix . "signups WHERE user_login = %s AND user_email = %s", $result->user_login, $result->user_email ), ARRAY_A );
+						
+						if ( $sql_result )
+							wppb_signup_user_notification( esc_sql( $sql_result['user_login'] ), esc_sql( $sql_result['user_email'] ), $sql_result['activation_key'], esc_sql( $sql_result['meta'] ) );
+					}
+					
+					$iterator++;
+				}
+
+				$this->wppb_process_bulk_action_message( __( 'The selected users have had their activation emails resent', 'profilebuilder' ), get_bloginfo('url').'/wp-admin/users.php?page=unconfirmed_emails' );
 			}
 			
-		}else{
-			$message = __("Sorry, but you don't have permission to do that!", "profilebuilder");
-			?>
-			<script type="text/javascript">
-				confirmECActionBulk('<?php echo get_bloginfo('url').'/wp-admin/';?>', '<?php echo $message;?>');
-			</script>
-			<?php
-		}
-        
+		}else
+			$this->wppb_process_bulk_action_message( __( "Sorry, but you don't have permission to do that!", "profilebuilder" ), get_bloginfo('url').'/wp-admin/' );
     }
     
     
@@ -292,14 +295,13 @@ class wpp_list_unfonfirmed_email_table extends WP_List_Table {
 		$this->dataArray = array();
 		$iterator = 0;
 		
-		$result = mysql_query("SELECT * FROM ".$wpdb->prefix."signups WHERE active=0");
-		if($result)
-			while ($row=mysql_fetch_row($result)){
-				$tempArray = array('ID' => $iterator, 'username' => $row[3], 'email' => $row[4], 'registered'  => $row[5]);
+		$results = $wpdb->get_results("SELECT * FROM ".$wpdb->prefix."signups WHERE active = 0");
+		foreach ($results as $result){
+			$tempArray = array('ID' => $iterator, 'username' => $result->user_login, 'email' => $result->user_email, 'registered'  => $result->registered);
 
-				array_push($this->dataArray, $tempArray);
-				$iterator++;
-			} 
+			array_push($this->dataArray, $tempArray);
+			$iterator++;
+		} 
 
         /**
          * First, lets decide how many records per page to show
@@ -332,7 +334,7 @@ class wpp_list_unfonfirmed_email_table extends WP_List_Table {
          * Optional. You can handle your bulk actions however you see fit. In this
          * case, we'll handle them within our package just to keep things clean.
          */
-        $this->process_bulk_action();
+        $this->wppb_process_bulk_action();
         
         
         /**

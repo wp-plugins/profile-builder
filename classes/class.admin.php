@@ -161,11 +161,11 @@ class PB_Admin{
 	*/
 	function profile_builder_load(){
 		// enqueue styles
-		wp_enqueue_style( 'profile-builder-style', WPPB_PLUGIN_URL.'/assets/css/style.css', false, $this->version, 'screen');
+		wp_enqueue_style( 'profile-builder-style', WPPB_PLUGIN_URL.'assets/css/style.css', false, $this->version, 'screen');
 
 		// enqueue scripts
 		add_thickbox();	
-		wp_enqueue_script( 'jquery-extra-profile-fields', WPPB_PLUGIN_URL.'/assets/js/jquery.extra.fields.js', array('jquery','media-upload','thickbox','jquery-ui-core','jquery-ui-tabs', 'jquery-ui-sortable'), $this->version );
+		wp_enqueue_script( 'jquery-extra-profile-fields', WPPB_PLUGIN_URL.'assets/js/jquery.extra.fields.js', array('jquery','media-upload','thickbox','jquery-ui-core','jquery-ui-tabs', 'jquery-ui-sortable'), $this->version );
 		
 		// remove GD star rating conflicts
 		wp_deregister_style( 'gdsr-jquery-ui-core' );

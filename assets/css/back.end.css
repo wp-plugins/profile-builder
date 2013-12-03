@@ -4,3 +4,7 @@
 .users_page_admin_approval #separatorID2, .users_page_admin_approval .bulkActionUsers, .users_page_admin_approval #bulkUsersNo{
 	display:none;
 }
+.col-metaName {
+    max-width: 170px;
+    overflow: hidden;
+}

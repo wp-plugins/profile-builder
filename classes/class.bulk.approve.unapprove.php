@@ -72,7 +72,11 @@ class wpp_list_approved_unapproved_users extends WP_List_Table {
      **************************************************************************/
     function column_default($item, $column_name){
         switch($column_name){
-            case 'email':
+            case 'first_name':
+				return $item[$column_name];
+			case 'last_name':
+				return $item[$column_name];
+			case 'email':
 				return $item[$column_name];
 			case 'role':
 				return $item[$column_name];
@@ -110,16 +114,23 @@ class wpp_list_approved_unapproved_users extends WP_List_Table {
 		$currentUser =  wp_get_current_user();
 		$wppb_nonce = wp_create_nonce( '_nonce_'.$current_user->ID.$user->ID);
 		
+		$edit_link = esc_url( add_query_arg( 'wp_http_referer', urlencode( stripslashes( $_SERVER['REQUEST_URI'] ) ), get_edit_user_link( $user->ID ) ) );
+		
+		$actions['remove'] = sprintf('<a class=\'edit_view\' href="%s">'. __('View or Edit', 'profilebuilder') .'</a>', $edit_link);
+		
         //Build row actions (approve/unapprove), but only for the users different from the currently logged in one
 		if ($current_user->ID != $user->ID){
+			if ( user_can( $current_user->ID, 'delete_user' ) )
+				$actions['delete'] = sprintf('<a class=\'submitdelete\' href="javascript:confirmAUAction(\'%s\',\'%s\',\'%s\',\'%s\',\''.__('delete this user?', 'profilebuilder').'\')">'. __('Delete', 'profilebuilder') .'</a>', wppb_curpageurl(), 'delete', $user->ID, $wppb_nonce);
+
 			if (!wp_get_object_terms( $user->ID, 'user_status' ))
-				$actions = array('unapproved' => sprintf('<a href="javascript:confirmAUAction(\'%s\',\'%s\',\'%s\',\'%s\',\''.__('unapprove this user?', 'profilebuilder').'\')">'. __('Unapprove', 'profilebuilder') .'</a>', wppb_curpageurl(), 'unapprove', $user->ID, $wppb_nonce));
+				$actions['unapproved'] = sprintf('<a href="javascript:confirmAUAction(\'%s\',\'%s\',\'%s\',\'%s\',\''.__('unapprove this user?', 'profilebuilder').'\')">'. __('Unapprove', 'profilebuilder') .'</a>', wppb_curpageurl(), 'unapprove', $user->ID, $wppb_nonce);
 			else
-				$actions = array('approved'	=> sprintf('<a href="javascript:confirmAUAction(\'%s\',\'%s\',\'%s\',\'%s\',\''.__('approve this user?', 'profilebuilder').'\')">'. __('Approve', 'profilebuilder') .'</a>', wppb_curpageurl(), 'approve', $user->ID, $wppb_nonce));
-        }else
-			$actions = array();
+				$actions['approved'] = sprintf('<a href="javascript:confirmAUAction(\'%s\',\'%s\',\'%s\',\'%s\',\''.__('approve this user?', 'profilebuilder').'\')">'. __('Approve', 'profilebuilder') .'</a>', wppb_curpageurl(), 'approve', $user->ID, $wppb_nonce);
+		}
+			
 		
-		$edit_link = esc_url( add_query_arg( 'wp_http_referer', urlencode( stripslashes( $_SERVER['REQUEST_URI'] ) ), get_edit_user_link( $user->ID ) ) );
+
 		
         //Return the user row
         return sprintf('%1$s <strong>%2$s</strong> %3$s',
@@ -164,6 +175,8 @@ class wpp_list_approved_unapproved_users extends WP_List_Table {
         $columns = array(
             'cb'        	=> '<input type="checkbox" />', //Render a checkbox instead of text
             'username'     	=> __('Username', 'profilebuilder'),
+            'first_name'    => __('Firstname', 'profilebuilder'),
+            'last_name'     => __('Lastname', 'profilebuilder'),
             'email'    		=> __('E-mail', 'profilebuilder'),
             'role'    		=> __('Role', 'profilebuilder'),
             'registered'  	=> __('Registered', 'profilebuilder'),
@@ -189,11 +202,14 @@ class wpp_list_approved_unapproved_users extends WP_List_Table {
     function get_sortable_columns() {
         $sortable_columns = array(
             'username'     	=> array('username',false),     //true means it's already sorted
+            'first_name'	=> array('first_name',false),
+            'last_name'		=> array('last_name',false),
             'email'    		=> array('email',false),
             'role'    		=> array('role',false),
             'registered'  	=> array('registered',false),
             'user_status'  	=> array('user_status',false)
         );
+		
         return $sortable_columns;
     }
     
@@ -214,8 +230,9 @@ class wpp_list_approved_unapproved_users extends WP_List_Table {
      **************************************************************************/
     function get_bulk_actions() {
         $actions = array(
-            'approved'		=> __('Approve', 'profilebuilder'),
-			'unapproved'	=> __('Unapprove', 'profilebuilder')
+            'approved'		=> __( 'Approve', 'profilebuilder' ),
+			'unapproved'	=> __( 'Unapprove', 'profilebuilder' ),
+			'delete' => __( 'Delete' )
         );
         return $actions;
     }
@@ -237,11 +254,13 @@ class wpp_list_approved_unapproved_users extends WP_List_Table {
 			if (isset($_GET['user']))
 				$users = implode(',', $_GET['user']);
 				
+			$extra_args = apply_filters('wppb_conditional_redirect', '&orderby=registered&order=desc');	
+				
 			//Detect when a bulk action is being triggered...
 			if( 'approved'===$this->current_action() ) {
 				?>
 				<script type="text/javascript">
-					confirmAUActionBulk('<?php echo get_bloginfo('url').'/wp-admin/users.php?page=admin_approval';?>', '<?php _e("Do you want to bulk approve the selected users?", "profilebuilder");?>', '<?php echo $wppb_nonce;?>', '<?php echo $users;?>', 'bulkApporve');
+					confirmAUActionBulk('<?php echo get_bloginfo('url').'/wp-admin/users.php?page=admin_approval'.$extra_args;?>', '<?php _e("Do you want to bulk approve the selected users?", "profilebuilder");?>', '<?php echo $wppb_nonce;?>', '<?php echo $users;?>', 'bulkApporve');
 				</script>
 				<?php
 	
@@ -249,7 +268,13 @@ class wpp_list_approved_unapproved_users extends WP_List_Table {
 			}elseif( 'unapproved'===$this->current_action() ) {
 				?>
 				<script type="text/javascript">
-					confirmAUActionBulk('<?php echo get_bloginfo('url').'/wp-admin/users.php?page=admin_approval';?>', '<?php _e("Do you want to bulk unapprove the selected users?", "profilebuilder");?>', '<?php echo $wppb_nonce;?>', '<?php echo $users;?>', 'bulkUnapporve');
+					confirmAUActionBulk('<?php echo get_bloginfo('url').'/wp-admin/users.php?page=admin_approval'.$extra_args;?>', '<?php _e("Do you want to bulk unapprove the selected users?", "profilebuilder");?>', '<?php echo $wppb_nonce;?>', '<?php echo $users;?>', 'bulkUnapporve');
+				</script>
+				<?php
+			}elseif( 'delete'===$this->current_action() ) {
+				?>
+				<script type="text/javascript">
+					confirmAUActionBulk('<?php echo get_bloginfo('url').'/wp-admin/users.php?page=admin_approval'.$extra_args;?>', '<?php _e("Do you want to bulk delete the selected users?", "profilebuilder");?>', '<?php echo $wppb_nonce;?>', '<?php echo $users;?>', 'bulkDelete');
 				</script>
 				<?php
 			}
@@ -286,32 +311,34 @@ class wpp_list_approved_unapproved_users extends WP_List_Table {
 		$this->dataArray = array();
 		$iterator = 0;
 		
-		$result = mysql_query("SELECT * FROM $wpdb->users");
-		if($result)
-			while ($row=mysql_fetch_row($result)){
-				if (!wp_get_object_terms( $row[0], 'user_status' ))
-					$status = __('Approved', 'profilebuilder');
-				else
-					$status = __('Unapproved', 'profilebuilder');
-				
-				
-				$user = get_userdata( $row[0] );
-				$capabilities = $user->{$wpdb->prefix . 'capabilities'};
+		$results = $wpdb->get_results("SELECT * FROM $wpdb->users ORDER BY ID");
+		
+		foreach ($results as $result){
+			if ( !wp_get_object_terms( $result->ID, 'user_status' ) )
+				$status = __( 'Approved', 'profilebuilder' );
+			else
+				$status = __( 'Unapproved', 'profilebuilder' );
+			
+			
+			$user = get_userdata( $result->ID );
+			$capabilities = $user->{$wpdb->prefix . 'capabilities'};
 
-				if ( !isset( $wp_roles ) )
-					$wp_roles = new WP_Roles();
+			if ( !isset( $wp_roles ) )
+				$wp_roles = new WP_Roles();
 
-				foreach ( $wp_roles->role_names as $thisRole => $name ){
-					if (is_array($capabilities) && ( array_key_exists( $thisRole, $capabilities ) ))
-						$role = $name;
-				}
-				
-				
-				$tempArray = array('ID' => $iterator, 'username' => $row[3], 'email' => $row[4], 'role'	=> print_r($role,true), 'registered'  => $row[6], 'user_status' => $status);
+			foreach ( $wp_roles->role_names as $thisRole => $name ){
+				if (is_array($capabilities) && ( array_key_exists( $thisRole, $capabilities ) ))
+					$role = $name;
+			}
+			
+			$first_name = get_user_meta ( $result->ID, 'first_name', true );
+			$last_name = get_user_meta ( $result->ID, 'last_name', true );
+			
+			$tempArray = array('ID' => $iterator, 'username' => $result->user_login, 'first_name' => trim( $first_name ), 'last_name' => trim( $last_name ), 'email' => $result->user_email, 'role'	=> print_r($role,true), 'registered'  => $result->user_registered, 'user_status' => $status);
 
-				array_push($this->dataArray, $tempArray);
-				$iterator++;
-			} 
+			array_push( $this->dataArray, $tempArray );
+			$iterator++;
+		} 
 
         /**
          * First, lets decide how many records per page to show

@@ -5,8 +5,8 @@ Donate link: http://www.cozmoslabs.com/wordpress-profile-builder/
 Tags: registration, user profile, user registration, custom field registration, customize profile, user fields, extra user fields, builder, profile builder, custom user profile, user profile page, edit profile, custom registration, custom registration form, custom registration page, registration page, user custom fields, user listing, front-end user listing, user login, user registration form, front-end login, front-end register, front-end registration, front-end edit profile, front-end user registration, custom redirects, user email, avatar upload
 
 Requires at least: 3.1
-Tested up to: 3.5.1
-Stable tag: 1.1.55
+Tested up to: 3.6.1
+Stable tag: 1.1.57
 
 Simple to use profile plugin allowing front-end login, user registration and edit profile by using shortcodes.
  
@@ -94,6 +94,12 @@ This plugin only adds/removes user fields in the front-end. The default profile 
 7. Password Recovery Page
 
 == Changelog ==
+= 1.1.57 =
+Minor changes to the readme.txt file.
+
+= 1.1.56 =
+Added activation_url and activation_link to the "Email Customizer" feature (pro). Also, once the "Email Confirmation" feature is activated, an option will appear to select the registration page for the "Resend confirmation email" feature, which was also added to the back-end userlisting.
+
 = 1.1.55 =
 Minor changes in the plugin's readme file and updated the screenshots.
 

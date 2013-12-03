@@ -18,9 +18,7 @@ function wppb_signon(){
 		$username = trim($_POST['user-name']);
 		if (isset($wppb_generalSettings['loginWith']) && ($wppb_generalSettings['loginWith'] == 'email')){
 			// if this setting is active, the posted username is, in fact the user's email
-			$result = mysql_query("SELECT user_login FROM $wpdb->users WHERE user_email='".$username."' LIMIT 1");
-			$result=mysql_fetch_row($result);
-			$username = $result[0];
+			$username = $wpdb->get_var( $wpdb->prepare( "SELECT user_login FROM $wpdb->users WHERE user_email= %s LIMIT 1", $username ) );
 		}
 		
 		$wppb_login = wp_signon( array( 'user_login' => $username, 'user_password' => trim($_POST['password']), 'remember' => trim($_POST['remember-me']) ), false );
@@ -32,9 +30,7 @@ function wppb_signon(){
 		
 		if (isset($wppb_generalSettings['loginWith']) && ($wppb_generalSettings['loginWith'] == 'email')){
 			// if this setting is active, the posted username is, in fact the user's email
-			$result = mysql_query("SELECT user_login FROM $wpdb->users WHERE user_email='".$username."' LIMIT 1");
-			$result=mysql_fetch_row($result);
-			$username = $result[0];
+			$username = $wpdb->get_var( $wpdb->prepare( "SELECT user_login FROM $wpdb->users WHERE user_email= %s LIMIT 1", $username ) );
 		}
 		
 		$wppb_login = wp_signon( array( 'user_login' => $username, 'user_password' => $password, 'remember' => $remember ), false );
@@ -59,7 +55,7 @@ function wppb_front_end_login( $atts ){
 		
 		if (isset($wppb_generalSettings['loginWith']) && ($wppb_generalSettings['loginWith'] == 'email'))
 			$display_name = $wppb_user->user_email;
-		elseif($wppb_user->display_name == '')
+		elseif($wppb_user->display_name !== '')
 			$display_name = $wppb_user->user_login;
 		else
 			$display_name = $wppb_user->display_name;
@@ -70,7 +66,7 @@ function wppb_front_end_login( $atts ){
 	}elseif ( isset($wppb_login->ID) ){ // Successful login
 		if (isset($wppb_generalSettings['loginWith']) && ($wppb_generalSettings['loginWith'] == 'email'))	
 			$display_name = $wppb_login->user_email;
-		elseif($wppb_login->display_name == '')
+		elseif($wppb_login->display_name !== '')
 			$display_name = $wppb_login->user_login;
 		else
 			$display_name = $wppb_login->display_name;
@@ -117,7 +113,7 @@ function wppb_front_end_login( $atts ){
 		?>
 				<p class="error">
 					<?php 
-					if ( trim($_POST['user-name']) == ''){
+					if (trim($_POST['user-name']) == ''){
 						if (isset($wppb_generalSettings['loginWith']) && ($wppb_generalSettings['loginWith'] == 'email')){
 							$loginFilterArray['emptyUsernameError'] = '<strong>'. __('ERROR:','profilebuilder').'</strong> '. __('The email field is empty', 'profilebuilder').'.'; 
 							$loginFilterArray['emptyUsernameError'] = apply_filters('wppb_login_empty_email_as_username_error_message', $loginFilterArray['emptyUsernameError']);
@@ -128,7 +124,14 @@ function wppb_front_end_login( $atts ){
 						}
 						
 						echo $loginFilterArray['emptyUsernameError'];
-					}	
+						
+					}elseif (trim($_POST['password']) == ''){
+						$loginFilterArray['emptyPasswordError'] = '<strong>'. __('ERROR:','profilebuilder').'</strong> '. __('The password field is empty', 'profilebuilder').'.'; 
+						$loginFilterArray['emptyPasswordError'] = apply_filters('wppb_login_empty_password_error_message', $loginFilterArray['emptyPasswordError']);
+						
+						echo $loginFilterArray['emptyPasswordError'];
+					}
+					
 					if ( is_wp_error($wppb_login) ){
 						$loginFilterArray['wpError'] = $wppb_login->get_error_message();
 						$loginFilterArray['wpError'] = apply_filters('wppb_login_wp_error_message', $loginFilterArray['wpError'],$wppb_login);
@@ -172,7 +175,8 @@ function wppb_front_end_login( $atts ){
 				
 		?>
 			<p class="login-form-submit">
-				<input type="submit" name="submit" class="submit button" value="<?php _e('Log in', 'profilebuilder'); ?>" />
+				<?php $button_name = __('Log in', 'profilebuilder'); ?>
+				<input type="submit" name="submit" class="submit button" value="<?php echo apply_filters('wppb_login_button_name1', $button_name); ?>" />
 				<?php
 					$loginFilterArray['rememberMe'] = '
 						<input class="remember-me checkbox" name="remember-me" id="remember-me" type="checkbox" checked="checked" value="forever" />
@@ -182,7 +186,7 @@ function wppb_front_end_login( $atts ){
 				?>
 
 				<input type="hidden" name="action" value="log-in" />
-				<input type="hidden" name="button" value="<?php echo $submit;?>" />
+				<input type="hidden" name="button" value="<?php echo apply_filters('wppb_login_button_name2', $submit); ?>" />
 				<input type="hidden" name="formName" value="login" />
 			</p><!-- .form-submit -->
 			<?php
