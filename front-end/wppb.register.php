@@ -1,52 +1,46 @@
 <?php
-/* Hook to change auto generated password */
-add_filter('random_password', 'signup_password_random_password_filter');
+
 /**
  * Function that changes the auto generated password with the one selected by the user.
  */
-function signup_password_random_password_filter($password) {
+function signup_password_random_password_filter( $password ) {
 	global $wpdb;
 
-	if ( ! empty($_GET['key']) ) {
-		$key = $_GET['key'];
-	} else {
-		$key = $_POST['key'];
-	}
-	if ( !empty($_POST['user_pass']) ) {
+	$key = ( !empty( $_GET['key'] ) ? $_GET['key'] : $_POST['key'] );
+
+	if ( !empty($_POST['user_pass']) )
 		$password = $_POST['user_pass'];
-	} else if ( !empty( $key ) ) {
-	
-		if ( is_multisite() )
-			$signup = $wpdb->get_row("SELECT * FROM " . $wpdb->signups . " WHERE activation_key = '" . $key . "'");
-		else
-			$signup = $wpdb->get_row("SELECT * FROM " . $wpdb->prefix . "signups WHERE activation_key = '" . $key . "'");
 		
-		if ( empty($signup) || $signup->active ) {
+	elseif ( !empty( $key ) ) {
+		$signup = ( is_multisite() ? $wpdb->get_row( $wpdb->prepare( "SELECT * FROM " . $wpdb->signups . " WHERE activation_key = %s", $key ) ) : $wpdb->get_row( $wpdb->prepare( "SELECT * FROM " . $wpdb->prefix . "signups WHERE activation_key = %s", $key ) ) );
+		
+		if ( empty( $signup ) || $signup->active ) {
 			//bad key or already active
 		} else {
 			//check for password in signup meta
-			$meta = unserialize($signup->meta);
+			$meta = unserialize( $signup->meta );
 			
 			$password = $meta['user_pass'];
 		}		
 	}
 	return $password;
 }
+add_filter('random_password', 'signup_password_random_password_filter');
 
 function wppb_generate_random_username($sentEmail){
 	$email = '';
 	
-	for($i=0;$i<strlen($sentEmail);$i++){
-		if ($sentEmail[$i] == '@')
+	for($i=0; $i<strlen($sentEmail); $i++){
+		if (($sentEmail[$i] === '@') || ($sentEmail[$i] === '_') || ($sentEmail[$i] === '-') || ($sentEmail[$i] === '.'))
 			break;
 		else
 			$email .= $sentEmail[$i];
 	}
 	
-    $username = 'pb_user_'.$email.mktime(date("H"), date("i"), date("s"), date("n"), date("j"), date("Y"));
+    $username = 'pbUser'.$email.mktime(date("H"), date("i"), date("s"), date("n"), date("j"), date("Y"));
 
 	while (username_exists($username)){
-		 $username = 'pb_user_'.$email.mktime(date("H"), date("i"), date("s"), date("n"), date("j"), date("Y"));
+		 $username = 'pbUser'.$email.mktime(date("H"), date("i"), date("s"), date("n"), date("j"), date("Y"));
     }
 	
     return $username;
@@ -70,7 +64,6 @@ function wppb_add_custom_field_values($POST, $meta){
 				}
 				case "checkbox":{
 					$checkboxOption = '';
-					$value['item_options'] = wppb_icl_t('plugin profile-builder-pro', 'custom_field_'.$id.'_options_translation', $value['item_options']);
 					$checkboxValue = explode(',', $value['item_options']);
 					foreach($checkboxValue as $thisValue){
 						$thisValue = str_replace(' ', '#@space@#', $thisValue); //we need to escape the space-codification we sent earlier in the post
@@ -107,33 +100,26 @@ function wppb_add_custom_field_values($POST, $meta){
 					$meta[$value['item_type'].$value['id']] = apply_filters('wppb_register_wpmu_textarea', esc_attr($POST[$value['item_type'].$value['id']]));
 					break;
 				}
-				case "upload":{
-					$uploadedfile = $value['item_type'].$value['id'];
+				case "upload":{				
+					$uploaded_file = $value['item_type'].$value['id'];
 						
 					//first we need to verify if we don't try to upload a 0b or 0 length file
-					if ( (basename( $_FILES[$uploadedfile]['name']) != '')){
+					if ( ( basename( $_FILES[$uploaded_file]['name'] ) != '' ) ){
 						
 						//second we need to verify if the uploaded file size is less then the set file size in php.ini
-						if (($_FILES[$uploadedfile]['size'] < WPPB_SERVER_MAX_UPLOAD_SIZE_BYTE) && ($_FILES[$uploadedfile]['size'] !=0)){
-							//we need to prepare the basename of the file, so that ' becomes ` as ' gives an error
-							$fileName = basename( $_FILES[$uploadedfile]['name']);
-							$finalFileName = '';
+						if ( ( $_FILES[$uploaded_file]['size'] < WPPB_SERVER_MAX_UPLOAD_SIZE_BYTE ) && ( $_FILES[$uploaded_file]['size'] !=0 ) ){
+							//we need to prepare the basename of the file, so that ' becomes ` as ' gives an error							
+							$safe_filename = preg_replace( array( "/\s+/", "/[^-\.\w]+/" ), array( "_", "" ), trim( $_FILES[$uploaded_file]['name'] ) );
 							
-							for ($i=0; $i < strlen($fileName); $i++){
-								if ($fileName[$i] == "'")
-									$finalFileName .= '`';
-								else $finalFileName .= $fileName[$i];
-							}
-								
 							//create the target path for uploading	
-							$wpUploadPath = wp_upload_dir(); // Array of key => value pairs
-							$target_path = $wpUploadPath['basedir']."/profile_builder/attachments/";
-							$target_path = $target_path . 'wpmuRandomID_'.$randomUserNumber.'_attachment_'. $finalFileName;
+							$wp_upload_array = wp_upload_dir(); // Array of key => value pairs
+							$target_path = $wp_upload_array['basedir']."/profile_builder/attachments/";
+							$target_path = $target_path . 'wpmuRandomID_' . $randomUserNumber . '_attachment_' . $safe_filename;
 
-							if (move_uploaded_file($_FILES[$uploadedfile]['tmp_name'], $target_path)){
-								$upFile = 'wpmuRandomID_'.$randomUserNumber.'_attachment_'. $finalFileName;
-								$meta[$value['item_type'].$value['id']] = apply_filters('wppb_register_wpmu_upload', $upFile);
-								$meta[$value['item_type'].$value['id'].'_radomUserNumber'] = apply_filters('wppb_register_wpmu_upload_random_user_number', $randomUserNumber);
+							if ( move_uploaded_file( $_FILES[$uploaded_file]['tmp_name'], $target_path ) ){
+								$upFile = $wp_upload_array['baseurl'].'/profile_builder/attachments/wpmuRandomID_'.$randomUserNumber.'_attachment_'. $safe_filename;
+								$meta[$value['item_type'].$value['id']] = apply_filters( 'wppb_register_wpmu_upload', $upFile );
+								$meta[$value['item_type'].$value['id'].'_radomUserNumber'] = apply_filters( 'wppb_register_wpmu_upload_random_user_number', $randomUserNumber );
 								$pictureUpload = 'yes';
 							}
 						}
@@ -141,59 +127,36 @@ function wppb_add_custom_field_values($POST, $meta){
 					break;
 				}
 				case "avatar":{
-					$uploadedfile = $value['item_type'].$value['id'];
-					$wpUploadPath = wp_upload_dir(); // Array of key => value pairs
-					$target_path_original = $wpUploadPath['basedir']."/profile_builder/avatars/";
-					$fileName = $_FILES[$uploadedfile]['name'];
-					$finalFileName = '';
-							
-					for ($i=0; $i < strlen($fileName); $i++){
-						if ($fileName[$i] == "'")
-							$finalFileName .= '`';
-						elseif ($fileName[$i] == ' ')
-							$finalFileName .= '_';
-						else $finalFileName .= $fileName[$i];
-					}
-					
-					$fileName = $finalFileName;
+					$avatarUpload = 'no';
 
-					$target_path = $target_path_original . 'wpmuRandomID_'.$randomUserNumber.'_originalAvatar_'. $fileName; 	
-					
-					/* when trying to upload file, be sure it's one of the accepted image file-types */
-					if ( (($_FILES[$uploadedfile]['type'] == 'image/jpeg') || ($_FILES[$uploadedfile]['type'] == 'image/jpg') || ($_FILES[$uploadedfile]['type'] == 'image/png') || ($_FILES[$uploadedfile]['type'] == 'image/bmp') || ($_FILES[$uploadedfile]['type'] == 'image/pjpeg') || ($_FILES[$uploadedfile]['type'] == 'image/x-png')) && (($_FILES[$uploadedfile]['size'] < WPPB_SERVER_MAX_UPLOAD_SIZE_BYTE) && ($_FILES[$uploadedfile]['size'] !=0)) ){
-						$wp_filetype = wp_check_filetype(basename( $_FILES[$uploadedfile]['name']), null );
-						$attachment = array('post_mime_type' => $wp_filetype['type'],
-											'post_title' => $fileName, //preg_replace('/\.[^.]+$/', '', basename($_FILES[$uploadedfile]['name'])),
-											'post_content' => '',
-											'post_status' => 'inherit'
-											);
-
-
-						$attach_id = wp_insert_attachment( $attachment, $target_path);
-				
-						$upFile = image_downsize( $attach_id, 'thumbnail' );
-						$upFile = $upFile[0];
+					$uploaded_file = $value['item_type'].$value['id'];
+					// If we have a file then: sanatize file name, remove extra spaces/convert to _, remove non 0-9a-Z._- characters, remove leading/trailing spaces check if under allowed upload size, check file extension for legal file types
+					if ( is_uploaded_file( $_FILES[$uploaded_file]['tmp_name'] ) ){
+						$wp_upload_array = wp_upload_dir(); // Array of key => value pairs
+						$safe_filename = preg_replace( array( "/\s+/", "/[^-\.\w]+/" ), array( "_", "" ), trim( $_FILES[$uploaded_file]['name'] ) );
+						$target_path = $wp_upload_array['basedir'].'/profile_builder/avatars/wpmuRandomID_'.$randomUserNumber.'_originalAvatar_'. $safe_filename;
 						
-						//if file upload succeded			
-						if (move_uploaded_file($_FILES[$uploadedfile]['tmp_name'], $target_path)){
-							$meta[$value['item_type'].$value['id']] = apply_filters('wppb_register_wpmu_avatar', $upFile);
-							$meta[$value['item_type'].$value['id'].'_radomUserNumber'] = apply_filters('wppb_register_wpmu_avatar_random_user_number', $randomUserNumber);
-							//will need to call the wppb_resize_avatar once email has been verified
-							$avatarUpload = 'yes';
+						$allowed_filetypes = "/^\.(jpg|jpeg|gif|png){1}$/i";  //"/^\.(jpg|jpeg|gif|png|doc|docx|txt|rtf|pdf|xls|xlsx|ppt|pptx){1}$/i";
+						
+						if ( $_FILES[$uploaded_file]['size'] <= WPPB_SERVER_MAX_UPLOAD_SIZE_BYTE && preg_match( $allowed_filetypes, strrchr( $safe_filename, '.' ) ) ){			
+							if ( move_uploaded_file( $_FILES[$uploaded_file]['tmp_name'], $target_path ) ){
+								$avatarUpload = 'yes';
+								
+								$meta[$value['item_type'].$value['id']] = apply_filters( 'wppb_register_wpmu_avatar', str_replace( $wp_upload_array['basedir'], $wp_upload_array['baseurl'], $target_path ) );
+								$meta[$value['item_type'].$value['id'].'avatar_directory_path'] = apply_filters( 'wppb_register_wpmu_avatar_directory_path', $target_path );
+								$meta[$value['item_type'].$value['id'].'_radomUserNumber'] = apply_filters( 'wppb_register_wpmu_avatar_random_user_number', $randomUserNumber );
+								
+							}else
+								$avatarUpload = 'no';
 						}
-						else $avatarUpload = 'no'; 
 					}
-					if (($_FILES[$uploadedfile]['type'] == ''))
-						$avatarUpload = 'yes';
-				
 					break;
 				}
 			}
 		}
 	}
-	
+
 	return $meta;
-	
 }
 
 /**
@@ -203,16 +166,13 @@ function wppb_add_custom_field_values($POST, $meta){
  * @param string $key The activation key provided to the user.
  * @return array An array containing information about the activated user and/or blog
  */
-function wppb_activate_signup($key) {
+function wppb_activate_signup( $key ) {
 	global $wpdb;
 	$bloginfo = get_bloginfo( 'name' );
 	$wppb_generalSettings = get_option('wppb_general_settings');
 
-	if ( is_multisite() )
-		$signup = $wpdb->get_row( $wpdb->prepare("SELECT * FROM $wpdb->signups WHERE activation_key = %s", $key) );
-	else
-		$signup = $wpdb->get_row( $wpdb->prepare("SELECT * FROM ".$wpdb->prefix."signups WHERE activation_key = %s", $key) );
-
+	$signup = ( is_multisite() ? $wpdb->get_row( $wpdb->prepare("SELECT * FROM $wpdb->signups WHERE activation_key = %s", $key) ) : $wpdb->get_row( $wpdb->prepare("SELECT * FROM ".$wpdb->prefix."signups WHERE activation_key = %s", $key) ) );
+	
 	if ( empty( $signup ) )
 		return $activateUserErrorMessage1 = apply_filters('wppb_register_activate_user_error_message1', '<p class="error">'. __('Invalid activation key!', 'profilebuilder') .'</p>');
 
@@ -220,12 +180,11 @@ function wppb_activate_signup($key) {
 		if ( empty( $signup->domain ) )
 			return $activateUserErrorMessage2 = apply_filters('wppb_register_activate_user_error_message2', '<p class="error">'. __('The user is already active!', 'profilebuilder') .'</p>');
 
-	$meta = unserialize($signup->meta);
-	if (isset($wppb_generalSettings['loginWith']) && ($wppb_generalSettings['loginWith'] == 'email'))
-		$user_login = $wpdb->escape($signup->user_email);
-	else
-		$user_login = $wpdb->escape($signup->user_login);
-	$user_email = $wpdb->escape($signup->user_email);
+	$meta = unserialize( $signup->meta );
+	
+	$user_login = ( ( isset( $wppb_generalSettings['loginWith'] ) && ( $wppb_generalSettings['loginWith'] == 'email' ) ) ? esc_sql( $signup->user_email ) : esc_sql( $signup->user_login ) );
+		
+	$user_email = esc_sql( $signup->user_email );
 	$password = base64_decode($meta['user_pass']);
 
 	$user_id = username_exists($user_login);
@@ -248,8 +207,6 @@ function wppb_activate_signup($key) {
 			$retVal = $wpdb->update( $wpdb->signups, array('active' => 1, 'activated' => $now), array('activation_key' => $key) );
 		else
 			$retVal = $wpdb->update( $wpdb->prefix.'signups', array('active' => 1, 'activated' => $now), array('activation_key' => $key) );
-
-		
 
 		wppb_add_meta_to_user_on_activation($user_id, '', $meta);
 		
@@ -335,7 +292,7 @@ function wppb_front_end_register($atts){
 		/* preset the values in case some are not submitted */
 		$user_pass = '';
 		if (isset($_POST['passw1']))
-			$user_pass = esc_attr( $_POST['passw1'] );
+			$user_pass = $_POST['passw1'];
 		$email = '';
 		if (isset($_POST['email']))
 			$email = trim ($_POST['email']);
@@ -489,7 +446,6 @@ function wppb_front_end_register($atts){
 					}
 					case "checkbox":{
 						$checkboxOption = '';
-						$value['item_options'] = wppb_icl_t('plugin profile-builder-pro', 'custom_field_'.$id.'_options_translation', $value['item_options']);
 						$checkboxValue = explode(',', $value['item_options']);
 						foreach($checkboxValue as $thisValue){
 							$thisValue = str_replace(' ', '#@space@#', $thisValue); //we need to escape the space-codification we sent earlier in the post
@@ -597,14 +553,18 @@ function wppb_front_end_register($atts){
 						break;
 					}
 					case "avatar":{
-						$uploadedfile = $value['item_type'].$value['id'];
-
-						if ( (basename( $_FILES[$uploadedfile]['name']) == '')){
-							if (($_FILES[$uploadedfile]['type'] != 'image/jpeg') || ($_FILES[$uploadedfile]['type'] != 'image/jpg') || ($_FILES[$uploadedfile]['type'] != 'image/png') || ($_FILES[$uploadedfile]['type'] != 'image/bmp') || ($_FILES[$uploadedfile]['type'] != 'image/pjpeg') || ($_FILES[$uploadedfile]['type'] != 'image/x-png'))
-								if (isset($value['item_required'])){
-									if ($value['item_required'] == 'yes')
-											array_push($extraFieldsErrorHolder, $value['id']);
+						if (isset($value['item_required'])){
+							if ($value['item_required'] == 'yes'){
+								$uploadedfile = $value['item_type'].$value['id'];
+						
+								if (basename( $_FILES[$uploadedfile]['name']) == ''){
+									array_push($extraFieldsErrorHolder, $value['id']);
+								}elseif ($_FILES[$uploadedfile]['type'] == 'image/bmp'){
+									array_push($extraFieldsErrorHolder, $value['id']);
+									$failReason = apply_filters('wppb_avatar_upload_bad_filetype_register', __('The following image extensions are NOT supported: bmp', 'profilebuilder'));
 								}
+								
+							}
 						}
 						break;
 					}
@@ -655,6 +615,8 @@ function wppb_front_end_register($atts){
 		}
 		elseif ( $agreed == false )
 			$error = __('You must agree to the terms and conditions before registering!', 'profilebuilder');
+		elseif(isset($failReason))
+			$error = __('The account was NOT created!', 'profilebuilder') .'<br/>'. $failReason;
 		elseif(($firstnameComplete == 'no' || $lastnameComplete == 'no' ||	$nicknameComplete == 'no' || $websiteComplete == 'no' || $aimComplete == 'no' || $yahooComplete == 'no' ||	$jabberComplete == 'no' ||	$bioComplete == 'no' ) || !empty($extraFieldsErrorHolder))
 			$error = __('The account was NOT created!', 'profilebuilder') .'<br/>'. __('(Several required fields were left uncompleted)', 'profilebuilder');
 		else{
@@ -668,9 +630,9 @@ function wppb_front_end_register($atts){
 					$foundError = false;
 				
 					if ( is_multisite() )
-						$userSignup = $wpdb->get_results("SELECT * FROM $wpdb->signups WHERE user_login='".$userdata['user_login']."' OR user_email='".$userdata['user_email']."'");
+						$userSignup = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM $wpdb->signups WHERE user_login = %s OR user_email= %s", $userdata['user_login'], $userdata['user_email'] ) );
 					else
-						$userSignup = $wpdb->get_results("SELECT * FROM ".$wpdb->prefix."signups WHERE user_login='".$userdata['user_login']."' OR user_email='".$userdata['user_email']."'");
+						$userSignup = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM ".$wpdb->prefix."signups WHERE user_login = %s OR user_email= %s", $userdata['user_login'], $userdata['user_email'] ) );
 						
 					if (trim($userSignup[0]->user_login) == $userdata['user_login']){
 						$foundError = true;
@@ -728,8 +690,7 @@ function wppb_front_end_register($atts){
 								}
 								case "checkbox":{
 									$checkboxOption = '';
-									$value['item_options'] = wppb_icl_t('plugin profile-builder-pro', 'custom_field_'.$id.'_options_translation', $value['item_options']);
-									$checkboxValue = explode(',', $value['item_options']);
+									$checkboxValue = explode(',', $value['item_options']);										
 									foreach($checkboxValue as $thisValue){
 										$thisValue = str_replace(' ', '#@space@#', $thisValue); //we need to escape the space-codification we sent earlier in the post
 										if (isset($_POST[$thisValue.$value['id']])){
@@ -766,31 +727,24 @@ function wppb_front_end_register($atts){
 									break;
 								}
 								case "upload":{
-									$uploadedfile = $value['item_type'].$value['id'];
+									$uploaded_file = $value['item_type'].$value['id'];
 										
 									//first we need to verify if we don't try to upload a 0b or 0 length file
-									if ( (basename( $_FILES[$uploadedfile]['name']) != '')){
+									if ( (basename( $_FILES[$uploaded_file]['name']) != '')){
 										
 										//second we need to verify if the uploaded file size is less then the set file size in php.ini
-										if (($_FILES[$uploadedfile]['size'] < WPPB_SERVER_MAX_UPLOAD_SIZE_BYTE) && ($_FILES[$uploadedfile]['size'] !=0)){
+										if (($_FILES[$uploaded_file]['size'] < WPPB_SERVER_MAX_UPLOAD_SIZE_BYTE) && ($_FILES[$uploaded_file]['size'] !=0)){
 											//we need to prepare the basename of the file, so that ' becomes ` as ' gives an error
-											$fileName = basename( $_FILES[$uploadedfile]['name']);
-											$finalFileName = '';
+											$safe_filename = preg_replace( array( "/\s+/", "/[^-\.\w]+/" ), array( "_", "" ), trim( $_FILES[$uploaded_file]['name'] ) );
 											
-											for ($i=0; $i < strlen($fileName); $i++){
-												if ($fileName[$i] == "'")
-													$finalFileName .= '`';
-												else $finalFileName .= $fileName[$i];
-											}
-												
 											//create the target path for uploading	
-											$wpUploadPath = wp_upload_dir(); // Array of key => value pairs
-											$target_path = $wpUploadPath['basedir']."/profile_builder/attachments/";
-											$target_path = $target_path . 'userID_'.$new_user.'_attachment_'. $finalFileName;
+											$wp_upload_array = wp_upload_dir(); // Array of key => value pairs
+											$target_path = $wp_upload_array['basedir']."/profile_builder/attachments/";
+											$target_path = $target_path . 'userID_'.$new_user.'_attachment_'. $safe_filename;
 
-											if (move_uploaded_file($_FILES[$uploadedfile]['tmp_name'], $target_path)){
+											if (move_uploaded_file($_FILES[$uploaded_file]['tmp_name'], $target_path)){
 												//$upFile = get_bloginfo('home').'/'.$target_path;
-												$upFile = $wpUploadPath['baseurl'].'/profile_builder/attachments/userID_'.$new_user.'_attachment_'. $finalFileName;
+												$upFile = $wp_upload_array['baseurl'].'/profile_builder/attachments/userID_'.$new_user.'_attachment_'. $safe_filename;
 												add_user_meta( $new_user, $value['item_metaName'], $upFile );
 												$pictureUpload = 'yes';
 											}
@@ -799,51 +753,47 @@ function wppb_front_end_register($atts){
 									break;
 								}
 								case "avatar":{
+									$avatarUpload = 'no';
 
-									$uploadedfile = $value['item_type'].$value['id'];
-									$wpUploadPath = wp_upload_dir(); // Array of key => value pairs
-									$target_path_original = $wpUploadPath['basedir']."/profile_builder/avatars/";
-									$fileName = $_FILES[$uploadedfile]['name'];
-									$finalFileName = '';
-											
-									for ($i=0; $i < strlen($fileName); $i++){
-										if ($fileName[$i] == "'")
-											$finalFileName .= '`';
-										elseif ($fileName[$i] == ' ')
-											$finalFileName .= '_';
-										else $finalFileName .= $fileName[$i];
-									}
-									
-									$fileName = $finalFileName;
+									$uploaded_file = $value['item_type'].$value['id'];
+									// If we have a file then: sanatize file name, remove extra spaces/convert to _, remove non 0-9a-Z._- characters, remove leading/trailing spaces check if under allowed upload size, check file extension for legal file types
+									if ( is_uploaded_file( $_FILES[$uploaded_file]['tmp_name'] ) ){
+										$wp_upload_array = wp_upload_dir(); // Array of key => value pairs
+										$safe_filename = preg_replace( array( "/\s+/", "/[^-\.\w]+/" ), array( "_", "" ), trim( $_FILES[$uploaded_file]['name'] ) );
+										$target_path = $wp_upload_array['basedir'].'/profile_builder/avatars/userID_'.$new_user.'_originalAvatar_'. $safe_filename; 
 
-									$target_path = $target_path_original . 'userID_'.$new_user.'_originalAvatar_'. $fileName; 	
-									
-									/* when trying to upload file, be sure it's one of the accepted image file-types */
-									if ( (($_FILES[$uploadedfile]['type'] == 'image/jpeg') || ($_FILES[$uploadedfile]['type'] == 'image/jpg') || ($_FILES[$uploadedfile]['type'] == 'image/png') || ($_FILES[$uploadedfile]['type'] == 'image/bmp') || ($_FILES[$uploadedfile]['type'] == 'image/pjpeg') || ($_FILES[$uploadedfile]['type'] == 'image/x-png')) && (($_FILES[$uploadedfile]['size'] < WPPB_SERVER_MAX_UPLOAD_SIZE_BYTE) && ($_FILES[$uploadedfile]['size'] !=0)) ){
-										$wp_filetype = wp_check_filetype(basename( $_FILES[$uploadedfile]['name']), null );
-										$attachment = array('post_mime_type' => $wp_filetype['type'],
-															'post_title' => $fileName, //preg_replace('/\.[^.]+$/', '', basename($_FILES[$uploadedfile]['name'])),
-															'post_content' => '',
-															'post_status' => 'inherit'
-															);
-
-
-										$attach_id = wp_insert_attachment( $attachment, $target_path);
-								
-										$upFile = image_downsize( $attach_id, 'thumbnail' );
-										$upFile = $upFile[0];
+										if ( PHP_OS == "WIN32" || PHP_OS == "WINNT" )
+											$target_path = str_replace( '\\', '/', $target_path );
 										
-										//if file upload succeded			
-										if (move_uploaded_file($_FILES[$uploadedfile]['tmp_name'], $target_path)){
-											add_user_meta( $new_user, $value['item_metaName'], $upFile );
-											wppb_resize_avatar($new_user);
-											$avatarUpload = 'yes';
+										$allowed_filetypes = "/^\.(jpg|jpeg|gif|png){1}$/i";  //"/^\.(jpg|jpeg|gif|png|doc|docx|txt|rtf|pdf|xls|xlsx|ppt|pptx){1}$/i";
+										
+										if ( $_FILES[$uploaded_file]['size'] <= WPPB_SERVER_MAX_UPLOAD_SIZE_BYTE && preg_match( $allowed_filetypes, strrchr( $safe_filename, '.' ) ) ){			
+											if ( move_uploaded_file( $_FILES[$uploaded_file]['tmp_name'], $target_path ) ){
+												$avatarUpload = 'yes';
+											
+												$wp_filetype = wp_check_filetype(basename( $_FILES[$uploaded_file]['name']), null );
+												$attachment = array(
+													 'post_mime_type' => $wp_filetype['type'],
+													 'post_title' => $safe_filename,
+													 'post_content' => '',
+													 'post_status' => 'inherit'
+													);
+
+												$attach_id = wp_insert_attachment( $attachment, $target_path );
+										
+												$upFile = image_downsize( $attach_id, 'thumbnail' );
+												$upFile = $upFile[0];
+											
+												add_user_meta( $new_user, $value['item_metaName'], $upFile );
+												add_user_meta( $new_user, 'avatar_directory_path_'.$value['id'], $target_path );
+												add_user_meta( $new_user, 'resized_avatar_'.$value['id'], '' );
+												wppb_resize_avatar($new_user);
+											}						
 										}
-										else $avatarUpload = 'no'; 
-									}
-									if (($_FILES[$uploadedfile]['type'] == ''))
+										
+									}else
 										$avatarUpload = 'yes';
-								
+
 									break;
 								}
 							}
@@ -898,8 +848,7 @@ function wppb_front_end_register($atts){
 
 ?>
 	<div class="wppb_holder" id="wppb_register">
-<?php 	
-
+<?php
 		if ( is_user_logged_in() && !current_user_can( 'create_users' ) ) :
 
 		global $user_ID; 
@@ -1022,7 +971,7 @@ function wppb_front_end_register($atts){
 					/* use this action hook to add extra content before the register form. */
 					do_action( 'wppb_before_register_fields' );
 ?>
-					<form enctype="multipart/form-data" method="post" id="adduser" class="user-forms" action="http://<?php echo $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>">
+					<form enctype="multipart/form-data" method="post" id="adduser" class="user-forms" action="<?php wppb_curpageurl(); ?>">
 <?php 					
 						echo '<input type="hidden" name="MAX_FILE_SIZE" value="'.WPPB_SERVER_MAX_UPLOAD_SIZE_BYTE.'" /><!-- set the MAX_FILE_SIZE to the server\'s current max upload size in bytes -->'; 
 	
@@ -1036,7 +985,7 @@ function wppb_front_end_register($atts){
 								$errorMark = '<font color="red" title="This field is required for registration.">*</font>';
 								if (isset($_POST['user_name'])){
 									if (trim($_POST['user_name']) == ''){
-										$errorMark = '<img src="'.WPPB_PLUGIN_URL . '/assets/images/pencil_delete.png" title="'.__('This field must be filled out before registering (It was marked as required by the administrator)', 'profilebuilder').'"/>';
+										$errorMark = '<img src="'.WPPB_PLUGIN_URL . 'assets/images/pencil_delete.png" title="'.__('This field must be filled out before registering (It was marked as required by the administrator)', 'profilebuilder').'"/>';
 										$errorVar = ' errorHolder';
 									}
 								}
@@ -1050,7 +999,7 @@ function wppb_front_end_register($atts){
 										$errorMark = '<font color="red" title="'.__('This field is marked as required by the administrator', 'profilebuilder').'">*</font>';
 										if (isset($_POST['email'])){
 											if ( (trim($_POST['email']) == '') || (!is_email(trim($_POST['email']))) ){
-												$errorMark = '<img src="'.WPPB_PLUGIN_URL . '/assets/images/pencil_delete.png" title="This field is required for registration."/>';
+												$errorMark = '<img src="'.WPPB_PLUGIN_URL . 'assets/images/pencil_delete.png" title="This field is required for registration."/>';
 												$errorVar = ' errorHolder';
 											}
 										}
@@ -1087,7 +1036,7 @@ function wppb_front_end_register($atts){
 									$errorMark = '<font color="red" title="'.__('This field is marked as required by the administrator', 'profilebuilder').'">*</font>';
 									if (isset($_POST['first_name'])){
 										if (trim($_POST['first_name']) == ''){
-											$errorMark = '<img src="'.WPPB_PLUGIN_URL . '/assets/images/pencil_delete.png" title="'.__('This field must be filled out before registering (It was marked as required by the administrator)', 'profilebuilder').'"/>';
+											$errorMark = '<img src="'.WPPB_PLUGIN_URL . 'assets/images/pencil_delete.png" title="'.__('This field must be filled out before registering (It was marked as required by the administrator)', 'profilebuilder').'"/>';
 											$errorVar = ' errorHolder';
 										}
 									}
@@ -1111,7 +1060,7 @@ function wppb_front_end_register($atts){
 								$errorMark = '<font color="red" title="'.__('This field is marked as required by the administrator', 'profilebuilder').'">*</font>';
 								if (isset($_POST['last_name'])){
 									if (trim($_POST['last_name']) == ''){
-										$errorMark = '<img src="'.WPPB_PLUGIN_URL . '/assets/images/pencil_delete.png" title="'.__('This field must be filled out before registering (It was marked as required by the administrator)', 'profilebuilder').'"/>';
+										$errorMark = '<img src="'.WPPB_PLUGIN_URL . 'assets/images/pencil_delete.png" title="'.__('This field must be filled out before registering (It was marked as required by the administrator)', 'profilebuilder').'"/>';
 										$errorVar = ' errorHolder';
 									}
 								}
@@ -1135,7 +1084,7 @@ function wppb_front_end_register($atts){
 								$errorMark = '<font color="red" title="'.__('This field is marked as required by the administrator', 'profilebuilder').'">*</font>';
 								if (isset($_POST['nickname'])){
 									if (trim($_POST['nickname']) == ''){
-										$errorMark = '<img src="'.WPPB_PLUGIN_URL . '/assets/images/pencil_delete.png" title="'.__('This field must be filled out before registering (It was marked as required by the administrator)', 'profilebuilder').'"/>';
+										$errorMark = '<img src="'.WPPB_PLUGIN_URL . 'assets/images/pencil_delete.png" title="'.__('This field must be filled out before registering (It was marked as required by the administrator)', 'profilebuilder').'"/>';
 										$errorVar = ' errorHolder';
 									}
 								}
@@ -1164,7 +1113,7 @@ function wppb_front_end_register($atts){
 									$errorMark = '<font color="red" title="'.__('This field is marked as required by the administrator', 'profilebuilder').'">*</font>';
 									if (isset($_POST['email'])){
 										if ( (trim($_POST['email']) == '') || (!is_email(trim($_POST['email']))) ){
-											$errorMark = '<img src="'.WPPB_PLUGIN_URL . '/assets/images/pencil_delete.png" title="This field is required for registration."/>';
+											$errorMark = '<img src="'.WPPB_PLUGIN_URL . 'assets/images/pencil_delete.png" title="This field is required for registration."/>';
 											$errorVar = ' errorHolder';
 										}
 									}
@@ -1189,7 +1138,7 @@ function wppb_front_end_register($atts){
 								$errorMark = '<font color="red" title="'.__('This field is marked as required by the administrator', 'profilebuilder').'">*</font>';
 								if (isset($_POST['website'])){
 									if (trim($_POST['website']) == ''){
-										$errorMark = '<img src="'.WPPB_PLUGIN_URL . '/assets/images/pencil_delete.png" title="'.__('This field must be filled out before registering (It was marked as required by the administrator)', 'profilebuilder').'"/>';
+										$errorMark = '<img src="'.WPPB_PLUGIN_URL . 'assets/images/pencil_delete.png" title="'.__('This field must be filled out before registering (It was marked as required by the administrator)', 'profilebuilder').'"/>';
 										$errorVar = ' errorHolder';
 									}
 								}
@@ -1213,7 +1162,7 @@ function wppb_front_end_register($atts){
 									$errorMark = '<font color="red" title="'.__('This field is marked as required by the administrator', 'profilebuilder').'">*</font>';
 									if (isset($_POST['aim'])){
 										if (trim($_POST['aim']) == ''){
-											$errorMark = '<img src="'.WPPB_PLUGIN_URL . '/assets/images/pencil_delete.png" title="'.__('This field must be filled out before registering (It was marked as required by the administrator)', 'profilebuilder').'"/>';
+											$errorMark = '<img src="'.WPPB_PLUGIN_URL . 'assets/images/pencil_delete.png" title="'.__('This field must be filled out before registering (It was marked as required by the administrator)', 'profilebuilder').'"/>';
 											$errorVar = ' errorHolder';
 										}
 									}
@@ -1237,7 +1186,7 @@ function wppb_front_end_register($atts){
 								$errorMark = '<font color="red" title="'.__('This field is marked as required by the administrator', 'profilebuilder').'">*</font>';
 								if (isset($_POST['yim'])){
 									if (trim($_POST['yim']) == ''){
-										$errorMark = '<img src="'.WPPB_PLUGIN_URL . '/assets/images/pencil_delete.png" title="'.__('This field must be filled out before registering (It was marked as required by the administrator)', 'profilebuilder').'"/>';
+										$errorMark = '<img src="'.WPPB_PLUGIN_URL . 'assets/images/pencil_delete.png" title="'.__('This field must be filled out before registering (It was marked as required by the administrator)', 'profilebuilder').'"/>';
 										$errorVar = ' errorHolder';
 									}
 								}
@@ -1261,7 +1210,7 @@ function wppb_front_end_register($atts){
 								$errorMark = '<font color="red" title="'.__('This field is marked as required by the administrator', 'profilebuilder').'">*</font>';
 								if (isset($_POST['jabber'])){
 									if (trim($_POST['jabber']) == ''){
-										$errorMark = '<img src="'.WPPB_PLUGIN_URL . '/assets/images/pencil_delete.png" title="'.__('This field must be filled out before registering (It was marked as required by the administrator)', 'profilebuilder').'"/>';
+										$errorMark = '<img src="'.WPPB_PLUGIN_URL . 'assets/images/pencil_delete.png" title="'.__('This field must be filled out before registering (It was marked as required by the administrator)', 'profilebuilder').'"/>';
 										$errorVar = ' errorHolder';
 									}
 								}
@@ -1288,7 +1237,7 @@ function wppb_front_end_register($atts){
 								$errorMark = '<font color="red" title="'.__('This field is marked as required by the administrator', 'profilebuilder').'">*</font>';
 								if (isset($_POST['description'])){
 									if (trim($_POST['description']) == ''){
-										$errorMark = '<img src="'.WPPB_PLUGIN_URL . '/assets/images/pencil_delete.png" title="'.__('This field must be filled out before registering (It was marked as required by the administrator)', 'profilebuilder').'"/>';
+										$errorMark = '<img src="'.WPPB_PLUGIN_URL . 'assets/images/pencil_delete.png" title="'.__('This field must be filled out before registering (It was marked as required by the administrator)', 'profilebuilder').'"/>';
 										$errorVar = ' errorHolder';
 									}
 								}
@@ -1315,12 +1264,12 @@ function wppb_front_end_register($atts){
 								$errorMark2 = '<font color="red" title="This field is required for registration.">*</font>';
 								if (isset ($_POST['passw1']))
 									if (trim($_POST['passw1']) == ''){
-										$errorMark = '<img src="'.WPPB_PLUGIN_URL . '/assets/images/pencil_delete.png" title="This field is required for registration."/>';
+										$errorMark = '<img src="'.WPPB_PLUGIN_URL . 'assets/images/pencil_delete.png" title="This field is required for registration."/>';
 										$errorVar = ' errorHolder';
 									}
 								if (isset ($_POST['passw2']))
 									if (trim($_POST['passw2']) == ''){
-										$errorMark2 = '<img src="'.WPPB_PLUGIN_URL . '/assets/images/pencil_delete.png" title="This field is required for registration."/>';
+										$errorMark2 = '<img src="'.WPPB_PLUGIN_URL . 'assets/images/pencil_delete.png" title="This field is required for registration."/>';
 										$errorVar2 = ' errorHolder';
 									}
 							}
@@ -1350,7 +1299,7 @@ function wppb_front_end_register($atts){
 								
 								//register_user_extra_fields($error, $_POST, $extraFieldsErrorHolder);
 								$page = 'register';
-								$returnedValue = wppb_extra_fields($current_user->id, $extraFieldsErrorHolder, $registerFilterArray, $page, $error, $_POST);
+								$returnedValue = wppb_extra_fields($current_user->ID, $extraFieldsErrorHolder, $registerFilterArray, $page, $error, $_POST);
 								
 								//copy over extra fields to the rest of the fieldso on the edit profile
 								foreach($returnedValue as $key => $value)
@@ -1359,7 +1308,7 @@ function wppb_front_end_register($atts){
 
 							if(function_exists('wppb_add_recaptcha_to_registration_form')){
 								$wppb_addon_settings = get_option('wppb_addon_settings');
-								if ($wppb_addon_settings['wppb_reCaptcha'] == 'show'){
+								if ( isset( $wppb_addon_settings['wppb_reCaptcha'] ) && ( $wppb_addon_settings['wppb_reCaptcha'] == 'show' ) ){
 									$reCAPTCHAForm = wppb_add_recaptcha_to_registration_form();
 									$labelName = apply_filters('wppb_register_anti_spam_title', __('Anti-Spam', 'profilebuilder'));
 									$registerFilterArray2['reCAPTCHAForm'] = '<div class="form-reCAPTCHA"><label class="form-reCAPTCHA-label" for="'.$labelName.'">'.$labelName.'</label>'.$reCAPTCHAForm.'</div><!-- .form-reCAPTCHA -->';
@@ -1396,7 +1345,13 @@ function wppb_front_end_register($atts){
 ?>
 							
 						<p class="form-submit">
-							<input name="adduser" type="submit" id="addusersub" class="submit button" value="<?php if ( current_user_can( 'create_users' ) ) _e('Add User', 'profilebuilder'); else _e('Register', 'profilebuilder'); ?>" />
+							<?php 
+								if ( current_user_can( 'create_users' ) ) 
+									$button_name = __('Add User', 'profilebuilder'); 
+								else 
+									$button_name = __('Register', 'profilebuilder');
+							?>
+							<input name="adduser" type="submit" id="addusersub" class="submit button" value="<?php echo apply_filters('wppb_register_button_name', $button_name, $current_user); ?>" />
 							<input name="action" type="hidden" id="action" value="adduser" />
 							<input type="hidden" name="formName" value="register" />
 						</p><!-- .form-submit -->
@@ -1423,15 +1378,10 @@ function wppb_front_end_register($atts){
 
 
 
-// function to choose whether to display the registration page or the key-validating function
+// function to choose whether to display the registration page or the validation message
 function wppb_front_end_register_handler($atts){
 
-	if (isset($_GET['key'])){
-		$res = wppb_activate_signup ($_GET['key']);
-	}else
-		$res = wppb_front_end_register($atts);
-		
-	return $res;	
+	return ( isset( $_GET['activation_key'] ) ? wppb_activate_signup ( $_GET['activation_key'] ) : wppb_front_end_register( $atts ) );
 }
 
 ?>

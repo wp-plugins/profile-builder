@@ -20,7 +20,6 @@ foreach ($allUserMeta as $userMeta) {
 		$metaFieldName = $userMeta->meta_key;
 		$metaFieldValue = $userMeta->meta_value;
 		delete_user_meta( $userMeta->user_id, $metaFieldName, $metaFieldValue );
-		//$wpdb->query("DELETE FROM $wpdb->usermeta WHERE meta_key = '".$metaFieldName."' AND meta_value = '".$metaFieldValue."'");
 	}
 
 	$foundAvatar = strpos ( (string)$userMeta->meta_key , 'resized_avatar_' );
@@ -28,7 +27,6 @@ foreach ($allUserMeta as $userMeta) {
 		$metaFieldName = $userMeta->meta_key;
 		$metaFieldValue = $userMeta->meta_value;
 		delete_user_meta( $userMeta->user_id, $metaFieldName, $metaFieldValue );
-		//$wpdb->query("DELETE FROM $wpdb->usermeta WHERE meta_key = '".$metaFieldName."' AND meta_value = '".$metaFieldValue."'");
 	}
 }
 
@@ -49,3 +47,4 @@ delete_option( 'userListingSettings' ); 					// Delete the user-listing settings
 delete_option( 'customUserListingSettings' ); 				// Delete the user-listing settings (since 1.1.21)
 delete_option( 'reCaptchaSettings' ); 						// Delete the public and private keys used by the reCAPTCHA addon (since 1.1.42)
 delete_option( 'emailCustomizer' ); 						// Delete the email-customizer settings
+delete_option( 'wppb_version' ); 							// Delete the version number

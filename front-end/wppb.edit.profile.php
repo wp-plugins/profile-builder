@@ -22,7 +22,7 @@ function wppb_save_the_password(){
 		/* Update user password. */
 		if ( !empty($_POST['pass1'] ) && !empty( $_POST['pass2'] ) ){
 			if ( $_POST['pass1'] == $_POST['pass2'] ){
-				wp_update_user( array( 'ID' => $current_user->id, 'user_pass' => esc_attr( $_POST['pass1'] ) ) );
+				wp_update_user( array( 'ID' => $current_user->ID, 'user_pass' => $_POST['pass1'] ) );
 				$changesSaved = 'yes';
 			} else {
 				$changesSavedNoMatchingPass = 'yes'; 
@@ -36,14 +36,12 @@ add_action('init', 'wppb_save_the_password');
 		
 function wppb_front_end_profile_info() {
 
-	global $changesSaved;
-	global $changesSavedNoMatchingPass;
-	global $changesSavedNoPass;
+	global $changesSaved, $changesSavedNoMatchingPass, $changesSavedNoPass, $wppb_shortcode_on_front, $current_user;
+
 	$editProfileFilterArray = array();
 	$editProfileFilterArray2 = array();
 	$extraFieldsErrorHolder = array();  //we will use this array to store the ID's of the extra-fields left uncompleted
-	
-	global $wppb_shortcode_on_front;
+
 	
 	//get "login with" setting
 	$wppb_generalSettings = get_option('wppb_general_settings');
@@ -57,16 +55,13 @@ function wppb_front_end_profile_info() {
 	$previousError = 'no';
 	$pictureUpload = 'no';
 	$avatarUpload = 'yes';
+	$failReason = '';
 	$allRequiredCompleted = 'yes';
 	$uploadName = array();
 	$uploadExt = array();
 	$uploadSize = array();
 	$editFilterArray = array();
 	$error = null;
-	
-	
-	/* Get user info. */
-		global $current_user;
 		
 	/* delete the attachment if set */
 	if (isset($_GET['userID']) && isset($_GET['field'])){
@@ -285,7 +280,10 @@ function wppb_front_end_profile_info() {
 						if (isset($value['item_required'])){
 							if ($value['item_required'] == 'yes'){
 								$uploadedfile = $value['item_type'].$value['id'];
-								if ( (basename( $_FILES[$uploadedfile]['name']) == '')){
+								$wp_upload_array = wp_upload_dir();
+								$userData = get_user_meta($current_user->ID, $value['item_metaName'], true);
+
+								if ( (basename( $_FILES[$uploadedfile]['name']) == '') && (($userData == '') || ($userData == $wp_upload_array['baseurl'].'/profile_builder/attachments/'))){
 									array_push($extraFieldsErrorHolder, $value['id']);
 									$allRequiredCompleted = 'no'; 
 								}
@@ -297,9 +295,16 @@ function wppb_front_end_profile_info() {
 						if (isset($value['item_required'])){
 							if ($value['item_required'] == 'yes'){
 								$uploadedfile = $value['item_type'].$value['id'];
-								if ( (basename( $_FILES[$uploadedfile]['name']) == '')){
+								$wp_upload_array = wp_upload_dir();
+								$userData = get_user_meta( $current_user->ID, $value['item_metaName'], true );
+								
+								if ( ( basename( $_FILES[$uploadedfile]['name'] ) == '') && ( trim ($userData) == '' ) ){
 									array_push($extraFieldsErrorHolder, $value['id']);
 									$allRequiredCompleted = 'no'; 
+								}elseif ( $_FILES[$uploadedfile]['type'] == 'image/bmp' ){
+									array_push( $extraFieldsErrorHolder, $value['id'] );
+									$allRequiredCompleted = 'no';
+									$failReason = apply_filters('wppb_avatar_upload_bad_filetype', '<br/>'.__('The following image extensions are NOT supported: bmp', 'profilebuilder'));
 								}
 							}
 						}
@@ -311,10 +316,14 @@ function wppb_front_end_profile_info() {
 		
 		
 		$allRequiredCompleted = apply_filters('wppb_edit_profile_all_required_completed_after_check', $allRequiredCompleted);
+		
+		$editProfileFilterArray['extraError'] = ''; //this is for creating extra error message and bypassing save
+		$editProfileFilterArray['extraError'] = apply_filters('wppb_edit_profile_extra_error', $editProfileFilterArray['extraError']);
+		
 	}
 		
 	/* If profile was saved, update profile. */
-	if ( ('POST' == $_SERVER['REQUEST_METHOD']) && (!empty( $_POST['action'] )) && ($_POST['action'] == 'update-user') && (wp_verify_nonce($_POST['edit_nonce_field'],'verify_edit_user')) && ($allRequiredCompleted == 'yes') ) { 
+	if ( ('POST' == $_SERVER['REQUEST_METHOD']) && (!empty( $_POST['action'] )) && ($_POST['action'] == 'update-user') && (wp_verify_nonce($_POST['edit_nonce_field'],'verify_edit_user')) && ($allRequiredCompleted == 'yes') ) {
 		
 		if (isset($wppb_generalSettings['loginWith']) && ($wppb_generalSettings['loginWith'] == 'email')){
 		}else{
@@ -323,11 +332,11 @@ function wppb_front_end_profile_info() {
 				if ((trim($_POST['email']) != '') && isset($_POST['email'])){
 					if (email_exists( $_POST['email'] ) !=  FALSE)
 						$thisEmail = email_exists( $_POST['email'] );
-					else $thisEmail = $current_user->id;
+					else $thisEmail = $current_user->ID;
 					
 					if ( !empty( $_POST['email'] ) &&  is_email( $_POST['email'] )){                  				// if the user entered a valid email address
-						if (($thisEmail ==  $current_user->id)){            										// if the entered email address is not already registered to some other user
-							wp_update_user( array( 'ID' => $current_user->id, 'user_email' => esc_attr( $_POST['email'] )));	
+						if (($thisEmail ==  $current_user->ID)){            										// if the entered email address is not already registered to some other user
+							wp_update_user( array( 'ID' => $current_user->ID, 'user_email' => esc_attr( $_POST['email'] )));	
 							$changesSaved = 'yes';
 						}else{
 							$changesSavedNoEmailExist = 'yes';
@@ -339,11 +348,11 @@ function wppb_front_end_profile_info() {
 			}else{	
 				if (email_exists( $_POST['email'] ) !=  FALSE)
 					$thisEmail = email_exists( $_POST['email'] );
-				else $thisEmail = $current_user->id;
+				else $thisEmail = $current_user->ID;
 				
 				if ( !empty( $_POST['email'] ) &&  is_email( $_POST['email'] )){                  				// if the user entered a valid email address
-					if (($thisEmail ==  $current_user->id)){            										// if the entered email address is not already registered to some other user
-						wp_update_user( array( 'ID' => $current_user->id, 'user_email' => esc_attr( $_POST['email'] )));	
+					if (($thisEmail ==  $current_user->ID)){            										// if the entered email address is not already registered to some other user
+						wp_update_user( array( 'ID' => $current_user->ID, 'user_email' => esc_attr( $_POST['email'] )));	
 						$changesSaved = 'yes';
 					}else{
 						$changesSavedNoEmailExist = 'yes';
@@ -359,11 +368,11 @@ function wppb_front_end_profile_info() {
 			$_POST['first_name'] =  apply_filters('wppb_edit_profile_posted_first_name', $_POST['first_name']);
 			if ($wppb_defaultOptions['firstnameRequired'] == 'yes'){
 				if (isset($_POST['first_name']) && (trim($_POST['first_name']) != '')){
-					wp_update_user( array( 'ID' => $current_user->id, 'first_name' => esc_attr( $_POST['first_name'] )));
+					wp_update_user( array( 'ID' => $current_user->ID, 'first_name' => esc_attr( $_POST['first_name'] )));
 					$changesSaved = 'yes';
 				}
 			}else{
-				wp_update_user( array( 'ID' => $current_user->id, 'first_name' => esc_attr( $_POST['first_name'] )));
+				wp_update_user( array( 'ID' => $current_user->ID, 'first_name' => esc_attr( $_POST['first_name'] )));
 				$changesSaved = 'yes';
 			}
 		}	
@@ -372,11 +381,11 @@ function wppb_front_end_profile_info() {
 			$_POST['last_name'] =  apply_filters('wppb_edit_profile_posted_last_name', $_POST['last_name']);
 			if ($wppb_defaultOptions['lastnameRequired'] == 'yes'){
 				if (isset($_POST['last_name']) && (trim($_POST['last_name']) != '')){
-					wp_update_user( array( 'ID' => $current_user->id, 'last_name' => esc_attr( $_POST['last_name'] )));
+					wp_update_user( array( 'ID' => $current_user->ID, 'last_name' => esc_attr( $_POST['last_name'] )));
 					$changesSaved = 'yes';
 				}
 			}else{
-				wp_update_user( array( 'ID' => $current_user->id, 'last_name' => esc_attr( $_POST['last_name'] )));
+				wp_update_user( array( 'ID' => $current_user->ID, 'last_name' => esc_attr( $_POST['last_name'] )));
 				$changesSaved = 'yes';
 			}
 		}
@@ -385,11 +394,11 @@ function wppb_front_end_profile_info() {
 			$_POST['nickname'] =  apply_filters('wppb_edit_profile_posted_nickname', $_POST['nickname']);
 			if ($wppb_defaultOptions['nicknameRequired'] == 'yes'){
 				if (isset($_POST['nickname']) && (trim($_POST['nickname']) != '')){
-					wp_update_user( array( 'ID' => $current_user->id, 'nickname' => esc_attr( $_POST['nickname'] )));
+					wp_update_user( array( 'ID' => $current_user->ID, 'nickname' => esc_attr( $_POST['nickname'] )));
 					$changesSaved = 'yes';
 				}
 			}else{
-				wp_update_user( array( 'ID' => $current_user->id, 'nickname' => esc_attr( $_POST['nickname'] )));
+				wp_update_user( array( 'ID' => $current_user->ID, 'nickname' => esc_attr( $_POST['nickname'] )));
 				$changesSaved = 'yes';
 			}
 
@@ -399,11 +408,11 @@ function wppb_front_end_profile_info() {
 			$_POST['display_name'] =  apply_filters('wppb_edit_profile_posted_display_name', $_POST['display_name']);
 			if ($wppb_defaultOptions['dispnameRequired'] == 'yes'){
 				if (isset($_POST['display_name']) && (trim($_POST['display_name']) != '')){
-					wp_update_user( array( 'ID' => $current_user->id, 'display_name' => esc_attr( $_POST['display_name'] )));
+					wp_update_user( array( 'ID' => $current_user->ID, 'display_name' => esc_attr( $_POST['display_name'] )));
 					$changesSaved = 'yes';
 				}
 			}else{
-				wp_update_user( array( 'ID' => $current_user->id, 'display_name' => esc_attr( $_POST['display_name'] )));
+				wp_update_user( array( 'ID' => $current_user->ID, 'display_name' => esc_attr( $_POST['display_name'] )));
 				$changesSaved = 'yes';
 			}
 		}
@@ -414,10 +423,10 @@ function wppb_front_end_profile_info() {
 				if (isset($_POST['website']) && (trim($_POST['website']) != '')){
 					$wppbPos = strpos( (string)$_POST['website'], 'http://' );
 					if($wppbPos !== FALSE){
-						wp_update_user( array( 'ID' => $current_user->id, 'user_url' => esc_attr( $_POST['website'] )));
+						wp_update_user( array( 'ID' => $current_user->ID, 'user_url' => esc_attr( $_POST['website'] )));
 						$changesSaved = 'yes';
 					}else{
-						wp_update_user( array( 'ID' => $current_user->id, 'user_url' => 'http://'.esc_attr( $_POST['website'] )));
+						wp_update_user( array( 'ID' => $current_user->ID, 'user_url' => 'http://'.esc_attr( $_POST['website'] )));
 						$changesSaved = 'yes';
 					}
 				}
@@ -427,12 +436,12 @@ function wppb_front_end_profile_info() {
 				if($wppbPos !== FALSE){
 					if ($website == 'http://')
 						$website = '';
-					wp_update_user( array( 'ID' => $current_user->id, 'user_url' => $website));
+					wp_update_user( array( 'ID' => $current_user->ID, 'user_url' => $website));
 					$changesSaved = 'yes';
 				}else{
 					if ($website != '')
 						$website = 'http://'.$website;
-					wp_update_user( array( 'ID' => $current_user->id, 'user_url' => $website));
+					wp_update_user( array( 'ID' => $current_user->ID, 'user_url' => $website));
 					$changesSaved = 'yes';
 				}
 			}
@@ -442,11 +451,11 @@ function wppb_front_end_profile_info() {
 			$_POST['aim'] =  apply_filters('wppb_edit_profile_posted_aim', $_POST['aim']);
 			if ($wppb_defaultOptions['aimRequired'] == 'yes'){
 				if (isset($_POST['aim']) && (trim($_POST['aim']) != '')){
-					update_user_meta( $current_user->id, 'aim', esc_attr( $_POST['aim'] ) );
+					update_user_meta( $current_user->ID, 'aim', esc_attr( $_POST['aim'] ) );
 					$changesSaved = 'yes';
 				}
 			}else{
-				update_user_meta( $current_user->id, 'aim', esc_attr( $_POST['aim'] ) );
+				update_user_meta( $current_user->ID, 'aim', esc_attr( $_POST['aim'] ) );
 				$changesSaved = 'yes';
 			}
 		}
@@ -455,11 +464,11 @@ function wppb_front_end_profile_info() {
 			$_POST['yim'] =  apply_filters('wppb_edit_profile_posted_yahoo', $_POST['yim']);
 			if ($wppb_defaultOptions['yahooRequired'] == 'yes'){
 				if (isset($_POST['yim']) && (trim($_POST['yim']) != '')){
-					update_user_meta( $current_user->id, 'yim', esc_attr( $_POST['yim'] ) );
+					update_user_meta( $current_user->ID, 'yim', esc_attr( $_POST['yim'] ) );
 					$changesSaved = 'yes';
 				}
 			}else{
-				update_user_meta( $current_user->id, 'yim', esc_attr( $_POST['yim'] ) );
+				update_user_meta( $current_user->ID, 'yim', esc_attr( $_POST['yim'] ) );
 				$changesSaved = 'yes';
 			}
 		}
@@ -468,11 +477,11 @@ function wppb_front_end_profile_info() {
 			$_POST['jabber'] =  apply_filters('wppb_edit_profile_posted_jabber', $_POST['jabber']);
 			if ($wppb_defaultOptions['jabberRequired'] == 'yes'){
 				if (isset($_POST['jabber']) && (trim($_POST['jabber']) != '')){
-					update_user_meta( $current_user->id, 'jabber', esc_attr( $_POST['jabber'] ) );
+					update_user_meta( $current_user->ID, 'jabber', esc_attr( $_POST['jabber'] ) );
 					$changesSaved = 'yes';
 				}
 			}else{
-				update_user_meta( $current_user->id, 'jabber', esc_attr( $_POST['jabber'] ) );
+				update_user_meta( $current_user->ID, 'jabber', esc_attr( $_POST['jabber'] ) );
 				$changesSaved = 'yes';
 			}
 		}
@@ -481,11 +490,11 @@ function wppb_front_end_profile_info() {
 			$_POST['description'] =  apply_filters('wppb_edit_profile_posted_bio', $_POST['description']);
 			if ($wppb_defaultOptions['bioRequired'] == 'yes'){
 				if (isset($_POST['description']) && (trim($_POST['description']) != '')){
-					update_user_meta( $current_user->id, 'description', esc_attr( $_POST['description'] ) );
+					update_user_meta( $current_user->ID, 'description', esc_attr( $_POST['description'] ) );
 					$changesSaved = 'yes';
 				}
 			}else{
-				update_user_meta( $current_user->id, 'description', esc_attr( $_POST['description'] ) );
+				update_user_meta( $current_user->ID, 'description', esc_attr( $_POST['description'] ) );
 				$changesSaved = 'yes';
 			}
 		}
@@ -501,24 +510,23 @@ function wppb_front_end_profile_info() {
 						if (isset($value['item_required'])){
 							if ($value['item_required'] == 'yes'){
 								if (trim($_POST[$value['item_type'].$value['id']]) != '')
-									update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
+									update_user_meta( $current_user->ID, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
 								else 
 									array_push($extraFieldsErrorHolder, $value['id']);
 							}else
-								update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
+								update_user_meta( $current_user->ID, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
 						}else
-							update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
+							update_user_meta( $current_user->ID, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
 							
 						break;
 					}						
 					case "hiddenInput":{
-						update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
+						update_user_meta( $current_user->ID, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
 						
 						break;
 					}
 					case "checkbox":{
 						$checkboxOption = '';
-						$value['item_options'] = wppb_icl_t('plugin profile-builder-pro', 'custom_field_'.$id.'_options_translation', $value['item_options']);
 						$checkboxValue = explode(',', $value['item_options']);
 						foreach($checkboxValue as $thisValue){
 							$thisValue = str_replace(' ', '#@space@#', $thisValue); //we need to escape the space-codification we sent earlier in the post
@@ -531,13 +539,13 @@ function wppb_front_end_profile_info() {
 						if (isset($value['item_required'])){
 							if ($value['item_required'] == 'yes'){
 								if (trim($checkboxOption) != '')
-									update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $checkboxOption ) );
+									update_user_meta( $current_user->ID, $value['item_metaName'], esc_attr( $checkboxOption ) );
 								else 
 									array_push($extraFieldsErrorHolder, $value['id']);
 							}else
-								update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $checkboxOption ) );
+								update_user_meta( $current_user->ID, $value['item_metaName'], esc_attr( $checkboxOption ) );
 						}else
-							update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $checkboxOption ) );
+							update_user_meta( $current_user->ID, $value['item_metaName'], esc_attr( $checkboxOption ) );
 							
 						break;
 					}
@@ -545,39 +553,39 @@ function wppb_front_end_profile_info() {
 						if (isset($value['item_required'])){
 							if ($value['item_required'] == 'yes'){
 								if (trim($_POST[$value['item_type'].$value['id']]) != '')
-									update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
+									update_user_meta( $current_user->ID, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
 								else 
 									array_push($extraFieldsErrorHolder, $value['id']);
 							}else
-								update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
+								update_user_meta( $current_user->ID, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
 						}else
-							update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
+							update_user_meta( $current_user->ID, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
 						break;
 					}
 					case "select":{
 						if (isset($value['item_required'])){
 							if ($value['item_required'] == 'yes'){
 								if (trim($_POST[$value['item_type'].$value['id']]) != '')
-									update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
+									update_user_meta( $current_user->ID, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
 								else 
 									array_push($extraFieldsErrorHolder, $value['id']);
 							}else
-								update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
+								update_user_meta( $current_user->ID, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
 						}else
-							update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
+							update_user_meta( $current_user->ID, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
 						break;
 					}
 					case "countrySelect":{
 						if (isset($value['item_required'])){
 							if ($value['item_required'] == 'yes'){
 								if (trim($_POST[$value['item_type'].$value['id']]) != '')
-									update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
+									update_user_meta( $current_user->ID, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
 								else 
 									array_push($extraFieldsErrorHolder, $value['id']);
 							}else
-								update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
+								update_user_meta( $current_user->ID, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
 						}else
-							update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
+							update_user_meta( $current_user->ID, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
 						
 						break;
 					}
@@ -585,13 +593,13 @@ function wppb_front_end_profile_info() {
 						if (isset($value['item_required'])){
 							if ($value['item_required'] == 'yes'){
 								if (trim($_POST[$value['item_type'].$value['id']]) != '')
-									update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
+									update_user_meta( $current_user->ID, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
 								else 
 									array_push($extraFieldsErrorHolder, $value['id']);
 							}else
-								update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
+								update_user_meta( $current_user->ID, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
 						}else
-							update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
+							update_user_meta( $current_user->ID, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
 						
 						break;
 					}
@@ -599,13 +607,13 @@ function wppb_front_end_profile_info() {
 						if (isset($value['item_required'])){
 							if ($value['item_required'] == 'yes'){
 								if (trim($_POST[$value['item_type'].$value['id']]) != '')
-									update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
+									update_user_meta( $current_user->ID, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
 								else 
 									array_push($extraFieldsErrorHolder, $value['id']);
 							}else
-								update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
+								update_user_meta( $current_user->ID, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
 						}else
-							update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
+							update_user_meta( $current_user->ID, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
 						
 						break;
 					}
@@ -613,18 +621,18 @@ function wppb_front_end_profile_info() {
 						if (isset($value['item_required'])){
 							if ($value['item_required'] == 'yes'){
 								if (trim($_POST[$value['item_type'].$value['id']]) != '')
-									update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
+									update_user_meta( $current_user->ID, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
 								else 
 									array_push($extraFieldsErrorHolder, $value['id']);
 							}else
-								update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
+								update_user_meta( $current_user->ID, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
 						}else
-							update_user_meta( $current_user->id, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
+							update_user_meta( $current_user->ID, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
 						
 						break;
 					}
 					case "upload":{
-						$uploadedfile = $value['item_type'].$value['id'];
+						$uploaded_file = $value['item_type'].$value['id'];
 						
 						//get allowed file types
 						if (($value['item_options'] != NULL) || ($value['item_options'] != '')){
@@ -635,44 +643,37 @@ function wppb_front_end_profile_info() {
 						}else 
 							$allFiles = true;
 						//first we need to verify if we don't try to upload a 0b or 0 length file
-						if ( (basename( $_FILES[$uploadedfile]['name']) != '')){
+						if ( (basename( $_FILES[$uploaded_file]['name']) != '')){
 							//get this attachments extension
-							$thisFileExtStart = strrpos($_FILES[$uploadedfile]['name'], '.');
-							$thisFileExt = substr($_FILES[$uploadedfile]['name'], $thisFileExtStart);
+							$thisFileExtStart = strrpos($_FILES[$uploaded_file]['name'], '.');
+							$thisFileExt = substr($_FILES[$uploaded_file]['name'], $thisFileExtStart);
 							
 							if ($allFiles === false){
 								if (in_array($thisFileExt, $extensions)){
 									//second we need to verify if the uploaded file size is less then the set file size in php.ini
-									if (($_FILES[$uploadedfile]['size'] < WPPB_SERVER_MAX_UPLOAD_SIZE_BYTE) && ($_FILES[$uploadedfile]['size'] !=0)){
+									if (($_FILES[$uploaded_file]['size'] < WPPB_SERVER_MAX_UPLOAD_SIZE_BYTE) && ($_FILES[$uploaded_file]['size'] !=0)){
 										//we need to prepare the basename of the file, so that ' becomes ` as ' gives an error
-										$fileName = basename( $_FILES[$uploadedfile]['name']);
-										$finalFileName = '';
-										
-										for ($i=0; $i < strlen($fileName); $i++){
-											if ($fileName[$i] == "'")
-												$finalFileName .= '`';
-											else $finalFileName .= $fileName[$i];
-										}
+										$safe_filename = preg_replace( array( "/\s+/", "/[^-\.\w]+/" ), array( "_", "" ), trim( $_FILES[$uploaded_file]['name'] ) );
 											
 										//create the target path for uploading
-										$wpUploadPath = wp_upload_dir(); // Array of key => value pairs
-										$target_path = $wpUploadPath['basedir']."/profile_builder/attachments/";
-										$target_path = $target_path . 'userID_'.$current_user->id.'_attachment_'. $finalFileName;
+										$wp_upload_array = wp_upload_dir(); // Array of key => value pairs
+										$target_path = $wp_upload_array['basedir']."/profile_builder/attachments/";
+										$target_path = $target_path . 'userID_'.$current_user->ID.'_attachment_'. $safe_filename;
 
-										if (move_uploaded_file($_FILES[$uploadedfile]['tmp_name'], $target_path)){
-											$upFile = $wpUploadPath['baseurl'].'/profile_builder/attachments/userID_'.$current_user->id.'_attachment_'. $finalFileName;
-											update_user_meta( $current_user->id, $value['item_metaName'], $upFile);
+										if (move_uploaded_file($_FILES[$uploaded_file]['tmp_name'], $target_path)){
+											$upFile = $wp_upload_array['baseurl'].'/profile_builder/attachments/userID_'.$current_user->ID.'_attachment_'. $safe_filename;
+											update_user_meta( $current_user->ID, $value['item_metaName'], $upFile);
 											$pictureUpload = 'yes';
 										}else{
 											//insert the name of the file in an array so that in case an error comes up, we know which files we just uploaded
-											array_push($uploadName, basename( $_FILES[$uploadedfile]['name']));
+											array_push($uploadName, basename( $_FILES[$uploaded_file]['name']));
 										}
 									}else{
 										//insert the name of the file in an array so that in case an error comes up, we know which files we just uploaded
-										array_push($uploadName, basename( $_FILES[$uploadedfile]['name']));
+										array_push($uploadName, basename( $_FILES[$uploaded_file]['name']));
 									}
 								}else{
-									array_push($uploadExt, basename( $_FILES[$uploadedfile]['name']));
+									array_push($uploadExt, basename( $_FILES[$uploaded_file]['name']));
 									$allowedExtensions = '';
 									(int)$nrOfExt = count($extensions)-2;
 									foreach($extensions as $key4 => $value4){
@@ -684,9 +685,9 @@ function wppb_front_end_profile_info() {
 								}
 							}else{
 								//second we need to verify if the uploaded file size is less then the set file size in php.ini
-								if (($_FILES[$uploadedfile]['size'] < WPPB_SERVER_MAX_UPLOAD_SIZE_BYTE) && ($_FILES[$uploadedfile]['size'] !=0)){
+								if (($_FILES[$uploaded_file]['size'] < WPPB_SERVER_MAX_UPLOAD_SIZE_BYTE) && ($_FILES[$uploaded_file]['size'] !=0)){
 									//we need to prepare the basename of the file, so that ' becomes ` as ' gives an error
-									$fileName = basename( $_FILES[$uploadedfile]['name']);
+									$fileName = basename( $_FILES[$uploaded_file]['name']);
 									$finalFileName = '';
 									
 									for ($i=0; $i < strlen($fileName); $i++){
@@ -696,21 +697,21 @@ function wppb_front_end_profile_info() {
 									}
 										
 									//create the target path for uploading
-									$wpUploadPath = wp_upload_dir(); // Array of key => value pairs
-									$target_path = $wpUploadPath['basedir']."/profile_builder/attachments/";
-									$target_path = $target_path . 'userID_'.$current_user->id.'_attachment_'. $finalFileName;
+									$wp_upload_array = wp_upload_dir(); // Array of key => value pairs
+									$target_path = $wp_upload_array['basedir']."/profile_builder/attachments/";
+									$target_path = $target_path . 'userID_'.$current_user->ID.'_attachment_'. $finalFileName;
 
-									if (move_uploaded_file($_FILES[$uploadedfile]['tmp_name'], $target_path)){
-										$upFile = $wpUploadPath['baseurl'].'/profile_builder/attachments/userID_'.$current_user->id.'_attachment_'. $finalFileName;
-										update_user_meta( $current_user->id, $value['item_metaName'], $upFile);
+									if (move_uploaded_file($_FILES[$uploaded_file]['tmp_name'], $target_path)){
+										$upFile = $wp_upload_array['baseurl'].'/profile_builder/attachments/userID_'.$current_user->ID.'_attachment_'. $finalFileName;
+										update_user_meta( $current_user->ID, $value['item_metaName'], $upFile);
 										$pictureUpload = 'yes';
 									}else{
 										//insert the name of the file in an array so that in case an error comes up, we know which files we just uploaded
-										array_push($uploadName, basename( $_FILES[$uploadedfile]['name']));
+										array_push($uploadName, basename( $_FILES[$uploaded_file]['name']));
 									}
 								}else{
 									//insert the name of the file in an array so that in case an error comes up, we know which files we just uploaded
-									array_push($uploadName, basename( $_FILES[$uploadedfile]['name']));
+									array_push($uploadName, basename( $_FILES[$uploaded_file]['name']));
 								}
 							}
 						}
@@ -718,56 +719,54 @@ function wppb_front_end_profile_info() {
 					}
 					case "avatar":{
 						$avatarUpload = 'no';
-						$uploadedfile = $value['item_type'].$value['id'];
-						$wpUploadPath = wp_upload_dir(); // Array of key => value pairs
-						$target_path_original = $wpUploadPath['basedir']."/profile_builder/avatars/";
-						$fileName = $_FILES[$uploadedfile]['name'];
-						$finalFileName = '';
-								
-						for ($i=0; $i < strlen($fileName); $i++){
-							if ($fileName[$i] == "'")
-								$finalFileName .= '`';
-							elseif ($fileName[$i] == ' ')
-								$finalFileName .= '_';
-							else $finalFileName .= $fileName[$i];
-						}
-						
-						$fileName = $finalFileName;
 
-						$target_path = $target_path_original . 'userID_'.$current_user->id.'_originalAvatar_'. $fileName; 	
+						$uploaded_file = $value['item_type'].$value['id'];
+						// If we have a file then: sanatize file name, remove extra spaces/convert to _, remove non 0-9a-Z._- characters, remove leading/trailing spaces check if under allowed upload size, check file extension for legal file types
+						if ( is_uploaded_file( $_FILES[$uploaded_file]['tmp_name'] ) ){
+							$wp_upload_array = wp_upload_dir(); // Array of key => value pairs
+							$safe_filename = preg_replace( array( "/\s+/", "/[^-\.\w]+/" ), array( "_", "" ), trim( $_FILES[$uploaded_file]['name'] ) );
+							$target_path = $wp_upload_array['basedir'].'/profile_builder/avatars/userID_'.$current_user->ID.'_originalAvatar_'. $safe_filename; 
 
-						/* when trying to upload file, be sure it's one of the accepted image file-types */
-						if ( (($_FILES[$uploadedfile]['type'] == 'image/jpeg') || ($_FILES[$uploadedfile]['type'] == 'image/jpg') || ($_FILES[$uploadedfile]['type'] == 'image/png') || ($_FILES[$uploadedfile]['type'] == 'image/bmp') || ($_FILES[$uploadedfile]['type'] == 'image/pjpeg') || ($_FILES[$uploadedfile]['type'] == 'image/x-png')) && (($_FILES[$uploadedfile]['size'] < WPPB_SERVER_MAX_UPLOAD_SIZE_BYTE) && ($_FILES[$uploadedfile]['size'] !=0)) ){
-							$avatarUpload = 'yes';
-							$wp_filetype = wp_check_filetype(basename( $_FILES[$uploadedfile]['name']), null );
-							$attachment = array(
-								 'post_mime_type' => $wp_filetype['type'],
-								 'post_title' => $fileName,
-								 'post_content' => '',
-								 'post_status' => 'inherit'
-								);
-
-
-							$attach_id = wp_insert_attachment( $attachment, $target_path);
-					
-							$upFile = image_downsize( $attach_id, 'thumbnail' );
-							$upFile = $upFile[0];
+							if ( PHP_OS == "WIN32" || PHP_OS == "WINNT" )
+								$target_path = str_replace( '\\', '/', $target_path );
 							
-							//if file upload succeded			
-							if (move_uploaded_file($_FILES[$uploadedfile]['tmp_name'], $target_path)){
-								update_user_meta( $current_user->id, $value['item_metaName'], $upFile);
-								update_user_meta( $current_user->id, 'resized_avatar_'.$value['id'], '');				
+							$allowed_filetypes = "/^\.(jpg|jpeg|gif|png){1}$/i";  //"/^\.(jpg|jpeg|gif|png|doc|docx|txt|rtf|pdf|xls|xlsx|ppt|pptx){1}$/i";
+							
+							if ( $_FILES[$uploaded_file]['size'] <= WPPB_SERVER_MAX_UPLOAD_SIZE_BYTE && preg_match( $allowed_filetypes, strrchr( $safe_filename, '.' ) ) ){			
+								if ( move_uploaded_file( $_FILES[$uploaded_file]['tmp_name'], $target_path ) ){
+									$avatarUpload = 'yes';
+								
+									$wp_filetype = wp_check_filetype(basename( $_FILES[$uploaded_file]['name']), null );
+									$attachment = array(
+										 'post_mime_type' => $wp_filetype['type'],
+										 'post_title' => $safe_filename,
+										 'post_content' => '',
+										 'post_status' => 'inherit'
+										);
 
-							}else $avatarUpload = 'no'; 
-						}elseif ( (($_FILES[$uploadedfile]['size'] > WPPB_SERVER_MAX_UPLOAD_SIZE_BYTE) || ($_FILES[$uploadedfile]['size'] == 0)) && ($fileName != '') )
-							$avatarUpload = 'no';
-						elseif ($fileName == '')
+									$attach_id = wp_insert_attachment( $attachment, $target_path );
+							
+									$upFile = image_downsize( $attach_id, 'thumbnail' );
+									$upFile = $upFile[0];
+								
+									update_user_meta( $current_user->ID, $value['item_metaName'], $upFile );
+									update_user_meta( $current_user->ID, 'avatar_directory_path_'.$value['id'], $target_path );								
+									update_user_meta( $current_user->ID, 'resized_avatar_'.$value['id'], '' );				
+
+								}							
+							}
+							
+						}else
 							$avatarUpload = 'yes';
+
 						break;
 					}
 				}
 			}
 		}
+		
+		$editProfileFilterArray['extraError'] = ''; //this is for creating extra error message and bypassing save
+		$editProfileFilterArray['extraError'] = apply_filters('wppb_edit_profile_extra_error', $editProfileFilterArray['extraError']);
 		
 	}
 	
@@ -779,23 +778,7 @@ function wppb_front_end_profile_info() {
 				<p class="warning">'. __('You must be logged in to edit your profile.', 'profilebuilder') .'</p><!-- .warning -->';
 			echo $editProfileFilterArray['notLoggedIn'] = apply_filters('wppb_edit_profile_user_not_logged_in', $editProfileFilterArray['notLoggedIn']);
  
-		}else{
-			/* messages for the the delete avatar/attachment */
-			if (isset($_GET['fileType'])){
-				if ($_GET['fileType'] == 'avatar'){
-					$editProfileFilterArray['avatarChangesSaved'] = '
-						<p class="changes-saved">'. __('The avatar was successfully deleted.', 'profilebuilder') .'</p><!-- .changes-saved -->';
-					echo $editProfileFilterArray['avatarChangesSaved'] = apply_filters('wppb_edit_profile_avatar_changes_saved', $editProfileFilterArray['avatarChangesSaved']);
-					unset($_GET['fileType']);
-					
-				}elseif ($_GET['fileType'] == 'attachment'){
-					$editProfileFilterArray['attachmentChangesSaved'] = '<p class="changes-saved">' . sprintf(__( 'The attachment "%1$s" was successfully deleted.', 'profilebuilder'), $_GET['fileName']) . '</p><!-- .changes-saved -->';
-					echo $editProfileFilterArray['attachmentChangesSaved'] = apply_filters('wppb_edit_profile_attachment_changes_saved', $editProfileFilterArray['attachmentChangesSaved']);
-					unset($_GET['fileType']);
-					unset($_GET['fileName']);
-				}
-			}
-			
+		}else{			
 			/* all the other messages/errors */
 			$nrOfBadUploads = 0;
 			$nrOfBadUploads = count($uploadName);
@@ -826,9 +809,10 @@ function wppb_front_end_profile_info() {
 				$previousError = 'yes';
 				
 			}elseif ($allRequiredCompleted == 'no'){
-				$editProfileFilterArray['errorSavingChanges'] = '<p class="error">'.$errorMessage.'<br/>'. __('Your profile was NOT updated, since not all required fields were completed!', 'profilebuilder').'</p><!-- .error -->';
-				echo $editProfileFilterArray['errorSavingChanges'] = apply_filters('wppb_edit_profile_error_saving_changes', $editProfileFilterArray['errorSavingChanges']);
-			}
+				$editProfileFilterArray['errorSavingChanges'] = '<p class="error">'.$errorMessage.'<br/>'. __('Your profile was NOT updated, since not all required fields were completed!', 'profilebuilder').$failReason.'</p><!-- .error -->';
+				echo $editProfileFilterArray['errorSavingChanges'] = apply_filters('wppb_edit_profile_error_saving_changes', $editProfileFilterArray['errorSavingChanges'], $failReason);
+			}elseif (isset($editProfileFilterArray['extraError']) && ($editProfileFilterArray['extraError'] != ''))
+				echo $editProfileFilterArray['extraError'] = apply_filters('wppb_edit_profile_extra_error_message', $editProfileFilterArray['extraError']);
 			
 			$wppb_premium = WPPB_PLUGIN_DIR . '/premium/functions/';
 			if (file_exists ( $wppb_premium.'extra.fields.php' )){
@@ -876,8 +860,8 @@ function wppb_front_end_profile_info() {
 		
 ?>
 	
-			<form enctype="multipart/form-data" method="post" id="edituser" class="user-forms" action="<?php the_permalink(); ?>">
-<?php 
+			<form enctype="multipart/form-data" method="post" id="edituser" class="user-forms" action="<?php wppb_curpageurl(); ?>">
+<?php
 				echo '<input type="hidden" name="MAX_FILE_SIZE" value="'.WPPB_SERVER_MAX_UPLOAD_SIZE_BYTE.'" /><!-- set the MAX_FILE_SIZE to the server\'s current max upload size in bytes -->';			
 				
 				$editProfileFilterArray2['contentName1'] = '<p class="nameHeader"><strong>'. __('Name', 'profilebuilder') .'</strong></p>';
@@ -888,18 +872,18 @@ function wppb_front_end_profile_info() {
 						$editProfileFilterArray2['contentName2'] = '
 							<p class="email">
 								<label for="email">'. __('Email', 'profilebuilder') .'</label>
-								<input class="text-input" name="email" type="text" id="email" value="'. get_the_author_meta( 'user_email', $current_user->id ) .'" disabled="disabled"/> <span class="wppb-description-delimiter"> '. __('The email cannot be changed.', 'profilebuilder') .'</span>
+								<input class="text-input" name="email" type="text" id="email" value="'. get_the_author_meta( 'user_email', $current_user->ID ) .'" disabled="disabled"/> <span class="wppb-description-delimiter"> '. __('The email cannot be changed.', 'profilebuilder') .'</span>
 							</p><!-- .first_name -->';
-						$editProfileFilterArray2['contentName2'] = apply_filters('wppb_edit_profile_content_name2_with_email', $editProfileFilterArray2['contentName2'], $current_user->id);
+						$editProfileFilterArray2['contentName2'] = apply_filters('wppb_edit_profile_content_name2_with_email', $editProfileFilterArray2['contentName2'], $current_user->ID);
 					}
 				}else{
 					if ($wppb_defaultOptions['username'] == 'show'){
 						$editProfileFilterArray2['contentName2'] = '
 							<p class="username">
 								<label for="user_login">'. __('Username', 'profilebuilder') .'</label>
-								<input class="text-input" name="user_login" type="text" id="user_login" value="'. get_the_author_meta( 'user_login', $current_user->id ) .'" disabled="disabled"/> <span class="wppb-description-delimiter"> '. __('The usernames cannot be changed.', 'profilebuilder') .'</span>
+								<input class="text-input" name="user_login" type="text" id="user_login" value="'. get_the_author_meta( 'user_login', $current_user->ID ) .'" disabled="disabled"/> <span class="wppb-description-delimiter"> '. __('The usernames cannot be changed.', 'profilebuilder') .'</span>
 							</p><!-- .first_name -->';
-						$editProfileFilterArray2['contentName2'] = apply_filters('wppb_edit_profile_content_name2', $editProfileFilterArray2['contentName2'], $current_user->id);
+						$editProfileFilterArray2['contentName2'] = apply_filters('wppb_edit_profile_content_name2', $editProfileFilterArray2['contentName2'], $current_user->ID);
 					}
 				}
 					
@@ -910,7 +894,7 @@ function wppb_front_end_profile_info() {
 						$errorMark = '<font color="red" title="'. __('This field is marked as required by the administrator.', 'profilebuilder') .'">*</font>';
 						if (isset($_POST['first_name'])){
 							if (trim($_POST['first_name']) == ''){
-								$errorMark = '<img src="'.WPPB_PLUGIN_URL . '/assets/images/pencil_delete.png" title="'. __('This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator.', 'profilebuilder') .'"/>';
+								$errorMark = '<img src="'.WPPB_PLUGIN_URL . 'assets/images/pencil_delete.png" title="'. __('This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator.', 'profilebuilder') .'"/>';
 								$errorVar = ' errorHolder';
 							}
 						}
@@ -918,9 +902,9 @@ function wppb_front_end_profile_info() {
 					$editProfileFilterArray2['contentName3'] = '
 						<p class="first_name'.$errorVar.'">
 							<label for="first_name">'. __('First Name', 'profilebuilder') .$errorMark.'</label>
-							<input class="text-input" name="first_name" type="text" id="first_name" value="'. get_the_author_meta( 'first_name', $current_user->id ) .'" />
+							<input class="text-input" name="first_name" type="text" id="first_name" value="'. get_the_author_meta( 'first_name', $current_user->ID ) .'" />
 						</p><!-- .first_name -->';
-					$editProfileFilterArray2['contentName3'] = apply_filters('wppb_edit_profile_content_name3', $editProfileFilterArray2['contentName3'], $current_user->id, $errorVar, $errorMark);	
+					$editProfileFilterArray2['contentName3'] = apply_filters('wppb_edit_profile_content_name3', $editProfileFilterArray2['contentName3'], $current_user->ID, $errorVar, $errorMark);	
 				}
 					
 				if ($wppb_defaultOptions['lastname'] == 'show'){
@@ -930,7 +914,7 @@ function wppb_front_end_profile_info() {
 						$errorMark = '<font color="red" title="'. __('This field is marked as required by the administrator.', 'profilebuilder') .'">*</font>';
 						if (isset($_POST['last_name'])){
 							if (trim($_POST['last_name']) == ''){
-								$errorMark = '<img src="'.WPPB_PLUGIN_URL . '/assets/images/pencil_delete.png" title="'. __('This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator.', 'profilebuilder') .'"/>';
+								$errorMark = '<img src="'.WPPB_PLUGIN_URL . 'assets/images/pencil_delete.png" title="'. __('This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator.', 'profilebuilder') .'"/>';
 								$errorVar = ' errorHolder';
 							}
 						}
@@ -938,9 +922,9 @@ function wppb_front_end_profile_info() {
 					$editProfileFilterArray2['contentName4'] = '
 						<p class="last_name'.$errorVar.'">
 							<label for="last_name">'. __('Last Name', 'profilebuilder') .$errorMark.'</label>
-							<input class="text-input" name="last_name" type="text" id="last_name" value="'. get_the_author_meta( 'last_name', $current_user->id ) .'" />
+							<input class="text-input" name="last_name" type="text" id="last_name" value="'. get_the_author_meta( 'last_name', $current_user->ID ) .'" />
 						</p><!-- .last_name -->';
-					$editProfileFilterArray2['contentName4'] = apply_filters('wppb_edit_profile_content_name4', $editProfileFilterArray2['contentName4'], $current_user->id);
+					$editProfileFilterArray2['contentName4'] = apply_filters('wppb_edit_profile_content_name4', $editProfileFilterArray2['contentName4'], $current_user->ID);
 				}
 					
 				if ($wppb_defaultOptions['nickname'] == 'show'){
@@ -950,7 +934,7 @@ function wppb_front_end_profile_info() {
 						$errorMark = '<font color="red" title="'. __('This field is marked as required by the administrator.', 'profilebuilder') .'">*</font>';
 						if (isset($_POST['nickname'])){
 							if (trim($_POST['nickname']) == ''){
-								$errorMark = '<img src="'.WPPB_PLUGIN_URL . '/assets/images/pencil_delete.png" title="'. __('This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator.', 'profilebuilder') .'"/>';
+								$errorMark = '<img src="'.WPPB_PLUGIN_URL . 'assets/images/pencil_delete.png" title="'. __('This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator.', 'profilebuilder') .'"/>';
 								$errorVar = ' errorHolder';
 							}
 						}
@@ -958,9 +942,9 @@ function wppb_front_end_profile_info() {
 					$editProfileFilterArray2['contentName5'] = '
 						<p class="nickname'.$errorVar.'">
 							<label for="nickname">'. __('Nickname', 'profilebuilder') .$errorMark.'</label>
-							<input class="text-input" name="nickname" type="text" id="nickname" value="'. get_the_author_meta( 'nickname', $current_user->id ) .'" />
+							<input class="text-input" name="nickname" type="text" id="nickname" value="'. get_the_author_meta( 'nickname', $current_user->ID ) .'" />
 						</p><!-- .nickname -->';
-					$editProfileFilterArray2['contentName5'] = apply_filters('wppb_edit_profile_content_name5', $editProfileFilterArray2['contentName5'], $current_user->id, $errorVar, $errorMark);	
+					$editProfileFilterArray2['contentName5'] = apply_filters('wppb_edit_profile_content_name5', $editProfileFilterArray2['contentName5'], $current_user->ID, $errorVar, $errorMark);	
 				}
 					
 				if ($wppb_defaultOptions['dispname'] == 'show'){
@@ -970,7 +954,7 @@ function wppb_front_end_profile_info() {
 						$errorMark = '<font color="red" title="'. __('This field is marked as required by the administrator.', 'profilebuilder') .'">*</font>';
 						if (isset($_POST['display_name'])){
 							if (trim($_POST['display_name']) == ''){
-								$errorMark = '<img src="'.WPPB_PLUGIN_URL . '/assets/images/pencil_delete.png" title="'. __('This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator.', 'profilebuilder') .'"/>';
+								$errorMark = '<img src="'.WPPB_PLUGIN_URL . 'assets/images/pencil_delete.png" title="'. __('This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator.', 'profilebuilder') .'"/>';
 								$errorVar = ' errorHolder';
 							}
 						}
@@ -981,19 +965,19 @@ function wppb_front_end_profile_info() {
 							<label for="display_name">'. __('Display name publicly as', 'profilebuilder') .$errorMark.'</label>
 							<select name="display_name" id="display_name">';
 								$public_display = array();
-								$public_display['display_username']  = get_the_author_meta('user_login', $current_user->id);
-								$thisFirstName = get_the_author_meta('first_name', $current_user->id);
+								$public_display['display_username']  = get_the_author_meta('user_login', $current_user->ID);
+								$thisFirstName = get_the_author_meta('first_name', $current_user->ID);
 								if ( !empty($thisFirstName))
-									$public_display['display_firstname'] = get_the_author_meta('first_name', $current_user->id);
-								$thisLastName = get_the_author_meta('last_name', $current_user->id);
+									$public_display['display_firstname'] = get_the_author_meta('first_name', $current_user->ID);
+								$thisLastName = get_the_author_meta('last_name', $current_user->ID);
 								if ( !empty($thisLastName))
-									$public_display['display_lastname'] = get_the_author_meta('last_name', $current_user->id);
-								$public_display['display_nickname']  = get_the_author_meta('nickname', $current_user->id);
+									$public_display['display_lastname'] = get_the_author_meta('last_name', $current_user->ID);
+								$public_display['display_nickname']  = get_the_author_meta('nickname', $current_user->ID);
 								if ( !empty($thisFirstName) && !empty($thisLastName) ) {
 									$public_display['display_firstlast'] = $thisFirstName . ' ' . $thisLastName;
 									$public_display['display_lastfirst'] = $thisLastName . ' ' . $thisFirstName;
 								}
-								$thisDisplayName = get_the_author_meta('display_name', $current_user->id);
+								$thisDisplayName = get_the_author_meta('display_name', $current_user->ID);
 								if ( !in_array( $thisDisplayName, $public_display ) )               // Only add this if it isn't duplicated elsewhere
 									$public_display = array( 'display_displayname' => $thisDisplayName ) + $public_display;
 								$public_display = array_map( 'trim', $public_display );
@@ -1007,7 +991,7 @@ function wppb_front_end_profile_info() {
 							</select>
 						</p><!-- .display_name -->';
 						
-					$editProfileFilterArray2['displayName'] = apply_filters('wppb_edit_profile_display_name', $editProfileFilterArray2['displayName'], $current_user->id, $errorVar, $errorMark);	
+					$editProfileFilterArray2['displayName'] = apply_filters('wppb_edit_profile_display_name', $editProfileFilterArray2['displayName'], $current_user->ID, $errorVar, $errorMark);	
 				}
 
 				$editProfileFilterArray2['contentInfo1'] = '<p class="contactInfoHeader"><strong>'. __('Contact Info', 'profilebuilder') .'</strong></p>';
@@ -1022,7 +1006,7 @@ function wppb_front_end_profile_info() {
 							$errorMark = '<font color="red" title="'. __('This field is marked as required by the administrator.', 'profilebuilder') .'">*</font>';
 							if (isset($_POST['email'])){
 								if (trim($_POST['email']) == ''){
-									$errorMark = '<img src="'.WPPB_PLUGIN_URL . '/assets/images/pencil_delete.png" title="'. __('This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator.', 'profilebuilder') .'"/>';
+									$errorMark = '<img src="'.WPPB_PLUGIN_URL . 'assets/images/pencil_delete.png" title="'. __('This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator.', 'profilebuilder') .'"/>';
 									$errorVar = ' errorHolder';
 								}
 							}
@@ -1030,10 +1014,10 @@ function wppb_front_end_profile_info() {
 						$editProfileFilterArray2['contentInfo2'] = '
 							<p class="form-email'.$errorVar.'">
 								<label for="email">'. __('E-mail', 'profilebuilder') .$errorMark.'</label>
-								<input class="text-input" name="email" type="text" id="email" value="'. get_the_author_meta( 'user_email', $current_user->id ) .'" />
+								<input class="text-input" name="email" type="text" id="email" value="'. get_the_author_meta( 'user_email', $current_user->ID ) .'" />
 								<span class="wppb-description-delimiter">'. __('(required)', 'profilebuilder') .'</span>
 							</p><!-- .form-email -->';
-						$editProfileFilterArray2['contentInfo2'] = apply_filters('wppb_edit_profile_content_info2', $editProfileFilterArray2['contentInfo2'], $current_user->id, $errorVar, $errorMark);
+						$editProfileFilterArray2['contentInfo2'] = apply_filters('wppb_edit_profile_content_info2', $editProfileFilterArray2['contentInfo2'], $current_user->ID, $errorVar, $errorMark);
 					}
 				}	
 					
@@ -1043,16 +1027,16 @@ function wppb_front_end_profile_info() {
 					if ($wppb_defaultOptions['websiteRequired'] == 'yes'){
 						$errorMark = '<font color="red" title="'. __('This field is marked as required by the administrator.', 'profilebuilder') .'">*</font>';
 						if (isset($_POST['website']) && (trim($_POST['website']) == '')){
-							$errorMark = '<img src="'.WPPB_PLUGIN_URL . '/assets/images/pencil_delete.png" title="'. __('This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator.', 'profilebuilder') .'"/>';
+							$errorMark = '<img src="'.WPPB_PLUGIN_URL . 'assets/images/pencil_delete.png" title="'. __('This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator.', 'profilebuilder') .'"/>';
 							$errorVar = ' errorHolder';
 						}
 					}					
 					$editProfileFilterArray2['contentInfo3'] = '
 						<p class="form-website'.$errorVar.'">
 							<label for="website">'. __('Website', 'profilebuilder') .$errorMark.'</label>
-							<input class="text-input" name="website" type="text" id="website" value="'. get_the_author_meta( 'user_url', $current_user->id ) .'" />
+							<input class="text-input" name="website" type="text" id="website" value="'. get_the_author_meta( 'user_url', $current_user->ID ) .'" />
 						</p><!-- .form-website -->';
-					$editProfileFilterArray2['contentInfo3'] = apply_filters('wppb_edit_profile_content_info3', $editProfileFilterArray2['contentInfo3'], $current_user->id, $errorVar, $errorMark);
+					$editProfileFilterArray2['contentInfo3'] = apply_filters('wppb_edit_profile_content_info3', $editProfileFilterArray2['contentInfo3'], $current_user->ID, $errorVar, $errorMark);
 				}
 
 				if ($wppb_defaultOptions['aim'] == 'show'){
@@ -1061,16 +1045,16 @@ function wppb_front_end_profile_info() {
 					if ($wppb_defaultOptions['aimRequired'] == 'yes'){
 						$errorMark = '<font color="red" title="'. __('This field is marked as required by the administrator.', 'profilebuilder') .'">*</font>';
 						if (isset($_POST['aim']) && (trim($_POST['aim']) == '')){
-							$errorMark = '<img src="'.WPPB_PLUGIN_URL . '/assets/images/pencil_delete.png" title="'. __('This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator.', 'profilebuilder') .'"/>';
+							$errorMark = '<img src="'.WPPB_PLUGIN_URL . 'assets/images/pencil_delete.png" title="'. __('This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator.', 'profilebuilder') .'"/>';
 							$errorVar = ' errorHolder';
 						}
 					}					
 					$editProfileFilterArray2['contentInfo4'] = '
 						<p class="form-aim'.$errorVar.'">
 							<label for="aim">'. __('AIM', 'profilebuilder') .'</label>
-							<input class="text-input" name="aim" type="text" id="aim" value="'. get_the_author_meta( 'aim', $current_user->id ) .'" />
+							<input class="text-input" name="aim" type="text" id="aim" value="'. get_the_author_meta( 'aim', $current_user->ID ) .'" />
 						</p><!-- .form-aim -->';
-					$editProfileFilterArray2['contentInfo4'] = apply_filters('wppb_edit_profile_content_info4', $editProfileFilterArray2['contentInfo4'], $current_user->id, $errorVar, $errorMark);
+					$editProfileFilterArray2['contentInfo4'] = apply_filters('wppb_edit_profile_content_info4', $editProfileFilterArray2['contentInfo4'], $current_user->ID, $errorVar, $errorMark);
 				}
 					
 				if ($wppb_defaultOptions['yahoo'] == 'show'){
@@ -1079,16 +1063,16 @@ function wppb_front_end_profile_info() {
 					if ($wppb_defaultOptions['yahooRequired'] == 'yes'){
 						$errorMark = '<font color="red" title="'. __('This field is marked as required by the administrator.', 'profilebuilder') .'">*</font>';
 						if (isset($_POST['yim']) && (trim($_POST['yim']) == '')){
-							$errorMark = '<img src="'.WPPB_PLUGIN_URL . '/assets/images/pencil_delete.png" title="'. __('This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator.', 'profilebuilder') .'"/>';
+							$errorMark = '<img src="'.WPPB_PLUGIN_URL . 'assets/images/pencil_delete.png" title="'. __('This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator.', 'profilebuilder') .'"/>';
 							$errorVar = ' errorHolder';
 						}
 					}					
 					$editProfileFilterArray2['contentInfo5'] = '
 						<p class="form-yim'.$errorVar.'">
 							<label for="yim">'. __('Yahoo IM', 'profilebuilder') .$errorMark.'</label>
-							<input class="text-input" name="yim" type="text" id="yim" value="'. get_the_author_meta( 'yim', $current_user->id ) .'" />
+							<input class="text-input" name="yim" type="text" id="yim" value="'. get_the_author_meta( 'yim', $current_user->ID ) .'" />
 						</p><!-- .form-yim -->';
-					$editProfileFilterArray2['contentInfo5'] = apply_filters('wppb_edit_profile_content_info5', $editProfileFilterArray2['contentInfo5'], $current_user->id, $errorVar, $errorMark);
+					$editProfileFilterArray2['contentInfo5'] = apply_filters('wppb_edit_profile_content_info5', $editProfileFilterArray2['contentInfo5'], $current_user->ID, $errorVar, $errorMark);
 				}
 	 
 				if ($wppb_defaultOptions['jabber'] == 'show'){
@@ -1097,16 +1081,16 @@ function wppb_front_end_profile_info() {
 					if ($wppb_defaultOptions['jabberRequired'] == 'yes'){
 						$errorMark = '<font color="red" title="'. __('This field is marked as required by the administrator.', 'profilebuilder') .'">*</font>';
 						if (isset($_POST['jabber']) && (trim($_POST['jabber']) == '')){
-							$errorMark = '<img src="'.WPPB_PLUGIN_URL . '/assets/images/pencil_delete.png" title="'. __('This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator.', 'profilebuilder') .'"/>';
+							$errorMark = '<img src="'.WPPB_PLUGIN_URL . 'assets/images/pencil_delete.png" title="'. __('This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator.', 'profilebuilder') .'"/>';
 							$errorVar = ' errorHolder';
 						}
 					}					
 					$editProfileFilterArray2['contentInfo6'] = '
 						<p class="form-jabber'.$errorVar.'">
 							<label for="jabber">'. __('Jabber / Google Talk', 'profilebuilder') .$errorMark.'</label>
-							<input class="text-input" name="jabber" type="text" id="jabber" value="'. get_the_author_meta( 'jabber', $current_user->id ) .'" />
+							<input class="text-input" name="jabber" type="text" id="jabber" value="'. get_the_author_meta( 'jabber', $current_user->ID ) .'" />
 						</p><!-- .form-jabber -->';
-					$editProfileFilterArray2['contentInfo6'] = apply_filters('wppb_edit_profile_content_info6', $editProfileFilterArray2['contentInfo6'], $current_user->id, $errorVar, $errorMark);
+					$editProfileFilterArray2['contentInfo6'] = apply_filters('wppb_edit_profile_content_info6', $editProfileFilterArray2['contentInfo6'], $current_user->ID, $errorVar, $errorMark);
 				}
 					
 				$editProfileFilterArray2['aboutYourself1'] = '<p class="aboutYourselfHeader"><strong>'. __('About Yourself', 'profilebuilder') .'</strong></p>';
@@ -1118,16 +1102,16 @@ function wppb_front_end_profile_info() {
 					if ($wppb_defaultOptions['bioRequired'] == 'yes'){
 						$errorMark = '<font color="red" title="'. __('This field is marked as required by the administrator.', 'profilebuilder') .'">*</font>';
 						if (isset($_POST['description']) && (trim($_POST['description']) == '')){
-							$errorMark = '<img src="'.WPPB_PLUGIN_URL . '/assets/images/pencil_delete.png" title="'. __('This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator.', 'profilebuilder') .'"/>';
+							$errorMark = '<img src="'.WPPB_PLUGIN_URL . 'assets/images/pencil_delete.png" title="'. __('This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator.', 'profilebuilder') .'"/>';
 							$errorVar = ' errorHolder';
 						}
 					}					
 					$editProfileFilterArray2['aboutYourself2'] = '
 						<p class="form-description'.$errorVar.'">
 							<label for="description">'. __('Biographical Info', 'profilebuilder') .$errorMark.'</label>
-							<textarea class="text-input" name="description" id="description" rows="5" cols="30">'. get_the_author_meta( 'description', $current_user->id ) .'</textarea>
+							<textarea class="text-input" name="description" id="description" rows="5" cols="30">'. get_the_author_meta( 'description', $current_user->ID ) .'</textarea>
 						</p><!-- .form-description -->';
-					$editProfileFilterArray2['aboutYourself2'] = apply_filters('wppb_edit_profile_content_about_yourself2', $editProfileFilterArray2['aboutYourself2'], $current_user->id, $errorVar, $errorMark);
+					$editProfileFilterArray2['aboutYourself2'] = apply_filters('wppb_edit_profile_content_about_yourself2', $editProfileFilterArray2['aboutYourself2'], $current_user->ID, $errorVar, $errorMark);
 				}
 					
 				if ($wppb_defaultOptions['password'] == 'show'){
@@ -1151,7 +1135,7 @@ function wppb_front_end_profile_info() {
 					require_once($wppb_premium.'extra.fields.php');
 					
 					$page = 'edit_profile';
-					$returnedValue = wppb_extra_fields($current_user->id, $extraFieldsErrorHolder, $editProfileFilterArray2, $page, $error, $_POST);
+					$returnedValue = wppb_extra_fields($current_user->ID, $extraFieldsErrorHolder, $editProfileFilterArray2, $page, $error, $_POST);
 					
 					//copy over extra fields to the rest of the fieldso on the edit profile
 					foreach($returnedValue as $key => $value)
@@ -1170,7 +1154,8 @@ function wppb_front_end_profile_info() {
 ?>
 				
 				<p class="form-submit">
-					<input name="updateuser" type="submit" id="updateuser" class="submit button" value="<?php _e('Update', 'profilebuilder'); ?>" />
+					<?php $button_name = __('Update', 'profilebuilder'); ?>
+					<input name="updateuser" type="submit" id="updateuser" class="submit button" value="<?php echo apply_filters('wppb_edit_profile_button_name', $button_name, $current_user); ?>" />
 					<?php // wp_nonce_field( 'update-user' ) ?>
 					<input name="action" type="hidden" id="action" value="update-user" />
 				</p><!-- .form-submit -->

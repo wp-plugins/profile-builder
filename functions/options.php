@@ -49,8 +49,8 @@ $arraySettingsPresent = get_option('wppb_custom_fields','not_found');
 	if (!file_exists ( $wppb_premium.'custom.fields.php' )){
 	?>
 		<div class="info basic-version-info">
-			<img src="<?php echo WPPB_PLUGIN_URL ?>/assets/images/ad_image.png" alt="Profile Builder Pro" />
-			<a href="http://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=link&utm_campaign=ProfileBuilderFree" alt="Profile Builder Pro" title="Buy Profile Builder Pro"><img id="wppb_buyNowButton" src="<?php echo WPPB_PLUGIN_URL ?>/assets/images/buy_now_button.png"/></a>
+			<img src="<?php echo WPPB_PLUGIN_URL ?>assets/images/ad_image.png" alt="Profile Builder Pro" />
+			<a href="http://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=link&utm_campaign=ProfileBuilderFree" alt="Profile Builder Pro" title="Buy Profile Builder Pro"><img id="wppb_buyNowButton" src="<?php echo WPPB_PLUGIN_URL ?>assets/images/buy_now_button.png"/></a>
 		</div>
 	<?php
 	}elseif ( ! get_user_meta($current_user->ID, 'wppb_dismiss_notification') ) {

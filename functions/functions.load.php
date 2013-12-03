@@ -10,9 +10,9 @@ Original Author URI: http://valendesigns.com
  * Functions Load
  *
  */
- /* whitelist options, you can add more register_settings changing the second parameter */
  
- function wppb_register_settings() {
+// whitelist options, you can add more register_settings changing the second parameter
+function wppb_register_settings() {
 	register_setting( 'wppb_option_group', 'wppb_default_settings' );
 	register_setting( 'wppb_general_settings', 'wppb_general_settings' );
 	register_setting( 'wppb_display_admin_settings', 'wppb_display_admin_settings' );
@@ -36,16 +36,6 @@ if (file_exists ( $wppb_premiumAddon.'custom.redirects.php' ))
 	include_once($wppb_premiumAddon.'custom.redirects.php');
 if (file_exists ( $wppb_premiumAddon.'email.customizer.php' ))
 	include_once($wppb_premiumAddon.'email.customizer.php');
-else{
-	// simple wp_mail "prototype"
-	function wppb_mail($to, $subject, $message, $blogInfo, $userID, $userName, $password, $userEmail, $function, $extraData1, $extraData2){
-	
-		//we add this filter to enable html encoding
-		add_filter('wp_mail_content_type',create_function('', 'return "text/html"; '));
-		
-		return $sent = wp_mail( $to , $subject, wpautop($message, true));
-	}
-}
 if (file_exists ( $wppb_premiumAddon.'userlisting.php' )){
 	include_once($wppb_premiumAddon.'userlisting.php');  
 
@@ -89,9 +79,9 @@ else
 function wppb_add_plugin_stylesheet() {
 		$wppb_generalSettings = get_option('wppb_general_settings');
 		
-        $styleUrl_default = WPPB_PLUGIN_URL . '/assets/css/front.end.css';
-        $styleUrl_white = WPPB_PLUGIN_URL . '/premium/assets/css/front.end.white.css';
-        $styleUrl_black = WPPB_PLUGIN_URL . '/premium/assets/css/front.end.black.css';
+        $styleUrl_default = WPPB_PLUGIN_URL . 'assets/css/front.end.css';
+        $styleUrl_white = WPPB_PLUGIN_URL . 'premium/assets/css/front.end.white.css';
+        $styleUrl_black = WPPB_PLUGIN_URL . 'premium/assets/css/front.end.black.css';
         $styleFile_default = WPPB_PLUGIN_DIR . '/assets/css/front.end.css';
         $styleFile_white = WPPB_PLUGIN_DIR . '/premium/assets/css/front.end.white.css';
         $styleFile_black = WPPB_PLUGIN_DIR . '/premium/assets/css/front.end.black.css';
@@ -153,7 +143,8 @@ if(!function_exists('wppb_curpageurl')){
 if ( is_admin() ){
 	add_action('admin_enqueue_scripts', 'wppb_add_backend_style');
 	function wppb_add_backend_style(){
-		wp_enqueue_style( 'profile-builder-back-end-style', WPPB_PLUGIN_URL.'/assets/css/back.end.css', false, PROFILE_BUILDER_VERSION);
+		wp_enqueue_style( 'profile-builder-back-end-style', WPPB_PLUGIN_URL.'assets/css/back.end.css', false, PROFILE_BUILDER_VERSION);
+		wp_enqueue_script( 'profile-builder-back-end-js', WPPB_PLUGIN_URL.'assets/js/back.end.js', false, PROFILE_BUILDER_VERSION );
 	}
 
 	// include the css for the datepicker
@@ -161,7 +152,7 @@ if ( is_admin() ){
 	if (file_exists ( $wppb_premiumDatepicker.'datepicker.style.css' )){
 		add_action('admin_enqueue_scripts', 'wppb_add_datepicker_style');
 		function wppb_add_datepicker_style(){
-			wp_enqueue_style( 'profile-builder-admin-datepicker-style', WPPB_PLUGIN_URL.'/premium/assets/css/datepicker.style.css', false, PROFILE_BUILDER_VERSION);
+			wp_enqueue_style( 'profile-builder-admin-datepicker-style', WPPB_PLUGIN_URL.'premium/assets/css/datepicker.style.css', false, PROFILE_BUILDER_VERSION);
 		}
 	}
 
@@ -208,13 +199,142 @@ if ( is_admin() ){
 	add_filter('widget_text', 'do_shortcode', 11);
 }
 
-function wppb_website_email($sender_email){
-	$wppb_addonOptions = get_option('wppb_addon_settings');
-	
-	if (($wppb_addonOptions['wppb_emailCustomizer'] == 'show') || ($wppb_addonOptions['wppb_emailCustomizerAdmin'] == 'show')){
-		$emailCustomizer = get_option('emailCustomizer');
+// this is to assure backwards compatibility for future reference for all versions, starting from version 1.3.13
+function wppb_update_patch( $plugin ){
+	if( !get_option( 'wppb_version' ) ) {
+		add_option( 'wppb_version', '1.3.13' );
 		
-		$sender_email = str_replace( '%%reply_to%%', $sender_email, $emailCustomizer['from'] );
+		do_action( 'wppb_set_initial_version_number', PROFILE_BUILDER_VERSION );
+	}
+	
+	$wppb_version = get_option( 'wppb_version' );
+	
+	do_action( 'wppb_before_default_changes', PROFILE_BUILDER_VERSION, $wppb_version );
+	
+	if( version_compare( PROFILE_BUILDER_VERSION, $wppb_version, '>' ) ) {
+		if ( ( $plugin == 'pro' ) || ( $plugin == 'hobbyist' ) ){
+			// this is to assure backwards compatibility from version 1.3.13 to version 1.3.14, we need to copy all data from item_options_values, and create the item_option_labels index for the checkbox, radio and select extra-fields, to reflect the front-end changes
+			$custom_fields = get_option( 'wppb_custom_fields','not_found' );
+
+			if ( $custom_fields != 'not_found' ){
+				foreach ( $custom_fields as $key => $value ){
+					if ( ( $value['item_type'] == 'checkbox' ) || ( $value['item_type'] == 'radio' ) || ( $value['item_type'] == 'select' ) ){
+						if ( isset( $custom_fields[$key]['item_option_values'] ) ){
+							$custom_fields[$key]['item_option_labels'] = $custom_fields[$key]['item_option_values'];
+							unset( $custom_fields[$key]['item_option_values'] );
+						}
+						
+					}else
+						unset( $custom_fields[$key]['item_option_values'] );
+				}
+				
+				update_option( 'wppb_custom_fields', $custom_fields );
+			}
+			// END this is to assure backwards compatibility from version 1.3.13 to version 1.3.14, we need to copy all data from item_options_values, and create the item_option_labels index for the checkbox, radio and select extra-fields, to reflect the front-end changes
+		}
+		
+		if ( $plugin == 'pro' ){
+			// this is to assure backwards compatibility from version 1.3.14 to version 1.3.15, where the email customizer array-indexes have been renamed
+			$email_customizer_array = get_option( 'emailCustomizer', 'not_found' );
+
+			if ( $email_customizer_array != 'not_found' ){
+				$new_email_customizer_array = array();
+				
+				if ( isset( $email_customizer_array['from'] ) ){
+					$new_email_customizer_array['reply_to'] = $email_customizer_array['from'];
+					unset( $email_customizer_array['from'] );
+				}
+					
+				if ( isset( $email_customizer_array['settingsGroup1Option2'] ) ){
+					$new_email_customizer_array['default_registration_email_subject'] = $email_customizer_array['settingsGroup1Option2'];
+					unset( $email_customizer_array['settingsGroup1Option2'] );
+				}
+					
+				if ( isset( $email_customizer_array['settingsGroup1Option3'] ) ){
+					$new_email_customizer_array['default_registration_email_content'] = $email_customizer_array['settingsGroup1Option3'];
+					unset( $email_customizer_array['settingsGroup1Option3'] );
+				}
+					
+				if ( isset( $email_customizer_array['settingsGroup3Option2'] ) ){
+					$new_email_customizer_array['registration_w_admin_approval_email_subject'] = $email_customizer_array['settingsGroup3Option2'];
+					unset( $email_customizer_array['settingsGroup3Option2'] );
+				}
+					
+				if ( isset( $email_customizer_array['settingsGroup3Option3'] ) ){
+					$new_email_customizer_array['registration_w_admin_approval_email_content'] = $email_customizer_array['settingsGroup3Option3'];
+					unset( $email_customizer_array['settingsGroup3Option3'] );
+				}
+					
+				if ( isset( $email_customizer_array['settingsGroup4Option2'] ) ){
+					$new_email_customizer_array['admin_approval_aproved_status_email_subject'] = $email_customizer_array['settingsGroup4Option2'];
+					unset( $email_customizer_array['settingsGroup4Option2'] );
+				}
+					
+				if ( isset( $email_customizer_array['settingsGroup4Option3'] ) ){
+					$new_email_customizer_array['admin_approval_aproved_status_email_content'] = $email_customizer_array['settingsGroup4Option3'];
+					unset( $email_customizer_array['settingsGroup4Option3'] );
+				}
+			
+				if ( isset( $email_customizer_array['settingsGroup2Option2'] ) ){
+					$new_email_customizer_array['registration_w_email_confirmation_email_subject'] = $email_customizer_array['settingsGroup2Option2'];
+					unset( $email_customizer_array['settingsGroup2Option2'] );
+				}
+			
+				if ( isset( $email_customizer_array['settingsGroup2Option3'] ) ){
+					$new_email_customizer_array['registration_w_email_confirmation_email_content'] = $email_customizer_array['settingsGroup2Option3'];
+					unset( $email_customizer_array['settingsGroup2Option3'] );
+				}
+					
+				if ( isset( $email_customizer_array['settingsGroup4Option6'] ) ){
+					$new_email_customizer_array['admin_approval_unaproved_status_email_subject'] = $email_customizer_array['settingsGroup4Option6'];
+					unset( $email_customizer_array['settingsGroup4Option6'] );
+				}
+					
+				if ( isset( $email_customizer_array['settingsGroup4Option7'] ) ){
+					$new_email_customizer_array['admin_approval_unaproved_status_email_content'] = $email_customizer_array['settingsGroup4Option7'];
+					unset( $email_customizer_array['settingsGroup4Option7'] );
+				}
+					
+				if ( isset( $email_customizer_array['admin_settingsGroup1Option2'] ) ){
+					$new_email_customizer_array['admin_default_registration_email_subject'] = $email_customizer_array['admin_settingsGroup1Option2'];
+					unset( $email_customizer_array['admin_settingsGroup1Option2'] );
+				}
+					
+				if ( isset( $email_customizer_array['admin_settingsGroup1Option3'] ) ){
+					$new_email_customizer_array['admin_default_registration_email_content'] = $email_customizer_array['admin_settingsGroup1Option3'];
+					unset( $email_customizer_array['admin_settingsGroup1Option3'] );
+				}
+					
+				if ( isset( $email_customizer_array['admin_settingsGroup3Option2'] ) ){
+					$new_email_customizer_array['admin_registration_w_admin_approval_email_subject'] = $email_customizer_array['admin_settingsGroup3Option2'];
+					unset( $email_customizer_array['admin_settingsGroup3Option2'] );
+				}
+					
+				if ( isset( $email_customizer_array['admin_settingsGroup3Option3'] ) ){
+					$new_email_customizer_array['admin_registration_w_admin_approval_email_content'] = $email_customizer_array['admin_settingsGroup3Option3'];
+					unset( $email_customizer_array['admin_settingsGroup3Option3'] );
+				}
+
+				update_option( 'emailCustomizer', $new_email_customizer_array + $email_customizer_array );
+			}
+			// END this is to assure backwards compatibility from version 1.3.14 to version 1.3.15, where the email customizer array-indexes have been renamed
+		}
+		
+		update_option( 'wppb_version', PROFILE_BUILDER_VERSION );
+	}
+	
+	do_action( 'wppb_after_default_changes', PROFILE_BUILDER_VERSION, $wppb_version );	
+}
+
+// functions to set email from and reply-to
+function wppb_website_email($sender_email){
+	$wppb_addonOptions = get_option( 'wppb_addon_settings' );
+	
+	if ( ( $wppb_addonOptions['wppb_emailCustomizer'] == 'show' ) || ( $wppb_addonOptions['wppb_emailCustomizerAdmin'] == 'show' ) ){
+		$email_customizer_array = get_option( 'emailCustomizer', 'not_found' );
+		
+		if ( $email_customizer_array != 'not_found' )
+			$sender_email = str_replace( '%%reply_to%%', $sender_email, $email_customizer_array['reply_to'] );
 		
 	}
 
@@ -223,15 +343,62 @@ function wppb_website_email($sender_email){
 add_filter('wp_mail_from','wppb_website_email');
  
 function wppb_website_name($site_name){
-	$wppb_addonOptions = get_option('wppb_addon_settings');
+	$wppb_addonOptions = get_option( 'wppb_addon_settings' );
 	
-	if (($wppb_addonOptions['wppb_emailCustomizer'] == 'show') || ($wppb_addonOptions['wppb_emailCustomizerAdmin'] == 'show')){
-		$emailCustomizer = get_option('emailCustomizer');
+	if ( ( $wppb_addonOptions['wppb_emailCustomizer'] == 'show' ) || ( $wppb_addonOptions['wppb_emailCustomizerAdmin'] == 'show' ) ){
+		$email_customizer_array = get_option( 'emailCustomizer', 'not_found' );
 		
-		$site_name = str_replace( '%%site_name%%', $site_name, $emailCustomizer['from_name'] );
+		if ( $email_customizer_array != 'not_found' )
+			$site_name = str_replace( '%%site_name%%', $site_name, $email_customizer_array['from_name'] );
 		
 	}
 
-    return $site_name = apply_filters('website_email_filter', $site_name);
+    return $site_name = apply_filters( 'website_email_filter', $site_name );
 }
 add_filter('wp_mail_from_name','wppb_website_name');
+
+// function to send out emails (depending on the case, set by $function), and if needed overwrite it with the data storder in via email customizer
+function wppb_mail($to, $subject, $message, $message_from){
+	$to = apply_filters ( 'wppb_send_email_to', $to );
+	$send_email = apply_filters ( 'wppb_send_email', true, $to, $subject, $message );
+	
+	do_action( 'wppb_before_sending_email', $to, $subject, $message, $send_email );
+	
+	if ( $send_email ){
+		//we add this filter to enable html encoding
+		add_filter( 'wp_mail_content_type', create_function( '', 'return "text/html"; ' ) );	
+		
+		$sent = wp_mail( $to , $subject, wpautop($message, true) );
+	}
+	
+	do_action( 'wppb_after_sending_email', $sent, $to, $subject, $message, $send_email );
+	
+	return $sent;
+}
+
+function wppb_activate_account_check(){
+	if ( ( isset( $_GET['activation_key'] ) ) && ( trim( $_GET['activation_key'] ) != '' ) ){
+		global $post;
+
+		$wppb_generalSettings = get_option( 'wppb_general_settings' );
+		$activation_landing_page_id = ( ( isset( $wppb_generalSettings['activationLandingPage'] ) && ( trim( $wppb_generalSettings['activationLandingPage'] ) != '' ) ) ? $wppb_generalSettings['activationLandingPage'] : 'not_set' );
+		
+		if ( $activation_landing_page_id != 'not_set' ){
+			//an activation page was selected, but we still need to check if the current page doesn't already have the registration shortcode
+			if ( strpos( $post->post_content, '[wppb-register' ) === false )
+				add_filter( 'the_content', 'wppb_add_activation_message' );
+
+		}elseif ( strpos( $post->post_content, '[wppb-register' ) === false ){
+			//no activation page was selected, and the sent link pointed to the home url
+			wp_redirect( apply_filters( 'wppb_activatate_account_redirect_url', WPPB_PLUGIN_URL.'assets/misc/wppb.fallback.page.php?activation_key='.urlencode( $_GET['activation_key'] ).'&site_name='.urlencode( get_bloginfo( 'name' ) ).'&site_url='.urlencode( get_bloginfo( 'url' ) ).'&message='.urlencode( $activation_message = wppb_activate_signup( $_GET['activation_key'] ) ), $_GET['activation_key'], $activation_message ) ); 
+			exit;
+		}
+	}
+}
+add_action( 'template_redirect', 'wppb_activate_account_check' );
+
+
+function wppb_add_activation_message( $content ){
+
+	return wppb_activate_signup( $_GET['activation_key'] ) . $content;
+}

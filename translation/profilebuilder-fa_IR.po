@@ -1,142 +1,194 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Profile Builder\n"
-"POT-Creation-Date: 2013-05-14 14:34+0200\n"
-"PO-Revision-Date: 2013-05-14 14:34+0200\n"
+"Project-Id-Version: ProfileBuilder\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-12-02 17:39+0200\n"
+"PO-Revision-Date: 2013-12-02 17:39+0200\n"
 "Last-Translator: Gabriel Barina <barinagabriel2007@yahoo.com>\n"
-"Language-Team: Alimir.ir <info@alimir.ir | alimir71@yahoo.com>\n"
-"Language: Persian\n"
+"Language-Team: Reflection Media, Gabriel Barina\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.5\n"
-"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
-"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx_noop:4c,1,2;_nx:4c,1,2\n"
+"X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: .\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-SearchPath-0: .\n"
-"X-Poedit-SearchPath-1: ..\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-SearchPath-0: C:\\Users\\Gabriel\\Desktop\\test\\profile-builder-"
+"pro\n"
 
-#: ../classes/class.bulk.approve.unapprove.php:116
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/classes/class.bulk.approve.unapprove.php:119
+msgid "View or Edit"
+msgstr ""
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/classes/class.bulk.approve.unapprove.php:124
+msgid "delete this user?"
+msgstr ""
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/classes/class.bulk.approve.unapprove.php:124
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/classes/class.bulk.approve.unapprove.php:235
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/classes/class.email.confirmation.php:106
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/classes/class.email.confirmation.php:202
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/custom.fields.php:40
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/custom.fields.php:73
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/custom.fields.php:218
+msgid "Delete"
+msgstr "حذف"
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/classes/class.bulk.approve.unapprove.php:127
+#, fuzzy
 msgid "unapprove this user?"
-msgstr ""
+msgstr "تایید نشده"
 
-#: ../classes/class.bulk.approve.unapprove.php:116
-#: ../classes/class.bulk.approve.unapprove.php:218
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/classes/class.bulk.approve.unapprove.php:127
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/classes/class.bulk.approve.unapprove.php:234
 msgid "Unapprove"
-msgstr ""
+msgstr "تایید نشده"
 
-#: ../classes/class.bulk.approve.unapprove.php:118
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/classes/class.bulk.approve.unapprove.php:129
 msgid "approve this user?"
 msgstr ""
 
-#: ../classes/class.bulk.approve.unapprove.php:118
-#: ../classes/class.bulk.approve.unapprove.php:217
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/classes/class.bulk.approve.unapprove.php:129
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/classes/class.bulk.approve.unapprove.php:233
 msgid "Approve"
-msgstr ""
+msgstr "تایید"
 
-#: ../classes/class.bulk.approve.unapprove.php:166
-#: ../classes/class.email.confirmation.php:153
-#: ../front-end/wppb.edit.profile.php:889 ../front-end/wppb.login.php:155
-#: ../front-end/wppb.register.php:1076 ../functions/default.settings.php:27
-#: ../functions/general.settings.php:79 ../premium/addons/userlisting.php:525
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/classes/class.bulk.approve.unapprove.php:177
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/classes/class.email.confirmation.php:153
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:883
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.login.php:158
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1025
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:27
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/general.settings.php:108
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:70
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:352
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:564
 msgid "Username"
 msgstr "نام کاربری"
 
-#: ../classes/class.bulk.approve.unapprove.php:167
-#: ../classes/class.email.confirmation.php:154
-#: ../front-end/wppb.edit.profile.php:1022 ../front-end/wppb.register.php:1064
-#: ../front-end/wppb.register.php:1178 ../functions/default.settings.php:98
-msgid "E-mail"
-msgstr "ایمیل"
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/classes/class.bulk.approve.unapprove.php:178
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:75
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:588
+msgid "Firstname"
+msgstr "نام"
 
-#: ../classes/class.bulk.approve.unapprove.php:168
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/classes/class.bulk.approve.unapprove.php:179
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:76
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:594
+msgid "Lastname"
+msgstr "نام خانوادگی"
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/classes/class.bulk.approve.unapprove.php:180
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/classes/class.email.confirmation.php:154
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:1016
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1013
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1127
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:98
+msgid "E-mail"
+msgstr "پست الکترونیک"
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/classes/class.bulk.approve.unapprove.php:181
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:224
 msgid "Role"
 msgstr ""
 
-#: ../classes/class.bulk.approve.unapprove.php:169
-#: ../classes/class.email.confirmation.php:155
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/classes/class.bulk.approve.unapprove.php:182
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/classes/class.email.confirmation.php:155
 #, fuzzy
 msgid "Registered"
 msgstr "عضویت"
 
-#: ../classes/class.bulk.approve.unapprove.php:170
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/classes/class.bulk.approve.unapprove.php:183
+#, fuzzy
 msgid "User-status"
-msgstr ""
+msgstr "لیست کاربران"
 
-#: ../classes/class.bulk.approve.unapprove.php:244
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/classes/class.bulk.approve.unapprove.php:263
 msgid "Do you want to bulk approve the selected users?"
 msgstr ""
 
-#: ../classes/class.bulk.approve.unapprove.php:252
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/classes/class.bulk.approve.unapprove.php:271
 msgid "Do you want to bulk unapprove the selected users?"
 msgstr ""
 
-#: ../classes/class.bulk.approve.unapprove.php:260
-#: ../classes/class.email.confirmation.php:263
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/classes/class.bulk.approve.unapprove.php:277
+#, fuzzy
+msgid "Do you want to bulk delete the selected users?"
+msgstr "از خذف این تصویر کاربری مطمئن هستید ؟"
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/classes/class.bulk.approve.unapprove.php:285
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/classes/class.email.confirmation.php:273
 msgid "Sorry, but you don't have permission to do that!"
 msgstr ""
 
-#: ../classes/class.bulk.approve.unapprove.php:294
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/classes/class.bulk.approve.unapprove.php:318
 msgid "Approved"
-msgstr ""
+msgstr "تایید شده"
 
-#: ../classes/class.bulk.approve.unapprove.php:296
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/classes/class.bulk.approve.unapprove.php:320
 msgid "Unapproved"
-msgstr ""
+msgstr "تایید نشده"
 
-#: ../classes/class.bulk.approve.unapprove.php:466
-#: ../premium/functions/admin.approval.php:8
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/classes/class.bulk.approve.unapprove.php:492
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/admin.approval.php:7
+#, fuzzy
 msgid "Admin Approval"
-msgstr ""
+msgstr "ثبت نام با تایید مدیر"
 
-#: ../classes/class.bulk.approve.unapprove.php:469
-#: ../classes/class.email.confirmation.php:456
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/classes/class.bulk.approve.unapprove.php:495
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/classes/class.email.confirmation.php:458
 #, fuzzy
 msgid "All Users"
 msgstr "اضافه کردن کاربر"
 
-#: ../classes/class.email.confirmation.php:106
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/classes/class.email.confirmation.php:106
 msgid "delete this user from the _signups table?"
 msgstr ""
 
-#: ../classes/class.email.confirmation.php:106
-#: ../classes/class.email.confirmation.php:200
-#: ../premium/functions/custom.fields.php:40
-#: ../premium/functions/custom.fields.php:73
-#: ../premium/functions/custom.fields.php:206
-msgid "Delete"
-msgstr ""
-
-#: ../classes/class.email.confirmation.php:107
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/classes/class.email.confirmation.php:107
 msgid "confirm this email yourself?"
 msgstr ""
 
-#: ../classes/class.email.confirmation.php:107
-#: ../classes/class.email.confirmation.php:201
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/classes/class.email.confirmation.php:107
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/classes/class.email.confirmation.php:203
 msgid "Confirm Email"
 msgstr ""
 
-#: ../classes/class.email.confirmation.php:228
-msgid "couldn't be deleted."
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/classes/class.email.confirmation.php:108
+#, fuzzy
+msgid "resend the activation link?"
+msgstr "کلید فعال سازی نامعتبر!"
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/classes/class.email.confirmation.php:108
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/classes/class.email.confirmation.php:204
+msgid "Resend Activation Email"
 msgstr ""
 
-#: ../classes/class.email.confirmation.php:239
-#, fuzzy
-msgid "All users have been successfully deleted."
-msgstr "تغییرات با موفقیت ذخیره شد."
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/classes/class.email.confirmation.php:240
+#, fuzzy, php-format
+msgid "%s couldn't be deleted"
+msgstr "شماره سریال وارد شده قابل معتبر سازی نمی باشد!"
 
-#: ../classes/class.email.confirmation.php:254
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/classes/class.email.confirmation.php:245
 #, fuzzy
-msgid "The selected users have been activated."
-msgstr "کاربر با موفقیت فعال سازی شد."
+msgid "All users have been successfully deleted"
+msgstr "اطلاعات با موفقیت ذخیره گردید."
 
-#: ../classes/class.email.confirmation.php:453
-#: ../functions/email.confirmation.php:48
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/classes/class.email.confirmation.php:255
+#, fuzzy
+msgid "The selected users have been activated"
+msgstr "نام کاربری همینک فعال است!"
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/classes/class.email.confirmation.php:269
+msgid "The selected users have had their activation emails resent"
+msgstr ""
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/classes/class.email.confirmation.php:455
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/email.confirmation.php:48
 msgid "Users with Unconfirmed Email Address"
 msgstr ""
 
-#: ../front-end/wppb.edit.profile.php:83 ../front-end/wppb.register.php:320
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:78
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:277
 #, php-format
 msgid ""
 "The information size you were trying to submit was larger than %1$sb!<br/"
@@ -144,892 +196,985 @@ msgid ""
 "it was also larger than %2$sb no additional information is available.<br/"
 ">The user was NOT created!"
 msgstr ""
-"حجم اطلاعات وارد شده بیش از %1$sb است!<br/>این می تواند تلاش برای آپلود فایل "
-"هایی با حجم بالا باشد.<br/>تا زمانی که آن بیش از %2$sb باشد،  اطلاعات اضافی "
-"در دسترس نخواهند بود..<br/>کاربر ساخته نشد!"
+"مقدار اندازه ی اطلاعاتی که شما در تلاش برای ثبت آن هستید بزرگتر از %1$sb!<br/"
+"> می باشد. این اتفاق معمولا به خاطر فایل های بزرگی می افتد که شما سعی در "
+"آپلود آن ها دارید.<br/> از آن جایی که این بزرگتر از  %2$sb بود اطلاعات "
+"افزوده شده در دسترس است.<br/> کاربر ساخته نشده بود!"
 
-#: ../front-end/wppb.edit.profile.php:769
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:307
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:564
+msgid "The following image extensions are NOT supported: bmp"
+msgstr ""
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:778
 msgid "You must be logged in to edit your profile."
-msgstr "برای ویرایش نمایه باید وارد شوید."
+msgstr "برای ویرایش نمایه خود باید ابتدا وارد شوید."
 
-#: ../front-end/wppb.edit.profile.php:777
-msgid "The avatar was successfully deleted."
-msgstr " تصویر نمایه شما با موفقیت حذف شد."
-
-#: ../front-end/wppb.edit.profile.php:782
-#, php-format
-msgid "The attachment \"%1$s\" was successfully deleted."
-msgstr "ضمیمه  \"%1$s\" با موفقیت حذف شد."
-
-#: ../front-end/wppb.edit.profile.php:795
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:788
 msgid "The changes have been successfully saved."
-msgstr "تغییرات با موفقیت ذخیره شد."
+msgstr "اطلاعات با موفقیت ذخیره گردید."
 
-#: ../front-end/wppb.edit.profile.php:799
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:792
 #, fuzzy, php-format
 msgid ""
 "The email address you entered is already registered to a different user."
 "%1$sThe email address was %2$sNOT%3$s updated along with the rest of the "
 "information."
 msgstr ""
-"علت: حج این فایل بیش از %1$sb است. فهرست پیوست ها  %2$s نتوانست %3$s با این "
-"مشخصه ها به روز رسانی شود.."
+"دلایل : حجم بزرگتر از %1$sb بود . ضمیمه ها در هنگام آپدیت %2$sNOT%3$s داشتند"
 
-#: ../front-end/wppb.edit.profile.php:804
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:797
 #, fuzzy, php-format
 msgid ""
 "The email address you entered is invalid.%1$sThe email address was %2$sNOT"
 "%3$s updated along with the rest of the information."
 msgstr ""
-"علت: حج این فایل بیش از %1$sb است. فهرست پیوست ها  %2$s نتوانست %3$s با این "
-"مشخصه ها به روز رسانی شود.."
+"دلایل : حجم بزرگتر از %1$sb بود . ضمیمه ها در هنگام آپدیت %2$sNOT%3$s داشتند"
 
-#: ../front-end/wppb.edit.profile.php:809
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:802
 #, fuzzy, php-format
 msgid ""
 "The passwords you entered do not match.%1$sThe password was %2$sNOT%3$s "
 "updated along with the rest of the information."
 msgstr ""
-"علت: حج این فایل بیش از %1$sb است. فهرست پیوست ها  %2$s نتوانست %3$s با این "
-"مشخصه ها به روز رسانی شود.."
+"دلایل : حجم بزرگتر از %1$sb بود . ضمیمه ها در هنگام آپدیت %2$sNOT%3$s داشتند"
 
-#: ../front-end/wppb.edit.profile.php:814
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:807
 #, fuzzy, php-format
 msgid ""
 "You didn't complete both password fields.%1$sThe password was %2$sNOT%3$s "
 "updated along with the rest of the information."
 msgstr ""
-"علت: حج این فایل بیش از %1$sb است. فهرست پیوست ها  %2$s نتوانست %3$s با این "
-"مشخصه ها به روز رسانی شود.."
+"دلایل : حجم بزرگتر از %1$sb بود . ضمیمه ها در هنگام آپدیت %2$sNOT%3$s داشتند"
 
-#: ../front-end/wppb.edit.profile.php:819
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:812
 msgid ""
 "Your profile was NOT updated, since not all required fields were completed!"
 msgstr ""
 
-#: ../front-end/wppb.edit.profile.php:828
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:822
 msgid "There was an error while trying to upload the following attachments:"
-msgstr "در آپلود ضمیمه های زیرین خطایی به وجود آمده است:"
+msgstr "مشکلی در هنگام آپلود ضمیمه ها رخ داده است"
 
-#: ../front-end/wppb.edit.profile.php:836
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:830
 #, php-format
 msgid ""
 "Possible cause: the size was bigger than %1$sb. The listed attachements were "
 "%2$sNOT%3$s updated along with the rest of the information."
 msgstr ""
-"علت: حج این فایل بیش از %1$sb است. فهرست پیوست ها  %2$s نتوانست %3$s با این "
-"مشخصه ها به روز رسانی شود.."
+"دلایل : حجم بزرگتر از %1$sb بود . ضمیمه ها در هنگام آپدیت %2$sNOT%3$s داشتند"
 
-#: ../front-end/wppb.edit.profile.php:843
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:837
 msgid "There was an error while trying to upload your avatar picture."
-msgstr "در بارگذاری تصویر نمایه شما خطایی رخ داده است."
+msgstr "مشکلی در هنگام آپلود آواتر رخ داده است"
 
-#: ../front-end/wppb.edit.profile.php:843
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:837
 msgid "Possible cause: size/incorrect file-type."
-msgstr "علت : حجم یا نامعتبر بودن فرمت فایل."
+msgstr "دلایل موجود : حجم / پسوند نامناسب"
 
-#: ../front-end/wppb.edit.profile.php:843
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:837
 msgid "The avatar was"
-msgstr "نمایه ی شما"
+msgstr "آواتر بود"
 
-#: ../front-end/wppb.edit.profile.php:843
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:837
 msgid "NOT"
-msgstr "نتوانست"
+msgstr "خیر"
 
-#: ../front-end/wppb.edit.profile.php:843
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:837
 msgid "updated along with the rest of the information."
-msgstr "با اطلاعات وارد شده به روز رسانی شود."
+msgstr "بروزرسانی در کنار اطلاعات انجام شد"
 
-#: ../front-end/wppb.edit.profile.php:851 ../front-end/wppb.register.php:646
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:845
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:606
 msgid "There was an error while trying to upload the following attachment(s)"
-msgstr "خطایی در بارگذاری فایل های پیوستی زیرین، رخ داده است"
+msgstr "اختلالی در هنگام آپلود ضمیمه ها رخ داده است"
 
-#: ../front-end/wppb.edit.profile.php:858
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:852
 #, php-format
 msgid ""
 "Only files with the following extension(s) can be uploaded: %1$s<br/>This "
 "file was %2$sNOT%3$s updated along with the rest of the information."
 msgstr ""
-"فایل ها تنها با مشخصه های زیر میتوانند بارگذاری شوند: %1$s<br/>این فایل %2$s "
-"نتوانست %3$s با این مشخصات به روز رسانی شود.."
+"فقط افزونه های روبرو توانستند آپدیت بشوند : %1$s<br/> فایل در هنگام "
+"بروزرسانی , نگه داشته %2$sNOT%3$s  شد"
 
-#: ../front-end/wppb.edit.profile.php:873 ../front-end/wppb.register.php:1029
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:867
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:978
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:347
 msgid "Name"
-msgstr "مشخصات"
+msgstr "نام"
 
-#: ../front-end/wppb.edit.profile.php:880 ../front-end/wppb.login.php:153
-#: ../functions/general.settings.php:80 ../premium/addons/userlisting.php:537
-#, fuzzy
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:874
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.login.php:156
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/general.settings.php:109
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:71
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:576
 msgid "Email"
-msgstr "ایمیل"
+msgstr "پست الکترونیک"
 
-#: ../front-end/wppb.edit.profile.php:881
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:875
 #, fuzzy
 msgid "The email cannot be changed."
-msgstr "نام کاربری ثابت است و قابلیت ویرایش را ندارد."
+msgstr "نام کاربری قابل تغییر نمی باشد."
 
-#: ../front-end/wppb.edit.profile.php:890
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:884
 #, fuzzy
 msgid "The usernames cannot be changed."
-msgstr "نام کاربری ثابت است و قابلیت ویرایش را ندارد."
+msgstr "نام کاربری قابل تغییر نمی باشد."
 
-#: ../front-end/wppb.edit.profile.php:900
-#: ../front-end/wppb.edit.profile.php:920
-#: ../front-end/wppb.edit.profile.php:940
-#: ../front-end/wppb.edit.profile.php:960
-#: ../front-end/wppb.edit.profile.php:1012
-#: ../front-end/wppb.edit.profile.php:1034
-#: ../front-end/wppb.edit.profile.php:1052
-#: ../front-end/wppb.edit.profile.php:1070
-#: ../front-end/wppb.edit.profile.php:1088
-#: ../front-end/wppb.edit.profile.php:1109
-#: ../premium/functions/extra.fields.php:68
-#: ../premium/functions/extra.fields.php:174
-#: ../premium/functions/extra.fields.php:243
-#: ../premium/functions/extra.fields.php:311
-#: ../premium/functions/extra.fields.php:378
-#: ../premium/functions/extra.fields.php:446
-#: ../premium/functions/extra.fields.php:501
-#: ../premium/functions/extra.fields.php:551
-#: ../premium/functions/extra.fields.php:616
-#: ../premium/functions/extra.fields.php:727
-#: ../premium/functions/extra.fields.php:774
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:894
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:914
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:934
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:954
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:1006
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:1028
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:1046
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:1064
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:1082
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:1103
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:68
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:183
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:272
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:360
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:434
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:502
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:557
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:607
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:674
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:784
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:829
 msgid "This field is marked as required by the administrator."
-msgstr "پر کردن این کادر توسط مدیریت الزامی علامتگذاری شده است."
+msgstr "پُر کردن این فیلد توسط ادمین الزامی شده است."
 
-#: ../front-end/wppb.edit.profile.php:903
-#: ../front-end/wppb.edit.profile.php:923
-#: ../front-end/wppb.edit.profile.php:943
-#: ../front-end/wppb.edit.profile.php:963
-#: ../front-end/wppb.edit.profile.php:1015
-#: ../front-end/wppb.edit.profile.php:1036
-#: ../front-end/wppb.edit.profile.php:1054
-#: ../front-end/wppb.edit.profile.php:1072
-#: ../front-end/wppb.edit.profile.php:1090
-#: ../front-end/wppb.edit.profile.php:1111
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:897
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:917
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:937
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:957
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:1009
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:1030
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:1048
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:1066
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:1084
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:1105
 msgid ""
 "This field wasn't updated because you entered and empty string (It was "
 "marked as required by the administrator."
 msgstr ""
-"این کادر به دلیل خالی بودن قابیلت به روز رسانی را ندارید (پر کردن این کادر "
-"توسط مدیریت الزامی علامتگذاری شده است)."
+"این رشته بروز نخواهد شد . چون شما رشته ای که مدیر ضروری خوانده است را خالی "
+"گذاشته اید"
 
-#: ../front-end/wppb.edit.profile.php:910 ../front-end/wppb.register.php:1101
-#: ../functions/default.settings.php:40
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:904
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1050
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:40
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:360
 msgid "First Name"
 msgstr "نام"
 
-#: ../front-end/wppb.edit.profile.php:930 ../front-end/wppb.register.php:1125
-#: ../functions/default.settings.php:53
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:924
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1074
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:53
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:368
 msgid "Last Name"
 msgstr "نام خانوادگی"
 
-#: ../front-end/wppb.edit.profile.php:950 ../front-end/wppb.register.php:1149
-#: ../functions/default.settings.php:66
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:944
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1098
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:66
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:376
 msgid "Nickname"
 msgstr "لقب"
 
-#: ../front-end/wppb.edit.profile.php:971
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:965
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:384
 msgid "Display name publicly as"
 msgstr "نمایش عمومی نام"
 
-#: ../front-end/wppb.edit.profile.php:1003 ../front-end/wppb.register.php:1155
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:997
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1104
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:392
 msgid "Contact Info"
 msgstr "اطلاعات تماس"
 
-#: ../front-end/wppb.edit.profile.php:1024
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:1018
 msgid "(required)"
-msgstr "(لازم)"
+msgstr "(ضروری)"
 
-#: ../front-end/wppb.edit.profile.php:1042 ../front-end/wppb.register.php:1203
-#: ../functions/default.settings.php:111 ../premium/addons/userlisting.php:567
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:1036
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1152
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:111
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:72
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:397
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:606
 msgid "Website"
 msgstr "وبسایت"
 
-#: ../front-end/wppb.edit.profile.php:1060 ../front-end/wppb.register.php:1227
-#: ../functions/default.settings.php:127
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:1054
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1176
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:127
 msgid "AIM"
-msgstr ""
+msgstr "AIM"
 
-#: ../front-end/wppb.edit.profile.php:1078 ../front-end/wppb.register.php:1251
-#: ../functions/default.settings.php:140
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:1072
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1200
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:140
 msgid "Yahoo IM"
-msgstr ""
+msgstr "شناسه یاهو"
 
-#: ../front-end/wppb.edit.profile.php:1096 ../front-end/wppb.register.php:1275
-#: ../functions/default.settings.php:153
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:1090
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1224
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:153
 msgid "Jabber / Google Talk"
-msgstr ""
+msgstr "Jabber / گوگل تاک"
 
-#: ../front-end/wppb.edit.profile.php:1102 ../front-end/wppb.register.php:1281
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:1096
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1230
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:405
 msgid "About Yourself"
-msgstr "درباره"
+msgstr "درباره شما"
 
-#: ../front-end/wppb.edit.profile.php:1117 ../front-end/wppb.register.php:1302
-#: ../functions/default.settings.php:172 ../premium/addons/userlisting.php:573
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:1111
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1251
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:172
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:73
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:410
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:612
 msgid "Biographical Info"
-msgstr "زندگی نامه"
+msgstr "اطلاعات فردی"
 
-#: ../front-end/wppb.edit.profile.php:1127
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:1121
 msgid "New Password"
-msgstr " رمز عبور جدید"
+msgstr "کلمه عبور جدید"
 
-#: ../front-end/wppb.edit.profile.php:1132
-#: ../front-end/wppb.recover.password.php:328
-#: ../front-end/wppb.recover.password.php:358
-#: ../front-end/wppb.register.php:1341
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:1126
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:249
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:280
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1290
 msgid "Repeat Password"
-msgstr "تکرار رمز عبور"
+msgstr "تکرار کلمه عبور"
 
-#: ../front-end/wppb.edit.profile.php:1163
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.edit.profile.php:1157
 msgid "Update"
-msgstr "به روز رسانی"
+msgstr "بروزرسانی"
 
-#: ../front-end/wppb.login.php:67
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.login.php:63
 #, php-format
 msgid "You are currently logged in as %1$s. %2$s"
-msgstr "وارد شده با نام کاربری %1$s. %2$s "
+msgstr "شما همینک با نام کاربری  %1$s. %2$s وارد شده اید."
 
-#: ../front-end/wppb.login.php:67
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.login.php:63
 msgid "Log out of this account"
-msgstr "خروج از این حساب"
+msgstr "خروج از این حساب کاربری"
 
-#: ../front-end/wppb.login.php:67
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.login.php:63
 msgid "Log out"
 msgstr "خروج"
 
-#: ../front-end/wppb.login.php:78
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.login.php:74
 #, php-format
 msgid "You have successfully logged in as %1$s"
-msgstr "کاربر گرامی %1$s, ورود شما موفقیت آمیز بود."
+msgstr "شما با موفقیت به حساب کاربری  %1$s وارد شدید"
 
-#: ../front-end/wppb.login.php:97 ../front-end/wppb.login.php:106
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.login.php:93
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.login.php:102
 #, php-format
 msgid ""
 "You will soon be redirected automatically. If you see this page for more "
 "than 1 second, please click %1$s"
 msgstr ""
-"شما به زودی به پنل کاربری خود هدایت خواهید شد، اگر این زمان بیش از یک ثانیه "
-"طول کشید %1$s کلیک کنید"
+"شما به زودی به صورت خودکار به صفحه قبل بازخواهید گشت. اگر این صفحه را بیش از "
+"یک ثانیه مشاهده کردید لطفا %1$s کلیک کنید"
 
-#: ../front-end/wppb.login.php:97 ../front-end/wppb.login.php:106
-#: ../front-end/wppb.register.php:943 ../front-end/wppb.register.php:973
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.login.php:93
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.login.php:102
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:892
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:922
 msgid "here"
 msgstr "اینجا"
 
-#: ../front-end/wppb.login.php:122 ../front-end/wppb.login.php:126
-#: ../front-end/wppb.recover.password.php:382
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.login.php:118
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.login.php:122
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.login.php:129
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:305
 msgid "ERROR:"
-msgstr "خطا:"
+msgstr "خطا : "
 
-#: ../front-end/wppb.login.php:122
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.login.php:118
 #, fuzzy
 msgid "The email field is empty"
-msgstr "نام کاربری را وارد نکرده اید!"
+msgstr "فیلد نام کاربری خالی است"
 
-#: ../front-end/wppb.login.php:126
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.login.php:122
 msgid "The username field is empty"
-msgstr "نام کاربری را وارد نکرده اید!"
+msgstr "فیلد نام کاربری خالی است"
 
-#: ../front-end/wppb.login.php:167 ../front-end/wppb.recover.password.php:323
-#: ../front-end/wppb.recover.password.php:353
-#: ../front-end/wppb.register.php:1336
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.login.php:129
+#, fuzzy
+msgid "The password field is empty"
+msgstr "فیلد نام کاربری خالی است"
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.login.php:170
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:244
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:275
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1285
 msgid "Password"
-msgstr "رمز عبور"
+msgstr "کلمه عبور"
 
-#: ../front-end/wppb.login.php:175
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.login.php:178
 msgid "Log in"
 msgstr "ورود"
 
-#: ../front-end/wppb.login.php:179
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.login.php:183
 msgid "Remember me"
-msgstr "مرا به خاطر داشته باش"
+msgstr "مرا به خاطر بسپار"
 
-#: ../front-end/wppb.login.php:194
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.login.php:198
 msgid "Lost password?"
-msgstr "رمز عبور را فراموش کرده اید؟"
+msgstr "بازیابی کلمه عبور ؟"
 
-#: ../front-end/wppb.recover.password.php:113
-#: ../front-end/wppb.recover.password.php:177
-#: ../front-end/wppb.recover.password.php:224
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:22
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:86
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:145
 msgid "ERROR"
 msgstr "خطا"
 
-#: ../front-end/wppb.recover.password.php:113
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:22
 msgid ""
 "Your account has to be confirmed by an administrator before you can use the "
 "\"Password Reset\" feature."
-msgstr "پیش از تأیید مدیر، قابلیت بازیابی رمز عبور را نخواهید داشت."
+msgstr ""
+"پیش از استفاده از \"بازیابی کلمه عبور\" حساب کاربری شما باید توسط یکی از "
+"مدیران تایید گردد."
 
-#: ../front-end/wppb.recover.password.php:153
-#: ../front-end/wppb.recover.password.php:200
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:62
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:109
 #, php-format
 msgid ""
 "A password reset email has been sent to %1$s.<br/>Following the link sent in "
 "the email address will reset the password."
 msgstr ""
-"ایمیلی برای بازیابی رمز عبور به %1$s ارسال شد.<br/>برای بازیابی و تغییر رمز "
-"عبور لینک ارسالی در ایمیل را دنبال کنید. "
+"پسورد جدید به ایمیل %1$s. ارسال شد. میل خود را برای بازیابی رمز عبور پیگیری "
+"نمایید"
 
-#: ../front-end/wppb.recover.password.php:165
-#: ../front-end/wppb.recover.password.php:212
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:74
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:133
 #, php-format
 msgid ""
 "Someone requested that the password be reset for the following account: <b>"
 "%1$s</b><br/>If this was a mistake, just ignore this email and nothing will "
 "happen.<br/>To reset your password, visit the following link:%2$s"
 msgstr ""
-"شخصی تقاضای بازیابی رمز عبور حساب ذیل را داده است: <b>%1$s</b><br/>اگر "
-"اشتباهی رخ داده است، این ایمیل را نادیده بگیرید و اتفاقی نخواهد افتاد.<br/"
-">برای بازیابی رمز عبور لینک ذیل را دنبال کنید:%2$s"
+"شما با نام کاربری <b>%1$s</b> در خواست بازیابی رمز عبور داده اید <br/> اگر "
+"اشتباه این درخواست را داده اید این ایمیل را نادیده بگیرید اما اگر واقعا "
+"میخواهید رمز عبور خود را بازیابی کنید بر روی لینک زیر کلیک کنید :%2$s"
 
-#: ../front-end/wppb.recover.password.php:168
-#: ../front-end/wppb.recover.password.php:215
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:77
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:136
 #, php-format
 msgid "Password Reset Feature from \"%1$s\""
-msgstr ""
+msgstr "پسورد بازیابی شد از \"%1$s\""
 
-#: ../front-end/wppb.recover.password.php:177
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:86
 #, php-format
 msgid "There was an error while trying to send the activation link to %1$s!"
-msgstr "اشکالی در ارسال لینک فعال سازی به %1$s   رخ داده است!"
+msgstr "یک مشکلی در هنگام ارسال لینک فعالسازی به %1$s رخ داده است"
 
-#: ../front-end/wppb.recover.password.php:187
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:96
 msgid "The email address entered wasn't found in the database!"
-msgstr "ایمیل وارد شده در پایگاه اطلاعاتی یافت نشد!"
+msgstr "ایمیل شما در سایت ثبت نشده است"
 
-#: ../front-end/wppb.recover.password.php:187
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:96
 msgid "Please check that you entered the correct email address."
-msgstr "لطفا صحت ایمیل وارد شده را  بررسی کنید."
+msgstr "ایمیل وارد شده اشتباه است . لطفا مجدد چک کنید"
 
-#: ../front-end/wppb.recover.password.php:224
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:145
 msgid "There was an error while trying to send the activation link to "
-msgstr "اشکالی در ارسال لینک فعال ساز حساب روبرو رخ داده است: "
+msgstr "مشکلی در ارسال لینک فعالسازی بوجود امده است"
 
-#: ../front-end/wppb.recover.password.php:232
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:153
 msgid "The username entered wasn't found in the database!"
-msgstr "نام کاربری وارد شده در پایگاه اطلاعاتی یافت نشد!"
+msgstr "نام کاربری وارد شده در سایت ثبت نشده است"
 
-#: ../front-end/wppb.recover.password.php:232
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:153
 msgid "Please check that you entered the correct username."
-msgstr "از صحت نام کاربری وارد شده مطمئن شوید."
+msgstr "لطفا از صحت نام کاربری وارد شده مطمئن شوید. "
 
-#: ../front-end/wppb.recover.password.php:243
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:164
 msgid "Your password has been successfully changed!"
-msgstr "رمز عبور شما با موفقیت تغییر کرد."
+msgstr "کلمه عبور با موفقیت تغییر یافت!"
 
-#: ../front-end/wppb.recover.password.php:257
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:178
 #, php-format
 msgid "You have successfully reset your password to: %1$s"
-msgstr "شما به موفقیت رمز عبور خود را به %1$s تغییر دادید."
+msgstr "شما با موفقیت کلمه عبور خود را به  %1$s تغییر دادید"
 
-#: ../front-end/wppb.recover.password.php:260
-#: ../front-end/wppb.recover.password.php:273
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:181
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:194
 #, php-format
 msgid "Password Successfully Reset for %1$s on \"%2$s\""
-msgstr "رمز عبور شما با موفقیت به %1$s تغییر یافت.  در \"%2$s\""
+msgstr "کلمه عبور  %1$s در %2$s با موفقیت به روز رسانی شد."
 
-#: ../front-end/wppb.recover.password.php:270
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:191
 #, php-format
 msgid ""
 "%1$s has requested a password change via the password reset feature.<br/>His/"
 "her new password is:%2$s"
-msgstr ""
-"%1$s درخواست تغییر رمز خود را در بخش بازیابی رمز عبور داده است.<br/>رمز جدید "
-"اون عبارت است از :%2$s"
+msgstr "%1$s در خواست رمز جدید کرده است. <br/>  رمز جدید او  : %2$s"
 
-#: ../front-end/wppb.recover.password.php:288
-#: ../front-end/wppb.register.php:643
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:209
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:603
 msgid "The entered passwords don't match!"
-msgstr "کلمات عبور وارد شده بایکدیگر تطابق ندارند!"
+msgstr "کلمه های عبور وارد شده یکسان نیستند!"
 
-#: ../front-end/wppb.recover.password.php:335
-#: ../front-end/wppb.recover.password.php:365
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:256
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:287
 msgid "Reset Password"
-msgstr "بازیابی رمز عبور"
+msgstr "بازنشانی کلمه عبور"
 
-#: ../front-end/wppb.recover.password.php:382
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:305
 msgid "Invalid key!"
-msgstr "کد امنیتی اشتباه است!"
+msgstr "کلید نا معتبر !"
 
-#: ../front-end/wppb.recover.password.php:397
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:320
 msgid "Please enter your username or email address."
-msgstr "لطفا نام کاربری یا ایمیل خود را وارد کنید."
+msgstr "لطفا نام کاربری یا پست الکترونیک خود را وارد نمایید."
 
-#: ../front-end/wppb.recover.password.php:397
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:320
 msgid "You will receive a link to create a new password via email."
 msgstr ""
-"شما به زودی ایمیلی را با پیوست یک لینک، برای تغییر رمز عبور دریافت خواهید "
-"کرد."
+"شما لینکی را برای تغییر کلمه عبور خود از طریق پست الکترونیک دریافت خواهد کرد."
 
-#: ../front-end/wppb.recover.password.php:405
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:328
 msgid "Username or E-mail"
-msgstr "نام کاربری یا ایمیل"
+msgstr "نام کاربری یا پست الکترونیک"
 
-#: ../front-end/wppb.recover.password.php:414
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.recover.password.php:337
 msgid "Get New Password"
-msgstr "دریافت یک رمز تازه"
+msgstr "دریافت کلمه عبور جدید"
 
-#: ../front-end/wppb.register.php:217
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:177
 msgid "Invalid activation key!"
-msgstr "کد فعال سازی اشتباه است!"
+msgstr "کلید فعال سازی نامعتبر!"
 
-#: ../front-end/wppb.register.php:221
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:181
 msgid "The user is already active!"
-msgstr "کاربر پیش از این فعال است."
+msgstr "کاربر همینک فعال است!"
 
-#: ../front-end/wppb.register.php:239 ../functions/email.confirmation.php:381
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:198
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/email.confirmation.php:372
 msgid "Could not create user!"
-msgstr "نمی توانید کاربری جدید بسازید."
+msgstr "ناتوانی در ساخت کاربر جدید"
 
-#: ../front-end/wppb.register.php:242 ../functions/email.confirmation.php:384
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:201
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/email.confirmation.php:375
 msgid "That username is already activated!"
-msgstr "این نام کاربری قبلا فعال شده است!"
+msgstr "نام کاربری همینک فعال است!"
 
-#: ../front-end/wppb.register.php:268
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:225
 msgid "The user was successfully activated."
-msgstr "کاربر با موفقیت فعال سازی شد."
+msgstr "کاربر با موفقیت فعال گردید."
 
-#: ../front-end/wppb.register.php:270 ../functions/email.confirmation.php:410
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:227
 msgid "There was an error while trying to activate the user."
-msgstr "خطایی در فعال سازی کاربر به وجود آمده است."
+msgstr "خطایی هنگام فعال سازی کاربر رخ داده است."
 
-#: ../front-end/wppb.register.php:630
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:590
 msgid "A username is required for registration."
-msgstr " وارد کردن یک نام کابری برای عضویت لازم است."
+msgstr "وارد کردن نام کاربری برای عضویت ضروری است."
 
-#: ../front-end/wppb.register.php:634
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:594
 msgid "Sorry, that username already exists!"
-msgstr "متأسفیم، این نام کاربری قبلا استفاده شده!"
+msgstr "متاسفیم، این نام کاربری همینک وجود دارد!"
 
-#: ../front-end/wppb.register.php:636
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:596
 msgid "You must enter a valid email address."
-msgstr "ایمیل شما نا معتبر است."
+msgstr "لطفا پست الکترونیکی معتبری وارد کنید."
 
-#: ../front-end/wppb.register.php:638
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:598
 msgid "Sorry, that email address is already used!"
-msgstr "متأسفیم، این ایمیل قبلا ثبت شده است!"
+msgstr "متاسفیم، این پست الکترونیک از قبل استفاده شده است."
 
-#: ../front-end/wppb.register.php:641
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:601
 msgid "You didn't complete one of the password-fields!"
-msgstr "یکی از فیلدهای رمز عبور تکمیل نشده است!"
+msgstr "یکی از فیلد های کلمه عبور را پر نکرده اید!"
 
-#: ../front-end/wppb.register.php:653
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:613
 msgid "Only files with the following extension(s) can be uploaded:"
-msgstr "فایل ها تنها با مشخصه های زیر می توانند بارگذاری شوند:"
+msgstr "فقط فایل هایی با پسوندهای زیر می توانند آپلود شوند:"
 
-#: ../front-end/wppb.register.php:653 ../front-end/wppb.register.php:659
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:613
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:619
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:621
 msgid "The account was NOT created!"
-msgstr "حساب ساخته نشد!"
+msgstr "حساب کاربری ایجاد نشد!"
 
-#: ../front-end/wppb.register.php:657
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:617
 msgid "You must agree to the terms and conditions before registering!"
-msgstr "باید قبل از عضویت فرم قوانین و شرایط را پذیرفته و تأیید کنید."
+msgstr "پیش از عضویت لازم است قوانین سایت را بپذیرید!"
 
-#: ../front-end/wppb.register.php:659
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:621
 msgid "(Several required fields were left uncompleted)"
-msgstr "(تعدادی از کادرهای الزامی تکمیل نشده اند)"
+msgstr "(برخی از فیلد های ضروری پُر نشده اند)"
 
-#: ../front-end/wppb.register.php:677
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:639
 msgid "This username is already reserved to be used soon."
-msgstr "این نام کاربری پیش از این رزرو شده است."
+msgstr "نام کاربری برای استفاده رزرو شده است."
 
-#: ../front-end/wppb.register.php:677 ../front-end/wppb.register.php:681
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:639
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:643
 msgid "Please try a different one!"
-msgstr "لطفا یک مورد دیگر را امتحان کنید!"
+msgstr "لطفا یک طور دیگر امتحان کنید!"
 
-#: ../front-end/wppb.register.php:681
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:643
 msgid "This email address is already reserved to be used soon."
-msgstr "این آدرس ایمیل پیش از این رزرو شده است."
+msgstr "این ایمیل آدرس قبلا ثبت شده است و بزودی مورد استفاده قرار می گیرد."
 
-#: ../front-end/wppb.register.php:911
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:860
 msgid "You are logged in as"
-msgstr "وارد شده با نام"
+msgstr "شما با نام کاربری وارد شده اید"
 
-#: ../front-end/wppb.register.php:911
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:860
 msgid "You don't need another account."
-msgstr "شما به حساب دیگری نیاز ندارید."
+msgstr "شما به حساب کاربری دیگری احتیاج ندارید."
 
-#: ../front-end/wppb.register.php:911
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:860
 msgid "Log out of this account."
-msgstr "خروج از این حساب"
+msgstr "خروج از این حساب کاربری"
 
-#: ../front-end/wppb.register.php:911
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:860
 msgid "Logout"
 msgstr "خروج"
 
-#: ../front-end/wppb.register.php:919
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:868
 #, php-format
 msgid ""
 "An email has been sent to %1$s with information on how to activate his/her "
 "account."
-msgstr "یک ایمیل به همراه اطلاعات فعال سازی به %1$s ارسال شد."
+msgstr ""
+"یک ایمیل به %1$s حاوی اطلاعاتی در مورد چگونگی فعال سازی حساب کاربری برای شما "
+"ارسال شد."
 
-#: ../front-end/wppb.register.php:923
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:872
 #, php-format
 msgid "A user account has been created for %1$s."
-msgstr "یک حساب کاربری برای %1$s ساخته شد."
+msgstr "یک حساب کاربری برای  %1$s ایجاد شد."
 
-#: ../front-end/wppb.register.php:943 ../front-end/wppb.register.php:973
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:892
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:922
 #, php-format
 msgid ""
 "You will soon be redirected automatically. If you see this page for more "
 "than 3 seconds, please click %1$s.%2$s"
 msgstr ""
-"شما به زودی به پنل خود هدایت خواهید شد. اگر این زمان بیش از از سه ثانیه طول "
-"کشید , کلیک کنید %1$s.%2$s"
+"شما به زودی به طور خودکار هدایت می شود. اگر بیش از 3 ثانیه این صفحه را "
+"ملاحظه نمودید و ،اینجا کلیک نمایید %1$s.%2$s"
 
-#: ../front-end/wppb.register.php:949
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:898
 msgid ""
 "An email has been sent to you with information on how to activate your "
 "account."
-msgstr "یک ایمیل حاوی اطلاعات فعال سازی به پست الکترونیکی شما ارسال شد."
+msgstr "یک ایمیل حاوی چگونگی فعال سازی حساب کاربری برای شما ارسال شد."
 
-#: ../front-end/wppb.register.php:953
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:902
 #, php-format
 msgid "Thank you for registering %1$s."
 msgstr " %1$s از عضویت شما متشکریم."
 
-#: ../front-end/wppb.register.php:980
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:929
 msgid "An error occured while trying to send the notification email."
-msgstr "خطایی در ارسال ایمیل اطلاع رسانی به وجود آمده است."
+msgstr "هنگام تلاش در ارسال ایمیل فعال سازی خطایی رخ داده است."
 
-#: ../front-end/wppb.register.php:985
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:934
 msgid "An email containing activation instructions was successfully sent."
-msgstr "ایمیل حاوی توضیحات فعال سازی با موفقیت ارسال شد."
+msgstr "یک ایمیل حاوی دستورالعمل های فعال سازی حساب کاربری با موفقیت ارسال شد."
 
-#: ../front-end/wppb.register.php:990
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:939
 msgid "An email containing the username and password was successfully sent."
-msgstr "ایمیل حاوی نام کاربری و رمز عبور، با موفقیت ارسال شد."
+msgstr "یک ایمیل حاوی نام کاربری و رمز عبور با موفقیت ارسال شد."
 
-#: ../front-end/wppb.register.php:1006
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:955
 msgid "Users can register themselves or you can manually create users here."
-msgstr "اعضاء می توانند مجددا نام نویسی  یا کاربری جدید را اضافه کنند."
+msgstr ""
+"کاربران می توانند خودشان اقدام به ثبت نام کنند یا شما می توانید اینجا "
+"کاربران را بصورت دستی بسازید."
 
-#: ../front-end/wppb.register.php:1011
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:960
 msgid ""
 "Users cannot currently register themselves, but you can manually create "
 "users here."
 msgstr ""
-"در حال حاضر هیچ کاربری نمی تواند نام نویسی کند، با اینحال شما می توانید "
-"هرکاربری را که خواستید اضافه کنید."
+"کاربران نمی توانند خود اقدام به ثبت نام کنند، اما شما می توانید بصورت دستی "
+"کاربری را ثبت نام کنید."
 
-#: ../front-end/wppb.register.php:1016
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:965
 msgid "Only an administrator can add new users."
-msgstr "تنها یک مدیر می تواند کاربری جدید را اضافه کند."
+msgstr "فقط مدیر سایت می تواند کاربر جدید اضافه کند."
 
-#: ../front-end/wppb.register.php:1039 ../front-end/wppb.register.php:1090
-#: ../front-end/wppb.register.php:1114 ../front-end/wppb.register.php:1138
-#: ../front-end/wppb.register.php:1192 ../front-end/wppb.register.php:1216
-#: ../front-end/wppb.register.php:1240 ../front-end/wppb.register.php:1264
-#: ../front-end/wppb.register.php:1291
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:988
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1039
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1063
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1087
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1141
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1165
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1189
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1213
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1240
 msgid ""
 "This field must be filled out before registering (It was marked as required "
 "by the administrator)"
 msgstr ""
-"این کادر قبل از عضویت باید تکمیل شود (پر کردن این کادر توسط مدیریت، الزامی "
-"شده است)"
+"این رشته قبل از ثبت نام باید پر شود. ( رشته ای که مدیر ضروری خوانده است )"
 
-#: ../front-end/wppb.register.php:1050 ../front-end/wppb.register.php:1087
-#: ../front-end/wppb.register.php:1111 ../front-end/wppb.register.php:1135
-#: ../front-end/wppb.register.php:1164 ../front-end/wppb.register.php:1189
-#: ../front-end/wppb.register.php:1213 ../front-end/wppb.register.php:1237
-#: ../front-end/wppb.register.php:1261 ../front-end/wppb.register.php:1288
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:999
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1036
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1060
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1084
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1113
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1138
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1162
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1186
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1210
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1237
 msgid "This field is marked as required by the administrator"
-msgstr "تکمیل این کادر توسط مدیریت، الزامی علامتگذاری شده است."
+msgstr "پُر کردن این فیلد توسط مدیر سایت الزامی شده است."
 
-#: ../front-end/wppb.register.php:1364
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1313
 msgid "Anti-Spam"
-msgstr "ضد هرزنامه"
+msgstr "ضد اسپم"
 
-#: ../front-end/wppb.register.php:1385
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1334
 msgid "Send these credentials via email."
-msgstr "فرستادن اعتبار نامه از طریق ایمیل"
+msgstr "ارسال اطلاعات به ایمیل"
 
-#: ../front-end/wppb.register.php:1399
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1350
 msgid "Add User"
 msgstr "اضافه کردن کاربر"
 
-#: ../front-end/wppb.register.php:1399
-#: ../premium/functions/login.widget.php:41
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/front-end/wppb.register.php:1352
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/login.widget.php:41
 msgid "Register"
 msgstr "عضویت"
 
-#: ../functions/admin.bar.php:13 ../functions/admin.bar.php:14
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/admin.bar.php:13
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/admin.bar.php:14
 msgid "Show/Hide the Admin Bar on Front End"
-msgstr "نمایش یا پنهان نمودن پنل مدیریت در برگه ها"
+msgstr "نمایش/مخفی کردن نوار مدیریت "
 
-#: ../functions/admin.bar.php:18
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/admin.bar.php:18
 msgid "User-group"
 msgstr "گروه کاربری"
 
-#: ../functions/admin.bar.php:19 ../functions/default.settings.php:15
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/admin.bar.php:19
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:15
 msgid "Visibility"
-msgstr "پدیداری"
+msgstr "وضعیت نمایش"
 
-#: ../functions/admin.bar.php:30 ../functions/general.settings.php:14
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/admin.bar.php:30
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/general.settings.php:13
 msgid "Default"
-msgstr "پیشفرض"
+msgstr "پیش فرض"
 
-#: ../functions/admin.bar.php:31 ../functions/default.settings.php:30
-#: ../functions/default.settings.php:43 ../functions/default.settings.php:56
-#: ../functions/default.settings.php:69 ../functions/default.settings.php:82
-#: ../functions/default.settings.php:101 ../functions/default.settings.php:114
-#: ../functions/default.settings.php:130 ../functions/default.settings.php:143
-#: ../functions/default.settings.php:156 ../functions/default.settings.php:175
-#: ../functions/default.settings.php:189
-#: ../premium/addons/email.customizer.php:33
-#: ../premium/addons/email.customizer.php:415
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/admin.bar.php:31
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:30
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:43
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:56
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:69
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:82
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:101
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:114
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:130
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:143
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:156
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:175
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:189
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:32
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:92
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:147
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:206
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:261
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:388
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:447
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:500
 msgid "Show"
-msgstr "نمایش"
+msgstr "نمایان"
 
-#: ../functions/admin.bar.php:32 ../functions/default.settings.php:31
-#: ../functions/default.settings.php:44 ../functions/default.settings.php:57
-#: ../functions/default.settings.php:70 ../functions/default.settings.php:83
-#: ../functions/default.settings.php:102 ../functions/default.settings.php:115
-#: ../functions/default.settings.php:131 ../functions/default.settings.php:144
-#: ../functions/default.settings.php:157 ../functions/default.settings.php:176
-#: ../functions/default.settings.php:190
-#: ../premium/addons/email.customizer.php:34
-#: ../premium/addons/email.customizer.php:416
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/admin.bar.php:32
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:31
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:44
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:57
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:70
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:83
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:102
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:115
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:131
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:144
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:157
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:176
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:190
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:33
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:389
 msgid "Hide"
-msgstr "پنهان"
+msgstr "مخفی"
 
-#: ../functions/admin.bar.php:43 ../functions/default.settings.php:202
-#: ../functions/general.settings.php:89 ../premium/addons/addon.php:59
-#: ../premium/addons/custom.redirects.php:147
-#: ../premium/addons/email.customizer.php:377
-#: ../premium/addons/email.customizer.php:650
-#: ../premium/addons/recaptcha.php:284 ../premium/addons/userlisting.php:405
-#: ../premium/functions/register.version.php:35
-#: ../premium/functions/register.version.php:76
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/admin.bar.php:43
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:202
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/general.settings.php:120
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/addon.php:59
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:147
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:376
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:567
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/recaptcha.php:284
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:436
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/register.version.php:35
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/register.version.php:76
 msgid "Save Changes"
 msgstr "ذخیره تغییرات"
 
-#: ../functions/basic.info.php:5 ../functions/basic.info.php:8
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/basic.info.php:5
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/basic.info.php:8
 msgid "Profile Builder"
-msgstr "نمایه ساز"
+msgstr "پنل کاربری پیشرفته"
 
-#: ../functions/basic.info.php:6
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/basic.info.php:6
 msgid "Welcome to Profile Builder!"
-msgstr "به نمایه ساز خوش آمدید. "
+msgstr "به  پنل کاربری پیشرفته خوش آمدید!"
 
-#: ../functions/basic.info.php:8
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/basic.info.php:8
 msgid ""
 " lets you customize your website by adding a front-end menu for all your "
 "users, giving them a more flexible way to modify their user-information or "
 "to register new users."
 msgstr ""
-".نام افزونه ای کاربردی وانعطاف پذیر برای تمامی وردپرسی کارانی است که به "
-"دنبال شخصی سازی بخش ورود و خروج، نام نویسی، بازیابی رمز عبور و... سایت خود "
-"هستند "
+" به شما این امکان را میدهد که سیستم کاربری وبسایت خود را به صورت خیلی "
+"پیشرفته درآورده و به راحتی آن را مدیریت نمایید. "
 
-#: ../functions/basic.info.php:9
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/basic.info.php:9
 msgid ""
 "Also, grants users with administrator rights to customize basic fields or to "
 "add new ones."
-msgstr ""
-"هر زمان، مدیریت و کاربران درجه دار، می توانند فیلدهای پایه را ویرایش یا "
-"فیلدهای جدید اضافه کنند. "
+msgstr "همچنین می توانید به بخش کاربری خود فیلد های مختلفی را اضافه کنید. "
 
-#: ../functions/basic.info.php:10
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/basic.info.php:10
 msgid ""
 "To achieve this, just create a new page, and give it an intuitive name(e.g. "
 "Edit Profile)."
 msgstr ""
-"برای کار با این افزونه ابتدا برگه ای ساخته و نامی مناسب را بر آن قرار دهید. "
-"(مثلا:ویرایش شناسنامه کاربری)"
+"برای شروع، کافیست یک برگه ایجاد کرده و برای ان یک نام دلخواه برگزینید. (مثلا "
+"صفحه کاربری)"
 
-#: ../functions/basic.info.php:11
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/basic.info.php:11
 msgid ""
 "Now all you need to do is add the following shortcode(for the previous "
 "example): "
-msgstr ""
-"حالا تنها کار لازم قرار دادن یکی از شورت کدهای زیرین در برگه مربوطه است."
-"(فرضا برای مثال بالایی، می توانید از شورت کد مقابل استفاده کنید): "
+msgstr "حالا کافی است کد میانبر روبرو را در برگه مورد نظر قرار دهید: "
 
-#: ../functions/basic.info.php:12
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/basic.info.php:12
 msgid "Publish your page and you are ready to go!"
-msgstr "صفحه خود را منتشر کنید و از این افزونه نهایت لذت ببرید!"
+msgstr "برگه خود را منتشر کنید و از آن لذت ببرید !"
 
-#: ../functions/basic.info.php:13
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/basic.info.php:13
 msgid "You can use the following shortcodes:"
-msgstr "کدهای کوتاه مورد نیاز:"
+msgstr "شما می توانید از این کد های میانبر استفاده کنید:"
 
-#: ../functions/basic.info.php:14
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/basic.info.php:14
 msgid "for a log-in form."
-msgstr "برای فرم ورود"
+msgstr "برای یک فرم ورود"
 
-#: ../functions/basic.info.php:15
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/basic.info.php:15
 msgid "to add a registration form."
-msgstr "برای افزودن فرم ثبت نام"
+msgstr "برای اضافه کردن فرم عضویت"
 
-#: ../functions/basic.info.php:16
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/basic.info.php:16
 msgid ""
 "to grant users a front-end acces to their personal information(requires user "
 "to be logged in)."
-msgstr "قابلیت ویرایش شناسنامه کاربری (تنها برای کاربرانی که وارد شده اند)"
+msgstr ""
+"برای دسترسی کابران به صفحه شخصی خود و ویرایش اطلاعات خودشان (مشاهده این صفحه "
+"نیازمند ورود کاربر است)."
 
-#: ../functions/basic.info.php:17
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/basic.info.php:17
 msgid "to add a password recovery form."
-msgstr "برای افزودن فرم بازیابی رمز عبور"
+msgstr "برای اضافه کردن فرم بازیابی کلمه عبور <span style=\"display:none\">"
 
-#: ../functions/basic.info.php:19
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/basic.info.php:19
 msgid ""
 "With the <strong>Pro</strong> version, users with administrator rights have "
 "access to the following features:"
-msgstr "قابلیت های ورژن پولی این افزونه:"
+msgstr ""
+"با <strong>نسخه حرفه ای</strong>, کاربران با حقوق مدیر به امکانات زیر دسترسی "
+"داشته باشند:"
 
-#: ../functions/basic.info.php:20
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/basic.info.php:20
 msgid ""
 "add a custom stylesheet/inherit values from the current theme or use one of "
 "the following built into this plugin: default, white or black."
-msgstr ""
+msgstr " "
 
-#: ../functions/basic.info.php:21
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/basic.info.php:21
 msgid ""
 "select whether to display or not the admin bar in the front end for a "
 "specific user-group registered to the site."
 msgstr ""
+"مشخص کنید که آیا می خواهید نوار مدیریت برای گروه کاربری خاصی نمایش داده شود"
 
-#: ../functions/basic.info.php:22
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/basic.info.php:22
 msgid ""
 "select which information-field can users see/modify. The hidden fields' "
 "values remain unmodified."
-msgstr ""
+msgstr "مشخص کنید که کاربران می توانند رشته اطلاعات را مشاهده/تغییر دهند. . "
 
-#: ../functions/basic.info.php:23
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/basic.info.php:23
 msgid ""
 "add custom fields to the existing ones, with several types to choose from: "
 "heading, text, textarea, select, checkbox, radio, and/or upload."
 msgstr ""
+"افزودن فیلد سفارشی به فیلدهای موجود با حق انتخاب انواع مختلف آیتم های:عنوان، "
+"متن، متنی،انتخابی، چک باکس، رادیو، و ​​یا آپلود."
 
-#: ../functions/basic.info.php:24
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/basic.info.php:24
 msgid "add an avatar field."
-msgstr ""
+msgstr "اضافه کردن فیلد آواتار"
 
-#: ../functions/basic.info.php:25
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/basic.info.php:25
 msgid "create custom redirects."
-msgstr ""
+msgstr "ساخت ریدایرکت های دلخواه  </span>"
 
-#: ../functions/basic.info.php:26
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/basic.info.php:26
 msgid "front-end userlisting using the"
-msgstr ""
+msgstr "برای نمایش لیست کاربران"
 
-#: ../functions/basic.info.php:26
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/basic.info.php:26
 msgid "shortcode."
-msgstr ""
+msgstr " "
 
-#: ../functions/basic.info.php:29 ../functions/general.settings.php:49
-#: ../functions/general.settings.php:65
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/basic.info.php:29
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/general.settings.php:75
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/general.settings.php:92
 msgid "NOTE:"
-msgstr "یادداشت:"
+msgstr "<span style=\"display:none\">"
 
-#: ../functions/basic.info.php:30
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/basic.info.php:30
 msgid "this plugin only adds/removes fields in the front-end."
-msgstr "این افزونه کادرها را در تنها در صفحات اضافه یا حذف می کند."
+msgstr "<span style=\"display:none\">"
 
-#: ../functions/basic.info.php:31
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/basic.info.php:31
 msgid ""
 "The default information-fields will still be visible(and thus modifiable)"
-msgstr ""
-"کادرهای پیشفرض (در شناسه شما) با حفظ قابلیت خود همچنان قابل مشاهده خواهند "
-"بود."
+msgstr "</span>"
 
-#: ../functions/basic.info.php:32
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/basic.info.php:32
 msgid ""
 "from the back-end, while custom fields will only be visible in the front-end."
-msgstr "در حالی که کادرهای اضافی تنها در برگه ها قابل نمایش اند."
+msgstr "</span>"
 
-#: ../functions/default.settings.php:9 ../functions/default.settings.php:10
-#: ../functions/options.php:89
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:9
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:10
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/options.php:89
 msgid "Default Profile Fields"
-msgstr "فیلدهای پیشفرض نمایه"
+msgstr "فیلد های کاربری پیش فرض"
 
-#: ../functions/default.settings.php:14
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:14
 msgid "Input Field Name"
-msgstr "نام فیلدهای ورودی"
+msgstr "فیلد نام"
 
-#: ../functions/default.settings.php:16
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:16
 msgid "Required"
-msgstr "لازم"
+msgstr "ضروری"
 
-#: ../functions/default.settings.php:21
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:21
 msgid "Name:"
-msgstr "مشخصات:"
+msgstr "نام:"
 
-#: ../functions/default.settings.php:34 ../functions/default.settings.php:47
-#: ../functions/default.settings.php:60 ../functions/default.settings.php:73
-#: ../functions/default.settings.php:86 ../functions/default.settings.php:105
-#: ../functions/default.settings.php:118 ../functions/default.settings.php:134
-#: ../functions/default.settings.php:147 ../functions/default.settings.php:160
-#: ../functions/default.settings.php:179 ../functions/default.settings.php:193
-#: ../functions/general.settings.php:31 ../functions/general.settings.php:41
-#: ../premium/addons/custom.redirects.php:49
-#: ../premium/addons/custom.redirects.php:57
-#: ../premium/addons/custom.redirects.php:67
-#: ../premium/addons/custom.redirects.php:96
-#: ../premium/addons/custom.redirects.php:108
-#: ../premium/addons/custom.redirects.php:120
-#: ../premium/addons/custom.redirects.php:132
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:34
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:47
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:60
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:73
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:86
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:105
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:118
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:134
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:147
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:160
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:179
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:193
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/general.settings.php:30
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/general.settings.php:67
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:49
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:57
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:67
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:96
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:108
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:120
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:132
 msgid "Yes"
 msgstr "بله"
 
-#: ../functions/default.settings.php:35 ../functions/default.settings.php:48
-#: ../functions/default.settings.php:61 ../functions/default.settings.php:74
-#: ../functions/default.settings.php:87 ../functions/default.settings.php:106
-#: ../functions/default.settings.php:119 ../functions/default.settings.php:135
-#: ../functions/default.settings.php:148 ../functions/default.settings.php:161
-#: ../functions/default.settings.php:180 ../functions/default.settings.php:194
-#: ../functions/general.settings.php:32 ../functions/general.settings.php:42
-#: ../premium/addons/custom.redirects.php:50
-#: ../premium/addons/custom.redirects.php:58
-#: ../premium/addons/custom.redirects.php:68
-#: ../premium/addons/custom.redirects.php:97
-#: ../premium/addons/custom.redirects.php:109
-#: ../premium/addons/custom.redirects.php:121
-#: ../premium/addons/custom.redirects.php:133
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:35
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:48
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:61
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:74
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:87
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:106
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:119
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:135
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:148
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:161
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:180
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:194
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/general.settings.php:31
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/general.settings.php:68
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:50
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:58
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:68
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:97
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:109
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:121
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:133
 msgid "No"
 msgstr "خیر"
 
-#: ../functions/default.settings.php:79
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:79
 msgid "Display name publicly as..."
-msgstr "نمایش نام عمومی..."
+msgstr "نماش عمومی نام ..."
 
-#: ../functions/default.settings.php:92
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:92
 msgid "Contact Info:"
 msgstr "اطلاعات تماس:"
 
-#: ../functions/default.settings.php:166
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:166
 msgid "About Yourself:"
-msgstr "درباره:"
+msgstr "درباره شما:"
 
-#: ../functions/default.settings.php:186
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/default.settings.php:186
 msgid "(New) Password"
-msgstr "رمز تازه"
+msgstr "کلمه عبور (جدید)"
 
-#: ../functions/email.confirmation.php:60
-#: ../premium/functions/admin.approval.php:24
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/email.confirmation.php:59
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/admin.approval.php:22
 msgid "Do you want to"
+msgstr "آیا مایلید"
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/email.confirmation.php:108
+#, fuzzy
+msgid "The selected user couldn't be deleted"
+msgstr "شماره سریال وارد شده قابل معتبر سازی نمی باشد!"
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/email.confirmation.php:128
+msgid "Email notification resent to user"
 msgstr ""
 
-#: ../functions/email.confirmation.php:112
-msgid "The selected user couldn't be deleted."
-msgstr ""
-
-#: ../functions/email.confirmation.php:129
-#: ../premium/functions/admin.approval.php:84
-#: ../premium/functions/admin.approval.php:132
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/email.confirmation.php:136
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/admin.approval.php:75
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/admin.approval.php:140
 msgid "You either don't have permission for that action or there was an error!"
 msgstr ""
 
-#: ../functions/email.confirmation.php:342
-#: ../premium/addons/email.customizer.php:14
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/email.confirmation.php:333
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:14
 #, php-format
 msgid "[%1$s] Activate %2$s"
-msgstr "[%1$s] فعال سازی %2$s"
+msgstr "[%1$s] فعال %2$s"
 
-#: ../functions/email.confirmation.php:343
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/email.confirmation.php:334
 #, php-format
 msgid ""
 "To activate your user, please click the following link:\n"
@@ -1039,119 +1184,155 @@ msgid ""
 "After you activate, you will receive *another email* with your login.\n"
 "\n"
 msgstr ""
-"برای فعال سازی حساب کاربری، لینک زیر را دنبال کنید:\n"
+"برای فعال سازی حساب کاربری خود لطفا روی لینک زیر کلیک کنید:\n"
 "\n"
 "%s%s%s\n"
 "\n"
-"پس از فعال سازی، با ورود به سیستم ایمیلی دیگر برای شما ارسال خواهد شد.\n"
+"بعد از فعال سازی، ایمیل دیگری حاوی اطلاعات ورود به سایت را دریافت خواهید "
+"کرد.\n"
 "\n"
 
-#: ../functions/email.confirmation.php:443
-#: ../premium/addons/email.customizer.php:19
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/email.confirmation.php:395
+#, fuzzy
+msgid "There was an error while trying to activate the user"
+msgstr "خطایی هنگام فعال سازی کاربر رخ داده است."
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/email.confirmation.php:429
+msgid "A new subscriber has (been) registered!"
+msgstr "کاربر جدید ثبت نام کرد!"
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/email.confirmation.php:432
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:19
 #, php-format
 msgid "New subscriber on %1$s.<br/><br/>Username:%2$s<br/>E-mail:%3$s<br/>"
-msgstr "یک مشترک جدید در %1$s.<br/><br/>نام کاربری:%2$s<br/>ایمیل:%3$s<br/>"
+msgstr ""
+"عضو جدید در  %1$s.<br/><br/>نام کاربری :%2$s<br/>پست الکترونیک:%3$s<br/>"
 
-#: ../functions/email.confirmation.php:445
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/email.confirmation.php:437
 msgid ""
 "The \"Admin Approval\" feature was activated at the time of registration, so "
 "please remember that you need to approve this user before he/she can log in!"
 msgstr ""
-"خصیصه \"تأیید توسط مدیر\" در زمان عضویت فعال است، بنابراین به یاد داشته "
-"باشید برای ورود کاربر، می بایست ابتدا عضویت او را تأیید کنید."
+"\"تایید توسط مدیر\" فعال سازی پس از تایید. لطفا به یاد داشته باشید کاربر قبل "
+"از ورود به تایید مدیر نیاز دارد"
 
-#: ../functions/email.confirmation.php:448
-msgid "A new subscriber has (been) registered!"
-msgstr "یک مشترک جدید نام نویسی کرده است."
-
-#: ../functions/email.confirmation.php:462
-#: ../premium/addons/email.customizer.php:8
-#: ../premium/addons/email.customizer.php:10
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/email.confirmation.php:453
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:8
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:10
 msgid "A new account has been created for you."
-msgstr "یک حساب جدید برای شما ساخته شد."
+msgstr "حساب کاربری جدیدی برای شما ایجاد گردید."
 
-#: ../functions/email.confirmation.php:465
-#: ../premium/addons/email.customizer.php:9
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/email.confirmation.php:456
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:9
 #, php-format
 msgid "Welcome to %1$s!<br/><br/> Your username is:%2$s and password:%3$s"
-msgstr "به %1$s!خوش آمدید!<br/><br/>نام کاربری شما:%2$s  رمز عبور:%3$s"
+msgstr ""
+"به  %1$s آمدید! <br/><br/> نام کاربری شما: <strong>%2$s</strong> <br /> کلمه "
+"عبور: <strong>%3$s</strong>"
 
-#: ../functions/email.confirmation.php:467
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/email.confirmation.php:461
 msgid ""
 "Before you can access your account, an administrator needs to approve it. "
 "You will be notified via email."
 msgstr ""
-"پیش از دسترسی به حساب، مدیریت می بایست عضویت شما را تصویب کند. به زودی از "
-"طریق ایمیل به شما اطلاع رسانی خواهد شد."
+"قبل از اینکه شما بتوانید به حساب کاربری خود دسترسی داشته باشید، یک مدیر باید "
+"آن را تایید نماید. هنگامی که حساب شما توسط یکی از مدیران تایید شد از طریق "
+"ایمیل به اطلاع شما خواهد رسید."
 
-#: ../functions/general.settings.php:10 ../functions/general.settings.php:11
-#: ../functions/options.php:87 ../premium/addons/userlisting.php:39
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/general.settings.php:9
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/general.settings.php:10
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/options.php:87
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:40
 msgid "General Settings"
-msgstr "تنظیمات عمومی"
+msgstr "تنظیمات اصلی"
 
-#: ../functions/general.settings.php:12
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/general.settings.php:11
 msgid "Stylesheet Used on the Front-End:"
-msgstr "طرح استفاده شده در صفحات:"
+msgstr "استایل استفاده شده:"
 
-#: ../functions/general.settings.php:18
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/general.settings.php:17
 msgid "White"
 msgstr "سفید"
 
-#: ../functions/general.settings.php:19
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/general.settings.php:18
 msgid "Black"
 msgstr "سیاه"
 
-#: ../functions/general.settings.php:23
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/general.settings.php:22
 msgid "None"
-msgstr "هیچکدام"
+msgstr "بدون استایل"
 
-#: ../functions/general.settings.php:29
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/general.settings.php:28
 msgid "\"Email Confirmation\" Feature Activated:"
-msgstr "تأیید از طریق ایمیل \"ویژگی فعال سازی\""
+msgstr "قابلیت \"تایید از طریق ایمیل\" فعال باشد؟"
 
-#: ../functions/general.settings.php:39
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/general.settings.php:40
+msgid "Account Activation Landing Page:"
+msgstr ""
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/general.settings.php:43
+#, fuzzy
+msgid "Existing Pages"
+msgstr "پس از عضویت:"
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/general.settings.php:58
+msgid ""
+"You need to (create) and specify the page where the users will see when "
+"trying to activate their account. This page can differ from the register page"
+"(s), and can be changed at any time, but if none selected, a simple, blank "
+"page will be displayed for the user."
+msgstr ""
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/general.settings.php:65
 msgid "\"Admin Approval\" Feature Activated:"
-msgstr "موافقت مدیر \"ویژگی فعال سازی\""
+msgstr "\"تایید مدیریت\" برای عضویت فعال باشد؟"
 
-#: ../functions/general.settings.php:50
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/general.settings.php:76
 msgid ""
 "The black stylesheet is intended for sites/blogs with a dark background."
-msgstr "طرح سیاه برای برای سایتهایی با زمینه تیره قرار گرفته است."
+msgstr "استایل سیاه برای وبسایت هایی با زمینه تیره مناسب است."
 
-#: ../functions/general.settings.php:51
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/general.settings.php:77
 msgid ""
 "The white stylesheet is intended for a sites/blogs with a light background "
 "color."
-msgstr "طرح سفید برای سایتهایی با زمینه روشن قرار گرفته است."
+msgstr "استایل سفید برای وبسایت هایی با زمینه روشن مناسب است."
 
-#: ../functions/general.settings.php:52
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/general.settings.php:78
 msgid ""
 "On single-site installations the \"Email Confirmation\" feature only works "
 "in the front-end, so make sure you also use the \"Custom Redirects\" feature."
 msgstr ""
+"پس از تایید از طریق ایمیل کاربر به صفجه اصلی باز می گردد. در صورتی که تمایل "
+"دارید به صفه خاصی برود از قسمت افزونه ها \"ریدایرکت دلخواه\" را فعال کنید."
 
-#: ../functions/general.settings.php:53 ../functions/general.settings.php:67
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/general.settings.php:79
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/general.settings.php:94
 msgid ""
 "The \"Email Confirmation\" feature is active (by default) on WPMU "
 "installations."
 msgstr ""
 
-#: ../functions/general.settings.php:55 ../functions/general.settings.php:69
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/general.settings.php:81
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/general.settings.php:96
 #, php-format
 msgid "You can find a list of unconfirmed email addresses %1$shere%2$s."
 msgstr ""
 
-#: ../functions/general.settings.php:66
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/general.settings.php:93
+#, fuzzy
 msgid ""
 "On single-site installations the \"Email Confirmation\" feature only works "
 "in the front-end."
 msgstr ""
+"پس از تایید از طریق ایمیل کاربر به صفجه اصلی باز می گردد. در صورتی که تمایل "
+"دارید به صفه خاصی برود از قسمت افزونه ها \"ریدایرکت دلخواه\" را فعال کنید."
 
-#: ../functions/general.settings.php:77
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/general.settings.php:106
 msgid "Allow Users to Log in With:"
 msgstr ""
 
-#: ../functions/options.php:64
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/options.php:64
 #, php-format
 msgid ""
 "Your <strong>Profile Builder</strong> serial number is invalid or missing. "
@@ -1159,185 +1340,207 @@ msgid ""
 "access to automatic updates and support. Need a license key? %3$sPurchase "
 "one now%4$s"
 msgstr ""
+"شماره سریال شما نامعتبر است. لطفا برای خرید این افزونه به وبسایت <a href="
+"\"http://wordpress98.com\" target=\"_blank\"> همیار وردپرس</a> مراجعه "
+"فرمایید. %1$s%2$s%3$s%4$s"
 
-#: ../functions/options.php:66
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/options.php:66
 #, php-format
 msgid ""
 "Your <strong>Profile Builder</strong> 1 year licence has expired. Please "
 "%1$sRenew Your Licence%2$s to receive access to automatic updates and "
 "priority support. %3$sPurchase one now%4$s"
 msgstr ""
+"لایسنس یک ساله ی  <strong>پروفایل ساز شما</strong> منقضی شده است. لطفا "
+"%1$sلایسنس خود را تمدید نمایید%2$s تا امکان بروز رسانی اتوماتیک و اولویت "
+"پشتیبانی را داشته باشد. %3$sهمین حالا خریداری نمایید%4$s"
 
-#: ../functions/options.php:86
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/options.php:86
 msgid "Basic Information"
-msgstr "اطلاعات پایه"
+msgstr "اطلاعات اصلی"
 
-#: ../functions/options.php:88
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/options.php:88
 msgid "Show/Hide the Admin Bar on Front-end"
-msgstr "نمایش یا عدم نمایش پنل مدیریتی در برگه ها"
+msgstr "نمایش/مخفی کردن نوار مدیریت در صفحه اصلی"
 
-#: ../functions/options.php:95 ../premium/functions/custom.fields.php:5
-#: ../premium/functions/custom.fields.php:6
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/options.php:95
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/custom.fields.php:5
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/custom.fields.php:6
 msgid "Extra Profile Fields"
-msgstr "فیدهای اضافی نمایه"
+msgstr "فیلد های کاربری اضافی"
 
-#: ../functions/options.php:98
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/options.php:98
 msgid "Addons"
-msgstr "اضافات"
+msgstr "امکانات"
 
-#: ../functions/options.php:101
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/functions/options.php:101
 msgid "Register Your Version"
 msgstr "نسخه خود را ثبت کنید"
 
-#: ../premium/addons/addon.php:9 ../premium/addons/addon.php:10
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/addon.php:9
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/addon.php:10
 msgid "Activate/Deactivate Addons"
-msgstr ""
+msgstr "فعال و غیر فعال کردن امکانات"
 
-#: ../premium/addons/addon.php:14
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/addon.php:14
 msgid "Name/Description"
-msgstr ""
+msgstr "نام/توضیحات"
 
-#: ../premium/addons/addon.php:15
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/addon.php:15
 msgid "Status"
-msgstr ""
+msgstr "وضعیت"
 
-#: ../premium/addons/addon.php:20 ../premium/addons/userlisting.php:31
-#: ../premium/addons/userlisting.php:32
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/addon.php:20
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:32
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:33
 msgid "User-Listing"
-msgstr ""
+msgstr "لیست کاربران"
 
-#: ../premium/addons/addon.php:22 ../premium/addons/addon.php:29
-#: ../premium/addons/addon.php:36 ../premium/addons/addon.php:43
-#: ../premium/addons/addon.php:50
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/addon.php:22
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/addon.php:29
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/addon.php:36
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/addon.php:43
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/addon.php:50
 msgid "Active"
-msgstr ""
+msgstr "فعال"
 
-#: ../premium/addons/addon.php:23 ../premium/addons/addon.php:30
-#: ../premium/addons/addon.php:37 ../premium/addons/addon.php:44
-#: ../premium/addons/addon.php:51
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/addon.php:23
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/addon.php:30
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/addon.php:37
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/addon.php:44
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/addon.php:51
 msgid "Inactive"
-msgstr ""
+msgstr "غیر فعال"
 
-#: ../premium/addons/addon.php:27 ../premium/addons/custom.redirects.php:30
-#: ../premium/addons/custom.redirects.php:31
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/addon.php:27
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:30
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:31
 msgid "Custom Redirects"
-msgstr ""
+msgstr "ریدایرکت دلخواه"
 
-#: ../premium/addons/addon.php:34 ../premium/addons/recaptcha.php:255
-#: ../premium/addons/recaptcha.php:256
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/addon.php:34
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/recaptcha.php:255
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/recaptcha.php:256
 msgid "reCAPTCHA"
-msgstr ""
+msgstr "کد امنیتی"
 
-#: ../premium/addons/addon.php:41 ../premium/addons/email.customizer.php:42
-#: ../premium/addons/email.customizer.php:43
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/addon.php:41
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:41
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:42
 msgid "User Email Customizer"
-msgstr ""
+msgstr "دلخواه کننده پست الکترونیک کاربر"
 
-#: ../premium/addons/addon.php:48 ../premium/addons/email.customizer.php:424
-#: ../premium/addons/email.customizer.php:425
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/addon.php:48
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:397
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:398
 msgid "Admin Email Customizer"
-msgstr ""
+msgstr "دلخواه کننده پست الکترونیک مدیر"
 
-#: ../premium/addons/custom.redirects.php:35
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:35
 msgid "Redirects on custom page requests:"
-msgstr ""
+msgstr "تغییر مسیر صفحه request سفارشی:"
 
-#: ../premium/addons/custom.redirects.php:41
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:41
 msgid "Action"
-msgstr ""
+msgstr "عملیات"
 
-#: ../premium/addons/custom.redirects.php:42
-#: ../premium/addons/custom.redirects.php:87
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:42
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:87
 msgid "Redirect"
-msgstr ""
+msgstr "ریدایرکت"
 
-#: ../premium/addons/custom.redirects.php:43
-#: ../premium/addons/custom.redirects.php:88
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:43
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:88
 msgid "URL"
-msgstr ""
+msgstr "آدرس"
 
-#: ../premium/addons/custom.redirects.php:47
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:47
 msgid "After Registration:"
-msgstr ""
+msgstr "پس از عضویت:"
 
-#: ../premium/addons/custom.redirects.php:55
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:55
 msgid "After Login:"
-msgstr ""
+msgstr "پس از ورود:"
 
-#: ../premium/addons/custom.redirects.php:64
-#, fuzzy
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:64
 msgid "Recover Password (*)"
-msgstr "بازیابی رمز عبور"
+msgstr "بازیابی کلمه عبور (*)"
 
-#: ../premium/addons/custom.redirects.php:75
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:75
 msgid ""
 "When activated this feature will redirect the user on both the default "
 "Wordpress password recovery page and the \"Lost password?\" link used by "
 "Profile Builder on the front-end login page."
 msgstr ""
+"هنگامی که این ویژگی فعال باشد کاربر با کلیک بر روی هر دو صفحه پیش فرض "
+"وردپرس، بازیابی پسورد و \"فراموشی رمز عبور?\" به صفحه ی مورد استفاده \"پنل "
+"ساز\" هدایت می شود."
 
-#: ../premium/addons/custom.redirects.php:80
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:80
 msgid "Redirects on default WordPress page requests:"
-msgstr ""
+msgstr "تغییر مسیر درخواست پیش فرض وردپرس:"
 
-#: ../premium/addons/custom.redirects.php:86
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:86
 msgid "Requested WP Page"
-msgstr ""
+msgstr "صفحه درخواست وردپرس"
 
-#: ../premium/addons/custom.redirects.php:93
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:93
 msgid "Default WP Login Page (*)"
-msgstr ""
+msgstr "صفحه پیش فرض ورود (*)"
 
-#: ../premium/addons/custom.redirects.php:105
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:105
 msgid "Default WP Logout Page (**)"
-msgstr ""
+msgstr "صفحه پیش فرض خروج (**)"
 
-#: ../premium/addons/custom.redirects.php:117
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:117
 msgid "Default WP Register Page"
-msgstr ""
+msgstr "صفحه پیش فرض ثبت نام"
 
-#: ../premium/addons/custom.redirects.php:129
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:129
 msgid "Default WP Dashboard (***)"
-msgstr ""
+msgstr "صفحه داشبورد پیش فرض"
 
-#: ../premium/addons/custom.redirects.php:140
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:140
 msgid "Before login. Works best if used in conjuction with \"After logout\"."
 msgstr ""
 
-#: ../premium/addons/custom.redirects.php:141
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:141
 msgid "After logout. Works best if used in conjuction with \"Before login\"."
 msgstr ""
 
-#: ../premium/addons/custom.redirects.php:142
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/custom.redirects.php:142
 msgid ""
 "Redirects every user-role EXCEPT the ones with administrator privilages (can "
 "manage options)."
 msgstr ""
+"تغییر مسیر نقش هر کاربر به جزء آنهایی که اجازه دسترسی مدیر را دارند ( می "
+"توانید گزینه ها را مدیریت نمایید )"
 
-#: ../premium/addons/email.customizer.php:11
-#, fuzzy, php-format
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:11
+#, php-format
 msgid ""
 "Welcome to %1$s!<br/><br/> Your username is:%2$s and password:%3$s<br/"
 ">Before you can access your account, an administrator needs to approve it. "
 "You will be notified via email."
 msgstr ""
-"پیش از دسترسی به حساب، مدیریت می بایست عضویت شما را تصویب کند. به زودی از "
-"طریق ایمیل به شما اطلاع رسانی خواهد شد."
+"خوش آمدی به %1$s!<br/><br/> نام کاربری شما:%2$s است و کلمه ی عبور شما:"
+"%3$s<br/>قبل از اینکه شما بتوانید از حساب کاربری خود استفاده کنید ، یک مدیر "
+"باید آن را تایید کند. وقتی که تایید شدید توسط ایمیل شما را با خبر می کنیم."
 
-#: ../premium/addons/email.customizer.php:12
-#: ../premium/functions/admin.approval.php:145
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:12
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/admin.approval.php:150
 #, php-format
 msgid "Your account on %1$s has been approved!"
-msgstr ""
+msgstr "حساب کاربری شما در %1$s مورد تایید قرار گرفته است!"
 
-#: ../premium/addons/email.customizer.php:13
-#: ../premium/functions/admin.approval.php:146
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:13
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/admin.approval.php:153
 #, php-format
 msgid "An administrator has just approved your account on %1$s (%2$s)."
 msgstr ""
 
-#: ../premium/addons/email.customizer.php:15
-#, fuzzy, php-format
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:15
+#, php-format
 msgid ""
 "To activate your user, please click the following link:\n"
 "\n"
@@ -1346,881 +1549,1234 @@ msgid ""
 "After you activate, you will receive *another email* with your login.\n"
 "\n"
 msgstr ""
-"برای فعال سازی حساب کاربری، لینک زیر را دنبال کنید:\n"
+"لطفا برای فعال سازی حساب کاربری خود ، روی لینک زیر کلیک نمایید:\n"
+"%s\n"
 "\n"
-"%s%s%s\n"
-"\n"
-"پس از فعال سازی، با ورود به سیستم ایمیلی دیگر برای شما ارسال خواهد شد.\n"
+"بعد از فعال سازی حساب خود ،شما ایمیل دیگری دریافت خواهید نمود.\n"
 "\n"
 
-#: ../premium/addons/email.customizer.php:16
-#: ../premium/functions/admin.approval.php:152
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:16
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/admin.approval.php:157
 #, php-format
 msgid "Your account on %1$s has been unapproved!"
-msgstr ""
+msgstr "حساب کاربری شما در %1$s تایید نشده است!"
 
-#: ../premium/addons/email.customizer.php:17
-#: ../premium/functions/admin.approval.php:153
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:17
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/admin.approval.php:160
 #, php-format
 msgid "An administrator has just unapproved your account on %1$s (%2$s)."
 msgstr ""
 
-#: ../premium/addons/email.customizer.php:18
-#: ../premium/addons/email.customizer.php:20
-#, fuzzy, php-format
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:18
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:20
+#, php-format
 msgid "[%1$s] A new subscriber has (been) registered!"
-msgstr "یک مشترک جدید نام نویسی کرده است."
+msgstr "[%1$s] مشترک جدیدی ثبت نام کرده است!"
 
-#: ../premium/addons/email.customizer.php:21
-#, fuzzy, php-format
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:21
+#, php-format
 msgid ""
 "New subscriber on %1$s.<br/><br/>Username:%2$s<br/>E-mail:%3$s<br/><br/>The "
 "\"Admin Approval\" feature was activated at the time of registration, so "
 "please remember that you need to approve this user before he/she can log in!"
 msgstr ""
-"خصیصه \"تأیید توسط مدیر\" در زمان عضویت فعال است، بنابراین به یاد داشته "
-"باشید برای ورود کاربر، می بایست ابتدا عضویت او را تأیید کنید."
+"مشترک جدید در %1$s.<br/><br/>نام کاربری:%2$s<br/>پست الکترونیکی:%3$s<br/><br/"
+">امکان \"تایید مدیر\" هنگام ثبت نام فعال بود، بنابر این بخاطر داشته باشید "
+"شما باید کاربر را تایید نمایید تا بتواند وارد سیستم شود!"
 
-#: ../premium/addons/email.customizer.php:46
-msgid "Here you can customize all the emails sent the users."
-msgstr ""
-
-#: ../premium/addons/email.customizer.php:49
-msgid ""
-"Common Settings: <span style=\"color:gray; font-size:11px;\">These settings "
-"are also replicated in the \"Admin Email Customizer\" settings-page upon "
-"save.</span>"
-msgstr ""
-
-#: ../premium/addons/email.customizer.php:52
-#: ../premium/addons/email.customizer.php:434
-msgid "From (name): "
-msgstr ""
-
-#: ../premium/addons/email.customizer.php:60
-#: ../premium/addons/email.customizer.php:76
-#: ../premium/addons/email.customizer.php:119
-#: ../premium/addons/email.customizer.php:175
-#: ../premium/addons/email.customizer.php:231
-#: ../premium/addons/email.customizer.php:291
-#: ../premium/addons/email.customizer.php:336
-#: ../premium/addons/email.customizer.php:442
-#: ../premium/addons/email.customizer.php:458
-#: ../premium/addons/email.customizer.php:502
-#: ../premium/addons/email.customizer.php:555
-#: ../premium/addons/email.customizer.php:609
-msgid "Available Merge Tags"
-msgstr ""
-
-#: ../premium/addons/email.customizer.php:68
-#: ../premium/addons/email.customizer.php:450
-msgid "From (reply-to email): "
-msgstr ""
-
-#: ../premium/addons/email.customizer.php:92
-#: ../premium/addons/email.customizer.php:475
-msgid "Default Registration"
-msgstr ""
-
-#: ../premium/addons/email.customizer.php:100
-#: ../premium/addons/email.customizer.php:156
-#: ../premium/addons/email.customizer.php:212
-#: ../premium/addons/email.customizer.php:272
-#: ../premium/addons/email.customizer.php:317
-#: ../premium/addons/email.customizer.php:483
-#: ../premium/addons/email.customizer.php:536
-#: ../premium/addons/email.customizer.php:590
-msgid "Email Subject: "
-msgstr ""
-
-#: ../premium/addons/email.customizer.php:108
-msgid ""
-"Email Content: <span style=\"color:gray\">This is the email sent to the "
-"<span style=\"color:red\">user</span> upon registration.</span>"
-msgstr ""
-
-#: ../premium/addons/email.customizer.php:147
-#: ../premium/addons/email.customizer.php:528
-msgid "Registration with Email Confirmation"
-msgstr ""
-
-#: ../premium/addons/email.customizer.php:164
-msgid ""
-"Email Content: <span style=\"color:gray\">This is the email sent to the "
-"<span style=\"color:red\">user</span> upon registration with email "
-"confirmation.</span>"
-msgstr ""
-
-#: ../premium/addons/email.customizer.php:203
-#: ../premium/addons/email.customizer.php:582
-msgid "Registration with Admin Approval"
-msgstr ""
-
-#: ../premium/addons/email.customizer.php:220
-msgid ""
-"Email Content: <span style=\"color:gray\">This is the email sent to the "
-"<span style=\"color:red\">user</span> upon registration with admin approval."
-"</span>"
-msgstr ""
-
-#: ../premium/addons/email.customizer.php:259
-msgid "Admin Approval Notifications (on status change)"
-msgstr ""
-
-#: ../premium/addons/email.customizer.php:267
-msgid "Message Sent to the User Upon Approval"
-msgstr ""
-
-#: ../premium/addons/email.customizer.php:280
-msgid ""
-"Email Content: <span style=\"color:gray\">This is the email sent to the "
-"<span style=\"color:red\">user</span> upon approval.</span>"
-msgstr ""
-
-#: ../premium/addons/email.customizer.php:312
-msgid "Message Sent to the User Upon Unapproval"
-msgstr ""
-
-#: ../premium/addons/email.customizer.php:325
-msgid ""
-"Email Content: <span style=\"color:gray\">This is the email sent to the "
-"<span style=\"color:red\">user</span> upon unapproval.</span>"
-msgstr ""
-
-#: ../premium/addons/email.customizer.php:428
-msgid "Here you can customize all the emails sent the administrator."
-msgstr ""
-
-#: ../premium/addons/email.customizer.php:431
-msgid ""
-"Common Settings: <span style=\"color:gray; font-size:11px;\">These settings "
-"are also replicated in the \"User Email Customizer\" settings-page upon save."
-"</span>"
-msgstr ""
-
-#: ../premium/addons/email.customizer.php:491
-msgid ""
-"Email Content: <span style=\"color:gray\">This is the email sent to the "
-"<span style=\"color:red\">administrator</span> upon user registration.</span>"
-msgstr ""
-
-#: ../premium/addons/email.customizer.php:544
-msgid ""
-"Email Content: <span style=\"color:gray\">This is the email sent to the "
-"<span style=\"color:red\">administrator</span> upon user registration with "
-"email confirmation.</span>"
-msgstr ""
-
-#: ../premium/addons/email.customizer.php:598
-msgid ""
-"Email Content: <span style=\"color:gray\">This is the email sent to the "
-"<span style=\"color:red\">administrator</span> upon user registration with "
-"admin approval.</span>"
-msgstr ""
-
-#: ../premium/addons/email.customizer.php:752
-msgid "approved"
-msgstr ""
-
-#: ../premium/addons/email.customizer.php:761
-msgid "unapproved"
-msgstr ""
-
-#: ../premium/addons/recaptcha.php:49
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:45
 #, fuzzy
-msgid "Could not open socket!"
-msgstr "نمی توانید کاربری جدید بسازید."
+msgid "Here you can customize all the emails sent to the users."
+msgstr "در اینجا شما می توانید ایمیل های ارسالی کاربران را سفارشی نمایید."
 
-#: ../premium/addons/recaptcha.php:76
-msgid "To use reCAPTCHA you must get an API key from"
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:48
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:404
+#, fuzzy
+msgid "Common Settings:"
+msgstr "تنظیمات اصلی"
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:48
+msgid ""
+"These settings are also replicated in the \"Admin Email Customizer\" "
+"settings-page upon save."
 msgstr ""
 
-#: ../premium/addons/recaptcha.php:123
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:51
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:407
+msgid "From (name): "
+msgstr "از (نام):"
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:59
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:75
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:118
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:174
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:233
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:292
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:337
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:415
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:431
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:473
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:526
+msgid "Available Merge Tags"
+msgstr "ادغام برچسب های در دسترس"
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:60
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:120
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:179
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:235
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:294
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:339
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:416
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:475
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:528
+#, fuzzy
+msgid "Display the site name"
+msgstr "نام نمایش داده شده"
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:67
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:423
+msgid "From (reply-to email): "
+msgstr "از (پاسخ به ایمیل):"
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:83
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:367
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:439
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:560
+msgid "Email Message Type"
+msgstr ""
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:84
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:368
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:440
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:561
+msgid "Show / Hide"
+msgstr ""
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:91
+msgid "Default Registration"
+msgstr "عضویت پیش فرض"
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:99
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:155
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:214
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:273
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:318
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:454
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:507
+msgid "Email Subject: "
+msgstr "عنوان ایمیل:"
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:107
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:163
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:222
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:281
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:326
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:462
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:515
+#, fuzzy
+msgid "Email Content:"
+msgstr "عنوان ایمیل:"
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:107
+#, fuzzy
+msgid ""
+"This is the email sent to the <span class=\"email_customizer_red\">user</"
+"span> upon registration."
+msgstr ""
+"محتوای ایمیل: <span style=\"color:gray\">این ایمیل پس از ثبت نام به <span "
+"style=\"color:red\">کاربر</span> ارسال شده است.</span>"
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:119
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:178
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:234
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:293
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:338
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:474
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:527
+msgid "Display the site URL"
+msgstr ""
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:121
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:236
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:295
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:340
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:476
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:529
+#, fuzzy
+msgid "Display the userID"
+msgstr "نام نمایش داده شده"
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:122
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:180
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:237
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:296
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:341
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:477
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:530
+#, fuzzy
+msgid "Display the username"
+msgstr "نام نمایش داده شده"
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:123
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:181
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:238
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:297
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:342
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:478
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:531
+#, fuzzy
+msgid "Display the email-address of the user"
+msgstr "متاسفیم، این پست الکترونیک از قبل استفاده شده است."
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:124
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:182
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:239
+msgid "Display the user's password"
+msgstr ""
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:125
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:183
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:240
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:299
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:344
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:480
+msgid "Display the user's first name"
+msgstr ""
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:126
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:184
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:241
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:300
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:345
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:481
+msgid "Display the user's last name"
+msgstr ""
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:127
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:185
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:242
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:301
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:346
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:482
+msgid "Display the user's nickname"
+msgstr ""
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:128
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:186
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:243
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:302
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:347
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:483
+msgid "Display the user's website"
+msgstr ""
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:129
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:187
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:244
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:303
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:348
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:484
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:536
+msgid "Display the \"about yourself\" content"
+msgstr ""
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:130
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:188
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:245
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:304
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:349
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:485
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:537
+#, fuzzy
+msgid "Display the aim value"
+msgstr "نام نمایش داده شده"
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:131
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:189
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:246
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:305
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:350
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:486
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:538
+#, fuzzy
+msgid "Display the yim value"
+msgstr "نام نمایش داده شده"
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:132
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:190
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:247
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:306
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:351
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:487
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:539
+msgid "Display the jabber value"
+msgstr ""
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:133
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:191
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:248
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:307
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:352
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:488
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:540
+msgid ""
+"Display any extra field by replacing the meta_name with the fields' meta-name"
+msgstr ""
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:146
+msgid "Registration with Email Confirmation"
+msgstr "ثبت نام با تایید توسط ایمیل "
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:163
+#, fuzzy
+msgid ""
+"This is the email sent to the <span class=\"email_customizer_red\">user</"
+"span> upon registration with email confirmation."
+msgstr ""
+"محتوای ایمیل: <span style=\"color:gray\">این ایمیل پس از ثبت نام و تایید "
+"توسط ایمیل به <span style=\"color:red\">کاربر</span> ارسال شده است.</span>"
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:175
+#, php-format
+msgid "Display the activation key ( register_page/?key=%%activation_key%% )"
+msgstr ""
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:176
+msgid "Display the activation url"
+msgstr ""
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:177
+msgid "Display a clickable activation link"
+msgstr ""
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:205
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:499
+msgid "Registration with Admin Approval"
+msgstr "ثبت نام با تایید مدیر"
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:222
+#, fuzzy
+msgid ""
+"This is the email sent to the <span class=\"email_customizer_red\">user</"
+"span> upon registration with admin approval."
+msgstr ""
+"محتوای ایمیل: <span style=\"color:gray\">این ایمیل پس از تایید ثبت نام به "
+"<span style=\"color:red\">کاربر</span> ارسال شده است.</span>"
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:260
+#, fuzzy
+msgid "Admin Approval Notifications (on status change)"
+msgstr "اطلاعیه های موافقت های مدیر ( تغییر وضعیت )"
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:268
+msgid "Message Sent to the User Upon Approval"
+msgstr "ارسال پیام به کاربر پس از تصویب"
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:281
+#, fuzzy
+msgid ""
+"This is the email sent to the <span class=\"email_customizer_red\">user</"
+"span> upon approval."
+msgstr ""
+"محتوای ایمیل: <span style=\"color:gray\">این ایمیل پس از تایید ثبت نام به "
+"<span style=\"color:red\">کاربر</span> ارسال شده است.</span>"
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:298
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:343
+msgid "Display the new user-status"
+msgstr ""
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:313
+msgid "Message Sent to the User Upon Unapproval"
+msgstr "ارسال پیام به کاربر پس از تایید"
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:326
+#, fuzzy
+msgid ""
+"This is the email sent to the <span class=\"email_customizer_red\">user</"
+"span> upon unapproval."
+msgstr ""
+"محتوای ایمیل: <span style=\"color:gray\">این ایمیل پس از عدم تایید  کاربر به "
+"<span style=\"color:red\">کاربر</span> ارسال شده است.</span>"
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:401
+#, fuzzy
+msgid "Here you can customize all the emails sent to the administrator."
+msgstr "در اینجا می توانید تمامی ایمیل های ارسالی مدیر را سفارشی نمایید."
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:404
+msgid ""
+"These settings are also replicated in the \"User Email Customizer\" settings-"
+"page upon save."
+msgstr ""
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:432
+#, fuzzy
+msgid "Display the default email address"
+msgstr "لطفا پست الکترونیکی معتبری وارد کنید."
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:446
+#, fuzzy
+msgid "Default Registration & Registration with Email Confirmation"
+msgstr "ثبت نام با تایید توسط ایمیل "
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:462
+#, fuzzy
+msgid ""
+"This is the email sent to the <span class=\"email_customizer_red"
+"\">administrator</span> upon registration."
+msgstr ""
+"محتوای ایمیل: <span style=\"color:gray\">این ایمیل پس از ثبت نام کاربر به "
+"<span style=\"color:red\">مدیر</span> ارسال شده است.</span>"
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:479
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:532
+#, fuzzy
+msgid "Display the password"
+msgstr "بازیابی کلمه عبور ؟"
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:515
+#, fuzzy
+msgid ""
+"This is the email sent to the <span class=\"email_customizer_red"
+"\">administrator</span> upon user registration with admin approval."
+msgstr ""
+"محتوای ایمیل: <span style=\"color:gray\">این ایمیل پس از ثبت نام کاربر با "
+"تایید مدیر به <span style=\"color:red\">مدیر</span> ارسال شده است.</span>"
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:533
+#, fuzzy
+msgid "Display the first name"
+msgstr "نام نمایش داده شده"
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:534
+#, fuzzy
+msgid "Display the last name"
+msgstr "نام نمایش داده شده"
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/email.customizer.php:535
+#, fuzzy
+msgid "Display the nickname"
+msgstr "نام نمایش داده شده"
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/recaptcha.php:49
+msgid "Could not open socket!"
+msgstr "سوکت باز نمی باشد!"
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/recaptcha.php:76
+msgid "To use reCAPTCHA you must get an API key from"
+msgstr "برای استفاده از reCAPTCHA شما باید یک کد ARI دریافت کنید از"
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/recaptcha.php:123
 msgid "For security reasons, you must pass the remote ip to reCAPTCHA!"
 msgstr ""
+"به دلایل امنیتی برای reCAPTCHA شما باید به آی پی از راه دور اجازه دسترسی دهید"
 
-#: ../premium/addons/recaptcha.php:180
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/recaptcha.php:180
 msgid ""
 "To use reCAPTCHA Mailhide, you need to have the mcrypt php module installed!"
-msgstr ""
+msgstr "برای استفاده از reCAPTCHA Mailhide، نیاز به نصب ماژول mcrypt phpدارید"
 
-#: ../premium/addons/recaptcha.php:196
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/recaptcha.php:196
 msgid ""
 "To use reCAPTCHA Mailhide, you have to sign up for a public and private key; "
 "you can do so at"
 msgstr ""
+"برای استفاده از reCAPTCHA Mailhide، شما نیاز به صبت نام برای کلید عمومی و "
+"خصوصی دارید،شما می توانید"
 
-#: ../premium/addons/recaptcha.php:260
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/recaptcha.php:260
 msgid ""
 "Adds a reCAPTCHA form on the registration page created in the front-end "
 "(only)."
-msgstr ""
+msgstr "افزودن یک فرم reCAPTCHA در صفحه ساخته شده ی ثبت نام فقط در front-end"
 
-#: ../premium/addons/recaptcha.php:261
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/recaptcha.php:261
 msgid "For this you must get a public and private key from Google:"
-msgstr ""
+msgstr "برای این کار شما باید یک کلید عمومی و خصوصی را از گوگل دریافت کنید:"
 
-#: ../premium/addons/recaptcha.php:267
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/recaptcha.php:267
 msgid "Key"
-msgstr ""
+msgstr "کلید"
 
-#: ../premium/addons/recaptcha.php:268
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/recaptcha.php:268
 msgid "Code"
-msgstr ""
+msgstr "کد"
 
-#: ../premium/addons/recaptcha.php:272
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/recaptcha.php:272
 msgid "Public Key:"
-msgstr ""
+msgstr "کلید عمومی:"
 
-#: ../premium/addons/recaptcha.php:276
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/recaptcha.php:276
 msgid "Private Key:"
-msgstr ""
+msgstr "کلید خصوصی:"
 
-#: ../premium/addons/recaptcha.php:312
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/recaptcha.php:312
 msgid "The reCAPTCHA wasn't entered correctly. Go back and try it again!"
 msgstr ""
+"reCAPTCHA به درستی وارد نشده است. به عقب بازگردید و دوباره امتحان نمایید!"
 
-#: ../premium/addons/userlisting.php:34
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:35
 msgid ""
 "To create a page containing the users registered to this current site/blog, "
 "insert the following shortcode in a (blank) page: "
 msgstr ""
+"برای ساخت یک صفحه حاوی کاربرانی که ثبت نام کرده اند ، کد کوتاه (shortcode) "
+"زیر را در یک برگه خالی وارد کنید:"
 
-#: ../premium/addons/userlisting.php:35
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:36
 msgid ""
 "For instance, to create a userlisting shortcode listing only the editors and "
 "authors, visible to only the users currently logged in, you would use:"
 msgstr ""
+"به عنوان مثال، برای ایجاد یک کد کوتاه از فهرست کاربران شامل فقط ویرایشگران و "
+"نویسندگان می باشد که برای کاربرانی که در حال حاضر وارد سیستم شده اند نمایش "
+"داده شود ، می توانید اینگونه عمل کنید:"
 
-#: ../premium/addons/userlisting.php:36
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:37
 msgid ""
 "You can also create a userlisting page that displays users having a certain "
 "meta-value within a certain (extra) meta-field like so:"
 msgstr ""
+"شما همچنین می توانید یک صفحه که لیست کاربرانی با متاهای ارزشی (خاص) ایجاد "
+"کنید:"
 
-#: ../premium/addons/userlisting.php:36
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:37
 msgid ""
 "Remember though, that the field-value combination must exist in the database."
 msgstr ""
+"هر چند به یاد داشته باشید، که ترکیب فیلد-ارزشی باید در پایگاه داده وجود "
+"داشته باشد."
 
-#: ../premium/addons/userlisting.php:41
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:42
 msgid "These settings are applied to the front-end userlisting."
-msgstr ""
+msgstr "این تنظیمات به لیست کاربر (front-end) استفاده شود."
 
-#: ../premium/addons/userlisting.php:47
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:48
 msgid "Number of Users/Page: "
-msgstr ""
+msgstr "تعداد کاربران/برگه:"
 
-#: ../premium/addons/userlisting.php:64
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:65
 msgid "Default Sorting Criteria: "
+msgstr "معیارهای مرتب سازی پیش فرض:"
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:74
+#, fuzzy
+msgid "Registration Date"
+msgstr "پس از عضویت:"
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:77
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:600
+msgid "Display Name"
+msgstr "نام نمایش داده شده"
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:78
+#, fuzzy
+msgid "Number of Posts"
+msgstr "تعداد کاربران/برگه:"
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:79
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:623
+msgid "Aim"
 msgstr ""
 
-#: ../premium/addons/userlisting.php:93
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:80
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:628
+msgid "Yim"
+msgstr ""
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:81
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:633
+msgid "Jabber"
+msgstr ""
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:83
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:152
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:308
+#, fuzzy
+msgid "Custom Fields"
+msgstr "\" ایجاد کنید."
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:99
 msgid "Default Sorting Order: "
+msgstr "مرتب سازی پیش فرض بر اساس:"
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:102
+#, fuzzy
+msgid "Ascending"
+msgstr "Heading"
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:103
+msgid "Descending"
 msgstr ""
 
-#: ../premium/addons/userlisting.php:104
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:110
 msgid "\"All-Userlisting\" Template"
-msgstr ""
+msgstr "قالب \"همه ی لیست کاربران\" "
 
-#: ../premium/addons/userlisting.php:106 ../premium/addons/userlisting.php:250
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:112
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:263
 msgid ""
 "With the userlisting templates you can customize the look, feel and "
 "information listed by the shortcode."
-msgstr ""
+msgstr "با قالب لیست کاربران شما می توانید فهرست کاربران را سفارشی ببینید."
 
-#: ../premium/addons/userlisting.php:107
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:113
 msgid ""
 "The \"All Users Listing\" template is used to list all users. It's displayed "
 "on each page access where the shortcode is present."
 msgstr ""
+"قالب \"لیست همه ی کاربران\" برای همه ی لیست کاربران استفاده می شود.این در "
+"صفحه ای که کد کوتاه موجود باشد ، نمایش داده می شود."
 
-#: ../premium/addons/userlisting.php:111
-msgid "Avatar size: "
-msgstr ""
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:117
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:269
+#, fuzzy
+msgid "Avatar/Gravatar Size: "
+msgstr "اندازه آواتار:"
 
-#: ../premium/addons/userlisting.php:127
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:133
 msgid "Insert \"Sort By\" Field:"
-msgstr ""
+msgstr "قرار دادن \"مرتب سازی با\" رشته:"
 
-#: ../premium/addons/userlisting.php:154 ../premium/addons/userlisting.php:256
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:138
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:291
+#, fuzzy
+msgid "Default WordPress Fields"
+msgstr "فیلد های کاربری پیش فرض"
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:164
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:286
 msgid "Insert \"User-Meta\" Field:"
-msgstr ""
+msgstr "قرار دادن \"متای کاربری\" :"
 
-#: ../premium/addons/userlisting.php:188 ../premium/addons/userlisting.php:297
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:201
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:328
 msgid "Insert Extra Functions:"
-msgstr ""
+msgstr "قرار دادن توابع اضافی:"
 
-#: ../premium/addons/userlisting.php:203
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:216
 msgid "Show/Hide Default \"All-Userlisting\" Code"
-msgstr ""
+msgstr "نمایش/عدم نمایش پیش فرض کد \"همه ی لیست کاربران\""
 
-#: ../premium/addons/userlisting.php:205 ../premium/addons/userlisting.php:311
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:218
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:342
 msgid ""
 "If you wish to use a default userlisting, just copy the following code and "
 "paste it in the textarea below:"
 msgstr ""
+"اگر شما مایل به استفاده از یک لیست کاربران پیش فرض هستید، فقط کد زیر را کپی "
+"کنید و آن را در قسمت زیر وارد کنید:"
 
-#: ../premium/addons/userlisting.php:248
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:227
+#, fuzzy
+msgid "More"
+msgstr "بیشتر ..."
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:261
 msgid "\"Single-Userlisting\" Template"
-msgstr ""
+msgstr "قالب \"صفحه تک نوشته برای لیست کاربران\""
 
-#: ../premium/addons/userlisting.php:251
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:264
 msgid ""
 "The \"Single User Listing\" template is used to list an individual user. "
 "It's displayed when clickin on the \"more info\" link."
 msgstr ""
+"قالب \"تک نوشته لیست کاربر\" برای تک کاربر نمایش داده میشود.این هنگامی نمایش "
+"داده میشود که روی لینک \"اطلاعات بیشتر\" کلیک شود."
 
-#: ../premium/addons/userlisting.php:309
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:317
+#, fuzzy
+msgid "Custom Fields(Description)"
+msgstr "نام/توضیحات"
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:340
 msgid "Show/Hide Default \"Single-Userlisting\" Code"
-msgstr ""
+msgstr "نمایش/عدم نمایش کد پیش فرض \"تک نوشته لیست کاربر\""
 
-#: ../premium/addons/userlisting.php:415
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:446
 msgid ""
 "You need to activate the User-Listing feature from within the \"Addons\" tab!"
-msgstr ""
+msgstr "شما نیاز دارید به فعال سازی امکان لیست کاربران از تب \"امکانات\" !"
 
-#: ../premium/addons/userlisting.php:415
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:446
 msgid "You can find it in Profile Builder's menu."
-msgstr ""
+msgstr "شما می توانید آن را در منوی پنل ساز پیدا کنید."
 
-#: ../premium/addons/userlisting.php:445
-#, fuzzy
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:476
 msgid "You need to be logged in to view the userlisting!"
-msgstr "برای ویرایش نمایه باید وارد شوید."
+msgstr "برای مشاهده ی لیست کاربران شما نیاز دارید به سیستم وارد شوید!"
 
-#: ../premium/addons/userlisting.php:477 ../premium/addons/userlisting.php:492
-#: ../premium/addons/userlisting.php:1641
-#: ../premium/addons/userlisting.php:1730
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:515
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:530
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:1907
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:1942
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/userlisting.class.php:445
 msgid "Search Users by All Fields"
-msgstr ""
+msgstr "جستجوی کاربر با همه ی رشته ها"
 
-#: ../premium/addons/userlisting.php:514
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:552
 msgid "Leave Blank and Press Search to List All Users"
-msgstr ""
+msgstr "برای مشاهده کل اعضا این بخش را خالی گذاشته و بر روی جستجو کلیک کنید"
 
-#: ../premium/addons/userlisting.php:518
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:556
 msgid "Search"
+msgstr "جستجو"
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:557
+msgid "Clear Results"
 msgstr ""
 
-#: ../premium/addons/userlisting.php:531
-#, fuzzy
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:570
 msgid "First/Lastname"
-msgstr "نام"
+msgstr "نام/نام خانوادگی"
 
-#: ../premium/addons/userlisting.php:543
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:582
 msgid "Sign-up Date"
-msgstr ""
+msgstr "تاریخ عضویت"
 
-#: ../premium/addons/userlisting.php:549
-#, fuzzy
-msgid "Firstname"
-msgstr "نام"
-
-#: ../premium/addons/userlisting.php:555
-#, fuzzy
-msgid "Lastname"
-msgstr "نام خانوادگی"
-
-#: ../premium/addons/userlisting.php:561
-#, fuzzy
-msgid "Display Name"
-msgstr "نام"
-
-#: ../premium/addons/userlisting.php:579
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:618
 msgid "Posts"
-msgstr ""
+msgstr "ارسال ها"
 
-#: ../premium/addons/userlisting.php:624
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:683
 msgid "Click here to see more information about this user"
-msgstr ""
+msgstr "برای دریاف اطلاعات بیشتر در مورد این کاربر اینجا کلیک کنید"
 
-#: ../premium/addons/userlisting.php:624
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:683
 msgid "More..."
-msgstr ""
+msgstr "بیشتر ..."
 
-#: ../premium/addons/userlisting.php:626
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:685
+#, fuzzy
 msgid "Click here to see more information about this user."
-msgstr ""
+msgstr "برای دریاف اطلاعات بیشتر در مورد این کاربر اینجا کلیک کنید"
 
-#: ../premium/addons/userlisting.php:829 ../premium/addons/userlisting.php:939
-#: ../premium/addons/userlisting.php:1251
-#: ../premium/addons/userlisting.php:1417
-#: ../premium/functions/extra.fields.php:600
-#: ../premium/functions/extra.fields.php:633
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:948
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:1100
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:1501
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:1710
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:658
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:691
 msgid "No uploaded attachment"
-msgstr ""
+msgstr "فایل ضمیمه ای بارگذاری نشده است"
 
-#: ../premium/addons/userlisting.php:831 ../premium/addons/userlisting.php:941
-#: ../premium/addons/userlisting.php:1253
-#: ../premium/addons/userlisting.php:1309
-#: ../premium/addons/userlisting.php:1419
-#: ../premium/addons/userlisting.php:1475
-#: ../premium/functions/extra.fields.php:604
-#: ../premium/functions/extra.fields.php:637
-#: ../premium/functions/extra.fields.php:640
-#: ../premium/functions/extra.fields.php:715
-#: ../premium/functions/extra.fields.php:747
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:950
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:1102
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:1503
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:1560
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:1712
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:1769
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:662
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:695
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:698
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:772
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:804
 msgid "Click to see the current attachment"
-msgstr ""
+msgstr "برای مشاهده فایل ضمیمه کلیک کنید"
 
-#: ../premium/addons/userlisting.php:1070
-#: ../premium/addons/userlisting.php:1072
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:1241
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:1243
 msgid "Click here to go back"
-msgstr ""
+msgstr "برای بازگشت کلیک کنید"
 
-#: ../premium/addons/userlisting.php:1070
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:1241
 msgid "Back"
-msgstr ""
+msgstr "بازگشت"
 
-#: ../premium/addons/userlisting.php:1251
-#: ../premium/addons/userlisting.php:1253
-#: ../premium/addons/userlisting.php:1417
-#: ../premium/addons/userlisting.php:1419
-#: ../premium/functions/extra.fields.php:600
-#: ../premium/functions/extra.fields.php:604
-#: ../premium/functions/extra.fields.php:633
-#: ../premium/functions/extra.fields.php:637
-#: ../premium/functions/extra.fields.php:640
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:1501
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:1503
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:1710
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:1712
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:658
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:662
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:691
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:695
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:698
 msgid "Current file"
-msgstr ""
+msgstr "فایل کنونی"
 
-#: ../premium/addons/userlisting.php:1307
-#: ../premium/addons/userlisting.php:1473
-#: ../premium/functions/extra.fields.php:712
-#: ../premium/functions/extra.fields.php:744
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:1558
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:1767
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:770
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:801
 msgid "Avatar"
-msgstr ""
+msgstr "آواتار"
 
-#: ../premium/addons/userlisting.php:1532
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:1826
 msgid "No results found!"
-msgstr ""
+msgstr "نتیجه ای یافت نشد !"
 
-#: ../premium/addons/userlisting.php:1628
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:1929
 msgid "&laquo;&laquo; First"
-msgstr ""
+msgstr "&laquo;&laquo; نخستین"
 
-#: ../premium/addons/userlisting.php:1629
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:1930
 msgid "&laquo; Prev"
-msgstr ""
+msgstr "&laquo; قبلی"
 
-#: ../premium/addons/userlisting.php:1630
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:1931
 msgid "Next &raquo; "
-msgstr ""
+msgstr "بعدی &raquo; "
 
-#: ../premium/addons/userlisting.php:1631
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/addons/userlisting.php:1932
 msgid "Last &raquo;&raquo;"
-msgstr ""
+msgstr "آخرین  &raquo;&raquo;"
 
-#: ../premium/classes/premium.class.admin.php:302
-#: ../premium/classes/premium.class.admin.php:455
-#, fuzzy
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:303
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:458
 msgid "You must give your option a title."
-msgstr "برای ویرایش نمایه باید وارد شوید."
+msgstr "برای گزینه خودتان عنوانی انتخاب کنید"
 
-#: ../premium/classes/premium.class.admin.php:306
-#: ../premium/classes/premium.class.admin.php:459
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:307
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:462
 msgid "You have entered an invalid meta-key format!"
-msgstr ""
+msgstr "کلید متای وارد شده نامعتبر است!"
 
-#: ../premium/classes/premium.class.admin.php:310
-#: ../premium/classes/premium.class.admin.php:463
-#, fuzzy
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:311
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:466
 msgid "You must enter a valid meta-key."
-msgstr "ایمیل شما نا معتبر است."
+msgstr "یک کلید معتبر وارد کنید."
 
-#: ../premium/classes/premium.class.admin.php:316
-#: ../premium/classes/premium.class.admin.php:326
-#: ../premium/classes/premium.class.admin.php:473
-#: ../premium/classes/premium.class.admin.php:485
-#, fuzzy
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:317
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:327
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:476
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:488
 msgid "That meta-key is already in use."
-msgstr "این نام کاربری قبلا فعال شده است!"
+msgstr "کلید وارد شده همینک در حال استفاده می باشد"
 
-#: ../premium/classes/premium.class.admin.php:333
-#: ../premium/classes/premium.class.admin.php:493
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:334
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:496
 msgid ""
 "There is already an avatar input-type. You can only have one avatar present."
-msgstr ""
+msgstr "در حال حاضر آواتار وجود دارد.شما تنها می توانید یک آواتار داشته باشید."
 
-#: ../premium/classes/premium.class.admin.php:340
-#: ../premium/classes/premium.class.admin.php:500
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:341
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:503
 msgid ""
 "There is already an \"Agree to Terms and Conditions\" checkbox. You can only "
 "have one present."
 msgstr ""
 
-#: ../premium/classes/premium.class.admin.php:345
-#: ../premium/classes/premium.class.admin.php:505
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:346
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:508
 msgid "The textarea row value must be numeric."
-msgstr ""
+msgstr "ردیف های ناحیه متنی باید به صورت عدد باشند."
 
-#: ../premium/classes/premium.class.admin.php:349
-#: ../premium/classes/premium.class.admin.php:509
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:350
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:512
 msgid "The maxlength attribute must be numeric."
-msgstr ""
+msgstr "حداکثر خاصیت طول باید عدد باشد."
 
-#: ../premium/classes/premium.class.admin.php:356
-#: ../premium/classes/premium.class.admin.php:516
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:357
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:519
 msgid "The value must be between 20 and 200!"
-msgstr ""
+msgstr "مقدار وارد  شده باید بین 20 تا 200 باشد!"
 
-#: ../premium/classes/premium.class.admin.php:361
-#: ../premium/classes/premium.class.admin.php:521
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:362
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:524
 msgid "The width component of the entered value must be numeric!"
-msgstr ""
+msgstr "مقدارعرض وارد شده باید عدد باشد!"
 
-#: ../premium/classes/premium.class.admin.php:363
-#: ../premium/classes/premium.class.admin.php:523
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:364
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:526
 msgid "The height component of the entered value must be numeric!"
-msgstr ""
+msgstr "مقدار ارتفاع وارد شده باید عدد باشد!"
 
-#: ../premium/classes/premium.class.admin.php:365
-#: ../premium/classes/premium.class.admin.php:525
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:366
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:528
 msgid "The width component of the entered value must be between 20 and 200!"
-msgstr ""
+msgstr "مقدار عرض وارد شده باید مابین 20 تا 200 باشد!"
 
-#: ../premium/classes/premium.class.admin.php:367
-#: ../premium/classes/premium.class.admin.php:527
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:368
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:530
 msgid "The height component of the entered value must be between 20 and 200!"
-msgstr ""
+msgstr "مقدار ارتفاع وارد شده باید مابین 20 تا 200 باشد!"
 
-#: ../premium/classes/premium.class.admin.php:369
-#: ../premium/classes/premium.class.admin.php:529
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:370
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:532
 msgid "The pair of values entered didn't have the right format (width,height)!"
-msgstr ""
+msgstr "فرمت مقادیر وارد شده ی (عرض و طول) اشتباه وارد شده اند!"
 
-#: ../premium/classes/premium.class.admin.php:372
-#: ../premium/classes/premium.class.admin.php:532
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:373
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:535
 msgid "The entered avatar size must be numeric!"
-msgstr ""
+msgstr "اندازه آواتار وارد شده باید عدد باشد!، لطفا دوباره سعی کنید."
 
-#: ../premium/classes/premium.class.admin.php:416
-#: ../premium/classes/premium.class.admin.php:602
-#, fuzzy
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:417
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/classes/premium.class.admin.php:606
 msgid "There was an error, please try again."
-msgstr "خطایی در فعال سازی کاربر به وجود آمده است."
+msgstr "خطایی اتفاق افتاده، لطفا دوباره امتحان کنید."
 
-#: ../premium/functions/admin.approval.php:60
-#: ../premium/functions/admin.approval.php:96
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/admin.approval.php:45
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/admin.approval.php:87
 msgid "Your session has expired! Please refresh the page and try again."
 msgstr ""
 
-#: ../premium/functions/admin.approval.php:71
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/admin.approval.php:56
 #, fuzzy
 msgid "User successfully approved!"
-msgstr "کاربر با موفقیت فعال سازی شد."
+msgstr "کاربر با موفقیت فعال گردید."
 
-#: ../premium/functions/admin.approval.php:79
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/admin.approval.php:64
 #, fuzzy
 msgid "User successfully unapproved!"
-msgstr "کاربر با موفقیت فعال سازی شد."
+msgstr "کاربر با موفقیت فعال گردید."
 
-#: ../premium/functions/admin.approval.php:114
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/admin.approval.php:70
+#, fuzzy
+msgid "User successfully deleted!"
+msgstr "تصویر کاربری با موفقیت حذف گردید."
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/admin.approval.php:107
 #, fuzzy
 msgid "Users successfully approved!"
-msgstr "کاربر با موفقیت فعال سازی شد."
+msgstr "کاربر با موفقیت فعال گردید."
 
-#: ../premium/functions/admin.approval.php:127
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/admin.approval.php:122
 #, fuzzy
 msgid "Users successfully unapproved!"
-msgstr "کاربر با موفقیت فعال سازی شد."
+msgstr "کاربر با موفقیت فعال گردید."
 
-#: ../premium/functions/admin.approval.php:174
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/admin.approval.php:135
 #, fuzzy
+msgid "Users successfully deleted!"
+msgstr "تصویر کاربری با موفقیت حذف گردید."
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/admin.approval.php:151
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/admin.approval.php:154
+msgid "approved"
+msgstr "تایید شده"
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/admin.approval.php:158
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/admin.approval.php:161
+msgid "unapproved"
+msgstr "عدم تایید"
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/admin.approval.php:177
 msgid ""
 "<strong>ERROR</strong>: Your account has to be confirmed by an administrator "
 "before you can log in."
-msgstr "پیش از تأیید مدیر، قابلیت بازیابی رمز عبور را نخواهید داشت."
+msgstr ""
+"<strong>توجه </strong> : قبل از ورود باید اکانت شما توسط مدیر تایید گردد"
 
-#: ../premium/functions/admin.approval.php:186
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/admin.approval.php:189
 #, fuzzy
 msgid ""
 "Your account has to be confirmed by an administrator before you can use the "
 "\"Password Recovery\" feature."
-msgstr "پیش از تأیید مدیر، قابلیت بازیابی رمز عبور را نخواهید داشت."
+msgstr ""
+"پیش از استفاده از \"بازیابی کلمه عبور\" حساب کاربری شما باید توسط یکی از "
+"مدیران تایید گردد."
 
-#: ../premium/functions/custom.fields.php:7
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/custom.fields.php:7
 msgid ""
 "You can create as many extra fields as your project requires. To break your "
 "custom fields into sections (on the front-end), add a \""
 msgstr ""
+"شما می توانید به هر تعداد که می خواهید فیلد های کاربری اضافه کنید. برای شروع "
+"یک زمینه دلخواه \""
 
-#: ../premium/functions/custom.fields.php:7
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/custom.fields.php:7
 msgid "heading"
-msgstr ""
+msgstr "Heading"
 
-#: ../premium/functions/custom.fields.php:7
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/custom.fields.php:7
 msgid "\" custom field."
-msgstr ""
+msgstr "\" ایجاد کنید."
 
-#: ../premium/functions/custom.fields.php:8
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/custom.fields.php:8
 msgid "All of the fields can be sorted and rearranged to your liking with"
-msgstr ""
+msgstr "همه فیلد های اضافه شده می توانند به صورت دلخواه با استفاده از "
 
-#: ../premium/functions/custom.fields.php:8
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/custom.fields.php:8
 msgid "Drag"
-msgstr ""
+msgstr "گرفتن"
 
-#: ../premium/functions/custom.fields.php:8
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/custom.fields.php:8
 msgid "Drop"
-msgstr ""
+msgstr "رها کردن مرتب شوند"
 
-#: ../premium/functions/custom.fields.php:8
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/custom.fields.php:8
 msgid ""
 "Don't worry about the order in which you create your custom fields, you can "
 "always reorder them."
 msgstr ""
+"درباره نحوه چیدمان فیلد های ایجاد شده خود نگران نباشید، شما همیشه می توانید "
+"آن هارا مرتب کنید."
 
-#: ../premium/functions/custom.fields.php:12
-#: ../premium/functions/custom.fields.php:22
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/custom.fields.php:12
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/custom.fields.php:22
 msgid "Title"
-msgstr ""
+msgstr "عنوان"
 
-#: ../premium/functions/custom.fields.php:13
-#: ../premium/functions/custom.fields.php:23
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/custom.fields.php:13
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/custom.fields.php:23
 msgid "Type"
-msgstr ""
+msgstr "نوع"
 
-#: ../premium/functions/custom.fields.php:14
-#: ../premium/functions/custom.fields.php:24
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/custom.fields.php:14
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/custom.fields.php:24
 msgid "Meta-Key"
-msgstr ""
+msgstr "نامک اختصاصی"
 
-#: ../premium/functions/custom.fields.php:15
-#: ../premium/functions/custom.fields.php:25
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/custom.fields.php:15
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/custom.fields.php:25
 msgid "ID"
-msgstr ""
+msgstr "شناسه"
 
-#: ../premium/functions/custom.fields.php:16
-#: ../premium/functions/custom.fields.php:26
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/custom.fields.php:16
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/custom.fields.php:26
 msgid "Req'd"
-msgstr ""
+msgstr "لازم"
 
-#: ../premium/functions/custom.fields.php:17
-#: ../premium/functions/custom.fields.php:27
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/custom.fields.php:17
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/custom.fields.php:27
 msgid "Add Option"
-msgstr ""
+msgstr "اضافه کردن قابلیت"
 
-#: ../premium/functions/custom.fields.php:39
-#: ../premium/functions/custom.fields.php:72
-#: ../premium/functions/custom.fields.php:205
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/custom.fields.php:39
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/custom.fields.php:72
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/custom.fields.php:217
 msgid "Edit"
-msgstr ""
+msgstr "ویرایش"
 
-#: ../premium/functions/custom.fields.php:100
-#: ../premium/functions/login.widget.php:82
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/custom.fields.php:101
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/login.widget.php:82
 msgid "Title:"
-msgstr ""
+msgstr "عنوان:"
 
-#: ../premium/functions/custom.fields.php:100
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/custom.fields.php:101
 msgid "The title of the item."
-msgstr ""
+msgstr "عنوان آیتم."
 
-#: ../premium/functions/custom.fields.php:110
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/custom.fields.php:111
 msgid "Meta-Key:"
-msgstr ""
+msgstr "نامک اختصاصی:"
 
-#: ../premium/functions/custom.fields.php:110
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/custom.fields.php:111
 msgid ""
 "Use this in conjuction with WordPress functions to display the value in the "
 "page of your choosing. Auto-completed but editable - in this case it must be "
 "uniqe.<br/>Changing this might take long in case of a very big user-count."
 msgstr ""
+"برای زمینه دلخواه خود یک نام لاتین اختصاصی بنوسید. در صورت رها کردن، این بخش "
+"به صورت اتوماتیک تکمیل خواهد شد. "
 
-#: ../premium/functions/custom.fields.php:143
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/custom.fields.php:144
 msgid "Option Type:"
-msgstr ""
+msgstr "نوع گزینه:"
 
-#: ../premium/functions/custom.fields.php:143
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/custom.fields.php:144
 msgid "Choose one of the supported option types."
-msgstr ""
+msgstr "یکی از انواع گزینه های پشتیبانی شده را انتخاب کنید."
 
-#: ../premium/functions/custom.fields.php:153
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/custom.fields.php:154
 msgid "Description:"
-msgstr ""
+msgstr "توضیحات:"
 
-#: ../premium/functions/custom.fields.php:153
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/custom.fields.php:154
 msgid ""
 "Enter a detailed description of the option for end users to read(optional)."
-msgstr ""
+msgstr "توضیجات مربوط به این فیلد را وارد کنید (دلخواه)."
 
-#: ../premium/functions/custom.fields.php:154
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/custom.fields.php:155
 msgid "You can only insert links using standard HTML syntax:"
 msgstr ""
+"شما فقط می توانید لینک هایی که از تگ های استاندارد HTML استفاده می کنند را "
+"وارد کنید"
 
-#: ../premium/functions/custom.fields.php:154
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/custom.fields.php:155
 msgid "address"
-msgstr ""
+msgstr "آدرس"
 
-#: ../premium/functions/custom.fields.php:154
-#, fuzzy
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/custom.fields.php:155
 msgid "name"
-msgstr "نام کاربری"
+msgstr "نام"
 
-#: ../premium/functions/custom.fields.php:164
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/custom.fields.php:165
 msgid "Options:"
-msgstr ""
+msgstr "گزینه ها:"
 
-#: ../premium/functions/custom.fields.php:164
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/custom.fields.php:165
 msgid ""
-"Enter a comma separated list of options. For example, you could have \"One,"
-"Two,Three\" or just a single value like \"Yes\" for a checkbox."
+"Enter a comma separated list of options.<br/>These can be anything, as it is "
+"hidden from the user, but should not contain special characters, spaces or "
+"apostrophes."
 msgstr ""
 
-#: ../premium/functions/custom.fields.php:175
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/custom.fields.php:176
+msgid "Labels:"
+msgstr ""
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/custom.fields.php:176
+#, fuzzy
+msgid ""
+"Enter a comma separated list of labels for the above options.<br/>For "
+"example, you could have \"One,Two,Three\" or just a single value like \"Yes"
+"\" for a checkbox.<br/>Visible for the user, and if no labels are specified, "
+"the values from the options are used instead."
+msgstr ""
+"گزینه ها را با کاما از هم جدا کنید. برای نمونه، \"یک,دو,سه\" یا ک مقدار \"بله"
+"\" برای یک چک باکس"
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/custom.fields.php:187
 msgid "ID:"
-msgstr ""
+msgstr "شناسه:"
 
-#: ../premium/functions/custom.fields.php:175
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/custom.fields.php:187
 msgid ""
 "This is the internal ID for this input. You can use this in conjuction with "
 "filters to target this element if needed.<br/>Can't be edited."
 msgstr ""
+"یک شماره شناسه انتخاب کنید. توجه داشته باشید که در آینده قادر به ویرایش این "
+"بخش نخواهید بود."
 
-#: ../premium/functions/custom.fields.php:186
-#, fuzzy
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/custom.fields.php:198
 msgid "Required:"
-msgstr "لازم"
+msgstr "ضروری:"
 
-#: ../premium/functions/custom.fields.php:186
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/custom.fields.php:198
 msgid "Check this box to make this field required."
-msgstr ""
+msgstr "برای الزامی کردن این فیلد، اینجا را تیک بزنید."
 
-#: ../premium/functions/custom.fields.php:193
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/custom.fields.php:205
 msgid "Cancel"
-msgstr ""
+msgstr "لغو کردن"
 
-#: ../premium/functions/custom.fields.php:194
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/custom.fields.php:206
 msgid "Save"
-msgstr ""
+msgstr "ذخیره"
 
-#: ../premium/functions/extra.fields.php:71
-#: ../premium/functions/extra.fields.php:177
-#: ../premium/functions/extra.fields.php:246
-#: ../premium/functions/extra.fields.php:314
-#: ../premium/functions/extra.fields.php:381
-#: ../premium/functions/extra.fields.php:449
-#: ../premium/functions/extra.fields.php:504
-#: ../premium/functions/extra.fields.php:554
-#: ../premium/functions/extra.fields.php:619
-#: ../premium/functions/extra.fields.php:730
-#, fuzzy
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:71
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:186
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:275
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:363
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:437
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:505
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:560
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:610
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:677
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:787
 msgid ""
 "This field wasn't updated because you entered and empty string (It was "
 "marked as required by the administrator)"
 msgstr ""
-"این کادر به دلیل خالی بودن قابیلت به روز رسانی را ندارید (پر کردن این کادر "
-"توسط مدیریت الزامی علامتگذاری شده است)."
+"این رشته بروز نخواهد شد . چون شما رشته ای که مدیر ضروری خوانده است را خالی "
+"گذاشته اید"
 
-#: ../premium/functions/extra.fields.php:597
-#: ../premium/functions/extra.fields.php:629
-#: ../premium/functions/extra.fields.php:705
-#: ../premium/functions/extra.fields.php:736
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:655
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:687
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:763
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:793
 msgid "max upload size"
-msgstr ""
+msgstr "بیشترین حجم آپلود"
 
-#: ../premium/functions/extra.fields.php:603
-#: ../premium/functions/extra.fields.php:639
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:661
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:697
 msgid "Are you sure you want to delete this attachment?"
-msgstr ""
+msgstr "از حذف این ضمیمه مطمئن هستید؟"
 
-#: ../premium/functions/extra.fields.php:604
-#: ../premium/functions/extra.fields.php:640
-#: ../premium/functions/extra.fields.php:715
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:662
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:698
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:772
 msgid "Click to delete the current attachment"
-msgstr ""
+msgstr "برای حذف ضمیمه کنونی کلیک کنید"
 
-#: ../premium/functions/extra.fields.php:637
-#, fuzzy
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:695
 msgid ""
 "The attachment can't be deleted (It was marked as required by the "
 "administrator)"
-msgstr ""
-"این کادر قبل از عضویت باید تکمیل شود (پر کردن این کادر توسط مدیریت، الزامی "
-"شده است)"
+msgstr "پیوست نمی تواند حذف شود (این توسط مدیر اصلی انتخاب شده است)"
 
-#: ../premium/functions/extra.fields.php:708
-#: ../premium/functions/extra.fields.php:740
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:766
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:797
 msgid "Current avatar"
-msgstr ""
+msgstr "تصویر کاربری کنونی"
 
-#: ../premium/functions/extra.fields.php:708
-#: ../premium/functions/extra.fields.php:740
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:766
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:797
 msgid "No uploaded avatar"
-msgstr ""
+msgstr "تصویری کاربری آپلود نشده است"
 
-#: ../premium/functions/extra.fields.php:714
-#: ../premium/functions/extra.fields.php:749
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:772
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:806
 msgid "Are you sure you want to delete this avatar?"
-msgstr ""
+msgstr "از خذف این تصویر کاربری مطمئن هستید ؟"
 
-#: ../premium/functions/extra.fields.php:747
-#, fuzzy
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:804
 msgid ""
 "The avatar image can't be deleted (It was marked as required by the "
 "administrator)."
-msgstr ""
-"این کادر قبل از عضویت باید تکمیل شود (پر کردن این کادر توسط مدیریت، الزامی "
-"شده است)"
+msgstr "تصویر آواتار قابل حذف نیست (این توسط مدیر اصلی انتخاب شده است)"
 
-#: ../premium/functions/extra.fields.php:750
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:806
 msgid "Click to see the current avatar"
-msgstr ""
+msgstr "برای مشاهده تصویر کاربری کنونی کلیک کنید"
 
-#: ../premium/functions/extra.fields.php:750
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:806
 msgid "Click to delete the avatar"
-msgstr ""
+msgstr "برای حذف تصویر کاربری کلیک کنید"
 
-#: ../premium/functions/login.widget.php:10
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:860
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:952
+#, fuzzy
+msgid "The avatar was successfully deleted!"
+msgstr "تصویر کاربری با موفقیت حذف گردید."
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:862
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/extra.fields.php:954
+#, fuzzy
+msgid "The following attachment was successfully deleted:"
+msgstr "ضمیمه \"%1$s\"  با موفقیت حذف شد"
+
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/login.widget.php:10
 msgid "This login widget lets you add a login form in the sidebar."
 msgstr ""
+"این ابزارک به شما اجازه می دهد تا بتوانید فرم ورود را در نوار کناری نمایش "
+"دهید."
 
-#: ../premium/functions/login.widget.php:15
-#, fuzzy
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/login.widget.php:15
 msgid "Profile Builder Login Widget"
-msgstr "نمایه ساز"
+msgstr "ابزارک ورود"
 
-#: ../premium/functions/login.widget.php:42
-#, fuzzy
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/login.widget.php:42
 msgid "Don't have an account?"
-msgstr "شما به حساب دیگری نیاز ندارید."
+msgstr "حساب کاربری ندارید؟"
 
-#: ../premium/functions/login.widget.php:49
-#, fuzzy
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/login.widget.php:49
 msgid "Lost Password"
-msgstr "رمز عبور را فراموش کرده اید؟"
+msgstr "بازیابی کلمه عبور"
 
-#: ../premium/functions/login.widget.php:49
-#, fuzzy
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/login.widget.php:49
 msgid "Lost Your Password?"
-msgstr "رمز عبور را فراموش کرده اید؟"
+msgstr "کلمه عبور خود را فراموش کرده اید ؟"
 
-#: ../premium/functions/login.widget.php:78
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/login.widget.php:78
 msgid "Login"
-msgstr ""
+msgstr "ورود"
 
-#: ../premium/functions/login.widget.php:87
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/login.widget.php:87
 msgid "After login redirect URL (optional):"
-msgstr ""
+msgstr "آدرس ریدایرکت بعد از لاگین کاربر(اختیاری):"
 
-#: ../premium/functions/login.widget.php:92
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/login.widget.php:92
 msgid "Register page URL (optional):"
-msgstr ""
+msgstr "ادرس صفحه عضویت (اختیاری):"
 
-#: ../premium/functions/login.widget.php:97
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/login.widget.php:97
 msgid "Password Recovery page URL (optional):"
-msgstr ""
+msgstr "آدرس صفحه بازیابی کلمه عبور (اختیاری):"
 
-#: ../premium/functions/premium.functions.load.php:14
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/premium.functions.load.php:14
 msgid "The user-validation has failed - the avatar was not deleted!"
-msgstr ""
+msgstr "تایید اعتبار کاربر دچار مشکل شده است - آواتار حذف نشد!!"
 
-#: ../premium/functions/premium.functions.load.php:25
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/premium.functions.load.php:25
 msgid "The user-validation has failed - the attachment was not deleted!"
-msgstr ""
+msgstr "تایید اعتبار کاربر دچار مشکل شده است - پیوست حذف نشد!"
 
-#: ../premium/functions/premium.functions.load.php:354
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/premium.functions.load.php:339
 #, php-format
 msgid ""
 "Your <strong>Profile Builder</strong> serial number is invalid or missing. "
@@ -2228,99 +2784,126 @@ msgid ""
 "automatic updates and support. Need a license key? %3$sPurchase one now%4$s "
 "%5$sDismiss%6$s"
 msgstr ""
+"سریال نامبر <strong>پروفایل ساز</strong> شما نامعتبر است و یا از دست رفته "
+"است. لطفا %1$sپروفایل ساز خود را رجیستر نمایید%2$s تا امکان بروز رسانی "
+"خودکار و پشتیبانی را داشته باشید. شما نیاز به مجوز دسترسی دارید؟? %3$sهمین "
+"حالا خریداری نمایید%4$s %5$sبستن%6$s"
 
-#: ../premium/functions/premium.functions.load.php:358
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/premium.functions.load.php:343
 #, php-format
 msgid ""
 "Your <strong>Profile Builder</strong> 1 year licence has expired. Please "
 "%1$sRenew Your Licence%2$s to receive access to automatic updates and "
 "priority support. %3$sPurchase one now%4$s %5$sDismiss%6$s"
 msgstr ""
+"لایسنس یک ساله ی  <strong>پروفایل ساز شما</strong> منقضی شده است. لطفا "
+"%1$sلایسنس خود را تمدید نمایید%2$s تا امکان بروز رسانی اتوماتیک و اولویت "
+"پشتیبانی را داشته باشد. %3$sهمین حالا خریداری نمایید%4$s %5$sبستن%6$s"
 
-#: ../premium/functions/register.version.php:9
-#: ../premium/functions/register.version.php:10
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/register.version.php:9
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/register.version.php:10
 msgid "Register your version of Profile Builder Pro"
-msgstr ""
+msgstr "افزونه خود را ثبت کنید"
 
-#: ../premium/functions/register.version.php:11
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/register.version.php:11
 msgid ""
 "Now that you acquired a copy of Profile Builder Pro, you should take the "
 "time and register it with the serial number you received in the e-mail."
 msgstr ""
+"برای استفاده از کلیه امکانات این افزونه لازم است افزونه خود را ثبت نمایید. "
 
-#: ../premium/functions/register.version.php:12
-#: ../premium/functions/register.version.php:53
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/register.version.php:12
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/register.version.php:53
 msgid ""
 "If you register this version of Profile Builder, you'll receive information "
 "regarding eventual upgrades, patches, and - if needed - technical support."
 msgstr ""
+"برای انجام این کار کافیست سریال اختصاصی خود را از سایت همیار وردپرس دریافت "
+"کرده و در کادر زیر وارد کرده و بر روی ذخیره تغییرات کلیک کنید."
 
-#: ../premium/functions/register.version.php:13
-#: ../premium/functions/register.version.php:54
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/register.version.php:13
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/register.version.php:54
 msgid "Serial Number:"
-msgstr ""
+msgstr "شماره سریال:"
 
-#: ../premium/functions/register.version.php:17
-#: ../premium/functions/register.version.php:58
-#, fuzzy
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/register.version.php:17
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/register.version.php:58
 msgid "The serial number was successfully validated!"
-msgstr "کاربر با موفقیت فعال سازی شد."
+msgstr "شماره سریال با موفقیت معتبر گشت."
 
-#: ../premium/functions/register.version.php:19
-#: ../premium/functions/register.version.php:60
-#, fuzzy
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/register.version.php:19
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/register.version.php:60
 msgid "The serial number entered couldn't be validated!"
-msgstr "نام کاربری وارد شده در پایگاه اطلاعاتی یافت نشد!"
+msgstr "شماره سریال وارد شده قابل معتبر سازی نمی باشد!"
 
-#: ../premium/functions/register.version.php:21
-#: ../premium/functions/register.version.php:62
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/register.version.php:21
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/register.version.php:62
 msgid "The serial number couldn't be validated because it is no longer valid!"
-msgstr ""
+msgstr "شماره سریال وارد شده به علت منقضی شدن قابل معتبر سازی نیست!"
 
-#: ../premium/functions/register.version.php:23
-#: ../premium/functions/register.version.php:64
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/register.version.php:23
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/register.version.php:64
 msgid ""
 "The serial number couldn't be validated because process timed out. This is "
 "possible due to the server being down. Please try again later!"
 msgstr ""
+"سریال نامبر معتبر نمی باشد ، زیرا زمان آن به اتمام رسیده است. ممکن است سرور "
+"دچار مشکل شده باشد . لطفا بعدأ دوباره امتحان کنید!"
 
-#: ../premium/functions/register.version.php:29
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/register.version.php:29
 msgid "(e.g. RMPB-15-SN-253a55baa4fbe7bf595b2aabb8d72985)"
-msgstr ""
+msgstr "(e.g. RMPB-15-SN-253a55baa4fbe7bf595b2aabb8d72985)"
 
-#: ../premium/functions/register.version.php:50
-#: ../premium/functions/register.version.php:51
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/register.version.php:50
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/register.version.php:51
 msgid "Register your version of Profile Builder Hobbyist"
-msgstr ""
+msgstr "پنل ساز خود را رجیستر کنید"
 
-#: ../premium/functions/register.version.php:52
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/register.version.php:52
 msgid ""
 "Now that you acquired a copy of Profile Builder Hobbyist, you should take "
 "the time and register it with the serial number you received in the e-mail."
-msgstr ""
+msgstr "شما باید پروفایل پیشرفته خود را به صورت قانون ثبت کنید "
 
-#: ../premium/functions/register.version.php:70
+#: C:\Users\Gabriel\Desktop\test\profile-builder-pro/premium/functions/register.version.php:70
 msgid "(e.g. RMPBH-15-SN-253a55baa4fbe7bf595b2aabb8d72985)"
-msgstr ""
+msgstr "(e.g. RMPBH-15-SN-253a55baa4fbe7bf595b2aabb8d72985)"
 
 #~ msgid ""
 #~ "The email address you entered is already registered to a different user."
-#~ msgstr "این ایمیل پیش از این توسط کاربر دیگری ثبت شده است.."
+#~ msgstr "پست الکترونیک وارد شده متعلق به یک کاربر دیگر است. "
 
 #~ msgid "The email address was"
-#~ msgstr "آدرس ایمیل شما"
+#~ msgstr "آدرس ایمیل "
 
 #~ msgid "The email address you entered is invalid."
-#~ msgstr "ایمیل وارد شده نا معتبر است."
+#~ msgstr "پست الکترونیک وارد شده معتبر نیست."
 
 #~ msgid "The passwords you entered do not match."
-#~ msgstr "کلمات عبور وارد شده با همدیگر تطابق ندارند."
+#~ msgstr "کلمه های عبور وارد شده یکسان نیستند."
 
 #~ msgid "The password was"
-#~ msgstr "رمز عبور شما"
+#~ msgstr "کلمه عبور "
 
 #~ msgid "You didn't complete both password fields."
-#~ msgstr "باید هر دو فیلد رمز عبور را کامل کنید."
+#~ msgstr "شما فیلد های کلمه عبور را پُر نکرده اید."
 
 #~ msgid "Your profile was NOT updated!"
-#~ msgstr "نمایه شما نتوانست به روز رسانی شود!"
+#~ msgstr "حساب کاربری شما به روز رسانی نشد!"
+
+#~ msgid ""
+#~ "Email Content: <span style=\"color:gray\">This is the email sent to the "
+#~ "<span style=\"color:red\">administrator</span> upon user registration "
+#~ "with email confirmation.</span>"
+#~ msgstr ""
+#~ "محتوای ایمیل: <span style=\"color:gray\">این ایمیل پس از ثبت نام کاربر با "
+#~ "ایمیل به <span style=\"color:red\">مدیر</span> ارسال شده است.</span>"
+
+#~ msgid "the current user?"
+#~ msgstr "کاربر کنونی؟"
+
+#~ msgid "approve"
+#~ msgstr "تایید"
+
+#~ msgid "Are you sure you want to %1$s this user?"
+#~ msgstr "آیا از  %1$s  این کاربر مطمئن هستید؟"

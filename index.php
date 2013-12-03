@@ -3,7 +3,7 @@
 Plugin Name: Profile Builder
 Plugin URI: http://www.cozmoslabs.com/2011/04/12/wordpress-profile-builder-a-front-end-user-registration-login-and-edit-profile-plugin/
 Description: Login, registration and edit profile shortcodes for the front-end. Also you can chose what fields should be displayed or add new (custom) ones both in the front-end and in the dashboard.
-Version: 1.1.55
+Version: 1.1.56
 Author: Reflection Media, Barina Gabriel
 Author URI: http://www.reflectionmedia.ro
 License: GPL2
@@ -37,10 +37,10 @@ Original Author URI: http://valendesigns.com
  *
  */
 
-function wppb_return_bytes($val) {
-    $val = trim($val);
-    $last = strtolower($val[strlen($val)-1]);
-    switch($last) {
+function wppb_return_bytes( $val ) {
+    $val = trim( $val );
+    $last = strtolower( $val[strlen( $val )-1] );
+    switch( $last ) {
         // The 'G' modifier is available since PHP 5.1.0
         case 'g':
             $val *= 1024;
@@ -51,25 +51,29 @@ function wppb_return_bytes($val) {
     }
 
     return $val;
-} 
+}
  
- 
-define( 'PROFILE_BUILDER_VERSION', '1.1.55' );
+define( 'PROFILE_BUILDER_VERSION', '1.1.56' );
 define( 'WPPB_PLUGIN_DIR', WP_PLUGIN_DIR . '/' . dirname( plugin_basename( __FILE__ ) ) );
-
-if (file_exists ( WPPB_PLUGIN_DIR . '/premium/addons/addon.php' ))
-	define( 'WPPB_PLUGIN_URL', plugins_url( 'profile-builder-pro' ) );
-elseif (file_exists ( WPPB_PLUGIN_DIR . '/premium/functions/premium.functions.load.php' ))
-	define( 'WPPB_PLUGIN_URL', plugins_url( 'profile-builder-hobbyist' ) );
-else
-	define( 'WPPB_PLUGIN_URL', plugins_url( 'profile-builder' ) );
-
-define( 'WPPB_SERVER_MAX_UPLOAD_SIZE_BYTE', wppb_return_bytes( ini_get( 'upload_max_filesize') ) );
-define( 'WPPB_SERVER_MAX_UPLOAD_SIZE_MEGA', ini_get( 'upload_max_filesize') );
-define( 'WPPB_SERVER_MAX_POST_SIZE_BYTE', wppb_return_bytes( ini_get( 'post_max_size') ) );
-define( 'WPPB_SERVER_MAX_POST_SIZE_MEGA', ini_get( 'post_max_size') );
+define( 'WPPB_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
+define( 'WPPB_SERVER_MAX_UPLOAD_SIZE_BYTE', apply_filters( 'wppb_server_max_upload_size_byte_constant', wppb_return_bytes( ini_get( 'upload_max_filesize') ) ) );
+define( 'WPPB_SERVER_MAX_UPLOAD_SIZE_MEGA', apply_filters( 'wppb_server_max_upload_size_mega_constant', ini_get( 'upload_max_filesize') ) );
+define( 'WPPB_SERVER_MAX_POST_SIZE_BYTE', apply_filters( 'wppb_server_max_post_size_byte_constant', wppb_return_bytes( ini_get( 'post_max_size') ) ) );
+define( 'WPPB_SERVER_MAX_POST_SIZE_MEGA', apply_filters( 'wppb_server_max_post_size_mega_constant', ini_get( 'post_max_size') ) );
 define( 'WPPB_TRANSLATE_DIR', WPPB_PLUGIN_DIR.'/translation' );
 define( 'WPPB_TRANSLATE_DOMAIN', 'profilebuilder' );
+
+
+//pre-require the functions file needed for the wppb_updated_patch function
+require_once( 'functions/functions.load.php' );
+
+if (file_exists ( WPPB_PLUGIN_DIR . '/premium/addons/addon.php' ) ){
+	wppb_update_patch( 'pro' );
+}elseif ( file_exists ( WPPB_PLUGIN_DIR . '/premium/functions/premium.functions.load.php' ) ){
+	wppb_update_patch( 'hobbyist' );
+}else{
+	wppb_update_patch( 'free' );
+}
 
 
 /**
@@ -77,27 +81,27 @@ define( 'WPPB_TRANSLATE_DOMAIN', 'profilebuilder' );
  *
  *
  */
-require_once('functions/functions.load.php');
+require_once( 'functions/functions.load.php' );
 
 $wppb_premiumAdmin = WPPB_PLUGIN_DIR . '/premium/classes/';	
-if (file_exists ( $wppb_premiumAdmin.'premium.class.admin.php' )){
-	require_once($wppb_premiumAdmin.'premium.class.admin.php');
+if (file_exists ( $wppb_premiumAdmin.'premium.class.admin.php' ) ){
+	require_once( $wppb_premiumAdmin.'premium.class.admin.php' );
 }else{
-	require_once('classes/class.admin.php');
+	require_once( 'classes/class.admin.php' );
 }
 
 /* check for updates */
 $wppb_premiumUpdate = WPPB_PLUGIN_DIR.'/premium/update/';
-if (file_exists ($wppb_premiumUpdate.'update-checker.php')){
-	require ($wppb_premiumUpdate.'update-checker.php');
+if (file_exists ( $wppb_premiumUpdate.'update-checker.php' ) ){
+	require ($wppb_premiumUpdate.'update-checker.php' );
 	
-	if (file_exists ( WPPB_PLUGIN_DIR . '/premium/addons/addon.php' )){
+	if (file_exists ( WPPB_PLUGIN_DIR . '/premium/addons/addon.php' ) ){
 		$localSerial = get_option( 'wppb_profile_builder_pro_serial' );
-		$wppb_update = new wppb_PluginUpdateChecker('http://updatemetadata.cozmoslabs.com/?localSerialNumber='.$localSerial.'&uniqueproduct=RMPB', __FILE__, 'profile-builder-pro-update');
+		$wppb_update = new wppb_PluginUpdateChecker( 'http://updatemetadata.cozmoslabs.com/?localSerialNumber='.$localSerial.'&uniqueproduct=RMPB', __FILE__, 'profile-builder-pro-update' );
 	
 	}else{
 		$localSerial = get_option( 'wppb_profile_builder_hobbyist_serial' );
-		$wppb_update = new wppb_PluginUpdateChecker('http://updatemetadata.cozmoslabs.com/?localSerialNumber='.$localSerial.'&uniqueproduct=RMPBH', __FILE__, 'profile-builder-hobbyist-update');
+		$wppb_update = new wppb_PluginUpdateChecker( 'http://updatemetadata.cozmoslabs.com/?localSerialNumber='.$localSerial.'&uniqueproduct=RMPBH', __FILE__, 'profile-builder-hobbyist-update' );
 	}
 }
 
@@ -109,10 +113,10 @@ if (file_exists ($wppb_premiumUpdate.'update-checker.php')){
 function wppb_init_translation(){
 	load_plugin_textdomain( 'profilebuilder', false, basename( dirname( __FILE__ ) ) . '/translation/' ); 
 }
-add_action('init', 'wppb_init_translation');
+add_action( 'init', 'wppb_init_translation' );
 
 /**
- * Instantiate Classe
+ * Instantiate Class
  *
  *
  */
