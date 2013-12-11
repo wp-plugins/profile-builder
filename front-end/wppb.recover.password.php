@@ -4,11 +4,11 @@ function wppb_check_for_unapproved_user($data, $what){
 	$retMessage = '';
 	$messageNo = '';
 	
-	$wppb_generalSettings = get_option('wppb_general_settings');
+	$wppb_generalSettings = get_option( 'wppb_general_settings' );
 	
-	if($wppb_generalSettings['adminApproval'] == 'yes'){
+	if( $wppb_generalSettings['adminApproval'] == 'yes' ){
 	
-		if ($what == 'user_email'){
+		if ( $what == 'user_email' ){
 			require_once(ABSPATH . WPINC . '/ms-functions.php');
 			$userID = get_user_id_from_string( $data );
 		
@@ -18,7 +18,7 @@ function wppb_check_for_unapproved_user($data, $what){
 		}
 		
 
-		if (wp_get_object_terms( $userID, 'user_status' )){
+		if ( wp_get_object_terms( $userID, 'user_status' ) ){
 			$retMessage = '<strong>'. __('ERROR', 'profilebuilder') . '</strong>: ' . __('Your account has to be confirmed by an administrator before you can use the "Password Reset" feature.', 'profilebuilder');
 			$retMessage = apply_filters('wppb_recover_password_unapporved_user', $retMessage);
 			
@@ -28,6 +28,23 @@ function wppb_check_for_unapproved_user($data, $what){
 	}
 	
 	return $retArray = array(0 => $retMessage, 1 => $messageNo);
+}
+
+function wppb_retrieve_activation_key( $requestedUserLogin ){
+	global $wpdb;
+
+	$wpdb->get_var( $wpdb->prepare( "SELECT user_activation_key FROM $wpdb->users WHERE user_login = %s", $requestedUserLogin ) );
+	if ( empty($key) ) {
+
+		// Generate something random for a key...
+		$key = wp_generate_password( 20, false );
+		do_action('wppb_retrieve_password_key', $requestedUserLogin, $key);
+		
+		// Now insert the new md5 key into the db
+		$wpdb->update($wpdb->users, array('user_activation_key' => $key), array('user_login' => $requestedUserLogin));
+	}
+	
+	return $key;
 }
 
 
@@ -70,8 +87,11 @@ function wppb_front_end_password_recovery(){
 					$requestedUserLogin = $query[0]->user_login; 
 					$requestedUserEmail = $query[0]->user_email; 
 					
+					//search if there is already an activation key present, if not create one
+					$key = wppb_retrieve_activation_key( $requestedUserLogin );
+					
 					//send primary email message
-					$recoverPasswordFilterArray['userMailMessage1']  = sprintf(__('Someone requested that the password be reset for the following account: <b>%1$s</b><br/>If this was a mistake, just ignore this email and nothing will happen.<br/>To reset your password, visit the following link:%2$s', 'profilebuilder'), $requestedUserLogin, '<a href="'.add_query_arg( array( 'loginName' => $user_login, 'key' => $key ), wppb_curpageurl() ).'">'.add_query_arg( array( 'loginName' => $user_login, 'key' => $key ), wppb_curpageurl() ).'</a>');
+					$recoverPasswordFilterArray['userMailMessage1']  = sprintf(__('Someone requested that the password be reset for the following account: <b>%1$s</b><br/>If this was a mistake, just ignore this email and nothing will happen.<br/>To reset your password, visit the following link:%2$s', 'profilebuilder'), $requestedUserLogin, '<a href="'.add_query_arg( array( 'loginName' => $requestedUserLogin, 'key' => $key ), wppb_curpageurl() ).'">'.add_query_arg( array( 'loginName' => $requestedUserLogin, 'key' => $key ), wppb_curpageurl() ).'</a>');
 					$recoverPasswordFilterArray['userMailMessage1']  = apply_filters('wppb_recover_password_message_content_sent_to_user1', $recoverPasswordFilterArray['userMailMessage1'], $requestedUserID, $requestedUserLogin);
 					
 					$recoverPasswordFilterArray['userMailMessageTitle1'] = sprintf(__('Password Reset Feature from "%1$s"', 'profilebuilder'), $blogname = wp_specialchars_decode(get_option('blogname'), ENT_QUOTES));
@@ -118,16 +138,7 @@ function wppb_front_end_password_recovery(){
 					$requestedUserEmail = $query[0]->user_email; 
 					
 					//search if there is already an activation key present, if not create one
-					$key = $wpdb->get_var( $wpdb->prepare( "SELECT user_activation_key FROM $wpdb->users WHERE user_login = %s", $requestedUserLogin ) );
-					if ( empty($key) ) {
-					
-						// Generate something random for a key...
-						$key = wp_generate_password( 20, false );
-						do_action('wppb_retrieve_password_key', $requestedUserLogin, $key);
-						
-						// Now insert the new md5 key into the db
-						$wpdb->update($wpdb->users, array('user_activation_key' => $key), array('user_login' => $requestedUserLogin));
-					}
+					$key = wppb_retrieve_activation_key( $requestedUserLogin );
 
 					//send primary email message
 					$recoverPasswordFilterArray['userMailMessage1']  = sprintf(__('Someone requested that the password be reset for the following account: <b>%1$s</b><br/>If this was a mistake, just ignore this email and nothing will happen.<br/>To reset your password, visit the following link:%2$s', 'profilebuilder'), $requestedUserLogin, '<a href="'.add_query_arg( array( 'loginName' => $requestedUserLogin, 'key' => $key ), wppb_curpageurl() ).'">'.add_query_arg( array( 'loginName' => $requestedUserLogin, 'key' => $key ), wppb_curpageurl() ).'</a>');
@@ -175,29 +186,29 @@ function wppb_front_end_password_recovery(){
 			$user_info = get_userdata($userID);
 
 			//send secondary mail to the user containing the username and the new password
-			$recoverPasswordFilterArray['userMailMessage2']  = sprintf(__('You have successfully reset your password to: %1$s', 'profilebuilder'), $new_pass);
-			$recoverPasswordFilterArray['userMailMessage2']  = apply_filters('wppb_recover_password_message_content_sent_to_user2', $recoverPasswordFilterArray['userMailMessage2'], $loginName);
+			$recoverPasswordFilterArray['userMailMessage2']  = sprintf( __( 'You have successfully reset your password to: %1$s', 'profilebuilder' ), $new_pass );
+			$recoverPasswordFilterArray['userMailMessage2']  = apply_filters( 'wppb_recover_password_message_content_sent_to_user2', $recoverPasswordFilterArray['userMailMessage2'], $loginName );
 			
-			$recoverPasswordFilterArray['userMailMessageTitle2'] = sprintf(__('Password Successfully Reset for %1$s on "%2$s"', 'profilebuilder'), $user_info->user_login, $blogname = wp_specialchars_decode(get_option('blogname'), ENT_QUOTES));
-			$recoverPasswordFilterArray['userMailMessageTitle2'] = apply_filters('wppb_recover_password_message_title_sent_to_user2', $recoverPasswordFilterArray['userMailMessageTitle2']);
+			$recoverPasswordFilterArray['userMailMessageTitle2'] = sprintf( __('Password Successfully Reset for %1$s on "%2$s"', 'profilebuilder' ), $user_info->user_login, $blogname = wp_specialchars_decode( get_option('blogname'), ENT_QUOTES ) );
+			$recoverPasswordFilterArray['userMailMessageTitle2'] = apply_filters( 'wppb_recover_password_message_title_sent_to_user2', $recoverPasswordFilterArray['userMailMessageTitle2'] );
 			
 			//we add this filter to enable html encoding
-			add_filter('wp_mail_content_type',create_function('', 'return "text/html"; '));
+			add_filter( 'wp_mail_content_type',create_function( '', 'return "text/html"; ') );
 			//send mail to the user notifying him of the reset request
-			if (trim($recoverPasswordFilterArray['userMailMessageTitle2']) != '')
-				wp_mail($user_info->user_email, $recoverPasswordFilterArray['userMailMessageTitle2'], $recoverPasswordFilterArray['userMailMessage2']);
+			if ( trim( $recoverPasswordFilterArray['userMailMessageTitle2'] ) != '' )
+				wp_mail( $user_info->user_email, $recoverPasswordFilterArray['userMailMessageTitle2'], $recoverPasswordFilterArray['userMailMessage2'] );
 			
 			//send email to admin
-			$recoverPasswordFilterArray['adminMailMessage']  = sprintf(__('%1$s has requested a password change via the password reset feature.<br/>His/her new password is:%2$s', 'profilebuilder'), $user_info->user_login, $_POST['passw1']);
-			$recoverPasswordFilterArray['adminMailMessage'] = apply_filters('wppb_recover_password_message_content_sent_to_admin', $recoverPasswordFilterArray['adminMailMessage']);
+			$recoverPasswordFilterArray['adminMailMessage']  = sprintf( __( '%1$s has requested a password change via the password reset feature.<br/>His/her new password is:%2$s', 'profilebuilder' ), $user_info->user_login, $_POST['passw1'] );
+			$recoverPasswordFilterArray['adminMailMessage'] = apply_filters( 'wppb_recover_password_message_content_sent_to_admin', $recoverPasswordFilterArray['adminMailMessage'] );
 
-			$recoverPasswordFilterArray['adminMailMessageTitle'] = sprintf(__('Password Successfully Reset for %1$s on "%2$s"', 'profilebuilder'), $user_info->user_login, $blogname = wp_specialchars_decode(get_option('blogname'), ENT_QUOTES));
-			$recoverPasswordFilterArray['adminMailMessageTitle'] = apply_filters('wppb_recover_password_message_title_sent_to_admin', $recoverPasswordFilterArray['adminMailMessageTitle']);
+			$recoverPasswordFilterArray['adminMailMessageTitle'] = sprintf( __( 'Password Successfully Reset for %1$s on "%2$s"', 'profilebuilder' ), $user_info->user_login, $blogname = wp_specialchars_decode( get_option('blogname'), ENT_QUOTES ) );
+			$recoverPasswordFilterArray['adminMailMessageTitle'] = apply_filters( 'wppb_recover_password_message_title_sent_to_admin', $recoverPasswordFilterArray['adminMailMessageTitle'] );
 			
 			
 			//we disable the feature to send the admin a notification mail but can be still used using filters
 			$recoverPasswordFilterArray['adminMailMessageTitle'] = '';
-			$recoverPasswordFilterArray['adminMailMessageTitle'] = apply_filters('wppb_recover_password_message_title_sent_to_admin', $recoverPasswordFilterArray['adminMailMessageTitle']);
+			$recoverPasswordFilterArray['adminMailMessageTitle'] = apply_filters( 'wppb_recover_password_message_title_sent_to_admin', $recoverPasswordFilterArray['adminMailMessageTitle'] );
 			
 			//we add this filter to enable html encoding
 			add_filter('wp_mail_content_type',create_function('', 'return "text/html"; '));
