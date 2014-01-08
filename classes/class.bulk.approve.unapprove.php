@@ -106,6 +106,26 @@ class wpp_list_approved_unapproved_users extends WP_List_Table {
      * @param array $item A singular item (one full row's worth of data)
      * @return string Text to be placed inside the column <td>
      **************************************************************************/
+	function wppb_get_edit_user_link( $user_id = null ) {
+        if ( ! $user_id )
+			$user_id = get_current_user_id();
+
+		if ( empty( $user_id ) || ! current_user_can( 'edit_user', $user_id ) )
+			return '';
+	
+		$user = get_userdata( $user_id );
+	
+		if ( ! $user )
+			return '';
+	
+		if ( get_current_user_id() == $user->ID )
+			$link = get_edit_profile_url( $user->ID );
+		else
+			$link = add_query_arg( 'user_id', $user->ID, self_admin_url( 'user-edit.php' ) );
+	
+		return apply_filters( 'wppb_get_edit_user_link', $link, $user->ID );
+	} 
+	 
     function column_username($item){
 		global $current_user;
 		
@@ -114,7 +134,7 @@ class wpp_list_approved_unapproved_users extends WP_List_Table {
 		$currentUser =  wp_get_current_user();
 		$wppb_nonce = wp_create_nonce( '_nonce_'.$current_user->ID.$user->ID);
 		
-		$edit_link = esc_url( add_query_arg( 'wp_http_referer', urlencode( stripslashes( $_SERVER['REQUEST_URI'] ) ), get_edit_user_link( $user->ID ) ) );
+		$edit_link = esc_url( add_query_arg( 'wp_http_referer', urlencode( stripslashes( $_SERVER['REQUEST_URI'] ) ), $this->wppb_get_edit_user_link( $user->ID ) ) );
 		
 		$actions['remove'] = sprintf('<a class=\'edit_view\' href="%s">'. __('View or Edit', 'profilebuilder') .'</a>', $edit_link);
 		
@@ -455,7 +475,7 @@ class wpp_list_approved_unapproved_users extends WP_List_Table {
  * Now we just need to define an admin page.
  */
 function wppb_add_au_submenu_page() {
-	if (is_multisite()){
+	if ( is_multisite() ){
 		add_submenu_page( 'users.php', 'Admin Approval', 'Admin Approval', 'manage_options', 'admin_approval', 'wppb_approved_unapproved_users_custom_menu_page' );
 		remove_submenu_page( 'users.php', 'admin_approval' ); //hide the page in the admin menu
 	
