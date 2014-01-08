@@ -5,20 +5,14 @@ function wppb_check_for_unapproved_user($data, $what){
 	$messageNo = '';
 	
 	$wppb_generalSettings = get_option( 'wppb_general_settings' );
-	
 	if( $wppb_generalSettings['adminApproval'] == 'yes' ){
-	
-		if ( $what == 'user_email' ){
-			require_once(ABSPATH . WPINC . '/ms-functions.php');
-			$userID = get_user_id_from_string( $data );
-		
-		}else{
-			$user = get_user_by('login', $data);
-			$userID = $user->ID;
-		}
-		
+		if ( $what == 'user_email' )
+			$user = get_user_by( 'email', $data );
+		else
+			$user = get_user_by( 'login', $data );
 
-		if ( wp_get_object_terms( $userID, 'user_status' ) ){
+
+		if ( wp_get_object_terms( $user->data->ID, 'user_status' ) ){
 			$retMessage = '<strong>'. __('ERROR', 'profilebuilder') . '</strong>: ' . __('Your account has to be confirmed by an administrator before you can use the "Password Reset" feature.', 'profilebuilder');
 			$retMessage = apply_filters('wppb_recover_password_unapporved_user', $retMessage);
 			
@@ -27,7 +21,7 @@ function wppb_check_for_unapproved_user($data, $what){
 		}
 	}
 	
-	return $retArray = array(0 => $retMessage, 1 => $messageNo);
+	return array(0 => $retMessage, 1 => $messageNo);
 }
 
 function wppb_retrieve_activation_key( $requestedUserLogin ){
