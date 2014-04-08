@@ -11,7 +11,7 @@ function wppb_signon(){
 	$wppb_generalSettings = get_option('wppb_general_settings');
 
 	if ( 'POST' == $_SERVER['REQUEST_METHOD'] && !empty( $_POST['action'] ) && $_POST['action'] == 'log-in' && wp_verify_nonce($_POST['login_nonce_field'],'verify_true_login') && ($_POST['formName'] == 'login') ){
-		$remember = ( ( isset( $_POST['remember-me'] ) && trim( $_POST['remember-me'] != '' ) ) ? trim( $_POST['remember-me'] ) : false );
+		$remember = ( ( isset( $_POST['remember-me'] ) && trim( $_POST['remember-me'] != '' ) ) ? true : false );
 		
 		// if this setting is active, the posted username is, in fact the user's email
 		if ( isset( $wppb_generalSettings['loginWith'] ) && ( $wppb_generalSettings['loginWith'] == 'email' ) ){

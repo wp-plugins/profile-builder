@@ -221,54 +221,43 @@ class wpp_list_unfonfirmed_email_table extends WP_List_Table {
 		echo "<script type=\"text/javascript\">confirmECActionBulk( '".$url."', '".$message."' )</script>";
 	}	
 
-
-	 
     function wppb_process_bulk_action() {
 		global $current_user;
 		global $wpdb;
 		
 		if ( current_user_can( 'delete_users' ) ){
-			$iterator = 0;
-			$results = $wpdb->get_results("SELECT * FROM ".$wpdb->prefix."signups WHERE active = 0");		
-		
-			//Detect when a bulk action is being triggered...
 			if( 'delete' === $this->current_action() ) {
-				foreach ( $results as $result ){
-					if ( in_array( (string)$iterator, $_GET['user'] ) ){
-						$sql_result = $wpdb->delete( $wpdb->prefix.'signups', array( 'user_login' => $result->user_login, 'user_email' => $result->user_email ) );
-						if ( !$sql_result )
-							$this->wppb_process_bulk_action_message( sprintf( __( "%s couldn't be deleted", "profilebuilder" ), $result->user_login ), get_bloginfo('url').'/wp-admin/users.php?page=unconfirmed_emails' );
-					}
-					$iterator++;
+				foreach ( $_GET['user'] as $user ){
+					$sql_result = $wpdb->delete( $wpdb->prefix.'signups', array( 'user_login' => $result->user_login, 'user_email' => $result->user_email ) );
+					if ( !$sql_result )
+						$this->wppb_process_bulk_action_message( sprintf( __( "%s couldn't be deleted", "profilebuilder" ), $result->user_login ), get_bloginfo('url').'/wp-admin/users.php?page=unconfirmed_emails' );
+
 				}
 				
 				$this->wppb_process_bulk_action_message( __( 'All users have been successfully deleted', 'profilebuilder' ), get_bloginfo('url').'/wp-admin/users.php?page=unconfirmed_emails' );
 			
 			}elseif( 'confirm' === $this->current_action() ) {
-				foreach ( $results as $result ){
-					if ( in_array( (string)$iterator, $_GET['user'] ) )
-						wppb_manual_activate_signup( $result->activation_key );
-
-					$iterator++;
+				foreach ( $_GET['user'] as $user ){
+					$sql_result = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM " . $wpdb->prefix . "signups WHERE user_email = %s", $user ), ARRAY_A );
+					
+					if ( $sql_result )
+						wppb_manual_activate_signup( $sql_result->activation_key );
 				}
 
 				$this->wppb_process_bulk_action_message( __( 'The selected users have been activated', 'profilebuilder' ), get_bloginfo('url').'/wp-admin/users.php?page=unconfirmed_emails' );
 				
 			}elseif( 'resend' === $this->current_action() ) {
-				foreach ( $results as $result ){
-					if (in_array((string)$iterator, $_GET['user'])){
-						$sql_result = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM " . $wpdb->prefix . "signups WHERE user_login = %s AND user_email = %s", $result->user_login, $result->user_email ), ARRAY_A );
-						
-						if ( $sql_result )
-							wppb_signup_user_notification( esc_sql( $sql_result['user_login'] ), esc_sql( $sql_result['user_email'] ), $sql_result['activation_key'], esc_sql( $sql_result['meta'] ) );
-					}
+				foreach ( $_GET['user'] as $user ){
+					$sql_result = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM " . $wpdb->prefix . "signups WHERE user_email = %s", $user ), ARRAY_A );
 					
-					$iterator++;
+					if ( $sql_result )
+						wppb_signup_user_notification( esc_sql( $sql_result['user_login'] ), esc_sql( $sql_result['user_email'] ), $sql_result['activation_key'], $sql_result['meta'] );
+
 				}
 
 				$this->wppb_process_bulk_action_message( __( 'The selected users have had their activation emails resent', 'profilebuilder' ), get_bloginfo('url').'/wp-admin/users.php?page=unconfirmed_emails' );
 			}
-			
+
 		}else
 			$this->wppb_process_bulk_action_message( __( "Sorry, but you don't have permission to do that!", "profilebuilder" ), get_bloginfo('url').'/wp-admin/' );
     }
@@ -297,7 +286,7 @@ class wpp_list_unfonfirmed_email_table extends WP_List_Table {
 		
 		$results = $wpdb->get_results("SELECT * FROM ".$wpdb->prefix."signups WHERE active = 0");
 		foreach ($results as $result){
-			$tempArray = array('ID' => $iterator, 'username' => $result->user_login, 'email' => $result->user_email, 'registered'  => $result->registered);
+			$tempArray = array('ID' => $result->user_email, 'username' => $result->user_login, 'email' => $result->user_email, 'registered'  => $result->registered);
 
 			array_push($this->dataArray, $tempArray);
 			$iterator++;
