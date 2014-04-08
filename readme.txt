@@ -1,12 +1,12 @@
 === Profile Builder - front-end user registration, login and edit profile === 
 
-Contributors: reflectionmedia, barinagabriel
+Contributors: reflectionmedia, barinagabriel, sareiodata
 Donate link: http://www.cozmoslabs.com/wordpress-profile-builder/
 Tags: registration, user profile, user registration, custom field registration, customize profile, user fields, extra user fields, builder, profile builder, custom user profile, user profile page, edit profile, custom registration, custom registration form, custom registration page, registration page, user custom fields, user listing, front-end user listing, user login, user registration form, front-end login, front-end register, front-end registration, front-end edit profile, front-end user registration, custom redirects, user email, avatar upload
 
 Requires at least: 3.1
-Tested up to: 3.6.1
-Stable tag: 1.1.57
+Tested up to: 3.8.1
+Stable tag: 1.1.59
 
 Simple to use profile plugin allowing front-end login, user registration and edit profile by using shortcodes.
  
@@ -94,6 +94,15 @@ This plugin only adds/removes user fields in the front-end. The default profile 
 7. Password Recovery Page
 
 == Changelog ==
+= 1.1.59 =
+Improved some of the queries meant to select users at certain points, hidden input value on front-end (Pro version) and the remember me checkbox on the login page.
+
+= 1.1.58 =
+Small changes to the index.php file
+
+= 1.1.57 =
+Fixed some bugs which only appeared in WPMU sites.
+
 = 1.1.57 =
 Minor changes to the readme.txt file.
 

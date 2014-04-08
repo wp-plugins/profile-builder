@@ -55,11 +55,11 @@ function wppb_add_pending_users_header_script(){
 		}
 	
 		// script to create a confirmation box for the user upon approving/unapproving a user
-		function confirmECAction( URL, todo, userID, actionText ) {
+		function confirmECAction( URL, todo, user_email, actionText ) {
 			actionText = '<?php _e( 'Do you want to', 'profilebuilder' ); ?>' + ' ' + actionText;
 		
 			if (confirm(actionText)) {
-				jQuery.post( ajaxurl ,  { action:"wppb_handle_email_confirmation_cases", URL:URL, todo:todo, userID:userID}, function(response) {	
+				jQuery.post( ajaxurl ,  { action:"wppb_handle_email_confirmation_cases", URL:URL, todo:todo, user_email:user_email}, function(response) {	
 					if (jQuery.trim(response) == 'ok')
 						window.location=URL;
 						
@@ -73,12 +73,10 @@ function wppb_add_pending_users_header_script(){
 }
 
 function wppb_get_unconfirmed_email_number(){
-	global $wpdb;	
-	
-	$result = $wpdb->get_results("SELECT * FROM ".$wpdb->prefix."signups WHERE active = 0");
+	global $wpdb;
 
 	header( 'Content-type: application/json' );
-	die( json_encode( array( 'number' => (int)$wpdb->num_rows ) ) );	
+	die( json_encode( array( 'number' => (int)$wpdb->get_var( "SELECT COUNT(*) FROM ".$wpdb->prefix."signups WHERE active = 0" ) ) ) );
 }
 	
 
@@ -89,47 +87,36 @@ function wppb_handle_email_confirmation_cases() {
 	//die($current_user);
 	$url = trim($_POST['URL']);
 	$todo = trim($_POST['todo']);
-	$userID = trim($_POST['userID']);
+	$user_email = trim($_POST['user_email']);
 	
-	if (current_user_can('delete_users'))
-		if ( ( $todo != '' ) && ( $userID != '' ) ){
+	if ( current_user_can( 'delete_users' ) )
+		if ( ( $todo != '' ) && ( $user_email != '' ) ){
+
+			$results = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM " . $wpdb->prefix . "signups WHERE active = 0 AND user_email = %s", $user_email ) );
 			
-			$iterator = 0;
-			$results = $wpdb->get_results( "SELECT * FROM ".$wpdb->prefix."signups WHERE active = 0" );
-		
-			if ( $todo == 'delete' ){
-				foreach ( $results as $result ){
-					if ( (string)$iterator === $userID ){
-						$sql_result = $wpdb->delete( $wpdb->prefix.'signups', array( 'user_login' => $result->user_login, 'user_email' => $result->user_email ) );
-						if ( $sql_result )
-							die( 'ok' );
-							
-						else
-							die( __( "The selected user couldn't be deleted", "profilebuilder" ) );
-					}
+			if ( count( $results ) != 1 )
+				die( __("There was an error performing that action!", "profilebuilder") );
+				
+			elseif ( $todo == 'delete' ){
+				$sql_result = $wpdb->delete( $wpdb->prefix.'signups', array( 'user_login' => $results[0]->user_login, 'user_email' => $results[0]->user_email ) );
+				if ( $sql_result )
+					die( 'ok' );
 					
-					$iterator++;
-				}
+				else
+					die( __( "The selected user couldn't be deleted", "profilebuilder" ) );
+
 			}elseif ( $todo == 'confirm' ){
-				foreach ( $results as $result ){
-					if ( (string)$iterator === $userID )
-						die( wppb_manual_activate_signup( $result->activation_key ) );
-					
-					$iterator++;
-				}
+				die( wppb_manual_activate_signup( $results[0]->activation_key ) );
+
 			}elseif ( $todo == 'resend' ){
-				foreach ( $results as $result ){
-					if ( (string)$iterator === $userID ){
-						$sql_result = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM " . $wpdb->prefix . "signups WHERE user_login = %s AND user_email = %s", $result->user_login, $result->user_email ), ARRAY_A );
-						
-						if ( $sql_result ){
-							wppb_signup_user_notification( esc_sql( $sql_result['user_login'] ), esc_sql( $sql_result['user_email'] ), $sql_result['activation_key'], $sql_result['meta'] );
-							
-							die( __( "Email notification resent to user", "profilebuilder" ) );
-						}
-					}
-					$iterator++;
+				$sql_result = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM " . $wpdb->prefix . "signups WHERE user_login = %s AND user_email = %s", $results[0]->user_login, $results[0]->user_email ), ARRAY_A );
+				
+				if ( $sql_result ){
+					wppb_signup_user_notification( esc_sql( $sql_result['user_login'] ), esc_sql( $sql_result['user_email'] ), $sql_result['activation_key'], $sql_result['meta'] );
+					
+					die( __( "Email notification resent to user", "profilebuilder" ) );
 				}
+				
 			}
 		}
 

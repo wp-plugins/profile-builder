@@ -178,7 +178,7 @@ function wppb_activate_signup( $key ) {
 
 	if ( $signup->active )
 		if ( empty( $signup->domain ) )
-			return $activateUserErrorMessage2 = apply_filters('wppb_register_activate_user_error_message2', '<p class="error">'. __('The user is already active!', 'profilebuilder') .'</p>');
+			return $activateUserErrorMessage2 = apply_filters('wppb_register_activate_user_error_message2', '<p class="error">'. __('This username is now active!', 'profilebuilder') .'</p>');
 
 	$meta = unserialize( $signup->meta );
 	
@@ -198,15 +198,12 @@ function wppb_activate_signup( $key ) {
 		return $activateUserErrorMessage4 = apply_filters('wppb_register_activate_user_error_message4', '<p class="error">'. __('Could not create user!', 'profilebuilder') .'</p>');
 		
 	elseif ( isset( $user_already_exists ) )
-		return $activateUserErrorMessage5 = apply_filters('wppb_register_activate_user_error_message5', '<p class="error">'. __('That username is already activated!', 'profilebuilder') .'</p>');
+		return $activateUserErrorMessage5 = apply_filters('wppb_register_activate_user_error_message5', '<p class="error">'. __('This username is already activated!', 'profilebuilder') .'</p>');
 	
 	else{
 		$now = current_time('mysql', true);
 		
-		if ( is_multisite() )
-			$retVal = $wpdb->update( $wpdb->signups, array('active' => 1, 'activated' => $now), array('activation_key' => $key) );
-		else
-			$retVal = $wpdb->update( $wpdb->prefix.'signups', array('active' => 1, 'activated' => $now), array('activation_key' => $key) );
+		$retVal = ( is_multisite() ? $wpdb->update( $wpdb->signups, array('active' => 1, 'activated' => $now), array('activation_key' => $key) ) : $wpdb->update( $wpdb->prefix.'signups', array('active' => 1, 'activated' => $now), array('activation_key' => $key) ) );
 
 		wppb_add_meta_to_user_on_activation($user_id, '', $meta);
 		
