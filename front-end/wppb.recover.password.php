@@ -164,7 +164,7 @@ function wppb_front_end_password_recovery(){
 		
 	}
 	/* If the user used the correct key-code, update his/her password */
-	elseif ( 'POST' == $_SERVER['REQUEST_METHOD'] && !empty( $_POST['action2'] ) && $_POST['action2'] == 'recover_password2' && wp_verify_nonce($_POST['password_recovery_nonce_field2'],'verify_true_password_recovery2') ) {
+	elseif ( 'POST' == $_SERVER['REQUEST_METHOD'] && !empty( $_POST['action2'] ) && $_POST['action2'] == 'recover_password2' && wp_verify_nonce( $_POST['password_recovery_nonce_field2'], 'verify_true_password_recovery2_'.$_POST['userData'] ) ) {
 		if (($_POST['passw1'] == $_POST['passw2']) && (!empty($_POST['passw1']) && !empty($_POST['passw2']))){
 			$message2 = __('Your password has been successfully changed!', 'profilebuilder');
 			$messageNo2 = '1';
@@ -262,7 +262,7 @@ function wppb_front_end_password_recovery(){
 									<input name="recover_password2" type="submit" id="recover_password2" class="submit button" value="<?php echo apply_filters('wppb_recover_password_button_name1', $button_name); ?>" />
 									<input name="action2" type="hidden" id="action2" value="recover_password2" />
 								</p><!-- .form-submit -->
-								<?php wp_nonce_field('verify_true_password_recovery2', 'password_recovery_nonce_field2'); ?>
+								<?php wp_nonce_field( 'verify_true_password_recovery2_'.$user->ID, 'password_recovery_nonce_field2' ); ?>
 							</form><!-- #recover_password -->
 <?php
 						}elseif ($messageNo2 == '1'){
@@ -293,7 +293,7 @@ function wppb_front_end_password_recovery(){
 								<input name="recover_password2" type="submit" id="recover_password2" class="submit button" value="<?php echo apply_filters('wppb_recover_password_button_name2', $button_name); ?>" />
 								<input name="action2" type="hidden" id="action2" value="recover_password2" />
 							</p><!-- .form-submit -->
-							<?php wp_nonce_field('verify_true_password_recovery2', 'password_recovery_nonce_field2'); ?>
+							<?php wp_nonce_field( 'verify_true_password_recovery2_'.$user->ID, 'password_recovery_nonce_field2' ); ?>
 						</form><!-- #recover_password -->
 <?php
 					}

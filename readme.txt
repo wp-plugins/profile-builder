@@ -6,7 +6,7 @@ Tags: registration, user profile, user registration, custom field registration, 
 
 Requires at least: 3.1
 Tested up to: 3.8.1
-Stable tag: 1.1.59
+Stable tag: 1.1.60
 
 Simple to use profile plugin allowing front-end login, user registration and edit profile by using shortcodes.
  
@@ -94,6 +94,9 @@ This plugin only adds/removes user fields in the front-end. The default profile 
 7. Password Recovery Page
 
 == Changelog ==
+= 1.1.60 =
+Emergency security update regarding the password recovery feature.
+
 = 1.1.59 =
 Improved some of the queries meant to select users at certain points, hidden input value on front-end (Pro version) and the remember me checkbox on the login page.
 
