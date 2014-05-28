@@ -6,7 +6,7 @@ Tags: registration, user profile, user registration, custom field registration, 
 
 Requires at least: 3.1
 Tested up to: 3.8.1
-Stable tag: 1.1.60
+Stable tag: 1.1.62
 
 Simple to use profile plugin allowing front-end login, user registration and edit profile by using shortcodes.
  
@@ -40,7 +40,7 @@ Users with administrator rights have access to the following features:
 
 The [Pro version](http://www.cozmoslabs.com/wordpress-profile-builder/) has the following extra features:
 
-* Create Extra User Fields (Heading, Input, Checkbox, Agree to Terms Checkbox, Radio Buttons, DatePicker, Textareas, Upload Fields, Selects, Country Selects, Timezone Selects, Avatar Upload)
+* Create Extra User Fields (Heading, Input, Checkbox, Agree to Terms Checkbox, Radio Buttons, DatePicker, Textareas, Upload fields, Selects, Country Selects, Timezone selects, Avatar Upload)
 * Add Avatar Upload for users
 * Front-end User Listing (sorting included)
 * Custom Redirects
@@ -94,6 +94,12 @@ This plugin only adds/removes user fields in the front-end. The default profile 
 7. Password Recovery Page
 
 == Changelog ==
+= 1.1.62 =
+Minor changes to the readme file.
+
+= 1.1.61 =
+Fixed a few notices in the plugin.
+
 = 1.1.60 =
 Emergency security update regarding the password recovery feature.
 
@@ -131,14 +137,14 @@ Minor changes in the plugin's readme file.
 Improved the userlisting feature in the Pro version.
 
 = 1.1.49 =
-Fixed "Edit Profile" bug and improved the "Admin Approval" default listing (in the paid versions).
+Fixed "Edit Profile" bug and impred the "Admin Approval" default listing (in the paid versions).
 
 = 1.1.48 =
 Improved a few existing features (like WPML compatibility), and added a new feature: login with email address.
 
 = 1.1.47 =
 Improved the "Email Confirmation" feature and a few other functions.
-Added new options for the "Userlisting" feature (available in the Pro version of Profile Builder).
+Added new options for the "Userlisting" feature (available in the Pro version of Profile Buildeer).
 Added translations: persian (thanks to Ali Mirzaei, info@alimir.ir)
 
 = 1.1.46 =
@@ -249,7 +255,7 @@ Added translations:
 *updated the english translation
 
 = 1.1.4 =
-Added the possibility to set up the default user-role on registration; by adding the role="role_name" argument (e.g. [wppb-register role="editor"]) the role is automatically set to all new users. 
+Added the possibility to set up the default user-role on registration; by adding the role="role_name" argument (e.g. [wppb-register role="editor"]) the role is automaticly set to all new users. 
 Added translations:
 *norvegian (thanks to Havard Ulvin, haavard@ulvin.no)
 *dutch (thanks to Pascal Frencken, pascal.frencken@dedeelgaard.nl)
@@ -266,7 +272,7 @@ Added translations to:
 *french(thanks to Sebastien CEZARD, sebastiencezard@orange.fr)
 
 Bugfixes/enhancements:
-*login page now automatically refreshes itself after 1 second, a little less annoying than clicking the refresh button manually
+*login page now automaticly refreshes itself after 1 second, a little less annoying than clicking the refresh button manually
 *fixed bug where translation didn't load like it should
 *added new user notification: the admin will now know about every new subscriber
 *fixed issue where adding one or more spaces in the checkbox options list, the user can't save values.
