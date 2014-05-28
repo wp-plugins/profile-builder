@@ -94,7 +94,7 @@ This plugin only adds/removes user fields in the front-end. The default profile 
 7. Password Recovery Page
 
 == Changelog ==
-= 1.1.60 =
+= 1.1.61 =
 Fixed a few notices in the plugin.
 
 = 1.1.60 =
