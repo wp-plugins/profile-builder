@@ -88,7 +88,7 @@ function wppb_front_end_password_recovery(){
 					$recoverPasswordFilterArray['userMailMessage1']  = sprintf(__('Someone requested that the password be reset for the following account: <b>%1$s</b><br/>If this was a mistake, just ignore this email and nothing will happen.<br/>To reset your password, visit the following link:%2$s', 'profilebuilder'), $requestedUserLogin, '<a href="'.add_query_arg( array( 'loginName' => $requestedUserLogin, 'key' => $key ), wppb_curpageurl() ).'">'.add_query_arg( array( 'loginName' => $requestedUserLogin, 'key' => $key ), wppb_curpageurl() ).'</a>');
 					$recoverPasswordFilterArray['userMailMessage1']  = apply_filters('wppb_recover_password_message_content_sent_to_user1', $recoverPasswordFilterArray['userMailMessage1'], $requestedUserID, $requestedUserLogin);
 					
-					$recoverPasswordFilterArray['userMailMessageTitle1'] = sprintf(__('Password Reset Feature from "%1$s"', 'profilebuilder'), $blogname = wp_specialchars_decode(get_option('blogname'), ENT_QUOTES));
+					$recoverPasswordFilterArray['userMailMessageTitle1'] = sprintf(__('Password Reset from "%1$s"', 'profilebuilder'), $blogname = wp_specialchars_decode(get_option('blogname'), ENT_QUOTES));
 					$recoverPasswordFilterArray['userMailMessageTitle1'] = apply_filters('wppb_recover_password_message_title_sent_to_user1', $recoverPasswordFilterArray['userMailMessageTitle1']);
 					
 					//we add this filter to enable html encoding
@@ -138,7 +138,7 @@ function wppb_front_end_password_recovery(){
 					$recoverPasswordFilterArray['userMailMessage1']  = sprintf(__('Someone requested that the password be reset for the following account: <b>%1$s</b><br/>If this was a mistake, just ignore this email and nothing will happen.<br/>To reset your password, visit the following link:%2$s', 'profilebuilder'), $requestedUserLogin, '<a href="'.add_query_arg( array( 'loginName' => $requestedUserLogin, 'key' => $key ), wppb_curpageurl() ).'">'.add_query_arg( array( 'loginName' => $requestedUserLogin, 'key' => $key ), wppb_curpageurl() ).'</a>');
 					$recoverPasswordFilterArray['userMailMessage1']  = apply_filters('wppb_recover_password_message_content_sent_to_user1', $recoverPasswordFilterArray['userMailMessage1'], $requestedUserID, $requestedUserLogin);
 					
-					$recoverPasswordFilterArray['userMailMessageTitle1'] = sprintf(__('Password Reset Feature from "%1$s"', 'profilebuilder'), $blogname = wp_specialchars_decode(get_option('blogname'), ENT_QUOTES));
+					$recoverPasswordFilterArray['userMailMessageTitle1'] = sprintf(__('Password Reset from "%1$s"', 'profilebuilder'), $blogname = wp_specialchars_decode(get_option('blogname'), ENT_QUOTES));
 					$recoverPasswordFilterArray['userMailMessageTitle1'] = apply_filters('wppb_recover_password_message_title_sent_to_user1', $recoverPasswordFilterArray['userMailMessageTitle1']);
 					
 					//we add this filter to enable html encoding

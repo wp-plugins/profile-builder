@@ -1,17 +1,15 @@
 <?php
-if( !defined( 'WP_UNINSTALL_PLUGIN' ) )			
+/* if( !defined( 'WP_UNINSTALL_PLUGIN' ) )			
 	exit ();												// If uninstall not called from WordPress exit
 
-/* get all the custom fields' names in one single array */
+// get all the custom fields' names in one single array
 $customFields = get_option('wppb_custom_fields','not_found');
 
 $customFieldNames = array();
 foreach($customFields as $key => $value)
 	array_push($customFieldNames, $value['item_metaName']);
-/* END get all custom fields */
 
-
-/* delete all the custom fields */
+// delete all the custom fields
 global $wpdb;
 $allUserMeta = $wpdb->get_results("SELECT * FROM $wpdb->usermeta");
 
@@ -47,4 +45,4 @@ delete_option( 'userListingSettings' ); 					// Delete the user-listing settings
 delete_option( 'customUserListingSettings' ); 				// Delete the user-listing settings (since 1.1.21)
 delete_option( 'reCaptchaSettings' ); 						// Delete the public and private keys used by the reCAPTCHA addon (since 1.1.42)
 delete_option( 'emailCustomizer' ); 						// Delete the email-customizer settings
-delete_option( 'wppb_version' ); 							// Delete the version number
+delete_option( 'wppb_version' ); 							// Delete the version number */
