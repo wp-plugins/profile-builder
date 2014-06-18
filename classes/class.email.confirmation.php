@@ -228,7 +228,8 @@ class wpp_list_unfonfirmed_email_table extends WP_List_Table {
 		if ( current_user_can( 'delete_users' ) ){
 			if( 'delete' === $this->current_action() ) {
 				foreach ( $_GET['user'] as $user ){
-					$sql_result = $wpdb->delete( $wpdb->prefix.'signups', array( 'user_login' => $result->user_login, 'user_email' => $result->user_email ) );
+					$sql_result = $wpdb->query( $wpdb->prepare( "DELETE FROM ".$wpdb->prefix."signups WHERE user_email = %s", $user ) );
+					
 					if ( !$sql_result )
 						$this->wppb_process_bulk_action_message( sprintf( __( "%s couldn't be deleted", "profilebuilder" ), $result->user_login ), get_bloginfo('url').'/wp-admin/users.php?page=unconfirmed_emails' );
 
