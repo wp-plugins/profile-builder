@@ -506,7 +506,7 @@ function wppb_front_end_profile_info() {
 			foreach ( $wppbFetchArray as $key => $value){
 				switch ($value['item_type']) {
 					case "input":{
-						$_POST[$value['item_type'].$value['id']] = apply_filters('wppb_edit_profile_input_custom_field_'.$value['id'], $_POST[$value['item_type'].$value['id']]);
+						$_POST[$value['item_type'].$value['id']] = apply_filters('wppb_edit_profile_input_custom_field_'.$value['id'].'_check2', $_POST[$value['item_type'].$value['id']]);
 						if (isset($value['item_required'])){
 							if ($value['item_required'] == 'yes'){
 								if (trim($_POST[$value['item_type'].$value['id']]) != '')
@@ -902,7 +902,7 @@ function wppb_front_end_profile_info() {
 					$editProfileFilterArray2['contentName3'] = '
 						<p class="first_name'.$errorVar.'">
 							<label for="first_name">'. __('First Name', 'profilebuilder') .$errorMark.'</label>
-							<input class="text-input" name="first_name" type="text" id="first_name" value="'. get_the_author_meta( 'first_name', $current_user->ID ) .'" />
+							<input class="text-input" name="first_name" type="text" id="first_name" value="'.( isset( $_POST['first_name'] ) ? trim( $_POST['first_name'] ) : get_the_author_meta( 'first_name', $current_user->ID ) ).'" />
 						</p><!-- .first_name -->';
 					$editProfileFilterArray2['contentName3'] = apply_filters('wppb_edit_profile_content_name3', $editProfileFilterArray2['contentName3'], $current_user->ID, $errorVar, $errorMark);	
 				}
@@ -922,7 +922,7 @@ function wppb_front_end_profile_info() {
 					$editProfileFilterArray2['contentName4'] = '
 						<p class="last_name'.$errorVar.'">
 							<label for="last_name">'. __('Last Name', 'profilebuilder') .$errorMark.'</label>
-							<input class="text-input" name="last_name" type="text" id="last_name" value="'. get_the_author_meta( 'last_name', $current_user->ID ) .'" />
+							<input class="text-input" name="last_name" type="text" id="last_name" value="'.( isset( $_POST['last_name'] ) ? trim( $_POST['last_name'] ) : get_the_author_meta( 'last_name', $current_user->ID ) ).'" />
 						</p><!-- .last_name -->';
 					$editProfileFilterArray2['contentName4'] = apply_filters('wppb_edit_profile_content_name4', $editProfileFilterArray2['contentName4'], $current_user->ID);
 				}
@@ -942,7 +942,7 @@ function wppb_front_end_profile_info() {
 					$editProfileFilterArray2['contentName5'] = '
 						<p class="nickname'.$errorVar.'">
 							<label for="nickname">'. __('Nickname', 'profilebuilder') .$errorMark.'</label>
-							<input class="text-input" name="nickname" type="text" id="nickname" value="'. get_the_author_meta( 'nickname', $current_user->ID ) .'" />
+							<input class="text-input" name="nickname" type="text" id="nickname" value="'.( isset( $_POST['nickname'] ) ? trim( $_POST['nickname'] ) : get_the_author_meta( 'nickname', $current_user->ID ) ).'" />
 						</p><!-- .nickname -->';
 					$editProfileFilterArray2['contentName5'] = apply_filters('wppb_edit_profile_content_name5', $editProfileFilterArray2['contentName5'], $current_user->ID, $errorVar, $errorMark);	
 				}
@@ -1014,7 +1014,7 @@ function wppb_front_end_profile_info() {
 						$editProfileFilterArray2['contentInfo2'] = '
 							<p class="form-email'.$errorVar.'">
 								<label for="email">'. __('E-mail', 'profilebuilder') .$errorMark.'</label>
-								<input class="text-input" name="email" type="text" id="email" value="'. get_the_author_meta( 'user_email', $current_user->ID ) .'" />
+								<input class="text-input" name="email" type="text" id="email" value="'.( isset( $_POST['email'] ) ? trim( $_POST['email'] ) : get_the_author_meta( 'user_email', $current_user->ID ) ).'" />
 								<span class="wppb-description-delimiter">'. __('(required)', 'profilebuilder') .'</span>
 							</p><!-- .form-email -->';
 						$editProfileFilterArray2['contentInfo2'] = apply_filters('wppb_edit_profile_content_info2', $editProfileFilterArray2['contentInfo2'], $current_user->ID, $errorVar, $errorMark);
@@ -1034,7 +1034,7 @@ function wppb_front_end_profile_info() {
 					$editProfileFilterArray2['contentInfo3'] = '
 						<p class="form-website'.$errorVar.'">
 							<label for="website">'. __('Website', 'profilebuilder') .$errorMark.'</label>
-							<input class="text-input" name="website" type="text" id="website" value="'. get_the_author_meta( 'user_url', $current_user->ID ) .'" />
+							<input class="text-input" name="website" type="text" id="website" value="'.( isset( $_POST['website'] ) ? trim( $_POST['website'] ) : get_the_author_meta( 'user_url', $current_user->ID ) ).'" />
 						</p><!-- .form-website -->';
 					$editProfileFilterArray2['contentInfo3'] = apply_filters('wppb_edit_profile_content_info3', $editProfileFilterArray2['contentInfo3'], $current_user->ID, $errorVar, $errorMark);
 				}
@@ -1052,7 +1052,7 @@ function wppb_front_end_profile_info() {
 					$editProfileFilterArray2['contentInfo4'] = '
 						<p class="form-aim'.$errorVar.'">
 							<label for="aim">'. __('AIM', 'profilebuilder') .'</label>
-							<input class="text-input" name="aim" type="text" id="aim" value="'. get_the_author_meta( 'aim', $current_user->ID ) .'" />
+							<input class="text-input" name="aim" type="text" id="aim" value="'.( isset( $_POST['aim'] ) ? trim( $_POST['aim'] ) : get_the_author_meta( 'aim', $current_user->ID ) ).'" />
 						</p><!-- .form-aim -->';
 					$editProfileFilterArray2['contentInfo4'] = apply_filters('wppb_edit_profile_content_info4', $editProfileFilterArray2['contentInfo4'], $current_user->ID, $errorVar, $errorMark);
 				}
@@ -1070,7 +1070,7 @@ function wppb_front_end_profile_info() {
 					$editProfileFilterArray2['contentInfo5'] = '
 						<p class="form-yim'.$errorVar.'">
 							<label for="yim">'. __('Yahoo IM', 'profilebuilder') .$errorMark.'</label>
-							<input class="text-input" name="yim" type="text" id="yim" value="'. get_the_author_meta( 'yim', $current_user->ID ) .'" />
+							<input class="text-input" name="yim" type="text" id="yim" value="'.( isset( $_POST['yim'] ) ? trim( $_POST['yim'] ) : get_the_author_meta( 'yim', $current_user->ID ) ).'" />
 						</p><!-- .form-yim -->';
 					$editProfileFilterArray2['contentInfo5'] = apply_filters('wppb_edit_profile_content_info5', $editProfileFilterArray2['contentInfo5'], $current_user->ID, $errorVar, $errorMark);
 				}
@@ -1088,7 +1088,7 @@ function wppb_front_end_profile_info() {
 					$editProfileFilterArray2['contentInfo6'] = '
 						<p class="form-jabber'.$errorVar.'">
 							<label for="jabber">'. __('Jabber / Google Talk', 'profilebuilder') .$errorMark.'</label>
-							<input class="text-input" name="jabber" type="text" id="jabber" value="'. get_the_author_meta( 'jabber', $current_user->ID ) .'" />
+							<input class="text-input" name="jabber" type="text" id="jabber" value="'.( isset( $_POST['jabber'] ) ? trim( $_POST['jabber'] ) : get_the_author_meta( 'jabber', $current_user->ID ) ).'" />
 						</p><!-- .form-jabber -->';
 					$editProfileFilterArray2['contentInfo6'] = apply_filters('wppb_edit_profile_content_info6', $editProfileFilterArray2['contentInfo6'], $current_user->ID, $errorVar, $errorMark);
 				}
@@ -1109,7 +1109,7 @@ function wppb_front_end_profile_info() {
 					$editProfileFilterArray2['aboutYourself2'] = '
 						<p class="form-description'.$errorVar.'">
 							<label for="description">'. __('Biographical Info', 'profilebuilder') .$errorMark.'</label>
-							<textarea class="text-input" name="description" id="description" rows="5" cols="30">'. get_the_author_meta( 'description', $current_user->ID ) .'</textarea>
+							<textarea class="text-input" name="description" id="description" rows="5" cols="30">'.( isset( $_POST['description'] ) ? trim( $_POST['description'] ) : get_the_author_meta( 'description', $current_user->ID ) ).'</textarea>
 						</p><!-- .form-description -->';
 					$editProfileFilterArray2['aboutYourself2'] = apply_filters('wppb_edit_profile_content_about_yourself2', $editProfileFilterArray2['aboutYourself2'], $current_user->ID, $errorVar, $errorMark);
 				}
@@ -1119,12 +1119,12 @@ function wppb_front_end_profile_info() {
 					$editProfileFilterArray2['aboutYourself3'] = '
 						<p class="form-password">
 							<label for="pass1">'. __('New Password', 'profilebuilder') .'</label>
-							<input class="text-input" name="pass1" type="password" id="pass1" />
+							<input class="text-input" name="pass1" type="password" id="pass1" value="'.( isset( $_POST['pass1'] ) ? trim( $_POST['pass1'] ) : '' ).'" autocomplete="off" />
 						</p><!-- .form-password -->
 
 						<p class="form-password'.$errorVar.'">
 							<label for="pass2">'. __('Repeat Password', 'profilebuilder') .$errorMark.'</label>
-							<input class="text-input" name="pass2" type="password" id="pass2" />
+							<input class="text-input" name="pass2" type="password" id="pass2"  value="'.( isset( $_POST['pass2'] ) ? trim( $_POST['pass2'] ) : '' ).'" autocomplete="off" />
 						</p><!-- .form-password -->';
 					$editProfileFilterArray2['aboutYourself3'] = apply_filters('wppb_edit_profile_content_about_yourself3', $editProfileFilterArray2['aboutYourself3'], $errorVar, $errorMark);
 				}
