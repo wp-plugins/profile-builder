@@ -22,7 +22,7 @@ function wppb_save_the_password(){
 		/* Update user password. */
 		if ( !empty($_POST['pass1'] ) && !empty( $_POST['pass2'] ) ){
 			if ( $_POST['pass1'] == $_POST['pass2'] ){
-				wp_update_user( array( 'ID' => $current_user->ID, 'user_pass' => $_POST['pass1'] ) );
+				wp_update_user( array( 'ID' => $current_user->ID, 'user_pass' => esc_html( $_POST['pass1'] ) ) );
 				$changesSaved = 'yes';
 			} else {
 				$changesSavedNoMatchingPass = 'yes'; 
@@ -36,7 +36,7 @@ add_action('init', 'wppb_save_the_password');
 		
 function wppb_front_end_profile_info() {
 
-	global $changesSaved, $changesSavedNoMatchingPass, $changesSavedNoPass, $wppb_shortcode_on_front, $current_user;
+    global $changesSaved, $changesSavedNoMatchingPass, $changesSavedNoPass, $wppb_shortcode_on_front, $current_user;
 
 	$editProfileFilterArray = array();
 	$editProfileFilterArray2 = array();
@@ -86,7 +86,7 @@ function wppb_front_end_profile_info() {
 		$allRequiredCompleted = apply_filters('wppb_edit_profile_all_required_completed', $allRequiredCompleted);
 		
 		if ($wppb_defaultOptions['firstname'] == 'show'){
-			$_POST['first_name'] =  apply_filters('wppb_edit_profile_posted_first_name_check', $_POST['first_name']);
+			$_POST['first_name'] =  apply_filters('wppb_edit_profile_posted_first_name_check', esc_html( $_POST['first_name'] ) );
 			if ($wppb_defaultOptions['firstnameRequired'] == 'yes'){
 				if (isset($_POST['first_name']) && (trim($_POST['first_name']) == '')){
 					$allRequiredCompleted = 'no'; 
@@ -95,7 +95,7 @@ function wppb_front_end_profile_info() {
 		}
 		
 		if ($wppb_defaultOptions['lastname'] == 'show'){
-			$_POST['last_name'] =  apply_filters('wppb_edit_profile_posted_last_name_check', $_POST['last_name']);
+			$_POST['last_name'] =  apply_filters('wppb_edit_profile_posted_last_name_check', esc_html( $_POST['last_name'] ));
 			if ($wppb_defaultOptions['lastnameRequired'] == 'yes'){
 				if (isset($_POST['last_name']) && (trim($_POST['last_name']) == '')){
 					$allRequiredCompleted = 'no';
@@ -104,7 +104,7 @@ function wppb_front_end_profile_info() {
 		}
 		
 		if ($wppb_defaultOptions['nickname'] == 'show'){
-			$_POST['nickname'] =  apply_filters('wppb_edit_profile_posted_nickname_check', $_POST['nickname']);
+			$_POST['nickname'] =  apply_filters('wppb_edit_profile_posted_nickname_check', esc_html( $_POST['nickname'] ) );
 			if ($wppb_defaultOptions['nicknameRequired'] == 'yes'){
 				if (isset($_POST['nickname']) && (trim($_POST['nickname']) == '')){
 					$allRequiredCompleted = 'no';
@@ -113,7 +113,7 @@ function wppb_front_end_profile_info() {
 		}
 			
 		if ($wppb_defaultOptions['dispname'] == 'show'){
-			$_POST['display_name'] =  apply_filters('wppb_edit_profile_posted_display_name_check', $_POST['display_name']);
+			$_POST['display_name'] =  apply_filters('wppb_edit_profile_posted_display_name_check', esc_html( $_POST['display_name'] ));
 			if ($wppb_defaultOptions['dispnameRequired'] == 'yes'){
 				if (isset($_POST['display_name']) && (trim($_POST['display_name']) == '')){
 					$allRequiredCompleted = 'no'; 
@@ -122,7 +122,7 @@ function wppb_front_end_profile_info() {
 		}
 			
 		if ($wppb_defaultOptions['website'] == 'show'){
-			$_POST['website'] =  apply_filters('wppb_edit_profile_posted_website_check', $_POST['website']);
+			$_POST['website'] =  apply_filters('wppb_edit_profile_posted_website_check', esc_html( $_POST['website'] ));
 			if ($wppb_defaultOptions['websiteRequired'] == 'yes'){
 				if (isset($_POST['website']) && (trim($_POST['website']) == '')){
 					$allRequiredCompleted = 'no'; 
@@ -131,7 +131,7 @@ function wppb_front_end_profile_info() {
 		}
 		
 		if ($wppb_defaultOptions['aim'] == 'show'){
-			$_POST['aim'] =  apply_filters('wppb_edit_profile_posted_aim_check', $_POST['aim']);
+			$_POST['aim'] =  apply_filters('wppb_edit_profile_posted_aim_check', esc_html( $_POST['aim'] ) );
 			if ($wppb_defaultOptions['aimRequired'] == 'yes'){
 				if (isset($_POST['aim']) && (trim($_POST['aim']) == '')){
 					$allRequiredCompleted = 'no'; 
@@ -140,7 +140,7 @@ function wppb_front_end_profile_info() {
 		}
 			
 		if ($wppb_defaultOptions['yahoo'] == 'show'){
-			$_POST['yim'] =  apply_filters('wppb_edit_profile_posted_yahoo_check', $_POST['yim']);
+			$_POST['yim'] =  apply_filters('wppb_edit_profile_posted_yahoo_check', esc_html( $_POST['yim'] ));
 			if ($wppb_defaultOptions['yahooRequired'] == 'yes'){
 				if (isset($_POST['yim']) && (trim($_POST['yim']) == '')){
 					$allRequiredCompleted = 'no'; 
@@ -149,7 +149,7 @@ function wppb_front_end_profile_info() {
 		}
 			
 		if ($wppb_defaultOptions['jabber'] == 'show'){
-			$_POST['jabber'] =  apply_filters('wppb_edit_profile_posted_jabber_check', $_POST['jabber']);
+			$_POST['jabber'] =  apply_filters('wppb_edit_profile_posted_jabber_check', esc_html( $_POST['jabber'] ) );
 			if ($wppb_defaultOptions['jabberRequired'] == 'yes'){
 				if (isset($_POST['jabber']) && (trim($_POST['jabber']) == '')){
 					$allRequiredCompleted = 'no'; 
@@ -158,7 +158,7 @@ function wppb_front_end_profile_info() {
 		}
 			
 		if ($wppb_defaultOptions['bio'] == 'show'){
-			$_POST['description'] =  apply_filters('wppb_edit_profile_posted_bio_check', $_POST['description']);
+			$_POST['description'] =  apply_filters('wppb_edit_profile_posted_bio_check', esc_textarea( $_POST['description'] ) );
 			if ($wppb_defaultOptions['bioRequired'] == 'yes'){
 				if (isset($_POST['description']) && (trim($_POST['description']) == '')){
 					$allRequiredCompleted = 'no'; 
@@ -173,7 +173,7 @@ function wppb_front_end_profile_info() {
 			foreach ( $wppbFetchArray as $key => $value){
 				switch ($value['item_type']) {
 					case "input":{
-						$_POST[$value['item_type'].$value['id']] = apply_filters('wppb_edit_profile_input_custom_field_'.$value['id'].'_check', $_POST[$value['item_type'].$value['id']]);
+						$_POST[$value['item_type'].$value['id']] = apply_filters('wppb_edit_profile_input_custom_field_'.$value['id'].'_check', esc_html( $_POST[$value['item_type'].$value['id']] ) );
 						if (isset($value['item_required'])){
 							if ($value['item_required'] == 'yes'){
 								if (trim($_POST[$value['item_type'].$value['id']]) == ''){
@@ -190,7 +190,7 @@ function wppb_front_end_profile_info() {
 						foreach($checkboxValue as $thisValue){
 							$thisValue = str_replace(' ', '#@space@#', $thisValue); //we need to escape the space-codification we sent earlier in the post
 							if (isset($_POST[$thisValue.$value['id']])){
-								$localValue = str_replace('#@space@#', ' ', $_POST[$thisValue.$value['id']]);
+								$localValue = str_replace('#@space@#', ' ', esc_html( $_POST[$thisValue.$value['id']] ) );
 								$checkboxOption = $checkboxOption.$localValue.',';
 							}
 						}
@@ -327,7 +327,7 @@ function wppb_front_end_profile_info() {
 		
 		if (isset($wppb_generalSettings['loginWith']) && ($wppb_generalSettings['loginWith'] == 'email')){
 		}else{
-			$_POST['email'] =  apply_filters('wppb_edit_profile_posted_email', $_POST['email']);
+			$_POST['email'] =  apply_filters('wppb_edit_profile_posted_email', esc_html( $_POST['email'] ) );
 			if ($wppb_defaultOptions['emailRequired'] == 'yes'){
 				if ((trim($_POST['email']) != '') && isset($_POST['email'])){
 					if (email_exists( $_POST['email'] ) !=  FALSE)
@@ -336,7 +336,7 @@ function wppb_front_end_profile_info() {
 					
 					if ( !empty( $_POST['email'] ) &&  is_email( $_POST['email'] )){                  				// if the user entered a valid email address
 						if (($thisEmail ==  $current_user->ID)){            										// if the entered email address is not already registered to some other user
-							wp_update_user( array( 'ID' => $current_user->ID, 'user_email' => esc_attr( $_POST['email'] )));	
+							wp_update_user( array( 'ID' => $current_user->ID, 'user_email' => esc_html( $_POST['email'] )));
 							$changesSaved = 'yes';
 						}else{
 							$changesSavedNoEmailExist = 'yes';
@@ -352,7 +352,7 @@ function wppb_front_end_profile_info() {
 				
 				if ( !empty( $_POST['email'] ) &&  is_email( $_POST['email'] )){                  				// if the user entered a valid email address
 					if (($thisEmail ==  $current_user->ID)){            										// if the entered email address is not already registered to some other user
-						wp_update_user( array( 'ID' => $current_user->ID, 'user_email' => esc_attr( $_POST['email'] )));	
+						wp_update_user( array( 'ID' => $current_user->ID, 'user_email' => esc_html( $_POST['email'] )));
 						$changesSaved = 'yes';
 					}else{
 						$changesSavedNoEmailExist = 'yes';
@@ -365,81 +365,81 @@ function wppb_front_end_profile_info() {
 
 		/* Update user information. */
 		if ($wppb_defaultOptions['firstname'] == 'show'){
-			$_POST['first_name'] =  apply_filters('wppb_edit_profile_posted_first_name', $_POST['first_name']);
+			$_POST['first_name'] =  apply_filters('wppb_edit_profile_posted_first_name', esc_html( $_POST['first_name'] ) );
 			if ($wppb_defaultOptions['firstnameRequired'] == 'yes'){
 				if (isset($_POST['first_name']) && (trim($_POST['first_name']) != '')){
-					wp_update_user( array( 'ID' => $current_user->ID, 'first_name' => esc_attr( $_POST['first_name'] )));
+					wp_update_user( array( 'ID' => $current_user->ID, 'first_name' => esc_html( $_POST['first_name'] )));
 					$changesSaved = 'yes';
 				}
 			}else{
-				wp_update_user( array( 'ID' => $current_user->ID, 'first_name' => esc_attr( $_POST['first_name'] )));
+				wp_update_user( array( 'ID' => $current_user->ID, 'first_name' => esc_html( $_POST['first_name'] )));
 				$changesSaved = 'yes';
 			}
 		}	
 		
 		if ($wppb_defaultOptions['lastname'] == 'show'){
-			$_POST['last_name'] =  apply_filters('wppb_edit_profile_posted_last_name', $_POST['last_name']);
+			$_POST['last_name'] =  apply_filters('wppb_edit_profile_posted_last_name', esc_html( $_POST['last_name'] ) );
 			if ($wppb_defaultOptions['lastnameRequired'] == 'yes'){
 				if (isset($_POST['last_name']) && (trim($_POST['last_name']) != '')){
-					wp_update_user( array( 'ID' => $current_user->ID, 'last_name' => esc_attr( $_POST['last_name'] )));
+					wp_update_user( array( 'ID' => $current_user->ID, 'last_name' => esc_html( $_POST['last_name'] )));
 					$changesSaved = 'yes';
 				}
 			}else{
-				wp_update_user( array( 'ID' => $current_user->ID, 'last_name' => esc_attr( $_POST['last_name'] )));
+				wp_update_user( array( 'ID' => $current_user->ID, 'last_name' => esc_html( $_POST['last_name'] )));
 				$changesSaved = 'yes';
 			}
 		}
 		
 		if ($wppb_defaultOptions['nickname'] == 'show'){
-			$_POST['nickname'] =  apply_filters('wppb_edit_profile_posted_nickname', $_POST['nickname']);
+			$_POST['nickname'] =  apply_filters('wppb_edit_profile_posted_nickname', esc_html( $_POST['nickname'] ) );
 			if ($wppb_defaultOptions['nicknameRequired'] == 'yes'){
 				if (isset($_POST['nickname']) && (trim($_POST['nickname']) != '')){
-					wp_update_user( array( 'ID' => $current_user->ID, 'nickname' => esc_attr( $_POST['nickname'] )));
+					wp_update_user( array( 'ID' => $current_user->ID, 'nickname' => esc_html( $_POST['nickname'] )));
 					$changesSaved = 'yes';
 				}
 			}else{
-				wp_update_user( array( 'ID' => $current_user->ID, 'nickname' => esc_attr( $_POST['nickname'] )));
+				wp_update_user( array( 'ID' => $current_user->ID, 'nickname' => esc_html( $_POST['nickname'] )));
 				$changesSaved = 'yes';
 			}
 
 		}
 			
 		if ($wppb_defaultOptions['dispname'] == 'show'){
-			$_POST['display_name'] =  apply_filters('wppb_edit_profile_posted_display_name', $_POST['display_name']);
+			$_POST['display_name'] =  apply_filters('wppb_edit_profile_posted_display_name', esc_html( $_POST['display_name'] ) );
 			if ($wppb_defaultOptions['dispnameRequired'] == 'yes'){
 				if (isset($_POST['display_name']) && (trim($_POST['display_name']) != '')){
-					wp_update_user( array( 'ID' => $current_user->ID, 'display_name' => esc_attr( $_POST['display_name'] )));
+					wp_update_user( array( 'ID' => $current_user->ID, 'display_name' => esc_html( $_POST['display_name'] )));
 					$changesSaved = 'yes';
 				}
 			}else{
-				wp_update_user( array( 'ID' => $current_user->ID, 'display_name' => esc_attr( $_POST['display_name'] )));
+				wp_update_user( array( 'ID' => $current_user->ID, 'display_name' => esc_html( $_POST['display_name'] )));
 				$changesSaved = 'yes';
 			}
 		}
 			
 		if ($wppb_defaultOptions['website'] == 'show'){
-			$_POST['website'] =  apply_filters('wppb_edit_profile_posted_website', $_POST['website']);
+			$_POST['website'] =  apply_filters('wppb_edit_profile_posted_website', esc_html( $_POST['website'] ) );
 			if ($wppb_defaultOptions['websiteRequired'] == 'yes'){
 				if (isset($_POST['website']) && (trim($_POST['website']) != '')){
 					$wppbPos = strpos( (string)$_POST['website'], 'http://' );
 					if($wppbPos !== FALSE){
-						wp_update_user( array( 'ID' => $current_user->ID, 'user_url' => esc_attr( $_POST['website'] )));
+						wp_update_user( array( 'ID' => $current_user->ID, 'user_url' => esc_html( $_POST['website'] )));
 						$changesSaved = 'yes';
 					}else{
-						wp_update_user( array( 'ID' => $current_user->ID, 'user_url' => 'http://'.esc_attr( $_POST['website'] )));
+						wp_update_user( array( 'ID' => $current_user->ID, 'user_url' => 'http://'.esc_html( $_POST['website'] )));
 						$changesSaved = 'yes';
 					}
 				}
 			}else{
 				$wppbPos = strpos( (string)$_POST['website'], 'http://' );
-				$website = esc_attr( $_POST['website'] );
-				if($wppbPos !== FALSE){
+				$website = esc_html( $_POST['website'] );
+                if($wppbPos !== FALSE){
 					if ($website == 'http://')
 						$website = '';
 					wp_update_user( array( 'ID' => $current_user->ID, 'user_url' => $website));
 					$changesSaved = 'yes';
 				}else{
-					if ($website != '')
+                    if ($website != '')
 						$website = 'http://'.$website;
 					wp_update_user( array( 'ID' => $current_user->ID, 'user_url' => $website));
 					$changesSaved = 'yes';
@@ -448,53 +448,53 @@ function wppb_front_end_profile_info() {
 		}
 		
 		if ($wppb_defaultOptions['aim'] == 'show'){
-			$_POST['aim'] =  apply_filters('wppb_edit_profile_posted_aim', $_POST['aim']);
+			$_POST['aim'] =  apply_filters('wppb_edit_profile_posted_aim', esc_html( $_POST['aim'] ) );
 			if ($wppb_defaultOptions['aimRequired'] == 'yes'){
 				if (isset($_POST['aim']) && (trim($_POST['aim']) != '')){
-					update_user_meta( $current_user->ID, 'aim', esc_attr( $_POST['aim'] ) );
+					update_user_meta( $current_user->ID, 'aim', esc_html( $_POST['aim'] ) );
 					$changesSaved = 'yes';
 				}
 			}else{
-				update_user_meta( $current_user->ID, 'aim', esc_attr( $_POST['aim'] ) );
+				update_user_meta( $current_user->ID, 'aim', esc_html( $_POST['aim'] ) );
 				$changesSaved = 'yes';
 			}
 		}
 			
 		if ($wppb_defaultOptions['yahoo'] == 'show'){
-			$_POST['yim'] =  apply_filters('wppb_edit_profile_posted_yahoo', $_POST['yim']);
+			$_POST['yim'] =  apply_filters('wppb_edit_profile_posted_yahoo', esc_html( $_POST['yim'] ) );
 			if ($wppb_defaultOptions['yahooRequired'] == 'yes'){
 				if (isset($_POST['yim']) && (trim($_POST['yim']) != '')){
-					update_user_meta( $current_user->ID, 'yim', esc_attr( $_POST['yim'] ) );
+					update_user_meta( $current_user->ID, 'yim', esc_html( $_POST['yim'] ) );
 					$changesSaved = 'yes';
 				}
 			}else{
-				update_user_meta( $current_user->ID, 'yim', esc_attr( $_POST['yim'] ) );
+				update_user_meta( $current_user->ID, 'yim', esc_html( $_POST['yim'] ) );
 				$changesSaved = 'yes';
 			}
 		}
 			
 		if ($wppb_defaultOptions['jabber'] == 'show'){
-			$_POST['jabber'] =  apply_filters('wppb_edit_profile_posted_jabber', $_POST['jabber']);
+			$_POST['jabber'] =  apply_filters('wppb_edit_profile_posted_jabber', esc_html( $_POST['jabber'] ) );
 			if ($wppb_defaultOptions['jabberRequired'] == 'yes'){
 				if (isset($_POST['jabber']) && (trim($_POST['jabber']) != '')){
-					update_user_meta( $current_user->ID, 'jabber', esc_attr( $_POST['jabber'] ) );
+					update_user_meta( $current_user->ID, 'jabber', esc_html( $_POST['jabber'] ) );
 					$changesSaved = 'yes';
 				}
 			}else{
-				update_user_meta( $current_user->ID, 'jabber', esc_attr( $_POST['jabber'] ) );
+				update_user_meta( $current_user->ID, 'jabber', esc_html( $_POST['jabber'] ) );
 				$changesSaved = 'yes';
 			}
 		}
 			
 		if ($wppb_defaultOptions['bio'] == 'show'){
-			$_POST['description'] =  apply_filters('wppb_edit_profile_posted_bio', $_POST['description']);
+			$_POST['description'] =  apply_filters('wppb_edit_profile_posted_bio', $_POST['description'] );
 			if ($wppb_defaultOptions['bioRequired'] == 'yes'){
 				if (isset($_POST['description']) && (trim($_POST['description']) != '')){
-					update_user_meta( $current_user->ID, 'description', esc_attr( $_POST['description'] ) );
+					update_user_meta( $current_user->ID, 'description', trim( $_POST['description'] ) );
 					$changesSaved = 'yes';
 				}
 			}else{
-				update_user_meta( $current_user->ID, 'description', esc_attr( $_POST['description'] ) );
+				update_user_meta( $current_user->ID, 'description', trim( $_POST['description'] ) );
 				$changesSaved = 'yes';
 			}
 		}
@@ -506,22 +506,22 @@ function wppb_front_end_profile_info() {
 			foreach ( $wppbFetchArray as $key => $value){
 				switch ($value['item_type']) {
 					case "input":{
-						$_POST[$value['item_type'].$value['id']] = apply_filters('wppb_edit_profile_input_custom_field_'.$value['id'].'_check2', $_POST[$value['item_type'].$value['id']]);
+						$_POST[$value['item_type'].$value['id']] = apply_filters('wppb_edit_profile_input_custom_field_'.$value['id'].'_check2', esc_html( $_POST[$value['item_type'].$value['id']] ) );
 						if (isset($value['item_required'])){
 							if ($value['item_required'] == 'yes'){
 								if (trim($_POST[$value['item_type'].$value['id']]) != '')
-									update_user_meta( $current_user->ID, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
+									update_user_meta( $current_user->ID, $value['item_metaName'], esc_html( $_POST[$value['item_type'].$value['id']] ) );
 								else 
 									array_push($extraFieldsErrorHolder, $value['id']);
 							}else
-								update_user_meta( $current_user->ID, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
+								update_user_meta( $current_user->ID, $value['item_metaName'], esc_html( $_POST[$value['item_type'].$value['id']] ) );
 						}else
-							update_user_meta( $current_user->ID, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
+							update_user_meta( $current_user->ID, $value['item_metaName'], esc_html( $_POST[$value['item_type'].$value['id']] ) );
 							
 						break;
 					}						
 					case "hiddenInput":{
-						update_user_meta( $current_user->ID, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
+						update_user_meta( $current_user->ID, $value['item_metaName'], esc_html( $_POST[$value['item_type'].$value['id']] ) );
 						
 						break;
 					}
@@ -531,7 +531,7 @@ function wppb_front_end_profile_info() {
 						foreach($checkboxValue as $thisValue){
 							$thisValue = str_replace(' ', '#@space@#', $thisValue); //we need to escape the space-codification we sent earlier in the post
 							if (isset($_POST[$thisValue.$value['id']])){
-								$localValue = str_replace('#@space@#', ' ', $_POST[$thisValue.$value['id']]);
+								$localValue = str_replace('#@space@#', ' ', esc_html( $_POST[$thisValue.$value['id']] ) );
 								$checkboxOption = $checkboxOption.$localValue.',';
 							}
 						}
@@ -553,39 +553,39 @@ function wppb_front_end_profile_info() {
 						if (isset($value['item_required'])){
 							if ($value['item_required'] == 'yes'){
 								if (trim($_POST[$value['item_type'].$value['id']]) != '')
-									update_user_meta( $current_user->ID, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
+									update_user_meta( $current_user->ID, $value['item_metaName'], esc_html( $_POST[$value['item_type'].$value['id']] ) );
 								else 
 									array_push($extraFieldsErrorHolder, $value['id']);
 							}else
-								update_user_meta( $current_user->ID, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
+								update_user_meta( $current_user->ID, $value['item_metaName'], esc_html( $_POST[$value['item_type'].$value['id']] ) );
 						}else
-							update_user_meta( $current_user->ID, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
+							update_user_meta( $current_user->ID, $value['item_metaName'], esc_html( $_POST[$value['item_type'].$value['id']] ) );
 						break;
 					}
 					case "select":{
 						if (isset($value['item_required'])){
 							if ($value['item_required'] == 'yes'){
 								if (trim($_POST[$value['item_type'].$value['id']]) != '')
-									update_user_meta( $current_user->ID, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
+									update_user_meta( $current_user->ID, $value['item_metaName'], esc_html( $_POST[$value['item_type'].$value['id']] ) );
 								else 
 									array_push($extraFieldsErrorHolder, $value['id']);
 							}else
-								update_user_meta( $current_user->ID, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
+								update_user_meta( $current_user->ID, $value['item_metaName'], esc_html( $_POST[$value['item_type'].$value['id']] ) );
 						}else
-							update_user_meta( $current_user->ID, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
+							update_user_meta( $current_user->ID, $value['item_metaName'], esc_html( $_POST[$value['item_type'].$value['id']] ) );
 						break;
 					}
 					case "countrySelect":{
 						if (isset($value['item_required'])){
 							if ($value['item_required'] == 'yes'){
 								if (trim($_POST[$value['item_type'].$value['id']]) != '')
-									update_user_meta( $current_user->ID, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
+									update_user_meta( $current_user->ID, $value['item_metaName'], esc_html( $_POST[$value['item_type'].$value['id']] ) );
 								else 
 									array_push($extraFieldsErrorHolder, $value['id']);
 							}else
-								update_user_meta( $current_user->ID, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
+								update_user_meta( $current_user->ID, $value['item_metaName'], esc_html( $_POST[$value['item_type'].$value['id']] ) );
 						}else
-							update_user_meta( $current_user->ID, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
+							update_user_meta( $current_user->ID, $value['item_metaName'], esc_html( $_POST[$value['item_type'].$value['id']] ) );
 						
 						break;
 					}
@@ -593,13 +593,13 @@ function wppb_front_end_profile_info() {
 						if (isset($value['item_required'])){
 							if ($value['item_required'] == 'yes'){
 								if (trim($_POST[$value['item_type'].$value['id']]) != '')
-									update_user_meta( $current_user->ID, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
+									update_user_meta( $current_user->ID, $value['item_metaName'], esc_html( $_POST[$value['item_type'].$value['id']] ) );
 								else 
 									array_push($extraFieldsErrorHolder, $value['id']);
 							}else
-								update_user_meta( $current_user->ID, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
+								update_user_meta( $current_user->ID, $value['item_metaName'], esc_html( $_POST[$value['item_type'].$value['id']] ) );
 						}else
-							update_user_meta( $current_user->ID, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
+							update_user_meta( $current_user->ID, $value['item_metaName'], esc_html( $_POST[$value['item_type'].$value['id']] ) );
 						
 						break;
 					}
@@ -607,13 +607,13 @@ function wppb_front_end_profile_info() {
 						if (isset($value['item_required'])){
 							if ($value['item_required'] == 'yes'){
 								if (trim($_POST[$value['item_type'].$value['id']]) != '')
-									update_user_meta( $current_user->ID, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
+									update_user_meta( $current_user->ID, $value['item_metaName'], esc_html( $_POST[$value['item_type'].$value['id']] ) );
 								else 
 									array_push($extraFieldsErrorHolder, $value['id']);
 							}else
-								update_user_meta( $current_user->ID, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
+								update_user_meta( $current_user->ID, $value['item_metaName'], esc_html( $_POST[$value['item_type'].$value['id']] ) );
 						}else
-							update_user_meta( $current_user->ID, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
+							update_user_meta( $current_user->ID, $value['item_metaName'], esc_html( $_POST[$value['item_type'].$value['id']] ) );
 						
 						break;
 					}
@@ -621,13 +621,13 @@ function wppb_front_end_profile_info() {
 						if (isset($value['item_required'])){
 							if ($value['item_required'] == 'yes'){
 								if (trim($_POST[$value['item_type'].$value['id']]) != '')
-									update_user_meta( $current_user->ID, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
+									update_user_meta( $current_user->ID, $value['item_metaName'], esc_textarea( $_POST[$value['item_type'].$value['id']] ) );
 								else 
 									array_push($extraFieldsErrorHolder, $value['id']);
 							}else
-								update_user_meta( $current_user->ID, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
+								update_user_meta( $current_user->ID, $value['item_metaName'], esc_textarea( $_POST[$value['item_type'].$value['id']] ) );
 						}else
-							update_user_meta( $current_user->ID, $value['item_metaName'], esc_attr( $_POST[$value['item_type'].$value['id']] ) );
+							update_user_meta( $current_user->ID, $value['item_metaName'], esc_textarea( $_POST[$value['item_type'].$value['id']] ) );
 						
 						break;
 					}
@@ -902,7 +902,7 @@ function wppb_front_end_profile_info() {
 					$editProfileFilterArray2['contentName3'] = '
 						<p class="first_name'.$errorVar.'">
 							<label for="first_name">'. __('First Name', 'profilebuilder') .$errorMark.'</label>
-							<input class="text-input" name="first_name" type="text" id="first_name" value="'.( isset( $_POST['first_name'] ) ? trim( $_POST['first_name'] ) : get_the_author_meta( 'first_name', $current_user->ID ) ).'" />
+							<input class="text-input" name="first_name" type="text" id="first_name" value="'.( isset( $_POST['first_name'] ) ? stripslashes( esc_html( $_POST['first_name'] ) ) : get_the_author_meta( 'first_name', $current_user->ID ) ).'" />
 						</p><!-- .first_name -->';
 					$editProfileFilterArray2['contentName3'] = apply_filters('wppb_edit_profile_content_name3', $editProfileFilterArray2['contentName3'], $current_user->ID, $errorVar, $errorMark);	
 				}
@@ -922,7 +922,7 @@ function wppb_front_end_profile_info() {
 					$editProfileFilterArray2['contentName4'] = '
 						<p class="last_name'.$errorVar.'">
 							<label for="last_name">'. __('Last Name', 'profilebuilder') .$errorMark.'</label>
-							<input class="text-input" name="last_name" type="text" id="last_name" value="'.( isset( $_POST['last_name'] ) ? trim( $_POST['last_name'] ) : get_the_author_meta( 'last_name', $current_user->ID ) ).'" />
+							<input class="text-input" name="last_name" type="text" id="last_name" value="'.( isset( $_POST['last_name'] ) ? stripslashes( esc_html( $_POST['last_name'] ) ) : get_the_author_meta( 'last_name', $current_user->ID ) ).'" />
 						</p><!-- .last_name -->';
 					$editProfileFilterArray2['contentName4'] = apply_filters('wppb_edit_profile_content_name4', $editProfileFilterArray2['contentName4'], $current_user->ID);
 				}
@@ -942,7 +942,7 @@ function wppb_front_end_profile_info() {
 					$editProfileFilterArray2['contentName5'] = '
 						<p class="nickname'.$errorVar.'">
 							<label for="nickname">'. __('Nickname', 'profilebuilder') .$errorMark.'</label>
-							<input class="text-input" name="nickname" type="text" id="nickname" value="'.( isset( $_POST['nickname'] ) ? trim( $_POST['nickname'] ) : get_the_author_meta( 'nickname', $current_user->ID ) ).'" />
+							<input class="text-input" name="nickname" type="text" id="nickname" value="'.( isset( $_POST['nickname'] ) ? stripslashes( esc_html( $_POST['nickname'] ) ) : get_the_author_meta( 'nickname', $current_user->ID ) ).'" />
 						</p><!-- .nickname -->';
 					$editProfileFilterArray2['contentName5'] = apply_filters('wppb_edit_profile_content_name5', $editProfileFilterArray2['contentName5'], $current_user->ID, $errorVar, $errorMark);	
 				}
@@ -1014,7 +1014,7 @@ function wppb_front_end_profile_info() {
 						$editProfileFilterArray2['contentInfo2'] = '
 							<p class="form-email'.$errorVar.'">
 								<label for="email">'. __('E-mail', 'profilebuilder') .$errorMark.'</label>
-								<input class="text-input" name="email" type="text" id="email" value="'.( isset( $_POST['email'] ) ? trim( $_POST['email'] ) : get_the_author_meta( 'user_email', $current_user->ID ) ).'" />
+								<input class="text-input" name="email" type="text" id="email" value="'.( isset( $_POST['email'] ) ? stripslashes( esc_html( $_POST['email'] ) ) : get_the_author_meta( 'user_email', $current_user->ID ) ).'" />
 								<span class="wppb-description-delimiter">'. __('(required)', 'profilebuilder') .'</span>
 							</p><!-- .form-email -->';
 						$editProfileFilterArray2['contentInfo2'] = apply_filters('wppb_edit_profile_content_info2', $editProfileFilterArray2['contentInfo2'], $current_user->ID, $errorVar, $errorMark);
@@ -1030,11 +1030,11 @@ function wppb_front_end_profile_info() {
 							$errorMark = '<img src="'.WPPB_PLUGIN_URL . 'assets/images/pencil_delete.png" title="'. __('This field wasn\'t updated because you entered and empty string (It was marked as required by the administrator.', 'profilebuilder') .'"/>';
 							$errorVar = ' errorHolder';
 						}
-					}					
-					$editProfileFilterArray2['contentInfo3'] = '
+					}
+                    $editProfileFilterArray2['contentInfo3'] = '
 						<p class="form-website'.$errorVar.'">
 							<label for="website">'. __('Website', 'profilebuilder') .$errorMark.'</label>
-							<input class="text-input" name="website" type="text" id="website" value="'.( isset( $_POST['website'] ) ? trim( $_POST['website'] ) : get_the_author_meta( 'user_url', $current_user->ID ) ).'" />
+							<input class="text-input" name="website" type="text" id="website" value="'.( isset( $_POST['website'] ) ? stripslashes( esc_html( $_POST['website'] ) ) : get_the_author_meta( 'user_url', $current_user->ID ) ).'" />
 						</p><!-- .form-website -->';
 					$editProfileFilterArray2['contentInfo3'] = apply_filters('wppb_edit_profile_content_info3', $editProfileFilterArray2['contentInfo3'], $current_user->ID, $errorVar, $errorMark);
 				}
@@ -1052,7 +1052,7 @@ function wppb_front_end_profile_info() {
 					$editProfileFilterArray2['contentInfo4'] = '
 						<p class="form-aim'.$errorVar.'">
 							<label for="aim">'. __('AIM', 'profilebuilder') .'</label>
-							<input class="text-input" name="aim" type="text" id="aim" value="'.( isset( $_POST['aim'] ) ? trim( $_POST['aim'] ) : get_the_author_meta( 'aim', $current_user->ID ) ).'" />
+							<input class="text-input" name="aim" type="text" id="aim" value="'.( isset( $_POST['aim'] ) ? stripslashes( esc_html( $_POST['aim'] ) ) : get_the_author_meta( 'aim', $current_user->ID ) ).'" />
 						</p><!-- .form-aim -->';
 					$editProfileFilterArray2['contentInfo4'] = apply_filters('wppb_edit_profile_content_info4', $editProfileFilterArray2['contentInfo4'], $current_user->ID, $errorVar, $errorMark);
 				}
@@ -1070,7 +1070,7 @@ function wppb_front_end_profile_info() {
 					$editProfileFilterArray2['contentInfo5'] = '
 						<p class="form-yim'.$errorVar.'">
 							<label for="yim">'. __('Yahoo IM', 'profilebuilder') .$errorMark.'</label>
-							<input class="text-input" name="yim" type="text" id="yim" value="'.( isset( $_POST['yim'] ) ? trim( $_POST['yim'] ) : get_the_author_meta( 'yim', $current_user->ID ) ).'" />
+							<input class="text-input" name="yim" type="text" id="yim" value="'.( isset( $_POST['yim'] ) ? stripslashes( esc_html( $_POST['yim'] ) ) : get_the_author_meta( 'yim', $current_user->ID ) ).'" />
 						</p><!-- .form-yim -->';
 					$editProfileFilterArray2['contentInfo5'] = apply_filters('wppb_edit_profile_content_info5', $editProfileFilterArray2['contentInfo5'], $current_user->ID, $errorVar, $errorMark);
 				}
@@ -1088,7 +1088,7 @@ function wppb_front_end_profile_info() {
 					$editProfileFilterArray2['contentInfo6'] = '
 						<p class="form-jabber'.$errorVar.'">
 							<label for="jabber">'. __('Jabber / Google Talk', 'profilebuilder') .$errorMark.'</label>
-							<input class="text-input" name="jabber" type="text" id="jabber" value="'.( isset( $_POST['jabber'] ) ? trim( $_POST['jabber'] ) : get_the_author_meta( 'jabber', $current_user->ID ) ).'" />
+							<input class="text-input" name="jabber" type="text" id="jabber" value="'.( isset( $_POST['jabber'] ) ? stripslashes( esc_html( $_POST['jabber'] ) ) : get_the_author_meta( 'jabber', $current_user->ID ) ).'" />
 						</p><!-- .form-jabber -->';
 					$editProfileFilterArray2['contentInfo6'] = apply_filters('wppb_edit_profile_content_info6', $editProfileFilterArray2['contentInfo6'], $current_user->ID, $errorVar, $errorMark);
 				}
@@ -1109,7 +1109,7 @@ function wppb_front_end_profile_info() {
 					$editProfileFilterArray2['aboutYourself2'] = '
 						<p class="form-description'.$errorVar.'">
 							<label for="description">'. __('Biographical Info', 'profilebuilder') .$errorMark.'</label>
-							<textarea class="text-input" name="description" id="description" rows="5" cols="30">'.( isset( $_POST['description'] ) ? trim( $_POST['description'] ) : get_the_author_meta( 'description', $current_user->ID ) ).'</textarea>
+							<textarea class="text-input" name="description" id="description" rows="5" cols="30">'.( isset( $_POST['description'] ) ? stripslashes( trim( $_POST['description'] ) ) : get_the_author_meta( 'description', $current_user->ID ) ).'</textarea>
 						</p><!-- .form-description -->';
 					$editProfileFilterArray2['aboutYourself2'] = apply_filters('wppb_edit_profile_content_about_yourself2', $editProfileFilterArray2['aboutYourself2'], $current_user->ID, $errorVar, $errorMark);
 				}
@@ -1119,12 +1119,12 @@ function wppb_front_end_profile_info() {
 					$editProfileFilterArray2['aboutYourself3'] = '
 						<p class="form-password">
 							<label for="pass1">'. __('New Password', 'profilebuilder') .'</label>
-							<input class="text-input" name="pass1" type="password" id="pass1" value="'.( isset( $_POST['pass1'] ) ? trim( $_POST['pass1'] ) : '' ).'" autocomplete="off" />
+							<input class="text-input" name="pass1" type="password" id="pass1" value="" autocomplete="off" />
 						</p><!-- .form-password -->
 
 						<p class="form-password'.$errorVar.'">
 							<label for="pass2">'. __('Repeat Password', 'profilebuilder') .$errorMark.'</label>
-							<input class="text-input" name="pass2" type="password" id="pass2"  value="'.( isset( $_POST['pass2'] ) ? trim( $_POST['pass2'] ) : '' ).'" autocomplete="off" />
+							<input class="text-input" name="pass2" type="password" id="pass2"  value="" autocomplete="off" />
 						</p><!-- .form-password -->';
 					$editProfileFilterArray2['aboutYourself3'] = apply_filters('wppb_edit_profile_content_about_yourself3', $editProfileFilterArray2['aboutYourself3'], $errorVar, $errorMark);
 				}

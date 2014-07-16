@@ -60,7 +60,7 @@ function wppb_front_end_password_recovery(){
 	/* If the user entered an email/username, process the request */
 	if ( 'POST' == $_SERVER['REQUEST_METHOD'] && !empty( $_POST['action'] ) && $_POST['action'] == 'recover_password' && wp_verify_nonce($_POST['password_recovery_nonce_field'],'verify_true_password_recovery') ) {
 		
-		$postedData = $_POST['username_email'];	//we get the raw data
+		$postedData = esc_html( $_POST['username_email'] );	//we get the raw data
 		//check to see if it's an e-mail (and if this is valid/present in the database) or is a username
 		if (is_email($postedData)){
 			if (email_exists($postedData)){
@@ -169,7 +169,7 @@ function wppb_front_end_password_recovery(){
 			$message2 = __('Your password has been successfully changed!', 'profilebuilder');
 			$messageNo2 = '1';
 			
-			$userID = $_POST['userData'];
+			$userID = esc_html( $_POST['userData'] );
 			$new_pass = $_POST['passw1'];
 			
 			//update the new password and delete the key
@@ -247,14 +247,14 @@ function wppb_front_end_password_recovery(){
 								$recoverPasswordFilterArray['inputPassword'] = '
 									<p class="passw1">
 										<label for="passw1">'. __('Password', 'profilebuilder').'</label>
-										<input class="password" name="passw1" type="password" id="passw1" value="'.$_POST['passw1'].'" />
+										<input class="password" name="passw1" type="password" id="passw1" value="" />
 									</p><!-- .passw1 -->
 									<input type="hidden" name="userData" value="'.$user->ID.'"/>
 									<p class="passw2">
 										<label for="passw2">'. __('Repeat Password', 'profilebuilder').'</label>
-										<input class="password" name="passw2" type="password" id="passw2" value="'.$_POST['passw2'].'" />
+										<input class="password" name="passw2" type="password" id="passw2" value="" />
 									</p><!-- .passw2 -->';
-								$recoverPasswordFilterArray['inputPassword'] = apply_filters('wppb_recover_password_input', $recoverPasswordFilterArray['inputPassword'], $_POST['passw1'], $_POST['passw2'], $user->ID);
+								$recoverPasswordFilterArray['inputPassword'] = apply_filters('wppb_recover_password_input_filter1', $recoverPasswordFilterArray['inputPassword'], $_POST['passw1'], $_POST['passw2'], $user->ID);
 								echo $recoverPasswordFilterArray['inputPassword'];
 ?>
 								<p class="form-submit">
@@ -278,14 +278,14 @@ function wppb_front_end_password_recovery(){
 							$recoverPasswordFilterArray['inputPassword'] = '
 								<p class="passw1">
 									<label for="passw1">'. __('Password', 'profilebuilder').'</label>
-									<input class="password" name="passw1" type="password" id="passw1" value="'.$_POST['passw1'].'" />
+									<input class="password" name="passw1" type="password" id="passw1" value="" />
 								</p><!-- .passw1 -->
 								<input type="hidden" name="userData" value="'.$user->ID.'"/>
 								<p class="passw2">
 									<label for="passw2">'. __('Repeat Password', 'profilebuilder').'</label>
-									<input class="password" name="passw2" type="password" id="passw2" value="'.$_POST['passw2'].'" />
+									<input class="password" name="passw2" type="password" id="passw2" value="" />
 								</p><!-- .passw2 -->';
-							$recoverPasswordFilterArray['inputPassword'] = apply_filters('wppb_recover_password_input', $recoverPasswordFilterArray['inputPassword'], $_POST['passw1'], $_POST['passw2'], $user->ID);
+							$recoverPasswordFilterArray['inputPassword'] = apply_filters('wppb_recover_password_input_filter2', $recoverPasswordFilterArray['inputPassword'], $_POST['passw1'], $_POST['passw2'], $user->ID);
 							echo $recoverPasswordFilterArray['inputPassword'];
 ?>
 							<p class="form-submit">
@@ -327,13 +327,13 @@ function wppb_front_end_password_recovery(){
 						
 						$username_email = '';
 						if (isset($_POST['username_email']))
-							$username_email = $_POST['username_email'];
+							$username_email = esc_attr( $_POST['username_email'] );
 						$recoverPasswordFilterArray['input'] = '
 							<p class="username_email">
 								<label for="username_email">'. __('Username or E-mail', 'profilebuilder').'</label>
-								<input class="text-input" name="username_email" type="text" id="username_email" value="'.trim($username_email).'" />
+								<input class="text-input" name="username_email" type="text" id="username_email" value="'.$username_email.'" />
 							</p><!-- .username_email -->';
-						$recoverPasswordFilterArray['input'] = apply_filters('wppb_recover_password_input', $recoverPasswordFilterArray['input'], trim($username_email));
+						$recoverPasswordFilterArray['input'] = apply_filters('wppb_recover_password_input_filter2', $recoverPasswordFilterArray['input'], $username_email);
 						echo $recoverPasswordFilterArray['input'];
 					
 				
