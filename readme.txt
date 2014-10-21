@@ -1,12 +1,12 @@
 === Profile Builder - front-end user registration, login and edit profile === 
 
-Contributors: reflectionmedia, barinagabriel, sareiodata, cozmoslabs
+Contributors: reflectionmedia, barinagabriel, sareiodata, cozmoslabs, adispiac, madalin.ungureanu
 Donate link: http://www.cozmoslabs.com/wordpress-profile-builder/
-Tags: registration, user profile, user registration, custom field registration, customize profile, user fields, extra user fields, builder, profile builder, custom user profile, user profile page, edit profile, custom registration, custom registration form, custom registration page, registration page, user custom fields, user listing, front-end user listing, user login, user registration form, front-end login, front-end register, front-end registration, front-end edit profile, front-end user registration, custom redirects, user email, avatar upload
+Tags: registration, user profile, user registration, custom field registration, customize profile, user fields, extra user fields, builder, profile builder, custom user profile, user profile page, edit profile, custom registration, custom registration form, custom registration page, registration page, user custom fields, user listing, front-end user listing, user login, user registration form, front-end login, front-end register, front-end registration, front-end edit profile, front-end user registration, custom redirects, user email, avatar upload, email confirmation, user approval, customize registration email, minimum password length, minimum password strength, password strength meter, multiple registration forms
 
 Requires at least: 3.1
 Tested up to: 4.0
-Stable tag: 1.1.67
+Stable tag: 2.0.2
 
 Simple to use profile plugin allowing front-end login, user registration and edit profile by using shortcodes.
  
@@ -16,9 +16,9 @@ Simple to use profile plugin allowing front-end login, user registration and edi
 
 It lets you customize your website by adding a front-end menu for all your users, 
 giving them a more flexible way to modify their user profile or register new users (front-end user registration). 
-Also, grants users with administrator rights to customize basic user fields or add custom user fields. 
+Users with administrator rights can customize basic user fields or add custom user fields to the front-end forms.
 
-To achieve this, just create a new page and give it an intuitive name(i.e. Edit Profile).
+To achieve this, simply create a new page and give it an intuitive name(i.e. Edit Profile).
 Now all you need to do is add the following shortcode(for the previous example): [wppb-edit-profile]. 
 Publish the page and you are done!
 
@@ -32,24 +32,30 @@ You can use the following shortcode list:
 
 Users with administrator rights have access to the following features:
 
-* add a custom stylesheet/inherit values from the current theme or use one of the following built into this plugin: default, white or black.
-* select whether to display or not the admin bar in the front-end for a specific user group registered to the site.
-* select which information fields can users see/modify. The hidden user fields values remain unmodified.
+* drag & drop to reorder user profile fields
+* enable **Email Confirmation** (on registration users will receive a notification to confirm their email address).
+* allow users to **Log-in with their Username or Email**
+* enforce a **minimum password length** and **minimum password strength** (using the default WordPress password strength meter)
+* assign users a specific role at registration (using [wppb-register role="desired_role"] shortcode )
+* add a custom stylesheet/inherit values from the current theme or use the default one built into this plugin.
+* chose which user roles view the admin bar in the front-end of the website (Admin Bar Settings page).
+* select which profile fields users can see/modify.
 
 **PROFILE BUILDER PRO**
 
 The [Pro version](http://www.cozmoslabs.com/wordpress-profile-builder/) has the following extra features:
 
-* Create Extra User Fields (Heading, Input, Checkbox, Agree to Terms Checkbox, Radio Buttons, DatePicker, Textareas, Upload fields, Selects, Country Selects, Timezone selects, Avatar Upload)
+* Create Extra User Fields (Heading, Input, Hidden-Input, Checkbox, Agree to Terms Checkbox, Radio Buttons, DatePicker, Textareas, reCAPTCHA, Upload fields, Selects, Country Selects, Timezone selects, Avatar Upload)
 * Add Avatar Upload for users
-* Front-end User Listing (sorting included)
+* Front-end User Listing (fully customizable, sorting included)
+* Create Multiple User Listings
 * Custom Redirects
-* Fully Customizable User Listing
+* Multiple Registration Forms (set up multiple registration forms with different profile fields for certain user roles)
+* Multiple Edit Profile Forms
 * Admin Approval
-* Email Confirmation
+* Email Customizer (Personalize all emails sent to your users or admins; customize default WordPress registration email)
 * reCAPTCHA on user registration form
-* Advanced Addons (e.g. custom redirects)
-* Select one of the 2 additional CSS styles: black or white
+* Advanced Modules (e.g. custom redirects, user listing, multiple registration forms etc.)
 * Access to support forums and documentation
 * 1 Year of Updates / Priority Support
 
@@ -59,7 +65,7 @@ The [Pro version](http://www.cozmoslabs.com/wordpress-profile-builder/) has the 
 
 NOTE:
 
-This plugin only adds/removes user fields in the front-end. The default profile fields will still be visible (and thus modifiable) from the back-end, while custom fields will only be visible in the front-end.
+This plugin adds/removes user fields in the front-end. Both default and extra profile fields will be visible in the back-end as well.
 	
 
 
@@ -71,52 +77,61 @@ This plugin only adds/removes user fields in the front-end. The default profile 
 
 == Frequently Asked Questions ==
 
-= I navigated away from Profile Builder and now I can’t find it anymore; where is it? =
-	
-	Profile Builder can be found in the default menu of your WordPress installation under the “Users” sub-menu.
+= I navigated away from Profile Builder and now I can�t find it anymore; where is it? =
 
-= Why do the custom WordPress user fields still show up, even though I set it to be "hidden"? =
+	Profile Builder can be found in the default menu of your WordPress installation below the �Users� menu item.
 
-	Profile Builder only disables the default user fields in the front-end of your site/blog, it does absolutely nothing in the dashboard.
+= Why do the default WordPress user fields still show up in the back-end? =
+
+	Profile Builder can only remove the default user fields in the front-end of your site/blog, it doesn't remove them from the back-end.
 
 = I can’t find a question similar to my issue; Where can I find support? =
 
-	For more information please visit http://www.cozmoslabs.com and check out the faq section from Profile Builder - front-end user registration plugin.
+	For more information please visit http://www.cozmoslabs.com and check out the documentation section from Profile Builder - front-end user registration plugin.
 
 
 == Screenshots ==
-1. General Settings - Profile Builder, front-end user registration plugin
-2. Show/Hide Admin Bar
-3. Profile Builder - Select Default User Fields
-4. Front-end User Registration Page
-5. User Login Page
-6. Edit User Profile Page
-7. Password Recovery Page
+1. Basic Information - Profile Builder, front-end user registration plugin
+2. General Settings - Profile Builder, front-end user registration plugin
+3. Show/Hide Admin Bar
+4. Profile Builder - Manage Default User Fields (Add, Edit or Delete)
+5. Profile Builder - Drag & Drop to Reorder User Profile Fields
+6. Front-end User Registration Page
+7. User Login Page
+8. Edit User Profile Page
+9. Recover Password Page
 
 == Changelog ==
+= 2.0.2 =
+* Brand new user interface.
+* Drag & drop to reorder User Profile Fields.
+* More flexibility for Managing Default User Fields.
+* Better Security by Enforcing Minimum Password Length and Minimum Password Strength on all forms (front-end and back-end).
+* NOTE: upgrading from Profile Builder 1.1.x to 2.0.2 might make some of your plugin customization (if you have any ) not work because in the restructuring we had to drop some of the filters from 1.1.x.
+
 = 1.1.67 =
-Added stripslashes to register shortcode.
+* Added stripslashes to register shortcode.
 
 = 1.1.66 =
-Sanitized forms against XSS exploits.
+* Sanitized forms against XSS exploits.
 
 = 1.1.65 =
-Minor changes in the readme and index files.
+* Minor changes in the readme and index files.
 
 = 1.1.64 =
-Minor changes in the readme and index files.
+* Minor changes in the readme and index files.
 
 = 1.1.63 =
-Changes weren't saving on the Edit Profile page when profile was not fully updated.
+* Changes weren't saving on the Edit Profile page when profile was not fully updated.
 
 = 1.1.62 =
-Minor changes to the readme file.
+* Minor changes to the readme file.
 
 = 1.1.61 =
-Fixed a few notices in the plugin.
+* Fixed a few notices in the plugin.
 
 = 1.1.60 =
-Emergency security update regarding the password recovery feature.
+* Emergency security update regarding the password recovery feature.
 
 = 1.1.59 =
 Improved some of the queries meant to select users at certain points, hidden input value on front-end (Pro version) and the remember me checkbox on the login page.

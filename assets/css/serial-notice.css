@@ -1,0 +1,15 @@
+.wppb-serial-wrap{
+    margin:40px 0;
+}
+
+.wppb-dismiss-notification{
+    position:absolute;
+    right:0px;
+    top:50%;
+    margin-top:-7px;
+}
+
+div.wppb-serial-notification p{
+    padding-right: 50px;
+    position:relative;
+}

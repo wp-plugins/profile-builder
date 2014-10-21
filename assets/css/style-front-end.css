@@ -1,0 +1,444 @@
+/* Register & Edit Profile Forms*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0 - Reset
+2.0 - Forms
+3.0 - Alignments
+4.0 - Errors & Notices
+5.0 - User Listing 
+6.0 - Media Queries
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+1.0 Reset
+--------------------------------------------------------------*/
+.wppb-user-forms,
+.wppb-user-forms *{
+	-webkit-box-sizing: border-box !important; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box !important;    /* Firefox, other Gecko */
+	box-sizing: border-box !important;         /* Opera/IE 8+ */
+}
+
+/*--------------------------------------------------------------
+2.0 Forms
+--------------------------------------------------------------*/
+.wppb-user-forms button,
+.wppb-user-forms input,
+.wppb-user-forms select,
+.wppb-user-forms textarea{
+	font-size: 100%; /* Corrects font size not being inherited in all browsers */
+	margin: 0; /* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
+	vertical-align: baseline; /* Improves appearance and consistency in all browsers */
+}
+.wppb-user-forms button,
+.wppb-user-forms input[type="button"],
+.wppb-user-forms input[type="reset"],
+.wppb-user-forms input[type="submit"] {
+	border: 1px solid;
+	border-color: #ccc #ccc #bbb; 
+	border-radius: 3px;
+	background: #e6e6e6;
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
+	color: rgba(0, 0, 0, .8);
+	cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
+	-webkit-appearance: button; /* Corrects inability to style clickable 'input' types in iOS */
+	font-size: 12px;
+	line-height: 1;
+	padding: .6em 1em .4em;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+.wppb-user-forms button:hover,
+.wppb-user-forms input[type="button"]:hover,
+.wppb-user-forms input[type="reset"]:hover,
+.wppb-user-forms input[type="submit"]:hover {
+	border-color: #ccc #bbb #aaa;
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
+}
+.wppb-user-forms button:focus,
+.wppb-user-forms input[type="button"]:focus,
+.wppb-user-forms input[type="reset"]:focus,
+.wppb-user-forms input[type="submit"]:focus,
+.wppb-user-forms button:active,
+.wppb-user-forms input[type="button"]:active,
+.wppb-user-forms input[type="reset"]:active,
+.wppb-user-forms input[type="submit"]:active {
+	border-color: #aaa #bbb #bbb;
+	box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+.wppb-user-forms input[type="checkbox"],
+.wppb-user-forms input[type="radio"] {
+	padding: 0; /* Addresses excess padding in IE8/9 */
+}
+.wppb-user-forms input[type="search"] {
+	-webkit-appearance: textfield; /* Addresses appearance set to searchfield in S5, Chrome */
+	-webkit-box-sizing: content-box; /* Addresses box sizing set to border-box in S5, Chrome (include -moz to future-proof) */
+	-moz-box-sizing:    content-box;
+	box-sizing:         content-box;
+}
+.wppb-user-forms input[type="search"]::-webkit-search-decoration { /* Corrects inner padding displayed oddly in S5, Chrome on OSX */
+	-webkit-appearance: none;
+}
+.wppb-user-forms button::-moz-focus-inner,
+.wppb-user-forms input::-moz-focus-inner { /* Corrects inner padding and border displayed oddly in FF3/4 www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */
+	border: 0;
+	padding: 0;
+}
+.wppb-user-forms input[type="text"],
+.wppb-user-forms input[type="email"],
+.wppb-user-forms input[type="url"],
+.wppb-user-forms input[type="password"],
+.wppb-user-forms input[type="search"],
+.wppb-user-forms textarea {
+	color: #666;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+}
+.wppb-user-forms input[type="text"]:focus,
+.wppb-user-forms input[type="email"]:focus,
+.wppb-user-forms input[type="url"]:focus,
+.wppb-user-forms input[type="password"]:focus,
+.wppb-user-forms input[type="search"]:focus,
+.wppb-user-forms textarea:focus {
+	color: #111;
+}
+.wppb-user-forms input[type="text"],
+.wppb-user-forms input[type="email"],
+.wppb-user-forms input[type="url"],
+.wppb-user-forms input[type="password"],
+.wppb-user-forms input[type="search"] {
+	padding: 3px;
+}
+.wppb-user-forms textarea {
+	overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
+	padding-left: 3px;
+	vertical-align: top; /* Improves readability and alignment in all browsers */
+	width: 100%;
+}
+
+#wppb-search-fields{
+    min-width: 250px;
+    float:left;
+    margin-right:20px;
+}
+
+.wppb-user-forms .wppb-search-button{
+    margin-right:10px;
+    padding:7px 20px;
+    line-height: 24px;
+}
+
+.wppb-search-users-wrap{
+    margin-bottom: 20px;
+}
+/*--------------------------------------------------------------
+3.0 Alignments
+--------------------------------------------------------------*/
+.wppb-user-forms ul{
+	max-width:900px;
+	list-style:none;
+	margin-left:0;
+	margin-right:0;
+    padding-left:0;
+    padding-right:0;
+}
+.wppb-user-forms ul li,
+#wppb-login-wrap p{
+	overflow:hidden;
+	margin:0;
+	padding-bottom:14px;
+}
+
+.wppb-form-field label,
+#wppb-login-wrap .login-username label,
+#wppb-login-wrap .login-password label{
+	width:30%;
+	float:left;
+	min-height:1px;
+}
+
+.wppb-form-field input,
+.wppb-form-field select,
+.wppb-form-field textarea,
+.wppb-checkboxes,
+.wppb-radios,
+#wppb-login-wrap .login-username input,
+#wppb-login-wrap .login-password input{
+	width:69.9%;
+	float:left;
+}
+
+input#send_credentials_via_email{
+	float:none;
+	width:auto;
+	margin-right:10px
+}
+
+.wppb-send-credentials-checkbox label{
+	width:auto;
+}
+
+.wppb-form-field > span{
+	display:block;
+	clear:both;
+	margin-left:30%;
+	font-size:80%;
+	font-style:italic;
+}
+
+.wppb-form-field .wppb-avatar-nofile,
+.wppb-form-field .wppb-avatar-file,
+.wppb-form-field .wppb-upload-nofile,
+.wppb-form-field .wppb-upload-file{
+	font-size:100%;
+	font-style:normal;
+	margin:10px 0 10px 30%;
+}
+
+.wppb-file-icons{
+	padding-left:10px;
+	box-shadow:none !important;
+}
+
+.wppb-user-forms .wppb-checkboxes li,
+.wppb-user-forms .wppb-radios li{
+	display:inline-block;
+	padding:0 20px 0 0;
+}
+
+.wppb-form-field .wppb-checkboxes label,
+.wppb-form-field .wppb-radios label{
+	float:none;
+	min-width:0;
+	padding-left:5px;
+}
+
+.wppb-checkbox-terms-and-conditions input,
+.wppb-checkboxes li input,
+.wppb-radios li input{
+	min-width:0;
+	float:none;
+	width:auto;
+}
+
+#wppb-edit-user .wppb-checkbox-terms-and-conditions {
+	display:none;
+}
+
+.wppb-form-field.wppb-heading span,
+.wppb-default-about-yourself-heading span,
+.wppb-default-contact-info-heading span,
+.wppb-default-name-heading span,
+.wppb-checkbox-terms-and-conditions span{
+	margin-left:0;
+}
+
+
+#recaptcha_widget_div{
+	display: inline-block;
+}
+
+/*--------------------------------------------------------------
+4.0 Errors & Notices
+--------------------------------------------------------------*/
+
+#wppb_general_top_error_message,
+.wppb-error,
+.wppb-warning,
+.wppb-required{
+	color: red;
+}
+
+.wppb-required,
+.wppb-checkbox-terms-and-conditions span.wppb-required{
+    margin-left:5px;
+}
+
+.wppb-success {
+	color:green;
+}
+
+#wppb-register-user .wppb-field-error,
+#wppb-edit-user .wppb-field-error,
+#wppb-recover-password .wppb-field-error{
+	background-color: #FFDFDF;
+    border: 1px dotted #C89797;
+    margin-bottom: 6px !important;
+    padding: 6px !important;
+}
+
+.wppb-field-error > input,
+.wppb-field-error > select,
+.wppb-field-error > textarea,
+.wppb-field-error > label{
+    margin-bottom: 10px;
+}
+
+.wppb-field-error img{
+    box-shadow: none;
+    -webkit-box-shadow:none;
+    border:none;
+    border-radius:0px;
+    vertical-align: middle;
+    margin-top: -3px;
+    padding-left:5px;
+}
+
+.wppb-form-field > span.wppb-form-error{
+    margin-top:10px;
+    padding-top: 5px;
+    border-top:1px dotted #c89797;
+    font-size:100%;
+    margin-left: 0;
+}
+
+
+
+
+/*--------------------------------------------------------------
+5.0 User Listing
+--------------------------------------------------------------*/
+.wppb-table *{
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+.wppb-table{
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+    border-spacing: 0.5rem;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.wppb-table th{
+    background: #f4f4f4;
+    padding: 7px;
+    border:1px solid #e1e1e1;
+    text-align: left;
+}
+
+.wppb-table thead tr:hover{
+    background: none;
+}
+
+.wppb-table tr:hover{
+    background: #f1fcff;
+}
+.wppb-table td{
+    padding: 7px;
+    border:1px solid #e1e1e1;
+}
+
+.wppb-table .wppb-posts,
+.wppb-table .wppb-moreinfo{
+    text-align: center;
+}
+
+ul.wppb-profile{
+    list-style-type: none;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left:0;
+    padding-right: 0;
+}
+
+ul.wppb-profile li{
+    margin-left: 0;
+    margin-right: 0;
+    overflow: hidden;
+}
+
+ul.wppb-profile li label{
+    display: block;
+    width:30%;
+    float:left;
+    min-height:1px;
+    font-weight: bold;
+}
+
+ul.wppb-profile li span{
+    display: block;
+    width:69.9%;
+    float:left;
+}
+
+ul.wppb-profile li h3,
+ul.wppb-profile li h3:first-child{
+    margin:20px 0;
+    padding-top:20px;
+    border-top:1px solid #d2d2d2;
+}
+/*--------------------------------------------------------------
+6.0 Media Queries
+--------------------------------------------------------------*/
+
+@media screen and (max-width: 400px) {
+
+	.wppb-form-field label,
+	#wppb-login-wrap .login-username label,
+	#wppb-login-wrap .login-password label,
+    ul.wppb-profile li label{
+		width:100%;
+		display:block;
+		float:none;
+	}
+
+	.wppb-form-field input,
+	.wppb-form-field select,
+	.wppb-form-field textarea,
+	.wppb-checkboxes,
+	.wppb-radios,
+	#wppb-login-wrap .login-username input,
+	#wppb-login-wrap .login-password input,
+    ul.wppb-profile li span{
+		width:100%;
+		float:left;
+	}
+
+	.wppb-form-field > span{
+		margin-left:0;
+	}
+
+	.wppb-checkboxes li label, 
+	.wppb-radios li label{
+		display:inline;
+	}
+	
+	.wppb-form-field .wppb-avatar-nofile,
+	.wppb-form-field .wppb-avatar-file,
+	.wppb-form-field .wppb-upload-nofile,
+	.wppb-form-field .wppb-upload-file{
+		margin-left:0;
+	}
+	
+}
+
+/*--------------------------------------------------------------
+7.0 Password Strength
+--------------------------------------------------------------*/
+#pass-strength-result {
+    background-color: #eee;
+    border: 1px solid #ddd;
+    display: none;
+    float: left;
+    margin: 13px 5px 5px 30%;
+    padding: 3px 5px;
+    text-align: center;
+    width: 200px;
+    height:28px;
+}
+#pass-strength-result.short {
+    background-color: #ffa0a0;
+    border-color: #f04040;
+}
+#pass-strength-result.bad {
+    background-color: #ffb78c;
+    border-color: #ff853c;
+}
+#pass-strength-result.good {
+    background-color: #ffec8b;
+    border-color: #fc0;
+}
+#pass-strength-result.strong {
+    background-color: #c3ff88;
+    border-color: #8dff1c;
+}
