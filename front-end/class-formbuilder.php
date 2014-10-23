@@ -156,7 +156,7 @@ class Profile_Builder_Form_Creator{
         $password = trim( $_POST['passw1'] );
 
         if( isset( $wppb_general_settings['loginWith'] ) && ( $wppb_general_settings['loginWith'] == 'email' ) ){
-            $username = Wordpress_Creation_Kit_PB::wck_generate_slug( trim( $_POST['email'] ) );
+            $username = apply_filters( 'wppb_generated_random_username', Wordpress_Creation_Kit_PB::wck_generate_slug( trim( $_POST['email'] ) ), $_POST['email'] );
         }
 
         /* get user id */
@@ -358,7 +358,7 @@ class Profile_Builder_Form_Creator{
 
         $wppb_general_settings = get_option( 'wppb_general_settings' );
         if( isset( $wppb_general_settings['loginWith'] ) && ( $wppb_general_settings['loginWith'] == 'email' ) ){
-            $userdata['user_login'] = Wordpress_Creation_Kit_PB::wck_generate_slug( trim( $userdata['user_email'] ) );
+            $userdata['user_login'] = apply_filters( 'wppb_generated_random_username', Wordpress_Creation_Kit_PB::wck_generate_slug( trim( $userdata['user_email'] ) ), $userdata['user_email'] );
         }
 
 		if( $this->args['form_type'] == 'register' ){

@@ -17,14 +17,14 @@ $message = ( isset( $_GET['message'] ) ? urldecode( $_GET['message'] ) : '' );
 			body {font-family:Arial; padding: 5px; margin-top:100px; text-align: center;}
 		</style>
 		
-		<title><?php echo $site_name; ?></title>
+		<title><?php echo htmlspecialchars( $site_name, ENT_QUOTES ); ?></title>
 	</head>
 	
 	<body id="wppb_content">
-		<h1><?php echo $site_name; ?></h1>
+		<h1><?php echo htmlspecialchars( $site_name, ENT_QUOTES ); ?></h1>
 		
-		<?php echo $message; ?>
+		<?php echo '<p>'. htmlspecialchars( strip_tags( $message ) ). '</p>'; ?>
 		
-		<?php echo 'Click <a href="'.$site_url.'">here</a> to return to the main site'; ?>
+		<?php echo 'Click <a href="'. htmlspecialchars(  $site_url, ENT_QUOTES ) .'">here</a> to return to the main site'; ?>
 	</body>
 </html>

@@ -28,19 +28,6 @@ function signup_password_random_password_filter( $password ) {
 }
 add_filter( 'random_password', 'signup_password_random_password_filter' );
 
-function wppb_generate_random_username( $user_email ){
-	$user_email = str_replace( array( '@', '-', '_', '.' ), '', $user_email );
-	
-    $username = strtolower( 'pbuser'.$email.mktime( date("H"), date("i"), date("s"), date("n"), date("j"), date("Y") ) );
-
-	while ( username_exists( $username ) ){
-		$username = strtolower( 'pbuser'.$email.mktime( date("H"), date("i"), date("s"), date("n"), date("j"), date("Y") ) );
-    }
-	
-    return apply_filters( 'wppb_generated_random_username', $username, $user_email );
-}
-
-
 /**
  * Activate a signup.
  *

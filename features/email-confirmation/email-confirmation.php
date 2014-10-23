@@ -421,7 +421,11 @@ function wppb_manual_activate_signup( $activation_key ) {
  * @return mixed Returns false on failure, or int $user_id on success
  */
 function wppb_create_user( $user_name, $password, $email) {
-	$user_name = preg_replace( '/\s+/', '', sanitize_user( $user_name, true ) );
+    if( is_email( $user_name ) )
+        $user_name = apply_filters( 'wppb_generated_random_username', Wordpress_Creation_Kit_PB::wck_generate_slug( trim( $user_name ) ), $user_name );
+    else
+	    $user_name = preg_replace( '/\s+/', '', sanitize_user( $user_name, true ) );
+
 
 	$user_id = wp_create_user( $user_name, $password, $email );
 	if ( is_wp_error($user_id) )

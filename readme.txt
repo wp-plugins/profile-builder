@@ -6,7 +6,7 @@ Tags: registration, user profile, user registration, custom field registration, 
 
 Requires at least: 3.1
 Tested up to: 4.0
-Stable tag: 2.0.2
+Stable tag: 2.0.3
 
 Simple to use profile plugin allowing front-end login, user registration and edit profile by using shortcodes.
  
@@ -102,6 +102,12 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 9. Recover Password Page
 
 == Changelog ==
+= 2.0.3 =
+Fixed bug that made radio buttons field types not to throw error when they are required
+Fixed XSS security vulnerability in fallback-page.php
+Reintroduced the filters:'wppb_generated_random_username', 'wppb_userlisting_extra_meta_email' and 'wppb_userlisting_extra_meta_user_name'
+Fixed the bug when changing the password in a edit profile form we were logged out
+
 = 2.0.2 =
 * Brand new user interface.
 * Drag & drop to reorder User Profile Fields.
