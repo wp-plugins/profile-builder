@@ -69,6 +69,15 @@
 	background:url(../images/logo_free.png) center 20px no-repeat #d54e21;
 }
 
+/* Userlist page */
+.wppb-ul-templates > textarea,
+.wppb-single-ul-templates > textarea {
+     float: left;
+     width: 60%;
+     max-width: 100%;
+     height: 400px;
+}
+
 /* Extra Stuff */
 .nowrap {
     white-space: nowrap;
