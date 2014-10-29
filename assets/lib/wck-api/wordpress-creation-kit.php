@@ -412,7 +412,7 @@ class Wordpress_Creation_Kit_PB{
 		$list .= '" post="'.esc_attr($id).'">';		
 		
 		
-		if($results != null){
+		if( !empty( $results ) ){
 			$list .= apply_filters( 'wck_metabox_content_header_'.$meta , '<thead><tr><th class="wck-number">#</th><th class="wck-content">'. __( 'Content', 'wck' ) .'</th><th class="wck-edit">'. __( 'Edit', 'wck' ) .'</th><th class="wck-delete">'. __( 'Delete', 'wck' ) .'</th></tr></thead>' );
 			$i=0;
 			foreach ($results as $result){			
