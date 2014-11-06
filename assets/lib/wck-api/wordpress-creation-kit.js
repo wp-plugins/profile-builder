@@ -90,7 +90,7 @@ function addMeta(value, id, nonce){
 					/* restore the add form to the original values */					
 					if( !jQuery( '#'+value ).hasClass('single') ){
 						jQuery.post( wckAjaxurl ,  { action:"wck_add_form"+meta, meta:value, id:id }, function(response) {			
-							jQuery( '#'+value ).replaceWith( response );							
+							jQuery( '#'+value ).replaceWith( response );
 							wck_set_to_widest( '.field-label', '#'+value );
 						});
 					}
@@ -238,26 +238,26 @@ jQuery(mb_sortable_elements);
 function showUpdateFormMeta(value, id, element_id, nonce){	
 	if( jQuery( '#update_container_' + value + '_' + element_id ).length == 0 ){
 		jQuery('#container_'+value).parent().css({'opacity':'0.4', 'position':'relative'}).append('<div id="mb-ajax-loading"></div>');
-		
+
 		if( jQuery( '#container_' + value + " tbody" ).hasClass('ui-sortable') )
 			jQuery( '#container_' + value + " tbody" ).sortable("disable");
-		
-		
+
+
 		meta = value;
-	
+
 		if( value.indexOf("-wcknested-") != -1 ){
 			metaDetails = value.split("-wcknested-");
 			meta = metaDetails[0];
 		}
-		
-		
-		jQuery.post( wckAjaxurl ,  { action:"wck_show_update"+meta, meta:value, id:id, element_id:element_id, _ajax_nonce:nonce}, function(response) {	
+
+
+		jQuery.post( wckAjaxurl ,  { action:"wck_show_update"+meta, meta:value, id:id, element_id:element_id, _ajax_nonce:nonce}, function(response) {
 				//jQuery('#container_'+value+' #element_'+element_id).append(response);
 				jQuery(response).insertAfter('#container_'+value+' > tbody > #element_'+element_id);
-				
+
 				/* set width of field-label */
-				wck_set_to_widest('.field-label', '#update_container_' + value + '_' + element_id );				
-				
+				wck_set_to_widest('.field-label', '#update_container_' + value + '_' + element_id );
+
 				jQuery('#container_'+value).parent().css('opacity','1');
 				jQuery('#mb-ajax-loading').remove();
 				wckGoToByScroll('update_container_' + value + '_' + element_id);

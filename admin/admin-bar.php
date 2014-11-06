@@ -45,7 +45,7 @@ function wppb_show_hide_admin_bar_content() {
 	<div class="wrap wppb-wrap wppb-admin-bar">
 	
 		<h2><?php _e( 'Admin Bar Settings', 'profilebuilder' );?></h2>
-		<p><?php _e( 'Chose which user roles view the admin bar in the front-end of the website.', 'profilebuilder' ); ?>
+		<p><?php _e( 'Choose which user roles view the admin bar in the front-end of the website.', 'profilebuilder' ); ?>
 		<form method="post" action="options.php#show-hide-admin-bar">
 		<?php	
 			$admin_bar_settings = get_option( 'wppb_display_admin_settings' );
@@ -68,7 +68,7 @@ function wppb_show_hide_admin_bar_content() {
 						$alt_class = ( ( $alt_i%2 == 0 ) ? ' class="alternate"' : '' );
 						
 						echo'<tr'.$alt_class.'>
-								<td>'.$key.'</td>
+								<td>'.translate_user_role($key).'</td>
 								<td>
 									<span><input id="rd'.$key.'" type="radio" name="wppb_display_admin_settings['.$key.']" value="default"'.( ( !$setting_exists || $admin_bar_settings[$key] == 'default' ) ? ' checked' : '' ).'/><label for="rd'.$key.'">'.__( 'Default', 'profilebuilder' ).'</label></span>
 									<span><input id="rs'.$key.'" type="radio" name="wppb_display_admin_settings['.$key.']" value="show"'.( ( $setting_exists && $admin_bar_settings[$key] == 'show') ? ' checked' : '' ).'/><label for="rs'.$key.'">'.__( 'Show', 'profilebuilder' ).'</label></span>

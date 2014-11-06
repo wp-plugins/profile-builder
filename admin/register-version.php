@@ -54,7 +54,7 @@ function wppb_serial_form($version, $fullname){
         <?php $wppb_profile_builder_serial_status = get_option( 'wppb_profile_builder_'.$version.'_serial_status' ); ?>
         <?php settings_fields( 'wppb_profile_builder_'.$version.'_serial' ); ?>
 
-        <p><?php _e( "Now that you acquired a copy of $fullname, you should take the time and register it with the serial number you received", 'profilebuilder' );?></p>
+        <p><?php printf( __( "Now that you acquired a copy of %s, you should take the time and register it with the serial number you received", 'profilebuilder'), $fullname);?></p>
         <p><?php _e( "If you register this version of Profile Builder, you'll receive information regarding upgrades, patches, and technical support.", 'profilebuilder' );?></p>
         <p class="wppb-serial-wrap">
             <label for="wppb_profile_builder_<?php echo $version; ?>_serial"><?php _e(' Serial Number:', 'profilebuilder' );?></label>

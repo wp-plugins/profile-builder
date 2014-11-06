@@ -87,7 +87,7 @@ function wppb_basic_info_content() {
 				<h3><?php _e( 'Customize Your Forms The Way You Want (*)', 'profilebuilder' ); ?></h3>
 				<p><?php _e( 'With Extra Profile Fields you can create the exact registration form your project needs.', 'profilebuilder' ); ?></p>
 				<?php if ($version == 'Free'){ ?>
-					<p><a href="http://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=basicinfo-extrafields&utm_campaign=PBFree" class="button-free"><?php _e( 'Extra Profile Fields are available in Hobbyist or PRO versions', 'profilebuilder' ); ?></a></p>
+					<p><a href="http://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=basicinfo-extrafields&utm_campaign=PBFree" class="wppb-button-free"><?php _e( 'Extra Profile Fields are available in Hobbyist or PRO versions', 'profilebuilder' ); ?></a></p>
 				<?php } else {?>
 					<p><a href="admin.php?page=manage-fields" class="button"><?php _e( 'Get started with extra fields', 'profilebuilder' ); ?></a></p>
 				<?php } ?>
@@ -118,7 +118,7 @@ function wppb_basic_info_content() {
 			    <p><a href="admin.php?page=profile-builder-modules" class="button"><?php _e( 'Enable your modules', 'profilebuilder' ); ?></a></p>
             <?php endif; ?>
 			<?php if ($version == 'Free'){ ?>
-				<p><a href="http://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=basicinfo-modules&utm_campaign=PBFree" class="button-free"><?php _e( 'Find out more about PRO Modules', 'profilebuilder' ); ?></a></p>
+				<p><a href="http://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=basicinfo-modules&utm_campaign=PBFree" class="wppb-button-free"><?php _e( 'Find out more about PRO Modules', 'profilebuilder' ); ?></a></p>
 			<?php }?>
 		</div>
 		<div class="wppb-row wppb-3-col">

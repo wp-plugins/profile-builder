@@ -11,6 +11,7 @@ function wppb_login_form_bottom( $form_part, $args ){
 		$form_part = '<input type="hidden" name="wppb_login" value="true"/>';
 		$form_part .= '<input type="hidden" name="wppb_form_location" value="'. $form_location .'"/>';
 		$form_part .= '<input type="hidden" name="wppb_request_url" value="'.wppb_curpageurl().'"/>';
+        $form_part .= '<input type="hidden" name="wppb_lostpassword_url" value="'.$args['lostpassword_url'].'"/>';
 	}
 	
 	return $form_part;
@@ -19,7 +20,7 @@ add_filter( 'login_form_bottom', 'wppb_login_form_bottom', 10, 2 );
 
 // when email login is enabled we need to change the post data for the username
 function wppb_change_login_with_email(){
-	if( !empty( $_POST['log'] ) ){
+    if( !empty( $_POST['log'] ) ){
 		// only do this for our form
 		if( isset( $_POST['wppb_login'] ) ){
 			global $wpdb, $_POST;
@@ -47,48 +48,61 @@ add_action( 'login_init', 'wppb_change_login_with_email' );
 function wppb_login_redirect( $redirect_to, $redirect_url, $user ){
 	// if login action initialized by our form
 	if( isset( $_POST['wppb_login'] ) ){
-		if( is_wp_error( $user ) ){
-			// if we don't have a succesfull login we must redirect to the url of the form, so make sure this happens
-			$redirect_to = $_POST['wppb_request_url'];
-			$request_form_location = $_POST['wppb_form_location'];
-			$error_string = $user->get_error_message();
-			
-			// if login with email is enabled change the word username with email
-			$wppb_generalSettings = get_option('wppb_general_settings');
-			if( isset( $wppb_generalSettings['loginWith'] ) && ( $wppb_generalSettings['loginWith'] == 'email' ) ){
-				$siteURL = home_url( '/wp-login.php?action=lostpassword' );
-				$siteURL = apply_filters( 'wppb_pre_login_url_filter', $siteURL );
-				
-				if( $user->get_error_code() == 'incorrect_password' ){
-					$error_string = '<strong>'. __( 'ERROR', 'profilebuilder' ) .'</strong>: '. __( 'The password you entered is incorrect.', 'profilebuilder' ) .' ';					
-					$error_string .= '<a href="'. $siteURL .'" title="'. __( 'Password Lost and Found.', 'profilebuilder' ) .'">'. __( 'Lost your password', 'profilebuilder' ) .'</a>?';
-				}
-				
-				/* maybe also change the recover password link */
-				$error_string = str_replace( home_url( '/wp-login.php?action=lostpassword' ), $siteURL, $error_string );
-				
-				$error_string = str_replace( 'username', 'email', $error_string );
-			}
-			
-			// if the error string is empty it means that none of the fields were completed
-			if( empty( $error_string ) ){
-				$error_string = '<strong>'. __( 'ERROR', 'profilebuilder' ) .'</strong>: '. __( 'Both fields are empty.', 'profilebuilder' ) .' ';
-				$error_string = apply_filters( 'wppb_login_empty_fields_error_message', $error_string );
-			}
-			
-			$error_string = apply_filters( 'wppb_login_wp_error_message', $error_string, $user );
-			
-			// encode the error string and send it as a GET parameter
-			$arr_params = array ( 'loginerror' => urlencode( base64_encode( $error_string ) ), 'request_form_location' => $request_form_location );
-			$redirect_to = add_query_arg( $arr_params, $redirect_to );
-			wp_safe_redirect( $redirect_to );			
-		}
+		if( is_wp_error( $user ) ) {
+            // if we don't have a successful login we must redirect to the url of the form, so make sure this happens
+            $redirect_to = $_POST['wppb_request_url'];
+            $request_form_location = $_POST['wppb_form_location'];
+            $error_string = $user->get_error_message();
+
+            $wppb_generalSettings = get_option('wppb_general_settings');
+
+            if (isset($wppb_generalSettings['loginWith'])) {
+                $LostPassURL = home_url('/wp-login.php?action=lostpassword');
+
+                // if the Login shortcode has a lostpassword argument set, give the lost password error link that value
+                if (!empty($_POST['wppb_lostpassword_url'])) {
+                    if ( wppb_check_missing_http( $_POST['wppb_lostpassword_url'] ) ) $LostPassURL = "http://" . $_POST['wppb_lostpassword_url'];
+                    else $LostPassURL = $_POST['wppb_lostpassword_url'];
+                }
+
+                //apply filter to allow changing Lost your Password link
+                $LostPassURL = apply_filters('wppb_pre_login_url_filter', $LostPassURL);
+
+                if ($user->get_error_code() == 'incorrect_password') {
+                    $error_string = '<strong>' . __('ERROR', 'profilebuilder') . '</strong>: ' . __('The password you entered is incorrect.', 'profilebuilder') . ' ';
+                    $error_string .= '<a href="' . $LostPassURL . '" title="' . __('Password Lost and Found.', 'profilebuilder') . '">' . __('Lost your password', 'profilebuilder') . '</a>?';
+
+                    // change the recover password link
+                    $error_string = str_replace(home_url('/wp-login.php?action=lostpassword'), $LostPassURL, $error_string);
+                }
+                if ($user->get_error_code() == 'invalid_username') {
+                    $error_string = '<strong>' . __('ERROR', 'profilebuilder') . '</strong>: ' . __('Invalid username.', 'profilebuilder') . ' ';
+                    $error_string .= '<a href="' . $LostPassURL . '" title="' . __('Password Lost and Found.', 'profilebuilder') . '">' . __('Lost your password', 'profilebuilder') . '</a>?';
+                }
+                // if login with email is enabled change the word username with email
+                if ($wppb_generalSettings['loginWith'] == 'email')
+                    $error_string = str_replace( __('username','profilebuilder'), __('email','profilebuilder'), $error_string);
+
+            }
+            // if the error string is empty it means that none of the fields were completed
+            if (empty($error_string)) {
+                $error_string = '<strong>' . __('ERROR', 'profilebuilder') . '</strong>: ' . __('Both fields are empty.', 'profilebuilder') . ' ';
+                $error_string = apply_filters('wppb_login_empty_fields_error_message', $error_string);
+            }
+
+            $error_string = apply_filters('wppb_login_wp_error_message', $error_string, $user);
+
+            // encode the error string and send it as a GET parameter
+            $arr_params = array('loginerror' => urlencode(base64_encode($error_string)), 'request_form_location' => $request_form_location);
+            $redirect_to = add_query_arg($arr_params, $redirect_to);
+            wp_safe_redirect($redirect_to);
+        }
 		else{
 			// we don't have an error make sure to remove the error from the query arg
 			$redirect_to = remove_query_arg( 'loginerror', $redirect_to );
 		}
 	}
-	
+
 	return $redirect_to;
 }
 add_filter( 'login_redirect', 'wppb_login_redirect', 10, 3 );
@@ -96,16 +110,17 @@ add_filter( 'login_redirect', 'wppb_login_redirect', 10, 3 );
 
 /* shortcode function */
 function wppb_front_end_login( $atts ){
-	extract( shortcode_atts( array( 'display' => true, 'redirect' => '' ), $atts ) );
-	
-	$wppb_generalSettings = get_option('wppb_general_settings');	
-	
+
+    extract( shortcode_atts( array( 'display' => true, 'redirect' =>'', 'register_url'=>'', 'lostpassword_url'=>'' ), $atts ) );
+
+	$wppb_generalSettings = get_option('wppb_general_settings');
+
 	if( !is_user_logged_in() ){
 		// set up the form arguments
 		$form_args = array( 'echo' => false, 'id_submit' => 'wppb-submit' );
-		
+
 		// maybe set up the redirect argument	
-		if( empty( $redirect ) ){			
+		if( empty( $redirect ) ){
 			$wppb_module_settings = get_option( 'wppb_module_settings' );
 			if( $wppb_module_settings['wppb_customRedirect'] == 'show' ){
 				//check to see if the redirect location is not an empty string and is activated
@@ -144,12 +159,28 @@ function wppb_front_end_login( $atts ){
                 }
             }
 		}
-		
 		// build our form
 		$login_form .= '<div id="wppb-login-wrap" class="wppb-user-forms">';
+        $form_args['lostpassword_url'] = $lostpassword_url;
 		$login_form .= wp_login_form( $form_args );
-		$login_form .= '</div>';
-		
+
+		if ((!empty($register_url)) || (!empty($lostpassword_url))) {
+                $login_form .= '<p class="login-register-lost-password">';
+                $i = 0;
+                if (!empty($register_url)) {
+                    if ( wppb_check_missing_http( $register_url ) ) $register_url = "http://" . $register_url;
+                    $login_form .= '<a href="' . esc_url($register_url) . '">'. apply_filters('wppb_login_register_text', __('Register','profilebuilder')) .'</a>';
+                    $i++;
+                }
+                if (!empty($lostpassword_url)) {
+                    if ($i != 0) $login_form .= ' | ';
+                    if ( wppb_check_missing_http( $lostpassword_url ) ) $lostpassword_url = "http://" . $lostpassword_url;
+                    $login_form .= '<a href="'. esc_url($lostpassword_url) .'">'. apply_filters('wppb_login_lostpass_text', __('Lost your password?','profilebuilder')) .'</a>';
+                }
+                $login_form .= '</p>';
+        }
+
+        $login_form .= '</div>';
 		return $login_form;
 	
 	}else{

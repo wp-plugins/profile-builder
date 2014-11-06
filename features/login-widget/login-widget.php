@@ -29,25 +29,9 @@ class wppb_login_widget extends WP_Widget {
 		if ( $title )
 			echo $before_title . $title . $after_title;
 
-		echo do_shortcode('[wppb-login display="false" redirect="'.$redirect.'"]');
+		echo do_shortcode('[wppb-login display="false" register_url="'.$register.'" lostpassword_url="'.$lostpass.'" redirect="'.$redirect.'"]');
 		
-		if ( $register ){
-
-			/* Check if users can register. */
-			$registration = get_option( 'users_can_register' );
-			
-			if ( ( current_user_can( 'create_users' ) || $registration ) && !is_user_logged_in() ){
-				$link = '<a href="'.$register.'" alt="'.__( 'Register', 'profilebuilder' ) .'" title="'.__( 'Register', 'profilebuilder' ).'">'.__( 'Register', 'profilebuilder' ).'</a>';
-				echo $registerLink = apply_filters('wppb_login_widget_register', '<br/>'.__( "Don't have an account?", "profilebuilder" ).' '.$link.'<br/>', $link );
-			}
-		}
-		
-		if ( $lostpass && !is_user_logged_in() ){
-			$link = '<br/><a href="'.$lostpass.'" alt="'. __('Lost Password', 'profilebuilder') .'" title="'. __('Lost Password', 'profilebuilder') .'">'. __('Lost Your Password?', 'profilebuilder') .'</a>';
-			echo $link = apply_filters('wppb_login_widget_lost_password', $link, $lostpass );
-		}
-
-		do_action( 'wppb_login_widget_display', $args, $instance);	
+		do_action( 'wppb_login_widget_display', $args, $instance);
 			
 		echo $after_widget;
 	}
@@ -77,22 +61,22 @@ class wppb_login_widget extends WP_Widget {
 
 		<p>
 			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'profilebuilder' ); ?></label>
-			<input id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo $instance['title']; ?>" style="width:100%;" />
+			<input id="<?php echo $this->get_field_id( 'title' ); ?>" class="widefat" type="text" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo $instance['title']; ?>" style="width:100%;" />
 		</p>
 
 		<p>
 			<label for="<?php echo $this->get_field_id( 'redirect' ); ?>"><?php _e( 'After login redirect URL (optional):', 'profilebuilder' ); ?></label>
-			<input id="<?php echo $this->get_field_id( 'redirect' ); ?>" name="<?php echo $this->get_field_name( 'redirect' ); ?>" value="<?php echo $instance['redirect']; ?>" style="width:100%;" />
+			<input id="<?php echo $this->get_field_id( 'redirect' ); ?>" class="widefat" type="url" name="<?php echo $this->get_field_name( 'redirect' ); ?>" value="<?php echo $instance['redirect']; ?>" style="width:100%;" />
 		</p>
 		
 		<p>
 			<label for="<?php echo $this->get_field_id( 'register' ); ?>"><?php _e( 'Register page URL (optional):', 'profilebuilder' ); ?></label>
-			<input id="<?php echo $this->get_field_id( 'register' ); ?>" name="<?php echo $this->get_field_name( 'register' ); ?>" value="<?php echo $instance['register']; ?>" style="width:100%;" />
+			<input id="<?php echo $this->get_field_id( 'register' ); ?>" class="widefat" type="url" name="<?php echo $this->get_field_name( 'register' ); ?>" value="<?php echo $instance['register']; ?>" style="width:100%;" />
 		</p>		
 		
 		<p>
 			<label for="<?php echo $this->get_field_id( 'lostpass' ); ?>"><?php _e( 'Password Recovery page URL (optional):', 'profilebuilder' ); ?></label>
-			<input id="<?php echo $this->get_field_id( 'lostpass' ); ?>" name="<?php echo $this->get_field_name( 'lostpass' ); ?>" value="<?php echo $instance['lostpass']; ?>" style="width:100%;" />
+			<input id="<?php echo $this->get_field_id( 'lostpass' ); ?>" class="widefat" type="url" name="<?php echo $this->get_field_name( 'lostpass' ); ?>" value="<?php echo $instance['lostpass']; ?>" style="width:100%;" />
 		</p>
 
 	<?php

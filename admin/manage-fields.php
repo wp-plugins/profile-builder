@@ -30,7 +30,7 @@ function wppb_manage_fields_submenu(){
 	$manage_field_types[] = 'Default - Nickname';
 	$manage_field_types[] = 'Default - E-mail';
 	$manage_field_types[] = 'Default - Website';
-	
+
 	// Default contact methods were removed in WP 3.6. A filter dictates contact methods.
 	if ( apply_filters( 'wppb_remove_default_contact_methods', get_site_option( 'initial_db_version' ) < 23588 ) ){
 		$manage_field_types[] = 'Default - AIM';
@@ -165,6 +165,7 @@ function wppb_get_meta_name(){
 	$id = 1;
 	
 	$wppb_manage_fields = get_option( 'wppb_manage_fields', 'not_found' );
+
 	if ( ( $wppb_manage_fields === 'not_found' ) || ( empty( $wppb_manage_fields ) ) ){
 		return 'custom_field'.$id;
 	}
@@ -190,7 +191,7 @@ function wppb_get_meta_name(){
                 $id = $meta_numbers[0]+1;
             }
         }
-	
+
 		return 'custom_field'.$id;
 	}
 }
@@ -234,7 +235,7 @@ function wppb_return_unique_field_list( $only_default_fields = false ){
 	$unique_field_list[] = 'Default - Nickname';
 	$unique_field_list[] = 'Default - E-mail';
 	$unique_field_list[] = 'Default - Website';
-	
+
 	// Default contact methods were removed in WP 3.6. A filter dictates contact methods.
 	if ( apply_filters( 'wppb_remove_default_contact_methods', get_site_option( 'initial_db_version' ) < 23588 ) ){
 		$unique_field_list[] = 'Default - AIM';
@@ -256,7 +257,7 @@ function wppb_return_unique_field_list( $only_default_fields = false ){
 
 
 /**
- * Function that checks several things when adding/editin the fields
+ * Function that checks several things when adding/editing the fields
  *
  * @since v.2.0
  *
