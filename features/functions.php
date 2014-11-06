@@ -130,7 +130,7 @@ if ( is_admin() ){
 
 
 /**
- * Function that overwites the default wp_mail function and sends out emails
+ * Function that overwrites the default wp_mail function and sends out emails
  *
  * @since v.2.0
  *
@@ -465,7 +465,7 @@ function wppb_check_password_strength(){
     $wppb_generalSettings = get_option( 'wppb_general_settings' );
     if( isset( $_POST['wppb_password_strength'] ) && !empty( $wppb_generalSettings['minimum_password_strength'] ) ){
         $password_strength_array = array( 'short' => 0, 'bad' => 1, 'good' => 2, 'strong' => 3 );
-        $password_strength_text = array( 'short' => __( 'Very Week', 'profilebuilder' ), 'bad' => __( 'Week', 'profilebuilder' ), 'good' => __( 'Medium', 'profilebuilder' ), 'strong' => __( 'Strong', 'profilebuilder' ) );
+        $password_strength_text = array( 'short' => __( 'Very Weak', 'profilebuilder' ), 'bad' => __( 'Weak', 'profilebuilder' ), 'good' => __( 'Medium', 'profilebuilder' ), 'strong' => __( 'Strong', 'profilebuilder' ) );
         if( $password_strength_array[$_POST['wppb_password_strength']] < $password_strength_array[$wppb_generalSettings['minimum_password_strength']] ){
             return $password_strength_text[$wppb_generalSettings['minimum_password_strength']];
         }
@@ -562,4 +562,48 @@ function wppb_required_field_error($field_title='') {
 /* Create a wrapper function for get_query_var */
 function wppb_get_query_var( $varname ){
     return apply_filters( 'wppb_get_query_var_'.$varname, get_query_var( $varname ) );
+}
+
+/*Filter the "Save Changes" button text, to make it translatable*/
+function wppb_change_save_changes_button($value){
+    $value = __('Save Changes','profilebuilder');
+    return $value;
+}
+add_filter( 'wck_save_changes_button', 'wppb_change_save_changes_button', 10, 2);
+
+/*Filter the "Cancel" button text, to make it translatable*/
+function wppb_change_cancel_button($value){
+    $value = __('Cancel','profilebuilder');
+    return $value;
+}
+add_filter( 'wck_cancel_button', 'wppb_change_cancel_button', 10, 2);
+
+/*Filter the "Delete" button text, to make it translatable*/
+function wppb_change_delete_button($value){
+    $value = __('Delete','profilebuilder');
+    return $value;
+}
+add_filter( 'wck_delete_button', 'wppb_change_delete_button', 10, 2);
+
+/*Filter the "Edit" button text, to make it translatable*/
+function wppb_change_edit_button($value){
+    $value = __('Edit','profilebuilder');
+    return $value;
+}
+add_filter( 'wck_edit_button', 'wppb_change_edit_button', 10, 2);
+
+/*Filter the User Listing, Register Forms and Edit Profile forms metabox header content, to make it translatable*/
+function wppb_change_metabox_content_header(){
+  return '<thead><tr><th class="wck-number">#</th><th class="wck-content">'. __( 'Content', 'profilebuilder' ) .'</th><th class="wck-edit">'. __( 'Edit', 'profilebuilder' ) .'</th><th class="wck-delete">'. __( 'Delete', 'profilebuilder' ) .'</th></tr></thead>';
+}
+add_filter('wck_metabox_content_header_wppb_ul_page_settings', 'wppb_change_metabox_content_header', 1);
+add_filter('wck_metabox_content_header_wppb_rf_page_settings', 'wppb_change_metabox_content_header', 1);
+add_filter('wck_metabox_content_header_wppb_epf_page_settings', 'wppb_change_metabox_content_header', 1);
+
+
+/* Add a notice if people are not able to register via Profile Builder; Membership -> "Anyone can register" checkbox is not checked under WordPress admin UI -> Settings -> General tab */
+if ( get_option('users_can_register') == false) {
+    new WPPB_Add_General_Notices('wppb_anyone_can_register',
+        sprintf(__('To allow users to register for your website via Profile Builder, you first must enable user registration. Go to %1$sSettings -> General%2$s tab, and under Membership make sure to check “Anyone can register”. %3$sDismiss%4$s', 'profilebuilder'), "<a href='".get_site_url()."/wp-admin/options-general.php'>", "</a>", "<a href='" . add_query_arg('wppb_anyone_can_register_dismiss_notification', '0') . "'>", "</a>"),
+        'update-nag');
 }

@@ -364,9 +364,7 @@ function wppb_hide_properties_for_already_added_fields( container_name ){
 
 	jQuery( container_name + ' tr' ).each(function() {
 
-		field = jQuery('.row-field', this).text();
-		field = jQuery.trim(field.replace('Field: ', ''));
-
+		field = jQuery('.row-field pre', this).text();
 
 		jQuery( 'li', this ).each(function() {
 			var class_name = '';

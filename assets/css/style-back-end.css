@@ -193,6 +193,16 @@
 #container_wppb_rf_fields thead tr:hover {
     background: #f1f1f1;
 }
+#container_wppb_epf_fields thead .wppb-delete-all-fields,
+#container_wppb_rf_fields thead .wppb-delete-all-fields {
+    color: #333;
+    text-decoration: underline;
+}
+
+#container_wppb_epf_fields tbody .wck-delete,
+#container_wppb_rf_fields tbody .wck-delete {
+    padding: 8px 16px;
+}
 
 #container_wppb_epf_fields tr.update_container_wppb_epf_fields:hover,
 #container_wppb_rf_fields tr.update_container_wppb_rf_fields:hover{
@@ -420,7 +430,7 @@
     }
 }
 /* Basic Information Buttons - for Free to Pro upgrade*/
-.button-free {
+.wppb-button-free {
     border-radius: 3px;
     border-style: solid;
     border-width: 1px;
@@ -440,10 +450,10 @@
     color: #fff;
     vertical-align:top;
 }
-p .button-free {
+p .wppb-button-free {
     vertical-align: baseline;
 }
-.button-free:hover {
+.wppb-button-free:hover {
     background: #e45424;
     border-color: #6d2811;
     color: #fff;

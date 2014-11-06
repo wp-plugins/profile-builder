@@ -117,3 +117,40 @@ function wppb_check_update_field_options_disabled() {
         }
     });
 }
+
+/*
+* Function that sends an ajax request to delete all items(fields) from a form
+*
+ */
+function wppb_rf_epf_delete_all_fields(event, delete_all_button_id, nonce) {
+    event.preventDefault();
+    $deleteButton = jQuery('#' + delete_all_button_id);
+
+    var response = confirm( "Are you sure you want to delete all items ?" );
+
+    if( response == true ) {
+        $tableParent = $deleteButton.parents('table');
+
+        var meta = $tableParent.attr('id').replace('container_', '');
+        var post_id = parseInt( $tableParent.attr('post') );
+
+        $tableParent.parent().css({'opacity':'0.4', 'position':'relative'}).append('<div id="mb-ajax-loading"></div>');
+
+        jQuery.post( ajaxurl, { action: "wppb_rf_epf_delete_all_fields", meta: meta, id: post_id, _ajax_nonce: nonce }, function(response) {
+
+            /* refresh the list */
+            jQuery.post( wckAjaxurl, { action: "wck_refresh_list"+meta, meta: meta, id: post_id}, function(response) {
+                jQuery('#container_'+meta).replaceWith(response);
+                $tableParent = jQuery('#container_'+meta);
+
+                $tableParent.find('tbody td').css('width', function(){ return jQuery(this).width() });
+
+                mb_sortable_elements();
+                $tableParent.parent().css('opacity','1');
+
+                jQuery('#mb-ajax-loading').remove();
+            });
+
+        });
+    }
+}

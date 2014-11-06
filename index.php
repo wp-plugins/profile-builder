@@ -3,7 +3,7 @@
 Plugin Name: Profile Builder
 Plugin URI: http://www.cozmoslabs.com/wordpress-profile-builder/
 Description: Login, registration and edit profile shortcodes for the front-end. Also you can chose what fields should be displayed or add new (custom) ones both in the front-end and in the dashboard.
-Version: 2.0.4
+Version: 2.0.5
 Author: Cozmoslabs, Madalin Ungureanu, Antohe Cristian, Barina Gabriel
 Author URI: http://www.cozmoslabs.com/
 License: GPL2
@@ -52,7 +52,7 @@ function wppb_return_bytes( $val ) {
  *
  *
  */
-define( 'PROFILE_BUILDER_VERSION', '2.0.4' );
+define( 'PROFILE_BUILDER_VERSION', '2.0.5' );
 define( 'WPPB_PLUGIN_DIR', WP_PLUGIN_DIR . '/' . dirname( plugin_basename( __FILE__ ) ) );
 define( 'WPPB_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 define( 'WPPB_SERVER_MAX_UPLOAD_SIZE_BYTE', apply_filters( 'wppb_server_max_upload_size_byte_constant', wppb_return_bytes( ini_get( 'upload_max_filesize') ) ) );
@@ -83,7 +83,7 @@ else
 function wppb_init_translation(){
 	load_plugin_textdomain( 'profilebuilder', false, basename( dirname( __FILE__ ) ) . '/translation/' ); 
 }
-add_action( 'init', 'wppb_init_translation' );
+add_action( 'init', 'wppb_init_translation', 8);
 
 
 /**
@@ -154,9 +154,3 @@ if ( file_exists ( WPPB_PLUGIN_DIR.'/update/update-checker.php' ) ){
 register_activation_hook( __FILE__, 'wppb_generate_default_settings_defaults' );	//prepoulate general settings
 register_activation_hook( __FILE__, 'wppb_prepopulate_fields' );					//prepopulate manage fields list
 
-/* Add a halloween notice */
-new WPPB_Add_General_Notices( 'wppb_halloween',
-    sprintf( __( '<p style="position:relative;">Halloween treat: 30&#37; OFF on all Profile Builder purchases 29 - 30 -31 October over at %1$swww.cozmslabs.com%2$s Get your discount code! %3$sDismiss%4$s</p>', 'profilebuilder'), "<a href='http://www.cozmoslabs.com/' target='_blank' class='button-primary'>", "</a>", "<a href='". add_query_arg( 'wppb_halloween_dismiss_notification', '0' ) ."' class='wppb-dismiss-notification' style='position: absolute;right: 0;top: 50%;margin-top: -7px;'>", "</a>" ),
-    'updated halloween',
-    '28 October 2014',
-    '1 November 2014' );

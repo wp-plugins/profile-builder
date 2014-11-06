@@ -422,7 +422,7 @@ class Wordpress_Creation_Kit_PB{
 				$i++;
 			}
 		}
-		$list .= apply_filters( 'wck_metabox_content_footer_'.$meta , '' );
+		$list .= apply_filters( 'wck_metabox_content_footer_'.$meta , '', $id );
 		$list .= '</table>';
 		
 		$list = apply_filters('wck_metabox_content_'.$meta, $list, $id);
@@ -499,8 +499,8 @@ class Wordpress_Creation_Kit_PB{
 		}
 		
 		$list .= '</td>';				
-		$list .= '<td style="text-align:center;vertical-align:middle;" class="wck-edit"><a href="javascript:void(0)" class="button-secondary"  onclick=\'showUpdateFormMeta("'.esc_js($meta).'", "'.esc_js($id).'", "'.esc_js($element_id).'", "'.esc_js($edit_nonce).'")\' title="'. __( 'Edit this item', 'wck' ) .'">'. __( 'Edit', 'wck' ) .'</a></td>';
-		$list .= '<td style="text-align:center;vertical-align:middle;" class="wck-delete"><a href="javascript:void(0)" class="mbdelete" onclick=\'removeMeta("'.esc_js($meta).'", "'.esc_js($id).'", "'.esc_js($element_id).'", "'.esc_js($delete_nonce).'")\' title="'. __( 'Delete this item', 'wck' ) .'">'. __( 'Delete', 'wck' ) .'</a></td>';
+		$list .= '<td style="text-align:center;vertical-align:middle;" class="wck-edit"><a href="javascript:void(0)" class="button-secondary"  onclick=\'showUpdateFormMeta("'.esc_js($meta).'", "'.esc_js($id).'", "'.esc_js($element_id).'", "'.esc_js($edit_nonce).'")\' title="'. __( 'Edit this item', 'wck' ) .'">'. apply_filters( 'wck_edit_button', __('Edit','wck'), $meta ) .'</a></td>';
+		$list .= '<td style="text-align:center;vertical-align:middle;" class="wck-delete"><a href="javascript:void(0)" class="mbdelete" onclick=\'removeMeta("'.esc_js($meta).'", "'.esc_js($id).'", "'.esc_js($element_id).'", "'.esc_js($delete_nonce).'")\' title="'. __( 'Delete this item', 'wck' ) .'">'. apply_filters( 'wck_delete_button', __( 'Delete', 'wck' ), $meta) .'</a></td>';
 			
 		$list .= "</tr> \r\n";
 	
@@ -1337,12 +1337,12 @@ class WCK_Page_Creator_PB{
 		/* Create the page using either add_menu_page or add_submenu_page functions depending on the 'page_type' parameter. */
 		if( $this->args['page_type'] == 'menu_page' ){
 			$this->hookname = add_menu_page( $this->args['page_title'], $this->args['menu_title'], $this->args['capability'], $this->args['menu_slug'], array( &$this, 'wck_page_template' ), $this->args['icon_url'], $this->args['position'] );
-			
+
 			$pb_wck_pages_hooknames[$this->args['menu_slug']] = $this->hookname;
 		}
 		else if( $this->args['page_type'] == 'submenu_page' ){
 			$this->hookname = add_submenu_page( $this->args['parent_slug'], $this->args['page_title'], $this->args['menu_title'], $this->args['capability'], $this->args['menu_slug'], array( &$this, 'wck_page_template' ) );
-			
+
 			$pb_wck_pages_hooknames[$this->args['menu_slug']] = $this->hookname;
 		}
 

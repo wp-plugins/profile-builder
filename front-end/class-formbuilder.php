@@ -221,16 +221,16 @@ class Profile_Builder_Form_Creator{
 
                         switch ( $account_management_settings ){
                             case 'ec-no_aa-no':
-                                $wppb_register_success_message = apply_filters( 'wppb_register_success_message', sprintf( __( "The account %1s has been successfully created!", 'profilebuilder' ), $account_name ) );
+                                $wppb_register_success_message = apply_filters( 'wppb_register_success_message', sprintf( __( "The account %1s has been successfully created!", 'profilebuilder' ), $account_name ), $account_name );
                                 break;
                             case 'ec-yes_aa-no':
-                                $wppb_register_success_message = apply_filters( 'wppb_register_success_message', sprintf( __( "Before you can access your account %1s, you need to confirm your email address. Please check your inbox and click the activation link.", 'profilebuilder' ), $account_name ) );
+                                $wppb_register_success_message = apply_filters( 'wppb_register_success_message', sprintf( __( "Before you can access your account %1s, you need to confirm your email address. Please check your inbox and click the activation link.", 'profilebuilder' ), $account_name ), $account_name );
                                 break;
                             case 'ec-no_aa-yes':
-                                $wppb_register_success_message = apply_filters( 'wppb_register_success_message', sprintf( __( "Before you can access your account %1s, an administrator has to approve it. You will be notified via email.", 'profilebuilder' ), $account_name ) );
+                                $wppb_register_success_message = apply_filters( 'wppb_register_success_message', sprintf( __( "Before you can access your account %1s, an administrator has to approve it. You will be notified via email.", 'profilebuilder' ), $account_name ), $account_name );
                                 break;
                             case 'ec-yes_aa-yes':
-                                $wppb_register_success_message = apply_filters( 'wppb_register_success_message', sprintf( __( "Before you can access your account %1s, you need to confirm your email address. Please check your inbox and click the activation link.", 'profilebuilder' ), $account_name ) );
+                                $wppb_register_success_message = apply_filters( 'wppb_register_success_message', sprintf( __( "Before you can access your account %1s, you need to confirm your email address. Please check your inbox and click the activation link.", 'profilebuilder' ), $account_name ), $account_name );
                                 break;
                         }
                         $redirect = apply_filters( 'wppb_register_redirect', $this->wppb_get_redirect() );
@@ -258,7 +258,7 @@ class Profile_Builder_Form_Creator{
 		// use this action hook to add extra content before the register form
 		do_action( 'wppb_before_'.$this->args['form_type'].'_fields' );
 		?>
-		<form enctype="multipart/form-data" method="post" id="<?php if( $this->args['form_type'] == 'register' ) echo 'wppb-register-user'; else if( $this->args['form_type'] == 'edit_profile' ) echo 'wppb-edit-user' ?>" class="wppb-user-forms" action="<?php echo wppb_curpageurl(); ?>">
+		<form enctype="multipart/form-data" method="post" id="<?php if( $this->args['form_type'] == 'register' ) echo 'wppb-register-user'; else if( $this->args['form_type'] == 'edit_profile' ) echo 'wppb-edit-user' ?>" class="wppb-user-forms" action="<?php echo apply_filters( 'wppb_form_action', '' ); ?>">
 			<?php 
 			echo apply_filters( 'wppb_before_form_fields', '<ul>' );
 			$this->wppb_output_form_fields( $_REQUEST, $field_check_errors );

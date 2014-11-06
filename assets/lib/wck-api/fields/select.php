@@ -11,7 +11,7 @@ if( !empty( $frontend_prefix ) )
 $element .= esc_attr( Wordpress_Creation_Kit_PB::wck_generate_slug( $details['title'], $details ) ) .'" class="mb-select mb-field" >';
 			
 if( !empty( $details['default-option'] ) && $details['default-option'] )
-	$element .= '<option value="">'. __('...Chose', 'wck') .'</option>';
+	$element .= '<option value="">'. __('...Choose', 'wck') .'</option>';
 
 $field_name = Wordpress_Creation_Kit_PB::wck_generate_slug( $details['title'], $details );
 

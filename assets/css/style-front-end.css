@@ -333,6 +333,10 @@ input#send_credentials_via_email{
     text-align: center;
 }
 
+.wppb-avatar img {
+    max-width: none;
+}
+
 ul.wppb-profile{
     list-style-type: none;
     margin-left: 0;
