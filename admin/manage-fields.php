@@ -167,7 +167,7 @@ function wppb_get_meta_name(){
 	$wppb_manage_fields = get_option( 'wppb_manage_fields', 'not_found' );
 
 	if ( ( $wppb_manage_fields === 'not_found' ) || ( empty( $wppb_manage_fields ) ) ){
-		return 'custom_field'.$id;
+		return 'custom_field_' . $id;
 	}
     else{
         $meta_names = array();
@@ -181,7 +181,7 @@ function wppb_get_meta_name(){
             $meta_numbers = array();
             foreach( $meta_names as $meta_name ){
                 $number = str_replace( 'custom_field', '', $meta_name );
-                /* backwards compatibility check in PB 1.3 meta_name was custom_field_#  */
+                /* we should have an underscore present in custom_field_# so remove it */
                 $number = str_replace( '_', '', $number );
 
                 $meta_numbers[] = $number;
@@ -192,7 +192,7 @@ function wppb_get_meta_name(){
             }
         }
 
-		return 'custom_field'.$id;
+		return 'custom_field_' . $id;
 	}
 }
 
@@ -218,11 +218,40 @@ function wppb_get_unique_id(){
         }
         if( !empty( $ids_array ) ){
             rsort( $ids_array );
-            $id = $ids_array[0]+1;
+            $id = $ids_array[0] + 1;
         }
     }
     return $id;
 }
+
+/**
+ * Function that checks to see if the id is unique when saving the new field
+ *
+ * @param array $values
+ *
+ * @return array
+ */
+function wppb_check_unique_id_on_saving( $values ) {
+    $wppb_manage_fields = get_option( 'wppb_manage_fields', 'not_found' );
+
+    if( $wppb_manage_fields != 'not_found' ) {
+
+        $ids_array = array();
+        foreach( $wppb_manage_fields as $field ){
+            $ids_array[] = $field['id'];
+        }
+
+        if( in_array( $values['id'], $ids_array ) ) {
+            rsort( $ids_array );
+            $values['id'] = $ids_array[0] + 1;
+        }
+
+    }
+
+    return $values;
+}
+add_filter( 'wck_add_meta_filter_values_wppb_manage_fields', 'wppb_check_unique_id_on_saving' );
+
 
 function wppb_return_unique_field_list( $only_default_fields = false ){
 	
@@ -336,14 +365,21 @@ function wppb_check_field_on_edit_add( $message, $fields, $required_fields, $met
 		}
 		// END check for the correct the date-format	
 		
-		//check duplicate meta-name
+		//check for empty meta-name and duplicate meta-name
 		if ( $posted_values['overwrite-existing'] == 'No' ){
             $skip_check_for_fields = wppb_return_unique_field_list(true);
             $skip_check_for_fields = apply_filters ( 'wppb_skip_check_for_fields', $skip_check_for_fields );
 		
 			if ( !in_array( trim( $posted_values['field'] ), $skip_check_for_fields ) ){
 				$unique_meta_name_list = array( 'first_name', 'last_name', 'nickname', 'description' );
-				
+
+                //check to see if meta-name is empty
+                $skip_empty_check_for_fields = array('Heading');
+
+                if( !in_array( $posted_values['field'], $skip_empty_check_for_fields ) && empty( $posted_values['meta-name'] ) ) {
+                    $message .= __( "The meta-name cannot be empty\n", 'profilebuilder' );
+                }
+
 				// Default contact methods were removed in WP 3.6. A filter dictates contact methods.
 				if ( apply_filters( 'wppb_remove_default_contact_methods', get_site_option( 'initial_db_version' ) < 23588 ) ){
 					$unique_meta_name_list[] = 'aim';
@@ -400,7 +436,9 @@ function wppb_check_field_on_edit_add( $message, $fields, $required_fields, $met
 				$message .= sprintf( __( "The following option did not coincide with the ones in the options list: %s\n", 'profilebuilder' ), $posted_values['default-option'] );
 		}
 		// END check for valid default option (checkbox, select, radio)
-	
+
+        $message = apply_filters( 'wppb_check_extra_manage_fields', $message, $posted_values );
+
 	}elseif ( ( $meta_name == 'wppb_rf_fields' ) || ( $meta_name == 'wppb_epf_fields' ) ){
 		if ( $posted_values['field'] == '' ){
 			$message .= __( "You must select a field\n", 'profilebuilder' );

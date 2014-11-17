@@ -143,6 +143,11 @@
     padding-left:0;
     padding-right:0;
 }
+
+.wppb-user-forms ul li{
+    list-style:none;
+}
+
 .wppb-user-forms ul li,
 #wppb-login-wrap p{
 	overflow:hidden;

@@ -344,7 +344,6 @@ class Wordpress_Creation_Kit_PB{
 		
 		$form = '';
 		$form .= '<tr id="update_container_'.$meta.'_'.$element_id.'" ' . $wck_update_container_css_class . '><td colspan="4">';
-		
 		if($results != null){
 			$i = 0;
 			$form .= '<ul class="mb-list-entry-fields">';			
@@ -356,7 +355,7 @@ class Wordpress_Creation_Kit_PB{
 						$value = $results[$element_id][Wordpress_Creation_Kit_PB::wck_generate_slug( $details['title'], $details )];
 					else 
 						$value = '';
-					
+
 					$form = apply_filters( "wck_before_update_form_{$meta}_element_{$i}", $form, $element_id, $value );
 					
 					$form .= '<li class="row-'. esc_attr( Wordpress_Creation_Kit_PB::wck_generate_slug( $details['title'], $details ) ) .'">';
@@ -673,9 +672,9 @@ class Wordpress_Creation_Kit_PB{
 			$values = $_POST['values'];
 		else
 			$values = array();
-		
+
 		$values = apply_filters( "wck_add_meta_filter_values_{$meta}", $values );
-		
+
 		/* check required fields */
 		$errors = self::wck_test_required( $this->args['meta_array'], $meta, $values, $id );		
 		if( $errors != '' ){
@@ -835,8 +834,10 @@ class Wordpress_Creation_Kit_PB{
 		check_ajax_referer( "wck-edit-entry" );		
 		$meta = $_POST['meta'];
 		$id = absint($_POST['id']);
-		$element_id = $_POST['element_id'];	
-		
+		$element_id = $_POST['element_id'];
+
+        do_action( "wck_before_adding_form_{$meta}", $id, $element_id );
+
 		echo self::mb_update_form($this->args['meta_array'], $meta, $id, $element_id);
 		
 		do_action( "wck_after_adding_form", $meta, $id, $element_id );
@@ -885,11 +886,11 @@ class Wordpress_Creation_Kit_PB{
 		if( $this->args['unserialize_fields'] && $this->args['context'] == 'post_meta' ){			
 			
 			$meta_suffix = 1;			
-			
+
 			if( !empty( $results ) ){
-				foreach( $results as $result ){				
-					foreach ( $result as $name => $value){					
-						update_post_meta($id, $meta.'_'.$name.'_'.$meta_suffix, $value);					
+				foreach( $results as $result ){
+					foreach ( $result as $name => $value){
+						update_post_meta($id, $meta.'_'.$name.'_'.$meta_suffix, $value);
 					}
 					$meta_suffix++;			
 				}
@@ -1030,33 +1031,32 @@ class Wordpress_Creation_Kit_PB{
 
 	function wck_media_send_to_editor($html, $id)
 	{
-		parse_str($_POST["_wp_http_referer"], $arr_postinfo);
-		
-		if(isset($arr_postinfo["mb_type"]))
-		{
-			$file_src = wp_get_attachment_url($id);
-			$thumbnail = wp_get_attachment_image( $id, array( 80, 60 ), true );
-			$file_name = get_the_title( $id );
-			
-			if ( preg_match( '/^.*?\.(\w+)$/', get_attached_file( $id ), $matches ) )
-				$file_type = esc_html( strtoupper( $matches[1] ) );
-			else
-				$file_type = strtoupper( str_replace( 'image/', '', get_post_mime_type( $id ) ) );
-		
-			?>
-			<script type="text/javascript">				
-				
-				self.parent.window. <?php echo $arr_postinfo["mb_type"];?> .val('<?php echo $id; ?>');
-				self.parent.window. <?php echo $arr_postinfo["mb_info_div"];?> .html('<?php echo $thumbnail ?><p><span class="file-name"><?php echo $file_name; ?></span><span class="file-type"><?php echo $file_type; ?></span><span class="wck-remove-upload"><?php _e( 'Remove', 'wck' )?></span></p>');
-				
-				self.parent.tb_remove();
-				
-			</script>
-			<?php
-			exit;
-		} 
-		else 
-		{
+        if( !empty( $_POST["_wp_http_referer"] ) ) {
+            parse_str($_POST["_wp_http_referer"], $arr_postinfo);
+            if (isset($arr_postinfo["mb_type"])) {
+                $file_src = wp_get_attachment_url($id);
+                $thumbnail = wp_get_attachment_image($id, array(80, 60), true);
+                $file_name = get_the_title($id);
+
+                if (preg_match('/^.*?\.(\w+)$/', get_attached_file($id), $matches))
+                    $file_type = esc_html(strtoupper($matches[1]));
+                else
+                    $file_type = strtoupper(str_replace('image/', '', get_post_mime_type($id)));
+
+                ?>
+                <script type="text/javascript">
+
+                    self.parent.window.<?php echo $arr_postinfo["mb_type"];?>.val('<?php echo $id; ?>');
+                    self.parent.window.<?php echo $arr_postinfo["mb_info_div"];?>.html('<?php echo $thumbnail ?><p><span class="file-name"><?php echo $file_name; ?></span><span class="file-type"><?php echo $file_type; ?></span><span class="wck-remove-upload"><?php _e( 'Remove', 'wck' )?></span></p>');
+
+                    self.parent.tb_remove();
+
+                </script>
+                <?php
+                exit;
+            }
+        }
+		else{
 			return $html;
 		}
 		

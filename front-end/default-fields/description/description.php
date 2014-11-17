@@ -20,7 +20,7 @@ function wppb_description_handler( $output, $form_location, $field, $user_id, $f
 
         $output = '
 			<label for="description">'.$item_title.$error_mark.'</label>
-			<textarea rows="'.$field['row-count'].'" name="description" class="default_field_description" id="description" wrap="virtual">'. esc_textarea( wp_unslash( $input_value ) ).'</textarea>';
+			<textarea rows="'.$field['row-count'].'" name="description" maxlength="'. apply_filters( 'wppb_maximum_character_length', '', $field ) .'" class="default_field_description" id="description" wrap="virtual">'. esc_textarea( wp_unslash( $input_value ) ).'</textarea>';
         if( !empty( $item_description ) )
             $output .= '<span class="wppb-description-delimiter">'. $item_description .'</span>';
 
