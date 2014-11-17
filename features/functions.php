@@ -553,7 +553,7 @@ function wppb_password_strength_check(){
  * Create functions for repeating error messages in front-end forms
  */
 function wppb_required_field_error($field_title='') {
-    $required_error = __(apply_filters('wppb_required_error' , 'This field is required' , $field_title),'profilebuilder');
+    $required_error = apply_filters('wppb_required_error' , __('This field is required','profilebuilder') , $field_title);
 
     return $required_error;
 
@@ -607,3 +607,17 @@ if ( get_option('users_can_register') == false) {
         sprintf(__('To allow users to register for your website via Profile Builder, you first must enable user registration. Go to %1$sSettings -> General%2$s tab, and under Membership make sure to check “Anyone can register”. %3$sDismiss%4$s', 'profilebuilder'), "<a href='".get_site_url()."/wp-admin/options-general.php'>", "</a>", "<a href='" . add_query_arg('wppb_anyone_can_register_dismiss_notification', '0') . "'>", "</a>"),
         'update-nag');
 }
+
+/*Filter default WordPress notices ("Post published. Post updated."), add post type name for User Listing, Registration Forms and Edit Profile Forms*/
+function wppb_change_default_post_updated_messages($messages){
+    global $post;
+    $post_type = get_post_type($post->ID);
+    $object = get_post_type_object($post_type);
+
+    if ( ($post_type == 'wppb-rf-cpt')||($post_type == 'wppb-epf-cpt')||($post_type == 'wppb-ul-cpt') ){
+        $messages['post'][1] = $object->labels->name . ' updated.';
+        $messages['post'][6] = $object->labels->name . ' published.';
+    }
+    return $messages;
+}
+add_filter('post_updated_messages','wppb_change_default_post_updated_messages', 2);

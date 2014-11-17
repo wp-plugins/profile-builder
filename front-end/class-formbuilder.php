@@ -368,7 +368,7 @@ class Profile_Builder_Form_Creator{
 					$multisite_message = true;					
 					$userdata = $this->wppb_add_custom_field_values( $global_request, $userdata, $this->args['form_fields'] );
 					$userdata['role'] = $this->args['role'];
-					$userdata['user_pass'] = base64_encode( $userdata['user_pass'] );
+					$userdata['user_pass'] = wp_hash_password( $userdata['user_pass'] );
 					wppb_signup_user( $userdata['user_login'], $userdata['user_email'], $userdata );
 				
 				}else{
@@ -382,7 +382,7 @@ class Profile_Builder_Form_Creator{
 				$multisite_message = true;			
 				$userdata = $this->wppb_add_custom_field_values( $global_request, $userdata, $this->args['form_fields'] );
 				$userdata['role'] = $this->args['role'];
-				$userdata['user_pass'] = base64_encode( $userdata['user_pass'] );
+				$userdata['user_pass'] = wp_hash_password( $userdata['user_pass'] );
                 $userdata = wp_unslash( $userdata );
 				wppb_signup_user( $userdata['user_login'], $userdata['user_email'], $userdata );
 			}
@@ -411,7 +411,7 @@ class Profile_Builder_Form_Creator{
                         $send_credentials_via_email = 'sending';
                     else
                         $send_credentials_via_email = '';
-					wppb_notify_user_registration_email( get_bloginfo( 'name' ), ( isset( $global_request['username'] ) ? trim( $global_request['username'] ) : trim( $global_request['email'] ) ), trim( $global_request['email'] ), $send_credentials_via_email, trim( $global_request['passw1'] ), ( isset( $wppb_general_settings['adminApproval'] ) ? $wppb_general_settings['adminApproval'] : 'no' ) );
+					wppb_notify_user_registration_email( get_bloginfo( 'name' ), ( isset( $userdata['user_login'] ) ? trim( $userdata['user_login'] ) : trim( $userdata['user_email'] ) ), trim( $userdata['user_email'] ), $send_credentials_via_email, trim( $userdata['user_pass'] ), ( isset( $wppb_general_settings['adminApproval'] ) ? $wppb_general_settings['adminApproval'] : 'no' ) );
 				}
             }
 		}

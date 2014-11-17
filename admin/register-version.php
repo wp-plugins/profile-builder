@@ -93,7 +93,7 @@ function wppb_check_serial_number($oldVal, $newVal){
 	$serial_number_set = $newVal;
 	
 	$response = wp_remote_get( 'http://updatemetadata.cozmoslabs.com/checkserial/?serialNumberSent='.$serial_number_set );
-	
+
 	if ( PROFILE_BUILDER == 'Profile Builder Pro' ){
         wppb_update_serial_status($response, 'pro');
         wp_clear_scheduled_hook( "check_plugin_updates-profile-builder-pro-update" );
@@ -208,18 +208,21 @@ class wppb_add_notices{
 
 if ( PROFILE_BUILDER == 'Profile Builder Pro' ){
     $wppb_profile_builder_pro_hobbyist_serial_status = get_option( 'wppb_profile_builder_pro_serial_status', 'empty' );
+    $version = 'pro';
+
 } elseif( PROFILE_BUILDER == 'Profile Builder Hobbyist' ) {
     $wppb_profile_builder_pro_hobbyist_serial_status = get_option( 'wppb_profile_builder_hobbyist_serial_status', 'empty' );
+    $version = 'hobbyist';
 }
 
 if ( $wppb_profile_builder_pro_hobbyist_serial_status == 'notFound' || $wppb_profile_builder_pro_hobbyist_serial_status == 'empty' ){
-	new wppb_add_notices( 'wppb', 'profile_builder_pro', sprintf( __( '<p>Your <strong>Profile Builder</strong> serial number is invalid or missing. <br/>Please %1$sregister your copy%2$s of Profile Builder to receive access to automatic updates and support. Need a license key? %3$sPurchase one now%4$s</p>', 'profilebuilder'), "<a href='admin.php?page=profile-builder-register'>", "</a>", "<a href='http://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=PB&utm_medium=dashboard&utm_campaign=PB-Purchase' target='_blank' class='button-primary'>", "</a>" ), 'wppb_profile_builder_pro_serial_status' );
+	new wppb_add_notices( 'wppb', 'profile_builder_pro', sprintf( __( '<p>Your <strong>Profile Builder</strong> serial number is invalid or missing. <br/>Please %1$sregister your copy%2$s to receive access to automatic updates and support. Need a license key? %3$sPurchase one now%4$s</p>', 'profilebuilder'), "<a href='admin.php?page=profile-builder-register'>", "</a>", "<a href='http://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=PB&utm_medium=dashboard&utm_campaign=PB-SN-Purchase' target='_blank' class='button-primary'>", "</a>" ), 'wppb_profile_builder_pro_serial_status' );
 }
 elseif ( $wppb_profile_builder_pro_hobbyist_serial_status == 'expired' ){
-    $wppb_notice = new wppb_add_notices( 'wppb', 'profile_builder_pro', sprintf( __( '<p>Your <strong>Profile Builder</strong> licence has expired. <br/>Please %1$sRenew Your Licence%2$s to receive access to automatic updates and support. %3$sPurchase one now%4$s %5$sDismiss%6$s</p>', 'profilebuilder'), "<a href='http://www.cozmoslabs.com/downloads/profile-builder-pro-1-year/?utm_source=PB&utm_medium=dashboard&utm_campaign=PB-Renewal' target='_blank'>", "</a>", "<a href='http://www.cozmoslabs.com/downloads/profile-builder-pro-1-year/?utm_source=PB&utm_medium=dashboard&utm_campaign=PB-Renewal' target='_blank' class='button-primary'>", "</a>", "<a href='". add_query_arg( 'wppb_dismiss_notification', '0' ) ."' class='wppb-dismiss-notification'>", "</a>" ), 'wppb_profile_builder_pro_serial_status' );
+    new wppb_add_notices( 'wppb_expired', 'profile_builder_pro', sprintf( __( '<p>Your <strong>Profile Builder</strong> license has expired. <br/>Please %1$sRenew Your Licence%2$s to continue receiving access to product downloads, automatic updates and support. %3$sRenew now and get 50&#37; off %4$s %5$sDismiss%6$s</p>', 'profilebuilder'), "<a href='http://www.cozmoslabs.com/downloads/profile-builder-". $version ."-v2-yearly-renewal/?utm_source=PB&utm_medium=dashboard&utm_campaign=PB-Renewal' target='_blank'>", "</a>", "<a href='http://www.cozmoslabs.com/downloads/profile-builder-".$version."-v2-yearly-renewal/?utm_source=PB&utm_medium=dashboard&utm_campaign=PB-Renewal' target='_blank' class='button-primary'>", "</a>", "<a href='". add_query_arg( 'wppb_expired_dismiss_notification', '0' ) ."' class='wppb-dismiss-notification'>", "</a>" ), 'wppb_profile_builder_pro_serial_status' );
 }
 elseif( strpos( $wppb_profile_builder_pro_hobbyist_serial_status, 'aboutToExpire' ) === 0 ){
     $serial_status_parts = explode( '#', $wppb_profile_builder_pro_hobbyist_serial_status );
     $date = $serial_status_parts[1];
-    new wppb_add_notices( 'wppb', 'profile_builder_pro', sprintf( __( '<p>Your <strong>Profile Builder</strong> serial number is about to expire on %5$s. <br/>Please %1$sRenew Your Licence%2$s to receive access to automatic updates and support. %3$sPurchase one now%4$s</p>', 'profilebuilder'), "<a href='admin.php?page=profile-builder-register'>", "</a>", "<a href='http://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=PB&utm_medium=dashboard&utm_campaign=PB-Purchase' target='_blank' class='button-primary'>", "</a>", $date ), 'wppb_profile_builder_pro_serial_status' );
+    new wppb_add_notices( 'wppb_about_to_expire', 'profile_builder_pro', sprintf( __( '<p>Your <strong>Profile Builder</strong> license is about to expire on %5$s. <br/>Please %1$sRenew Your Licence%2$s to continue receiving access to product downloads, automatic updates and support. %3$sRenew now and get 50&#37; off %4$s %6$sDismiss%7$s</p>', 'profilebuilder'), "<a href='http://www.cozmoslabs.com/downloads/profile-builder-". $version ."-v2-yearly-renewal/?utm_source=PB&utm_medium=dashboard&utm_campaign=PB-Renewal' target='_blank'>", "</a>", "<a href='http://www.cozmoslabs.com/downloads/profile-builder-".$version."-v2-yearly-renewal/?utm_source=PB&utm_medium=dashboard&utm_campaign=PB-Renewal' target='_blank' class='button-primary'>", "</a>", $date, "<a href='". add_query_arg( 'wppb_about_to_expire_dismiss_notification', '0' ) ."' class='wppb-dismiss-notification'>", "</a>" ), 'wppb_profile_builder_pro_serial_status' );
 }

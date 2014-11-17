@@ -2,11 +2,11 @@
 
 Contributors: reflectionmedia, barinagabriel, sareiodata, cozmoslabs, adispiac, madalin.ungureanu
 Donate link: http://www.cozmoslabs.com/wordpress-profile-builder/
-Tags: registration, user profile, user registration, custom field registration, customize profile, user fields, extra user fields, builder, profile builder, custom user profile, user profile page, edit profile, custom registration, custom registration form, custom registration page, registration page, user custom fields, user listing, front-end user listing, user login, user registration form, front-end login, front-end register, front-end registration, front-end edit profile, front-end user registration, custom redirects, user email, avatar upload, email confirmation, user approval, customize registration email, minimum password length, minimum password strength, password strength meter, multiple registration forms
+Tags: registration, user profile, user registration, custom field registration, customize profile, user fields, extra user fields, builder, profile builder, custom user profile, user profile page, edit profile, custom registration, custom registration form, custom registration page, registration page, user custom fields, user listing, front-end user listing, user login, user registration form, front-end login, login redirect, login widget, front-end register, front-end registration, front-end edit profile, front-end user registration, custom redirects, user email, avatar upload, email confirmation, user approval, customize registration email, minimum password length, minimum password strength, password strength meter, multiple registration forms
 
 Requires at least: 3.1
 Tested up to: 4.0
-Stable tag: 2.0.5
+Stable tag: 2.0.6
 
 Simple to use profile plugin allowing front-end login, user registration and edit profile by using shortcodes.
  
@@ -19,7 +19,7 @@ giving them a more flexible way to modify their user profile or register new use
 Users with administrator rights can customize basic user fields or add custom user fields to the front-end forms.
 
 To achieve this, simply create a new page and give it an intuitive name(i.e. Edit Profile).
-Now all you need to do is add the following shortcode(for the previous example): [wppb-edit-profile]. 
+Now all you need to do is add the following shortcode: [wppb-edit-profile].
 Publish the page and you are done!
 
 = Front-end User Registration, Login, Edit Profile and Password Recovery Shortcodes =
@@ -36,14 +36,17 @@ Users with administrator rights have access to the following features:
 * enable **Email Confirmation** (on registration users will receive a notification to confirm their email address).
 * allow users to **Log-in with their Username or Email**
 * enforce a **minimum password length** and **minimum password strength** (using the default WordPress password strength meter)
-* assign users a specific role at registration (using [wppb-register role="desired_role"] shortcode )
+* assign users a specific role at registration (using **[wppb-register role="desired_role"]** shortcode argument)
+* redirect users after login (using **[wppb-login redirect="www.example.com"]** shortcode argument)
+* add register and lost password links below the login form (using **[wppb-login register_url="www.example.com" lostpassword_url="www.example.com"]** shortcode arguments)
+* customizable login widget
 * add a custom stylesheet/inherit values from the current theme or use the default one built into this plugin.
 * chose which user roles view the admin bar in the front-end of the website (Admin Bar Settings page).
 * select which profile fields users can see/modify.
 
 **PROFILE BUILDER PRO**
 
-The [Pro version](http://www.cozmoslabs.com/wordpress-profile-builder/) has the following extra features:
+The [Pro version](http://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wp.org&utm_medium=plugin-description-page&utm_campaign=PBFree) has the following extra features:
 
 * Create Extra User Fields (Heading, Input, Hidden-Input, Checkbox, Agree to Terms Checkbox, Radio Buttons, DatePicker, Textareas, reCAPTCHA, Upload fields, Selects, Country Selects, Timezone selects, Avatar Upload)
 * Add Avatar Upload for users
@@ -59,9 +62,7 @@ The [Pro version](http://www.cozmoslabs.com/wordpress-profile-builder/) has the 
 * Access to support forums and documentation
 * 1 Year of Updates / Priority Support
 
-[Click here to find out more](http://www.cozmoslabs.com/wordpress-profile-builder/) or watch the video below:
-
-[youtube http://www.youtube.com/watch?v=Uv8piGapOoA]
+[Find out more about Profile Builder PRO](http://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wp.org&utm_medium=plugin-description-page&utm_campaign=PBFree)
 
 NOTE:
 
@@ -100,8 +101,18 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 7. User Login Page
 8. Edit User Profile Page
 9. Recover Password Page
+10. Profile Builder Login Widget
 
 == Changelog ==
+= 2.0.6 =
+* Fixed a bug with checkbox field that didn't pass the required if the value of the checkbox contained spaces
+* When email confirmation is enabled we no longer can send the selected password via email because we now store the hased password inside wp-signups table and not a encoded version of it. This was done to improve security
+* Fixed problem that was causing "Insert into post" image button not to work
+* Fixed Fatal error when having both Free and Premium versions activated.
+* Removing the meta name for extra fields is no longer possible
+* Added translation files
+
+
 = 2.0.5 =
 * Added notification to enable user registration via Profile Builder (Anyone can register checkbox).
 * Add register_url and lostpassword_url parameters to login shortcode.

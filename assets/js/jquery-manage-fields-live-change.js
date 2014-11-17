@@ -463,24 +463,27 @@ function wppb_display_needed_fields( index, container_name, current_field_select
                 meta_name = jQuery(this).text();
                 if( meta_name.indexOf( 'custom_field' ) !== -1 ){
                     var meta_name = meta_name.replace('custom_field', '' );
-                    /* backwards compatibility check in PB 1.3 meta_name was custom_field_#  */
+                    /* we should have an underscore present in custom_field_# so remove it */
                     meta_name = meta_name.replace('_', '' );
+
                     if( isNaN( meta_name ) ){
                         meta_name = Math.floor((Math.random() * 200) + 100);
                     }
-                    numbers.push( meta_name );
+                    numbers.push( parseInt(meta_name) );
                 }
+
             });
             if( numbers.length > 0 ){
-                numbers.sort();
+                numbers.sort( function(a, b){return a-b} );
                 numbers.reverse();
                 meta_number = parseInt(numbers[0])+1;
             }
             else
                 meta_number = 1;
 
-            meta_value = 'custom_field'+meta_number;
+            meta_value = 'custom_field_' + meta_number;
         }
+
 		jQuery( container_name + ' ' + '#meta-name' ).val( meta_value );
 		jQuery( container_name + ' ' + '#meta-name' ).attr( 'readonly', false );
 	}

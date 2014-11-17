@@ -374,7 +374,8 @@ function wppb_manual_activate_signup( $activation_key ) {
 		$meta = unserialize( $signup->meta );
 		$user_login = esc_sql( $signup->user_login );
 		$user_email = esc_sql( $signup->user_email );
-		$password = base64_decode( $meta['user_pass'] );
+        /* the password is in hashed form in the signup table and we will copy it later to the user */
+		$password = NULL;
 
 		$user_id = username_exists($user_login);
 
@@ -402,6 +403,15 @@ function wppb_manual_activate_signup( $activation_key ) {
 				wp_set_object_terms( $user_id, array( 'unapproved' ), 'user_status', false);
 				clean_object_term_cache( $user_id, 'user_status' );
 			}
+
+            /* copy the hashed password from signup meta to wp user table */
+            if( !empty( $meta['user_pass'] ) ){
+                /* we might still have the base64 encoded password in signups and not the hash */
+                if( base64_encode(base64_decode($meta['user_pass'], true)) === $meta['user_pass'] )
+                    $meta['user_pass'] = wp_hash_password( $meta['user_pass'] );
+
+                $wpdb->update( $wpdb->users, array('user_pass' => $meta['user_pass'] ), array('ID' => $user_id) );
+            }
 			
 			wppb_notify_user_registration_email( get_bloginfo( 'name' ), $user_login, $user_email, 'sending', $password, ( isset( $wppb_general_settings['adminApproval'] ) ? $wppb_general_settings['adminApproval'] : 'no' ) );
 			

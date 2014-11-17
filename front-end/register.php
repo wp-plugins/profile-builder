@@ -54,7 +54,8 @@ function wppb_activate_signup( $key ) {
 	$user_login = ( ( isset( $wppb_general_settings['loginWith'] ) && ( $wppb_general_settings['loginWith'] == 'email' ) ) ? trim( $signup->user_email ) : trim( $signup->user_login ) );
 		
 	$user_email = esc_sql( $signup->user_email );
-	$password = base64_decode( $meta['user_pass'] );
+    /* the password is in hashed form in the signup table so we will add it later */
+	$password = NULL;
 
 	$user_id = username_exists( $user_login );
 
@@ -83,6 +84,15 @@ function wppb_activate_signup( $key ) {
 
         if ( !isset( $wppb_generalSettings['adminApproval'] ) )
             $wppb_generalSettings['adminApproval'] = 'no';
+
+        /* copy the hashed password from signup meta to wp user table */
+        if( !empty( $meta['user_pass'] ) ){
+            /* we might still have the base64 encoded password in signups and not the hash */
+            if( base64_encode(base64_decode($meta['user_pass'], true)) === $meta['user_pass'] )
+                $meta['user_pass'] = wp_hash_password( $meta['user_pass'] );
+
+            $wpdb->update( $wpdb->users, array('user_pass' => $meta['user_pass'] ), array('ID' => $user_id) );
+        }
 		
 		wppb_notify_user_registration_email($bloginfo, $user_login, $user_email, 'sending', $password, $wppb_generalSettings['adminApproval']);
 		

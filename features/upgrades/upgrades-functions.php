@@ -158,7 +158,8 @@ function wppb_pro_hobbyist_free_v2_0(){
             foreach ( $old_custom_fields as $key => $value ) {
                 $local_array = array();
 
-                $local_array['id'] 							= ( isset( $value['id'] ) ? trim( $value['id'] ) : '' );
+                /* id will be set up at a later point */
+                $local_array['id'] 							= '';
                 $local_array['meta-name']					= ( isset( $value['item_metaName'] ) ? trim( $value['item_metaName'] ) : '' );
                 $local_array['field-title'] 				= ( isset( $value['item_title'] ) ? trim( $value['item_title'] ) : '' );
                 $local_array['description'] 				= ( isset( $value['item_desc'] ) ? $value['item_desc'] : '' );
@@ -279,7 +280,15 @@ function wppb_pro_hobbyist_free_v2_0(){
 	
 		update_option( 'wppb_module_settings', $wppb_module_settings );
 	}
-	
+
+    /* set up ids for each field */
+	if( !empty( $backed_up_manage_fields ) ){
+        /*make sure we have a 0 based index */
+        $backed_up_manage_fields = array_values( $backed_up_manage_fields );
+        foreach( $backed_up_manage_fields as $key => $backed_up_manage_field ){
+            $backed_up_manage_fields[$key]['id'] = (int)$key + 1;
+        }
+    }
 	add_option( 'wppb_manage_fields', $backed_up_manage_fields );
 	
 	
@@ -507,15 +516,8 @@ function wppb_replace_and_save( $content, $option_name ){
  */
 function wppb_add_existing_default_fields ( $backed_up_manage_fields = array(), $field, $meta_name, $required, $description = '', $recaptcha_public_key = '', $recaptcha_private_key = '' ){
 	$local_array = array();
-	
-	$id = 0;
-	foreach ( $backed_up_manage_fields as $key => $value ){
-		if ( (int)$id < (int)$value['id'] );
-			$id = $value['id'];
-	}
-	$id++;
 
-	$local_array['id'] 							= $id;
+	$local_array['id'] 							= '';
 	$local_array['field']						= $field;
 	$local_array['meta-name']					= $meta_name;
 	$local_array['field-title'] 				= str_replace( array( 'Default - ', ' (Heading)' ), '', $field );
