@@ -173,6 +173,8 @@ function wppb_general_settings_content() {
                 </select>
             </td>
         </tr>
+
+        <?php do_action( 'wppb_extra_general_settings', $wppb_generalSettings ); ?>
 	</table>
 		
 	
@@ -184,3 +186,29 @@ function wppb_general_settings_content() {
 	
 <?php
 }
+
+
+/*
+ * Function that sanitizes the general settings
+ *
+ * @param array $wppb_generalSettings
+ *
+ * @since v.2.0.7
+ */
+function wppb_general_settings_sanitize( $wppb_generalSettings ) {
+
+    $wppb_generalSettings = apply_filters( 'wppb_general_settings_sanitize_extra', $wppb_generalSettings );
+
+    return $wppb_generalSettings;
+}
+
+
+/*
+ * Function that pushes settings errors to the user
+ *
+ * @since v.2.0.7
+ */
+function wppb_general_settings_admin_notices() {
+    settings_errors( 'wppb_general_settings' );
+}
+add_action( 'admin_notices', 'wppb_general_settings_admin_notices' );

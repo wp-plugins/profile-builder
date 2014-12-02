@@ -90,10 +90,10 @@ class Profile_Builder_Form_Creator{
                 $current_user_capability = apply_filters ( 'wppb_registration_user_capability', 'create_users' );
 
                 if ( current_user_can( $current_user_capability ) && $registration )
-                    $this->wppb_form_content( apply_filters( 'wppb_register_pre_form_message', '<p class="alert" id="wppb_register_pre_form_message">'.__( 'Users can register themselves or you can manually create users here.', 'profilebuilder').'</p>' ) );
+                    $this->wppb_form_content( apply_filters( 'wppb_register_pre_form_message', '<p class="alert" id="wppb_register_pre_form_message">'.__( 'Users can register themselves or you can manually create users here.', 'profilebuilder'). '<img src="'.WPPB_PLUGIN_URL.'assets/images/pencil_delete.png" title="'.__( 'This message is only visible by administrators', 'profilebuilder' ).'"/>' . '</p>' ) );
 
                 elseif ( current_user_can( $current_user_capability ) && !$registration )
-                    $this->wppb_form_content( apply_filters( 'wppb_register_pre_form_message', '<p class="alert" id="wppb_register_pre_form_message">'.__( 'Users cannot currently register themselves, but you can manually create users here.', 'profilebuilder').'</p>' ) );
+                    $this->wppb_form_content( apply_filters( 'wppb_register_pre_form_message', '<p class="alert" id="wppb_register_pre_form_message">'.__( 'Users cannot currently register themselves, but you can manually create users here.', 'profilebuilder'). '<img src="'.WPPB_PLUGIN_URL.'assets/images/pencil_delete.png" title="'.__( 'This message is only visible by administrators', 'profilebuilder' ).'"/>' . '</p>' ) );
 
                 elseif ( !current_user_can( $current_user_capability ) ){
                     global $user_ID;

@@ -10,7 +10,7 @@ function wppb_check_for_unapproved_user( $data, $what ){
 	$messageNo = '';
 	
 	$wppb_generalSettings = get_option( 'wppb_general_settings' );
-	if( $wppb_generalSettings['adminApproval'] == 'yes' ){
+	if( !empty( $wppb_generalSettings['adminApproval'] ) && $wppb_generalSettings['adminApproval'] == 'yes' ){
 		$user = ( ( $what == 'user_email' ) ? get_user_by( 'email', $data ) : get_user_by( 'login', $data ) );
 
 		if ( wp_get_object_terms( $user->data->ID, 'user_status' ) ){
@@ -25,7 +25,7 @@ function wppb_check_for_unapproved_user( $data, $what ){
 }
 
 /**
- * Function that retrives the unique user key from the database. If we don't have one we generate one and add it to the database
+ * Function that retrieves the unique user key from the database. If we don't have one we generate one and add it to the database
  *
  * @param string $requested_user_login the user login
  * 
