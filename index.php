@@ -3,7 +3,7 @@
 Plugin Name: Profile Builder
 Plugin URI: http://www.cozmoslabs.com/wordpress-profile-builder/
 Description: Login, registration and edit profile shortcodes for the front-end. Also you can chose what fields should be displayed or add new (custom) ones both in the front-end and in the dashboard.
-Version: 2.0.6
+Version: 2.0.7
 Author: Cozmoslabs, Madalin Ungureanu, Antohe Cristian, Barina Gabriel
 Author URI: http://www.cozmoslabs.com/
 License: GPL2
@@ -25,7 +25,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 */
 
 /* Check if another version of Profile Builder is activated, to prevent fatal errors*/
-function wppb_plugin_init() {
+function wppb_free_plugin_init() {
     if (function_exists('wppb_return_bytes')) {
         function wppb_admin_notice()
         {
@@ -73,7 +73,7 @@ function wppb_plugin_init() {
          *
          *
          */
-        define('PROFILE_BUILDER_VERSION', '2.0.6' );
+        define('PROFILE_BUILDER_VERSION', '2.0.7' );
         define('WPPB_PLUGIN_DIR', WP_PLUGIN_DIR . '/' . dirname(plugin_basename(__FILE__)));
         define('WPPB_PLUGIN_URL', plugin_dir_url(__FILE__));
         define('WPPB_SERVER_MAX_UPLOAD_SIZE_BYTE', apply_filters('wppb_server_max_upload_size_byte_constant', wppb_return_bytes(ini_get('upload_max_filesize'))));
@@ -178,5 +178,5 @@ function wppb_plugin_init() {
         register_activation_hook(__FILE__, 'wppb_prepopulate_fields');                    //prepopulate manage fields list
 
     }
-} //end wppb_plugin_init
-add_action( 'plugins_loaded', 'wppb_plugin_init' );
+} //end wppb_free_plugin_init
+add_action( 'plugins_loaded', 'wppb_free_plugin_init' );

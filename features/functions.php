@@ -7,7 +7,7 @@
 // whitelist options, you can add more register_settings changing the second parameter
 function wppb_register_settings() {
 	register_setting( 'wppb_option_group', 'wppb_default_settings' );
-	register_setting( 'wppb_general_settings', 'wppb_general_settings' );
+	register_setting( 'wppb_general_settings', 'wppb_general_settings', 'wppb_general_settings_sanitize' );
 	register_setting( 'wppb_display_admin_settings', 'wppb_display_admin_settings' );
 	register_setting( 'wppb_profile_builder_pro_serial', 'wppb_profile_builder_pro_serial' );
 	register_setting( 'wppb_profile_builder_hobbyist_serial', 'wppb_profile_builder_hobbyist_serial' );
@@ -307,9 +307,10 @@ function wppb_changeDefaultAvatar( $avatar, $id_or_email, $size, $default, $alt 
 		foreach( $wppb_manage_fields as $value ){
 			if ( $value['field'] == 'Avatar'){
 				$customUserAvatar = get_user_meta( $my_user_id, 'resized_avatar_'.$value['id'], true );
-				
-				if (($customUserAvatar != '') || ($customUserAvatar != null)){				
-					$avatar = "<img alt='{$alt}' src='{$customUserAvatar}' class='avatar avatar-{$value['avatar-size']} photo avatar-default' height='{$size}' width='{$size}' />";
+                $customUserAvatarRelativePath = get_user_meta( $my_user_id, 'resized_avatar_'.$value['id'].'_relative_path', true );
+
+				if ( ( ($customUserAvatar != '') || ($customUserAvatar != null) ) && file_exists($customUserAvatarRelativePath) ){
+					$avatar = "<img alt='{$alt}' src='{$customUserAvatar}' class='avatar avatar-{$size} photo avatar-default' height='{$size}' width='{$size}' />";
 				}
 			}
 		}
@@ -347,42 +348,44 @@ function wppb_resize_avatar( $userID, $userlisting_size = null, $userlisting_cro
 			
 			$width = ( !empty( $userlisting_size ) ? $userlisting_size : $width );
 			$height = ( !empty( $userlisting_size ) ? $userlisting_size : $height );
-					
-			// retrieve the original image (in original size)
-			$avatar_directory_path = get_user_meta( $userID, 'avatar_directory_path_'.$value['id'], true );
-			
-			$image = wp_get_image_editor( $avatar_directory_path );			
-			if ( !is_wp_error( $image ) ) {
-				do_action( 'wppb_before_avatar_resizing', $image, $userID, $value['meta-name'], $value['avatar-size'] );
-				
-				$crop = apply_filters( 'wppb_avatar_crop_resize', ( !empty( $userlisting_crop ) ? $userlisting_crop : false ) );
-				
-				$resize = $image->resize( $width, $height, $crop );
-				
-				if ($resize !== FALSE) {
-					do_action( 'wppb_avatar_resizing', $image, $resize );
-					
-					$fileType = apply_filters( 'wppb_resized_file_extension', 'png' );
-					
-					$wp_upload_array = wp_upload_dir(); // Array of key => value pairs
-					
-					//create file(name); both with directory and url
-					$fileName_dir = $image->generate_filename( NULL, $wp_upload_array['basedir'].'/profile_builder/avatars/', $fileType );
-					
-					if ( PHP_OS == "WIN32" || PHP_OS == "WINNT" )
-						$fileName_dir = str_replace( '\\', '/', $fileName_dir );
-					
-					$fileName_url = str_replace( str_replace( '\\', '/', $wp_upload_array['basedir'] ), $wp_upload_array['baseurl'], $fileName_dir );
 
-					//save the newly created (resized) avatar on the disc
-					$image->save( $fileName_dir );
-					
-					update_user_meta( $userID, 'resized_avatar_'.$value['id'], $fileName_url );
-					update_user_meta( $userID, 'resized_avatar_'.$value['id'].'_relative_path', $fileName_dir );
-					
-					do_action( 'wppb_after_avatar_resizing', $image, $fileName_dir, $fileName_url );
-				}
-			}
+            if( !strpos( get_user_meta( $userID, 'resized_avatar_'.$value['id'], true ), $width . 'x' . $height ) ) {
+                // retrieve the original image (in original size)
+                $avatar_directory_path = get_user_meta( $userID, 'avatar_directory_path_'.$value['id'], true );
+
+                $image = wp_get_image_editor( $avatar_directory_path );
+                if ( !is_wp_error( $image ) ) {
+                    do_action( 'wppb_before_avatar_resizing', $image, $userID, $value['meta-name'], $value['avatar-size'] );
+
+                    $crop = apply_filters( 'wppb_avatar_crop_resize', ( !empty( $userlisting_crop ) ? $userlisting_crop : false ) );
+
+                    $resize = $image->resize( $width, $height, $crop );
+
+                    if ($resize !== FALSE) {
+                        do_action( 'wppb_avatar_resizing', $image, $resize );
+
+                        $fileType = apply_filters( 'wppb_resized_file_extension', 'png' );
+
+                        $wp_upload_array = wp_upload_dir(); // Array of key => value pairs
+
+                        //create file(name); both with directory and url
+                        $fileName_dir = $image->generate_filename( NULL, $wp_upload_array['basedir'].'/profile_builder/avatars/', $fileType );
+
+                        if ( PHP_OS == "WIN32" || PHP_OS == "WINNT" )
+                            $fileName_dir = str_replace( '\\', '/', $fileName_dir );
+
+                        $fileName_url = str_replace( str_replace( '\\', '/', $wp_upload_array['basedir'] ), $wp_upload_array['baseurl'], $fileName_dir );
+
+                        //save the newly created (resized) avatar on the disc
+                        $image->save( $fileName_dir );
+
+                        update_user_meta( $userID, 'resized_avatar_'.$value['id'], $fileName_url );
+                        update_user_meta( $userID, 'resized_avatar_'.$value['id'].'_relative_path', $fileName_dir );
+
+                        do_action( 'wppb_after_avatar_resizing', $image, $fileName_dir, $fileName_url );
+                    }
+                }
+            }
 		}
 	}
 }
@@ -479,7 +482,7 @@ function wppb_check_password_strength(){
 function wppb_password_length_text(){
     $wppb_generalSettings = get_option( 'wppb_general_settings' );
     if( !empty( $wppb_generalSettings['minimum_password_length'] ) ){
-        return __( 'Minimum length of '. $wppb_generalSettings['minimum_password_length'] .' characters', 'profilebuilder' );
+        return sprintf(__('Minimum length of %d characters', 'profilebuilder'), $wppb_generalSettings['minimum_password_length']);
     }
     return '';
 }

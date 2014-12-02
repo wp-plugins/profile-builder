@@ -2,11 +2,11 @@
 
 Contributors: reflectionmedia, barinagabriel, sareiodata, cozmoslabs, adispiac, madalin.ungureanu
 Donate link: http://www.cozmoslabs.com/wordpress-profile-builder/
-Tags: registration, user profile, user registration, custom field registration, customize profile, user fields, extra user fields, builder, profile builder, custom user profile, user profile page, edit profile, custom registration, custom registration form, custom registration page, registration page, user custom fields, user listing, front-end user listing, user login, user registration form, front-end login, login redirect, login widget, front-end register, front-end registration, front-end edit profile, front-end user registration, custom redirects, user email, avatar upload, email confirmation, user approval, customize registration email, minimum password length, minimum password strength, password strength meter, multiple registration forms
+Tags: registration, user profile, user registration, custom field registration, customize profile, user fields, extra user fields, builder, profile builder, custom user profile, user profile page, edit profile, custom registration, custom registration form, custom registration page, registration page, user custom fields, user listing, front-end user listing, user login, user registration form, front-end login, login redirect, login widget, front-end register, front-end registration, front-end edit profile, front-end user registration, custom redirects, user email, avatar upload, email confirmation, user approval, customize registration email, minimum password length, minimum password strength, password strength meter, multiple registration forms, register, register form
 
 Requires at least: 3.1
 Tested up to: 4.0
-Stable tag: 2.0.6
+Stable tag: 2.0.7
 
 Simple to use profile plugin allowing front-end login, user registration and edit profile by using shortcodes.
  
@@ -27,7 +27,7 @@ You can use the following shortcode list:
 
 * **[wppb-edit-profile]** - to grant users front-end access to their profile (requires user to be logged in).
 * **[wppb-login]** - to add a front-end login form.
-* **[wppb-register]** - to add a front-end user registration form.
+* **[wppb-register]** - to add a front-end register form.
 * **[wppb-recover-password]** - to add a password recovery form.
 
 Users with administrator rights have access to the following features:
@@ -36,7 +36,7 @@ Users with administrator rights have access to the following features:
 * enable **Email Confirmation** (on registration users will receive a notification to confirm their email address).
 * allow users to **Log-in with their Username or Email**
 * enforce a **minimum password length** and **minimum password strength** (using the default WordPress password strength meter)
-* assign users a specific role at registration (using **[wppb-register role="desired_role"]** shortcode argument)
+* assign users a specific role at registration (using **[wppb-register role="desired_role"]** shortcode argument for the register form)
 * redirect users after login (using **[wppb-login redirect="www.example.com"]** shortcode argument)
 * add register and lost password links below the login form (using **[wppb-login register_url="www.example.com" lostpassword_url="www.example.com"]** shortcode arguments)
 * customizable login widget
@@ -97,13 +97,21 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 3. Show/Hide Admin Bar
 4. Profile Builder - Manage Default User Fields (Add, Edit or Delete)
 5. Profile Builder - Drag & Drop to Reorder User Profile Fields
-6. Front-end User Registration Page
+6. Register Form - Front-end User Registration Page
 7. User Login Page
 8. Edit User Profile Page
 9. Recover Password Page
 10. Profile Builder Login Widget
 
 == Changelog ==
+
+= 2.0.7 =
+* Added icon with tooltip on registration pages 'Users can register themselves or you can manually create users here' message
+* Updated translation files
+* Removed some php notices from the code-base
+* Improved theme compatibility for the submit buttons inside the Profile Builder forms
+* Removed UL dots from Register form in Chrome, Safari
+
 = 2.0.6 =
 * Fixed a bug with checkbox field that didn't pass the required if the value of the checkbox contained spaces
 * When email confirmation is enabled we no longer can send the selected password via email because we now store the hased password inside wp-signups table and not a encoded version of it. This was done to improve security
