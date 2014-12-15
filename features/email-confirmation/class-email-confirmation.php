@@ -228,7 +228,7 @@ class wpp_list_unfonfirmed_email_table extends PB_WP_List_Table {
 		if ( current_user_can( 'delete_users' ) ){
 			if( 'delete' === $this->current_action() ) {
 				foreach ( $_GET['user'] as $user ){
-					$sql_result = $wpdb->query( $wpdb->prepare( "DELETE FROM ".$wpdb->prefix."signups WHERE user_email = %s", $user ) );
+					$sql_result = $wpdb->query( $wpdb->prepare( "DELETE FROM ".$wpdb->base_prefix."signups WHERE user_email = %s", $user ) );
 					
 					if ( !$sql_result )
 						$this->wppb_process_bulk_action_message( sprintf( __( "%s couldn't be deleted", "profilebuilder" ), $result->user_login ), get_bloginfo('url').'/wp-admin/users.php?page=unconfirmed_emails' );
@@ -239,7 +239,7 @@ class wpp_list_unfonfirmed_email_table extends PB_WP_List_Table {
 			
 			}elseif( 'confirm' === $this->current_action() ) {
 				foreach ( $_GET['user'] as $user ){
-					$sql_result = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM " . $wpdb->prefix . "signups WHERE user_email = %s", $user ), ARRAY_A );
+					$sql_result = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM " . $wpdb->base_prefix . "signups WHERE user_email = %s", $user ), ARRAY_A );
 					
 					if ( $sql_result )
 						wppb_manual_activate_signup( $sql_result->activation_key );
@@ -249,7 +249,7 @@ class wpp_list_unfonfirmed_email_table extends PB_WP_List_Table {
 				
 			}elseif( 'resend' === $this->current_action() ) {
 				foreach ( $_GET['user'] as $user ){
-					$sql_result = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM " . $wpdb->prefix . "signups WHERE user_email = %s", $user ), ARRAY_A );
+					$sql_result = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM " . $wpdb->base_prefix . "signups WHERE user_email = %s", $user ), ARRAY_A );
 					
 					if ( $sql_result )
 						wppb_signup_user_notification( esc_sql( $sql_result['user_login'] ), esc_sql( $sql_result['user_email'] ), $sql_result['activation_key'], $sql_result['meta'] );
@@ -285,12 +285,18 @@ class wpp_list_unfonfirmed_email_table extends PB_WP_List_Table {
 		$this->dataArray = array();
 		$iterator = 0;
 		
-		$results = $wpdb->get_results("SELECT * FROM ".$wpdb->prefix."signups WHERE active = 0");
+		$results = $wpdb->get_results("SELECT * FROM ".$wpdb->base_prefix."signups WHERE active = 0");
 		foreach ($results as $result){
-			$tempArray = array('ID' => $result->user_email, 'username' => $result->user_login, 'email' => $result->user_email, 'registered'  => $result->registered);
-
-			array_push($this->dataArray, $tempArray);
-			$iterator++;
+            /* since version 2.0.7 for multisite we add a 'registered_for_blog_id' meta in the registration process
+            so we can display only the users registered on that blog. Also for backwards compatibility we display the users that don't have that meta at all */
+            if( !empty(  $result->meta ) ){
+                $user_meta = maybe_unserialize( $result->meta );
+                if( empty( $user_meta['registered_for_blog_id'] ) || $user_meta['registered_for_blog_id'] == get_current_blog_id() ){
+                    $tempArray = array('ID' => $result->user_email, 'username' => $result->user_login, 'email' => $result->user_email, 'registered'  => $result->registered);
+                    array_push($this->dataArray, $tempArray);
+                    $iterator++;
+                }
+            }
 		} 
 
         /**

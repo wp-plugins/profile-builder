@@ -12,7 +12,7 @@ function signup_password_random_password_filter( $password ) {
 		$password = $_POST['user_pass'];
 		
 	elseif ( !is_null( $key ) ) {
-		$signup = ( is_multisite() ? $wpdb->get_row( $wpdb->prepare( "SELECT * FROM " . $wpdb->signups . " WHERE activation_key = %s", $key ) ) : $wpdb->get_row( $wpdb->prepare( "SELECT * FROM " . $wpdb->prefix . "signups WHERE activation_key = %s", $key ) ) );
+		$signup = ( is_multisite() ? $wpdb->get_row( $wpdb->prepare( "SELECT * FROM " . $wpdb->signups . " WHERE activation_key = %s", $key ) ) : $wpdb->get_row( $wpdb->prepare( "SELECT * FROM " . $wpdb->base_prefix . "signups WHERE activation_key = %s", $key ) ) );
 		
 		if ( empty( $signup ) || $signup->active ) {
 			//bad key or already active
@@ -40,7 +40,7 @@ function wppb_activate_signup( $key ) {
 	$bloginfo = get_bloginfo( 'name' );
 	$wppb_general_settings = get_option( 'wppb_general_settings' );
 
-	$signup = ( is_multisite() ? $wpdb->get_row( $wpdb->prepare("SELECT * FROM $wpdb->signups WHERE activation_key = %s", $key) ) : $wpdb->get_row( $wpdb->prepare( "SELECT * FROM ".$wpdb->prefix."signups WHERE activation_key = %s", $key ) ) );
+	$signup = ( is_multisite() ? $wpdb->get_row( $wpdb->prepare("SELECT * FROM $wpdb->signups WHERE activation_key = %s", $key) ) : $wpdb->get_row( $wpdb->prepare( "SELECT * FROM ".$wpdb->base_prefix."signups WHERE activation_key = %s", $key ) ) );
 	
 	if ( empty( $signup ) )
 		return apply_filters( 'wppb_register_activate_user_error_message1', '<p class="error">'.__( 'Invalid activation key!', 'profilebuilder' ).'</p>');
@@ -71,7 +71,7 @@ function wppb_activate_signup( $key ) {
 		return apply_filters( 'wppb_register_activate_user_error_message5', '<p class="error">'.__( 'This username is already activated!', 'profilebuilder' ).'</p>' );
 	
 	else{
-		$inserted_user = ( is_multisite() ? $wpdb->update( $wpdb->signups, array( 'active' => 1, 'activated' => $current_time( 'mysql', true ) ), array( 'activation_key' => $key ) ) : $wpdb->update( $wpdb->prefix.'signups', array( 'active' => 1, 'activated' => current_time( 'mysql', true ) ), array( 'activation_key' => $key ) ) );
+		$inserted_user = ( is_multisite() ? $wpdb->update( $wpdb->signups, array( 'active' => 1, 'activated' => current_time( 'mysql', true ) ), array( 'activation_key' => $key ) ) : $wpdb->update( $wpdb->base_prefix.'signups', array( 'active' => 1, 'activated' => current_time( 'mysql', true ) ), array( 'activation_key' => $key ) ) );
 
 		wppb_add_meta_to_user_on_activation( $user_id, '', $meta );
 		

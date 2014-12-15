@@ -155,11 +155,15 @@ function wppb_pro_hobbyist_free_v2_0(){
 
         $old_custom_fields = get_option( 'wppb_custom_fields', 'not_found' );
         if( $old_custom_fields != 'not_found' && count( $old_custom_fields ) != 0 ){
+            $existing_ids = array();
             foreach ( $old_custom_fields as $key => $value ) {
                 $local_array = array();
 
+                if( isset( $value['id'] ) )
+                    $existing_ids[] = $value['id'];
+
                 /* id will be set up at a later point */
-                $local_array['id'] 							= '';
+                $local_array['id'] 							= ( isset( $value['id'] ) ? trim( $value['id'] ) : '' );
                 $local_array['meta-name']					= ( isset( $value['item_metaName'] ) ? trim( $value['item_metaName'] ) : '' );
                 $local_array['field-title'] 				= ( isset( $value['item_title'] ) ? trim( $value['item_title'] ) : '' );
                 $local_array['description'] 				= ( isset( $value['item_desc'] ) ? $value['item_desc'] : '' );
@@ -281,12 +285,21 @@ function wppb_pro_hobbyist_free_v2_0(){
 		update_option( 'wppb_module_settings', $wppb_module_settings );
 	}
 
+    /* set up start from index. it is set from the highest existing index + 1 */
+    if( !empty( $existing_ids ) ) {
+        rsort($existing_ids, SORT_NUMERIC );
+        $start_from_index = $existing_ids[0] + 1;
+    }
+    else
+        $start_from_index = 1;
+
     /* set up ids for each field */
 	if( !empty( $backed_up_manage_fields ) ){
-        /*make sure we have a 0 based index */
-        $backed_up_manage_fields = array_values( $backed_up_manage_fields );
         foreach( $backed_up_manage_fields as $key => $backed_up_manage_field ){
-            $backed_up_manage_fields[$key]['id'] = (int)$key + 1;
+            if( empty( $backed_up_manage_fields[$key]['id'] ) ){
+                $backed_up_manage_fields[$key]['id'] = $start_from_index;
+                $start_from_index ++;
+            }
         }
     }
 	add_option( 'wppb_manage_fields', $backed_up_manage_fields );

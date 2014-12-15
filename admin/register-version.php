@@ -6,11 +6,23 @@
  *
  * @return void
  */
-function wppb_register_your_version_submenu_page() {
-	if ( PROFILE_BUILDER != 'Profile Builder Free' )
-		add_submenu_page( 'profile-builder', __( 'Register Your Version', 'profilebuilder' ), __( 'Register Version', 'profilebuilder' ), 'manage_options', 'profile-builder-register', 'wppb_register_your_version_content' ); 
+
+if( !is_multisite() ){
+    function wppb_register_your_version_submenu_page()
+    {
+        if (PROFILE_BUILDER != 'Profile Builder Free')
+            add_submenu_page('profile-builder', __('Register Your Version', 'profilebuilder'), __('Register Version', 'profilebuilder'), 'manage_options', 'profile-builder-register', 'wppb_register_your_version_content');
+    }
+    add_action('admin_menu', 'wppb_register_your_version_submenu_page', 20);
 }
-add_action( 'admin_menu', 'wppb_register_your_version_submenu_page', 20 );
+else{
+    function wppb_multisite_register_your_version_page()
+    {
+        if (PROFILE_BUILDER != 'Profile Builder Free')
+            add_menu_page(__('Profile Builder Register', 'profilebuilder'), __('Profile Builder Register', 'profilebuilder'), 'manage_options', 'profile-builder-register', 'wppb_register_your_version_content', WPPB_PLUGIN_URL . 'assets/images/pb_menu_icon.png');
+    }
+    add_action('network_admin_menu', 'wppb_multisite_register_your_version_page', 20);
+}
 
 
 /**
@@ -48,7 +60,7 @@ function wppb_serial_form($version, $fullname){
 
     <h2><?php _e( "Register your version of $fullname", 'profilebuilder' ); ?></h2>
 
-    <form method="post" action="options.php">
+    <form method="post" action="<?php echo get_admin_url( 1, 'options.php' ) ?>">
 
         <?php $wppb_profile_builder_serial = get_option( 'wppb_profile_builder_'.$version.'_serial' ); ?>
         <?php $wppb_profile_builder_serial_status = get_option( 'wppb_profile_builder_'.$version.'_serial_status' ); ?>
@@ -65,8 +77,10 @@ function wppb_serial_form($version, $fullname){
                     echo '<span class="validateStatus"><img src="'.WPPB_PLUGIN_URL.'/assets/images/accept.png" title="'.__( 'The serial number was successfully validated!', 'profilebuilder' ).'"/></span>';
                 elseif ( $wppb_profile_builder_serial_status == 'notFound' )
                     echo '<span class="validateStatus"><img src="'.WPPB_PLUGIN_URL.'/assets/images/icon_error.png" title="'.__( 'The serial number entered couldn\'t be validated!','profilebuilder' ).'"/></span>';
+                elseif ( strpos( $wppb_profile_builder_serial_status, 'aboutToExpire')  !== false )
+                    echo '<span class="validateStatus"><img src="' . WPPB_PLUGIN_URL . '/assets/images/icon_error.png" title="' . __('The serial number is about to expire soon!', 'profilebuilder') . '"/>'. sprintf( __(' Your serial number is about to expire, please %1$s Renew Your License%2$s.','profilebuilder'), "<a href='http://www.cozmoslabs.com/downloads/profile-builder-". $version ."-v2-yearly-renewal/?utm_source=PB&utm_medium=dashboard&utm_campaign=PB-Renewal' >", "</a>").'</span>';
                 elseif ( $wppb_profile_builder_serial_status == 'expired' )
-                    echo '<span class="validateStatus"><img src="'.WPPB_PLUGIN_URL.'/assets/images/icon_error.png" title="'.__( 'The serial number couldn\'t be validated because it expired!','profilebuilder' ).'"/></span>';
+                    echo '<span class="validateStatus"><img src="'.WPPB_PLUGIN_URL.'/assets/images/icon_error.png" title="'.__( 'The serial number couldn\'t be validated because it expired!','profilebuilder' ).'"/>'. sprintf( __(' Your serial number is expired, please %1$s Renew Your License%2$s.','profilebuilder'), "<a href='http://www.cozmoslabs.com/downloads/profile-builder-". $version ."-v2-yearly-renewal/?utm_source=PB&utm_medium=dashboard&utm_campaign=PB-Renewal' >", "</a>").'</span>';
                 elseif ( $wppb_profile_builder_serial_status == 'serverDown' )
                     echo '<span class="validateStatus"><img src="'.WPPB_PLUGIN_URL.'/assets/images/icon_error.png" title="'.__( 'The serial number couldn\'t be validated because process timed out. This is possible due to the server being down. Please try again later!','profilebuilder' ).'"/></span>';
                 ?>
@@ -91,9 +105,9 @@ function wppb_serial_form($version, $fullname){
 function wppb_check_serial_number($oldVal, $newVal){
 
 	$serial_number_set = $newVal;
-	
-	$response = wp_remote_get( 'http://updatemetadata.cozmoslabs.com/checkserial/?serialNumberSent='.$serial_number_set );
 
+
+	$response = wp_remote_get( 'http://updatemetadata.cozmoslabs.com/checkserial/?serialNumberSent='.$serial_number_set );
 	if ( PROFILE_BUILDER == 'Profile Builder Pro' ){
         wppb_update_serial_status($response, 'pro');
         wp_clear_scheduled_hook( "check_plugin_updates-profile-builder-pro-update" );
@@ -119,7 +133,7 @@ function wppb_update_serial_status($response, $version)
 {
     if (is_wp_error($response)) {
         update_option('wppb_profile_builder_'.$version.'_serial_status', 'serverDown'); //server down
-    } elseif ((trim($response['body']) != 'notFound') && (trim($response['body']) != 'found') && (trim($response['body']) != 'expired')) {
+    } elseif ((trim($response['body']) != 'notFound') && (trim($response['body']) != 'found') && (trim($response['body']) != 'expired') && (strpos( $response['body'], 'aboutToExpire' ) === false)) {
         update_option('wppb_profile_builder_'.$version.'_serial_status', 'serverDown'); //unknown response parameter
         update_option('wppb_profile_builder_'.$version.'_serial', ''); //reset the entered password, since the user will need to try again later
 
@@ -216,7 +230,12 @@ if ( PROFILE_BUILDER == 'Profile Builder Pro' ){
 }
 
 if ( $wppb_profile_builder_pro_hobbyist_serial_status == 'notFound' || $wppb_profile_builder_pro_hobbyist_serial_status == 'empty' ){
-	new wppb_add_notices( 'wppb', 'profile_builder_pro', sprintf( __( '<p>Your <strong>Profile Builder</strong> serial number is invalid or missing. <br/>Please %1$sregister your copy%2$s to receive access to automatic updates and support. Need a license key? %3$sPurchase one now%4$s</p>', 'profilebuilder'), "<a href='admin.php?page=profile-builder-register'>", "</a>", "<a href='http://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=PB&utm_medium=dashboard&utm_campaign=PB-SN-Purchase' target='_blank' class='button-primary'>", "</a>" ), 'wppb_profile_builder_pro_serial_status' );
+    if( !is_multisite() )
+        $register_url = 'admin.php?page=profile-builder-register';
+    else
+        $register_url = network_admin_url( 'admin.php?page=profile-builder-register' );
+
+	new wppb_add_notices( 'wppb', 'profile_builder_pro', sprintf( __( '<p>Your <strong>Profile Builder</strong> serial number is invalid or missing. <br/>Please %1$sregister your copy%2$s to receive access to automatic updates and support. Need a license key? %3$sPurchase one now%4$s</p>', 'profilebuilder'), "<a href='". $register_url ."'>", "</a>", "<a href='http://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=PB&utm_medium=dashboard&utm_campaign=PB-SN-Purchase' target='_blank' class='button-primary'>", "</a>" ), 'wppb_profile_builder_pro_serial_status' );
 }
 elseif ( $wppb_profile_builder_pro_hobbyist_serial_status == 'expired' ){
     new wppb_add_notices( 'wppb_expired', 'profile_builder_pro', sprintf( __( '<p>Your <strong>Profile Builder</strong> license has expired. <br/>Please %1$sRenew Your Licence%2$s to continue receiving access to product downloads, automatic updates and support. %3$sRenew now and get 50&#37; off %4$s %5$sDismiss%6$s</p>', 'profilebuilder'), "<a href='http://www.cozmoslabs.com/downloads/profile-builder-". $version ."-v2-yearly-renewal/?utm_source=PB&utm_medium=dashboard&utm_campaign=PB-Renewal' target='_blank'>", "</a>", "<a href='http://www.cozmoslabs.com/downloads/profile-builder-".$version."-v2-yearly-renewal/?utm_source=PB&utm_medium=dashboard&utm_campaign=PB-Renewal' target='_blank' class='button-primary'>", "</a>", "<a href='". add_query_arg( 'wppb_expired_dismiss_notification', '0' ) ."' class='wppb-dismiss-notification'>", "</a>" ), 'wppb_profile_builder_pro_serial_status' );

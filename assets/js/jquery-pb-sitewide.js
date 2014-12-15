@@ -87,3 +87,23 @@ jQuery( function(){
         jQuery( '.row-visible-to-following-roles', jQuery(this).parent().parent().parent().parent().parent().parent()).toggle();
     });
 });
+
+/*
+* Dialog boxes throughout Profile Builder
+*/
+jQuery( function() {
+    jQuery(document).ready( function() {
+        jQuery('.wppb-modal-box').dialog({
+            autoOpen: false,
+            modal: true,
+            draggable: false,
+            minWidth: 450,
+            minHeight: 450
+        });
+
+        jQuery('.wppb-open-modal-box').click( function(e) {
+            e.preventDefault();
+            jQuery('#' + jQuery(this).attr('href')).dialog('open');
+        });
+    });
+});

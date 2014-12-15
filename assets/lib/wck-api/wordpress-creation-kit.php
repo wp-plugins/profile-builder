@@ -167,10 +167,12 @@ class Wordpress_Creation_Kit_PB{
 				
 			}		
 		}
-		else if( $this->args['context'] == 'option' ){			
-			add_meta_box($this->args['metabox_id'], $this->args['metabox_title'], array( &$this, 'wck_content' ), $pb_wck_pages_hooknames[$this->args['post_type']], $this->args['mb_context'], 'high',  array( 'meta_name' => $this->args['meta_name'], 'meta_array' => $this->args['meta_array']) );
-			/* add class to meta box */
-			add_filter( "postbox_classes_".$pb_wck_pages_hooknames[$this->args['post_type']]."_".$this->args['metabox_id'], array( &$this, 'wck_add_metabox_classes' ) );
+		else if( $this->args['context'] == 'option' ){
+            if( !empty( $pb_wck_pages_hooknames[$this->args['post_type']] ) ) {
+                add_meta_box($this->args['metabox_id'], $this->args['metabox_title'], array(&$this, 'wck_content'), $pb_wck_pages_hooknames[$this->args['post_type']], $this->args['mb_context'], 'high', array('meta_name' => $this->args['meta_name'], 'meta_array' => $this->args['meta_array']));
+                /* add class to meta box */
+                add_filter("postbox_classes_" . $pb_wck_pages_hooknames[$this->args['post_type']] . "_" . $this->args['metabox_id'], array(&$this, 'wck_add_metabox_classes'));
+            }
 		}
 	}	
 	
@@ -1333,6 +1335,12 @@ class WCK_Page_Creator_PB{
 	 */
 	function wck_page_init(){			
 		global $pb_wck_pages_hooknames;
+
+        /* don't add the page at all if the user doesn't meet the capabilities */
+        if( !empty( $this->args['capability'] ) ){
+            if( !current_user_can( $this->args['capability'] ) )
+                return;
+        }
 		
 		/* Create the page using either add_menu_page or add_submenu_page functions depending on the 'page_type' parameter. */
 		if( $this->args['page_type'] == 'menu_page' ){
