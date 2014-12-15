@@ -431,6 +431,15 @@ function wppb_edit_form_properties( container_name, element_id ){
 		for (var key in to_show)
 			jQuery( container_name + ' #' + element_id + ' ' + to_show[key] ).show();
 
+        var properties = fields[ jQuery.trim(field) ]['properties'];
+        if( typeof properties !== 'undefined' && properties ) {
+            for( var key in properties ) {
+                if( typeof properties['meta_name_value'] !== 'undefined' ) {
+                    jQuery( container_name + ' ' + '#meta-name').attr( 'readonly', true );
+                }
+            }
+        }
+
 		jQuery( container_name + ' ' + '.mb-list-entry-fields .button-primary' ).removeAttr( 'disabled' );
 	}
 }

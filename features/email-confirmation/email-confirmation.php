@@ -74,8 +74,21 @@ function wppb_add_pending_users_header_script(){
 function wppb_get_unconfirmed_email_number(){
 	global $wpdb;
 
-	header( 'Content-type: application/json' );
-	die( json_encode( array( 'number' => (int)$wpdb->get_var( "SELECT COUNT(*) FROM ".$wpdb->prefix."signups WHERE active = 0" ) ) ) );
+    /* since version 2.0.7 for multisite we add a 'registered_for_blog_id' meta in the registration process
+    so we can count only the users registered on that blog. Also for backwards compatibility we display the users that don't have that meta at all */
+    $number_of_users = 0;
+    $results = $wpdb->get_results("SELECT * FROM ".$wpdb->base_prefix."signups WHERE active = 0");
+    foreach ($results as $result){
+        if( !empty(  $result->meta ) ){
+            $user_meta = maybe_unserialize( $result->meta );
+            if( empty( $user_meta['registered_for_blog_id'] ) || $user_meta['registered_for_blog_id'] == get_current_blog_id() ){
+                $number_of_users++;
+            }
+        }
+    }
+
+    header( 'Content-type: application/json' );
+	die( json_encode( array( 'number' => $number_of_users ) ) );
 }
 	
 
@@ -91,13 +104,13 @@ function wppb_handle_email_confirmation_cases() {
 	if ( current_user_can( 'delete_users' ) )
 		if ( ( $todo != '' ) && ( $user_email != '' ) ){
 
-			$results = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM " . $wpdb->prefix . "signups WHERE active = 0 AND user_email = %s", $user_email ) );
+			$results = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM " . $wpdb->base_prefix . "signups WHERE active = 0 AND user_email = %s", $user_email ) );
 			
 			if ( count( $results ) != 1 )
 				die( __( "There was an error performing that action!", "profilebuilder" ) );
 				
 			elseif ( $todo == 'delete' ){
-				$sql_result = $wpdb->delete( $wpdb->prefix.'signups', array( 'user_login' => $results[0]->user_login, 'user_email' => $results[0]->user_email ) );
+				$sql_result = $wpdb->delete( $wpdb->base_prefix.'signups', array( 'user_login' => $results[0]->user_login, 'user_email' => $results[0]->user_email ) );
 				if ( $sql_result )
 					die( 'ok' );
 					
@@ -108,7 +121,7 @@ function wppb_handle_email_confirmation_cases() {
 				die( wppb_manual_activate_signup( $results[0]->activation_key ) );
 
 			}elseif ( $todo == 'resend' ){
-				$sql_result = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM " . $wpdb->prefix . "signups WHERE user_login = %s AND user_email = %s", $results[0]->user_login, $results[0]->user_email ), ARRAY_A );
+				$sql_result = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM " . $wpdb->base_prefix . "signups WHERE user_login = %s AND user_email = %s", $results[0]->user_login, $results[0]->user_email ), ARRAY_A );
 				
 				if ( $sql_result ){
 					wppb_signup_user_notification( trim( $sql_result['user_login'] ), trim( $sql_result['user_email'] ), $sql_result['activation_key'], $sql_result['meta'] );
@@ -393,7 +406,7 @@ function wppb_manual_activate_signup( $activation_key ) {
 		else{
 			$now = current_time('mysql', true);
 			
-			$retVal = ( is_multisite() ? $wpdb->update( $wpdb->signups, array('active' => 1, 'activated' => $now), array('activation_key' => $activation_key) ) : $wpdb->update( $wpdb->prefix.'signups', array('active' => 1, 'activated' => $now), array('activation_key' => $activation_key) ) );
+			$retVal = ( is_multisite() ? $wpdb->update( $wpdb->signups, array('active' => 1, 'activated' => $now), array('activation_key' => $activation_key) ) : $wpdb->update( $wpdb->base_prefix.'signups', array('active' => 1, 'activated' => $now), array('activation_key' => $activation_key) ) );
 
 			wppb_add_meta_to_user_on_activation( $user_id, '', $meta );
 			
@@ -480,8 +493,14 @@ function wppb_notify_user_registration_email( $bloginfo, $user_name, $email, $se
 
 		$user_message_subject = sprintf( __( '[%1$s] Your new account information', 'profilebuilder' ), $user_message_from, $user_name, $password );
 		$user_message_subject = apply_filters( 'wppb_register_user_email_subject_without_admin_approval', $user_message_subject, $email, $password, $user_message_subject, 'wppb_user_emailc_default_registration_email_subject' );
-		
+
+        if ( $password === NULL ) {
+            $password = __( 'Your selected password at signup', 'profilebuilder' );
+        }
 		$user_message_content = sprintf( __( 'Welcome to %1$s!<br/><br/><br/>Your username is:%2$s and password:%3$s', 'profilebuilder' ), $user_message_from, $user_name, $password );
+        if ( $password === __( 'Your selected password at signup', 'profilebuilder' ) ) {
+            $password = NULL;
+        }
 		
 		if ( $adminApproval == 'yes' ){
 			$user_message_subject = apply_filters( 'wppb_register_user_email_subject_with_admin_approval', $user_message_subject, $email, $password, $user_message_subject, 'wppb_user_emailc_registration_with_admin_approval_email_subject' );
@@ -505,11 +524,12 @@ add_action( 'wp_ajax_wppb_get_unconfirmed_email_number', 'wppb_get_unconfirmed_e
 add_action( 'wp_ajax_wppb_handle_email_confirmation_cases', 'wppb_handle_email_confirmation_cases' );
 
 if ( is_multisite() ){
-			
-	if (strpos($_SERVER['SCRIPT_NAME'], 'users.php')){  //global $pagenow doesn't seem to work
-		add_action( 'admin_head', 'wppb_add_pending_users_header_script' );
 
+    /* don't display on network admin */
+	if( strpos($_SERVER['SCRIPT_NAME'], 'users.php') && !is_network_admin() ){  //global $pagenow doesn't seem to work
+		add_action( 'admin_head', 'wppb_add_pending_users_header_script' );
 	}
+
 	if ( file_exists ( WPPB_PLUGIN_DIR . '/features/admin-approval/admin-approval.php' ) )
 		add_action( 'user_register', 'wppb_update_user_status_on_admin_registration' );
 	
@@ -534,6 +554,6 @@ function wppb_delete_user_from_signups( $user_id ) {
 	global $wpdb;
 
     $user = get_user_by( 'id', $user_id );
-	$wpdb->delete( $wpdb->prefix.'signups', array( 'user_email' => $user->user_email ) );
+	$wpdb->delete( $wpdb->base_prefix.'signups', array( 'user_email' => $user->user_email ) );
 }
 add_action( 'delete_user', 'wppb_delete_user_from_signups' );

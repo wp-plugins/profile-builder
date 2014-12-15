@@ -119,22 +119,24 @@ function wppb_front_end_login( $atts ){
 		// set up the form arguments
 		$form_args = array( 'echo' => false, 'id_submit' => 'wppb-submit' );
 
-		// maybe set up the redirect argument	
+		// maybe set up the redirect argument
 		if( empty( $redirect ) ){
-			$wppb_module_settings = get_option( 'wppb_module_settings' );
-			if( $wppb_module_settings['wppb_customRedirect'] == 'show' ){
-				//check to see if the redirect location is not an empty string and is activated
-				$login_redirect_settings = get_option( 'customRedirectSettings' );
-				
-				// set up the redirect argument to our redirect page
-				if( ( trim( $login_redirect_settings['afterLoginTarget'] ) != '' ) && ( $login_redirect_settings['afterLogin'] == 'yes' ) ){
-					$redirect_to = trim( $login_redirect_settings['afterLoginTarget'] );					
-					if( wppb_check_missing_http( $redirect_to ) )
-						$redirect_to = 'http://'. $redirect_to;
-						
-					$form_args['redirect'] = $redirect_to;
-				}
-			}
+            if( PROFILE_BUILDER == 'Profile Builder Pro' ) {
+                $wppb_module_settings = get_option( 'wppb_module_settings' );
+                if( $wppb_module_settings['wppb_customRedirect'] == 'show' ){
+                    //check to see if the redirect location is not an empty string and is activated
+                    $login_redirect_settings = get_option( 'customRedirectSettings' );
+
+                    // set up the redirect argument to our redirect page
+                    if( ( trim( $login_redirect_settings['afterLoginTarget'] ) != '' ) && ( $login_redirect_settings['afterLogin'] == 'yes' ) ){
+                        $redirect_to = trim( $login_redirect_settings['afterLoginTarget'] );
+                        if( wppb_check_missing_http( $redirect_to ) )
+                            $redirect_to = 'http://'. $redirect_to;
+
+                        $form_args['redirect'] = $redirect_to;
+                    }
+                }
+            }
 		}
 		else	
 			$form_args['redirect'] = trim( $redirect );
@@ -162,7 +164,7 @@ function wppb_front_end_login( $atts ){
 		// build our form
 		$login_form .= '<div id="wppb-login-wrap" class="wppb-user-forms">';
         $form_args['lostpassword_url'] = $lostpassword_url;
-		$login_form .= wp_login_form( $form_args );
+		$login_form .= wp_login_form( apply_filters( 'wppb_login_form_args', $form_args ) );
 
 		if ((!empty($register_url)) || (!empty($lostpassword_url))) {
                 $login_form .= '<p class="login-register-lost-password">';
@@ -196,9 +198,13 @@ function wppb_front_end_login( $atts ){
 		else
 			$display_name = $wppb_user->display_name;
 		
-		$loged_in_message = '<p class="wppb-alert">'.sprintf(__( 'You are currently logged in as %1$s. %2$s', 'profilebuilder' ), '<a href="'.$authorPostsUrl = get_author_posts_url( $wppb_user->ID ).'" title="'.$display_name.'">'.$display_name.'</a>', '<a href="'.wp_logout_url( $redirectTo = wppb_curpageurl() ).'" title="'.__( 'Log out of this account', 'profilebuilder' ).'">'. __( 'Log out', 'profilebuilder').' &raquo;</a>' ) . '</p><!-- .alert-->';
+		$logged_in_message = '<p class="wppb-alert">';
+        $user_url = '<a href="'.$authorPostsUrl = get_author_posts_url( $wppb_user->ID ).'" class="wppb-author-url" title="'.$display_name.'">'.$display_name.'</a>';
+        $logout_url = '<a href="'.wp_logout_url( $redirectTo = wppb_curpageurl() ).'" class="wppb-logout-url" title="'.__( 'Log out of this account', 'profilebuilder' ).'">'. __( 'Log out', 'profilebuilder').' &raquo;</a>';
+        $logged_in_message .= sprintf(__( 'You are currently logged in as %1$s. %2$s', 'profilebuilder' ), $user_url, $logout_url );
+        $logged_in_message .= '</p><!-- .wppb-alert-->';
 		
-		return apply_filters( 'wppb_login_message', $loged_in_message, $wppb_user->ID, $display_name );
+		return apply_filters( 'wppb_login_message', $logged_in_message, $wppb_user->ID, $display_name );
 		
 	}
 }

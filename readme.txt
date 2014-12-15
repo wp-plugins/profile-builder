@@ -2,11 +2,11 @@
 
 Contributors: reflectionmedia, barinagabriel, sareiodata, cozmoslabs, adispiac, madalin.ungureanu
 Donate link: http://www.cozmoslabs.com/wordpress-profile-builder/
-Tags: registration, user profile, user registration, custom field registration, customize profile, user fields, extra user fields, builder, profile builder, custom user profile, user profile page, edit profile, custom registration, custom registration form, custom registration page, registration page, user custom fields, user listing, front-end user listing, user login, user registration form, front-end login, login redirect, login widget, front-end register, front-end registration, front-end edit profile, front-end user registration, custom redirects, user email, avatar upload, email confirmation, user approval, customize registration email, minimum password length, minimum password strength, password strength meter, multiple registration forms, register, register form
+Tags: registration, user profile, user registration, custom field registration, customize profile, user fields, extra user fields, builder, profile builder, custom user profile, user profile page, edit profile, custom registration, custom registration form, custom registration page, registration page, user custom fields, user listing, front-end user listing, user login, user registration form, front-end login, login redirect, login widget, front-end register, front-end registration, front-end edit profile, front-end user registration, custom redirects, user email, avatar upload, email confirmation, user approval, customize registration email, minimum password length, minimum password strength, password strength meter, multiple registration forms, register, register form, member directory
 
 Requires at least: 3.1
 Tested up to: 4.0
-Stable tag: 2.0.7
+Stable tag: 2.0.8
 
 Simple to use profile plugin allowing front-end login, user registration and edit profile by using shortcodes.
  
@@ -64,8 +64,11 @@ The [Pro version](http://www.cozmoslabs.com/wordpress-profile-builder/?utm_sourc
 
 [Find out more about Profile Builder PRO](http://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wp.org&utm_medium=plugin-description-page&utm_campaign=PBFree)
 
-NOTE:
+= Profile Builder in your Language =
+We're focusing on translating Profile Builder in as many languages as we can. So far, the translations for 10 languages are almost complete, but we still need help on a lot of other languages, so please join us at [translate.cozmoslabs.com.](http://translate.cozmoslabs.com/projects/profilebuilder)
+You will be able to download all the [available language packs](http://translate.cozmoslabs.com/projects/profilebuilder) as well as help us translate Profile Builder in your language.
 
+NOTE:
 This plugin adds/removes user fields in the front-end. Both default and extra profile fields will be visible in the back-end as well.
 	
 
@@ -104,6 +107,16 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 10. Profile Builder Login Widget
 
 == Changelog ==
+
+= 2.0.8 =
+* Fixed problem that when Email Confirmation was active the password in the registration emails was empty. We now have a placeholder for when we can't send the actual password.
+* Added 'wppb_login_form_args' filter to filter wp_login_form() arguments.
+* Added css classes to loged in message links so we can style.
+* Fixed bug that was allowing us to change meta_name on un-editable fields:First Name, Last Name etc.
+* Fixed "Display Name Publicly as” field on front-end.
+* Now User Email Confirmation works on multisite as expected.
+* Fixed bug that was throwing “This email is already reserved to be used soon” ERROR on Edit Profile form on multisite.
+* Fixed bug that caused metaboxes and the Profile Builder page to appeared for roles that shouldn't have.
 
 = 2.0.7 =
 * Added icon with tooltip on registration pages 'Users can register themselves or you can manually create users here' message

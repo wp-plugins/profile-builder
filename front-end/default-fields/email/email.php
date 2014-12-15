@@ -44,9 +44,17 @@ function wppb_check_email_value( $message, $field, $request_data, $form_location
 	
 	if ( is_multisite() || ( !is_multisite() && ( isset( $wppb_generalSettings['emailConfirmation'] ) && ( $wppb_generalSettings['emailConfirmation'] == 'yes' ) ) ) ){
 		$user_signup = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM ".$wpdb->prefix."signups WHERE user_email = %s", $request_data['email'] ) );
-	
-		if ( !empty( $user_signup ) )	
-			return __( 'This email is already reserved to be used soon.', 'profilebuilder' ) .'<br/>'. __( 'Please try a different one!', 'profilebuilder' );
+
+        if ( !empty( $user_signup ) ){
+            if ( $form_location == 'register' ){
+                    return __( 'This email is already reserved to be used soons.', 'profilebuilder' ) .'<br/>'. __( 'Please try a different one!', 'profilebuilder' );
+            }
+            else if ( $form_location == 'edit_profile' ){
+                $current_user = wp_get_current_user();
+                if ( $current_user->user_email != $request_data['email'] )
+                    return __( 'This email is already reserved to be used soons.', 'profilebuilder' ) .'<br/>'. __( 'Please try a different one!', 'profilebuilder' );
+            }
+        }
 	}
 	
 	$users = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM {$wpdb->users} WHERE user_email = %s", $request_data['email'] ) );
