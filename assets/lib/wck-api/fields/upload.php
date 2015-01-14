@@ -10,7 +10,7 @@ $upload_input_id = str_replace( '-', '_', Wordpress_Creation_Kit_PB::wck_generat
 $upload_info_div_id = str_replace( '-', '_', Wordpress_Creation_Kit_PB::wck_generate_slug( $meta .'_info_container_'. $details['title'] ) );
 
 /* hidden input that will hold the attachment id */
-$element .= '<input id="'. esc_attr( $upload_input_id ) .'" type="hidden" size="36" name="'. esc_attr( Wordpress_Creation_Kit_PB::wck_generate_slug( $details['title'], $details ) ) .'" value="'. $value .'" class="mb-text-input mb-field"/>';
+$element .= '<input id="'. esc_attr( $upload_input_id ) .'" type="hidden" size="36" name="'. $single_prefix . esc_attr( Wordpress_Creation_Kit_PB::wck_generate_slug( $details['title'], $details ) ) .'" value="'. $value .'" class="mb-text-input mb-field"/>';
 
 $thumbnail = '';
 $file_name = '';

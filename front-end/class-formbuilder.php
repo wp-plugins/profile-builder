@@ -29,6 +29,8 @@ class Profile_Builder_Form_Creator{
 		$this->wppb_retrieve_custom_settings();
 
 		add_action( 'wp_footer', array( &$this, 'wppb_print_script' ) ); //print scripts
+        if( current_user_can( 'manage_options' ) )
+            add_action( 'wppb_before_edit_profile_fields', array( &$this, 'wppb_edit_profile_select_user_to_edit' ) );
 	}
 	
 	function wppb_retrieve_custom_settings(){
@@ -259,9 +261,9 @@ class Profile_Builder_Form_Creator{
 		
 		// use this action hook to add extra content before the register form
 		do_action( 'wppb_before_'.$this->args['form_type'].'_fields' );
-		?>
-		<form enctype="multipart/form-data" method="post" id="<?php if( $this->args['form_type'] == 'register' ) echo 'wppb-register-user'; else if( $this->args['form_type'] == 'edit_profile' ) echo 'wppb-edit-user' ?>" class="wppb-user-forms" action="<?php echo apply_filters( 'wppb_form_action', '' ); ?>">
-			<?php 
+        ?>
+        <form enctype="multipart/form-data" method="post" id="<?php if( $this->args['form_type'] == 'register' ) echo 'wppb-register-user';  else if( $this->args['form_type'] == 'edit_profile' ) echo 'wppb-edit-user'; if( isset($this->args['form_name']) && $this->args['form_name'] != "unspecified" ) echo '-' . $this->args['form_name']; ?>" class="wppb-user-forms<?php if( $this->args['form_type'] == 'register' ) echo ' wppb-register-user';  else if( $this->args['form_type'] == 'edit_profile' ) echo ' wppb-edit-user';?>" action="<?php echo apply_filters( 'wppb_form_action', '' ); ?>">
+			<?php
 			echo apply_filters( 'wppb_before_form_fields', '<ul>' );
 			$this->wppb_output_form_fields( $_REQUEST, $field_check_errors );
 			echo apply_filters( 'wppb_after_form_fields', '</ul>' );
@@ -291,16 +293,21 @@ class Profile_Builder_Form_Creator{
 	}
 	
 	function wppb_output_form_fields( $global_request, $field_check_errors ){
-		
+
 		$output_fields = '';
 		
 		if( !empty( $this->args['form_fields'] ) ){
 			foreach( $this->args['form_fields'] as $field ){
 				$error_var = ( ( array_key_exists( $field['id'], $field_check_errors ) ) ? ' wppb-field-error' : '' );
 				$specific_message = ( ( array_key_exists( $field['id'], $field_check_errors ) ) ? $field_check_errors[$field['id']] : '' );
-				
+
+                $display_field = apply_filters( 'wppb_output_display_form_field', true, $field, $this->args['form_type'], $this->args['role'], $this->wppb_get_desired_user_id() );
+
+                if( $display_field == false )
+                    continue;
+
 				$output_fields .= apply_filters( 'wppb_output_before_form_field', '<li class="wppb-form-field wppb-'. Wordpress_Creation_Kit_PB::wck_generate_slug( $field['field'] ) .$error_var.'" id="wppb-form-element-'. $field['id'] .'">', $field, $error_var );
-				$output_fields .= apply_filters( 'wppb_output_form_field_'.Wordpress_Creation_Kit_PB::wck_generate_slug( $field['field'] ), '', $this->args['form_type'], $field, get_current_user_id(), $field_check_errors, $global_request );
+				$output_fields .= apply_filters( 'wppb_output_form_field_'.Wordpress_Creation_Kit_PB::wck_generate_slug( $field['field'] ), '', $this->args['form_type'], $field, $this->wppb_get_desired_user_id(), $field_check_errors, $global_request, $this->args['role'] );
 				$output_fields .= apply_filters( 'wppb_output_specific_error_message', $specific_message );
 				$output_fields .= apply_filters( 'wppb_output_after_form_field', '</li>', $field );
 			}
@@ -354,7 +361,7 @@ class Profile_Builder_Form_Creator{
 	}
 	
 	function wppb_save_form_values( $global_request ){
-		$user_id = get_current_user_id();
+		$user_id = $this->wppb_get_desired_user_id();
 		$userdata = apply_filters( 'wppb_build_userdata', array(), $global_request );
 		$new_user_signup = false;
 
@@ -369,12 +376,17 @@ class Profile_Builder_Form_Creator{
 					$new_user_signup = true;
 					$multisite_message = true;					
 					$userdata = $this->wppb_add_custom_field_values( $global_request, $userdata, $this->args['form_fields'] );
-					$userdata['role'] = $this->args['role'];
-					$userdata['user_pass'] = wp_hash_password( $userdata['user_pass'] );
+
+                    if( !isset( $userdata['role'] ) )
+                        $userdata['role'] = $this->args['role'];
+
+                    $userdata['user_pass'] = wp_hash_password( $userdata['user_pass'] );
 					wppb_signup_user( $userdata['user_login'], $userdata['user_email'], $userdata );
 				
 				}else{
-					$userdata['role'] = $this->args['role'];
+                    if( !isset( $userdata['role'] ) )
+					    $userdata['role'] = $this->args['role'];
+
                     $userdata = wp_unslash( $userdata );
 					$user_id = wp_insert_user( $userdata );
 				}
@@ -383,8 +395,11 @@ class Profile_Builder_Form_Creator{
 				$new_user_signup = true;
 				$multisite_message = true;			
 				$userdata = $this->wppb_add_custom_field_values( $global_request, $userdata, $this->args['form_fields'] );
-				$userdata['role'] = $this->args['role'];
-				$userdata['user_pass'] = wp_hash_password( $userdata['user_pass'] );
+
+                if( !isset( $userdata['role'] ) )
+				    $userdata['role'] = $this->args['role'];
+
+                $userdata['user_pass'] = wp_hash_password( $userdata['user_pass'] );
                 /* since version 2.0.7 add this meta so we know on what blog the user registered */
                 $userdata['registered_for_blog_id'] = get_current_blog_id();
                 $userdata = wp_unslash( $userdata );
@@ -392,7 +407,7 @@ class Profile_Builder_Form_Creator{
 			}
 		
 		}elseif( $this->args['form_type'] == 'edit_profile' ){
-			$userdata['ID'] = get_current_user_id();
+			$userdata['ID'] = $this->wppb_get_desired_user_id();
             $userdata = wp_unslash( $userdata );
             /* if the user changes his password then we can't send it to the wp_update_user() function or
             the user will be logged out and won't be logged in again because we call wp_update_user() after
@@ -434,6 +449,43 @@ class Profile_Builder_Form_Creator{
 		
 		return $meta;
 	}
+
+    /**
+     * Function that returns the id for the current logged in user or for edit profile forms for administrator it can return the id of a selected user
+     */
+    function wppb_get_desired_user_id(){
+        if( $this->args['form_type'] == 'edit_profile' ){
+            //only admins
+            if ( current_user_can( 'manage_options' ) ) {
+                if( isset( $_GET['edit_user'] ) && ! empty( $_GET['edit_user'] ) ){
+                    return $_GET['edit_user'];
+                }
+            }
+        }
+
+        return get_current_user_id();
+    }
+
+    function wppb_edit_profile_select_user_to_edit(){
+
+        /* add a hard cap: if we have more than 5000 users don't display the dropdown for performance considerations */
+        $user_count = count_users();
+        if( $user_count['total_users'] > apply_filters( 'wppb_edit_other_users_count_limit', 5000 ) )
+            return;
+
+        if( isset( $_GET['edit_user'] ) && ! empty( $_GET['edit_user'] ) )
+            $selected = $_GET['edit_user'];
+        else
+            $selected = false;
+        ?>
+        <form method="GET" action="" id="select_user_to_edit_form">
+            <p class="wppb-form-field">
+                <label for="edit_user"><?php _e( 'User to edit:', 'profilebuilder' ) ?></label><?php wp_dropdown_users( array( 'name' => 'edit_user', 'id' => 'wppb-edit-user', 'selected' => $selected ) ); ?>
+            </p>
+            <script type="text/javascript">jQuery( '#wppb-edit-user' ).change( function(){ window.location.href = "<?php echo add_query_arg( array( 'edit_user' => '=' ) ) ?>"+jQuery(this).val(); });</script>
+        </form>
+        <?php
+    }
 
     /**
      * Handle toString method

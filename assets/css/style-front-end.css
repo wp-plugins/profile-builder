@@ -113,7 +113,8 @@
 }
 
 .wppb-user-forms ul li,
-#wppb-login-wrap p{
+#wppb-login-wrap p,
+#select_user_to_edit_form p{
 	overflow:hidden;
 	margin:0;
 	padding-bottom:14px;
@@ -191,7 +192,7 @@ input#send_credentials_via_email{
 	width:auto;
 }
 
-#wppb-edit-user .wppb-checkbox-terms-and-conditions {
+.wppb-edit-user .wppb-checkbox-terms-and-conditions {
 	display:none;
 }
 
@@ -228,8 +229,8 @@ input#send_credentials_via_email{
 	color:green;
 }
 
-#wppb-register-user .wppb-field-error,
-#wppb-edit-user .wppb-field-error,
+.wppb-register-user .wppb-field-error,
+.wppb-edit-user .wppb-field-error,
 #wppb-recover-password .wppb-field-error{
 	background-color: #FFDFDF;
     border: 1px dotted #C89797;
@@ -287,6 +288,22 @@ input#send_credentials_via_email{
 
 .wppb-table thead tr:hover{
     background: none;
+}
+
+.wppb-table .wppb-sorting .wppb-sorting-default {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url('../images/sorting-default.png') no-repeat center center;
+    vertical-align: middle;
+}
+
+.wppb-table .wppb-sorting .wppb-sorting-ascending {
+    background-image: url('../images/sorting-ascending.png');
+}
+
+.wppb-table .wppb-sorting .wppb-sorting-descending {
+    background-image: url('../images/sorting-descending.png');
 }
 
 .wppb-table tr:hover{

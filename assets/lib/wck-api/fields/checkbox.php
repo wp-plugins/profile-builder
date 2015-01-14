@@ -4,17 +4,17 @@
  * @param string $value Contains input value;
  * @param string $context Context where the function is used. Depending on it some actions are preformed.;
  * @return string $element input element html string. */
- 
+
 if( !empty( $details['options'] ) ){
 	$element .= '<div class="wck-checkboxes">';
 	foreach( $details['options'] as $option ){
-		$found = false;						
-		
+		$found = false;
+
 		if( !is_array( $value ) )
 			$values = explode( ', ', $value );						
 		else
 			$values = $value;	
-		
+
 		if( strpos( $option, '%' ) === false  ){
 			$label = $option;
 			$value_attr = $option;
@@ -32,9 +32,14 @@ if( !empty( $details['options'] ) ){
 				}
 			}
 		}
-			
-		$element .= '<div><label><input type="checkbox" name="'. esc_attr( Wordpress_Creation_Kit_PB::wck_generate_slug( $details['title'], $details ) ) .'" id="';
-		if( !empty( $frontend_prefix ) )
+
+        $element .= '<div><label><input type="checkbox" name="'. $single_prefix . esc_attr( Wordpress_Creation_Kit_PB::wck_generate_slug( $details['title'] ) );
+        if( $this->args['single'] ) {
+            $element .= '[]';
+        }
+        $element .= '" id="';
+
+        if( !empty( $frontend_prefix ) )
 			$element .= $frontend_prefix;
 		$element .= esc_attr( Wordpress_Creation_Kit_PB::wck_generate_slug( $details['title'] . '_' . $value_attr ) ) .'" value="'. esc_attr( $value_attr ) .'"  '. checked( $found, true, false ) .'class="mb-checkbox mb-field" />'. esc_html( $label ) .'</label></div>' ;
 	}

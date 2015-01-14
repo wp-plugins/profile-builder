@@ -128,6 +128,10 @@
 	display:none !important;
 }
 
+#container_wppb_manage_fields li .description strong {
+    display: inline !important;
+}
+
 #container_wppb_manage_fields .added_fields_list li.row-meta-name{
 	display:list-item !important;
 }
@@ -135,6 +139,23 @@
 #container_wppb_manage_fields li.row-field-title pre,
 #container_wppb_manage_fields li.row-meta-name pre{
 	min-height:10px;
+}
+
+#wppb_manage_fields li.row-user-roles label,
+#container_wppb_manage_fields li.row-user-roles label {
+    background: #fff;
+}
+
+#wppb_manage_fields li.row-user-roles .sortable-handle,
+#container_wppb_manage_fields li.row-user-roles .sortable-handle {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url('../images/sorting-icon-dots.png') no-repeat center center;;
+    vertical-align: middle;
+    margin-right: 7px;
+    cursor: move;
+    margin-top: -1px;
 }
 
 #container_wppb_manage_fields pre{
@@ -218,19 +239,23 @@
 }
 
 #wppb_rf_page_settings .row-url, #wppb_rf_page_settings .row-display-messages, .update_container_wppb_rf_page_settings.redirect_ .row-url,
-.update_container_wppb_rf_page_settings.redirect_ .row-display-messages, #container_wppb_rf_page_settings .redirect_ .wck-content .row-url,
-#container_wppb_rf_page_settings .redirect_ .wck-content .row-display-messages, .update_container_wppb_rf_page_settings.redirect_no .row-url,
-.update_container_wppb_rf_page_settings.redirect_no .row-display-messages, #container_wppb_rf_page_settings .redirect_no .wck-content .row-url,
-#container_wppb_rf_page_settings .redirect_no .wck-content .row-display-messages{
+.update_container_wppb_rf_page_settings.redirect_ .row-display-messages, .update_container_wppb_rf_page_settings.redirect_no .row-url,
+.update_container_wppb_rf_page_settings.redirect_no .row-display-messages{
     display:none;
 }
 
+#wppb_rf_page_settings.update_container_wppb_rf_page_settings.redirect_yes .row-url, #wppb_rf_page_settings.update_container_wppb_rf_page_settings.redirect_yes .row-display-messages{
+    display: block;
+}
+
 #wppb_epf_page_settings .row-url, #wppb_epf_page_settings .row-display-messages, .update_container_wppb_epf_page_settings.redirect_ .row-url,
-.update_container_wppb_epf_page_settings.redirect_ .row-display-messages, #container_wppb_epf_page_settings .redirect_ .wck-content .row-url,
-#container_wppb_epf_page_settings .redirect_ .wck-content .row-display-messages, .update_container_wppb_epf_page_settings.redirect_no .row-url,
-.update_container_wppb_epf_page_settings.redirect_no .row-display-messages, #container_wppb_epf_page_settings .redirect_no .wck-content .row-url,
-#container_wppb_epf_page_settings .redirect_no .wck-content .row-display-messages{
+.update_container_wppb_epf_page_settings.redirect_ .row-display-messages, .update_container_wppb_epf_page_settings.redirect_no .row-url,
+.update_container_wppb_epf_page_settings.redirect_no .row-display-messages{
     display:none;
+}
+
+#wppb_epf_page_settings.update_container_wppb_epf_page_settings.redirect_yes .row-url, #wppb_epf_page_settings.update_container_wppb_epf_page_settings.redirect_yes .row-display-messages{
+    display: block;
 }
 
 /* Columns :) */
@@ -404,9 +429,12 @@
 }
 
 
-#wppb_ul_page_settings .row-visible-to-following-roles, .update_container_wppb_ul_page_settings.visible_to_logged_ .row-visible-to-following-roles,
-#container_wppb_ul_page_settings .visible_to_logged_ .wck-content .row-visible-to-following-roles{
+#wppb_ul_page_settings .row-visible-to-following-roles, .update_container_wppb_ul_page_settings.visible_to_logged_ .row-visible-to-following-roles{
     display:none;
+}
+
+#wppb_ul_page_settings.update_container_wppb_ul_page_settings.visible_to_logged_yes .row-visible-to-following-roles{
+    display: block;
 }
 
 /* Manage Fields Responsive CSS */
