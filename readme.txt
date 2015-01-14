@@ -5,8 +5,8 @@ Donate link: http://www.cozmoslabs.com/wordpress-profile-builder/
 Tags: registration, user profile, user registration, custom field registration, customize profile, user fields, extra user fields, builder, profile builder, custom user profile, user profile page, edit profile, custom registration, custom registration form, custom registration page, registration page, user custom fields, user listing, front-end user listing, user login, user registration form, front-end login, login redirect, login widget, front-end register, front-end registration, front-end edit profile, front-end user registration, custom redirects, user email, avatar upload, email confirmation, user approval, customize registration email, minimum password length, minimum password strength, password strength meter, multiple registration forms, register, register form, member directory
 
 Requires at least: 3.1
-Tested up to: 4.0
-Stable tag: 2.0.8
+Tested up to: 4.1
+Stable tag: 2.0.9
 
 Simple to use profile plugin allowing front-end login, user registration and edit profile by using shortcodes.
  
@@ -107,6 +107,17 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 10. Profile Builder Login Widget
 
 == Changelog ==
+
+= 2.0.9 =
+* Fixed bug that was causing the username to be sent instead of the email when login with email was set to true in the default registration emails.
+* Fixed bug in Password Reset email when Login with email was on.
+* The "This email is already reserved to be used soon" error wasn't appearing on single site when Email Confirmation was on. Now it does when it is the case.
+* Fixed bug that was causing an upload incompatibility with WordPress media uploader.
+* Fixed bug that was causing Password strength and Password length error messages to not be translatable.
+* Interface changes to forms in admin area on Profile Builder Pages.
+* Added possibility to edit other users from the front end edit form when an admin is logged in.
+* Added a popup in unconfirmed email user listing in admin area where the admin can see the users meta information.
+* Add logout shortcode and menu link to Profile Builder.
 
 = 2.0.8 =
 * Fixed problem that when Email Confirmation was active the password in the registration emails was empty. We now have a placeholder for when we can't send the actual password.

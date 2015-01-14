@@ -351,7 +351,18 @@ var fields 	=	{
 																	'required'	:	[
 																						true
 																					]
-																}
+																},
+                        'Select (User Role)':					{	'show_rows'	:	[
+                                                                                        '.row-field-title',
+                                                                                        '.row-description',
+                                                                                        '.row-user-roles',
+                                                                                        '.row-required'
+                                                                                    ],
+                                                                    'properties':	{
+                                                                        'meta_name_value'	: ''
+                                                                    }
+                                                                }
+
 				}
 var fields_to_show = [
 	'.row-field-title',
@@ -441,6 +452,9 @@ function wppb_edit_form_properties( container_name, element_id ){
         }
 
 		jQuery( container_name + ' ' + '.mb-list-entry-fields .button-primary' ).removeAttr( 'disabled' );
+
+        //Handle user role sorting
+        wppb_handle_user_role_field( container_name );
 	}
 }
 
@@ -496,7 +510,9 @@ function wppb_display_needed_fields( index, container_name, current_field_select
 		jQuery( container_name + ' ' + '#meta-name' ).val( meta_value );
 		jQuery( container_name + ' ' + '#meta-name' ).attr( 'readonly', false );
 	}
-	
+
+    //Handle user role sorting
+    wppb_handle_user_role_field( container_name );
 	
 	var set_required = fields[jQuery.trim(index)]['required'];
 	if ( ( typeof set_required !== 'undefined' ) && ( set_required ) ){
@@ -511,6 +527,52 @@ function wppb_display_needed_fields( index, container_name, current_field_select
 	jQuery( container_name + ' ' + '.mb-list-entry-fields .button-primary' ).removeAttr( 'disabled' );
 }
 
+
+/*
+* Function that handles the sorting of the user roles from the Select (User Role)
+* extra field
+*
+ */
+function wppb_handle_user_role_field( container_name ) {
+
+    jQuery( container_name + ' ' + '.row-user-roles .wck-checkboxes').sortable({
+
+        //Assign a custom handle for the drag and drop
+        handle: '.sortable-handle',
+
+        create: function( event, ui ) {
+
+            //Add the custom handle for drag and drop
+            jQuery(this).find('div').each( function() {
+                jQuery(this).prepend('<span class="sortable-handle"></span>');
+            });
+
+            $sortOrderInput = jQuery(this).parents('.row-user-roles').siblings('.row-user-roles-sort-order').find('input[type=text]');
+
+            if( $sortOrderInput.val() == '' ) {
+                jQuery(this).find('input[type=checkbox]').each( function() {
+                    $sortOrderInput.val( $sortOrderInput.val() + ', ' + jQuery(this).val() );
+                });
+            } else {
+                sortOrderElements = $sortOrderInput.val().split(', ');
+                sortOrderElements.shift();
+
+                for( var i=0; i < sortOrderElements.length; i++ ) {
+                    jQuery( container_name + ' ' + '.row-user-roles .wck-checkboxes').append( jQuery( container_name + ' ' + '.row-user-roles .wck-checkboxes input[value=' + sortOrderElements[i] + ']').parent().parent().get(0) );
+                }
+            }
+        },
+
+        update: function( event, ui ) {
+            $sortOrderInput = ui.item.parents('.row-user-roles').siblings('.row-user-roles-sort-order').find('input[type=text]');
+            $sortOrderInput.val('');
+
+            ui.item.parent().find('input[type=checkbox]').each( function() {
+                $sortOrderInput.val( $sortOrderInput.val() + ', ' + jQuery(this).val() );
+            });
+        }
+    });
+}
 
 function wppb_initialize_live_select( container_name ){	
 	wppb_hide_all( container_name );

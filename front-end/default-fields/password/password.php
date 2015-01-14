@@ -41,11 +41,11 @@ function wppb_check_password_value( $message, $field, $request_data, $form_locat
         $wppb_generalSettings = get_option( 'wppb_general_settings' );
 
         if( wppb_check_password_length( $request_data['passw1'] ) )
-            return __( "<br/>The password must have the minimum length of ". $wppb_generalSettings['minimum_password_length'] ." characters", "profilebuilder" );
+            return '<br/>'. sprintf( __( "The password must have the minimum length of %s characters", "profilebuilder" ), $wppb_generalSettings['minimum_password_length'] );
 
 
         if( wppb_check_password_strength() ){
-            return __( "<br/>The password must have a minimum strength of ". wppb_check_password_strength(), "profilebuilder" );
+            return '<br/>' . sprintf( __( "The password must have a minimum strength of %s", "profilebuilder" ), wppb_check_password_strength() );
         }
     }
 

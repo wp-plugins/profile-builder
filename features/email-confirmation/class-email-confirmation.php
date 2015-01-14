@@ -75,6 +75,18 @@ class wpp_list_unfonfirmed_email_table extends PB_WP_List_Table {
             case 'email':
             case 'registered':
                 return $item[$column_name];
+            case 'user-meta':
+                global $wpdb;
+                $sql_result = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM " . $wpdb->base_prefix . "signups WHERE user_email = %s", $item['email'] ), ARRAY_A );
+                $user_meta = $sql_result['meta'];
+                $user_meta_content = '';
+                if( !empty( $user_meta ) ){
+                    foreach( maybe_unserialize( $user_meta ) as $key => $value ){
+                        if( $key != 'user_pass' )
+                            $user_meta_content .= $key.':'.$value.'<br/>';
+                    }
+                }
+                return '<a href="#" data-email="'. $item['email'] .'" onclick="jQuery(\'<div><pre>'. $user_meta_content .'</pre></div>\').dialog({title:\''. __("User Meta", "profilebuilder" ) .'\', width: 500 }) ;return false;">'. __( 'show', 'profilebuilder' ) .'</a>';
             default:
                 return print_r($item,true); //Show the whole array for troubleshooting purposes
         }
@@ -152,7 +164,8 @@ class wpp_list_unfonfirmed_email_table extends PB_WP_List_Table {
             'cb'        	=> '<input type="checkbox" />', //Render a checkbox instead of text
             'username'     	=> __( 'Username', 'profilebuilder' ),
             'email'    		=> __( 'E-mail', 'profilebuilder' ),
-            'registered'  	=> __( 'Registered', 'profilebuilder' )
+            'registered'  	=> __( 'Registered', 'profilebuilder' ),
+            'user-meta'  	=> __( 'User Meta', 'profilebuilder' )
         );
 		
         return $columns;

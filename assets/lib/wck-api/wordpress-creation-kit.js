@@ -106,13 +106,8 @@ function addMeta(value, id, nonce){
 						jQuery(this).html('<p><span class="file-name"></span><span class="file-type"></span></p>');	
 					}); */	
 					
-					jQuery('#'+value).parent().css('opacity','1');	
-					
-					/* Remove form if is single */
-					if( jQuery( '#'+value ).hasClass('single') )
-						jQuery( '#'+value ).remove();
-					
-					
+					jQuery('#'+value).parent().css('opacity','1');
+
 					jQuery('body').trigger('wck-added-element');
 					
 					jQuery('#mb-ajax-loading').remove();

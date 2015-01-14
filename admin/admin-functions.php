@@ -103,7 +103,7 @@ function wppb_password_check_extra_conditions( $errors, $user ){
         $wppb_generalSettings = get_option( 'wppb_general_settings' );
         if( !empty( $wppb_generalSettings['minimum_password_length'] ) ){
             if( strlen( $password ) < $wppb_generalSettings['minimum_password_length'] )
-                $errors->add( 'pass', __( '<strong>ERROR</strong>: The password must have the minimum length of '. $wppb_generalSettings['minimum_password_length'] .' characters', 'profilebuilder' ) );
+                $errors->add( 'pass', sprintf( __( '<strong>ERROR</strong>: The password must have the minimum length of %s characters', 'profilebuilder' ), $wppb_generalSettings['minimum_password_length'] ) );
         }
 
         if( isset( $_POST['wppb_password_strength'] ) && !empty( $wppb_generalSettings['minimum_password_strength'] ) ){
@@ -120,7 +120,7 @@ function wppb_password_check_extra_conditions( $errors, $user ){
 
             if( !empty( $password_strength_result_slug ) ){
                 if( $password_strength_array[$password_strength_result_slug] < $password_strength_array[$wppb_generalSettings['minimum_password_strength']] )
-                    $errors->add( 'pass', __( '<strong>ERROR</strong>: The password must have a minimum strength of '. $password_strength_text[$wppb_generalSettings['minimum_password_strength']], 'profilebuilder' ) );
+                    $errors->add( 'pass', sprintf( __( '<strong>ERROR</strong>: The password must have a minimum strength of %s', 'profilebuilder' ), $password_strength_text[$wppb_generalSettings['minimum_password_strength']] ) );
             }
         }
     }

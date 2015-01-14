@@ -52,6 +52,7 @@ function wppb_manage_fields_submenu(){
         $manage_field_types[] = 'Select (Multiple)';
         $manage_field_types[] = 'Select (Country)';
         $manage_field_types[] = 'Select (Timezone)';
+        $manage_field_types[] = 'Select (User Role)';
         $manage_field_types[] = 'Checkbox';
         $manage_field_types[] = 'Checkbox (Terms and Conditions)';
         $manage_field_types[] = 'Radio';
@@ -67,6 +68,14 @@ function wppb_manage_fields_submenu(){
 	if( PROFILE_BUILDER == 'Profile Builder Free' ) {
 		$field_description .='. Extra Field Types are available in %1$sHobbyist or PRO versions%2$s.';
 	}
+
+    //user roles
+    global $wp_roles;
+
+    $user_roles = array();
+    foreach( $wp_roles->roles as $user_role_slug => $user_role )
+        if( $user_role_slug !== 'administrator' )
+            array_push( $user_roles, '%' . $user_role['name'] . '%' . $user_role_slug );
 
 	// set up the fields array
 	$fields = apply_filters( 'wppb_manage_fields', array(
@@ -86,6 +95,8 @@ function wppb_manage_fields_submenu(){
         array( 'type' => 'text', 'slug' => 'labels', 'title' => __( 'Labels', 'profilebuilder' ), 'description' => __( "Enter a comma separated list of labels<br/>Visible for the user", 'profilebuilder' ) ),
         array( 'type' => 'text', 'slug' => 'public-key', 'title' => __( 'Public Key', 'profilebuilder' ), 'description' => __( 'The public key from Google, <a href="http://www.google.com/recaptcha" target="_blank">www.google.com/recaptcha</a>', 'profilebuilder' ) ),
         array( 'type' => 'text', 'slug' => 'private-key', 'title' => __( 'Private Key', 'profilebuilder' ), 'description' => __( 'The private key from Google, <a href="http://www.google.com/recaptcha" target="_blank">www.google.com/recaptcha</a>', 'profilebuilder' ) ),
+        array( 'type' => 'checkbox', 'slug' => 'user-roles', 'title' => __( 'User Roles', 'profilebuilder' ), 'options' => $user_roles, 'description' => __( "Select which user roles to show to the user ( drag and drop to re-order )", 'profilebuilder' ) ),
+        array( 'type' => 'text', 'slug' => 'user-roles-sort-order', 'title' => __( 'User Roles Order', 'profilebuilder' ), 'description' => __( "Save the user role order from the user roles checkboxes", 'profilebuilder' ) ),
         array( 'type' => 'text', 'slug' => 'default-value', 'title' => __( 'Default Value', 'profilebuilder' ), 'description' => __( "Default value of the field", 'profilebuilder' ) ),
         array( 'type' => 'text', 'slug' => 'default-option', 'title' => __( 'Default Option', 'profilebuilder' ), 'description' => __( "Specify the option which should be selected by default", 'profilebuilder' ) ),
         array( 'type' => 'text', 'slug' => 'default-options', 'title' => __( 'Default Option(s)', 'profilebuilder' ), 'description' => __( "Specify the option which should be checked by default<br/>If there are multiple values, separate them with a ',' (comma)", 'profilebuilder' ) ),
@@ -279,6 +290,7 @@ function wppb_return_unique_field_list( $only_default_fields = false ){
     if( !$only_default_fields ){
 	    $unique_field_list[] = 'Avatar';
 	    $unique_field_list[] = 'reCAPTCHA';
+        $unique_field_list[] = 'Select (User Role)';
     }
 
 	return 	apply_filters ( 'wppb_unique_field_list', $unique_field_list );
@@ -374,7 +386,7 @@ function wppb_check_field_on_edit_add( $message, $fields, $required_fields, $met
 				$unique_meta_name_list = array( 'first_name', 'last_name', 'nickname', 'description' );
 
                 //check to see if meta-name is empty
-                $skip_empty_check_for_fields = array('Heading');
+                $skip_empty_check_for_fields = array('Heading', 'Select (User Role)');
 
                 if( !in_array( $posted_values['field'], $skip_empty_check_for_fields ) && empty( $posted_values['meta-name'] ) ) {
                     $message .= __( "The meta-name cannot be empty\n", 'profilebuilder' );
@@ -436,6 +448,14 @@ function wppb_check_field_on_edit_add( $message, $fields, $required_fields, $met
 				$message .= sprintf( __( "The following option did not coincide with the ones in the options list: %s\n", 'profilebuilder' ), $posted_values['default-option'] );
 		}
 		// END check for valid default option (checkbox, select, radio)
+
+        // check to see if any user role is selected (user-role field)
+        if( $posted_values['field'] == 'Select (User Role)' ) {
+            if( empty( $posted_values['user-roles'] ) ) {
+                $message .= __( "Please select at least one user role\n", 'profilebuilder' );
+            }
+        }
+        // END check to see if Administrator user role has been selected (user-role field)
 
         $message = apply_filters( 'wppb_check_extra_manage_fields', $message, $posted_values );
 
@@ -541,3 +561,20 @@ function wppb_remove_properties_from_added_form( $meta_name, $id, $element_id ){
         echo "<script type=\"text/javascript\">wppb_edit_form_properties( '#container_wppb_manage_fields', 'update_container_wppb_manage_fields_".$element_id."' );</script>";
 }
 add_action("wck_after_adding_form", "wppb_remove_properties_from_added_form", 10, 3);
+
+/*
+ * WPML Support for dynamic strings in Profile Builder. Tags: WPML, fields, translate
+ */
+add_filter( 'update_option_wppb_manage_fields', 'wppb_wpml_compat_with_fields', 10, 2 );
+function wppb_wpml_compat_with_fields( $oldvalue, $_newvalue ){
+    if ( is_array( $_newvalue ) ){
+        foreach ( $_newvalue as $field ){
+            $field_title = $field['field-title'];
+            $field_description = $field['description'];
+            if (function_exists('icl_register_string')){
+                icl_register_string('plugin profile-builder-pro', 'custom_field_'.$field['id'].'_title_translation' , $field_title);
+                icl_register_string('plugin profile-builder-pro', 'custom_field_'.$field['id'].'_description_translation', $field_description);
+            }
+        }
+    }
+}

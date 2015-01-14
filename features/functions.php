@@ -115,6 +115,10 @@ if ( is_admin() ){
 	include_once( WPPB_PLUGIN_DIR.'/front-end/login.php' );       
 	add_shortcode( 'wppb-login', 'wppb_front_end_login' );
 
+    // include the menu file for the logout screen
+    include_once( WPPB_PLUGIN_DIR.'/front-end/logout.php' );
+    add_shortcode( 'wppb-logout', 'wppb_front_end_logout' );
+
 	// include the menu file for the register screen
 	include_once( WPPB_PLUGIN_DIR.'/front-end/register.php' );        		
 	add_shortcode( 'wppb-register', 'wppb_front_end_register_handler' );	
