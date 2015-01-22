@@ -16,7 +16,7 @@ function wppb_generate_default_settings_defaults(){
 	$wppb_general_settings = get_option( 'wppb_general_settings', 'not_found' );
 	
 	if ( $wppb_general_settings == 'not_found' )
-		update_option( 'wppb_general_settings', array( 'extraFieldsLayout' => 'default', 'emailConfirmation' => 'no', 'activationLandingPage' => '', 'adminApproval' => 'no', 'loginWith' => 'username' ) );	
+		update_option( 'wppb_general_settings', array( 'extraFieldsLayout' => 'default', 'emailConfirmation' => 'no', 'activationLandingPage' => '', 'adminApproval' => 'no', 'loginWith' => 'usernameemail' ) );
 }
 
 
@@ -100,7 +100,7 @@ function wppb_general_settings_content() {
 				</p>
 			</td>
 		</tr>
-	
+
 
 	<?php
 	if ( file_exists( WPPB_PLUGIN_DIR.'/features/admin-approval/admin-approval.php' ) ){
@@ -134,16 +134,22 @@ function wppb_general_settings_content() {
 			</td>
 		</tr>
 	<?php } ?>
-		
+
 		<tr>
 			<th scope="row">
 				<?php _e( 'Allow Users to Log in With:', 'profilebuilder' ); ?>
 			</th>
 			<td>
 				<select name="wppb_general_settings[loginWith]" class="wppb-select">
+					<option value="usernameemail" <?php if ( $wppb_generalSettings['loginWith'] == 'usernameemail' ) echo 'selected'; ?>><?php _e( 'Username and Email', 'profilebuilder' ); ?></option>
 					<option value="username" <?php if ( $wppb_generalSettings['loginWith'] == 'username' ) echo 'selected'; ?>><?php _e( 'Username', 'profilebuilder' ); ?></option>
 					<option value="email" <?php if ( $wppb_generalSettings['loginWith'] == 'email' ) echo 'selected'; ?>><?php _e( 'Email', 'profilebuilder' ); ?></option>
 				</select>
+				<ul>
+					<li class="description"><?php _e( '"Username and Email" - users can Log In with both Username and Email.', 'profilebuilder' ); ?></li>
+					<li class="description"><?php _e( '"Username" - users can Log In only with Username.', 'profilebuilder' ); ?></li>
+					<li class="description"><?php _e( '"Email" - users can Log In only with Email.', 'profilebuilder' ); ?></li>
+				</ul>
 			</td>
 		</tr>
 

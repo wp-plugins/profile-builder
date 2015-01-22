@@ -24,9 +24,9 @@ function wppb_change_login_with_email(){
 		// only do this for our form
 		if( isset( $_POST['wppb_login'] ) ){
 			global $wpdb, $_POST;
-			
+
 			$wppb_generalSettings = get_option( 'wppb_general_settings' );
-			
+
 			// if this setting is active, the posted username is, in fact the user's email
 			if( isset( $wppb_generalSettings['loginWith'] ) && ( $wppb_generalSettings['loginWith'] == 'email' ) ){
 				$username = $wpdb->get_var( $wpdb->prepare( "SELECT user_login FROM $wpdb->users WHERE user_email= %s LIMIT 1", trim( $_POST['log'] ) ) );
@@ -34,7 +34,24 @@ function wppb_change_login_with_email(){
 				if( !empty( $username ) )
 					$_POST['log'] = $username;
 				
-				else{
+				else {
+					// if we don't have a username for the email entered we can't have an empty username because we will receive a field empty error
+					$_POST['log'] = 'this_is_an_invalid_email'.time();
+				}
+			}
+
+			// if this setting is active, the posted username is, in fact the user's email or username
+			if( isset( $wppb_generalSettings['loginWith'] ) && ( $wppb_generalSettings['loginWith'] == 'usernameemail' ) ) {
+				if( is_email( $_POST['log'] ) ) {
+					$username = $wpdb->get_var( $wpdb->prepare( "SELECT user_login FROM $wpdb->users WHERE user_email= %s LIMIT 1", trim( $_POST['log'] ) ) );
+				} else {
+					$username = $_POST['log'];
+				}
+
+				if( !empty( $username ) )
+					$_POST['log'] = $username;
+
+				else {
 					// if we don't have a username for the email entered we can't have an empty username because we will receive a field empty error
 					$_POST['log'] = 'this_is_an_invalid_email'.time();
 				}
@@ -82,6 +99,10 @@ function wppb_login_redirect( $redirect_to, $redirect_url, $user ){
                 // if login with email is enabled change the word username with email
                 if ($wppb_generalSettings['loginWith'] == 'email')
                     $error_string = str_replace( __('username','profilebuilder'), __('email','profilebuilder'), $error_string);
+
+				// if login with username and email is enabled change the word username with username or email
+				if ($wppb_generalSettings['loginWith'] == 'usernameemail')
+					$error_string = str_replace( __('username','profilebuilder'), __('username or email','profilebuilder'), $error_string);
 
             }
             // if the error string is empty it means that none of the fields were completed
@@ -144,7 +165,11 @@ function wppb_front_end_login( $atts ){
 		// change the label argument for username is login with email is enabled
 		if ( isset( $wppb_generalSettings['loginWith'] ) && ( $wppb_generalSettings['loginWith'] == 'email' ) )
 			$form_args['label_username'] = __( 'Email', 'profilebuilder' );
-		
+
+		// change the label argument for username on login with username or email when Username and Email is enabled
+		if ( isset( $wppb_generalSettings['loginWith'] ) && ( $wppb_generalSettings['loginWith'] == 'usernameemail' ) )
+			$form_args['label_username'] = __( 'Username or Email', 'profilebuilder' );
+
 		// initialize our form variable
 		$login_form = '';
 		
@@ -197,7 +222,17 @@ function wppb_front_end_login( $atts ){
 		
 		else
 			$display_name = $wppb_user->display_name;
-		
+
+		if( isset( $wppb_generalSettings['loginWith'] ) && ( $wppb_generalSettings['loginWith'] == 'usernameemail' ) )
+			if( $wppb_user->user_login == Wordpress_Creation_Kit_PB::wck_generate_slug( trim( $wppb_user->user_email ) ) )
+			$display_name = $wppb_user->user_email;
+
+		elseif($wppb_user->display_name !== '')
+			$display_name = $wppb_user->user_login;
+
+		else
+			$display_name = $wppb_user->display_name;
+
 		$logged_in_message = '<p class="wppb-alert">';
         $user_url = '<a href="'.$authorPostsUrl = get_author_posts_url( $wppb_user->ID ).'" class="wppb-author-url" title="'.$display_name.'">'.$display_name.'</a>';
         $logout_url = '<a href="'.wp_logout_url( $redirectTo = wppb_curpageurl() ).'" class="wppb-logout-url" title="'.__( 'Log out of this account', 'profilebuilder' ).'">'. __( 'Log out', 'profilebuilder').' &raquo;</a>';
