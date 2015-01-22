@@ -6,7 +6,7 @@ Tags: registration, user profile, user registration, custom field registration, 
 
 Requires at least: 3.1
 Tested up to: 4.1
-Stable tag: 2.0.9
+Stable tag: 2.1.0
 
 Simple to use profile plugin allowing front-end login, user registration and edit profile by using shortcodes.
  
@@ -27,6 +27,7 @@ You can use the following shortcode list:
 
 * **[wppb-edit-profile]** - to grant users front-end access to their profile (requires user to be logged in).
 * **[wppb-login]** - to add a front-end login form.
+* **[wppb-logout]** - to add logout functionality.
 * **[wppb-register]** - to add a front-end register form.
 * **[wppb-recover-password]** - to add a password recovery form.
 
@@ -48,7 +49,7 @@ Users with administrator rights have access to the following features:
 
 The [Pro version](http://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wp.org&utm_medium=plugin-description-page&utm_campaign=PBFree) has the following extra features:
 
-* Create Extra User Fields (Heading, Input, Hidden-Input, Checkbox, Agree to Terms Checkbox, Radio Buttons, DatePicker, Textareas, reCAPTCHA, Upload fields, Selects, Country Selects, Timezone selects, Avatar Upload)
+* Create Extra User Fields (Heading, Input, Hidden-Input, Checkbox, Agree to Terms Checkbox, Radio Buttons, DatePicker, Textareas, reCAPTCHA, Upload fields, Selects, User Role Select, Country Selects, Timezone selects, Avatar Upload)
 * Add Avatar Upload for users
 * Front-end User Listing (fully customizable, sorting included)
 * Create Multiple User Listings
@@ -107,6 +108,10 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 10. Profile Builder Login Widget
 
 == Changelog ==
+
+= 2.1.0 =
+* Added option to Log In with either Username or Email.
+* Added default values for "Logout" shortcode so it displays even if you don't pass any arguments to it.
 
 = 2.0.9 =
 * Fixed bug that was causing the username to be sent instead of the email when login with email was set to true in the default registration emails.

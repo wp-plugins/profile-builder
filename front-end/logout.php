@@ -10,17 +10,11 @@
         if( !is_user_logged_in() )
             return;
 
-        extract( shortcode_atts( array( 'text' => '', 'redirect' => wppb_curpageurl(), 'link_text' => ''), $atts ) );
-
-        $logout_link = '';
-
-        if( trim($text) == '' )
-            return;
-
-        if( trim( $link_text ) != '' )
-            $logout_link = '<a href="' . wp_logout_url( $redirect ) . '" class="wppb-logout-url" title="' . __( 'Log out of this account', 'profilebuilder' ) . '">' . $link_text . '</a>';
-
         $current_user = get_userdata( get_current_user_id() );
+
+        extract( shortcode_atts( array( 'text' => sprintf( __('You are currently logged in as %s. ','profilebuilder') ,$current_user->user_login) , 'redirect' => wppb_curpageurl(), 'link_text' => __('Log out &raquo;','profilebuilder')), $atts ) );
+
+        $logout_link = '<a href="' . wp_logout_url( $redirect ) . '" class="wppb-logout-url" title="' . __( 'Log out of this account', 'profilebuilder' ) . '">' . $link_text . '</a>';
 
         $meta_tags = apply_filters( 'wppb_front_end_logout_meta_tags', array( '{{meta_user_name}}', '{{meta_first_name}}', '{{meta_last_name}}', '{{meta_display_name}}' ) );
         $meta_tags_values = apply_filters( 'wppb_front_end_logout_meta_tags_values', array( $current_user->user_login, $current_user->first_name, $current_user->last_name, $current_user->display_name ) );

@@ -4,10 +4,16 @@
  * @param string $value Contains input value;
  * @param string $context Context where the function is used. Depending on it some actions are preformed.;
  * @return string $element input element html string. */
- 
+
+/* since the slug below is generated dinamically from other elements we need to determine here if we have a slug or not and not let the wck_generate_slug() function do that */
+if( !empty( $details['slug'] ) )
+    $slug_from = $details['slug'];
+else
+    $slug_from = $details['title'];
+
 /* define id's for input and info div */
-$upload_input_id = str_replace( '-', '_', Wordpress_Creation_Kit_PB::wck_generate_slug( $meta . $details['title'] ) );
-$upload_info_div_id = str_replace( '-', '_', Wordpress_Creation_Kit_PB::wck_generate_slug( $meta .'_info_container_'. $details['title'] ) );
+$upload_input_id = str_replace( '-', '_', Wordpress_Creation_Kit_PB::wck_generate_slug( $meta . $slug_from ) );
+$upload_info_div_id = str_replace( '-', '_', Wordpress_Creation_Kit_PB::wck_generate_slug( $meta .'_info_container_'. $slug_from ) );
 
 /* hidden input that will hold the attachment id */
 $element .= '<input id="'. esc_attr( $upload_input_id ) .'" type="hidden" size="36" name="'. $single_prefix . esc_attr( Wordpress_Creation_Kit_PB::wck_generate_slug( $details['title'], $details ) ) .'" value="'. $value .'" class="mb-text-input mb-field"/>';
@@ -45,7 +51,7 @@ $media_upload_url = 'media-upload.php?'.$attach_to_post.'type=file&amp;mb_type='
 
 $media_upload_url = admin_url( $media_upload_url );
 	
-$element .= '<a id="upload_'. esc_attr(Wordpress_Creation_Kit_PB::wck_generate_slug( $details['title'] ) ) .'_button" class="button" onclick="tb_show(\'\', \''.$media_upload_url.'\');">'. __( 'Upload ', 'wck' ) . $details['title'] .' </a>';
+$element .= '<a id="upload_'. esc_attr(Wordpress_Creation_Kit_PB::wck_generate_slug( $details['title'], $details ) ) .'_button" class="button" onclick="tb_show(\'\', \''.$media_upload_url.'\');">'. __( 'Upload ', 'wck' ) . $details['title'] .' </a>';
 
 /* add js global var for the hidden input, and info container div */
 $element .= '<script type="text/javascript">';				

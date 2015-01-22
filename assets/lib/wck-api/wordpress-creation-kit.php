@@ -226,7 +226,7 @@ class Wordpress_Creation_Kit_PB{
 		}
 		else{
             if( isset( $details['default'] ) && !( $this->args['single'] == true && !is_null( $value ) ) ) {
-                $value = apply_filters("wck_default_value_{$meta}_" . Wordpress_Creation_Kit_PB::wck_generate_slug($details['title']), $details['default']);
+                $value = apply_filters("wck_default_value_{$meta}_" . Wordpress_Creation_Kit_PB::wck_generate_slug( $details['title'], $details ), $details['default']);
             }
         }
 
@@ -237,7 +237,7 @@ class Wordpress_Creation_Kit_PB{
         else
             $single_prefix = '';
 
-        $element .= '<label for="'. $single_prefix . esc_attr( Wordpress_Creation_Kit_PB::wck_generate_slug( $details['title'] ) ) .'" class="field-label">'. apply_filters( "wck_label_{$meta}_". Wordpress_Creation_Kit_PB::wck_generate_slug( $details['title'] ), ucfirst($details['title']) ) .':';
+        $element .= '<label for="'. $single_prefix . esc_attr( Wordpress_Creation_Kit_PB::wck_generate_slug( $details['title'],  $details ) ) .'" class="field-label">'. apply_filters( "wck_label_{$meta}_". Wordpress_Creation_Kit_PB::wck_generate_slug( $details['title'], $details ), ucfirst($details['title']) ) .':';
         if( !empty( $details['required'] ) && $details['required'] )
 			$element .= '<span class="required">*</span>';
 		$element .= '</label>';
@@ -317,8 +317,8 @@ class Wordpress_Creation_Kit_PB{
                         $value = '';
                         if( $this->args['single'] == true ) {
                             $value = null;
-                            if (isset($results[0][Wordpress_Creation_Kit_PB::wck_generate_slug($details['title'])]))
-                                $value = $results[0][Wordpress_Creation_Kit_PB::wck_generate_slug($details['title'])];
+                            if (isset($results[0][Wordpress_Creation_Kit_PB::wck_generate_slug($details['title'], $details )]))
+                                $value = $results[0][Wordpress_Creation_Kit_PB::wck_generate_slug($details['title'], $details )];
                         }
                         ?>
 							<li class="row-<?php echo esc_attr( Wordpress_Creation_Kit_PB::wck_generate_slug( $details['title'], $details ) ) ?>">
@@ -1029,16 +1029,16 @@ class Wordpress_Creation_Kit_PB{
                         if( !empty( $this->args['meta_array'] ) ){
                             foreach ($this->args['meta_array'] as $meta_field){
                                 /* in the $_POST the names for the fields are prefixed with the meta_name for the single metaboxes in case there are multiple metaboxes that contain fields wit hthe same name */
-                                $single_field_name = $this->args['meta_name'] .'_'. Wordpress_Creation_Kit_PB::wck_generate_slug( $meta_field['title'] );
+                                $single_field_name = $this->args['meta_name'] .'_'. Wordpress_Creation_Kit_PB::wck_generate_slug( $meta_field['title'],$meta_field );
                                 if (!empty($_POST[$single_field_name])) {
                                     /* checkbox needs to be stored as string not array */
                                     if( $meta_field['type'] == 'checkbox' )
                                         $_POST[$single_field_name] = implode( ', ', $_POST[$single_field_name] );
 
-                                    $meta_values[Wordpress_Creation_Kit_PB::wck_generate_slug($meta_field['title'])] = $_POST[$single_field_name];
+                                    $meta_values[Wordpress_Creation_Kit_PB::wck_generate_slug( $meta_field['title'], $meta_field )] = $_POST[$single_field_name];
                                 }
                                 else
-                                    $meta_values[Wordpress_Creation_Kit_PB::wck_generate_slug($meta_field['title'])] = '';
+                                    $meta_values[Wordpress_Creation_Kit_PB::wck_generate_slug( $meta_field['title'], $meta_field )] = '';
                             }
                         }
 
@@ -1061,7 +1061,7 @@ class Wordpress_Creation_Kit_PB{
                             if ($this->args['unserialize_fields']) {
                                 if (!empty($this->args['meta_array'])) {
                                     foreach ($this->args['meta_array'] as $meta_field) {
-                                        update_post_meta($post_id, $meta_name . '_' . Wordpress_Creation_Kit_PB::wck_generate_slug($meta_field['title']) . '_1', $_POST[$this->args['meta_name'] . '_' . Wordpress_Creation_Kit_PB::wck_generate_slug($meta_field['title'])]);
+                                        update_post_meta($post_id, $meta_name . '_' . Wordpress_Creation_Kit_PB::wck_generate_slug( $meta_field['title'], $meta_field ) . '_1', $_POST[$this->args['meta_name'] . '_' . Wordpress_Creation_Kit_PB::wck_generate_slug( $meta_field['title'], $meta_field )]);
                                     }
                                 }
                             }
