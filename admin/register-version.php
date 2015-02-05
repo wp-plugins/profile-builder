@@ -220,6 +220,9 @@ class wppb_add_notices{
 	}
 }
 
+if( is_multisite() && function_exists( 'switch_to_blog' ) )
+    switch_to_blog(1);
+
 if ( PROFILE_BUILDER == 'Profile Builder Pro' ){
     $wppb_profile_builder_pro_hobbyist_serial_status = get_option( 'wppb_profile_builder_pro_serial_status', 'empty' );
     $version = 'pro';
@@ -228,6 +231,8 @@ if ( PROFILE_BUILDER == 'Profile Builder Pro' ){
     $wppb_profile_builder_pro_hobbyist_serial_status = get_option( 'wppb_profile_builder_hobbyist_serial_status', 'empty' );
     $version = 'hobbyist';
 }
+if( is_multisite() && function_exists( 'restore_current_blog' ) )
+    restore_current_blog();
 
 if ( $wppb_profile_builder_pro_hobbyist_serial_status == 'notFound' || $wppb_profile_builder_pro_hobbyist_serial_status == 'empty' ){
     if( !is_multisite() )

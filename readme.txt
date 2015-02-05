@@ -6,7 +6,7 @@ Tags: registration, user profile, user registration, custom field registration, 
 
 Requires at least: 3.1
 Tested up to: 4.1
-Stable tag: 2.1.0
+Stable tag: 2.1.1
 
 Simple to use profile plugin allowing front-end login, user registration and edit profile by using shortcodes.
  
@@ -108,6 +108,9 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 10. Profile Builder Login Widget
 
 == Changelog ==
+= 2.1.1 =
+* Added username validation for illegal characters
+* Fixed wp_mail() From headers being set sitewide
 
 = 2.1.0 =
 * Added option to Log In with either Username or Email.

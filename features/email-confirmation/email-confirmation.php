@@ -359,9 +359,12 @@ function wppb_signup_user_notification( $user, $user_email, $activation_key, $me
 		$registration_page_url = ( ( strpos( $post_content, '[wppb-register' ) !== false ) ? add_query_arg( array('activation_key' => $activation_key ), $permalink ) : add_query_arg( array('activation_key' => $activation_key ), get_bloginfo( 'url' ) ) );
 	}
 	
-	$subject = sprintf( apply_filters( 'wppb_signup_user_notification_email_subject', __( '[%1$s] Activate %2$s', 'profilebuilder'), $user_email, $user, $activation_key, $registration_page_url, $meta, $from_name, 'wppb_user_emailc_registr_w_email_confirm_email_subject' ), $from_name, $user );
-	$message = sprintf( apply_filters( 'wppb_signup_user_notification_email_content', __( "To activate your user, please click the following link:\n\n%s%s%s\n\nAfter you activate it you will receive yet *another email* with your login.", "profilebuilder" ), $user_email, $user, $activation_key, $registration_page_url, $meta, $from_name, 'wppb_user_emailc_registr_w_email_confirm_email_content' ), '<a href="'.$registration_page_url.'">', $registration_page_url, '</a>.' );
-	
+	$subject = sprintf( __( '[%1$s] Activate %2$s', 'profilebuilder'), $from_name, $user );
+	$subject = apply_filters( 'wppb_signup_user_notification_email_subject', $subject, $user_email, $user, $activation_key, $registration_page_url, $meta, $from_name, 'wppb_user_emailc_registr_w_email_confirm_email_subject' );
+
+	$message = sprintf( __( "To activate your user, please click the following link:\n\n%s%s%s\n\nAfter you activate it you will receive yet *another email* with your login.", "profilebuilder" ), '<a href="'.$registration_page_url.'">', $registration_page_url, '</a>.' );
+    $message = apply_filters( 'wppb_signup_user_notification_email_content', $message, $user_email, $user, $activation_key, $registration_page_url, $meta, $from_name, 'wppb_user_emailc_registr_w_email_confirm_email_content' );
+
 	wppb_mail( $user_email, $subject, $message, $from_name, '', $user, '', $user_email, 'register_w_email_confirmation', $registration_page_url, $meta );
 	
 	return true;
