@@ -54,7 +54,7 @@
 .wppb-user-forms input[type="url"],
 .wppb-user-forms input[type="password"],
 .wppb-user-forms input[type="search"],
-.wppb-user-forms textarea {
+.wppb-user-forms textarea{
 	color: #666;
 	border: 1px solid #ccc;
 	border-radius: 3px;
@@ -79,6 +79,30 @@
 	padding-left: 3px;
 	vertical-align: top; /* Improves readability and alignment in all browsers */
 	width: 100%;
+}
+.wppb-user-forms .wppb-wysiwyg .wp-editor-wrap { /* properly align wysiwyg editor among form fields */
+    float:left;
+    width:69.9%;
+}
+.wppb-user-forms .wppb-wysiwyg button:hover{ /* wysiwyg - overwrite the theme inherited background color on hover*/
+    background: none;
+}
+.wppb-user-forms .wppb-wysiwyg div.mce-tinymce.mce-panel{   /*Display the borders for the TinyMCE editor - Visual tab*/
+    border: 1px solid #ccc !important;
+    color: #666 !important;
+}
+.wppb-user-forms .wppb-wysiwyg div.mce-panel.mce-first{
+    border-width: 0 0 1px 0 !important;
+}
+.wppb-user-forms .wppb-wysiwyg div.mce-panel.mce-last{
+    border-width: 1px 0 !important;
+}
+.wppb-user-forms .wppb-wysiwyg .quicktags-toolbar {      /*Display the borders for the TinyMCE editor - Text tab*/
+    border: 1px solid #dedede;
+    border-bottom: 0;
+}
+#wp-link label input[type="text"] {    /*Fix the looks of the Add Link window for TinyMCE editor*/
+    padding: 0px;
 }
 
 #wppb-search-fields{
@@ -137,6 +161,15 @@
 #wppb-login-wrap .login-password input{
 	width:69.9%;
 	float:left;
+}
+
+.wppb-user-forms .wppb-wysiwyg .wp-editor-wrap .wp-editor-tabs *{
+    box-sizing: content-box !important;
+}
+
+.wppb-user-forms .wp-editor-wrap input {
+    float: none;
+    width: auto;
 }
 
 input#send_credentials_via_email{
@@ -207,6 +240,9 @@ input#send_credentials_via_email{
 
 #recaptcha_widget_div{
 	display: inline-block;
+}
+#recaptcha_widget_div iframe{
+    margin-bottom: 0;
 }
 
 /*--------------------------------------------------------------

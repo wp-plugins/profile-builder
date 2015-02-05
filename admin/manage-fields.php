@@ -48,6 +48,7 @@ function wppb_manage_fields_submenu(){
         $manage_field_types[] = 'Input';
         $manage_field_types[] = 'Input (Hidden)';
         $manage_field_types[] = 'Textarea';
+        $manage_field_types[] = 'WYSIWYG';
         $manage_field_types[] = 'Select';
         $manage_field_types[] = 'Select (Multiple)';
         $manage_field_types[] = 'Select (Country)';
@@ -386,7 +387,7 @@ function wppb_check_field_on_edit_add( $message, $fields, $required_fields, $met
 				$unique_meta_name_list = array( 'first_name', 'last_name', 'nickname', 'description' );
 
                 //check to see if meta-name is empty
-                $skip_empty_check_for_fields = array('Heading', 'Select (User Role)');
+                $skip_empty_check_for_fields = array('Heading', 'Select (User Role)', 'reCAPTCHA');
 
                 if( !in_array( $posted_values['field'], $skip_empty_check_for_fields ) && empty( $posted_values['meta-name'] ) ) {
                     $message .= __( "The meta-name cannot be empty\n", 'profilebuilder' );

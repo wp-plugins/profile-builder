@@ -229,6 +229,15 @@ var fields 	=	{
 																						'.row-overwrite-existing'
 																					]
 																},
+                        'WYSIWYG':								{	'show_rows'	:	[
+                                                                                        '.row-field-title',
+                                                                                        '.row-meta-name',
+                                                                                        '.row-description',
+                                                                                        '.row-default-content',
+                                                                                        '.row-required',
+                                                                                        '.row-overwrite-existing'
+                                                                                    ]
+                                                                },
 
 						'Select':								{	'show_rows'	:	[
 																						'.row-field-title',
@@ -341,17 +350,19 @@ var fields 	=	{
 
 						'reCAPTCHA':							{	'show_rows'	:	[
 																						'.row-field-title',
-																						'.row-meta-name',
 																						'.row-description',
 																						'.row-public-key',
 																						'.row-private-key',
-																						'.row-required',
-																						'.row-overwrite-existing'
+																						'.row-required'
 																					],
 																	'required'	:	[
 																						true
-																					]
+																					],
+                                                                    'properties':	{
+                                                                       'meta_name_value'	: ''
+                                                                    }
 																},
+
                         'Select (User Role)':					{	'show_rows'	:	[
                                                                                         '.row-field-title',
                                                                                         '.row-description',

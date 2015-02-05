@@ -43,6 +43,9 @@ function wppb_check_username_value( $message, $field, $request_data, $form_locat
         if( !empty( $search_by_user_login ) ){
             return __( 'This username already exists.', 'profilebuilder' ) .'<br/>'. __( 'Please try a different one!', 'profilebuilder' );
         }
+		if( ! validate_username( $request_data['username'] ) ) {
+			return __( 'This username is invalid because it uses illegal characters.', 'profilebuilder' ) .'<br/>'. __( 'Please enter a valid username.', 'profilebuilder' );
+		}
 
         $wppb_generalSettings = get_option('wppb_general_settings');
         if ( is_multisite() || ( !is_multisite() && $wppb_generalSettings['emailConfirmation'] == 'yes'  ) ){
