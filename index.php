@@ -3,7 +3,7 @@
 Plugin Name: Profile Builder
 Plugin URI: http://www.cozmoslabs.com/wordpress-profile-builder/
 Description: Login, registration and edit profile shortcodes for the front-end. Also you can chose what fields should be displayed or add new (custom) ones both in the front-end and in the dashboard.
-Version: 2.1.1
+Version: 2.1.2
 Author: Cozmoslabs, Madalin Ungureanu, Antohe Cristian, Barina Gabriel
 Author URI: http://www.cozmoslabs.com/
 License: GPL2
@@ -73,7 +73,7 @@ function wppb_free_plugin_init() {
          *
          *
          */
-        define('PROFILE_BUILDER_VERSION', '2.1.1' );
+        define('PROFILE_BUILDER_VERSION', '2.1.2' );
         define('WPPB_PLUGIN_DIR', WP_PLUGIN_DIR . '/' . dirname(plugin_basename(__FILE__)));
         define('WPPB_PLUGIN_URL', plugin_dir_url(__FILE__));
         define('WPPB_SERVER_MAX_UPLOAD_SIZE_BYTE', apply_filters('wppb_server_max_upload_size_byte_constant', wppb_return_bytes(ini_get('upload_max_filesize'))));
@@ -154,6 +154,8 @@ function wppb_free_plugin_init() {
             if (isset($wppb_module_settings['wppb_emailCustomizer']) && ($wppb_module_settings['wppb_emailCustomizer'] == 'show'))
                 include_once(WPPB_PLUGIN_DIR . '/modules/email-customizer/user-email-customizer.php');
         }
+
+        include_once(WPPB_PLUGIN_DIR . '/admin/add-ons.php');
 
 
         /**

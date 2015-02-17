@@ -132,13 +132,16 @@ add_filter( 'login_redirect', 'wppb_login_redirect', 10, 3 );
 /* shortcode function */
 function wppb_front_end_login( $atts ){
 
-    extract( shortcode_atts( array( 'display' => true, 'redirect' =>'', 'register_url'=>'', 'lostpassword_url'=>'' ), $atts ) );
+    extract( shortcode_atts( array( 'display' => true, 'redirect' => '', 'redirect_url' => '', 'register_url' => '', 'lostpassword_url' => '' ), $atts ) );
 
 	$wppb_generalSettings = get_option('wppb_general_settings');
 
 	if( !is_user_logged_in() ){
 		// set up the form arguments
 		$form_args = array( 'echo' => false, 'id_submit' => 'wppb-submit' );
+
+        //Add support for "redirect_url" parameter for Login shortcode (will do the same thing as "redirect" - for consistency with Register, Edit Profile shortcodes)
+        if ( !empty($redirect_url) ) $redirect = $redirect_url;
 
 		// maybe set up the redirect argument
 		if( empty( $redirect ) ){

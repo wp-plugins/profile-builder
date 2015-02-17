@@ -6,7 +6,7 @@ Tags: registration, user profile, user registration, custom field registration, 
 
 Requires at least: 3.1
 Tested up to: 4.1
-Stable tag: 2.1.1
+Stable tag: 2.1.2
 
 Simple to use profile plugin allowing front-end login, user registration and edit profile by using shortcodes.
  
@@ -38,12 +38,13 @@ Users with administrator rights have access to the following features:
 * allow users to **Log-in with their Username or Email**
 * enforce a **minimum password length** and **minimum password strength** (using the default WordPress password strength meter)
 * assign users a specific role at registration (using **[wppb-register role="desired_role"]** shortcode argument for the register form)
-* redirect users after login (using **[wppb-login redirect="www.example.com"]** shortcode argument)
+* redirect users after login, register and edit-profile using redirect_url shortcode argument ( e.g **[wppb-login redirect_url="www.example.com"]** )
 * add register and lost password links below the login form (using **[wppb-login register_url="www.example.com" lostpassword_url="www.example.com"]** shortcode arguments)
 * customizable login widget
 * add a custom stylesheet/inherit values from the current theme or use the default one built into this plugin.
 * chose which user roles view the admin bar in the front-end of the website (Admin Bar Settings page).
 * select which profile fields users can see/modify.
+* extended functionality available via [Add-ons](http://www.cozmoslabs.com/profile-builder-add-ons/?utm_source=wp.org&utm_medium=plugin-description-page&utm_campaign=PBFree)
 
 **PROFILE BUILDER PRO**
 
@@ -64,6 +65,10 @@ The [Pro version](http://www.cozmoslabs.com/wordpress-profile-builder/?utm_sourc
 * 1 Year of Updates / Priority Support
 
 [Find out more about Profile Builder PRO](http://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wp.org&utm_medium=plugin-description-page&utm_campaign=PBFree)
+
+
+**Profile Builder Add-ons**
+For more functionality check out Profile Builder [Add-ons page](http://www.cozmoslabs.com/profile-builder-add-ons/?utm_source=wp.org&utm_medium=plugin-description-page&utm_campaign=PBFree)
 
 = Profile Builder in your Language =
 We're focusing on translating Profile Builder in as many languages as we can. So far, the translations for 10 languages are almost complete, but we still need help on a lot of other languages, so please join us at [translate.cozmoslabs.com.](http://translate.cozmoslabs.com/projects/profilebuilder)
@@ -108,6 +113,12 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 10. Profile Builder Login Widget
 
 == Changelog ==
+= 2.1.2 =
+* Created Add-On Page in Profile Builder
+* Added support for Twenty Fifteen theme to better target inputs
+* Add support for "redirect_url" parameter to Login shortcode (will do the same thing as "redirect" - for consistency)
+* Added "redirect_url" parameter to Register and Edit-profile shortcodes
+
 = 2.1.1 =
 * Added username validation for illegal characters
 * Fixed wp_mail() From headers being set sitewide

@@ -52,9 +52,9 @@ function wppb_autologin_after_password_changed(){
 		
 function wppb_front_end_profile_info( $atts ){
 	// get value set in the shortcode as parameter, still need to default to something else than empty string
-	extract( shortcode_atts( array( 'form_name' => 'unspecified' ), $atts, 'wppb-edit-profile' ) );
+	extract( shortcode_atts( array( 'form_name' => 'unspecified', 'redirect_url' => '' ), $atts, 'wppb-edit-profile' ) );
     global $$form_name;
-    $$form_name = new Profile_Builder_Form_Creator( array( 'form_type' => 'edit_profile', 'form_name' => $form_name ) );
+    $$form_name = new Profile_Builder_Form_Creator( array( 'form_type' => 'edit_profile', 'form_name' => $form_name, 'redirect_url' => $redirect_url ) );
 
     return $$form_name;
 }
