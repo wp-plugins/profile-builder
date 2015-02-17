@@ -5,6 +5,7 @@ class Profile_Builder_Form_Creator{
 							'form_fields' 			=> array(),
 							'form_name' 			=> '',
 							'role' 					=> '', //used only for the register-form settings
+                            'redirect_url'          => '',
 						);
 	private $args;	
 	
@@ -36,14 +37,15 @@ class Profile_Builder_Form_Creator{
 	function wppb_retrieve_custom_settings(){
 		$this->args['login_after_register'] = apply_filters( 'wppb_automatically_login_after_register', 'No' ); //used only for the register-form settings
 		$this->args['redirect_activated'] = apply_filters( 'wppb_redirect_default_setting', '' );
-		$this->args['redirect_url'] = apply_filters( 'wppb_redirect_default_location', wppb_curpageurl() );
+		$this->args['redirect_url'] = apply_filters( 'wppb_redirect_default_location', ($this->args['redirect_url'] != '') ? $this->args['redirect_url'] : wppb_curpageurl() );
         /* for register forms check to see if we have a custom redirect "Redirect After Register" */
         if( PROFILE_BUILDER == 'Profile Builder Pro' ) {
             if ($this->args['form_type'] == 'register') {
                 $wppb_module_settings = get_option('wppb_module_settings');
                 if (isset($wppb_module_settings['wppb_customRedirect']) && ($wppb_module_settings['wppb_customRedirect'] == 'show')) {
                     $custom_redirect = get_option('customRedirectSettings');
-                    if (isset($custom_redirect['afterRegister']) && ($custom_redirect['afterRegister'] == 'yes') && (trim($custom_redirect['afterRegisterTarget']) != '')) {
+                    //Make sure Custom Redirects are set and there was no "redirect_url" parameter set in the shortcode
+                    if (isset($custom_redirect['afterRegister']) && ($custom_redirect['afterRegister'] == 'yes') && (trim($custom_redirect['afterRegisterTarget']) != '') && ($this->args['redirect_url'] == wppb_curpageurl())) {
                         $this->args['redirect_url'] = $this->args['custom_redirect_after_register_url'] = apply_filters('wppb_redirect_default_location', $custom_redirect['afterRegisterTarget']);
                     }
                 }
@@ -124,11 +126,10 @@ class Profile_Builder_Form_Creator{
     }
 	
 	function wppb_get_redirect(){
-		if ( $this->args['login_after_register'] == 'Yes' )
+        if ( $this->args['login_after_register'] == 'Yes' )
 			return $this->wppb_log_in_user();
-		if ( $this->args['redirect_activated'] == 'No' || ( $this->args['form_type'] == 'edit_profile' && $this->args['form_name'] == 'unspecified' ) || ( $this->args['form_type'] == 'register' && $this->args['form_name'] == 'unspecified' && wppb_curpageurl() == $this->args['redirect_url'] ) )
+		if ( $this->args['redirect_activated'] == 'No' || ( $this->args['form_type'] == 'edit_profile' && $this->args['form_name'] == 'unspecified' && wppb_curpageurl() == $this->args['redirect_url'] ) || ( $this->args['form_type'] == 'register' && $this->args['form_name'] == 'unspecified' && wppb_curpageurl() == $this->args['redirect_url'] ) )
 			return '';
-
         /* if we don't have a preference on the form for redirect then if we have a custom redirect "after register redirect" option redirect to that if not don't do anything  */
         if ( $this->args['redirect_activated'] == '-' ){
             if( !empty( $this->args['custom_redirect_after_register_url'] ) )

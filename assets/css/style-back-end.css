@@ -437,6 +437,94 @@
     display: block;
 }
 
+/* Add-Ons page */
+.wppb-add-on-user-messages{ display: none; }
+
+.wppb-add-on-wrap .plugin-card-bottom:after {
+    display: block;
+    content: '';
+    clear: both;
+}
+
+.wppb-add-on a:focus {
+    box-shadow: none;
+}
+
+.wppb-add-on img {
+    max-width: 100%;
+    height: auto;
+}
+
+.wppb-add-on .wppb-add-on-title {
+    letter-spacing: -0.7px;
+    margin-bottom: 7px;
+}
+
+.wppb-add-on .wppb-add-on-title a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.wppb-add-on .wppb-add-on-price {
+    font-size: 1.1em;
+    letter-spacing: -0.7px;
+    margin-top: 7px;
+}
+
+.wppb-add-on-compatible span {
+    line-height: 28px;
+}
+
+.wppb-add-on-not-compatible {
+    position: relative;
+}
+
+.wppb-add-on-not-compatible:before {
+    display: block;
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 100%;
+    background: #d54e21;
+    top: 0;
+    left: 0;
+}
+
+.wppb-add-on .button {
+    position: relative;
+}
+
+.wppb-add-on .button.wppb-add-on-deactivate {
+    opacity: 0;
+}
+
+.wppb-add-on .spinner {
+    display: block;
+    margin-top: 4px;
+    opacity: 0;
+}
+
+.wppb-add-on-spinner {
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -10px;
+    margin-left: -10px;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url('../images/spinner.gif') no-repeat center;
+}
+
+.wppb-confirmation-success {
+    color: #27ae60;
+}
+
+.wppb-confirmation-error {
+    color: #c0392b;
+}
+
 /* Manage Fields Responsive CSS */
 @media screen and ( max-width: 1125px ) {
     /* Manage Fields Responsive */

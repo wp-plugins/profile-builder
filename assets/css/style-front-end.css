@@ -151,8 +151,8 @@
 	float:left;
 	min-height:1px;
 }
-
 .wppb-form-field input,
+.wppb-form-field input[type="text"], .wppb-form-field input[type="email"], .wppb-form-field input[type="url"], .wppb-form-field input[type="password"], .wppb-form-field input[type="search"],
 .wppb-form-field select,
 .wppb-form-field textarea,
 .wppb-checkboxes,
