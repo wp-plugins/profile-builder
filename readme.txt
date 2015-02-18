@@ -68,6 +68,7 @@ The [Pro version](http://www.cozmoslabs.com/wordpress-profile-builder/?utm_sourc
 
 
 **Profile Builder Add-ons**
+
 For more functionality check out Profile Builder [Add-ons page](http://www.cozmoslabs.com/profile-builder-add-ons/?utm_source=wp.org&utm_medium=plugin-description-page&utm_campaign=PBFree)
 
 = Profile Builder in your Language =
