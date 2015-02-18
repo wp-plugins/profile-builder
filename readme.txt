@@ -50,7 +50,7 @@ Users with administrator rights have access to the following features:
 
 The [Pro version](http://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wp.org&utm_medium=plugin-description-page&utm_campaign=PBFree) has the following extra features:
 
-* Create Extra User Fields (Heading, Input, Hidden-Input, Checkbox, Agree to Terms Checkbox, Radio Buttons, DatePicker, Textareas, reCAPTCHA, Upload fields, Selects, User Role Select, Country Selects, Timezone selects, Avatar Upload)
+* Create Extra User Fields (Heading, Input, Hidden-Input, Checkbox, Agree to Terms Checkbox, Radio Buttons, DatePicker, Textareas, WYSIWYG, reCAPTCHA, Upload fields, Selects, User Role Select, Country Selects, Timezone selects, Avatar Upload)
 * Add Avatar Upload for users
 * Front-end User Listing (fully customizable, sorting included)
 * Create Multiple User Listings
