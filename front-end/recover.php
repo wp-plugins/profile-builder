@@ -347,7 +347,8 @@ function wppb_front_end_password_recovery(){
 			}else{
 				//display error message and the form
 				if (($messageNo == '') || ($messageNo == '2') || ($messageNo == '4')){
-					echo apply_filters( 'wppb_recover_password_displayed_message1', '<p class="wppb-warning">'.$message.'</p>' );
+                    if( !empty( $message ) )
+					    echo apply_filters( 'wppb_recover_password_displayed_message1', '<p class="wppb-warning">'.$message.'</p>' );
 
 					wppb_create_generate_password_form( $_POST );
 

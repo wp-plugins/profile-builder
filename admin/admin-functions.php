@@ -166,3 +166,19 @@ function wppb_change_add_entry_button( $string, $meta ){
 
     return $string;
 }
+
+/* Add admin footer text for encouraging users to leave a review of the plugin on wordpress.org */
+function wppb_admin_rate_us( $footer_text ) {
+    global $current_screen;
+
+    if ($current_screen->parent_base == 'profile-builder'){
+        $rate_text = sprintf( __( 'If you enjoy using <strong> %1$s </strong> please <a href="%2$s" target="_blank">rate us on WordPress.org</a> to help us reach more people. More happy users means more features, less bugs and better support for everyone. ', 'profilebuilder' ),
+            PROFILE_BUILDER,
+            'https://wordpress.org/support/view/plugin-reviews/profile-builder?filter=5#postform'
+        );
+        return '<span id="footer-thankyou">' .$rate_text . '</span>';
+    } else {
+        return $footer_text;
+    }
+}
+add_filter('admin_footer_text','wppb_admin_rate_us');

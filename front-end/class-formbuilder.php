@@ -206,9 +206,17 @@ class Profile_Builder_Form_Creator{
                         $wppb_general_settings = get_option( 'wppb_general_settings', 'false' );
                         if ( $wppb_general_settings ){
                             if( !empty( $wppb_general_settings['emailConfirmation'] ) )
-                                $wppb_email_confirmation = $wppb_general_settings['emailConfirmation'];
+								if ( is_multisite() ) {
+									$wppb_email_confirmation = 'yes';
+								} else {
+									$wppb_email_confirmation = $wppb_general_settings['emailConfirmation'];
+								}
                             else
-                                $wppb_email_confirmation = 'no';
+								if ( is_multisite() ) {
+									$wppb_email_confirmation = 'yes';
+								} else {
+									$wppb_email_confirmation = 'no';
+								}
                             if( !empty( $wppb_general_settings['adminApproval'] ) )
                                 $wppb_admin_approval = $wppb_general_settings['adminApproval'];
                             else
@@ -232,8 +240,12 @@ class Profile_Builder_Form_Creator{
                                 $wppb_register_success_message = apply_filters( 'wppb_register_success_message', sprintf( __( "Before you can access your account %1s, you need to confirm your email address. Please check your inbox and click the activation link.", 'profilebuilder' ), $account_name ), $account_name );
                                 break;
                             case 'ec-no_aa-yes':
-                                $wppb_register_success_message = apply_filters( 'wppb_register_success_message', sprintf( __( "Before you can access your account %1s, an administrator has to approve it. You will be notified via email.", 'profilebuilder' ), $account_name ), $account_name );
-                                break;
+								if( current_user_can( 'delete_users' ) ) {
+									$wppb_register_success_message = apply_filters( 'wppb_register_success_message', sprintf( __( "The account %1s has been successfully created!", 'profilebuilder' ), $account_name ), $account_name );
+								} else {
+									$wppb_register_success_message = apply_filters( 'wppb_register_success_message', sprintf( __( "Before you can access your account %1s, an administrator has to approve it. You will be notified via email.", 'profilebuilder' ), $account_name ), $account_name );
+								}
+								break;
                             case 'ec-yes_aa-yes':
                                 $wppb_register_success_message = apply_filters( 'wppb_register_success_message', sprintf( __( "Before you can access your account %1s, you need to confirm your email address. Please check your inbox and click the activation link.", 'profilebuilder' ), $account_name ), $account_name );
                                 break;
@@ -477,7 +489,7 @@ class Profile_Builder_Form_Creator{
         if( isset( $_GET['edit_user'] ) && ! empty( $_GET['edit_user'] ) )
             $selected = $_GET['edit_user'];
         else
-            $selected = false;
+            $selected = get_current_user_id();
         ?>
         <form method="GET" action="" id="select_user_to_edit_form">
             <p class="wppb-form-field">

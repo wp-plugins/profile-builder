@@ -42,9 +42,13 @@ function wppb_check_email_value( $message, $field, $request_data, $form_location
         return __( 'The email you entered is not a valid email address.', 'profilebuilder' );
     }
 
+	if ( empty( $request_data['email'] ) ) {
+		return __( 'You must enter a valid email address.', 'profilebuilder' );
+	}
+
     $wppb_generalSettings = get_option( 'wppb_general_settings' );
 	if ( is_multisite() || ( !is_multisite() && ( isset( $wppb_generalSettings['emailConfirmation'] ) && ( $wppb_generalSettings['emailConfirmation'] == 'yes' ) ) ) ){
-		$user_signup = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM ".$wpdb->prefix."signups WHERE user_email = %s", $request_data['email'] ) );
+		$user_signup = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM ".$wpdb->base_prefix."signups WHERE user_email = %s", $request_data['email'] ) );
 
         if ( !empty( $user_signup ) ){
             if ( $form_location == 'register' ){

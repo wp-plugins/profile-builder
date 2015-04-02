@@ -287,6 +287,8 @@ function wppb_add_meta_to_user_on_activation( $user_id, $password, $meta ){
 					}				
 					break;
 				}
+                default:
+                    do_action( 'wppb_add_meta_on_user_activation_'.Wordpress_Creation_Kit_PB::wck_generate_slug( $value['field'] ), $user_id, $password, $meta );
 			}
 		}
 	}
@@ -514,8 +516,10 @@ function wppb_notify_user_registration_email( $bloginfo, $user_name, $email, $se
 		
 		if ( $adminApproval == 'yes' ){
 			$user_message_subject = apply_filters( 'wppb_register_user_email_subject_with_admin_approval', $user_message_subject, $email, $password, $user_message_subject, 'wppb_user_emailc_registration_with_admin_approval_email_subject' );
-		
-			$user_message_content .= '<br/><br/>' . __( 'Before you can access your account, an administrator needs to approve it. You will be notified via email.', 'profilebuilder' );
+
+			if( ! current_user_can( 'delete_users' ) ) {
+				$user_message_content .= '<br/><br/>' . __( 'Before you can access your account, an administrator needs to approve it. You will be notified via email.', 'profilebuilder' );
+			}
 			$user_message_content = apply_filters( 'wppb_register_user_email_message_with_admin_approval', $user_message_content, $email, $password, $user_message_subject, 'wppb_user_emailc_registration_with_admin_approval_email_content' );
 		
 		}else
