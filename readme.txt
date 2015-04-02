@@ -1,4 +1,4 @@
-=== Profile Builder - front-end user registration, login and edit profile === 
+﻿=== Profile Builder - front-end user registration, login and edit profile === 
 
 Contributors: reflectionmedia, barinagabriel, sareiodata, cozmoslabs, adispiac, madalin.ungureanu
 Donate link: http://www.cozmoslabs.com/wordpress-profile-builder/
@@ -116,7 +116,7 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 == Changelog ==
 = 2.1.3 =
 * Fixed bug that prevented non-administrator roles to save fields in their profile on the admin area
-* Added Spanish translation
+* Added Spanish translation thanks to Andrew Kurtis at http://www.webhostinghub.com/
 * Styled the alerts and errors in registration/edit profile, above the forms
 * Added line in footer that asks users to leave a review if they enjoyed the plugin
 * Fixed bug in registration forms that allowed users to create accounts even when they removed the email box from the DOM
