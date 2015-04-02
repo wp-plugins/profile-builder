@@ -82,8 +82,10 @@ class wpp_list_unfonfirmed_email_table extends PB_WP_List_Table {
                 $user_meta_content = '';
                 if( !empty( $user_meta ) ){
                     foreach( maybe_unserialize( $user_meta ) as $key => $value ){
-                        if( $key != 'user_pass' )
+                        if( $key != 'user_pass' ){
+                            if ( is_array($value) ) $value = implode(',',$value);
                             $user_meta_content .= $key.':'.$value.'<br/>';
+                        }
                     }
                 }
                 return '<a href="#" data-email="'. $item['email'] .'" onclick="jQuery(\'<div><pre>'. $user_meta_content .'</pre></div>\').dialog({title:\''. __("User Meta", "profilebuilder" ) .'\', width: 500 }) ;return false;">'. __( 'show', 'profilebuilder' ) .'</a>';

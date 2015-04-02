@@ -54,8 +54,6 @@ function wppb_add_ons_content() {
             $wppb_get_all_plugins = get_plugins();
             $wppb_get_active_plugins = get_option('active_plugins');
 
-
-
             if( $wppb_add_ons === false ) {
 
                 echo __('Something went wrong, we could not connect to the server. Please try again later.', 'profilebuilder');
@@ -104,39 +102,54 @@ function wppb_add_ons_content() {
 
                     echo '<div class="plugin-card-bottom ' . $wppb_version_validation_class . '">';
 
+                    // PB minimum version number is all good
                     if( $wppb_version_validation != -1 ) {
 
-                        if( $wppb_add_on_exists ) {
+                        // PB version type does match
+                        if( in_array( strtolower( $version ), $wppb_add_on['product_version_type'] ) ) {
 
-                            if( !$wppb_add_on_is_active ) {
+                            if( $wppb_add_on_exists ) {
 
-                                echo '<a class="wppb-add-on-activate right button button-secondary" href="' . $wppb_add_on['plugin_file'] . '">' . __( 'Activate', 'profilebuilder' ) . '</a>';
-                                echo '<span class="dashicons dashicons-no-alt"></span><span class="wppb-add-on-message">' . __( 'Add-On is <strong>inactive</strong>', 'profilebuilder' ) . '</span>';
+                                if( !$wppb_add_on_is_active ) {
+
+                                    echo '<a class="wppb-add-on-activate right button button-secondary" href="' . $wppb_add_on['plugin_file'] . '">' . __( 'Activate', 'profilebuilder' ) . '</a>';
+                                    echo '<span class="dashicons dashicons-no-alt"></span><span class="wppb-add-on-message">' . __( 'Add-On is <strong>inactive</strong>', 'profilebuilder' ) . '</span>';
+
+                                } else {
+
+                                    echo '<a class="wppb-add-on-deactivate right button button-secondary" href="' . $wppb_add_on['plugin_file'] . '">' . __( 'Deactivate', 'profilebuilder' ) . '</a>';
+                                    echo '<span class="dashicons dashicons-yes"></span><span class="wppb-add-on-message">' . __( 'Add-On is <strong>active</strong>', 'profilebuilder' ) . '</span>';
+
+                                }
 
                             } else {
 
-                                echo '<a class="wppb-add-on-deactivate right button button-secondary" href="' . $wppb_add_on['plugin_file'] . '">' . __( 'Deactivate', 'profilebuilder' ) . '</a>';
-                                echo '<span class="dashicons dashicons-yes"></span><span class="wppb-add-on-message">' . __( 'Add-On is <strong>active</strong>', 'profilebuilder' ) . '</span>';
+                                ( $wppb_add_on['paid'] ) ? $wppb_paid_link_class = 'button-primary' : $wppb_paid_link_class = 'button-secondary wppb-add-on-download';
+                                ( $wppb_add_on['paid'] ) ? $wppb_paid_link_text = __( 'Buy Now', 'profilebuilder' ) : $wppb_paid_link_text = __( 'Install Now', 'profilebuilder' );
+                                ( $wppb_add_on['paid'] ) ? $wppb_paid_href_utm_text = '?utm_source=wpbackend&utm_medium=clientsite&utm_content=add-on-page-buy-button&utm_campaign=PB' . $version : $wppb_paid_href_utm_text = '&utm_source=wpbackend&utm_medium=clientsite&utm_content=add-on-page&utm_campaign=PB' . $version;
+
+                                echo '<a target="_blank" class="right button ' . $wppb_paid_link_class . '" href="' . $wppb_add_on['download_url'] . $wppb_paid_href_utm_text . '" data-add-on-slug="profile-builder-' . $wppb_add_on['slug'] . '" data-add-on-name="' . $wppb_add_on['name'] . '" >' . $wppb_paid_link_text . '</a>';
+                                echo '<span class="dashicons dashicons-yes"></span><span class="wppb-add-on-message">' . __( 'Compatible with your version of Profile Builder.', 'profilebuilder' ) . '</span>';
 
                             }
 
+                            echo '<div class="spinner"></div>';
+
+                        // PB version type does not match
                         } else {
 
-                            ( $wppb_add_on['paid'] ) ? $wppb_paid_link_class = 'button-primary' : $wppb_paid_link_class = 'button-secondary wppb-add-on-download';
-                            ( $wppb_add_on['paid'] ) ? $wppb_paid_link_text = __( 'Buy Now', 'profilebuilder' ) : $wppb_paid_link_text = __( 'Install Now', 'profilebuilder' );
-                            ( $wppb_add_on['paid'] ) ? $wppb_paid_href_utm_text = '?utm_source=wpbackend&utm_medium=clientsite&utm_content=add-on-page-buy-button&utm_campaign=PB' . $version : $wppb_paid_href_utm_text = '&utm_source=wpbackend&utm_medium=clientsite&utm_content=add-on-page&utm_campaign=PB' . $version;
-
-                            echo '<a target="_blank" class="right button ' . $wppb_paid_link_class . '" href="' . $wppb_add_on['download_url'] . $wppb_paid_href_utm_text . '" data-add-on-slug="profile-builder-' . $wppb_add_on['slug'] . '" data-add-on-name="' . $wppb_add_on['name'] . '" >' . $wppb_paid_link_text . '</a>';
-                            echo '<span class="dashicons dashicons-yes"></span><span class="wppb-add-on-message">' . __( 'Compatible with your version of Profile Builder.', 'profilebuilder' ) . '</span>';
+                            echo '<a target="_blank" class="button button-secondary right" href="http://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=add-on-page-upgrade-button&utm_campaign=PB' . $version . '">' . __( 'Upgrade Profile Builder', 'profilebuilder' ) . '</a>';
+                            echo '<span class="dashicons dashicons-no-alt"></span><span class="wppb-add-on-message">' . __( 'Not compatible with Profile Builder', 'profilebuilder' ) . ' ' . $version . '</span>';
 
                         }
 
-                        echo '<div class="spinner"></div>';
-
                     } else {
+
+                        // If PB version is older than the minimum required version of the add-on
                         echo ' ' . '<a class="button button-secondary right" href="' . admin_url('plugins.php') . '">' . __( 'Update', 'profilebuilder' ) . '</a>';
                         echo '<span class="wppb-add-on-message">' . __( 'Not compatible with your version of Profile Builder.', 'profilebuilder' ) . '</span><br />';
                         echo '<span class="wppb-add-on-message">' . __( 'Minimum required Profile Builder version:', 'profilebuilder' ) . '<strong> ' . $wppb_add_on['product_version'] . '</strong></span>';
+
                     }
 
                     // We had to put this error here because we need the url of the add-on

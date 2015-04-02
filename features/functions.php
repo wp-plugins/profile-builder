@@ -389,7 +389,16 @@ function wppb_resize_avatar( $userID, $userlisting_size = null, $userlisting_cro
                         $fileName_url = str_replace( str_replace( '\\', '/', $wp_upload_array['basedir'] ), $wp_upload_array['baseurl'], $fileName_dir );
 
                         //save the newly created (resized) avatar on the disc
-                        $image->save( $fileName_dir );
+                        $saved_image = $image->save( $fileName_dir );
+
+                        /* the image save sometimes doesn't save with the desired extension so we need to see with what extension it saved it with and
+                        if it differs replace the extension	in the path and url that we save as meta */
+                        $validate_saved_image = wp_check_filetype_and_ext( $saved_image['path'], $saved_image['path'] );
+                        $ext = substr( $fileName_dir,strrpos( $fileName_dir, '.', -1 ), strlen($fileName_dir) );
+                        if( !empty( $validate_saved_image['ext'] ) && $validate_saved_image['ext'] != $ext ){
+                            $fileName_url = str_replace( $ext, '.'.$validate_saved_image['ext'], $fileName_url );
+                            $fileName_dir = str_replace( $ext, '.'.$validate_saved_image['ext'], $fileName_dir );
+                        }
 
                         update_user_meta( $userID, 'resized_avatar_'.$value['id'], $fileName_url );
                         update_user_meta( $userID, 'resized_avatar_'.$value['id'].'_relative_path', $fileName_dir );

@@ -129,3 +129,11 @@ function wppb_front_end_register_handler( $atts ){
 
 	return ( isset( $_GET['activation_key'] ) ? wppb_activate_signup ( $_GET['activation_key'] ) : wppb_front_end_register( $atts ) );
 }
+
+add_action( 'user_register', 'wppbc_disable_admin_approval_for_user_role', 99, 1 );
+function wppbc_disable_admin_approval_for_user_role( $user_id ) {
+	if ( current_user_can( 'delete_users' ) ) {
+		wp_set_object_terms( $user_id, NULL, 'user_status' );
+		clean_object_term_cache( $user_id, 'user_status' );
+	}
+}

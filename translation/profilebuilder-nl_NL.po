@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Profile Builder package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2014-11-20 12:47:18+0000\n"
+"PO-Revision-Date: 2015-02-18 14:24:25+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -10,21 +10,153 @@ msgstr ""
 "X-Generator: GlotPress/0.1\n"
 "Project-Id-Version: Profile Builder\n"
 
-#: ../features/functions.php:485
-msgid "Minimum length of %d characters"
-msgstr ""
+#: ../admin/admin-functions.php:106
+msgid "<strong>ERROR</strong>: The password must have the minimum length of %s characters"
+msgstr "<strong>FOUT</strong>: Het wachtwoord moet een minimumlengte van %s karakters hebben"
 
-#: ../front-end/class-formbuilder.php:93 ../front-end/class-formbuilder.php:96
-msgid "This message is only visible by administrators"
+#: ../admin/admin-functions.php:123
+msgid "<strong>ERROR</strong>: The password must have a minimum strength of %s"
+msgstr "<strong>FOUT</strong>: Het wachtwoord moet een minimumsterkte van %s karakters hebben"
+
+#: ../admin/general-settings.php:144
+msgid "Username and Email"
+msgstr "Gebruikersnaam en e-mailadres"
+
+#: ../admin/general-settings.php:149
+msgid "\"Username and Email\" - users can Log In with both Username and Email."
+msgstr "'Username and Email'-gebruikers kunnen inloggen met zowel Gebruikersnaam als E-mailadres."
+
+#: ../admin/general-settings.php:150
+msgid "\"Username\" - users can Log In only with Username."
+msgstr "'Username'-gebruikers kunnen alleen inloggen met Gebruikersnaam."
+
+#: ../admin/general-settings.php:151
+msgid "\"Email\" - users can Log In only with Email."
+msgstr "'E-mail-'gebruikers kunnen alleen inloggen met E-mailadres."
+
+#: ../admin/manage-fields.php:89
+msgid "Specify the extension(s) you want to limit to upload<br/>Example: .ext1,.ext2,.ext3<br/>If not specified, defaults to: .jpg,.jpeg,.gif,.png (.*)"
+msgstr "Specificeer de extensie(s) waartoe je de uploads wilt beperken, <br/>bijvoorbeeld: .ext1,.ext2,.ext3<br/>Indien niet gespecificeerd; de standaardinstelling is: .jpg,.jpeg,.gif,.png (.*)"
+
+#: ../admin/manage-fields.php:90
+msgid "Specify the extension(s) you want to limit to upload<br/>Example: .ext1,.ext2,.ext3<br/>If not specified, defaults to all WordPress allowed file extensions (.*)"
+msgstr "Specificeer de extensie(s) waartoe je de uploads wilt beperken, <br/>bijvoorbeeld: .ext1,.ext2,.ext3<br/>Indien niet gespecificeerd; de standaardinstelling is : de in WordPress toegestane extensies (.*)"
+
+#: ../admin/manage-fields.php:98
+msgid "User Roles"
+msgstr "Gebruikersrollen"
+
+#: ../admin/manage-fields.php:98
+msgid "Select which user roles to show to the user ( drag and drop to re-order )"
+msgstr "Selecteer welke gebruikersrollen getoond worden aan de gebruiker (versleep om te herordenen)"
+
+#: ../admin/manage-fields.php:99
+msgid "User Roles Order"
+msgstr "Volgorde gebruikersrollen"
+
+#: ../admin/manage-fields.php:99
+msgid "Save the user role order from the user roles checkboxes"
+msgstr "Sla de gebruikersrollenvolgorde op mbv de aanvinkvakjes voor de gebruikersrollen"
+
+#: ../admin/manage-fields.php:455
+msgid "Please select at least one user role\n"
 msgstr ""
+"Selecteer minstens één gebruikersrol \n"
+"\n"
+
+#: ../admin/register-version.php:22
+msgid "Profile Builder Register"
+msgstr "'Profile Builder'-register"
+
+#: ../admin/register-version.php:81
+msgid "The serial number is about to expire soon!"
+msgstr "Het serienummer zal spoedig verlopen zijn."
+
+#: ../admin/register-version.php:81
+msgid " Your serial number is about to expire, please %1$s Renew Your License%2$s."
+msgstr "Het serienummer is bijna verlopen, %1$s Vernieuw de licentie %2$s."
+
+#: ../admin/register-version.php:83
+msgid " Your serial number is expired, please %1$s Renew Your License%2$s."
+msgstr "Het serienummer is bijna verlopen, %1$s Vernieuw de licentie %2$s."
+
+#: ../assets/lib/wck-api/wordpress-creation-kit.php:337
+msgid "Add Entry"
+msgstr "Voeg invoer toe"
+
+#: ../features/email-confirmation/class-email-confirmation.php:89
+msgid "show"
+msgstr "tonen"
+
+#: ../features/functions.php:620
+msgid "To allow users to register for your website via Profile Builder, you first must enable user registration. Go to %1$sNetwork Settings%2$s, and under Registration Settings make sure to check “User accounts may be registered”. %3$sDismiss%4$s"
+msgstr "Om gebruikers toe te staan te registreren voor de website mbv 'Profile Builder', moet je eerst gebruikersregistratie inschakelen. Ga naar %1$sInstellingen%2$s => Algemeen en vink achter 'Lidmaatschap' aan 'Iedereen kan registreren'. %3$sAfbreken%4$s"
+
+#: ../front-end/class-formbuilder.php:483
+msgid "User to edit:"
+msgstr "Te bewerken gebruiker:"
+
+#: ../front-end/default-fields/password/password.php:44
+#: ../front-end/recover.php:236
+msgid "The password must have the minimum length of %s characters"
+msgstr "Het wachtwoord moet een minimumlengte hebben van %s karakters"
+
+#: ../front-end/default-fields/password/password.php:48
+#: ../front-end/recover.php:240
+msgid "The password must have a minimum strength of %s"
+msgstr "Het wachtwoord moet een minimumsterkte hebben van %s"
+
+#: ../front-end/extra-fields/user-role/user-role.php:72
+msgid "You cannot register this user role"
+msgstr "Je kunt deze gebruikersrol niet registreren"
+
+#: ../front-end/login.php:105
+msgid "username or email"
+msgstr "Gebruikersnaam of e-mailadres"
+
+#: ../front-end/login.php:171
+msgid "Username or Email"
+msgstr "Gebruikersnaam of e-mailadres"
+
+#: ../front-end/logout.php:15
+msgid "You are currently logged in as %s. "
+msgstr "Je bent op dit moment ingelogd als %s."
+
+#: ../front-end/logout.php:15
+msgid "Log out &raquo;"
+msgstr "Uitloggen &raquo;"
+
+#: ../modules/email-customizer/email-customizer.php:31
+msgid "User Role"
+msgstr "Gebruikersrol"
+
+#: ../modules/user-listing/userlisting.php:1093
+msgid "View all extra shortcode parameters"
+msgstr "Bekijk alle extra shortcode-parameters"
+
+#: ../modules/user-listing/userlisting.php:1107
+msgid "displays only the users that you specified the user_id for"
+msgstr "Geeft alleen de gebruikers weer die je in het user_id gespecificeerd hebt"
+
+#: ../modules/user-listing/userlisting.php:1113
+msgid "displays all users except the ones you specified the user_id for"
+msgstr "Geeft alle gebruikers weer, behalve degenen die je in user_id gespecificeerd hebt"
+
+#: ../features/functions.php:494
+msgid "Minimum length of %d characters"
+msgstr "Minimumlengte %d karakters"
+
+#: ../front-end/class-formbuilder.php:97 ../front-end/class-formbuilder.php:100
+msgid "This message is only visible by administrators"
+msgstr "Dit bericht is alleen zichtbaar voor beheerders"
 
 #: ../front-end/extra-fields/avatar/avatar.php:119
 msgid "The image file set in the %s field for this user could not be found on the server. The default WordPress avatar is being used at the moment."
-msgstr ""
+msgstr "De afbeelding die is ingesteld in het veld %s voor deze gebruiker is niet op de server gevonden. Momenteel wordt de standaard WordPress-avatar gebruikt."
 
-#: ../modules/user-listing/userlisting.php:353
+#: ../modules/user-listing/userlisting.php:354
 msgid "User not found"
-msgstr ""
+msgstr "Gebruiker niet gevonden"
 
 #: ../modules/email-customizer/admin-email-customizer.php:38
 #: ../modules/email-customizer/user-email-customizer.php:38
@@ -33,120 +165,123 @@ msgstr "Geldige tags {{reply_to}} en {{site_name}}"
 
 #: ../admin/admin-bar.php:48
 msgid "Choose which user roles view the admin bar in the front-end of the website."
-msgstr "Kies welke gebruikersrollen de admin balk in de front-end van de website zien."
+msgstr "Kies welke gebruikersrollen de beheerdersbalk in het front-end van de website getoond worden."
 
-#: ../admin/manage-fields.php:85
+#: ../admin/manage-fields.php:94
 msgid "Enter a comma separated list of values<br/>This can be anything, as it is hidden from the user, but should not contain special characters or apostrophes"
-msgstr "Voer een met komma's gescheiden lijst van waardes in<br/>Dit kan van alles zijn, want verborgen van de gebruiker, maar mag geen speciale karakters of apostrofs bevatten"
+msgstr "Voer een kommagescheiden lijst van waardes in<br/>Dit kan van alles zijn, want verborgen voor de gebruiker, maar mag geen speciale karakters of apostrofs bevatten"
 
-#: ../admin/manage-fields.php:380
+#: ../admin/manage-fields.php:392
 msgid "The meta-name cannot be empty\n"
 msgstr "De meta-naam mag niet leeg zijn\n"
 
-#: ../admin/register-version.php:57
+#: ../admin/register-version.php:69
 msgid "Now that you acquired a copy of %s, you should take the time and register it with the serial number you received"
-msgstr "Nu je een exemplaar van %s hebt gekregen, kun je de tijd nemen om het te registreren met het serienummer die je ontvangen hebt."
+msgstr "Nu je een exemplaar van %s hebt gekregen, moet je de tijd nemen om het te registreren met het serienummer dat je ontvangen hebt."
 
-#: ../admin/register-version.php:219
+#: ../admin/register-version.php:238
 msgid "<p>Your <strong>Profile Builder</strong> serial number is invalid or missing. <br/>Please %1$sregister your copy%2$s to receive access to automatic updates and support. Need a license key? %3$sPurchase one now%4$s</p>"
-msgstr "<p>Je <strong>Profile Builder</strong> serienummer is ongeldig of mist. <br/>Svp %1$sregistreer je exemplaar%2$s om toegang te krijgen tot automatische updates en support. Licentiesleutel nodig? %3$sKoop nu%4$s</p>"
+msgstr "<p>Het <strong>Profile Builder</strong>-serienummer is ongeldig of ontbreekt. <br/> %1$sRegistreer je exemplaar%2$s om toegang te krijgen tot automatische updates en support. Licentiesleutel nodig? %3$sKoop er nu een%4$s</p>"
 
-#: ../admin/register-version.php:222
+#: ../admin/register-version.php:241
 msgid "<p>Your <strong>Profile Builder</strong> license has expired. <br/>Please %1$sRenew Your Licence%2$s to continue receiving access to product downloads, automatic updates and support. %3$sRenew now and get 50&#37; off %4$s %5$sDismiss%6$s</p>"
-msgstr "<p>Je <strong>Profile Builder</strong> licentie is verlopen. <br/>Svp %1$sVernieuw Je Licentie%2$s om product downloads, automatische updates en support te blijven ontvangen. %3$sVernieuw nu en krijg 50&#37; korting %4$s %5$sNegeer%6$s</p>"
+msgstr "<p>De <strong>Profile Builder</strong>-licentie is verlopen. <br/>Svp %1$sVernieuw de Licentie%2$s om productdownloads, automatische updates en support te blijven ontvangen. %3$sVernieuw nu en krijg 50&#37; %4$s korting. %5$sNegeer%6$s</p>"
 
-#: ../admin/register-version.php:227
+#: ../admin/register-version.php:246
 msgid "<p>Your <strong>Profile Builder</strong> license is about to expire on %5$s. <br/>Please %1$sRenew Your Licence%2$s to continue receiving access to product downloads, automatic updates and support. %3$sRenew now and get 50&#37; off %4$s %6$sDismiss%7$s</p>"
-msgstr "<p>Je <strong>Profile Builder</strong> licentie gaat verlopen op %5$s. <br/>Svp %1$sVernieuw Je Licentie%2$s om product downloads, automatische updates en support te blijven ontvangen. %3$sVernieuw nu en krijg 50&#37; korting %4$s %6$sNegeer%7$s</p>"
+msgstr "<p>De <strong>Profile Builder</strong>-licentie zal verlopen op %5$s. <br/>%1$sVernieuw de Licentie%2$s om productdownloads, automatische updates en support te blijven ontvangen. %3$sVernieuw nu en krijg 50&#37; korting %4$s %6$sNegeer%7$s</p>"
 
 #: ../assets/lib/wck-api/fields/country select.php:14
 #: ../assets/lib/wck-api/fields/cpt select.php:17
 #: ../assets/lib/wck-api/fields/select.php:14 ../assets/lib/wck-api/fields/user
 #: select.php:15
 msgid "...Choose"
-msgstr "...Kies"
+msgstr "...Kiezen"
 
 #: ../features/class-list-table.php:526 ../features/class-list-table.php:941
 msgid "1 item"
 msgstr "1 item"
 
-#: ../features/functions.php:471
+#: ../features/functions.php:480
 msgid "Very Weak"
-msgstr "Erg Zwak"
+msgstr "Erg zwak"
 
-#: ../features/functions.php:559
+#: ../features/functions.php:568
 msgid "This field is required"
 msgstr "Dit veld is verplicht"
 
-#: ../features/functions.php:579
+#: ../features/functions.php:588
 msgid "Cancel"
-msgstr "Annuleer"
+msgstr "Annuleren"
 
-#: ../features/functions.php:610
+#: ../features/functions.php:624
 msgid "To allow users to register for your website via Profile Builder, you first must enable user registration. Go to %1$sSettings -> General%2$s tab, and under Membership make sure to check “Anyone can register”. %3$sDismiss%4$s"
-msgstr "Om gebruikers toe te staan zich voor je website via Profile Builder te registreren, moet je eerst gebruikersregistratie inschakelen. Ga naar de %1$sInstellingen -> Algemeen%2$s tab, en zorg ervoor dat je onder Lidmaatschap \"Iedereen kan registreren\" aangevinkt hebt. %3$sNegeer%4$s"
+msgstr "Om gebruikers toe te staan zich voor de website te registreren mbv Profile Builder, moet je eerst gebruikersregistratie inschakelen. Ga naar de %1$sInstellingen => Tabblad Algemeen%2$s, en zorg ervoor dat je onder Lidmaatschap 'Iedereen kan registreren' aangevinkt hebt. %3$sNegeer%4$s"
 
-#: ../front-end/login.php:79
+#: ../front-end/login.php:96
 msgid "Invalid username."
 msgstr "Ongeldige gebruikersnaam"
 
-#: ../front-end/login.php:84
+#: ../front-end/login.php:101 ../front-end/login.php:105
 msgid "username"
 msgstr "gebruikersnaam"
 
-#: ../front-end/login.php:84
+#: ../front-end/login.php:101
 msgid "email"
-msgstr "e-mail"
+msgstr "e-mailadres"
 
-#: ../front-end/login.php:178
+#: ../front-end/login.php:205
 msgid "Lost your password?"
 msgstr "Wachtwoord vergeten?"
 
 #: ../index.php:34
 msgid " is also activated. You need to deactivate it before activating this version of the plugin."
-msgstr "is ook geactiveerd. Je moet dit de-activeren voordat je deze versie van de plugin activeert."
+msgstr "is ook geactiveerd. Je moet deze deactiveren voordat je deze versie van de plugin activeert."
 
 #: ../modules/email-customizer/admin-email-customizer.php:54
 #: ../modules/email-customizer/user-email-customizer.php:54
 msgid "Must be a valid email address or the tag {{reply_to}} which defaults to the administrator email"
-msgstr "Moet een geldig e-mailadres zijn of de tag {{reply_to}} wat zorgt voor het e-mailadres van de beheerder"
+msgstr "Moet een geldig e-mailadres zijn of de tag {{reply_to}} die standaard het e-mailadres van de beheerder geeft"
 
-#: ../modules/email-customizer/email-customizer.php:265
-#: ../modules/email-customizer/email-customizer.php:272
+#: ../features/email-confirmation/email-confirmation.php:505
+#: ../features/email-confirmation/email-confirmation.php:508
+#: ../modules/email-customizer/email-customizer.php:266
+#: ../modules/email-customizer/email-customizer.php:273
+#: ../modules/email-customizer/email-customizer.php:280
 msgid "Your selected password at signup"
-msgstr "Je geselecteerde wachtwoord tijdens registratie"
+msgstr "Het geselecteerde wachtwoord tijdens registratie"
 
 #: ../modules/email-customizer/user-email-customizer.php:38
 msgid "These settings are also replicated in the \"Admin Email Customizer\" settings-page upon save."
-msgstr "Deze instellingen zijn tijdens opslaan ook overgenomen in de \"Aanpasser E-mailadres Beheerder\" instellingen pagina."
+msgstr "Deze instellingen worden na opslaan ook overgenomen in de instellingenpagina van de 'Aanpasser e-mailadres beheerder'."
 
-#: ../modules/multiple-forms/edit-profile-forms.php:272
+#: ../modules/multiple-forms/edit-profile-forms.php:270
 msgid "This form is empty."
 msgstr "Dit formulier is leeg."
 
-#: ../modules/multiple-forms/multiple-forms.php:407
+#: ../modules/multiple-forms/multiple-forms.php:416
 msgid "Delete all items"
-msgstr "Verwijder alle items."
+msgstr "Alle items verwijderen."
 
-#: ../modules/multiple-forms/multiple-forms.php:407
+#: ../modules/multiple-forms/multiple-forms.php:416
 msgid "Delete all"
-msgstr "Verwijder alle"
+msgstr "Alles verwijderen"
 
-#: ../modules/multiple-forms/register-forms.php:230
+#: ../modules/multiple-forms/register-forms.php:226
 msgid "Choose..."
-msgstr "Kies..."
+msgstr "Kiezen..."
 
-#: ../modules/user-listing/userlisting.php:1160
+#: ../modules/user-listing/userlisting.php:1184
 msgid "Set the number of users to be displayed on every paginated part of the all-userlisting"
-msgstr "Stel aantal gebruikers in die worden getoond op ieder gepagineerde deel van de alle gebruikersweergave"
+msgstr "Stel aantal gebruikers in dat wordt getoond op ieder gepagineerd deel van de lijst met alle gebruikers"
 
 #: ../admin/admin-bar.php:10
 msgid "Show/Hide the Admin Bar on the Front-End"
-msgstr "Toon/Verberg de admin balk in de front-end"
+msgstr "Toon/verberg de beheerdersbalk in het front-end"
 
 #: ../admin/admin-bar.php:10 ../admin/admin-bar.php:47
 msgid "Admin Bar Settings"
-msgstr "Admin balk instellingen"
+msgstr "Instellingen beheerdersbalk"
 
 #: ../admin/admin-bar.php:57
 msgid "User-Role"
@@ -162,66 +297,58 @@ msgstr "Standaard"
 
 #: ../admin/admin-bar.php:74
 msgid "Show"
-msgstr "Toon"
+msgstr "Tonen"
 
 #: ../admin/admin-bar.php:75
 msgid "Hide"
-msgstr "Verberg"
+msgstr "Verbergen"
 
-#: ../admin/admin-bar.php:86 ../admin/general-settings.php:183
-#: ../admin/register-version.php:81 ../features/functions.php:572
+#: ../admin/admin-bar.php:86 ../admin/general-settings.php:189
+#: ../admin/register-version.php:95 ../features/functions.php:581
 #: ../modules/custom-redirects/custom-redirects.php:136
 #: ../modules/modules.php:142
 msgid "Save Changes"
-msgstr "Wijzigingen Opslaan"
+msgstr "Wijzigingen opslaan"
 
 #: ../admin/admin-functions.php:34
 msgid "Login is set to be done using the E-mail. This field will NOT appear in the front-end! ( you can change these settings under the \"%s\" tab )"
-msgstr "Je moet inloggen via het e-mailadres. Dit veld is NIET zichtbaar in de front-end! (je kunt deze instellingen wijzigen via de \"%s\" tab)"
+msgstr "Je moet inloggen dmv het e-mailadres. Dit veld is NIET zichtbaar op het front-end. (je kunt deze instellingen wijzigen op het tabblad \"%s\")"
 
 #: ../admin/admin-functions.php:34 ../admin/general-settings.php:10
 #: ../admin/general-settings.php:38
 msgid "General Settings"
 msgstr "Algemene Instellingen"
 
-#: ../admin/admin-functions.php:106
-msgid "<strong>ERROR</strong>: The password must have the minimum length of "
-msgstr "<strong>FOUT</strong>: Het wachtwoord moet een minimale lengte hebben van"
-
-#: ../admin/admin-functions.php:112 ../admin/general-settings.php:169
+#: ../admin/admin-functions.php:112 ../admin/general-settings.php:175
 msgid "Very weak"
 msgstr "Zeer zwak"
 
-#: ../admin/admin-functions.php:112 ../admin/general-settings.php:170
-#: ../features/functions.php:471
+#: ../admin/admin-functions.php:112 ../admin/general-settings.php:176
+#: ../features/functions.php:480
 msgid "Weak"
 msgstr "Zwak"
 
-#: ../admin/admin-functions.php:112 ../admin/general-settings.php:171
-#: ../features/functions.php:471
+#: ../admin/admin-functions.php:112 ../admin/general-settings.php:177
+#: ../features/functions.php:480
 msgid "Medium"
 msgstr "Gemiddeld"
 
-#: ../admin/admin-functions.php:112 ../admin/general-settings.php:172
-#: ../features/functions.php:471
+#: ../admin/admin-functions.php:112 ../admin/general-settings.php:178
+#: ../features/functions.php:480
 msgid "Strong"
 msgstr "Sterk"
 
-#: ../admin/admin-functions.php:123
-msgid "<strong>ERROR</strong>: The password must have a minimum strength of "
-msgstr "<strong>FOUT</strong>: Het wachtwoord moet een minimale lengte hebben van"
-
 #: ../admin/admin-functions.php:162
 msgid "Add Field"
-msgstr "Veld Toevoegen"
+msgstr "Veld toevoegen"
 
 #: ../admin/admin-functions.php:164
 msgid "Save Settings"
-msgstr "Wijzigingen Opslaan"
+msgstr "Wijzigingen opslaan"
 
 #: ../admin/basic-info.php:10
 msgid "Basic Information"
-msgstr "Basis Informatie"
+msgstr "Basisinformatie"
 
 #: ../admin/basic-info.php:29
 msgid "Version %s"
@@ -233,11 +360,11 @@ msgstr "<strong>Profile Builder </strong>"
 
 #: ../admin/basic-info.php:31
 msgid "The best way to add front-end registration, edit profile and login forms."
-msgstr "De beste manier om frond-end registratie, profiel bewerking en inlog formulieren toe te voegen."
+msgstr "De beste manier om frond-end-registratie, profielbewerking en inlogformulieren toe te voegen."
 
 #: ../admin/basic-info.php:33
 msgid "For Modern User Interaction"
-msgstr "Voor moderne Gebruikers Interactie"
+msgstr "Voor moderne gebruikersinteractie"
 
 #: ../admin/basic-info.php:36 ../features/login-widget/login-widget.php:59
 msgid "Login"
@@ -245,7 +372,7 @@ msgstr "Inloggen"
 
 #: ../admin/basic-info.php:37
 msgid "Friction-less login using <strong class=\"nowrap\">[wppb-login]</strong> shortcode or a widget."
-msgstr "Probleemloos inloggen via de <strong class=\"nowrap\">[wppb-login]</strong> shortcode of een widget."
+msgstr "Probleemloos inloggen mbv de shortcode <strong class=\"nowrap\">[wppb-login]</strong> of een widget."
 
 #: ../admin/basic-info.php:40
 msgid "Registration"
@@ -253,115 +380,115 @@ msgstr "Registratie"
 
 #: ../admin/basic-info.php:41
 msgid "Beautiful registration forms fully customizable using the <strong class=\"nowrap\">[wppb-register]</strong> shortcode."
-msgstr "Prachtige volledig aanpasbare registratie formulieren via de  <strong class=\"nowrap\">[wppb-register]</strong> shortcode."
+msgstr "Prachtige registratieformulieren volledig aanpasbaar mbv de shortcode <strong class=\"nowrap\">[wppb-register]</strong>."
 
 #: ../admin/basic-info.php:44
 msgid "Edit Profile"
-msgstr "Bewerk Profiel"
+msgstr "Profiel bewerken"
 
 #: ../admin/basic-info.php:45
 msgid "Straight forward edit profile forms using <strong class=\"nowrap\">[wppb-edit-profile]</strong> shortcode."
-msgstr "Eenvoudige bewerkbare profiel formulieren via de <strong class=\"nowrap\">[wppb-edit-profile]</strong> shortcode."
+msgstr "Bewerk eenvoudig profielformulieren mbv de shortcode <strong class=\"nowrap\">[wppb-edit-profile]</strong>."
 
 #: ../admin/basic-info.php:51
 msgid "Extra Features"
-msgstr "Extra Functies"
+msgstr "Extra functies"
 
 #: ../admin/basic-info.php:52
 msgid "Features that give you more control over your users, increased security and help you fight user registration spam."
-msgstr "Functies die je meer controle geven over je gebruikers, meer veiligheid en je helpen tegen spam tijdens gebruikersregistratie."
+msgstr "Functies die je meer controle geven over de gebruikers, de veiligheid verhogen en je helpen tegen spam tijdens gebruikersregistratie."
 
 #: ../admin/basic-info.php:53
 msgid "Enable extra features"
-msgstr "Extra functies aanzetten"
+msgstr "Extra functies inschakelen"
 
 #: ../admin/basic-info.php:57
 msgid "Recover Password"
-msgstr "Wachtwoord Achterhalen"
+msgstr "Wachtwoord herstellen"
 
 #: ../admin/basic-info.php:58
 msgid "Allow users to recover their password in the front-end using the [wppb-recover-password]."
-msgstr "Sta gebruikers toe om wachtwoord in front-end te achterhalen via de  [wppb-recover-password]."
+msgstr "Sta gebruikers toe hun wachtwoord te herstellen in het front-end mbv de shortcode [wppb-recover-password]."
 
 #: ../admin/basic-info.php:61
 msgid "Admin Approval (*)"
-msgstr "Goedkeuring Beheerder (*)"
+msgstr "Goedkeuring beheerder (*)"
 
 #: ../admin/basic-info.php:62
 msgid "You decide who is a user on your website. Get notified via email or approve multiple users at once from the WordPress UI."
-msgstr "Jij bepaalt wie een gebruiker is op je website. Word geinformeerd via e-mail of keur meerdere gebruikers ineens goed van de WordPress UI."
+msgstr "Jij bepaalt wie er gebruiker is op de website. Word geïnformeerd dmv e-mail of keur meerdere gebruikers in één keer goed vanaf de WordPress-UI."
 
 #: ../admin/basic-info.php:65
 msgid "Email Confirmation"
-msgstr "E-mail Bevestiging"
+msgstr "E-mailbevestiging"
 
 #: ../admin/basic-info.php:66
 msgid "Make sure users sign up with genuine emails. On registration users will receive a notification to confirm their email address."
-msgstr "Zorg ervoor dat gebruikers zich met echte e-mailadressen opgeven. Tijdens registratie zullen gebruikers een bericht ontvangen om e-mailadres te bevestigen."
+msgstr "Wees er zeker van dat gebruikers zich met echte e-mailadressen opgeven. Tijdens registratie zullen gebruikers een bericht ontvangen het e-mailadres te bevestigen."
 
 #: ../admin/basic-info.php:69
 msgid "Minimum Password Length and Strength Meter"
-msgstr "Minimale Wachtwoord Lengte en Kracht Meter"
+msgstr "Minimumachtwoordlengte- en sterktemeter"
 
 #: ../admin/basic-info.php:70
 msgid "Eliminate weak passwords altogether by setting a minimum password length and enforcing a certain password strength."
-msgstr "Elimineer zwakke wachtwoorden ineens door minimale wachtwoord lengte in te stellen en een bepaalde wachtwoord sterkte."
+msgstr "Elimineer zwakke wachtwoorden meteen door een minimumwachtwoordlengte in te stellen en een bepaalde wachtwoordsterkte af te dwingen."
 
 #: ../admin/basic-info.php:73
 msgid "Login with Email or Username"
-msgstr "Inloggen met E-mailadres of Gebruikersnaam"
+msgstr "Inloggen met e-mailadres of gebruikersnaam"
 
 #: ../admin/basic-info.php:74
 msgid "Allow users to log in with their email or username when accessing your site."
-msgstr "Sta gebruikers toe om te inloggen met e-mailadres of gebruikersnaam wanneer ze je site bezoeken."
+msgstr "Sta gebruikers toe in te loggen met e-mailadres of gebruikersnaam als ze de site bezoeken."
 
 #: ../admin/basic-info.php:87
 msgid "Customize Your Forms The Way You Want (*)"
-msgstr "Pas Je Formulieren Aan Zoals Jij Het Wilt (*)"
+msgstr "Pas de formulieren aan naar jouw wens (*)"
 
 #: ../admin/basic-info.php:88
 msgid "With Extra Profile Fields you can create the exact registration form your project needs."
-msgstr "Met extra Profielvelden kun je een registratie formulier maken die voldoet aan je project wensen."
+msgstr "Met extra profielvelden kun je een registratieformulier creëren dat precies voldoet aan de behoefte van het project."
 
 #: ../admin/basic-info.php:90
 msgid "Extra Profile Fields are available in Hobbyist or PRO versions"
-msgstr "Extra Profielvelden zijn beschikbaar in Hobbyist of PRO versies"
+msgstr "Extra profielvelden zijn beschikbaar in Hobbyist- of PRO-versies"
 
 #: ../admin/basic-info.php:92
 msgid "Get started with extra fields"
-msgstr "Start met extra velden"
+msgstr "Beginnen met extra velden"
 
 #: ../admin/basic-info.php:95
 msgid "Avatar Upload"
-msgstr "Avatar Upload"
+msgstr "Avatarupload"
 
 #: ../admin/basic-info.php:96
 msgid "Generic Uploads"
-msgstr "Algemene Uploads"
+msgstr "Algemene uploads"
 
 #: ../admin/basic-info.php:97
 msgid "Agree To Terms Checkbox"
-msgstr "Akkoord Met Voorwaarden Selectievakje"
+msgstr "Selectievakje 'Akkoord met de voorwaarden'"
 
 #: ../admin/basic-info.php:98
 msgid "Datepicker"
-msgstr "Datumpicker"
+msgstr "Datumkiezer"
 
 #: ../admin/basic-info.php:99
 msgid "reCAPTCHA"
-msgstr "reCAPTCHA"
+msgstr "Nieuwe CAPTCHA"
 
 #: ../admin/basic-info.php:100
 msgid "Country Select"
-msgstr "Land Selectie"
+msgstr "Landselectie"
 
 #: ../admin/basic-info.php:101
 msgid "Timezone Select"
-msgstr "Tijdzone Selectie"
+msgstr "Tijdzoneselectie"
 
 #: ../admin/basic-info.php:102
 msgid "Input / Hidden Input"
-msgstr "Invoer / Afgeschermde Invoer"
+msgstr "Invoer/Afgeschermde invoer"
 
 #: ../admin/basic-info.php:103
 msgid "Checkbox"
@@ -369,7 +496,7 @@ msgstr "Selectievakje"
 
 #: ../admin/basic-info.php:104
 msgid "Select"
-msgstr "Selecteer"
+msgstr "Selecteren"
 
 #: ../admin/basic-info.php:105
 msgid "Radio Buttons"
@@ -381,19 +508,19 @@ msgstr "Tekstgebied"
 
 #: ../admin/basic-info.php:115
 msgid "Powerful Modules (**)"
-msgstr "Sterke Modules (**)"
+msgstr "Krachtige modules (**)"
 
 #: ../admin/basic-info.php:116
 msgid "Everything you will need to manage your users is probably already available using the Pro Modules."
-msgstr "Alles wat je nodig hebt om je gebruikers te beheren is waarschijnlijk al beschikbaar als je de PRO Modules gebruikt."
+msgstr "Alles wat je nodig hebt om de gebruikers te beheren is waarschijnlijk al beschikbaar bij gebruik van de PRO-modules."
 
 #: ../admin/basic-info.php:118
 msgid "Enable your modules"
-msgstr "Je modules aanzetten"
+msgstr "De modules inschakelen"
 
 #: ../admin/basic-info.php:121
 msgid "Find out more about PRO Modules"
-msgstr "Leer meer over je PRO Modules"
+msgstr "Leer meer over de PRO-modules"
 
 #: ../admin/basic-info.php:126 ../modules/modules.php:111
 #: ../modules/user-listing/userlisting.php:11
@@ -405,586 +532,573 @@ msgstr "Gebruikersoverzicht"
 
 #: ../admin/basic-info.php:128
 msgid "Easy to edit templates for listing your website users as well as creating single user pages. Shortcode based, offering many options to customize your listings."
-msgstr "Eenvoudig om templates te bewerken die je website gebruikers tonen en om pagina's te maken voor losse gebruikers. Op shortcode gebaseerd, met vele opties om je overzichten aan te passen."
+msgstr "Het is eenvoudig sjablonen te bewerken om websitegebruikers te kunnen weergeven als om pagina's aan te maken voor losse gebruikers. Op shortcode gebaseerd en met vele opties om de overzichten aan te passen."
 
 #: ../admin/basic-info.php:130
 msgid "To create a page containing the users registered to this current site/blog, insert the following shortcode in a page of your chosing: <strong class=\"nowrap\">[wppb-list-users]</strong>."
-msgstr "Om een pagina te maken met de geregistreerde gebruikers van deze site/blog, voeg de volgende shortcode in de gewenste pagina: <strong class=\"nowrap\">[wppb-list-users]</strong>."
+msgstr "Voer de volgende shortcode in op de gewenste pagina: <strong class=\"nowrap\">[wppb-list-users]</strong> om een pagina aan te maken met de geregistreerde gebruikers van deze site/blog."
 
 #: ../admin/basic-info.php:134
 msgid "Email Customizer"
-msgstr "E-mailadres Aanpasser"
+msgstr "E-mailadres-aanpasser"
 
 #: ../admin/basic-info.php:135
 msgid "Personalize all emails sent to your users or admins. On registration, email confirmation, admin approval / un-approval."
-msgstr "Personaliseer alle e-mails die naar je gebruikers of beheerders gestuurd worden. Na registratie, e-mail bevestiging, goedkeuring / afkeuring van beheerder."
+msgstr "Personaliseer alle e-mails die naar de gebruikers of beheerders gestuurd worden. Na registratie vindt e-mailbevestiging en goedkeuring/afkeuring door de beheerder plaats."
 
 #: ../admin/basic-info.php:138
 #: ../modules/custom-redirects/custom-redirects.php:29
 #: ../modules/modules.php:32 ../modules/modules.php:132
 msgid "Custom Redirects"
-msgstr "Aangepaste Doorverwijzingen"
+msgstr "Aangepaste doorverwijzingen"
 
 #: ../admin/basic-info.php:139
 msgid "Keep your users out of the WordPress dashboard, redirect them to the front-page after login or registration, everything is just a few clicks away."
-msgstr "Laat je gebruikers uit het WordPress Dashboard, stuur ze door naar de homepage na inloggen of registratie, alles is onder handbereik."
+msgstr "Houd de gebruikers weg van het WordPress-fashboard, stuur hen door naar de homepage na inloggen of registratie, alles vereist maar een paar muisklikken."
 
 #: ../admin/basic-info.php:144 ../modules/modules.php:97
 msgid "Multiple Registration Forms"
-msgstr "Meerdere Registratie Formulieren"
+msgstr "Meerdere registratieformulieren"
 
 #: ../admin/basic-info.php:145
 msgid "Set up multiple registration forms with different fields for certain user roles. Capture different information from different types of users."
-msgstr "Maak meerdere registratieformulieren met verschillende velden voor bepaalde gebruikersgroepen. Ontvang verschillende informatie van verschillende type gebruikers."
+msgstr "Maak meerdere registratieformulieren met verschillende velden voor bepaalde gebruikersrollen. Ontvang verschillende soorten informatie van verschillende gebruikerstypen."
 
 #: ../admin/basic-info.php:148 ../modules/modules.php:104
 msgid "Multiple Edit-profile Forms"
-msgstr "Meerdere Bewerk Profiel Formulieren"
+msgstr "Meerdere formulieren voor profielbewerking"
 
 #: ../admin/basic-info.php:149
 msgid "Allow different user roles to edit their specific information. Set up multiple edit-profile forms with different fields for certain user roles."
-msgstr "Sta verschillende gebruikersgroepen toe om specifieke informatie te bewerken. Maak meerdere Bewerk Profiel formulieren met verschillende velden voor bepaalde gebruikersgroepen."
+msgstr "Sta verschillende gebruikersgroepen toe hun specifieke informatie te bewerken. Maak meerdere formulieren voor profielbewerking aan met verschillende velden voor bepaalde gebruikersrollen."
 
 #: ../admin/basic-info.php:161
 msgid " * only available in the %1$sHobbyist and Pro versions%2$s."
-msgstr "* alleen beschikbaar in de %1$sHobbyist en Pro versies%2$s."
+msgstr "* alleen beschikbaar in de %1$sHobbyist- en Pro-versie%2$s."
 
 #: ../admin/basic-info.php:162
 msgid "** only available in the %1$sPro version%2$s."
-msgstr "** alleen beschikbaar in de %1$sPro versies%2$s."
+msgstr "** alleen beschikbaar in de %1$sPro-versie%2$s."
 
 #: ../admin/general-settings.php:42
 msgid "Load Profile Builder's own CSS file in the front-end:"
-msgstr "Laad Profile Builder's eigen CSS bestand in de front-end:"
+msgstr "Laad het eigen CSS-bestand van Profile Builder in het front-end:"
 
 #: ../admin/general-settings.php:45 ../admin/general-settings.php:60
 #: ../admin/general-settings.php:114
-#: ../modules/multiple-forms/register-forms.php:229
-#: ../modules/multiple-forms/register-forms.php:230
-#: ../modules/user-listing/userlisting.php:1165
+#: ../modules/multiple-forms/register-forms.php:225
+#: ../modules/multiple-forms/register-forms.php:226
+#: ../modules/user-listing/userlisting.php:1189
 msgid "Yes"
 msgstr "Ja"
 
 #: ../admin/general-settings.php:47
 msgid "You can find the default file here: %1$s"
-msgstr "Je kunt het standaard bestand hier vinden: %1$s"
+msgstr "Je kunt het standaardbestand hier vinden: %1$s"
 
 #: ../admin/general-settings.php:56
 msgid "\"Email Confirmation\" Activated:"
-msgstr "\"E-mail Bevestiging\" Geactiveerd:"
+msgstr "'E-mailbevestiging' geactiveerd:"
 
 #: ../admin/general-settings.php:61 ../admin/general-settings.php:115
-#: ../modules/multiple-forms/register-forms.php:229
-#: ../modules/multiple-forms/register-forms.php:230
+#: ../modules/multiple-forms/register-forms.php:225
+#: ../modules/multiple-forms/register-forms.php:226
 msgid "No"
 msgstr "Nee"
 
 #: ../admin/general-settings.php:64
 msgid "On single-site installations this works with front-end forms only. Recommended to redirect WP default registration to a Profile Builder one using \"Custom Redirects\" addon."
-msgstr "Op enkele-site installaties werkt dit alleen met front-end formulieren. Het is aan te raden om de standaard WP registratie door te verwijzen naar die van Profile Builder, middels de \"Aangepaste Doorverwijzingen\" functie."
+msgstr "Op enkele-site-installaties werkt dit alleen met front-end-formulieren. Het is aan te raden de standaard WP-registratie door te verwijzen naar die van Profile Builder, dmv de functie 'Aangepaste doorverwijzingen'."
 
 #: ../admin/general-settings.php:65
 msgid "The \"Email Confirmation\" feature is active (by default) on WPMU installations."
-msgstr "De \"E-mail Bevestiging\" functie is (standaard) actief op WPMU installaties."
+msgstr "De functie 'E-mailbevestiging' is (standaard) actief op WPMU-installaties."
 
 #: ../admin/general-settings.php:67
 msgid "You can find a list of unconfirmed email addresses %1$sUsers > All Users > Email Confirmation%2$s."
-msgstr "Je kunt een lijst met niet bevestigde e-mailadressen vinden %1$sGebruikers > Alle Gebruikers > E-mail Bevestiging%2$s."
+msgstr "Je kunt een lijst met niet bevestigde e-mailadressen vinden in %1$sGebruikers => Alle Gebruikers => E-mailbevestiging%2$s."
 
 #: ../admin/general-settings.php:79
 msgid "\"Email Confirmation\" Landing Page:"
-msgstr "\"E-mail Bevestiging\" Begin Pagina:"
+msgstr "Startpagina 'E-mailbevestiging':"
 
 #: ../admin/general-settings.php:84
 msgid "Existing Pages"
-msgstr "Bestaande Pagina's"
+msgstr "Bestaande pagina's"
 
 #: ../admin/general-settings.php:99
 msgid "Specify the page where the users will be directed when confirming the email account. This page can differ from the register page(s) and can be changed at any time. If none selected, a simple confirmation page will be displayed for the user."
-msgstr "Specificeer de pagina waar gebruikers naar worden doorgestuurd wanneer ze hun e-mail bevestigen. Dit kan een andere pagina zijn dan de geregistreerde pagina's en kan altijd gewijzigd worden. Als er niets geselecteerd is, zal een eenvoudige bevestigingspagina aan gebruiker getoond worden."
+msgstr "Specificeer de pagina waar gebruikers naar worden doorgestuurd als ze hun e-mail bevestigen. Dit kan een andere pagina zijn dan de registratiepagina(s), en kan altijd gewijzigd worden. Als er niets geselecteerd is, zal er een eenvoudige bevestigingspagina aan gebruiker getoond worden."
 
 #: ../admin/general-settings.php:110
 msgid "\"Admin Approval\" Activated:"
-msgstr "\"Goedkeuring Beheerder\" Geactiveerd:"
+msgstr "'Goedkeuring beheerder' geactiveerd:"
 
 #: ../admin/general-settings.php:118
 msgid "You can find a list of users at %1$sUsers > All Users > Admin Approval%2$s."
-msgstr "Je kunt een gebruikerslijst vinden bij %1$sGebruikers > Alle Gebruikers > Goedkeuring Beheerder%2$s."
+msgstr "Je kunt een gebruikerslijst vinden bij %1$sGebruikers => Alle Gebruikers = > Goedkeuring beheerder%2$s."
 
 #: ../admin/general-settings.php:130
 msgid "\"Admin Approval\" Feature:"
-msgstr "\"Goedkeuring Beheerder\" Functie:"
+msgstr "Functie 'Goedkeuring beheerder':"
 
 #: ../admin/general-settings.php:133
 msgid "You decide who is a user on your website. Get notified via email or approve multiple users at once from the WordPress UI. Enable Admin Approval by upgrading to %1$sHobbyist or PRO versions%2$s."
-msgstr "Jij bepaalt wie een gebruikers is op je website. Krijg bericht via e-mail of keur meerdere gebruikers in 1 keer goed via het WordPress Dashboard. Zet Goedkeuring Beheerder aan door te upgraden naar %1$sHobbyist of PRO versies%2$s."
+msgstr "Jij bepaalt wie gebruikers is op de website. Krijg bericht via e-mail of keur meerdere gebruikers in één keer goed op het WordPress-dashboard. Zet 'Goedkeuring beheerder' aan door te upgraden naar de %1$sHobbyist- of PRO-versie%2$s."
 
 #: ../admin/general-settings.php:140
 msgid "Allow Users to Log in With:"
-msgstr "Sta Gebruikers toe in te loggen met:"
+msgstr "Sta gebruikers toe in te loggen met:"
 
-#: ../admin/general-settings.php:144 ../admin/manage-fields.php:133
+#: ../admin/general-settings.php:145 ../admin/manage-fields.php:144
 #: ../features/admin-approval/class-admin-approval.php:177
-#: ../features/email-confirmation/class-email-confirmation.php:153
+#: ../features/email-confirmation/class-email-confirmation.php:165
 #: ../modules/email-customizer/email-customizer.php:28
-#: ../modules/user-listing/userlisting.php:94
-#: ../modules/user-listing/userlisting.php:522
-#: ../modules/user-listing/userlisting.php:1122
+#: ../modules/user-listing/userlisting.php:92
+#: ../modules/user-listing/userlisting.php:523
+#: ../modules/user-listing/userlisting.php:1145
 msgid "Username"
 msgstr "Gebruikersnaam"
 
-#: ../admin/general-settings.php:145 ../front-end/login.php:144
+#: ../admin/general-settings.php:146 ../front-end/login.php:167
 #: ../modules/email-customizer/email-customizer.php:29
-#: ../modules/user-listing/userlisting.php:528
-#: ../modules/user-listing/userlisting.php:1123
+#: ../modules/user-listing/userlisting.php:529
+#: ../modules/user-listing/userlisting.php:1146
 msgid "Email"
 msgstr "E-mailadres"
 
-#: ../admin/general-settings.php:152
+#: ../admin/general-settings.php:158
 msgid "Minimum Password Length:"
-msgstr "Minimale Wachtwoord Lengte:"
+msgstr "Minimumwachtwoordlengte:"
 
-#: ../admin/general-settings.php:157
+#: ../admin/general-settings.php:163
 msgid "Enter the minimum characters the password should have. Leave empty for no minimum limit"
-msgstr "Voer het minimaal aantal karakters in die wachtwoord mag hebben. Laat leeg voor geen minimale limiet."
+msgstr "Voer het minimumaantal karakters in die het wachtwoord moe hebben. Laat leeg voor geen minimumlimiet."
 
-#: ../admin/general-settings.php:164
+#: ../admin/general-settings.php:170
 msgid "Minimum Password Strength:"
-msgstr "Minimale Wachtwoord Sterkte:"
+msgstr "Minimumwachtwoordsterkte:"
 
-#: ../admin/general-settings.php:168
+#: ../admin/general-settings.php:174
 msgid "Disabled"
 msgstr "Uitgeschakeld"
 
 #: ../admin/manage-fields.php:12
 msgid "Manage Fields"
-msgstr "Beheer Velden"
+msgstr "Velden beheren"
 
 #: ../admin/manage-fields.php:13
 msgid "Manage Default and Extra Fields"
-msgstr "Beheer Standaard en Extra Velden"
+msgstr "Standaard- en extra velden beheren"
 
-#: ../admin/manage-fields.php:74
+#: ../admin/manage-fields.php:83
 msgid "Field Title"
-msgstr "Veld Titel"
+msgstr "Veldtitel"
 
-#: ../admin/manage-fields.php:74
+#: ../admin/manage-fields.php:83
 msgid "Title of the field"
-msgstr "Titel van het Veld"
+msgstr "Titel van het veld"
 
-#: ../admin/manage-fields.php:75
-#: ../modules/multiple-forms/edit-profile-forms.php:243
-#: ../modules/multiple-forms/register-forms.php:264
+#: ../admin/manage-fields.php:84
+#: ../modules/multiple-forms/edit-profile-forms.php:241
+#: ../modules/multiple-forms/register-forms.php:262
 msgid "Field"
 msgstr "Veld"
 
-#: ../admin/manage-fields.php:76
+#: ../admin/manage-fields.php:85
 msgid "Meta-name"
 msgstr "Meta-naam"
 
-#: ../admin/manage-fields.php:76
+#: ../admin/manage-fields.php:85
 msgid "Use this in conjuction with WordPress functions to display the value in the page of your choosing<br/>Auto-completed but in some cases editable (in which case it must be uniqe)<br/>Changing this might take long in case of a very big user-count"
-msgstr "Gebruik dit in combinatie met de WordPress functies om de waarde te tonen in de gewenste pagina<br/>Auto-aangevuld maar is sommige gevallen te wijzigen (indien het uniek is)<br/>In het geval van een groot aantal gebruikers zal het lang duren voordat dit gewijzigd is"
+msgstr "Gebruik dit in combinatie met de WordPress-functies om de waarde te tonen op de gewenste pagina<br/>Automatisch aanvullen maar is sommige gevallen te bewerken (in dat geval moet het zijn)<br/>Bij een groot aantal gebruikers zal het lang duren eer dit gewijzigd is"
 
-#: ../admin/manage-fields.php:77
-#: ../modules/multiple-forms/edit-profile-forms.php:244
-#: ../modules/multiple-forms/register-forms.php:265
+#: ../admin/manage-fields.php:86
+#: ../modules/multiple-forms/edit-profile-forms.php:242
+#: ../modules/multiple-forms/register-forms.php:263
 msgid "ID"
 msgstr "ID"
 
-#: ../admin/manage-fields.php:77
-#: ../modules/multiple-forms/edit-profile-forms.php:244
-#: ../modules/multiple-forms/register-forms.php:265
+#: ../admin/manage-fields.php:86
+#: ../modules/multiple-forms/edit-profile-forms.php:242
+#: ../modules/multiple-forms/register-forms.php:263
 msgid "A unique, auto-generated ID for this particular field<br/>You can use this in conjuction with filters to target this element if needed<br/>Can't be edited"
-msgstr "Een unieke, automatisch aangemaakte ID voor dit bepaalde veld<br/>Je kunt dit gebruiken in combinatie met filters om dit element te richten, indien nodig<br/>Kan niet gewijzigd worden"
+msgstr "Een uniek, automatisch aangemaakt ID voor dit bepaalde veld<br/>Je kunt dit gebruiken in combinatie met filters om dit element indien nodig aan te pakken<br/>Kan niet bewerkt worden"
 
-#: ../admin/manage-fields.php:78
+#: ../admin/manage-fields.php:87
 msgid "Description"
 msgstr "Beschrijving"
 
-#: ../admin/manage-fields.php:78
+#: ../admin/manage-fields.php:87
 msgid "Enter a (detailed) description of the option for end users to read<br/>Optional"
-msgstr "Voer een (gedetailleerde) beschrijving in van de functie, die gebruikers kunnen lezen<br/>Optioneel"
+msgstr "Voer een (gedetailleerde) beschrijving in van de optie, zodat gebruikers die kunnen lezen<br/>Optioneel"
 
-#: ../admin/manage-fields.php:79
+#: ../admin/manage-fields.php:88
 msgid "Row Count"
-msgstr "Rij Telling"
+msgstr "Rij-telling"
 
-#: ../admin/manage-fields.php:79
+#: ../admin/manage-fields.php:88
 msgid "Specify the number of rows for a 'Textarea' field<br/>If not specified, defaults to 5"
-msgstr "Specificeer aantal rijen voor een 'Tekstgebied' veld<br/>Indien niet gespecificeerd, standaard is 5"
+msgstr "Specificeer het aantal rijen voor een 'Tekstgebied'-veld<br/>Is standaard 5, indien niet gespecificeerd."
 
-#: ../admin/manage-fields.php:80
+#: ../admin/manage-fields.php:89
 msgid "Allowed Image Extensions"
-msgstr "Toegestane Foto Extensies"
+msgstr "Toegestane afbeeldingsextensies"
 
-#: ../admin/manage-fields.php:80
-msgid "Specify the extension(s) you want to limit to upload<br/>Example: .ext1,.ext2,.ext3<br/>If not specified, defaults to all existing image extensions (.*)"
-msgstr "Specificeer de extensie(s) om upload te limiteren<br/>Voorbeeld: .ext1,.ext2,.ext3<br/>Indien niet gespecificeerd, standaard alle bestaande foto extensies (.*)"
-
-#: ../admin/manage-fields.php:81
+#: ../admin/manage-fields.php:90
 msgid "Allowed Upload Extensions"
-msgstr "Toegestane Upload Extensies"
+msgstr "Toegestane uploadextensies"
 
-#: ../admin/manage-fields.php:81
-msgid "Specify the extension(s) you want to limit to upload<br/>Example: .ext1,.ext2,.ext3<br/>If not specified, defaults to all existing extensions (.*)"
-msgstr "Specificeer de extensie(s) om upload te limiteren<br/>Voorbeeld: .ext1,.ext2,.ext3<br/>Indien niet gespecificeerd, standaard alle bestaande extensies (.*)"
-
-#: ../admin/manage-fields.php:82
+#: ../admin/manage-fields.php:91
 msgid "Avatar Size"
-msgstr "Avatar Grootte"
+msgstr "Avatargrootte"
 
-#: ../admin/manage-fields.php:82
+#: ../admin/manage-fields.php:91
 msgid "Enter a value (between 20 and 200) for the size of the 'Avatar'<br/>If not specified, defaults to 100"
-msgstr "Voer een waarde in (tussen 20 en 200) voor de grootte van de 'Avatar'<br/>Indien niet gespecificeerd, standaard is 100"
+msgstr "Voer een waarde in (tussen 20 en 200) voor de grootte van de 'Avatar'<br/>Is standaard 100, indien niet gespecificeerd."
 
-#: ../admin/manage-fields.php:83
+#: ../admin/manage-fields.php:92
 msgid "Date-format"
 msgstr "Datum-formaat"
 
-#: ../admin/manage-fields.php:83
+#: ../admin/manage-fields.php:92
 msgid "Specify the format of the date when using Datepicker<br/>Valid options: mm/dd/yy, mm/yy/dd, dd/yy/mm, dd/mm/yy, yy/dd/mm, yy/mm/dd<br/>If not specified, defaults to mm/dd/yy"
-msgstr "Specificeer datum formaat als je de datum picker gebruikt<br/>Geldige opties: mm/dd/yy, mm/yy/dd, dd/yy/mm, dd/mm/yy, yy/dd/mm, yy/mm/dd<br/>Indien niet gespecificeerd, standaard is mm/dd/yy"
+msgstr "Specificeer het datumformaat als je de datumkiezer gebruikt<br/>Geldige opties: mm/dd/yy, mm/yy/dd, dd/yy/mm, dd/mm/yy, yy/dd/mm, yy/mm/dd<br/>Is standaard mm/dd/yy, indien niet gespecificeerd."
 
-#: ../admin/manage-fields.php:84
+#: ../admin/manage-fields.php:93
 msgid "Terms of Agreement"
-msgstr "Algemene Voorwaarden"
+msgstr "Algemene voorwaarden"
 
-#: ../admin/manage-fields.php:84
+#: ../admin/manage-fields.php:93
 msgid "Enter a detailed description of the temrs of agreement for the user to read.<br/>Links can be inserted by using standard HTML syntax: &lt;a href=\"custom_url\"&gt;custom_text&lt;/a&gt;"
-msgstr "Voer een (gedetailleerde) beschrijving in van de algemene voorwaarden, die gebruikers kunnen lezen<br/>Links kunnen ingevoerd worden middels de standaard HTML syntax: &lt;a href=\"custom_url\"&gt;custom_text&lt;/a&gt;"
+msgstr "Voer een (gedetailleerde) beschrijving in van de algemene voorwaarden, die gebruikers kunnen lezen.<br/>Links kunnen ingevoerd worden mbv standaard HTML-syntax: &lt;a href=\"custom_url\"&gt;custom_text&lt;/a&gt;"
 
-#: ../admin/manage-fields.php:85
+#: ../admin/manage-fields.php:94
 msgid "Options"
 msgstr "Opties"
 
-#: ../admin/manage-fields.php:86
+#: ../admin/manage-fields.php:95
 msgid "Labels"
 msgstr "Labels"
 
-#: ../admin/manage-fields.php:86
+#: ../admin/manage-fields.php:95
 msgid "Enter a comma separated list of labels<br/>Visible for the user"
-msgstr "Voer een met komma's gescheiden lijst van labels in<br/>Zichtbaar voor de gebruiker"
+msgstr "Voer een kommagescheiden lijst van labels in<br/>Zichtbaar voor de gebruiker"
 
-#: ../admin/manage-fields.php:87
+#: ../admin/manage-fields.php:96
 msgid "Public Key"
-msgstr "Publieke Sleutel"
+msgstr "Publieke sleutel"
 
-#: ../admin/manage-fields.php:87
+#: ../admin/manage-fields.php:96
 msgid "The public key from Google, <a href=\"http://www.google.com/recaptcha\" target=\"_blank\">www.google.com/recaptcha</a>"
-msgstr "De Publieke Sleutel van Google, <a href=\"http://www.google.com/recaptcha\" target=\"_blank\">www.google.com/recaptcha</a>"
+msgstr "De publieke sleutel van Google, <a href=\"http://www.google.com/recaptcha\" target=\"_blank\">www.google.com/recaptcha</a>"
 
-#: ../admin/manage-fields.php:88
+#: ../admin/manage-fields.php:97
 msgid "Private Key"
-msgstr "Prive Sleutel"
+msgstr "Privésleutel"
 
-#: ../admin/manage-fields.php:88
+#: ../admin/manage-fields.php:97
 msgid "The private key from Google, <a href=\"http://www.google.com/recaptcha\" target=\"_blank\">www.google.com/recaptcha</a>"
-msgstr "De Prive Sleutel van Google, <a href=\"http://www.google.com/recaptcha\" target=\"_blank\">www.google.com/recaptcha</a>"
+msgstr "De privésleutel van Google, <a href=\"http://www.google.com/recaptcha\" target=\"_blank\">www.google.com/recaptcha</a>"
 
-#: ../admin/manage-fields.php:89
+#: ../admin/manage-fields.php:100
 msgid "Default Value"
-msgstr "Standaard Waarde"
+msgstr "Standaardwaarde"
 
-#: ../admin/manage-fields.php:89
+#: ../admin/manage-fields.php:100
 msgid "Default value of the field"
-msgstr "Standaard waarde van het veld"
+msgstr "Standaardwaarde van het veld"
 
-#: ../admin/manage-fields.php:90
+#: ../admin/manage-fields.php:101
 msgid "Default Option"
-msgstr "Standaard Optie"
+msgstr "Standaardoptie"
 
-#: ../admin/manage-fields.php:90
+#: ../admin/manage-fields.php:101
 msgid "Specify the option which should be selected by default"
-msgstr "Specificeer de optie die als standaard geselecteerd wordt"
+msgstr "Specificeer de optie die standaard geselecteerd moet worden"
 
-#: ../admin/manage-fields.php:91
+#: ../admin/manage-fields.php:102
 msgid "Default Option(s)"
-msgstr "Standaard Optie(s)"
+msgstr "Standaardoptie(s)"
 
-#: ../admin/manage-fields.php:91
+#: ../admin/manage-fields.php:102
 msgid "Specify the option which should be checked by default<br/>If there are multiple values, separate them with a ',' (comma)"
-msgstr "Specificeer de optie die als standaard geselecteerd wordt<br/>Als er meerdere waardes zijn, scheid ze met een ',' (komma)"
+msgstr "Specificeer de optie die standaard geselecteerd moet worden.<br/>Als er meerdere waardes zijn, scheid ze dan met een ',' (komma)"
 
-#: ../admin/manage-fields.php:92
+#: ../admin/manage-fields.php:103
 msgid "Default Content"
-msgstr "Standaard Inhoud"
+msgstr "Standaardcontent"
 
-#: ../admin/manage-fields.php:92
+#: ../admin/manage-fields.php:103
 msgid "Default value of the textarea"
-msgstr "Standaard waarde van tekstgebied"
+msgstr "Standaardwaarde van het tekstgebied"
 
-#: ../admin/manage-fields.php:93
+#: ../admin/manage-fields.php:104
 msgid "Required"
 msgstr "Verplicht"
 
-#: ../admin/manage-fields.php:93
+#: ../admin/manage-fields.php:104
 msgid "Whether the field is required or not"
 msgstr "Of een veld verplicht is of niet"
 
-#: ../admin/manage-fields.php:94
+#: ../admin/manage-fields.php:105
 msgid "Overwrite Existing"
-msgstr "Overschrijf Bestaande"
+msgstr "Overschrijf bestaande"
 
-#: ../admin/manage-fields.php:94
+#: ../admin/manage-fields.php:105
 msgid "Selecting 'Yes' will add the field to the list, but will overwrite any other field in the database that has the same meta-name<br/>Use this at your own risk"
-msgstr "Als je 'Ja' selecteert zal veld aan de lijst toegevoegd worden, maar zal alle andere velden in database overschrijven, die dezelfde meta-naam hebben<br/>Gebruik dit op eigen risico"
+msgstr "Als je 'Ja' selecteert zal het veld aan de lijst toegevoegd worden, maar het zal alle andere velden in database overschrijven die dezelfde meta-naam hebben<br/>Gebruik dit op eigen risico"
 
-#: ../admin/manage-fields.php:100
+#: ../admin/manage-fields.php:111
 msgid "Field Properties"
-msgstr "Veld Eigenschappen"
+msgstr "Veldeigenschappen"
 
-#: ../admin/manage-fields.php:113
+#: ../admin/manage-fields.php:124
 msgid "Registration & Edit Profile"
-msgstr "Registratie & Beheer Profiel"
+msgstr "Registratie & profiel bewerken"
 
-#: ../admin/manage-fields.php:132
+#: ../admin/manage-fields.php:143
 msgid "Name"
 msgstr "Naam"
 
-#: ../admin/manage-fields.php:133
+#: ../admin/manage-fields.php:144
 msgid "Usernames cannot be changed."
 msgstr "Gebruikersnamen kunnen niet veranderd worden."
 
-#: ../admin/manage-fields.php:134
+#: ../admin/manage-fields.php:145
 msgid "First Name"
 msgstr "Voornaam"
 
-#: ../admin/manage-fields.php:135
+#: ../admin/manage-fields.php:146
 msgid "Last Name"
 msgstr "Achternaam"
 
-#: ../admin/manage-fields.php:136 ../modules/user-listing/userlisting.php:561
+#: ../admin/manage-fields.php:147 ../modules/user-listing/userlisting.php:562
 msgid "Nickname"
 msgstr "Schermnaam"
 
-#: ../admin/manage-fields.php:137
+#: ../admin/manage-fields.php:148
 msgid "Display name publicly as"
-msgstr "Toon publiek als"
+msgstr "Toon de naam publiek als"
 
-#: ../admin/manage-fields.php:138
+#: ../admin/manage-fields.php:149
 msgid "Contact Info"
-msgstr "Contact Info"
+msgstr "Contactinformatie"
 
-#: ../admin/manage-fields.php:139
+#: ../admin/manage-fields.php:150
 #: ../features/admin-approval/class-admin-approval.php:180
-#: ../features/email-confirmation/class-email-confirmation.php:154
-#: ../modules/user-listing/userlisting.php:100
+#: ../features/email-confirmation/class-email-confirmation.php:166
+#: ../modules/user-listing/userlisting.php:98
 msgid "E-mail"
 msgstr "E-mailadres"
 
-#: ../admin/manage-fields.php:140
-#: ../modules/email-customizer/email-customizer.php:31
-#: ../modules/user-listing/userlisting.php:103
-#: ../modules/user-listing/userlisting.php:543
-#: ../modules/user-listing/userlisting.php:1124
+#: ../admin/manage-fields.php:151
+#: ../modules/email-customizer/email-customizer.php:32
+#: ../modules/user-listing/userlisting.php:101
+#: ../modules/user-listing/userlisting.php:544
+#: ../modules/user-listing/userlisting.php:1147
 msgid "Website"
 msgstr "Website"
 
-#: ../admin/manage-fields.php:144
+#: ../admin/manage-fields.php:155
 msgid "AIM"
 msgstr "AIM"
 
-#: ../admin/manage-fields.php:145
+#: ../admin/manage-fields.php:156
 msgid "Yahoo IM"
 msgstr "Yahoo IM"
 
-#: ../admin/manage-fields.php:146
+#: ../admin/manage-fields.php:157
 msgid "Jabber / Google Talk"
-msgstr "Jabber / Google Talk"
+msgstr "Jabber/Google Talk"
 
-#: ../admin/manage-fields.php:149
+#: ../admin/manage-fields.php:160
 msgid "About Yourself"
-msgstr "Over Jezelf"
+msgstr "Over jezelf"
 
-#: ../admin/manage-fields.php:150 ../modules/user-listing/userlisting.php:106
-#: ../modules/user-listing/userlisting.php:546
-#: ../modules/user-listing/userlisting.php:1125
+#: ../admin/manage-fields.php:161 ../modules/user-listing/userlisting.php:104
+#: ../modules/user-listing/userlisting.php:547
+#: ../modules/user-listing/userlisting.php:1148
 msgid "Biographical Info"
-msgstr "Biografie"
+msgstr "Biografische informatie"
 
-#: ../admin/manage-fields.php:150
+#: ../admin/manage-fields.php:161
 msgid "Share a little biographical information to fill out your profile. This may be shown publicly."
-msgstr "Vertel iets over jezelf. Dit kan voor iedereen zichtbaar zijn."
+msgstr "Vertel iets over jezelf om het profiel aan te vullen. Dit zou voor iedereen zichtbaar kunnen zijn."
 
-#: ../admin/manage-fields.php:151 ../front-end/recover.php:75
+#: ../admin/manage-fields.php:162 ../front-end/recover.php:75
 #: ../modules/email-customizer/email-customizer.php:30
 msgid "Password"
 msgstr "Wachtwoord"
 
-#: ../admin/manage-fields.php:151
+#: ../admin/manage-fields.php:162
 msgid "Type your password."
 msgstr "Voer je wachtwoord in."
 
-#: ../admin/manage-fields.php:152 ../front-end/recover.php:80
+#: ../admin/manage-fields.php:163 ../front-end/recover.php:80
 msgid "Repeat Password"
-msgstr "Herhaal Wachtwoord"
+msgstr "Herhaal het wachtwoord"
 
-#: ../admin/manage-fields.php:152
+#: ../admin/manage-fields.php:163
 msgid "Type your password again. "
 msgstr "Voer je wachtwoord opnieuw in."
 
-#: ../admin/manage-fields.php:308 ../admin/manage-fields.php:444
+#: ../admin/manage-fields.php:320 ../admin/manage-fields.php:464
 msgid "You must select a field\n"
 msgstr "Je moet een veld selecteren\n"
 
-#: ../admin/manage-fields.php:318
+#: ../admin/manage-fields.php:330
 msgid "Please choose a different field type as this one already exists in your form (must be unique)\n"
-msgstr "Selecteer svp een ander type veld omdat deze al in je formulier staat (moet uniek zijn)\n"
+msgstr "Selecteer een ander veldtype omdat dit al n het formulier staat (het moet uniek zijn)\n"
 
-#: ../admin/manage-fields.php:329
+#: ../admin/manage-fields.php:341
 msgid "The entered avatar size is not between 20 and 200\n"
-msgstr "De ingevoerde avatar grootte is niet tussen 20 en 200\n"
+msgstr "De ingevoerde avatargrootte ligt niet tussen 20 en 200\n"
 
-#: ../admin/manage-fields.php:332
+#: ../admin/manage-fields.php:344
 msgid "The entered avatar size is not numerical\n"
-msgstr "De ingevoerde avatar grootte is niet numeriek\n"
+msgstr "De ingevoerde avatargrootte is niet numeriek\n"
 
-#: ../admin/manage-fields.php:340
+#: ../admin/manage-fields.php:352
 msgid "The entered row number is not numerical\n"
-msgstr "Het ingevoerde rij nummer is niet numeriek\n"
+msgstr "Het ingevoerde rijnummer is niet numeriek\n"
 
-#: ../admin/manage-fields.php:343
+#: ../admin/manage-fields.php:355
 msgid "You must enter a value for the row number\n"
-msgstr "Je moet een waarde invoeren voor het rij nummer\n"
+msgstr "Je moet een waarde invoeren voor het rijnummer\n"
 
-#: ../admin/manage-fields.php:351
+#: ../admin/manage-fields.php:363
 msgid "You must enter the public key\n"
 msgstr "Je moet de publieke sleutel invoeren\n"
 
-#: ../admin/manage-fields.php:353
+#: ../admin/manage-fields.php:365
 msgid "You must enter the private key\n"
-msgstr "Je moet de prive sleutel invoeren\n"
+msgstr "Je moet de privésleutel invoeren\n"
 
-#: ../admin/manage-fields.php:361
+#: ../admin/manage-fields.php:373
 msgid "The entered value for the Datepicker is not a valid date-format\n"
-msgstr "De ingevoerde waarde voor de datum picker is geen geldig datum formaat\n"
+msgstr "De ingevoerde waarde voor de datumkiezer heeft geen geldig datumformaat\n"
 
-#: ../admin/manage-fields.php:364
+#: ../admin/manage-fields.php:376
 msgid "You must enter a value for the date-format\n"
-msgstr "Je moet een waarde voor het datum formaat invoeren\n"
+msgstr "Je moet een waarde voor het datumformaat invoeren\n"
 
-#: ../admin/manage-fields.php:392 ../admin/manage-fields.php:400
-#: ../admin/manage-fields.php:410
+#: ../admin/manage-fields.php:404 ../admin/manage-fields.php:412
+#: ../admin/manage-fields.php:422
 msgid "That meta-name is already in use\n"
 msgstr "Deze meta-naam is al in gebruik\n"
 
-#: ../admin/manage-fields.php:432
+#: ../admin/manage-fields.php:444
 msgid "The following option(s) did not coincide with the ones in the options list: %s\n"
 msgstr "De volgende optie(s) komen niet overeen met de opties in de optielijst: %s\n"
 
-#: ../admin/manage-fields.php:436
+#: ../admin/manage-fields.php:448
 msgid "The following option did not coincide with the ones in the options list: %s\n"
 msgstr "De volgende optie(s) komen niet overeen met de opties in de optielijst: %s \n"
 
-#: ../admin/manage-fields.php:451
+#: ../admin/manage-fields.php:471
 msgid "That field is already added in this form\n"
 msgstr "Dat veld is al aan dit formulier toegevoegd\n"
 
-#: ../admin/manage-fields.php:500
+#: ../admin/manage-fields.php:520
 msgid "<pre>Title</pre><pre>Type</pre><pre>Meta Name</pre><pre class=\"wppb-mb-head-required\">Required</pre>"
-msgstr "<pre>Titel</pre><pre>Type</pre><pre>Meta Naam</pre><pre class=\"wppb-mb-head-required\">Verplicht</pre>"
+msgstr "<pre>Titel</pre><pre>Type</pre><pre>Metanaam</pre><pre class=\"wppb-mb-head-required\">Verplicht</pre>"
 
-#: ../admin/manage-fields.php:500
-#: ../assets/lib/wck-api/wordpress-creation-kit.php:415
-#: ../assets/lib/wck-api/wordpress-creation-kit.php:501
-#: ../features/functions.php:593 ../features/functions.php:600
-#: ../modules/multiple-forms/multiple-forms.php:407
+#: ../admin/manage-fields.php:520
+#: ../assets/lib/wck-api/wordpress-creation-kit.php:440
+#: ../assets/lib/wck-api/wordpress-creation-kit.php:529
+#: ../features/functions.php:602 ../features/functions.php:609
+#: ../modules/multiple-forms/multiple-forms.php:416
 msgid "Edit"
-msgstr "Bewerk"
+msgstr "Bewerken"
 
-#: ../admin/manage-fields.php:500
-#: ../assets/lib/wck-api/wordpress-creation-kit.php:415
-#: ../assets/lib/wck-api/wordpress-creation-kit.php:502
+#: ../admin/manage-fields.php:520
+#: ../assets/lib/wck-api/wordpress-creation-kit.php:440
+#: ../assets/lib/wck-api/wordpress-creation-kit.php:530
 #: ../features/admin-approval/class-admin-approval.php:124
 #: ../features/admin-approval/class-admin-approval.php:235
-#: ../features/email-confirmation/class-email-confirmation.php:106
-#: ../features/email-confirmation/class-email-confirmation.php:202
-#: ../features/functions.php:586 ../features/functions.php:600
+#: ../features/email-confirmation/class-email-confirmation.php:118
+#: ../features/email-confirmation/class-email-confirmation.php:215
+#: ../features/functions.php:595 ../features/functions.php:609
 msgid "Delete"
-msgstr "Verwijder"
+msgstr "Verwijderen"
 
-#: ../admin/manage-fields.php:515
+#: ../admin/manage-fields.php:535
 msgid "Use these shortcodes on the pages you want the forms to be displayed:"
 msgstr "Gebruik deze shortcodes op de pagina's waarop je de formulieren wilt tonen:"
 
-#: ../admin/manage-fields.php:521
+#: ../admin/manage-fields.php:541
 msgid "If you're interested in displaying different fields in the registration and edit profile forms, please use the Multiple Registration & Edit Profile Forms Addon."
-msgstr "Als je geinteresseerd bent in het tonen van verschillende velden in de registratie en bewerk profiel formulieren, gebruik svp de Meerdere Registraties & Bewerk Profiel Formulieren Addon. "
+msgstr "Als je geïnteresseerd bent in het weergeven van verschillende velden in de registratie- en profielbewerkformulieren, gebruik dan de add-on 'Meerdere registraties & profielbewerkingsformulieren'"
 
-#: ../admin/register-version.php:11
+#: ../admin/register-version.php:14
 msgid "Register Your Version"
-msgstr "Registreer je Versie"
+msgstr "Registreer je versie"
 
-#: ../admin/register-version.php:11
+#: ../admin/register-version.php:14
 msgid "Register Version"
-msgstr "Registreer Versie"
+msgstr "Versie registreren"
 
-#: ../admin/register-version.php:58
+#: ../admin/register-version.php:70
 msgid "If you register this version of Profile Builder, you'll receive information regarding upgrades, patches, and technical support."
-msgstr "Als je deze versie van Profile Builder registreert, zul je informatie ontvangen inzake updates, patches en technisch support."
+msgstr "Als je deze versie van Profile Builder registreert, zul je informatie ontvangen inzake updates, patches en technische support."
 
-#: ../admin/register-version.php:60
+#: ../admin/register-version.php:72
 msgid " Serial Number:"
 msgstr "Serienummer:"
 
-#: ../admin/register-version.php:65
+#: ../admin/register-version.php:77
 msgid "The serial number was successfully validated!"
-msgstr "Het serienummer is succesvol gevalideerd!"
+msgstr "Het serienummer is met succes gevalideerd."
 
-#: ../admin/register-version.php:67
+#: ../admin/register-version.php:79
 msgid "The serial number entered couldn't be validated!"
-msgstr "Het ingevoerde serienummer kon niet gevalideerd worden!"
+msgstr "Het ingevoerde serienummer kon niet gevalideerd worden."
 
-#: ../admin/register-version.php:69
+#: ../admin/register-version.php:83
 msgid "The serial number couldn't be validated because it expired!"
-msgstr "Het serienummer kon niet gevalideerd worden want is verlopen!"
+msgstr "Het serienummer kon niet gevalideerd worden want het is verlopen."
 
-#: ../admin/register-version.php:71
+#: ../admin/register-version.php:85
 msgid "The serial number couldn't be validated because process timed out. This is possible due to the server being down. Please try again later!"
-msgstr "Het serienummer kon niet gevalideerd worden omdat het proces verlopen is. Dit komt mogelijk doordat de server niet werkt. Probeer het svp later opnieuw!"
+msgstr "Het serienummer kon niet gevalideerd worden omdat het proces te lang duurde. Dit komt mogelijk doordat de server niet werkt. Probeer het later opnieuw."
 
-#: ../admin/register-version.php:73
+#: ../admin/register-version.php:87
 msgid "(e.g. RMPB-15-SN-253a55baa4fbe7bf595b2aabb8d72985)"
 msgstr "(v.b. RMPB-15-SN-253a55baa4fbe7bf595b2aabb8d72985)"
 
-#: ../assets/lib/wck-api/wordpress-creation-kit.php:415
-#: ../features/functions.php:600
+#: ../assets/lib/wck-api/wordpress-creation-kit.php:440
+#: ../features/functions.php:609
 msgid "Content"
-msgstr "Inhoud"
+msgstr "Content"
 
-#: ../assets/lib/wck-api/wordpress-creation-kit.php:501
+#: ../assets/lib/wck-api/wordpress-creation-kit.php:529
 msgid "Edit this item"
-msgstr "Bewerk dit item"
+msgstr "Dit item bewerken"
 
-#: ../assets/lib/wck-api/wordpress-creation-kit.php:502
+#: ../assets/lib/wck-api/wordpress-creation-kit.php:530
 msgid "Delete this item"
-msgstr "Verwijder dit item"
+msgstr "Dit item verwijderen"
 
-#: ../assets/lib/wck-api/wordpress-creation-kit.php:643
+#: ../assets/lib/wck-api/wordpress-creation-kit.php:671
 msgid "Please enter a value for the required field "
-msgstr "Voer svp een waarde in voor het verplichte veld"
-
-#: ../assets/lib/wck-api/wordpress-creation-kit.php:1010
-msgid "Select File"
-msgstr "Selecteer Bestand"
+msgstr "Voer een waarde in voor het verplichte veld"
 
 #: ../assets/lib/wck-api/fields/upload.php:31
-#: ../assets/lib/wck-api/wordpress-creation-kit.php:1050
 msgid "Remove"
-msgstr "Verwijder"
+msgstr "Verwijderen"
 
-#: ../assets/lib/wck-api/wordpress-creation-kit.php:1090
+#: ../assets/lib/wck-api/wordpress-creation-kit.php:1150
 msgid "Syncronize WCK"
-msgstr "Synchroniseer WCK"
+msgstr "WCK synchroniseren"
 
-#: ../assets/lib/wck-api/wordpress-creation-kit.php:1102
+#: ../assets/lib/wck-api/wordpress-creation-kit.php:1162
 msgid "Syncronize WCK Translation"
-msgstr "Synchroniseer WCK Vertaling"
+msgstr "WCK-vertaling synchroniseren"
 
 #: ../assets/lib/wck-api/fields/nested repeater.php:8
 msgid "You can add the information for the %s after you add a entry"
-msgstr "Je kunt informatie toevoegen voor %s nadat je een item hebt toegevoegd"
+msgstr "Je kunt informatie toevoegen aan %s nadat je een item hebt toegevoegd"
 
 #: ../assets/lib/wck-api/fields/upload.php:48
 msgid "Upload "
@@ -996,7 +1110,7 @@ msgstr "Geen items gevonden."
 
 #: ../features/class-list-table.php:308
 msgid "Bulk Actions"
-msgstr "Bulk Acties"
+msgstr "Bulkacties"
 
 #: ../features/class-list-table.php:318
 msgid "Apply"
@@ -1004,7 +1118,7 @@ msgstr "Toepassen"
 
 #: ../features/class-list-table.php:402
 msgid "Show all dates"
-msgstr "Toon alle data"
+msgstr "Alle data tonen"
 
 #: ../features/class-list-table.php:415
 msgid "%1$s %2$d"
@@ -1012,11 +1126,11 @@ msgstr "%1$s %2$d"
 
 #: ../features/class-list-table.php:431
 msgid "List View"
-msgstr "Toon Lijst"
+msgstr "Lijstweergave"
 
 #: ../features/class-list-table.php:432
 msgid "Excerpt View"
-msgstr "Toon fragment"
+msgstr "Uittrekselweergave"
 
 #: ../features/class-list-table.php:458
 msgid "%s pending"
@@ -1028,109 +1142,109 @@ msgstr "%1$s van %2$s"
 
 #: ../features/class-list-table.php:713
 msgid "Select All"
-msgstr "Selecteer Alle"
+msgstr "Alles selecteren"
 
-#: ../features/functions.php:193 ../features/functions.php:194
+#: ../features/functions.php:199 ../features/functions.php:200
 msgid "Profile Builder"
-msgstr "Profile Builder"
+msgstr "Profiel-builder"
 
-#: ../features/functions.php:261
+#: ../features/functions.php:270
 msgid "The user-validation has failed - the avatar was not deleted!"
-msgstr "Validatie gebruiker mislukt - de avatar is niet verwijderd!"
+msgstr "Validatie gebruiker mislukt - de avatar is niet verwijderd."
 
-#: ../features/functions.php:272
+#: ../features/functions.php:281
 msgid "The user-validation has failed - the attachment was not deleted!"
-msgstr "Validatie gebruiker mislukt - de bijlage is niet verwijderd!"
+msgstr "Validatie gebruiker mislukt - de bijlage is niet verwijderd."
 
-#: ../features/functions.php:446
+#: ../features/functions.php:455
 msgid "Strength indicator"
-msgstr "Sterkte indicator"
+msgstr "Sterkte-indicator"
 
 #: ../features/admin-approval/admin-approval.php:7
-#: ../features/admin-approval/class-admin-approval.php:489
+#: ../features/admin-approval/class-admin-approval.php:496
 msgid "Admin Approval"
-msgstr "Goedkeuring Beheerder"
+msgstr "Goedkeuring beheerder"
 
-#: ../features/admin-approval/admin-approval.php:22
+#: ../features/admin-approval/admin-approval.php:21
 #: ../features/email-confirmation/email-confirmation.php:58
 msgid "Do you want to"
 msgstr "Wil je"
 
-#: ../features/admin-approval/admin-approval.php:45
+#: ../features/admin-approval/admin-approval.php:44
 msgid "Your session has expired! Please refresh the page and try again"
-msgstr "Je sessie is verlopen. Ververs svp de pagina en probeer het opnieuw "
+msgstr "De sessie is verlopen. Ververs de pagina en probeer het opnieuw "
 
-#: ../features/admin-approval/admin-approval.php:56
+#: ../features/admin-approval/admin-approval.php:55
 msgid "User successfully approved!"
-msgstr "Gebruiker succesvol goedgekeurd!"
+msgstr "Gebruiker met succes goedgekeurd."
 
-#: ../features/admin-approval/admin-approval.php:64
+#: ../features/admin-approval/admin-approval.php:63
 msgid "User successfully unapproved!"
-msgstr "Gebruiker succesvol afgekeurd!"
+msgstr "Gebruiker met succes afgekeurd."
 
-#: ../features/admin-approval/admin-approval.php:70
+#: ../features/admin-approval/admin-approval.php:69
 msgid "User successfully deleted!"
-msgstr "Gebruiker succesvol verwijderd!"
+msgstr "Gebruiker met succes verwijderd."
 
-#: ../features/admin-approval/admin-approval.php:75
-#: ../features/admin-approval/admin-approval.php:140
-#: ../features/email-confirmation/email-confirmation.php:122
+#: ../features/admin-approval/admin-approval.php:74
+#: ../features/admin-approval/admin-approval.php:139
+#: ../features/email-confirmation/email-confirmation.php:135
 msgid "You either don't have permission for that action or there was an error!"
-msgstr "Je hebt of geen goedkeuring voor deze actie of er was een fout!"
+msgstr "Je hebt of niet de rechten voor deze actie of is een fout opgetreden."
 
-#: ../features/admin-approval/admin-approval.php:87
+#: ../features/admin-approval/admin-approval.php:86
 msgid "Your session has expired! Please refresh the page and try again."
-msgstr "Je sessie is verlopen. Ververs svp de pagina en probeer het opnieuw."
+msgstr "De sessie is verlopen. Ververs de pagina en probeer het opnieuw."
 
-#: ../features/admin-approval/admin-approval.php:107
+#: ../features/admin-approval/admin-approval.php:106
 msgid "Users successfully approved!"
-msgstr "Gebruiker succesvol goedgekeurd! "
+msgstr "Gebruikers met succes goedgekeurd."
 
-#: ../features/admin-approval/admin-approval.php:122
+#: ../features/admin-approval/admin-approval.php:121
 msgid "Users successfully unapproved!"
-msgstr "Gebruiker succesvol afgekeurd!"
+msgstr "Gebruikers met succes afgekeurd."
 
-#: ../features/admin-approval/admin-approval.php:135
+#: ../features/admin-approval/admin-approval.php:134
 msgid "Users successfully deleted!"
-msgstr "Gebruiker succesvol verwijderd!"
+msgstr "Gebruikers met succes verwijderd."
+
+#: ../features/admin-approval/admin-approval.php:149
+msgid "Your account on %1$s has been approved!"
+msgstr "Je account op %1$s is goedgekeurd."
 
 #: ../features/admin-approval/admin-approval.php:150
-msgid "Your account on %1$s has been approved!"
-msgstr "Je account op %1$s is goedgekeurd!"
-
-#: ../features/admin-approval/admin-approval.php:151
-#: ../features/admin-approval/admin-approval.php:154
+#: ../features/admin-approval/admin-approval.php:153
 msgid "approved"
 msgstr "goedgekeurd"
 
-#: ../features/admin-approval/admin-approval.php:153
+#: ../features/admin-approval/admin-approval.php:152
 msgid "An administrator has just approved your account on %1$s (%2$s)."
-msgstr "Een beheerder heeft net je account goedgekeurd op  %1$s (%2$s)."
+msgstr "Een beheerder heeft zojuist je account goedgekeurd op %1$s (%2$s)."
+
+#: ../features/admin-approval/admin-approval.php:156
+msgid "Your account on %1$s has been unapproved!"
+msgstr "Je account op %1$s is afgekeurd."
 
 #: ../features/admin-approval/admin-approval.php:157
-msgid "Your account on %1$s has been unapproved!"
-msgstr "Je account op %1$s is afgekeurd!"
-
-#: ../features/admin-approval/admin-approval.php:158
-#: ../features/admin-approval/admin-approval.php:161
+#: ../features/admin-approval/admin-approval.php:160
 msgid "unapproved"
 msgstr "afgekeurd"
 
-#: ../features/admin-approval/admin-approval.php:160
+#: ../features/admin-approval/admin-approval.php:159
 msgid "An administrator has just unapproved your account on %1$s (%2$s)."
-msgstr "Een beheerder heeft net je account afgekeurd op %1$s (%2$s)."
+msgstr "Een beheerder heeft zojuist je account afgekeurd op %1$s (%2$s)."
 
-#: ../features/admin-approval/admin-approval.php:177
+#: ../features/admin-approval/admin-approval.php:176
 msgid "<strong>ERROR</strong>: Your account has to be confirmed by an administrator before you can log in."
 msgstr "<strong>FOUT</strong>: Je account moet bevestigd worden door een beheerder voordat je kunt inloggen. "
 
-#: ../features/admin-approval/admin-approval.php:189
+#: ../features/admin-approval/admin-approval.php:188
 msgid "Your account has to be confirmed by an administrator before you can use the \"Password Recovery\" feature."
-msgstr "Je account moet bevestigd worden door een beheerder voordat je \"Wachtwoord Achterhalen\" functie kunt gebruiken."
+msgstr "Je account moet bevestigd worden door een beheerder voordat je de functie 'Wachtwoord herstellen' kunt gebruiken."
 
 #: ../features/admin-approval/class-admin-approval.php:119
 msgid "View or Edit"
-msgstr "Bekijk of Bewerk"
+msgstr "Bekijken of bewerken"
 
 #: ../features/admin-approval/class-admin-approval.php:124
 msgid "delete this user?"
@@ -1155,121 +1269,123 @@ msgid "Approve"
 msgstr "Goedkeuren"
 
 #: ../features/admin-approval/class-admin-approval.php:178
-#: ../modules/user-listing/userlisting.php:534
-#: ../modules/user-listing/userlisting.php:1127
+#: ../modules/user-listing/userlisting.php:535
+#: ../modules/user-listing/userlisting.php:1150
 msgid "Firstname"
 msgstr "Voornaam"
 
 #: ../features/admin-approval/class-admin-approval.php:179
-#: ../modules/user-listing/userlisting.php:537
-#: ../modules/user-listing/userlisting.php:1128
+#: ../modules/user-listing/userlisting.php:538
+#: ../modules/user-listing/userlisting.php:1151
 msgid "Lastname"
 msgstr "Achternaam"
 
 #: ../features/admin-approval/class-admin-approval.php:181
-#: ../modules/user-listing/userlisting.php:117
+#: ../modules/user-listing/userlisting.php:115
+#: ../modules/user-listing/userlisting.php:565
+#: ../modules/user-listing/userlisting.php:1154
 msgid "Role"
 msgstr "Rol"
 
 #: ../features/admin-approval/class-admin-approval.php:182
-#: ../features/email-confirmation/class-email-confirmation.php:155
+#: ../features/email-confirmation/class-email-confirmation.php:167
 msgid "Registered"
 msgstr "Geregistreerd"
 
 #: ../features/admin-approval/class-admin-approval.php:183
 msgid "User-status"
-msgstr "Status Gebruiker"
+msgstr "Gebruikersstatus"
 
 #: ../features/admin-approval/class-admin-approval.php:263
 msgid "Do you want to bulk approve the selected users?"
-msgstr "Wil je de geselecteerde gebruikers in 1 keer goedkeuren?"
+msgstr "Wil je de geselecteerde gebruikers in één keer goedkeuren?"
 
 #: ../features/admin-approval/class-admin-approval.php:271
 msgid "Do you want to bulk unapprove the selected users?"
-msgstr "Wil je de geselecteerde gebruikers in 1 keer afkeuren?"
+msgstr "Wil je de geselecteerde gebruikers in één keer afkeuren?"
 
 #: ../features/admin-approval/class-admin-approval.php:277
 msgid "Do you want to bulk delete the selected users?"
-msgstr "Wil je de geselecteerde gebruikers in 1 keer verwijderen?"
+msgstr "Wil je de geselecteerde gebruikers in één keer verwijderen?"
 
 #: ../features/admin-approval/class-admin-approval.php:285
-#: ../features/email-confirmation/class-email-confirmation.php:263
+#: ../features/email-confirmation/class-email-confirmation.php:276
 msgid "Sorry, but you don't have permission to do that!"
-msgstr "Sorry, je hebt geen toestemming om dit te doen!"
+msgstr "Sorry, je hebt niet het recht dit te doen."
 
-#: ../features/admin-approval/class-admin-approval.php:318
+#: ../features/admin-approval/class-admin-approval.php:325
 msgid "Approved"
 msgstr "Goedgekeurd"
 
-#: ../features/admin-approval/class-admin-approval.php:320
+#: ../features/admin-approval/class-admin-approval.php:327
 msgid "Unapproved"
 msgstr "Afgekeurd"
 
-#: ../features/admin-approval/class-admin-approval.php:492
-#: ../features/email-confirmation/class-email-confirmation.php:448
+#: ../features/admin-approval/class-admin-approval.php:499
+#: ../features/email-confirmation/class-email-confirmation.php:467
 msgid "All Users"
-msgstr "Alle Gebruikers"
+msgstr "Alle gebruikers"
 
-#: ../features/email-confirmation/class-email-confirmation.php:106
+#: ../features/email-confirmation/class-email-confirmation.php:118
 msgid "delete this user from the _signups table?"
-msgstr "verwijder gebruiker van de _signups tabel?"
+msgstr "deze gebruiker verwijderen uit de tabel _signups?"
 
-#: ../features/email-confirmation/class-email-confirmation.php:107
+#: ../features/email-confirmation/class-email-confirmation.php:119
 msgid "confirm this email yourself?"
 msgstr "dit e-mailadres zelf bevestigen?"
 
-#: ../features/email-confirmation/class-email-confirmation.php:107
-#: ../features/email-confirmation/class-email-confirmation.php:203
+#: ../features/email-confirmation/class-email-confirmation.php:119
+#: ../features/email-confirmation/class-email-confirmation.php:216
 msgid "Confirm Email"
-msgstr "E-mailadres Bevestigen "
+msgstr "E-mailadres bevestigen "
 
-#: ../features/email-confirmation/class-email-confirmation.php:108
+#: ../features/email-confirmation/class-email-confirmation.php:120
 msgid "resend the activation link?"
-msgstr "de activatielink opnieuw sturen?"
+msgstr "de activeringslink opnieuw sturen?"
 
-#: ../features/email-confirmation/class-email-confirmation.php:108
-#: ../features/email-confirmation/class-email-confirmation.php:204
+#: ../features/email-confirmation/class-email-confirmation.php:120
+#: ../features/email-confirmation/class-email-confirmation.php:217
 msgid "Resend Activation Email"
-msgstr "Activatiemail Opnieuw Sturen"
+msgstr "Activeringsmail opnieuw sturen"
 
-#: ../features/email-confirmation/class-email-confirmation.php:234
+#: ../features/email-confirmation/class-email-confirmation.php:247
 msgid "%s couldn't be deleted"
 msgstr "%s kon niet verwijderd worden"
 
-#: ../features/email-confirmation/class-email-confirmation.php:238
+#: ../features/email-confirmation/class-email-confirmation.php:251
 msgid "All users have been successfully deleted"
-msgstr "Alle gebruikers zijn succesvol verwijderd"
+msgstr "Alle gebruikers zijn met succes verwijderd"
 
-#: ../features/email-confirmation/class-email-confirmation.php:248
+#: ../features/email-confirmation/class-email-confirmation.php:261
 msgid "The selected users have been activated"
 msgstr "De geselecteerde gebruikers zijn geactiveerd"
 
-#: ../features/email-confirmation/class-email-confirmation.php:259
+#: ../features/email-confirmation/class-email-confirmation.php:272
 msgid "The selected users have had their activation emails resent"
-msgstr "Activatiemail is opnieuw gestuurd naar de geselecteerde gebruikers "
+msgstr "Activeringsemail is opnieuw gestuurd naar de geselecteerde gebruikers "
 
-#: ../features/email-confirmation/class-email-confirmation.php:445
+#: ../features/email-confirmation/class-email-confirmation.php:464
 #: ../features/email-confirmation/email-confirmation.php:47
 msgid "Users with Unconfirmed Email Address"
 msgstr "Gebruikers met niet bevestigde e-mailadressen"
 
-#: ../features/email-confirmation/email-confirmation.php:97
+#: ../features/email-confirmation/email-confirmation.php:110
 msgid "There was an error performing that action!"
-msgstr "Fout opgetreden tijdens deze actie!"
+msgstr "Er is een fout opgetreden tijdens deze actie."
 
-#: ../features/email-confirmation/email-confirmation.php:105
+#: ../features/email-confirmation/email-confirmation.php:118
 msgid "The selected user couldn't be deleted"
 msgstr "De geselecteerde gebruiker kon niet verwijderd worden"
 
-#: ../features/email-confirmation/email-confirmation.php:116
+#: ../features/email-confirmation/email-confirmation.php:129
 msgid "Email notification resent to user"
-msgstr "E-mail notificatie opnieuw gestuurd naar gebruiker"
+msgstr "E-mailkennisgeving opnieuw gestuurd naar gebruiker"
 
-#: ../features/email-confirmation/email-confirmation.php:349
+#: ../features/email-confirmation/email-confirmation.php:362
 msgid "[%1$s] Activate %2$s"
-msgstr "[%1$s] Activeer %2$s"
+msgstr "[%1$s] Activeren %2$s"
 
-#: ../features/email-confirmation/email-confirmation.php:350
+#: ../features/email-confirmation/email-confirmation.php:363
 msgid ""
 "To activate your user, please click the following link:\n"
 "\n"
@@ -1277,62 +1393,62 @@ msgid ""
 "\n"
 "After you activate it you will receive yet *another email* with your login."
 msgstr ""
-"Om je gebruiker te activeren, klik op de volgende link:\n"
+"Klik op de volgende link om de gebruiker te activeren:\n"
 "\n"
 "%s%s%s\n"
 "\n"
-"Nadat je het geactiveerd hebt ontvang je nog *een andere e-mail* met je inlog."
+"Nadat je hem geactiveerd hebt, zul je *nog een e-mail* met de inloggegevens ontvangen."
 
-#: ../features/email-confirmation/email-confirmation.php:388
+#: ../features/email-confirmation/email-confirmation.php:401
 #: ../front-end/register.php:68
 msgid "Could not create user!"
-msgstr "Kon gebruiker niet aanmaken!"
+msgstr "Gebruiker kon niet aangemaakt worden."
 
-#: ../features/email-confirmation/email-confirmation.php:391
+#: ../features/email-confirmation/email-confirmation.php:404
 msgid "That username is already activated!"
-msgstr "Die gebruikersnaam is al geactiveerd!"
+msgstr "Die gebruikersnaam is al geactiveerd."
 
-#: ../features/email-confirmation/email-confirmation.php:420
+#: ../features/email-confirmation/email-confirmation.php:433
 msgid "There was an error while trying to activate the user"
-msgstr "Fout opgetreden tijdens activatie van de gebruiker"
+msgstr "Er is een fout opgetreden tijdens het activeren van de gebruiker"
 
-#: ../features/email-confirmation/email-confirmation.php:458
+#: ../features/email-confirmation/email-confirmation.php:478
 #: ../modules/email-customizer/admin-email-customizer.php:73
 msgid "A new subscriber has (been) registered!"
-msgstr "Een nieuw abonnee is geregistreerd!"
+msgstr "Er is een nieuw abonnee geregistreerd."
 
-#: ../features/email-confirmation/email-confirmation.php:461
+#: ../features/email-confirmation/email-confirmation.php:481
 msgid "New subscriber on %1$s.<br/><br/>Username:%2$s<br/>E-mail:%3$s<br/>"
 msgstr "Nieuwe abonnee op %1$s.<br/><br/>Gebruikersnaam:%2$s<br/>E-mailadres:%3$s<br/>"
 
-#: ../features/email-confirmation/email-confirmation.php:466
+#: ../features/email-confirmation/email-confirmation.php:486
 msgid "The \"Admin Approval\" feature was activated at the time of registration, so please remember that you need to approve this user before he/she can log in!"
-msgstr "De functie \"Goedkeuring Beheerder\" is tijdens registratie geactiveerd, zo vergeet niet dat je gebruiker moet goedkeuren voordat hij/zij kan inloggen!"
+msgstr "De functie \"Goedkeuring beheerder\" is tijdens registratie geactiveerd. Vergeet dus niet dat je de gebruiker moet goedkeuren voordat hij/zij kan inloggen."
 
-#: ../features/email-confirmation/email-confirmation.php:481
+#: ../features/email-confirmation/email-confirmation.php:501
 msgid "[%1$s] Your new account information"
-msgstr "[%1$s] Je nieuwe account informatie"
+msgstr "[%1$s] De nieuwe accountinformatie"
 
-#: ../features/email-confirmation/email-confirmation.php:484
+#: ../features/email-confirmation/email-confirmation.php:507
 msgid "Welcome to %1$s!<br/><br/><br/>Your username is:%2$s and password:%3$s"
-msgstr "Welkom op %1$s!<br/><br/><br/>Je gebruikersnaam is:%2$s en wachtwoord:%3$s"
+msgstr "Welkom op %1$s!<br/><br/><br/>Je gebruikersnaam is:%2$s en het wachtwoord:%3$s"
 
-#: ../features/email-confirmation/email-confirmation.php:489
+#: ../features/email-confirmation/email-confirmation.php:515
 #: ../front-end/register.php:103
 msgid "Before you can access your account, an administrator needs to approve it. You will be notified via email."
-msgstr "Voordat je toegang tot je account hebt, moet een beheerder dit goedkeuren. Je wordt geinformeerd via e-mail."
+msgstr "Voordat je toegang tot het account hebt, moet een beheerder dit goedkeuren. Je wordt geïnformeerd dmv e-mail."
 
 #: ../features/login-widget/login-widget.php:10
 msgid "This login widget lets you add a login form in the sidebar."
-msgstr "Met deze inlog widget kun je een inlogformulier in sidebar plaatsen."
+msgstr "Met deze inlogwidget kun je een inlogformulier op de zijbalk plaatsen."
 
 #: ../features/login-widget/login-widget.php:15
 msgid "Profile Builder Login Widget"
-msgstr "Profile Builder Inlog Widget"
+msgstr "'Profile Builder'-inlogwidget"
 
-#: ../front-end/class-formbuilder.php:274 ../front-end/login.php:172
+#: ../front-end/class-formbuilder.php:278 ../front-end/login.php:199
 msgid "Register"
-msgstr "Registreer"
+msgstr "Registreren"
 
 #: ../features/login-widget/login-widget.php:63
 msgid "Title:"
@@ -1340,266 +1456,258 @@ msgstr "Titel:"
 
 #: ../features/login-widget/login-widget.php:68
 msgid "After login redirect URL (optional):"
-msgstr "Doorverwijs URL na inloggen (optioneel):"
+msgstr "Doorstuur-URL na inloggen (optioneel):"
 
 #: ../features/login-widget/login-widget.php:73
 msgid "Register page URL (optional):"
-msgstr "Registratie pagina URL (optioneel):"
+msgstr "Registratiepagina-URL (optioneel):"
 
 #: ../features/login-widget/login-widget.php:78
 msgid "Password Recovery page URL (optional):"
-msgstr "Wachtwoord Achterhalen URL (optioneel):"
+msgstr "Wachtwoord-herstel-URL (optioneel):"
 
 #: ../features/upgrades/upgrades-functions.php:91
 #: ../features/upgrades/upgrades-functions.php:134
 msgid "The usernames cannot be changed."
 msgstr "De gebruikersnaam kan niet gewijzigd worden."
 
-#: ../front-end/class-formbuilder.php:83
+#: ../front-end/class-formbuilder.php:87
 msgid "Only an administrator can add new users."
 msgstr "Alleen een beheerder kan nieuwe gebruikers toevoegen."
 
-#: ../front-end/class-formbuilder.php:93
+#: ../front-end/class-formbuilder.php:97
 msgid "Users can register themselves or you can manually create users here."
 msgstr "Gebruikers kunnen zichzelf registreren of je kunt hier handmatig gebruikers aanmaken."
 
-#: ../front-end/class-formbuilder.php:96
+#: ../front-end/class-formbuilder.php:100
 msgid "Users cannot currently register themselves, but you can manually create users here."
 msgstr "Gebruikers kunnen zich momenteel niet zelf registreren, maar je kunt hier handmatig gebruikers aanmaken."
 
-#: ../front-end/class-formbuilder.php:108
+#: ../front-end/class-formbuilder.php:112
 msgid "You are currently logged in as %1s. You don't need another account. %2s"
 msgstr "Je bent momenteel ingelogd als %1s. Je hebt geen ander account nodig. %2s"
 
-#: ../front-end/class-formbuilder.php:108
+#: ../front-end/class-formbuilder.php:112
 msgid "Log out of this account."
 msgstr "Uitloggen van dit account."
 
-#: ../front-end/class-formbuilder.php:108
+#: ../front-end/class-formbuilder.php:112
 msgid "Logout"
 msgstr "Uitloggen"
 
-#: ../front-end/class-formbuilder.php:114
+#: ../front-end/class-formbuilder.php:118
 msgid "You must be logged in to edit your profile."
 msgstr "Je moet ingelogd zijn om je profiel te bewerken."
 
-#: ../front-end/class-formbuilder.php:137
+#: ../front-end/class-formbuilder.php:141
 msgid "here"
 msgstr "hier"
 
-#: ../front-end/class-formbuilder.php:139
+#: ../front-end/class-formbuilder.php:143
 msgid "You will soon be redirected automatically. If you see this page for more than %1$d seconds, please click %2$s.%3$s"
-msgstr "Je wordt snel automatisch doorgestuurd. Als je deze pagina meer dan %1$d seconden ziet, klik svp %2$s.%3$s"
+msgstr "Je zult spoedig automatisch doorgestuurd worden. Als je deze pagina meer dan %1$d seconden ziet, klik dan op %2$s.%3$s"
 
-#: ../front-end/class-formbuilder.php:224
+#: ../front-end/class-formbuilder.php:228
 msgid "The account %1s has been successfully created!"
-msgstr "Het account %1s is succesvol gemaakt!"
+msgstr "Het account %1s is met succes aangemaakt."
 
-#: ../front-end/class-formbuilder.php:227
-#: ../front-end/class-formbuilder.php:233
+#: ../front-end/class-formbuilder.php:231
+#: ../front-end/class-formbuilder.php:237
 msgid "Before you can access your account %1s, you need to confirm your email address. Please check your inbox and click the activation link."
-msgstr "Voordat je toegang krijgt tot het account %1s, moet je het e-mailadres bevestigen. Kijk svp in je inbox en klik op de activatielink."
+msgstr "Voordat je toegang krijgt tot account %1s, moet je het e-mailadres bevestigen. Kijk in de inbox en klik op de activeringslink."
 
-#: ../front-end/class-formbuilder.php:230
+#: ../front-end/class-formbuilder.php:234
 msgid "Before you can access your account %1s, an administrator has to approve it. You will be notified via email."
-msgstr "Voordat je toegang krijgt tot het account %1s, moet een beheerder dit goedkeuren. Je wordt geinformeerd via e-mail."
+msgstr "Voordat je toegang krijgt tot het account %1s, moet een beheerder dit goedkeuren. Je wordt geïnformeerd dmv e-mail."
 
-#: ../front-end/class-formbuilder.php:243
+#: ../front-end/class-formbuilder.php:247
 msgid "Your profile has been successfully updated!"
-msgstr "Je profiel is succesvol bijgewerkt!"
+msgstr "Het profiel is met succes bijgewerkt."
 
-#: ../front-end/class-formbuilder.php:253
+#: ../front-end/class-formbuilder.php:257
 msgid "There was an error in the submitted form"
 msgstr "Fout tijdens versturen van het formulier"
 
-#: ../front-end/class-formbuilder.php:274
+#: ../front-end/class-formbuilder.php:278
 msgid "Add User"
-msgstr "Gebruiker Toevoegen"
+msgstr "Gebruiker toevoegen"
 
-#: ../front-end/class-formbuilder.php:277
+#: ../front-end/class-formbuilder.php:281
 msgid "Update"
 msgstr "Bijwerken"
 
-#: ../front-end/class-formbuilder.php:314
-#: ../front-end/extra-fields/extra-fields.php:33
+#: ../front-end/class-formbuilder.php:323
+#: ../front-end/extra-fields/extra-fields.php:34
 msgid "The avatar was successfully deleted!"
-msgstr "De avatar is succesvol verwijderd!"
+msgstr "De avatar is met succes verwijderd."
 
-#: ../front-end/class-formbuilder.php:314
-#: ../front-end/extra-fields/extra-fields.php:35
+#: ../front-end/class-formbuilder.php:323
+#: ../front-end/extra-fields/extra-fields.php:36
 msgid "The following attachment was successfully deleted:"
-msgstr "Het volgende bestand is succesvol verwijderd:"
+msgstr "De volgende bijlage is met succes verwijderd:"
 
-#: ../front-end/class-formbuilder.php:326
+#: ../front-end/class-formbuilder.php:335
 msgid "Send these credentials via email."
-msgstr "Stuur deze aanmeldgegevens via e-mail."
+msgstr "Stuur deze aanmeldingsgegevens via e-mail."
 
-#: ../front-end/extra-fields/extra-fields.php:94 ../front-end/login.php:72
-#: ../front-end/login.php:79 ../front-end/login.php:89
-#: ../front-end/recover.php:17 ../front-end/recover.php:206
+#: ../front-end/extra-fields/extra-fields.php:103 ../front-end/login.php:89
+#: ../front-end/login.php:96 ../front-end/login.php:110
+#: ../front-end/recover.php:17 ../front-end/recover.php:213
 msgid "ERROR"
 msgstr "FOUT"
 
-#: ../front-end/login.php:72
+#: ../front-end/login.php:89
 msgid "The password you entered is incorrect."
 msgstr "Het ingevoerde wachtwoord is onjuist."
 
-#: ../front-end/login.php:73 ../front-end/login.php:80
+#: ../front-end/login.php:90 ../front-end/login.php:97
 msgid "Password Lost and Found."
-msgstr "Wachtwoord Verloren en Gevonden"
+msgstr "Wachtwoord verloren en gevonden."
 
-#: ../front-end/login.php:73 ../front-end/login.php:80
+#: ../front-end/login.php:90 ../front-end/login.php:97
 msgid "Lost your password"
 msgstr "Je wachtwoord verloren"
 
-#: ../front-end/login.php:89
+#: ../front-end/login.php:110
 msgid "Both fields are empty."
 msgstr "Beide velden zijn leeg."
 
-#: ../front-end/login.php:199
+#: ../front-end/login.php:239
 msgid "You are currently logged in as %1$s. %2$s"
 msgstr "Je bent momenteel ingelogd als %1$s. %2$s"
 
-#: ../front-end/login.php:199
+#: ../front-end/login.php:238 ../front-end/logout.php:17
 msgid "Log out of this account"
 msgstr "Uitloggen van dit account"
 
-#: ../front-end/login.php:199
+#: ../front-end/login.php:238
 msgid "Log out"
 msgstr "Uitloggen"
 
 #: ../front-end/recover.php:17
 msgid "Your account has to be confirmed by an administrator before you can use the \"Password Reset\" feature."
-msgstr "Je account moet door een beheerder worden bevestigd, voordat je de \"Wachtwoord Reset\" functie kunt gebruiken."
+msgstr "Je account moet door een beheerder worden bevestigd voordat je de functie 'Wachtwoordreset' kunt gebruiken."
 
 #: ../front-end/recover.php:91
 msgid "Reset Password"
-msgstr "Reset Wachtwoord"
+msgstr "Wachtwoord resetten"
 
 #: ../front-end/recover.php:111
 msgid "Please enter your username or email address."
-msgstr "Voer svp je gebruikersnaam en e-mailadres in."
+msgstr "Voer je gebruikersnaam en e-mailadres in."
 
 #: ../front-end/recover.php:112
 msgid "You will receive a link to create a new password via email."
-msgstr "Je zult een link via e-mail ontvangen om een nieuw wachtwoord aan te maken."
+msgstr "Je zult een link dmv e-mail ontvangen om een nieuw wachtwoord aan te maken."
 
 #: ../front-end/recover.php:119
 msgid "Username or E-mail"
-msgstr "Gebruikersnaam of E-mailadres"
+msgstr "Gebruikersnaam of e-mailadres"
 
 #: ../front-end/recover.php:125
 msgid "Get New Password"
-msgstr "Ontvang nieuw wachtwoord"
+msgstr "Ontvang een nieuw wachtwoord"
 
-#: ../front-end/recover.php:164
+#: ../front-end/recover.php:166
 msgid "The username entered wasn't found in the database!"
-msgstr "De ingevoerde gebruikersnaam is niet in de database gevonden!"
+msgstr "De ingevoerde gebruikersnaam is niet in de database gevonden."
 
-#: ../front-end/recover.php:164
+#: ../front-end/recover.php:166
 msgid "Please check that you entered the correct username."
-msgstr "Kijk svp of je de juiste gebruikersnaam ingevoerd hebt."
+msgstr "Controleer of je de juiste gebruikersnaam ingevoerd hebt."
 
-#: ../front-end/recover.php:179
+#: ../front-end/recover.php:181
 msgid "Check your e-mail for the confirmation link."
-msgstr "Kijk svp in je e-mail voor de bevestingslink."
+msgstr "Controleer de e-mail voor de bevestingslink."
 
-#: ../front-end/recover.php:194
+#: ../front-end/recover.php:201
 msgid "Someone requested that the password be reset for the following account: <b>%1$s</b><br/>If this was a mistake, just ignore this email and nothing will happen.<br/>To reset your password, visit the following link:%2$s"
-msgstr "Iemand heeft gevraagd om het wachtwoord te resetten voor het volgende account: <b>%1$s</b><br/>Als dit een fout was, negeer deze e-mail en er zal niets gebeuren.<br/>Om wachtwoord te resetten, ga naar de volgende link:%2$s"
+msgstr "Iemand heeft gevraagd het wachtwoord te resetten voor het volgende account: <b>%1$s</b><br/>Als dit een fout was, negeer dan deze e-mail en er zal niets gebeuren.<br/>Ga naar de volgende link om het wachtwoord te resetten: %2$s"
 
-#: ../front-end/recover.php:197
+#: ../front-end/recover.php:204
 msgid "Password Reset from \"%1$s\""
-msgstr "Wachtwoord Resetten van \"%1$s\""
+msgstr "Wachtwoord resetten van \"%1$s\""
 
-#: ../front-end/recover.php:206
+#: ../front-end/recover.php:213
 msgid "There was an error while trying to send the activation link to %1$s!"
-msgstr "Fout opgetreden tijdens verzenden van de activatielink naar %1$s!"
+msgstr "Er is een fout opgetreden tijdens het verzenden van de activeringslink naar %1$s."
 
-#: ../front-end/recover.php:215
+#: ../front-end/recover.php:222
 msgid "The email address entered wasn't found in the database!"
-msgstr "Het ingevoerde e-mailadres is niet in de database gevonden!"
+msgstr "Het ingevoerde e-mailadres is niet in de database gevonden."
 
-#: ../front-end/recover.php:215
+#: ../front-end/recover.php:222
 msgid "Please check that you entered the correct email address."
-msgstr "Kijk svp of je het juiste e-mailadres ingevoerd hebt."
+msgstr "Controleer of je het juiste e-mailadres ingevoerd hebt."
 
-#: ../front-end/default-fields/password/password.php:44
-#: ../front-end/recover.php:231
-msgid "<br/>The password must have the minimum length of "
-msgstr "<br/>Het wachtwoord moet een minimale lengte hebben van"
-
-#: ../front-end/default-fields/password/password.php:48
-#: ../front-end/recover.php:235
-msgid "<br/>The password must have a minimum strength of "
-msgstr "<br/>Het wachtwoord moet een minimale sterkte hebben van"
-
-#: ../front-end/recover.php:242
+#: ../front-end/recover.php:247
 msgid "Your password has been successfully changed!"
-msgstr "Je wachtwoord is succesvol gewijzigd!"
+msgstr "Je wachtwoord is met succes gewijzigd."
 
-#: ../front-end/recover.php:256
+#: ../front-end/recover.php:266
 msgid "You have successfully reset your password to: %1$s"
-msgstr "Je hebt je wachtwoord succesvol gereset naar: %1$s"
+msgstr "Je hebt het wachtwoord met succes gereset naar: %1$s"
 
-#: ../front-end/recover.php:259 ../front-end/recover.php:273
+#: ../front-end/recover.php:269 ../front-end/recover.php:283
 msgid "Password Successfully Reset for %1$s on \"%2$s\""
-msgstr "Wachtwoord Succesvol Gereset voor %1$s op \"%2$s\""
+msgstr "Wachtwoord met succes gereset voor %1$s op \"%2$s\""
 
-#: ../front-end/recover.php:270
+#: ../front-end/recover.php:280
 msgid "%1$s has requested a password change via the password reset feature.<br/>His/her new password is:%2$s"
-msgstr "%1$s heeft gevraagd om wachtwoord te wijzigen via de wachtwoord reset functie.<br/>Zijn/haar nieuwe wachtwoord is:%2$s"
+msgstr "%1$s heeft gevraagd het wachtwoord te wijzigen mbv de wachtwoordreset-functie.<br/>Zijn/haar nieuwe wachtwoord is: %2$s"
 
-#: ../front-end/recover.php:289
+#: ../front-end/recover.php:299
 msgid "The entered passwords don't match!"
-msgstr "De ingevoerde wachtwoorden komen niet overeen!"
+msgstr "De ingevoerde wachtwoorden komen niet overeen."
 
-#: ../front-end/recover.php:334
+#: ../front-end/recover.php:344
 msgid "ERROR:"
 msgstr "FOUT:"
 
-#: ../front-end/recover.php:334
+#: ../front-end/recover.php:344
 msgid "Invalid key!"
-msgstr "Ongeldige sleutel!"
+msgstr "Ongeldige sleutel."
 
 #: ../front-end/register.php:46
 msgid "Invalid activation key!"
-msgstr "Ongeldige activatiesleutel!"
+msgstr "Ongeldige activeringssleutel."
 
 #: ../front-end/register.php:50
 msgid "This username is now active!"
-msgstr "Deze gebruikersnaam is nu actief!"
+msgstr "Deze gebruikersnaam is nu actief."
 
 #: ../front-end/register.php:71
 msgid "This username is already activated!"
-msgstr "Deze gebruikersnaam is reeds geactiveerd!"
+msgstr "Deze gebruikersnaam is reeds geactiveerd."
 
 #: ../front-end/register.php:102
 msgid "Your email was successfully confirmed."
-msgstr "Je e-mailadres is succesvol bevestigd."
+msgstr "Je e-mailadres is met succes bevestigd."
 
 #: ../front-end/register.php:112
 msgid "There was an error while trying to activate the user."
-msgstr "Fout opgetreden tijdens activatie van de gebruiker."
+msgstr "Er is een fout opgetreden tijdens activering van de gebruiker."
 
 #: ../front-end/default-fields/email/email.php:42
 msgid "The email you entered is not a valid email address."
 msgstr "Het ingevoerde e-mailadres is niet geldig."
 
-#: ../front-end/default-fields/email/email.php:49
+#: ../front-end/default-fields/email/email.php:51
+#: ../front-end/default-fields/email/email.php:56
 msgid "This email is already reserved to be used soon."
 msgstr "Dit e-mailadres is gereserveerd voor toekomstig gebruik."
 
-#: ../front-end/default-fields/email/email.php:49
-#: ../front-end/default-fields/email/email.php:55
-#: ../front-end/default-fields/email/email.php:62
+#: ../front-end/default-fields/email/email.php:51
+#: ../front-end/default-fields/email/email.php:56
+#: ../front-end/default-fields/email/email.php:64
+#: ../front-end/default-fields/email/email.php:75
 #: ../front-end/default-fields/username/username.php:44
 #: ../front-end/default-fields/username/username.php:51
 msgid "Please try a different one!"
-msgstr "Probeer svp een andere!"
+msgstr "Probeer een ander."
 
-#: ../front-end/default-fields/email/email.php:55
-#: ../front-end/default-fields/email/email.php:62
+#: ../front-end/default-fields/email/email.php:64
+#: ../front-end/default-fields/email/email.php:75
 msgid "This email is already in use."
 msgstr "Dit e-mailadres is reeds in gebruik."
 
@@ -1621,7 +1729,7 @@ msgstr "Deze gebruikersnaam is gereserveerd voor toekomstig gebruik. "
 #: ../front-end/extra-fields/upload/upload.php:29
 #: ../front-end/extra-fields/upload/upload.php:68
 msgid "max upload size"
-msgstr "max upload grootte"
+msgstr "maximumuploadgrootte"
 
 #: ../front-end/extra-fields/avatar/avatar.php:66
 msgid "Current avatar: No uploaded avatar"
@@ -1637,12 +1745,12 @@ msgstr "Avatar"
 #: ../front-end/extra-fields/avatar/avatar.php:108
 #: ../front-end/extra-fields/avatar/avatar.php:110
 msgid "Click to see the current avatar"
-msgstr "Klik om huidige avatar te zien"
+msgstr "Klik om de huidige avatar te zien"
 
 #: ../front-end/extra-fields/avatar/avatar.php:77
 #: ../front-end/extra-fields/avatar/avatar.php:108
 msgid "The avatar can't be deleted (It was marked as required by the administrator)"
-msgstr "De avatar kan niet verwijderd worden (het is als verplicht gemarkeerd door de beheerder)"
+msgstr "De avatar kan niet verwijderd worden (het is als verplicht aangemerkt door de beheerder)"
 
 #: ../front-end/extra-fields/avatar/avatar.php:82
 #: ../front-end/extra-fields/avatar/avatar.php:110
@@ -1652,11 +1760,11 @@ msgstr "Weet je zeker dat je deze avatar wilt verwijderen?"
 #: ../front-end/extra-fields/avatar/avatar.php:83
 #: ../front-end/extra-fields/avatar/avatar.php:110
 msgid "Click to delete the current avatar"
-msgstr "Klik om huidige avatar te verwijderen"
+msgstr "Klik om de huidige avatar te verwijderen"
 
 #: ../front-end/extra-fields/avatar/avatar.php:91
 #: ../front-end/extra-fields/checkbox/checkbox.php:46
-#: ../front-end/extra-fields/datepicker/datepicker.php:44
+#: ../front-end/extra-fields/datepicker/datepicker.php:47
 #: ../front-end/extra-fields/input-hidden/input-hidden.php:32
 #: ../front-end/extra-fields/input/input.php:28
 #: ../front-end/extra-fields/radio/radio.php:42
@@ -1686,30 +1794,30 @@ msgstr "De extensie van het bestand komt niet overeen"
 #: ../front-end/extra-fields/upload/upload.php:177
 #: ../front-end/extra-fields/upload/upload.php:180
 msgid "The file uploaded exceeds the upload_max_filesize directive in php.ini"
-msgstr "Het geüploade bestand is groter dan de upload_max_filesize richtlijn in php.ini"
+msgstr "Het geüploade bestand is groter dan de richtlijn 'upload_max_filesize' in php.ini"
 
 #: ../front-end/extra-fields/avatar/avatar.php:216
 #: ../front-end/extra-fields/upload/upload.php:183
 msgid "The file uploaded exceeds the MAX_FILE_SIZE directive in php.ini"
-msgstr "Het geüploade bestand is groter dan de MAX_FILE_SIZE richtlijn in php.ini "
+msgstr "Het geüploade bestand is groter dan de richtlijn 'MAX_FILE_SIZE' in php.ini "
 
 #: ../front-end/extra-fields/avatar/avatar.php:219
 msgid "The file could only partially be uploaded "
-msgstr "Het bestand kon alleen gedeeltelijk geüpload  worden"
+msgstr "Het bestand kon maar voor een deel geüploadet worden"
 
 #: ../front-end/extra-fields/avatar/avatar.php:222
-#: ../front-end/extra-fields/avatar/avatar.php:243
 #: ../front-end/extra-fields/avatar/avatar.php:246
+#: ../front-end/extra-fields/avatar/avatar.php:249
 #: ../front-end/extra-fields/upload/upload.php:189
-#: ../front-end/extra-fields/upload/upload.php:210
 #: ../front-end/extra-fields/upload/upload.php:213
+#: ../front-end/extra-fields/upload/upload.php:216
 msgid "No file was selected"
 msgstr "Geen bestand geselecteerd"
 
 #: ../front-end/extra-fields/avatar/avatar.php:225
 #: ../front-end/extra-fields/upload/upload.php:192
 msgid "The temporary upload folder is missing from the system"
-msgstr "De tijdelijke upload map mist van het systeem"
+msgstr "De tijdelijke uploadmap ontbreekt op het systeem"
 
 #: ../front-end/extra-fields/avatar/avatar.php:228
 #: ../front-end/extra-fields/upload/upload.php:195
@@ -1719,7 +1827,7 @@ msgstr "Het wegschrijven van het bestand is mislukt"
 #: ../front-end/extra-fields/avatar/avatar.php:231
 #: ../front-end/extra-fields/upload/upload.php:198
 msgid "A PHP extension stopped the file upload"
-msgstr "Een PHP extensie heeft de bestand upload gestopt"
+msgstr "Een PHP-extensie heeft de bestandupload gestopt"
 
 #: ../front-end/extra-fields/avatar/avatar.php:234
 msgid "Unknown error occurred"
@@ -1727,31 +1835,31 @@ msgstr "Onbekende fout opgetreden"
 
 #: ../front-end/extra-fields/recaptcha/recaptcha.php:48
 msgid "Could not open socket!"
-msgstr "Kon socket niet openen!"
+msgstr "Socket kon niet geopend worden"
 
 #: ../front-end/extra-fields/recaptcha/recaptcha.php:75
 msgid "To use reCAPTCHA you must get an API key from"
-msgstr "Om reCAPTCHA te gebruiken moet je een API sleutel krijgen van"
+msgstr "Om 'CAPTCHA opnieuw uitvoeren' te gebruiken moet je een API-sleutel krijgen van"
 
 #: ../front-end/extra-fields/recaptcha/recaptcha.php:114
 msgid "For security reasons, you must pass the remote ip to reCAPTCHA!"
-msgstr "Om veiligheid redenen, moet je de externe ip aanbieden aan reCAPTCHA!"
+msgstr "Om veiligheidsredenen moet je de externe ip doorgeven aan reCAPTCHA."
 
 #: ../front-end/extra-fields/recaptcha/recaptcha.php:171
 msgid "To use reCAPTCHA Mailhide, you need to have the mcrypt php module installed!"
-msgstr "Om reCAPTCHA Mailhide te gebruiken, moet je de mcrypt php module geinstalleerd hebben!"
+msgstr "Om 'reCAPTCHA-Mailhide' te kunnen gebruiken moet de php-module 'mcrypt' geïnstalleerd zijn."
 
 #: ../front-end/extra-fields/recaptcha/recaptcha.php:187
 msgid "To use reCAPTCHA Mailhide, you have to sign up for a public and private key; you can do so at"
-msgstr "Om reCAPTCHA Mailhide te gebruiken, moet je een openbare en prive sleutel aanvragen; dit kun je doen op"
+msgstr "Om 'reCAPTCHA Mailhide' te kunnen gebruiken moet je een openbare en een privé-sleutel aanvragen; dit kun je doen op"
 
-#: ../front-end/extra-fields/recaptcha/recaptcha.php:254
+#: ../front-end/extra-fields/recaptcha/recaptcha.php:264
 msgid "To use reCAPTCHA you must get an API public key from:"
-msgstr "Om reCAPTCHA te gebruiken moet je een openbare API sleutel krijgen van:"
+msgstr "Om reCAPTCHA te kunnen gebruiken moet je een openbare API-sleutel halen van:"
 
-#: ../front-end/extra-fields/recaptcha/recaptcha.php:257
+#: ../front-end/extra-fields/recaptcha/recaptcha.php:267
 msgid "To use reCAPTCHA you must get an API private key from:"
-msgstr "Om reCAPTCHA te gebruiken moet je een prive API sleutel krijgen van:"
+msgstr "Om reCAPTCHA te kunnen gebruiken moet je een privé-API-sleutel halen van:"
 
 #: ../front-end/extra-fields/upload/upload.php:35
 msgid "Current file: No uploaded attachment"
@@ -1770,12 +1878,12 @@ msgstr "Huidig bestand"
 #: ../front-end/extra-fields/upload/upload.php:75
 #: ../front-end/extra-fields/upload/upload.php:77
 msgid "Click to see the current attachment"
-msgstr "Klik om huidige bijlage te zien"
+msgstr "Klik om de huidige bijlage te zien"
 
 #: ../front-end/extra-fields/upload/upload.php:44
 #: ../front-end/extra-fields/upload/upload.php:75
 msgid "The attachment can't be deleted (It was marked as required by the administrator)"
-msgstr "De bijlage kan niet verwijderd worden (het is als verplicht gemarkeerd door de beheerder)"
+msgstr "De bijlage kan niet verwijderd worden (het is als verplicht aangemerkt door de beheerder)"
 
 #: ../front-end/extra-fields/upload/upload.php:53
 #: ../front-end/extra-fields/upload/upload.php:77
@@ -1797,11 +1905,11 @@ msgstr "De extensie van dit bestand is niet toegestaan"
 
 #: ../front-end/extra-fields/upload/upload.php:186
 msgid "The file could only partially be uploaded"
-msgstr "Het bestand kon alleen gedeeltelijk geüpload worden"
+msgstr "Het bestand kon maar voor een deel geüploadet worden"
 
 #: ../front-end/extra-fields/upload/upload.php:201
 msgid "This field wasn't updated because an unknown error occured"
-msgstr "Veld is niet geupdate doordat onbekende fout opgetreden is"
+msgstr "Veld is niet bijgewerkt omdat er een onbekende fout opgetreden is"
 
 #: ../modules/modules.php:11 ../modules/modules.php:80
 msgid "Modules"
@@ -1809,11 +1917,11 @@ msgstr "Modules"
 
 #: ../modules/modules.php:81
 msgid "Here you can activate / deactivate available modules for Profile Builder."
-msgstr "Hier kun je alle modules van Profile Builder activeren / deactiveren."
+msgstr "Hier kun je alle modules van Profile Builder activeren/deactiveren."
 
 #: ../modules/modules.php:91
 msgid "Name/Description"
-msgstr "Naam/Beschrijving"
+msgstr "Naam/beschrijving"
 
 #: ../modules/modules.php:92
 msgid "Status"
@@ -1830,7 +1938,7 @@ msgstr "Status"
 #: ../modules/modules.php:113 ../modules/modules.php:120
 #: ../modules/modules.php:127 ../modules/modules.php:134
 msgid "Active"
-msgstr "Actieve"
+msgstr "Actief"
 
 #: ../modules/custom-redirects/custom-redirects.php:49
 #: ../modules/custom-redirects/custom-redirects.php:59
@@ -1843,27 +1951,28 @@ msgstr "Actieve"
 #: ../modules/modules.php:114 ../modules/modules.php:121
 #: ../modules/modules.php:128 ../modules/modules.php:135
 msgid "Inactive"
-msgstr "Inactieve"
+msgstr "Niet actief"
 
 #: ../modules/email-customizer/admin-email-customizer.php:11
 #: ../modules/email-customizer/admin-email-customizer.php:12
 #: ../modules/modules.php:118
 msgid "Admin Email Customizer"
-msgstr "Aanpasser E-mailadres Beheerder"
+msgstr "Aanpasfunctie beheerders-mailadres"
 
 #: ../modules/email-customizer/user-email-customizer.php:11
 #: ../modules/email-customizer/user-email-customizer.php:12
 #: ../modules/modules.php:125
 msgid "User Email Customizer"
-msgstr "Aanpasser E-mailadres Gebruiker"
+msgstr "Aanpasfunctie gebruikers-mailadres"
 
+#: ../assets/lib/wck-api/wordpress-creation-kit.php:337
 #: ../modules/class-mustache-templates/class-mustache-templates.php:242
 msgid "Save"
 msgstr "Opslaan"
 
 #: ../modules/custom-redirects/custom-redirects.php:35
 msgid "Redirects on custom page requests:"
-msgstr "Stuurt door als aangepaste pagina's geladen worden:"
+msgstr "Stuurt door bij het aanvragen van een aangepaste pagina:"
 
 #: ../modules/custom-redirects/custom-redirects.php:39
 #: ../modules/custom-redirects/custom-redirects.php:85
@@ -1872,61 +1981,61 @@ msgstr "Actie"
 
 #: ../modules/custom-redirects/custom-redirects.php:40
 #: ../modules/custom-redirects/custom-redirects.php:86
-#: ../modules/multiple-forms/edit-profile-forms.php:206
-#: ../modules/multiple-forms/register-forms.php:230
+#: ../modules/multiple-forms/edit-profile-forms.php:202
+#: ../modules/multiple-forms/register-forms.php:226
 msgid "Redirect"
-msgstr "Stuur door"
+msgstr "Doorsturen"
 
 #: ../modules/custom-redirects/custom-redirects.php:41
 #: ../modules/custom-redirects/custom-redirects.php:87
-#: ../modules/multiple-forms/edit-profile-forms.php:208
-#: ../modules/multiple-forms/register-forms.php:232
+#: ../modules/multiple-forms/edit-profile-forms.php:204
+#: ../modules/multiple-forms/register-forms.php:228
 msgid "URL"
 msgstr "URL"
 
 #: ../modules/custom-redirects/custom-redirects.php:46
 msgid "After Registration:"
-msgstr "Na Registratie:"
+msgstr "Na registratie:"
 
 #: ../modules/custom-redirects/custom-redirects.php:56
 msgid "After Login:"
-msgstr "Na Inloggen:"
+msgstr "Na inloggen:"
 
 #: ../modules/custom-redirects/custom-redirects.php:66
 msgid "Recover Password (*)"
-msgstr "Wachtwoord Achterhalen (*)"
+msgstr "Wachtwoord herstellen (*)"
 
 #: ../modules/custom-redirects/custom-redirects.php:77
 msgid "When activated this feature will redirect the user on both the default Wordpress password recovery page and the \"Lost password?\" link used by Profile Builder on the front-end login page."
-msgstr "Indien deze functie is geactiveerd zal de gebruiker doorgestuurd worden op zowel de standaard WordPress pagina om wachtwoord te achterhalen als de \"Wachtwoord vergeten\" link die Profile Builder gebruikt op de front-end inlogpagina."
+msgstr "Indien deze functie is geactiveerd zal de gebruiker doorgestuurd worden op zowel de standaard-WordPresspagina voor wachtwoordherstel als de 'Wachtwoord vergeten'-link die Profile Builder gebruikt op de front-end-inlogpagina."
 
 #: ../modules/custom-redirects/custom-redirects.php:81
 msgid "Redirects on default WordPress page requests:"
-msgstr "Stuurt door als standaard WordPress pagina's geladen worden: "
+msgstr "Stuurt door bij het aanvragen van standaard-WordPresspagina's: "
 
 #: ../modules/custom-redirects/custom-redirects.php:92
 msgid "Default WordPress Login Page"
-msgstr "Standaard WordPress Inlog Pagina:"
+msgstr "Standaard WordPress-inlogpagina:"
 
 #: ../modules/custom-redirects/custom-redirects.php:102
 msgid "Default WordPress Logout Page"
-msgstr "Standaard WordPress Uitlog Pagina:"
+msgstr "Standaard WordPress-uitlogpagina:"
 
 #: ../modules/custom-redirects/custom-redirects.php:112
 msgid "Default WordPress Register Page"
-msgstr "Standaard WordPress Registratie Pagina"
+msgstr "Standaard WordPress-registratiepagina"
 
 #: ../modules/custom-redirects/custom-redirects.php:122
 msgid "Default WordPress Dashboard (*)"
-msgstr "Standaard WordPress Dashboard (*)"
+msgstr "Standaard WordPress-dashboard (*)"
 
 #: ../modules/custom-redirects/custom-redirects.php:133
 msgid "Redirects every user-role EXCEPT the ones with administrator privileges (can manage options)."
-msgstr "Stuurt alle gebruikers door BEHALVE gebruikers met beheerder privileges (kan opties beheren)."
+msgstr "Stuurt alle gebruikersrollen door, BEHALVE gebruikers met beheerdersprivileges (kan opties beheren)."
 
 #: ../modules/email-customizer/admin-email-customizer.php:38
 msgid "These settings are also replicated in the \"User Email Customizer\" settings-page upon save."
-msgstr "Deze instellingen zijn tijdens opslaan ook overgenomen in de \"Aanpasser E-mailadres Gebruiker\" instellingen pagina."
+msgstr "Deze instellingen worden tijdens het opslaan ook overgenomen in de instellingenpagina 'Aanpasfunctie gebruiker-mailadres'."
 
 #: ../modules/email-customizer/admin-email-customizer.php:41
 #: ../modules/email-customizer/user-email-customizer.php:41
@@ -1936,7 +2045,7 @@ msgstr "Van (naam)"
 #: ../modules/email-customizer/admin-email-customizer.php:49
 #: ../modules/email-customizer/user-email-customizer.php:49
 msgid "From (reply-to email)"
-msgstr "Van (reageer naar e-mailadres)"
+msgstr "Van (antwoord-aan-mailadres)"
 
 #: ../modules/email-customizer/admin-email-customizer.php:57
 #: ../modules/email-customizer/user-email-customizer.php:57
@@ -1965,11 +2074,11 @@ msgstr ""
 #: ../modules/email-customizer/user-email-customizer.php:155
 #: ../modules/email-customizer/user-email-customizer.php:183
 msgid "Email Subject"
-msgstr "Onderwerp E-mail"
+msgstr "Onderwerp e-mail"
 
 #: ../modules/email-customizer/admin-email-customizer.php:84
 msgid "Default Registration & Registration with Email Confirmation"
-msgstr "Standaard Registratie & Registratie met E-mail Bevestiging"
+msgstr "Standaardregistratie & registratie met e-mailbevestiging"
 
 #: ../modules/email-customizer/admin-email-customizer.php:87
 msgid ""
@@ -1987,51 +2096,53 @@ msgstr ""
 "\n"
 "<p>E-mailadres:{{user_email}}</p>\n"
 "\n"
-"<p>De functie Goedkeuring Beheerder is geactiveerd tijdens registratie,\n"
+"<p>De functie 'goedkeuring beheerder' is geactiveerd tijdens registratie,\n"
 "\n"
-"zo vergeet niet dat je deze gebruiker moet goedkeuren voordat hij/zij kan inloggen!</p>\n"
+"vergeet dus niet dat je deze gebruiker moet goedkeuren voordat hij/zij kan inloggen.</p>\n"
 
 #: ../modules/email-customizer/admin-email-customizer.php:114
 #: ../modules/email-customizer/user-email-customizer.php:143
 msgid "Registration with Admin Approval"
-msgstr "Registratie met Goedkeuring Beheerder"
+msgstr "Registratie met 'goedkeuring beheerder'"
 
 #: ../modules/email-customizer/email-customizer.php:7
 msgid "Available Tags"
-msgstr "Beschikbare Tags"
+msgstr "Beschikbare tags"
 
+#: ../features/email-confirmation/class-email-confirmation.php:89
+#: ../features/email-confirmation/class-email-confirmation.php:168
 #: ../modules/email-customizer/email-customizer.php:11
 msgid "User Meta"
-msgstr "Meta Gebruiker"
+msgstr "Gebruikers-meta"
 
 #: ../modules/email-customizer/email-customizer.php:21
 msgid "Site Url"
-msgstr "Website URL"
+msgstr "Website-URL"
 
 #: ../modules/email-customizer/email-customizer.php:22
 msgid "Site Name"
-msgstr "Website Naam"
+msgstr "Websitenaam"
 
 #: ../modules/email-customizer/email-customizer.php:25
-#: ../modules/user-listing/userlisting.php:126
+#: ../modules/user-listing/userlisting.php:124
 msgid "User Id"
-msgstr "Gebruikers ID"
+msgstr "Gebruikers-ID"
 
-#: ../modules/email-customizer/email-customizer.php:32
+#: ../modules/email-customizer/email-customizer.php:33
 msgid "Reply To"
-msgstr "Reageer Op"
-
-#: ../modules/email-customizer/email-customizer.php:35
-msgid "Activation Key"
-msgstr "Activatie Sleutel"
+msgstr "Antwoorden aan"
 
 #: ../modules/email-customizer/email-customizer.php:36
-msgid "Activation Url"
-msgstr "Activatie URL"
+msgid "Activation Key"
+msgstr "Activeringssleutel"
 
 #: ../modules/email-customizer/email-customizer.php:37
+msgid "Activation Url"
+msgstr "Activerings-URL"
+
+#: ../modules/email-customizer/email-customizer.php:38
 msgid "Activation Link"
-msgstr "Activatie Link"
+msgstr "Activerings-link"
 
 #: ../modules/email-customizer/user-email-customizer.php:64
 msgid ""
@@ -2046,7 +2157,7 @@ msgstr ""
 
 #: ../modules/email-customizer/user-email-customizer.php:85
 msgid "Default Registration"
-msgstr "Standaard Registratie"
+msgstr "Standaardregistratie"
 
 #: ../modules/email-customizer/user-email-customizer.php:91
 msgid ""
@@ -2056,19 +2167,19 @@ msgid ""
 "<p>After you activate, you will receive another email with your credentials.</p>\n"
 msgstr ""
 "\n"
-"<p>Om gebruiker te activeren, klik svp op de volgende link:<br/>\n"
+"<p>Klik op de volgende link om de gebruiker te activeren:<br/>\n"
 "\n"
 "{{{activation_link}}}</p>\n"
 "\n"
-"<p>Na activatie zul je een andere e-mail ontvangen met je aanmeld gegevens.</p>\n"
+"<p>Na activering zul je nog een e-mail ontvangen met de aanmeldgegevens.</p>\n"
 
 #: ../modules/email-customizer/user-email-customizer.php:103
 msgid "[{{site_name}}] Activate {{username}}"
-msgstr "[{{site_name}}] Activeer {{username}}"
+msgstr "[{{site_name}}] Activeren {{username}}"
 
 #: ../modules/email-customizer/user-email-customizer.php:114
 msgid "Registration with Email Confirmation"
-msgstr "Registratie met E-mail Bevestiging"
+msgstr "Registratie met e-mailbevestiging"
 
 #: ../modules/email-customizer/user-email-customizer.php:120
 msgid ""
@@ -2082,11 +2193,11 @@ msgstr ""
 "\n"
 "<p>Je gebruikersnaam is:{{username}} en wachtwoord:{{password}}</p>\n"
 "\n"
-"<p>Voordat je toegang krijgt tot je account, moet een beheerder dit goedkeuren. Je wordt via e-mail geinformeerd.</p>\n"
+"<p>Voordat je toegang krijgt tot je account moet een beheerder dit goedkeuren. Je wordt dmv e-mail geïnformeerd.</p>\n"
 
 #: ../modules/email-customizer/user-email-customizer.php:132
 msgid "A new account has been created for you on {{site_name}}"
-msgstr "Een nieuwe account is voor je aangemaakt op {{site_name}}"
+msgstr "Er is een nieuwe account is voor je aangemaakt op {{site_name}}"
 
 #: ../modules/email-customizer/user-email-customizer.php:148
 msgid ""
@@ -2095,17 +2206,17 @@ msgid ""
 "<p>An administrator has just approved your account: {{username}} on {{site_name}}.</p>\n"
 msgstr ""
 "\n"
-"<h3>Goed Nieuws!</h3>\n"
+"<h3>Goed nieuws.</h3>\n"
 "\n"
-"<p>Een beheerder heeft net je account goedgekeurd: {{username}} op {{site_name}}.</p>\n"
+"<p>Een beheerder heeft zojuist je account goedgekeurd: {{username}} op {{site_name}}.</p>\n"
 
 #: ../modules/email-customizer/user-email-customizer.php:159
 msgid "Your account on {{site_name}} has been approved!"
-msgstr "Je account op {{site_name}} is goedgekeurd!"
+msgstr "Je account op {{site_name}} is goedgekeurd."
 
 #: ../modules/email-customizer/user-email-customizer.php:170
 msgid "User Approval Notification"
-msgstr "Goedkeuring Gebruiker Notificatie"
+msgstr "Kennisgeving goedkeuring gebruiker"
 
 #: ../modules/email-customizer/user-email-customizer.php:175
 msgid ""
@@ -2115,130 +2226,130 @@ msgid ""
 msgstr ""
 "\n"
 "<h3>Hallo,</h3>\n"
-"<p>Helaas heeft een beheerder je account net afgekeurd: {{username}} op {{site_name}}.</p>\n"
+"<p>Helaas heeft een beheerder je account zojuist afgekeurd: {{username}} op {{site_name}}.</p>\n"
 
 #: ../modules/email-customizer/user-email-customizer.php:187
 msgid "Your account on {{site_name}} has been unapproved!"
-msgstr "Je account op {{site_name}} is afgekeurd!"
+msgstr "Je account op {{site_name}} is afgekeurd."
 
 #: ../modules/email-customizer/user-email-customizer.php:198
 msgid "Unapproved User Notification"
-msgstr "Notificatie Afgekeurde Gebruiker"
+msgstr "Kennisgeving afgekeurde gebruiker"
 
 #: ../modules/multiple-forms/edit-profile-forms.php:11
 #: ../modules/multiple-forms/edit-profile-forms.php:12
 msgid "Edit-profile Form"
-msgstr "Bewerk Profiel Formulier"
+msgstr "Formulier om profiel te bewerken"
 
 #: ../modules/multiple-forms/edit-profile-forms.php:13
 #: ../modules/multiple-forms/register-forms.php:13
 #: ../modules/user-listing/userlisting.php:13
 msgid "Add New"
-msgstr "Voeg nieuwe toe"
+msgstr "Nieuw toevoegen"
 
 #: ../modules/multiple-forms/edit-profile-forms.php:14
 msgid "Add new Edit-profile Form"
-msgstr "Voeg nieuw Bewerk Profiel Formulier toe"
+msgstr "Formulier voeg nieuw toe/bewerk profiel"
 
 #: ../modules/multiple-forms/edit-profile-forms.php:15
 msgid "Edit the Edit-profile Forms"
-msgstr "Bewerk de Bewerk Profiel Formulieren"
+msgstr "Het profielbewerk-formulier"
 
 #: ../modules/multiple-forms/edit-profile-forms.php:16
 msgid "New Edit-profile Form"
-msgstr "Nieuw Bewerk Profiel Formulier"
+msgstr "Nieuw profielbewerk-formulier"
 
 #: ../modules/multiple-forms/edit-profile-forms.php:17
 #: ../modules/multiple-forms/edit-profile-forms.php:23
 msgid "Edit-profile Forms"
-msgstr "Bewerk Profiel Formulieren"
+msgstr "Profielbewerk-formulieren"
 
 #: ../modules/multiple-forms/edit-profile-forms.php:18
 msgid "View the Edit-profile Form"
-msgstr "Bekijk het Bewerk Profiel Formulier"
+msgstr "Bekijk het profielbewerk-formulier"
 
 #: ../modules/multiple-forms/edit-profile-forms.php:19
 msgid "Search the Edit-profile Forms"
-msgstr "Zoek de Bewerk Profiel Formulieren"
+msgstr "Zoek de profielbewerk-formulieren"
 
 #: ../modules/multiple-forms/edit-profile-forms.php:20
 msgid "No Edit-profile Form found"
-msgstr "Geen Bewerk Profiel Formulier gevonden"
+msgstr "Geen profielbewerk-formulier gevonden"
 
 #: ../modules/multiple-forms/edit-profile-forms.php:21
 msgid "No Edit-profile Forms found in trash"
-msgstr "Geen Bewerk Profiel Formulieren in prullenbak gevonden"
+msgstr "Geen Profielbewerk-formulieren in prullenbak gevonden"
 
-#: ../modules/multiple-forms/edit-profile-forms.php:135
-#: ../modules/multiple-forms/register-forms.php:138
-#: ../modules/user-listing/userlisting.php:1037
+#: ../modules/multiple-forms/edit-profile-forms.php:131
+#: ../modules/multiple-forms/register-forms.php:134
+#: ../modules/user-listing/userlisting.php:1041
 msgid "Shortcode"
 msgstr "Shortcode"
 
-#: ../modules/multiple-forms/edit-profile-forms.php:155
-#: ../modules/multiple-forms/register-forms.php:159
-#: ../modules/user-listing/userlisting.php:1058
+#: ../modules/multiple-forms/edit-profile-forms.php:151
+#: ../modules/multiple-forms/register-forms.php:155
+#: ../modules/user-listing/userlisting.php:1062
 msgid "(no title)"
 msgstr "(geen titel)"
 
-#: ../modules/multiple-forms/edit-profile-forms.php:175
-#: ../modules/multiple-forms/register-forms.php:178
-#: ../modules/user-listing/userlisting.php:1078
+#: ../modules/multiple-forms/edit-profile-forms.php:171
+#: ../modules/multiple-forms/register-forms.php:174
+#: ../modules/user-listing/userlisting.php:1082
 msgid "The shortcode will be available after you publish this form."
-msgstr "De shortcode is beschikbaar nadat je formulier hebt geplaatst."
+msgstr "De shortcode is beschikbaar nadat je dit formulier gepubliceerd hebt."
+
+#: ../modules/multiple-forms/edit-profile-forms.php:173
+#: ../modules/multiple-forms/register-forms.php:176
+#: ../modules/user-listing/userlisting.php:1084
+msgid "Use this shortcode on the page you want the form to be displayed:"
+msgstr "Gebruik deze shortcode op de pagina waarop je het formulier wilt weergeven:"
 
 #: ../modules/multiple-forms/edit-profile-forms.php:177
 #: ../modules/multiple-forms/register-forms.php:180
-#: ../modules/user-listing/userlisting.php:1080
-msgid "Use this shortcode on the page you want the form to be displayed:"
-msgstr "Gebruik deze shortcode op de pagina waarop formulier geplaatst moet worden:"
-
-#: ../modules/multiple-forms/edit-profile-forms.php:181
-#: ../modules/multiple-forms/register-forms.php:184
-#: ../modules/user-listing/userlisting.php:1084
+#: ../modules/user-listing/userlisting.php:1088
 msgid "<span style=\"color:red;\">Note:</span> changing the form title also changes the shortcode!"
-msgstr "<span style=\"color:red;\">Attentie:</span> als je formulier titel wijzigt zal ook de shortcode wijzigen!"
+msgstr "<span style=\"color:red;\">Attentie:</span> als je de formuliertitel wijzigt zal ook de shortcode gewijzigd worden."
 
-#: ../modules/multiple-forms/edit-profile-forms.php:187
-#: ../modules/multiple-forms/register-forms.php:190
-#: ../modules/user-listing/userlisting.php:1098
+#: ../modules/multiple-forms/edit-profile-forms.php:183
+#: ../modules/multiple-forms/register-forms.php:186
+#: ../modules/user-listing/userlisting.php:1121
 msgid "Form Shortcode"
-msgstr "Formulier Shortcode"
+msgstr "Formulier-shortcode"
 
-#: ../modules/multiple-forms/edit-profile-forms.php:206
-#: ../modules/multiple-forms/register-forms.php:230
+#: ../modules/multiple-forms/edit-profile-forms.php:202
+#: ../modules/multiple-forms/register-forms.php:226
 msgid "Whether to redirect the user to a specific page or not"
 msgstr "Of je de gebruiker wilt doorverwijzen naar een bepaalde pagina of niet"
 
-#: ../modules/multiple-forms/edit-profile-forms.php:207
-#: ../modules/multiple-forms/register-forms.php:231
+#: ../modules/multiple-forms/edit-profile-forms.php:203
+#: ../modules/multiple-forms/register-forms.php:227
 msgid "Display Messages"
-msgstr "Toon Berichten"
+msgstr "Berichten weergeven"
 
-#: ../modules/multiple-forms/edit-profile-forms.php:207
-#: ../modules/multiple-forms/register-forms.php:231
+#: ../modules/multiple-forms/edit-profile-forms.php:203
+#: ../modules/multiple-forms/register-forms.php:227
 msgid "Allowed time to display any success messages (in seconds)"
-msgstr "Toegestane tijd om succes berichten te tonen (in seconden)"
+msgstr "Toegestane tijd om succesberichten weer te geven (in seconden)"
 
-#: ../modules/multiple-forms/edit-profile-forms.php:208
+#: ../modules/multiple-forms/edit-profile-forms.php:204
 msgid "Specify the URL of the page users will be redirected once they updated their profile using this form<br/>Use the following format: http://www.mysite.com"
-msgstr "Specificeer de URL van de pagina waar gebruiker naar doorverwezen wordt nadat ze hun profiel geupdate hebben middels dit formulier <br/>Gebruik dit formaat: http://www.mysite.com"
+msgstr "Specificeer de URL van de pagina waar gebruikers naar doorverwezen worden nadat ze hun profiel bijgewerkt hebben dmv dit formulier <br/>Gebruik dit opmaak: http://www.mysite.com"
 
-#: ../modules/multiple-forms/edit-profile-forms.php:215
+#: ../modules/multiple-forms/edit-profile-forms.php:211
 msgid "After Profile Update..."
-msgstr "Na Updaten Profiel..."
+msgstr "Na bijwerkenprofiel..."
 
-#: ../modules/multiple-forms/edit-profile-forms.php:239
-#: ../modules/multiple-forms/register-forms.php:260
+#: ../modules/multiple-forms/edit-profile-forms.php:237
+#: ../modules/multiple-forms/register-forms.php:258
 msgid "Add New Field to the List"
-msgstr "Voeg nieuw Veld aan Lijst toe"
+msgstr "Voeg een nieuw veld aan de lijst toe"
 
-#: ../modules/multiple-forms/edit-profile-forms.php:243
-#: ../modules/multiple-forms/register-forms.php:264
+#: ../modules/multiple-forms/edit-profile-forms.php:241
+#: ../modules/multiple-forms/register-forms.php:262
 msgid "Choose one of the supported fields you manage <a href=\""
-msgstr "Kies 1 van de ondersteunde velden die je beheert <a href=\""
+msgstr "Kies een van de ondersteunde velden die je beheert <a href=\""
 
-#: ../modules/multiple-forms/multiple-forms.php:407
+#: ../modules/multiple-forms/multiple-forms.php:416
 msgid "<pre>Title (Type)</pre>"
 msgstr "<pre>Titel (Type)</pre>"
 
@@ -2249,349 +2360,350 @@ msgstr "Je moet de titel van het formulier specificeren voordat je het aanmaakt"
 #: ../modules/multiple-forms/register-forms.php:11
 #: ../modules/multiple-forms/register-forms.php:12
 msgid "Registration Form"
-msgstr "Registratie Formulier"
+msgstr "Registratieformulier"
 
 #: ../modules/multiple-forms/register-forms.php:14
 msgid "Add new Registration Form"
-msgstr "Voeg nieuw Registratie Formulier toe"
+msgstr "Nieuw registratieformulier toevoegen"
 
 #: ../modules/multiple-forms/register-forms.php:15
 msgid "Edit the Registration Forms"
-msgstr "Bewerk de Registratie Formulieren"
+msgstr "De registratieformulieren bewerken"
 
 #: ../modules/multiple-forms/register-forms.php:16
 msgid "New Registration Form"
-msgstr "Nieuw Registratie Formulier"
+msgstr "Nieuw registratieformulier"
 
 #: ../modules/multiple-forms/register-forms.php:17
 #: ../modules/multiple-forms/register-forms.php:23
 msgid "Registration Forms"
-msgstr "Registratie Formulieren"
+msgstr "Registratieformulieren"
 
 #: ../modules/multiple-forms/register-forms.php:18
 msgid "View the Registration Form"
-msgstr "Bekijk het Registratie Formulier"
+msgstr "Het registratieformulier bekijken"
 
 #: ../modules/multiple-forms/register-forms.php:19
 msgid "Search the Registration Forms"
-msgstr "Zoek de Registratie Formulieren"
+msgstr "De registratieformulieren zoeken"
 
 #: ../modules/multiple-forms/register-forms.php:20
 msgid "No Registration Form found"
-msgstr "Geen Registratie Formulier gevonden"
+msgstr "Geen registratieformulier gevonden"
 
 #: ../modules/multiple-forms/register-forms.php:21
 msgid "No Registration Forms found in trash"
-msgstr "Geen Registratie Formulieren in prullenbak gevonden"
+msgstr "Geen registratieformulieren in prullenbak gevonden"
 
-#: ../modules/multiple-forms/register-forms.php:219
+#: ../modules/multiple-forms/register-forms.php:215
 msgid "Default Role"
-msgstr "Standaard Rol"
+msgstr "Standaardrol"
 
-#: ../modules/multiple-forms/register-forms.php:228
+#: ../modules/multiple-forms/register-forms.php:224
 msgid "Set Role"
 msgstr "Rol Instellen"
 
-#: ../modules/multiple-forms/register-forms.php:228
+#: ../modules/multiple-forms/register-forms.php:224
 msgid "Choose what role the user will have after (s)he registered<br/>If not specified, defaults to the role set in the WordPress settings"
-msgstr "Kies welke rol gebruiker heeft na registratie<br/>Indien niet gespecificeerd, standaard de rol van de WordPress instellingen"
+msgstr "Kies welke rol de gebruiker heeft na registratie<br/>Indien niet gespecificeerd, wordt de rol standaard die van de WordPress-instellingen"
 
-#: ../modules/multiple-forms/register-forms.php:229
+#: ../modules/multiple-forms/register-forms.php:225
 msgid "Automatically Log In"
 msgstr "Automatisch Inloggen"
 
-#: ../modules/multiple-forms/register-forms.php:229
+#: ../modules/multiple-forms/register-forms.php:225
 msgid "Whether to automatically log in the newly registered user or not<br/>Only works on single-sites without \"Admin Approval\" and \"Email Confirmation\" features activated<br/>WARNING: Caching the registration form will make automatic login not work"
-msgstr "Of de nieuwe gebruiker automatisch ingelogd wordt of niet<br/>Werkt alleen op losse websites zonder geactiveerde \"Goedkeuring Beheerder\" en \"E-mail Bevestiging\" functies<br/>WAARSCHUWING: Als registratie formulier gecached wordt zal inloggen niet werken"
+msgstr "Of de nieuwe gebruiker automatisch ingelogd wordt of niet<br/>Werkt alleen op losse websites zonder dat de functies 'Goedkeuring beheerder' en 'E-mailbevestiging' geactiveerd zijn<br/>WAARSCHUWING: Als het registratieformulier gecachet wordt, zal automatisch inloggen niet werken"
 
-#: ../modules/multiple-forms/register-forms.php:232
+#: ../modules/multiple-forms/register-forms.php:228
 msgid "Specify the URL of the page users will be redirected once registered using this form<br/>Use the following format: http://www.mysite.com"
-msgstr "Specificeer de URL van de pagina waar gebruikers naar doorverwezen wordt als ze dit formulier gebruiken<br/>Gebruik dit formaat: http://www.mysite.com"
+msgstr "Specificeer de URL van de pagina waar gebruikers naar doorverwezen worden als ze dit formulier gebruiken<br/>Gebruik de volgende opmaak: http://www.mysite.com"
 
-#: ../modules/multiple-forms/register-forms.php:238
+#: ../modules/multiple-forms/register-forms.php:234
 msgid "After Registration..."
-msgstr "Na Registratie..."
+msgstr "Na registratie..."
 
-#: ../modules/user-listing/class-userlisting.php:461
-#: ../modules/user-listing/userlisting.php:632
-#: ../modules/user-listing/userlisting.php:850
-#: ../modules/user-listing/userlisting.php:893
-#: ../modules/user-listing/userlisting.php:1217
+#: ../modules/user-listing/class-userlisting.php:471
+#: ../modules/user-listing/userlisting.php:636
+#: ../modules/user-listing/userlisting.php:854
+#: ../modules/user-listing/userlisting.php:897
+#: ../modules/user-listing/userlisting.php:1241
 msgid "Search Users by All Fields"
-msgstr "Zoek Gebruikers via Alle Velden"
+msgstr "Zoek gebruikers mbv alle velden"
 
 #: ../modules/user-listing/userlisting.php:14
 msgid "Add new User Listing"
-msgstr "Voeg nieuwe Gebruikersweergave toe"
+msgstr "Weergave 'Nieuwe gebruiker toevoegen'"
 
 #: ../modules/user-listing/userlisting.php:15
 msgid "Edit the User Listing"
-msgstr "Bewerk de Gebruikersweergave"
+msgstr "Weergave 'Bewerk de gebruiker'"
 
 #: ../modules/user-listing/userlisting.php:16
 msgid "New User Listing"
-msgstr "Nieuwe Gebruikersweergave"
+msgstr "Weergave 'Nieuwe gebruiker'"
 
 #: ../modules/user-listing/userlisting.php:18
 msgid "View the User Listing"
-msgstr "Bekijk de Gebruikersweergave"
+msgstr "Weergave 'Bekijk de gebruikers'"
 
 #: ../modules/user-listing/userlisting.php:19
 msgid "Search the User Listing"
-msgstr "Zoek de Gebruikersweergave"
+msgstr "Weergave 'Zoek de gebruiker'"
 
 #: ../modules/user-listing/userlisting.php:20
 msgid "No User Listing found"
-msgstr "Geen Gebruikersweergave gevonden"
+msgstr "Geen gebruikersweergave gevonden"
 
 #: ../modules/user-listing/userlisting.php:21
 msgid "No User Listing found in trash"
-msgstr "Geen Gebruikersweergave in prullenbak gevonden"
+msgstr "Geen gebruikersweergave in prullenbak gevonden"
 
-#: ../modules/user-listing/userlisting.php:97
+#: ../modules/user-listing/userlisting.php:95
 msgid "Display name as"
 msgstr "Toon naam als"
 
-#: ../modules/user-listing/userlisting.php:110
+#: ../modules/user-listing/userlisting.php:108
 msgid "Url"
 msgstr "URL"
 
-#: ../modules/user-listing/userlisting.php:118
-#: ../modules/user-listing/userlisting.php:1126
+#: ../modules/user-listing/userlisting.php:116
+#: ../modules/user-listing/userlisting.php:1149
 msgid "Registration Date"
 msgstr "Registratiedatum"
 
-#: ../modules/user-listing/userlisting.php:119
-#: ../modules/user-listing/userlisting.php:1130
+#: ../modules/user-listing/userlisting.php:117
+#: ../modules/user-listing/userlisting.php:1153
 msgid "Number of Posts"
-msgstr "Aantal Berichten"
+msgstr "Aantal berichten"
 
-#: ../modules/user-listing/userlisting.php:123
+#: ../modules/user-listing/userlisting.php:121
 msgid "More Info"
 msgstr "Meer Info"
 
-#: ../modules/user-listing/userlisting.php:124
+#: ../modules/user-listing/userlisting.php:122
 msgid "More Info Url"
-msgstr "Meer Info URL"
+msgstr "'Meer info'-URL"
 
-#: ../modules/user-listing/userlisting.php:125
+#: ../modules/user-listing/userlisting.php:123
 msgid "Avatar or Gravatar"
-msgstr "Avatar or Gravatar"
+msgstr "Avatar of gravatar"
 
-#: ../modules/user-listing/userlisting.php:153
+#: ../modules/user-listing/userlisting.php:151
 msgid "Meta Variables"
-msgstr "Meta Variabelen"
+msgstr "Meta-variabelen"
 
-#: ../modules/user-listing/userlisting.php:159
+#: ../modules/user-listing/userlisting.php:157
 msgid "Sort Variables"
-msgstr "Sorteer Variabelen"
+msgstr "Sorteer-variabelen"
+
+#: ../modules/user-listing/userlisting.php:161
+#: ../modules/user-listing/userlisting.php:188
+msgid "Extra Functions"
+msgstr "Extra functies"
 
 #: ../modules/user-listing/userlisting.php:163
-#: ../modules/user-listing/userlisting.php:190
-msgid "Extra Functions"
-msgstr "Extra Functies"
-
-#: ../modules/user-listing/userlisting.php:165
 msgid "Pagination"
 msgstr "Paginering"
 
-#: ../modules/user-listing/userlisting.php:166
+#: ../modules/user-listing/userlisting.php:164
 msgid "Search all Fields"
-msgstr "Zoek alle Velden"
+msgstr "Zoek alle velden"
 
-#: ../modules/user-listing/userlisting.php:192
+#: ../modules/user-listing/userlisting.php:190
 msgid "Go Back Link"
-msgstr "Ga Terug Link"
+msgstr "'Ga terug'-link"
 
-#: ../modules/user-listing/userlisting.php:210
+#: ../modules/user-listing/userlisting.php:208
 msgid "All-userlisting Template"
-msgstr "Alle gebruikersweergave Template"
+msgstr "Sjabloon voor weergave 'Alle gebruikers'"
 
-#: ../modules/user-listing/userlisting.php:213
+#: ../modules/user-listing/userlisting.php:211
 msgid "Single-userlisting Template"
-msgstr "Enkele gebruikersweergave Template"
+msgstr "Sjabloon voor weergave 'Enkele gebruiker'"
 
-#: ../modules/user-listing/userlisting.php:330
+#: ../modules/user-listing/userlisting.php:328
 msgid "You do not have permission to view this user list"
-msgstr "Je hebt geen toestemming om deze gebruikersweergave te bekijken"
+msgstr "Je hebt niet het recht deze gebruikerslijst te bekijken"
 
-#: ../modules/user-listing/userlisting.php:343
+#: ../modules/user-listing/userlisting.php:341
 msgid "You do not have the required user role to view this user list"
-msgstr "Je hebt niet de vereiste gebruikersrol om deze gebruikersweergave te bekijken"
+msgstr "Je hebt niet de vereiste gebruikersrol deze gebruikerslijst te bekijken"
 
-#: ../modules/user-listing/userlisting.php:525
+#: ../modules/user-listing/userlisting.php:526
 msgid "First/Lastname"
-msgstr "Voor/Achternaam"
+msgstr "Voor-/achternaam"
 
-#: ../modules/user-listing/userlisting.php:531
+#: ../modules/user-listing/userlisting.php:532
 msgid "Sign-up Date"
-msgstr "Aanmeld Datum"
+msgstr "Aanmeld-datum"
 
-#: ../modules/user-listing/userlisting.php:540
-#: ../modules/user-listing/userlisting.php:1129
+#: ../modules/user-listing/userlisting.php:541
+#: ../modules/user-listing/userlisting.php:1152
 msgid "Display Name"
-msgstr "Scherm Naam"
+msgstr "Schermnaam"
 
-#: ../modules/user-listing/userlisting.php:549
+#: ../modules/user-listing/userlisting.php:550
 msgid "Posts"
 msgstr "Berichten"
 
-#: ../modules/user-listing/userlisting.php:552
-#: ../modules/user-listing/userlisting.php:1134
+#: ../modules/user-listing/userlisting.php:553
+#: ../modules/user-listing/userlisting.php:1158
 msgid "Aim"
 msgstr "Aim"
 
-#: ../modules/user-listing/userlisting.php:555
-#: ../modules/user-listing/userlisting.php:1135
+#: ../modules/user-listing/userlisting.php:556
+#: ../modules/user-listing/userlisting.php:1159
 msgid "Yim"
 msgstr "Yim"
 
-#: ../modules/user-listing/userlisting.php:558
-#: ../modules/user-listing/userlisting.php:1136
+#: ../modules/user-listing/userlisting.php:559
+#: ../modules/user-listing/userlisting.php:1160
 msgid "Jabber"
 msgstr "Jabber"
 
-#: ../modules/user-listing/userlisting.php:709
+#: ../modules/user-listing/userlisting.php:713
 msgid "Click here to see more information about this user"
 msgstr "Klik hier om meer informatie over deze gebruiker te bekijken"
 
-#: ../modules/user-listing/userlisting.php:709
+#: ../modules/user-listing/userlisting.php:713
 msgid "More..."
 msgstr "Meer..."
 
-#: ../modules/user-listing/userlisting.php:712
+#: ../modules/user-listing/userlisting.php:716
 msgid "Click here to see more information about this user."
 msgstr "Klik hier om meer informatie over deze gebruiker te bekijken."
 
-#: ../modules/user-listing/userlisting.php:804
-#: ../modules/user-listing/userlisting.php:807
+#: ../modules/user-listing/userlisting.php:808
+#: ../modules/user-listing/userlisting.php:811
 msgid "Click here to go back"
 msgstr "Klik hier om terug te gaan"
 
-#: ../modules/user-listing/userlisting.php:804
+#: ../modules/user-listing/userlisting.php:808
 msgid "Back"
 msgstr "Terug"
 
-#: ../modules/user-listing/userlisting.php:837
+#: ../modules/user-listing/userlisting.php:841
 msgid "&laquo;&laquo; First"
 msgstr "&laquo;&laquo; Eerste"
 
-#: ../modules/user-listing/userlisting.php:838
+#: ../modules/user-listing/userlisting.php:842
 msgid "&laquo; Prev"
-msgstr "&laquo; Volgende"
+msgstr "&laquo; Vorige"
 
-#: ../modules/user-listing/userlisting.php:839
+#: ../modules/user-listing/userlisting.php:843
 msgid "Next &raquo; "
-msgstr "Vorige &raquo;"
+msgstr "Volgende &raquo;"
 
-#: ../modules/user-listing/userlisting.php:840
+#: ../modules/user-listing/userlisting.php:844
 msgid "Last &raquo;&raquo;"
 msgstr "Laatste &raquo;&raquo;"
 
-#: ../modules/user-listing/userlisting.php:869
+#: ../modules/user-listing/userlisting.php:873
 msgid "You don't have any pagination settings on this userlisting!"
-msgstr "Je hebt geen paginering instellingen op deze gebruikersweergave!"
+msgstr "Er zijn geen pagineringsinstellingen bij deze gebruikerslijst."
 
-#: ../modules/user-listing/userlisting.php:910
+#: ../modules/user-listing/userlisting.php:914
 msgid "Search"
-msgstr "Zoek"
+msgstr "Zoeken"
 
-#: ../modules/user-listing/userlisting.php:911
+#: ../modules/user-listing/userlisting.php:915
 msgid "Clear Results"
-msgstr "Wis Resultaten"
+msgstr "Resultaten wissen"
 
-#: ../modules/user-listing/userlisting.php:1087
+#: ../modules/user-listing/userlisting.php:1091
+#: ../modules/user-listing/userlisting.php:1095
 msgid "Extra shortcode parameters"
-msgstr "Extra schortcode parameters"
+msgstr "Extra shortcode-parameters"
 
-#: ../modules/user-listing/userlisting.php:1089
+#: ../modules/user-listing/userlisting.php:1098
 msgid "displays users having a certain meta-value within a certain (extra) meta-field"
 msgstr "toont gebruikers met een bepaalde meta-waarde in een bepaald (extra) meta-veld"
 
-#: ../modules/user-listing/userlisting.php:1090
+#: ../modules/user-listing/userlisting.php:1099
 msgid "Example:"
 msgstr "Voorbeeld:"
 
-#: ../modules/user-listing/userlisting.php:1092
+#: ../modules/user-listing/userlisting.php:1101
 msgid "Remember though, that the field-value combination must exist in the database."
-msgstr "Let er op, dat de veld-waarde combinatie in de database aanwezig moet zijn."
+msgstr "Onthoud echter dat de veldwaarde-combinatie in de database aanwezig moet zijn."
 
-#: ../modules/user-listing/userlisting.php:1146
+#: ../modules/user-listing/userlisting.php:1170
 msgid "Random (very slow on large databases > 10K user)"
-msgstr "Willekeurig (traag in grote databases > 10.000 gebruikers)"
+msgstr "Willekeurig (vertraagt grote databases > 10.000 gebruikers)"
 
-#: ../modules/user-listing/userlisting.php:1159
+#: ../modules/user-listing/userlisting.php:1183
 msgid "Roles to Display"
-msgstr "Te tonen Rollen"
+msgstr "Te tonen rollen"
 
-#: ../modules/user-listing/userlisting.php:1159
+#: ../modules/user-listing/userlisting.php:1183
 msgid "Restrict the userlisting to these selected roles only<br/>If not specified, defaults to all existing roles"
-msgstr "Beperk de gebruikersweergave tot deze geselecteerde rollen<br/>Indien niet gespecificeerd, standaard alle bestaande rollen"
+msgstr "Beperk de gebruikersweergave tot deze geselecteerde rollen<br/>Indien niet gespecificeerd, worden standaard alle bestaande rollen weergegeven"
 
-#: ../modules/user-listing/userlisting.php:1160
+#: ../modules/user-listing/userlisting.php:1184
 msgid "Number of Users/Page"
-msgstr "Aantal gebruikers/Pagina"
+msgstr "Aantal gebruikers per pagina"
 
-#: ../modules/user-listing/userlisting.php:1161
+#: ../modules/user-listing/userlisting.php:1185
 msgid "Default Sorting Criteria"
-msgstr "Standaard Criteria Sortering"
+msgstr "Standaard sorteercriteria"
 
-#: ../modules/user-listing/userlisting.php:1161
+#: ../modules/user-listing/userlisting.php:1185
 msgid "Set the default sorting criteria<br/>This can temporarily be changed for each new session"
-msgstr "Stel de standaard criteria sortering in<br/>Dit kan tijdelijk gewijzigd worden voor iedere nieuwe sessie"
+msgstr "Stel de standaard sorteercriteria in<br/>Dit kan tijdelijk gewijzigd worden voor iedere nieuwe sessie"
 
-#: ../modules/user-listing/userlisting.php:1162
+#: ../modules/user-listing/userlisting.php:1186
 msgid "Default Sorting Order"
-msgstr "Standaard Criteria Volgorde"
+msgstr "Standaard sorteervolgorde"
 
-#: ../modules/user-listing/userlisting.php:1162
+#: ../modules/user-listing/userlisting.php:1186
 msgid "Set the default sorting order<br/>This can temporarily be changed for each new session"
-msgstr "Stel de standaard criteria volgorde in<br/>Dit kan tijdelijk gewijzigd worden voor iedere nieuwe sessie"
+msgstr "Stel de standaard sorteervolgorde in<br/>Dit kan tijdelijk gewijzigd worden voor iedere nieuwe sessie"
 
-#: ../modules/user-listing/userlisting.php:1163
+#: ../modules/user-listing/userlisting.php:1187
 msgid "Avatar Size (All-userlisting)"
-msgstr "Avatar Grootte (Alle gebruikersweergave)"
+msgstr "Avatargrootte (lijst van alle gebruikers)"
 
-#: ../modules/user-listing/userlisting.php:1163
+#: ../modules/user-listing/userlisting.php:1187
 msgid "Set the avatar size on the all-userlisting only"
-msgstr "Stel de Avatar Grootte in voor de alle gebruikersweergave"
+msgstr "Stel de Avatargrootte in voor alleen de lijst van alle gebruikers"
 
-#: ../modules/user-listing/userlisting.php:1164
+#: ../modules/user-listing/userlisting.php:1188
 msgid "Avatar Size (Single-userlisting)"
-msgstr "Avatar Grootte (Losse gebruikersweergave)"
+msgstr "Avatargrootte (weergave losse gebruiker)"
 
-#: ../modules/user-listing/userlisting.php:1164
+#: ../modules/user-listing/userlisting.php:1188
 msgid "Set the avatar size on the single-userlisting only"
-msgstr "Stel de Avatar Grootte in voor de losse gebruikersweergave "
+msgstr "Stel de Avatargrootte in voor alleen de weergave van losse gebruikers"
 
-#: ../modules/user-listing/userlisting.php:1165
+#: ../modules/user-listing/userlisting.php:1189
 msgid "Visible only to logged in users?"
 msgstr "Alleen zichtbaar voor ingelogde gebruikers?"
 
-#: ../modules/user-listing/userlisting.php:1165
+#: ../modules/user-listing/userlisting.php:1189
 msgid "The userlisting will only be visible only to the logged in users"
 msgstr "De gebruikersweergave is alleen zichtbaar voor ingelogde gebruikers"
 
-#: ../modules/user-listing/userlisting.php:1166
+#: ../modules/user-listing/userlisting.php:1190
 msgid "Visible to following Roles"
-msgstr "Zichtbaar voor de volgende Rollen"
+msgstr "Zichtbaar voor de volgende rollen"
 
-#: ../modules/user-listing/userlisting.php:1166
+#: ../modules/user-listing/userlisting.php:1190
 msgid "The userlisting will only be visible to the following roles"
 msgstr "De gebruikersweergave is alleen zichtbaar voor de volgende rollen"
 
-#: ../modules/user-listing/userlisting.php:1172
+#: ../modules/user-listing/userlisting.php:1196
 msgid "Userlisting Settings"
-msgstr "Instellingen Gebruikersweergave"
+msgstr "Instellingen gebruikersweergave"
 
-#: ../modules/user-listing/userlisting.php:1193
+#: ../modules/user-listing/userlisting.php:1217
 msgid "You need to activate the Userlisting feature from within the \"Modules\" tab!"
-msgstr "Je moet de Gebruikersweergave functie activeren vanuit de \"Modulen\" tab!"
+msgstr "Je moet de gebruikersweergavefunctie activeren vanuit het tabblad Modules'."
 
-#: ../modules/user-listing/userlisting.php:1193
+#: ../modules/user-listing/userlisting.php:1217
 msgid "You can find it in the Profile Builder menu."
-msgstr "Je kunt dit niet in het menu van Profile Builder vinden."
+msgstr "Je zult dit niet in het menu van 'Profile Builder' vinden."
 
-#: ../modules/user-listing/userlisting.php:1343
+#: ../modules/user-listing/userlisting.php:1380
 msgid "No results found!"
-msgstr "Geen resultaten gevonden!"
+msgstr "Geen resultaten gevonden."
