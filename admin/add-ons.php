@@ -109,17 +109,15 @@ function wppb_add_ons_content() {
                         if( in_array( strtolower( $version ), $wppb_add_on['product_version_type'] ) ) {
 
                             if( $wppb_add_on_exists ) {
+                                $ajax_nonce = wp_create_nonce( "wppb-activate-addon" );
 
                                 if( !$wppb_add_on_is_active ) {
-
-                                    echo '<a class="wppb-add-on-activate right button button-secondary" href="' . $wppb_add_on['plugin_file'] . '">' . __( 'Activate', 'profilebuilder' ) . '</a>';
+                                    echo '<a class="wppb-add-on-activate right button button-secondary" href="' . $wppb_add_on['plugin_file'] . '" data-nonce="'. $ajax_nonce .'">' . __( 'Activate', 'profilebuilder' ) . '</a>';
                                     echo '<span class="dashicons dashicons-no-alt"></span><span class="wppb-add-on-message">' . __( 'Add-On is <strong>inactive</strong>', 'profilebuilder' ) . '</span>';
 
                                 } else {
-
-                                    echo '<a class="wppb-add-on-deactivate right button button-secondary" href="' . $wppb_add_on['plugin_file'] . '">' . __( 'Deactivate', 'profilebuilder' ) . '</a>';
+                                    echo '<a class="wppb-add-on-deactivate right button button-secondary" href="' . $wppb_add_on['plugin_file'] . '" data-nonce="'. $ajax_nonce .'">' . __( 'Deactivate', 'profilebuilder' ) . '</a>';
                                     echo '<span class="dashicons dashicons-yes"></span><span class="wppb-add-on-message">' . __( 'Add-On is <strong>active</strong>', 'profilebuilder' ) . '</span>';
-
                                 }
 
                             } else {
@@ -199,16 +197,19 @@ function wppb_add_ons_get_remote_content() {
  * @since v.2.1.0
  */
 function wppb_add_on_activate() {
+    check_ajax_referer( 'wppb-activate-addon', 'nonce' );
+    if( current_user_can( 'manage_options' ) ){
+        // Setup variables from POST
+        $wppb_add_on_to_activate = $_POST['wppb_add_on_to_activate'];
+        $response = $_POST['wppb_add_on_index'];
 
-    // Setup variables from POST
-    $wppb_add_on_to_activate = $_POST['wppb_add_on_to_activate'];
-    $response = $_POST['wppb_add_on_index'];
+        if( !empty( $wppb_add_on_to_activate ) && !is_plugin_active( $wppb_add_on_to_activate )) {
+            activate_plugin( $wppb_add_on_to_activate );
+        }
 
-    if( !is_plugin_active( $wppb_add_on_to_activate )) {
-        activate_plugin( $wppb_add_on_to_activate );
+        if( !empty( $response ) )
+            echo $response;
     }
-
-    echo $response;
     wp_die();
 }
 add_action( 'wp_ajax_wppb_add_on_activate', 'wppb_add_on_activate' );
@@ -220,14 +221,18 @@ add_action( 'wp_ajax_wppb_add_on_activate', 'wppb_add_on_activate' );
  * @since v.2.1.0
  */
 function wppb_add_on_deactivate() {
+    check_ajax_referer( 'wppb-activate-addon', 'nonce' );
+    if( current_user_can( 'manage_options' ) ){
+        // Setup variables from POST
+        $wppb_add_on_to_deactivate = $_POST['wppb_add_on_to_deactivate'];
+        $response = $_POST['wppb_add_on_index'];
 
-    // Setup variables from POST
-    $wppb_add_on_to_deactivate = $_POST['wppb_add_on_to_deactivate'];
-    $response = $_POST['wppb_add_on_index'];
+        if( !empty( $wppb_add_on_to_deactivate ))
+            deactivate_plugins( $wppb_add_on_to_deactivate );
 
-    deactivate_plugins( $wppb_add_on_to_deactivate );
-
-    echo $response;
+        if( !empty( $response ) )
+            echo $response;
+    }
     wp_die();
 
 }

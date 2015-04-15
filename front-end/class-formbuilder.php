@@ -160,12 +160,8 @@ class Profile_Builder_Form_Creator{
             $username = trim( $_POST['username'] );
         $password = trim( $_POST['passw1'] );
 
-        if( isset( $wppb_general_settings['loginWith'] ) && ( $wppb_general_settings['loginWith'] == 'email' ) ){
-            $username = apply_filters( 'wppb_generated_random_username', Wordpress_Creation_Kit_PB::wck_generate_slug( trim( $_POST['email'] ) ), $_POST['email'] );
-        }
-
         /* get user id */
-        $user = get_user_by( 'login', $username );
+        $user = get_user_by( 'email', trim( $_POST['email'] ) );
         $nonce = wp_create_nonce( 'autologin-'.$user->ID.'-'.(int)( time() / 60 ) );
 
         /* define redirect location */
@@ -319,7 +315,8 @@ class Profile_Builder_Form_Creator{
                 if( $display_field == false )
                     continue;
 
-				$output_fields .= apply_filters( 'wppb_output_before_form_field', '<li class="wppb-form-field wppb-'. Wordpress_Creation_Kit_PB::wck_generate_slug( $field['field'] ) .$error_var.'" id="wppb-form-element-'. $field['id'] .'">', $field, $error_var );
+                $css_class = apply_filters( 'wppb_field_css_class', 'wppb-form-field wppb-'. Wordpress_Creation_Kit_PB::wck_generate_slug( $field['field'] ) .$error_var, $field, $error_var );
+				$output_fields .= apply_filters( 'wppb_output_before_form_field', '<li class="'. $css_class .'" id="wppb-form-element-'. $field['id'] .'">', $field, $error_var );
 				$output_fields .= apply_filters( 'wppb_output_form_field_'.Wordpress_Creation_Kit_PB::wck_generate_slug( $field['field'] ), '', $this->args['form_type'], $field, $this->wppb_get_desired_user_id(), $field_check_errors, $global_request, $this->args['role'] );
 				$output_fields .= apply_filters( 'wppb_output_specific_error_message', $specific_message );
 				$output_fields .= apply_filters( 'wppb_output_after_form_field', '</li>', $field );

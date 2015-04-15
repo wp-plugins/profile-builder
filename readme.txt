@@ -6,7 +6,7 @@ Tags: registration, user profile, user registration, custom field registration, 
 
 Requires at least: 3.1
 Tested up to: 4.1.1
-Stable tag: 2.1.3
+Stable tag: 2.1.4
 
 Simple to use profile plugin allowing front-end login, user registration and edit profile by using shortcodes.
  
@@ -114,9 +114,14 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 10. Profile Builder Login Widget
 
 == Changelog ==
+= 2.1.4 =
+* Fixed vulnerability regarding activating/deactivationg addons through ajax. We added nonces and permission checks.
+* Added a filter in which we can change the classes on the li element for fields: 'wppb_field_css_class'
+* Fixed automatic login on registration when filtering the random username generated when login with email is active
+
 = 2.1.3 =
 * Fixed bug that prevented non-administrator roles to save fields in their profile on the admin area
-* Added Spanish translation thanks to Andrew Kurtis at http://www.webhostinghub.com/
+* Added Spanish translation
 * Styled the alerts and errors in registration/edit profile, above the forms
 * Added line in footer that asks users to leave a review if they enjoyed the plugin
 * Fixed bug in registration forms that allowed users to create accounts even when they removed the email box from the DOM

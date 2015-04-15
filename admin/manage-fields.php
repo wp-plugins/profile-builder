@@ -94,8 +94,8 @@ function wppb_manage_fields_submenu(){
         array( 'type' => 'textarea', 'slug' => 'terms-of-agreement', 'title' => __( 'Terms of Agreement', 'profilebuilder' ), 'description' => __( 'Enter a detailed description of the temrs of agreement for the user to read.<br/>Links can be inserted by using standard HTML syntax: &lt;a href="custom_url"&gt;custom_text&lt;/a&gt;', 'profilebuilder' ) ),
         array( 'type' => 'text', 'slug' => 'options', 'title' => __( 'Options', 'profilebuilder' ), 'description' => __( "Enter a comma separated list of values<br/>This can be anything, as it is hidden from the user, but should not contain special characters or apostrophes", 'profilebuilder' ) ),
         array( 'type' => 'text', 'slug' => 'labels', 'title' => __( 'Labels', 'profilebuilder' ), 'description' => __( "Enter a comma separated list of labels<br/>Visible for the user", 'profilebuilder' ) ),
-        array( 'type' => 'text', 'slug' => 'public-key', 'title' => __( 'Public Key', 'profilebuilder' ), 'description' => __( 'The public key from Google, <a href="http://www.google.com/recaptcha" target="_blank">www.google.com/recaptcha</a>', 'profilebuilder' ) ),
-        array( 'type' => 'text', 'slug' => 'private-key', 'title' => __( 'Private Key', 'profilebuilder' ), 'description' => __( 'The private key from Google, <a href="http://www.google.com/recaptcha" target="_blank">www.google.com/recaptcha</a>', 'profilebuilder' ) ),
+        array( 'type' => 'text', 'slug' => 'public-key', 'title' => __( 'Site Key', 'profilebuilder' ), 'description' => __( 'The site key from Google, <a href="http://www.google.com/recaptcha" target="_blank">www.google.com/recaptcha</a>', 'profilebuilder' ) ),
+        array( 'type' => 'text', 'slug' => 'private-key', 'title' => __( 'Secret Key', 'profilebuilder' ), 'description' => __( 'The secret key from Google, <a href="http://www.google.com/recaptcha" target="_blank">www.google.com/recaptcha</a>', 'profilebuilder' ) ),
         array( 'type' => 'checkbox', 'slug' => 'user-roles', 'title' => __( 'User Roles', 'profilebuilder' ), 'options' => $user_roles, 'description' => __( "Select which user roles to show to the user ( drag and drop to re-order )", 'profilebuilder' ) ),
         array( 'type' => 'text', 'slug' => 'user-roles-sort-order', 'title' => __( 'User Roles Order', 'profilebuilder' ), 'description' => __( "Save the user role order from the user roles checkboxes", 'profilebuilder' ) ),
         array( 'type' => 'text', 'slug' => 'default-value', 'title' => __( 'Default Value', 'profilebuilder' ), 'description' => __( "Default value of the field", 'profilebuilder' ) ),
@@ -361,9 +361,9 @@ function wppb_check_field_on_edit_add( $message, $fields, $required_fields, $met
 		// check for the public and private keys
 		if ( $posted_values['field'] == 'reCAPTCHA'){
 			if ( trim( $posted_values['public-key'] ) == '' )
-				$message .= __( "You must enter the public key\n", 'profilebuilder' );
+				$message .= __( "You must enter the site key\n", 'profilebuilder' );
 			if ( trim( $posted_values['private-key'] ) == '' )
-				$message .= __( "You must enter the private key\n", 'profilebuilder' );
+				$message .= __( "You must enter the secret key\n", 'profilebuilder' );
 		}
 		// END check for the public and private keys
 		
