@@ -1,12 +1,12 @@
-=== Profile Builder - front-end user registration, login and edit profile === 
+﻿=== Profile Builder - front-end user registration, login and edit profile === 
 
-Contributors: reflectionmedia, barinagabriel, sareiodata, cozmoslabs, adispiac, madalin.ungureanu
+Contributors: cozmoslabs, reflectionmedia, sareiodata, adispiac, madalin.ungureanu, iova.mihai, barinagabriel
 Donate link: http://www.cozmoslabs.com/wordpress-profile-builder/
 Tags: registration, user profile, user registration, custom field registration, customize profile, user fields, extra user fields, builder, profile builder, custom user profile, user profile page, edit profile, custom registration, custom registration form, custom registration page, registration page, user custom fields, user listing, front-end user listing, user login, user registration form, front-end login, login redirect, login widget, front-end register, front-end registration, front-end edit profile, front-end user registration, custom redirects, user email, avatar upload, email confirmation, user approval, customize registration email, minimum password length, minimum password strength, password strength meter, multiple registration forms, register, register form, member directory
 
 Requires at least: 3.1
-Tested up to: 4.1.1
-Stable tag: 2.1.4
+Tested up to: 4.2
+Stable tag: 2.1.5
 
 Simple to use profile plugin allowing front-end login, user registration and edit profile by using shortcodes.
  
@@ -114,6 +114,12 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 10. Profile Builder Login Widget
 
 == Changelog ==
+= 2.1.5 =
+Added compatibility with "Captcha" plugin
+Fixed issue on Add-Ons Page that prevented addons to be activated right after install
+Fixed issue on multisite where Adminstrator roles were able to edit other users from frontend
+Added filters to edit other users dropdown:'wppb_display_edit_other_users_dropdown' and 'wppb_edit_profile_user_dropdown_role'
+
 = 2.1.4 =
 * Fixed vulnerability regarding activating/deactivationg addons through ajax. We added nonces and permission checks.
 * Added a filter in which we can change the classes on the li element for fields: 'wppb_field_css_class'

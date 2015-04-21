@@ -48,7 +48,7 @@ function wppb_add_ons_content() {
 
         <div id="the-list">
 
-        <?php
+            <?php
 
             $wppb_add_ons = wppb_add_ons_get_remote_content();
             $wppb_get_all_plugins = get_plugins();
@@ -67,7 +67,7 @@ function wppb_add_ons_content() {
 
                     // Check to see if add-on is in the plugins folder
                     foreach( $wppb_get_all_plugins as $wppb_plugin_key => $wppb_plugin ) {
-                        if( strpos( $wppb_plugin['Name'], $wppb_add_on['name'] ) !== false && strpos( $wppb_plugin['AuthorName'], 'Cozmoslabs' ) !== false ) {
+                        if( strpos( strtolower($wppb_plugin['Name']), strtolower($wppb_add_on['name']) ) !== false && strpos( strtolower($wppb_plugin['AuthorName']), strtolower('Cozmoslabs') ) !== false ) {
                             $wppb_add_on_exists = 1;
 
                             if( in_array( $wppb_plugin_key, $wppb_get_active_plugins ) ) {
@@ -108,8 +108,9 @@ function wppb_add_ons_content() {
                         // PB version type does match
                         if( in_array( strtolower( $version ), $wppb_add_on['product_version_type'] ) ) {
 
+                            $ajax_nonce = wp_create_nonce( "wppb-activate-addon" );
+
                             if( $wppb_add_on_exists ) {
-                                $ajax_nonce = wp_create_nonce( "wppb-activate-addon" );
 
                                 if( !$wppb_add_on_is_active ) {
                                     echo '<a class="wppb-add-on-activate right button button-secondary" href="' . $wppb_add_on['plugin_file'] . '" data-nonce="'. $ajax_nonce .'">' . __( 'Activate', 'profilebuilder' ) . '</a>';
@@ -126,14 +127,14 @@ function wppb_add_ons_content() {
                                 ( $wppb_add_on['paid'] ) ? $wppb_paid_link_text = __( 'Buy Now', 'profilebuilder' ) : $wppb_paid_link_text = __( 'Install Now', 'profilebuilder' );
                                 ( $wppb_add_on['paid'] ) ? $wppb_paid_href_utm_text = '?utm_source=wpbackend&utm_medium=clientsite&utm_content=add-on-page-buy-button&utm_campaign=PB' . $version : $wppb_paid_href_utm_text = '&utm_source=wpbackend&utm_medium=clientsite&utm_content=add-on-page&utm_campaign=PB' . $version;
 
-                                echo '<a target="_blank" class="right button ' . $wppb_paid_link_class . '" href="' . $wppb_add_on['download_url'] . $wppb_paid_href_utm_text . '" data-add-on-slug="profile-builder-' . $wppb_add_on['slug'] . '" data-add-on-name="' . $wppb_add_on['name'] . '" >' . $wppb_paid_link_text . '</a>';
+                                echo '<a target="_blank" class="right button ' . $wppb_paid_link_class . '" href="' . $wppb_add_on['download_url'] . $wppb_paid_href_utm_text . '" data-add-on-slug="profile-builder-' . $wppb_add_on['slug'] . '" data-add-on-name="' . $wppb_add_on['name'] . '" data-nonce="'. $ajax_nonce .'">' . $wppb_paid_link_text . '</a>';
                                 echo '<span class="dashicons dashicons-yes"></span><span class="wppb-add-on-message">' . __( 'Compatible with your version of Profile Builder.', 'profilebuilder' ) . '</span>';
 
                             }
 
                             echo '<div class="spinner"></div>';
 
-                        // PB version type does not match
+                            // PB version type does not match
                         } else {
 
                             echo '<a target="_blank" class="button button-secondary right" href="http://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=add-on-page-upgrade-button&utm_campaign=PB' . $version . '">' . __( 'Upgrade Profile Builder', 'profilebuilder' ) . '</a>';
@@ -159,10 +160,10 @@ function wppb_add_ons_content() {
                 endforeach;
             }
 
-        ?>
+            ?>
         </div>
     </div>
-    <?php
+<?php
 }
 
 /*
