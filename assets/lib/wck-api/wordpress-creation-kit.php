@@ -779,7 +779,7 @@ class Wordpress_Creation_Kit_PB{
 		$results[$element_id] = $values;
 		
 		do_action( 'wck_before_update_meta', $meta, $id, $values, $element_id );
-		
+
 		if( $this->args['context'] == 'post_meta' )
 			update_post_meta($id, $meta, $results);
 		else if ( $this->args['context'] == 'option' )

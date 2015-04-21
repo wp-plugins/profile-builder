@@ -182,40 +182,6 @@ function wppb_front_end_password_recovery(){
 					$message = apply_filters( 'wppb_recover_password_sent_message1', $message, $postedData );
 					$messageNo = '1';
 
-					//verify e-mail validity
-					$query = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM $wpdb->users WHERE user_email= %s", $postedData ) );
-					if( !empty( $query[0] ) ){
-						$requestedUserID = $query[0]->ID;
-						$requestedUserLogin = $query[0]->user_login;
-						$requestedUserEmail = $query[0]->user_email;
-
-                        if( $wppb_generalSettings['loginWith'] == 'username' )
-                            $display_username_email = $query[0]->user_login;
-                        else
-                            $display_username_email = $query[0]->user_email;
-
-						//search if there is already an activation key present, if not create one
-						$key = wppb_retrieve_activation_key( $requestedUserLogin );
-
-						//send primary email message
-						$recoveruserMailMessage1  = sprintf( __('Someone requested that the password be reset for the following account: <b>%1$s</b><br/>If this was a mistake, just ignore this email and nothing will happen.<br/>To reset your password, visit the following link:%2$s', 'profilebuilder'), $display_username_email, '<a href="'.add_query_arg( array( 'loginName' => $requestedUserLogin, 'key' => $key ), wppb_curpageurl() ).'">'.add_query_arg( array( 'loginName' => $requestedUserLogin, 'key' => $key ), wppb_curpageurl() ).'</a>');
-						$recoveruserMailMessage1  = apply_filters( 'wppb_recover_password_message_content_sent_to_user1', $recoveruserMailMessage1, $requestedUserID, $requestedUserLogin, $requestedUserEmail );
-
-						$recoveruserMailMessageTitle1 = sprintf(__('Password Reset from "%1$s"', 'profilebuilder'), $blogname = wp_specialchars_decode(get_option('blogname'), ENT_QUOTES));
-						$recoveruserMailMessageTitle1 = apply_filters('wppb_recover_password_message_title_sent_to_user1', $recoveruserMailMessageTitle1, $requestedUserLogin);
-
-						//we add this filter to enable html encoding
-						add_filter('wp_mail_content_type',create_function('', 'return "text/html"; '));
-						//send mail to the user notifying him of the reset request
-						if (trim($recoveruserMailMessageTitle1) != ''){
-							$sent = wp_mail($requestedUserEmail, $recoveruserMailMessageTitle1, $recoveruserMailMessage1);
-							if ($sent === false){
-								$message = '<b>'. __( 'ERROR', 'profilebuilder' ) .': </b>' . sprintf( __( 'There was an error while trying to send the activation link to %1$s!', 'profilebuilder' ), $postedData );
-								$message = apply_filters( 'wppb_recover_password_sent_message_error_sending', $message );
-								$messageNo = '5';
-							}
-						}
-					}
 				}
 
 			}elseif ( !email_exists( $postedData ) ){
@@ -224,6 +190,48 @@ function wppb_front_end_password_recovery(){
 				$messageNo = '2';
 			}
 		}
+
+        // For some extra validations you can filter messageNo
+        $messageNo = apply_filters( 'wppb_recover_password_message_no', $messageNo );
+
+        if( $messageNo == '1' ) {
+
+            //verify e-mail validity
+            $query = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM $wpdb->users WHERE user_email= %s", $postedData ) );
+            if( !empty( $query[0] ) ){
+                $requestedUserID = $query[0]->ID;
+                $requestedUserLogin = $query[0]->user_login;
+                $requestedUserEmail = $query[0]->user_email;
+
+                if( $wppb_generalSettings['loginWith'] == 'username' )
+                    $display_username_email = $query[0]->user_login;
+                else
+                    $display_username_email = $query[0]->user_email;
+
+                //search if there is already an activation key present, if not create one
+                $key = wppb_retrieve_activation_key( $requestedUserLogin );
+
+                //send primary email message
+                $recoveruserMailMessage1  = sprintf( __('Someone requested that the password be reset for the following account: <b>%1$s</b><br/>If this was a mistake, just ignore this email and nothing will happen.<br/>To reset your password, visit the following link:%2$s', 'profilebuilder'), $display_username_email, '<a href="'.add_query_arg( array( 'loginName' => $requestedUserLogin, 'key' => $key ), wppb_curpageurl() ).'">'.add_query_arg( array( 'loginName' => $requestedUserLogin, 'key' => $key ), wppb_curpageurl() ).'</a>');
+                $recoveruserMailMessage1  = apply_filters( 'wppb_recover_password_message_content_sent_to_user1', $recoveruserMailMessage1, $requestedUserID, $requestedUserLogin, $requestedUserEmail );
+
+                $recoveruserMailMessageTitle1 = sprintf(__('Password Reset from "%1$s"', 'profilebuilder'), $blogname = wp_specialchars_decode(get_option('blogname'), ENT_QUOTES));
+                $recoveruserMailMessageTitle1 = apply_filters('wppb_recover_password_message_title_sent_to_user1', $recoveruserMailMessageTitle1, $requestedUserLogin);
+
+                //we add this filter to enable html encoding
+                add_filter('wp_mail_content_type',create_function('', 'return "text/html"; '));
+                //send mail to the user notifying him of the reset request
+                if (trim($recoveruserMailMessageTitle1) != ''){
+                    $sent = wp_mail($requestedUserEmail, $recoveruserMailMessageTitle1, $recoveruserMailMessage1);
+                    if ($sent === false){
+                        $message = '<b>'. __( 'ERROR', 'profilebuilder' ) .': </b>' . sprintf( __( 'There was an error while trying to send the activation link to %1$s!', 'profilebuilder' ), $postedData );
+                        $message = apply_filters( 'wppb_recover_password_sent_message_error_sending', $message );
+                        $messageNo = '5';
+                    }
+                }
+            }
+
+        }
 
 	}
 	// If the user used the correct key-code, update his/her password
