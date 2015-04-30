@@ -48,7 +48,7 @@ function wppb_add_ons_content() {
 
         <div id="the-list">
 
-            <?php
+        <?php
 
             $wppb_add_ons = wppb_add_ons_get_remote_content();
             $wppb_get_all_plugins = get_plugins();
@@ -60,17 +60,24 @@ function wppb_add_ons_content() {
 
             } else {
 
-                foreach( $wppb_add_ons as $key => $wppb_add_on ):
+                foreach( $wppb_add_ons as $key => $wppb_add_on ) {
 
                     $wppb_add_on_exists = 0;
                     $wppb_add_on_is_active = 0;
+                    $wppb_add_on_is_network_active = 0;
 
                     // Check to see if add-on is in the plugins folder
-                    foreach( $wppb_get_all_plugins as $wppb_plugin_key => $wppb_plugin ) {
-                        if( strpos( strtolower($wppb_plugin['Name']), strtolower($wppb_add_on['name']) ) !== false && strpos( strtolower($wppb_plugin['AuthorName']), strtolower('Cozmoslabs') ) !== false ) {
+                    foreach ($wppb_get_all_plugins as $wppb_plugin_key => $wppb_plugin) {
+                        if (strpos(strtolower($wppb_plugin['Name']), strtolower($wppb_add_on['name'])) !== false && strpos(strtolower($wppb_plugin['AuthorName']), strtolower('Cozmoslabs')) !== false) {
                             $wppb_add_on_exists = 1;
 
-                            if( in_array( $wppb_plugin_key, $wppb_get_active_plugins ) ) {
+                            if (in_array($wppb_plugin_key, $wppb_get_active_plugins)) {
+                                $wppb_add_on_is_active = 1;
+                            }
+
+                            // Consider the add-on active if it's network active
+                            if (is_plugin_active_for_network($wppb_plugin_key)) {
+                                $wppb_add_on_is_network_active = 1;
                                 $wppb_add_on_is_active = 1;
                             }
 
@@ -96,39 +103,54 @@ function wppb_add_ons_content() {
 
                     echo '</div>';
 
-                    $wppb_version_validation = version_compare( PROFILE_BUILDER_VERSION, $wppb_add_on['product_version'] );
+                    $wppb_version_validation = version_compare(PROFILE_BUILDER_VERSION, $wppb_add_on['product_version']);
 
-                    ( $wppb_version_validation != -1 ) ? $wppb_version_validation_class = 'wppb-add-on-compatible' : $wppb_version_validation_class = 'wppb-add-on-not-compatible';
+                    ($wppb_version_validation != -1) ? $wppb_version_validation_class = 'wppb-add-on-compatible' : $wppb_version_validation_class = 'wppb-add-on-not-compatible';
 
                     echo '<div class="plugin-card-bottom ' . $wppb_version_validation_class . '">';
 
                     // PB minimum version number is all good
-                    if( $wppb_version_validation != -1 ) {
+                    if ($wppb_version_validation != -1) {
 
                         // PB version type does match
-                        if( in_array( strtolower( $version ), $wppb_add_on['product_version_type'] ) ) {
+                        if (in_array(strtolower($version), $wppb_add_on['product_version_type'])) {
 
-                            $ajax_nonce = wp_create_nonce( "wppb-activate-addon" );
+                            $ajax_nonce = wp_create_nonce("wppb-activate-addon");
 
-                            if( $wppb_add_on_exists ) {
+                            if ($wppb_add_on_exists) {
 
-                                if( !$wppb_add_on_is_active ) {
-                                    echo '<a class="wppb-add-on-activate right button button-secondary" href="' . $wppb_add_on['plugin_file'] . '" data-nonce="'. $ajax_nonce .'">' . __( 'Activate', 'profilebuilder' ) . '</a>';
-                                    echo '<span class="dashicons dashicons-no-alt"></span><span class="wppb-add-on-message">' . __( 'Add-On is <strong>inactive</strong>', 'profilebuilder' ) . '</span>';
+                                // Display activate/deactivate buttons
+                                if (!$wppb_add_on_is_active) {
+                                    echo '<a class="wppb-add-on-activate right button button-secondary" href="' . $wppb_add_on['plugin_file'] . '" data-nonce="' . $ajax_nonce . '">' . __('Activate', 'profilebuilder') . '</a>';
 
+                                    // If add-on is network activated don't allow deactivation
+                                } elseif (!$wppb_add_on_is_network_active) {
+                                    echo '<a class="wppb-add-on-deactivate right button button-secondary" href="' . $wppb_add_on['plugin_file'] . '" data-nonce="' . $ajax_nonce . '">' . __('Deactivate', 'profilebuilder') . '</a>';
+                                }
+
+                                // Display message to the user
+                                if (!$wppb_add_on_is_active) {
+                                    echo '<span class="dashicons dashicons-no-alt"></span><span class="wppb-add-on-message">' . __('Add-On is <strong>inactive</strong>', 'profilebuilder') . '</span>';
                                 } else {
-                                    echo '<a class="wppb-add-on-deactivate right button button-secondary" href="' . $wppb_add_on['plugin_file'] . '" data-nonce="'. $ajax_nonce .'">' . __( 'Deactivate', 'profilebuilder' ) . '</a>';
-                                    echo '<span class="dashicons dashicons-yes"></span><span class="wppb-add-on-message">' . __( 'Add-On is <strong>active</strong>', 'profilebuilder' ) . '</span>';
+                                    echo '<span class="dashicons dashicons-yes"></span><span class="wppb-add-on-message">' . __('Add-On is <strong>active</strong>', 'profilebuilder') . '</span>';
                                 }
 
                             } else {
 
-                                ( $wppb_add_on['paid'] ) ? $wppb_paid_link_class = 'button-primary' : $wppb_paid_link_class = 'button-secondary wppb-add-on-download';
-                                ( $wppb_add_on['paid'] ) ? $wppb_paid_link_text = __( 'Buy Now', 'profilebuilder' ) : $wppb_paid_link_text = __( 'Install Now', 'profilebuilder' );
-                                ( $wppb_add_on['paid'] ) ? $wppb_paid_href_utm_text = '?utm_source=wpbackend&utm_medium=clientsite&utm_content=add-on-page-buy-button&utm_campaign=PB' . $version : $wppb_paid_href_utm_text = '&utm_source=wpbackend&utm_medium=clientsite&utm_content=add-on-page&utm_campaign=PB' . $version;
+                                // If we're on a multisite don't add the wpp-add-on-download class to the button so we don't fire the js that
+                                // handles the in-page download
+                                if (is_multisite()) {
+                                    ($wppb_add_on['paid']) ? $wppb_paid_link_class = 'button-primary' : $wppb_paid_link_class = 'button-secondary';
+                                    ($wppb_add_on['paid']) ? $wppb_paid_link_text = __('Buy Now', 'profilebuilder') : $wppb_paid_link_text = __('Download Now', 'profilebuilder');
+                                } else {
+                                    ($wppb_add_on['paid']) ? $wppb_paid_link_class = 'button-primary' : $wppb_paid_link_class = 'button-secondary wppb-add-on-download';
+                                    ($wppb_add_on['paid']) ? $wppb_paid_link_text = __('Buy Now', 'profilebuilder') : $wppb_paid_link_text = __('Install Now', 'profilebuilder');
+                                }
 
-                                echo '<a target="_blank" class="right button ' . $wppb_paid_link_class . '" href="' . $wppb_add_on['download_url'] . $wppb_paid_href_utm_text . '" data-add-on-slug="profile-builder-' . $wppb_add_on['slug'] . '" data-add-on-name="' . $wppb_add_on['name'] . '" data-nonce="'. $ajax_nonce .'">' . $wppb_paid_link_text . '</a>';
-                                echo '<span class="dashicons dashicons-yes"></span><span class="wppb-add-on-message">' . __( 'Compatible with your version of Profile Builder.', 'profilebuilder' ) . '</span>';
+                                ($wppb_add_on['paid']) ? $wppb_paid_href_utm_text = '?utm_source=wpbackend&utm_medium=clientsite&utm_content=add-on-page-buy-button&utm_campaign=PB' . $version : $wppb_paid_href_utm_text = '&utm_source=wpbackend&utm_medium=clientsite&utm_content=add-on-page&utm_campaign=PB' . $version;
+
+                                echo '<a target="_blank" class="right button ' . $wppb_paid_link_class . '" href="' . $wppb_add_on['download_url'] . $wppb_paid_href_utm_text . '" data-add-on-slug="profile-builder-' . $wppb_add_on['slug'] . '" data-add-on-name="' . $wppb_add_on['name'] . '" data-nonce="' . $ajax_nonce . '">' . $wppb_paid_link_text . '</a>';
+                                echo '<span class="dashicons dashicons-yes"></span><span class="wppb-add-on-message">' . __('Compatible with your version of Profile Builder.', 'profilebuilder') . '</span>';
 
                             }
 
@@ -137,33 +159,33 @@ function wppb_add_ons_content() {
                             // PB version type does not match
                         } else {
 
-                            echo '<a target="_blank" class="button button-secondary right" href="http://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=add-on-page-upgrade-button&utm_campaign=PB' . $version . '">' . __( 'Upgrade Profile Builder', 'profilebuilder' ) . '</a>';
-                            echo '<span class="dashicons dashicons-no-alt"></span><span class="wppb-add-on-message">' . __( 'Not compatible with Profile Builder', 'profilebuilder' ) . ' ' . $version . '</span>';
+                            echo '<a target="_blank" class="button button-secondary right" href="http://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=add-on-page-upgrade-button&utm_campaign=PB' . $version . '">' . __('Upgrade Profile Builder', 'profilebuilder') . '</a>';
+                            echo '<span class="dashicons dashicons-no-alt"></span><span class="wppb-add-on-message">' . __('Not compatible with Profile Builder', 'profilebuilder') . ' ' . $version . '</span>';
 
                         }
 
                     } else {
 
                         // If PB version is older than the minimum required version of the add-on
-                        echo ' ' . '<a class="button button-secondary right" href="' . admin_url('plugins.php') . '">' . __( 'Update', 'profilebuilder' ) . '</a>';
-                        echo '<span class="wppb-add-on-message">' . __( 'Not compatible with your version of Profile Builder.', 'profilebuilder' ) . '</span><br />';
-                        echo '<span class="wppb-add-on-message">' . __( 'Minimum required Profile Builder version:', 'profilebuilder' ) . '<strong> ' . $wppb_add_on['product_version'] . '</strong></span>';
+                        echo ' ' . '<a class="button button-secondary right" href="' . admin_url('plugins.php') . '">' . __('Update', 'profilebuilder') . '</a>';
+                        echo '<span class="wppb-add-on-message">' . __('Not compatible with your version of Profile Builder.', 'profilebuilder') . '</span><br />';
+                        echo '<span class="wppb-add-on-message">' . __('Minimum required Profile Builder version:', 'profilebuilder') . '<strong> ' . $wppb_add_on['product_version'] . '</strong></span>';
 
                     }
 
                     // We had to put this error here because we need the url of the add-on
-                    echo '<span class="wppb-add-on-user-messages wppb-error-manual-install">' . sprintf( __( 'Could not install add-on. Retry or <a href="%s" target="_blank">install manually</a>.', 'profilebuilder' ), esc_url( $wppb_add_on['url'] ) ) . '</span>';
+                    echo '<span class="wppb-add-on-user-messages wppb-error-manual-install">' . sprintf(__('Could not install add-on. Retry or <a href="%s" target="_blank">install manually</a>.', 'profilebuilder'), esc_url($wppb_add_on['url'])) . '</span>';
 
                     echo '</div>';
                     echo '</div>';
 
-                endforeach;
+                } /* end $wppb_add_ons foreach */
             }
 
-            ?>
+        ?>
         </div>
     </div>
-<?php
+    <?php
 }
 
 /*

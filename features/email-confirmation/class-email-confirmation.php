@@ -88,7 +88,7 @@ class wpp_list_unfonfirmed_email_table extends PB_WP_List_Table {
                         }
                     }
                 }
-                return '<a href="#" data-email="'. $item['email'] .'" onclick="jQuery(\'<div><pre>'. $user_meta_content .'</pre></div>\').dialog({title:\''. __("User Meta", "profilebuilder" ) .'\', width: 500 }) ;return false;">'. __( 'show', 'profilebuilder' ) .'</a>';
+                return '<a href="#" data-email="'. $item['email'] .'" onclick="'. esc_attr( 'jQuery(\'<div><pre>'. $user_meta_content .'</pre></div>\').dialog({title:\''. addslashes( __("User Meta", "profilebuilder" ) ) .'\', width: 500 }) ;return false;') .'">'. __( 'show', 'profilebuilder' ) .'</a>';
             default:
                 return print_r($item,true); //Show the whole array for troubleshooting purposes
         }
@@ -117,9 +117,9 @@ class wpp_list_unfonfirmed_email_table extends PB_WP_List_Table {
 		
         //Build row actions
         $actions = array(
-            'delete'    => sprintf( '<a href="javascript:confirmECAction( \'%s\', \'%s\', \'%s\', \'' . __( 'delete this user from the _signups table?', 'profilebuilder' ) . '\' )">' . __( 'Delete', 'profilebuilder' ) . '</a>', wppb_curpageurl(), 'delete', $item['ID'] ),
-            'confirm'   => sprintf( '<a href="javascript:confirmECAction( \'%s\', \'%s\', \'%s\', \'' . __( 'confirm this email yourself?', 'profilebuilder' ) . '\' )">' . __( 'Confirm Email', 'profilebuilder' ) . '</a>', wppb_curpageurl(), 'confirm', $item['ID'] ),
-            'resend'    => sprintf( '<a href="javascript:confirmECAction( \'%s\', \'%s\', \'%s\', \'' . __( 'resend the activation link?', 'profilebuilder' ) . '\' )">' . __( 'Resend Activation Email', 'profilebuilder' ) . '</a>', wppb_curpageurl(), 'resend', $item['ID'] )
+            'delete'    => sprintf( '<a href="javascript:confirmECAction( \'%s\', \'%s\', \'%s\', \'' . addslashes( __( 'delete this user from the _signups table?', 'profilebuilder' ) ) . '\' )">' . __( 'Delete', 'profilebuilder' ) . '</a>', wppb_curpageurl(), 'delete', $item['ID'] ),
+            'confirm'   => sprintf( '<a href="javascript:confirmECAction( \'%s\', \'%s\', \'%s\', \'' . addslashes( __( 'confirm this email yourself?', 'profilebuilder' ) ) . '\' )">' . __( 'Confirm Email', 'profilebuilder' ) . '</a>', wppb_curpageurl(), 'confirm', $item['ID'] ),
+            'resend'    => sprintf( '<a href="javascript:confirmECAction( \'%s\', \'%s\', \'%s\', \'' . addslashes( __( 'resend the activation link?', 'profilebuilder' ) ) . '\' )">' . __( 'Resend Activation Email', 'profilebuilder' ) . '</a>', wppb_curpageurl(), 'resend', $item['ID'] )
         );
         
         //Return the user row
@@ -255,9 +255,9 @@ class wpp_list_unfonfirmed_email_table extends PB_WP_List_Table {
 			}elseif( 'confirm' === $this->current_action() ) {
 				foreach ( $_GET['user'] as $user ){
 					$sql_result = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM " . $wpdb->base_prefix . "signups WHERE user_email = %s", $user ), ARRAY_A );
-					
+
 					if ( $sql_result )
-						wppb_manual_activate_signup( $sql_result->activation_key );
+						wppb_manual_activate_signup( $sql_result['activation_key'] );
 				}
 
 				$this->wppb_process_bulk_action_message( __( 'The selected users have been activated', 'profilebuilder' ), get_bloginfo('url').'/wp-admin/users.php?page=unconfirmed_emails' );

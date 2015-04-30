@@ -65,10 +65,11 @@ function wppb_manage_fields_submenu(){
 	
 				
 	//Free to Pro call to action on Manage Fields page
-	$field_description = 'Choose one of the supported field types';
+	$field_description = __('Choose one of the supported field types','profilebuilder');
 	if( PROFILE_BUILDER == 'Profile Builder Free' ) {
-		$field_description .='. Extra Field Types are available in %1$sHobbyist or PRO versions%2$s.';
+		$field_description .= sprintf( __('. Extra Field Types are available in <a href="%s">Hobbyist or PRO versions</a>.' , 'profilebuilder'), esc_url( 'http://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=manage-fields-link&utm_campaign=PBFree' ) );
 	}
+
 
     //user roles
     global $wp_roles;
@@ -82,7 +83,7 @@ function wppb_manage_fields_submenu(){
 	$fields = apply_filters( 'wppb_manage_fields', array(
 
         array( 'type' => 'text', 'slug' => 'field-title', 'title' => __( 'Field Title', 'profilebuilder' ), 'description' => __( 'Title of the field', 'profilebuilder' ) ),
-        array( 'type' => 'select', 'slug' => 'field', 'title' => __( 'Field', 'profilebuilder' ), 'options' => apply_filters( 'wppb_manage_fields_types', $manage_field_types ), 'default-option' => true, 'description' => sprintf(__( $field_description, 'profilebuilder' ), '<a href="http://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=manage-fields-link&utm_campaign=PBFree">', '</a>') ),
+        array( 'type' => 'select', 'slug' => 'field', 'title' => __( 'Field', 'profilebuilder' ), 'options' => apply_filters( 'wppb_manage_fields_types', $manage_field_types ), 'default-option' => true, 'description' => $field_description ),
         array( 'type' => 'text', 'slug' => 'meta-name', 'title' => __( 'Meta-name', 'profilebuilder' ), 'default' => wppb_get_meta_name(), 'description' => __( 'Use this in conjuction with WordPress functions to display the value in the page of your choosing<br/>Auto-completed but in some cases editable (in which case it must be uniqe)<br/>Changing this might take long in case of a very big user-count', 'profilebuilder' ) ),
         array( 'type' => 'text', 'slug' => 'id', 'title' => __( 'ID', 'profilebuilder' ), 'default' => wppb_get_unique_id(), 'description' => __( "A unique, auto-generated ID for this particular field<br/>You can use this in conjuction with filters to target this element if needed<br/>Can't be edited", 'profilebuilder' ), 'readonly' => true ),
         array( 'type' => 'textarea', 'slug' => 'description', 'title' => __( 'Description', 'profilebuilder' ), 'description' => __( 'Enter a (detailed) description of the option for end users to read<br/>Optional', 'profilebuilder') ),

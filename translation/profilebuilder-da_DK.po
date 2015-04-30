@@ -1,12 +1,12 @@
-# Translation of Profile Builder in Chinese (China)
+# Translation of Profile Builder in Danish
 # This file is distributed under the same license as the Profile Builder package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2015-04-08 09:10:00+0000\n"
+"PO-Revision-Date: 2015-04-23 08:43:09+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: GlotPress/0.1\n"
 "Project-Id-Version: Profile Builder\n"
 
@@ -52,104 +52,104 @@ msgstr ""
 
 #: ../admin/add-ons.php:10 ../admin/add-ons.php:32
 msgid "Add-Ons"
-msgstr "插件"
+msgstr "Tilføjelser"
 
 #: ../admin/add-ons.php:34 ../admin/add-ons.php:124
 msgid "Activate"
-msgstr "激活"
+msgstr "Aktivér"
 
 #: ../admin/add-ons.php:36
 msgid "Downloading and installing..."
-msgstr ""
+msgstr "Dowloader og installerer...."
 
 #: ../admin/add-ons.php:37
 msgid "Installation complete"
-msgstr ""
+msgstr "Installationen gennemført"
 
 #: ../admin/add-ons.php:39
 msgid "Add-On is Active"
-msgstr ""
+msgstr "Tilføjelser er aktive"
 
 #: ../admin/add-ons.php:40
 msgid "Add-On has been activated"
-msgstr ""
+msgstr "Tilføjelser er blevet aktiveret"
 
 #: ../admin/add-ons.php:41
 msgid "Retry Install"
-msgstr "重新安装"
+msgstr "Geninstallér"
 
 #: ../admin/add-ons.php:43 ../admin/add-ons.php:135
 msgid "Add-On is <strong>active</strong>"
-msgstr ""
+msgstr "Tilføjelser (add-on) er <strong>active</strong>"
 
 #: ../admin/add-ons.php:44 ../admin/add-ons.php:133
 msgid "Add-On is <strong>inactive</strong>"
-msgstr ""
+msgstr "Tilføjelser (add-on) er <strong>inactive</strong>"
 
 #: ../admin/add-ons.php:46 ../admin/add-ons.php:128
 msgid "Deactivate"
-msgstr ""
+msgstr "Deaktivér"
 
 #: ../admin/add-ons.php:47
 msgid "Add-On has been deactivated."
-msgstr ""
+msgstr "Tilføjelser er blevet deaktiveret"
 
 #: ../admin/add-ons.php:59
 msgid "Something went wrong, we could not connect to the server. Please try again later."
-msgstr "现在无法连接服务器，请稍候重试"
+msgstr "Et eller andet gik galt, vi kunne ikke forbinde til serveren. Venligst prøv igen senere."
 
 #: ../admin/add-ons.php:144 ../admin/add-ons.php:147
 msgid "Buy Now"
-msgstr "立即购买"
+msgstr "Køb nu"
 
 #: ../admin/add-ons.php:147
 msgid "Install Now"
-msgstr "立即安装"
+msgstr "Installér nu"
 
 #: ../admin/add-ons.php:153
 msgid "Compatible with your version of Profile Builder."
-msgstr ""
+msgstr "Kompatibel med din version af Profile Builder."
 
 #: ../admin/add-ons.php:162
 msgid "Upgrade Profile Builder"
-msgstr ""
+msgstr "Opgradér Profile Builder"
 
 #: ../admin/add-ons.php:163
 msgid "Not compatible with Profile Builder"
-msgstr ""
+msgstr "Ikke kompatibel med Profile Builder"
 
 #: ../admin/add-ons.php:171
 msgid "Not compatible with your version of Profile Builder."
-msgstr ""
+msgstr "Ikke kompatibel med din version af Profile Builder"
 
 #: ../admin/add-ons.php:172
 msgid "Minimum required Profile Builder version:"
-msgstr ""
+msgstr "Minimum krævet version af Profile Builder:"
 
 #: ../admin/add-ons.php:177
 msgid "Could not install add-on. Retry or <a href=\"%s\" target=\"_blank\">install manually</a>."
-msgstr ""
+msgstr "Kunne ikke installere tilføjelse (add-on). Prøv igen eller <a href=\"%s\" target=\"_blank\">install manually</a>."
 
 #: ../front-end/default-fields/email/email.php:46
 msgid "You must enter a valid email address."
-msgstr "请输入有效的邮箱地址"
+msgstr "Du skal indtaste en gyldig e-mail adresse."
 
 #: ../front-end/default-fields/username/username.php:47
 msgid "This username is invalid because it uses illegal characters."
-msgstr ""
+msgstr "Dette brugernavn er ugyldigt, idet det indeholde karaterer / tegn som ikke er tilladte."
 
 #: ../front-end/default-fields/username/username.php:47
 msgid "Please enter a valid username."
-msgstr "请输入有效的用户名"
+msgstr "Venligst indtast et gyldigt brugernavn."
 
 #: ../front-end/extra-fields/user-role/user-role.php:65
 #: ../front-end/extra-fields/user-role/user-role.php:78
 msgid "Only administrators can see this field on edit profile forms."
-msgstr ""
+msgstr "Kun administratorer kan se dette felt på rediger profilformularer."
 
 #: ../front-end/extra-fields/user-role/user-role.php:74
 msgid "As an administrator you cannot change your role."
-msgstr "作为管理员，您无法改变您的角色"
+msgstr "Som administrator kan du ikke ændre din rolle."
 
 #: ../modules/email-customizer/admin-email-customizer.php:117
 msgid ""
@@ -157,22 +157,27 @@ msgid ""
 "<p>{{username}} has requested a password change via the password reset feature.</p>\n"
 "<p>His/her new password is: {{password}}</p>\n"
 msgstr ""
+"\n"
+"<p>{{username}} har foretaget en ændring af adgangskoden via genskab adgangskode.</p>\n"
+"\n"
+"<p>Hans/hendes nye adgangskode er: {{password}}</p>\n"
+"\n"
 
 #: ../modules/email-customizer/admin-email-customizer.php:141
 msgid "Admin Notification for User Password Reset"
-msgstr ""
+msgstr "Admin meddelelse for genskabning af bruger adgangskode"
 
 #: ../modules/email-customizer/email-customizer.php:42
 msgid "Reset Key"
-msgstr ""
+msgstr "Genskab nøgle"
 
 #: ../modules/email-customizer/email-customizer.php:43
 msgid "Reset Url"
-msgstr ""
+msgstr "Genskab URL"
 
 #: ../modules/email-customizer/email-customizer.php:44
 msgid "Reset Link"
-msgstr ""
+msgstr "Genskab link"
 
 #: ../modules/email-customizer/user-email-customizer.php:204
 msgid ""
@@ -183,267 +188,276 @@ msgid ""
 "<p>To reset your password, visit the following address:<br/>\n"
 "{{{reset_link}}}</p>\n"
 msgstr ""
+"\n"
+"<p>Nogen har foretaget en genskabning af adgangskoden for følgende konto: {{site_name}}<br/>\n"
+"Brugernavn: {{username}}</p>\n"
+"<p>Hvis dette var en fejl skal du blot se bort fra denne email og intet vil ske.</p>\n"
+"<p>For at genskabe din adgangskode gå ind på følgende adresse:<br/>\n"
+"{{{reset_link}}}</p>\n"
 
 #: ../modules/email-customizer/user-email-customizer.php:218
 msgid "[{{site_name}}] Password Reset"
-msgstr ""
+msgstr "[{{site_name}}] Nulstil adgangskode "
 
 #: ../modules/email-customizer/user-email-customizer.php:229
 msgid "Password Reset Email"
-msgstr "密码重设邮件"
+msgstr "E-mail vedr. nulstilling af adgangskode"
 
 #: ../modules/email-customizer/user-email-customizer.php:235
 msgid ""
 "\n"
 "<p>You have successfully reset your password to: {{password}}</p>\n"
 msgstr ""
+"\n"
+"<p>Du har med succes nulstillet din adgangskode til: {{password}}</p>\n"
+"\n"
 
 #: ../modules/email-customizer/user-email-customizer.php:245
 msgid "[{{site_name}}] Password Reset Successfully"
-msgstr ""
+msgstr "[{{site_name}}] Adgangskode nulstillet succesfuldt"
 
 #: ../modules/email-customizer/user-email-customizer.php:256
 msgid "Password Reset Success Email"
-msgstr ""
+msgstr "E-mail vedr. adgangskode nulstillet succesfuldt"
 
 #: ../modules/user-listing/userlisting.php:134
 msgid "User Nicename"
-msgstr "用户昵称"
+msgstr "Bruger kaldenavn"
 
 #: ../modules/user-listing/userlisting.php:442
 msgid "None"
-msgstr ""
+msgstr "Ingen"
 
 #: ../admin/admin-functions.php:106
 msgid "<strong>ERROR</strong>: The password must have the minimum length of %s characters"
-msgstr "<strong>错误</strong>: 密码必须有 %s 个字符"
+msgstr "<strong>FEJL</strong>: Adgangskoden skal bestå af mindst %s characters"
 
 #: ../admin/admin-functions.php:123
 msgid "<strong>ERROR</strong>: The password must have a minimum strength of %s"
-msgstr "<strong>错误</strong>: 密码必须满足强度 %s"
+msgstr "<strong>FEJL</strong>: Adgangskodens styrke skal være mindst: %s"
 
 #: ../admin/general-settings.php:144
 msgid "Username and Email"
-msgstr "用户名和邮箱"
+msgstr "Brugernavn og e-mail"
 
 #: ../admin/general-settings.php:149
 msgid "\"Username and Email\" - users can Log In with both Username and Email."
-msgstr "\"用户名和邮箱\" - 同时以用户名和邮箱登陆"
+msgstr "\"Brugernavn og e-mail\" - brugere kan logge ind med såvel brugernavn som e-mail."
 
 #: ../admin/general-settings.php:150
 msgid "\"Username\" - users can Log In only with Username."
-msgstr "\"用户名\" - 只能以用户名登陆"
+msgstr "\"Brugernavn\" - brugere kan kun logge ind med brugernavn."
 
 #: ../admin/general-settings.php:151
 msgid "\"Email\" - users can Log In only with Email."
-msgstr "\"邮箱\" - 用户只能用邮箱登陆"
+msgstr "\"E-mail\" - brugere kan kun logge ind med e-mail."
 
 #: ../admin/manage-fields.php:91
 msgid "Specify the extension(s) you want to limit to upload<br/>Example: .ext1,.ext2,.ext3<br/>If not specified, defaults to: .jpg,.jpeg,.gif,.png (.*)"
-msgstr "指定你想限制的文件后缀<br/>例如: .ext1,.ext2,.ext3<br/>如果不指定，默认为: .jpg,.jpeg,.gif,.png (.*)"
+msgstr "Specificer hvilke filformater (extensions) du ønsker at afgrænse til i uploads<br/>Eks: .ext1,.ext2,.ext3<br/>Hvis ikke specificeret er default: .jpg,.jpeg,.gif,.png (.*)"
 
 #: ../admin/manage-fields.php:92
 msgid "Specify the extension(s) you want to limit to upload<br/>Example: .ext1,.ext2,.ext3<br/>If not specified, defaults to all WordPress allowed file extensions (.*)"
-msgstr "指定你想限制的文件后缀<br/>例如: .ext1,.ext2,.ext3<br/>如果不指定，默认为Wordpress所允许的全部文件后缀"
+msgstr "Specificer hvilke filformater (extensions) du ønsker at afgrænse til i uploads<br/>Eks: .ext1,.ext2,.ext3<br/>Hvis ikke specificeret er default alle WordPress tilladte filformater (.*)"
 
 #: ../admin/manage-fields.php:100
 msgid "User Roles"
-msgstr "用户角色"
+msgstr "Brugerroller"
 
 #: ../admin/manage-fields.php:100
 msgid "Select which user roles to show to the user ( drag and drop to re-order )"
-msgstr "请选择要对用户显示哪个角色(可拖拽排序)"
+msgstr "Vælg hvilke brugerroller der skal vises for brugerne (\"træk\" og \"slip\" for at om-organiserer)"
 
 #: ../admin/manage-fields.php:101
 msgid "User Roles Order"
-msgstr "用户角色排序"
+msgstr "Brugerroller orden"
 
 #: ../admin/manage-fields.php:101
 msgid "Save the user role order from the user roles checkboxes"
-msgstr "从角色选择框来保存角色排序"
+msgstr "Gem brugerrolle ordenen fra brugerrollernes tjekbokse"
 
 #: ../admin/manage-fields.php:457
 msgid "Please select at least one user role\n"
-msgstr "请至少选择一个用户角色\n"
+msgstr "Vælg venligst mindst en brugerrolle\n"
 
 #: ../admin/register-version.php:22
 msgid "Profile Builder Register"
-msgstr "Profile Builder 注册"
+msgstr "Registrer Profile Builder"
 
 #: ../admin/register-version.php:81
 msgid "The serial number is about to expire soon!"
-msgstr "序列号即将到期"
+msgstr "Serienummeret udløber snart!"
 
 #: ../admin/register-version.php:81
 msgid " Your serial number is about to expire, please %1$s Renew Your License%2$s."
-msgstr "您的序列号即将到期, 请 %1$s 更新您的许可 %2$s."
+msgstr "Dit serienummer er ved at udløbe, venligst %1$s forny din licens%2$s."
 
 #: ../admin/register-version.php:83
 msgid " Your serial number is expired, please %1$s Renew Your License%2$s."
-msgstr "您的序列号已经过期, 请 %1$s 更新您的许可 %2$s. "
+msgstr " Dit serienummer er udløbet, venligst %1$s forny din licens%2$s."
 
 #: ../assets/lib/wck-api/wordpress-creation-kit.php:337
 msgid "Add Entry"
-msgstr "增加条目"
+msgstr "Tilføj post"
 
 #: ../features/email-confirmation/class-email-confirmation.php:91
 msgid "show"
-msgstr "显示"
+msgstr "vis"
 
 #: ../features/functions.php:632
 msgid "To allow users to register for your website via Profile Builder, you first must enable user registration. Go to %1$sNetwork Settings%2$s, and under Registration Settings make sure to check “User accounts may be registered”. %3$sDismiss%4$s"
-msgstr "为使用户可以通过Profile Builder注册，您首先需要开启“用户注册”。去到%1$s网络设置%2$s，常规，确保”任何人都可以注册“这个选项已被勾选。%3$s忽略%4$s"
+msgstr "For at tillade brugere at registrere sig på din hjemmeside via Profile Builder, skal du først aktivere brugerregistrering. Gå til %1$sNetwork Settings%2$s, og under registreringsopsætningen sørg for at sætte markering ved “Brugerkonti må registreres.” %3$sDismiss%4$s"
 
 #: ../front-end/class-formbuilder.php:506
 msgid "User to edit:"
-msgstr "要编辑的用户"
+msgstr "Bruger der skal redigeres:"
 
 #: ../front-end/default-fields/password/password.php:44
 #: ../front-end/recover.php:244
 msgid "The password must have the minimum length of %s characters"
-msgstr "密码至少应包括%s个字符"
+msgstr "Adgangskoden skal have en minimumslængde på %s karakterer"
 
 #: ../front-end/default-fields/password/password.php:48
 #: ../front-end/recover.php:248
 msgid "The password must have a minimum strength of %s"
-msgstr "密码至少满足强度 %s"
+msgstr "Adgangskoden skal minimum have en styrke på %s"
 
 #: ../front-end/extra-fields/user-role/user-role.php:106
 msgid "You cannot register this user role"
-msgstr "您不可以注册这个用户组"
+msgstr "Du kan ikke registrere denne brugerrolle"
 
 #: ../front-end/login.php:105
 msgid "username or email"
-msgstr "用户名或邮件"
+msgstr "brugernavn og e-mail"
 
 #: ../front-end/login.php:174
 msgid "Username or Email"
-msgstr "用户名或邮件"
+msgstr "Brugernavn og e-mail"
 
 #: ../front-end/logout.php:15
 msgid "You are currently logged in as %s. "
-msgstr "您现在的登陆名为 %s"
+msgstr "Du er i øjeblikket logget ind som %s."
 
 #: ../front-end/logout.php:15
 msgid "Log out &raquo;"
-msgstr "登出&raquo;"
+msgstr "Log ud &raquo;"
 
 #: ../modules/email-customizer/email-customizer.php:31
 msgid "User Role"
-msgstr "用户角色"
+msgstr "Brugerrolle"
 
 #: ../modules/user-listing/userlisting.php:1192
 msgid "View all extra shortcode parameters"
-msgstr "查看其他的断码参数"
+msgstr "Se alle ekstra \"shortcode\" parametre"
 
 #: ../modules/user-listing/userlisting.php:1206
 msgid "displays only the users that you specified the user_id for"
-msgstr ""
+msgstr "vis kun de brugere som du specificerede 'user_id' for"
 
 #: ../modules/user-listing/userlisting.php:1212
 msgid "displays all users except the ones you specified the user_id for"
-msgstr ""
+msgstr "vis alle brugere undtagen dem som du specificerede 'user_id' for"
 
 #: ../features/functions.php:506
 msgid "Minimum length of %d characters"
-msgstr "最少%d个字符"
+msgstr "Minimum længde på %d karakterer"
 
 #: ../front-end/class-formbuilder.php:99 ../front-end/class-formbuilder.php:102
 msgid "This message is only visible by administrators"
-msgstr "只有管理员可以查看该信息"
+msgstr "Denne meddelelse er kun synlig for administratorer"
 
 #: ../front-end/extra-fields/avatar/avatar.php:124
 msgid "The image file set in the %s field for this user could not be found on the server. The default WordPress avatar is being used at the moment."
-msgstr ""
+msgstr "Billedfilen i %s feltet for denne bruger. kunne ikke findes på serveren. WordPress' default avatar anvendes i øjeblikket.."
 
 #: ../modules/user-listing/userlisting.php:364
 msgid "User not found"
-msgstr "找不到用户"
+msgstr "Bruger ikke fundet"
 
 #: ../modules/email-customizer/admin-email-customizer.php:38
 #: ../modules/email-customizer/user-email-customizer.php:38
 msgid "Valid tags {{reply_to}} and {{site_name}}"
-msgstr ""
+msgstr "Gyldige tags {{reply_to}} og{{site_name}}"
 
 #: ../admin/admin-bar.php:48
 msgid "Choose which user roles view the admin bar in the front-end of the website."
-msgstr "选择哪个用户角色可以产看网站前台的管理员工具栏"
+msgstr "Vælg hvilke brugerroller der skal se kontrolpanelet på sitets 'front-end'."
 
 #: ../admin/manage-fields.php:96
 msgid "Enter a comma separated list of values<br/>This can be anything, as it is hidden from the user, but should not contain special characters or apostrophes"
-msgstr ""
+msgstr "Indsæt en komma separeret liste med værdier<br/>Det kan være hvad som helst, idet værdierne er skjulte for brugeren. Men listen må ikke indeholde specielle karakterer eller apostroffer."
 
 #: ../admin/manage-fields.php:394
 msgid "The meta-name cannot be empty\n"
-msgstr ""
+msgstr "'Meta-name' kan ikke være tom\n"
 
 #: ../admin/register-version.php:69
 msgid "Now that you acquired a copy of %s, you should take the time and register it with the serial number you received"
-msgstr ""
+msgstr "Nu du har erhvervet en kopi af %s bør du tage dig tid til at registrere det med serienummeret som du modtog."
 
 #: ../admin/register-version.php:243
 msgid "<p>Your <strong>Profile Builder</strong> serial number is invalid or missing. <br/>Please %1$sregister your copy%2$s to receive access to automatic updates and support. Need a license key? %3$sPurchase one now%4$s</p>"
-msgstr ""
+msgstr "<p>Din<strong>Profile Builder</strong> serienummer er ugyldigt eller mangler. <br/>Venligst %1$sregistrer din kopi%2$s for at få adgang til automatiske opdateringer og support.Har du brug for en licensnøgle? %3$sPurchase one now%4$s</p>"
 
 #: ../admin/register-version.php:246
 msgid "<p>Your <strong>Profile Builder</strong> license has expired. <br/>Please %1$sRenew Your Licence%2$s to continue receiving access to product downloads, automatic updates and support. %3$sRenew now and get 50&#37; off %4$s %5$sDismiss%6$s</p>"
-msgstr ""
+msgstr "<p>Din<strong>Profile Builder</strong> licens er udløbet. <br/>Venligst %1$sForny din licens%2$s for fortsat at have adgang til produkt downloads, automatiske opdateringer og support. %3$sForny nu og få 50&#37; rabat %4$s %5$sAfvis%6$s</p>"
 
 #: ../admin/register-version.php:251
 msgid "<p>Your <strong>Profile Builder</strong> license is about to expire on %5$s. <br/>Please %1$sRenew Your Licence%2$s to continue receiving access to product downloads, automatic updates and support. %3$sRenew now and get 50&#37; off %4$s %6$sDismiss%7$s</p>"
-msgstr ""
+msgstr "<p>Din<strong>Profile Builder</strong> licens udløber den %5$s. <br/>Venligst%1$sForny din licens%2$s for fortsat at have adgang til produkt downloads, automatiske opdateringer og support. %3$sForny nu og få 50&#37; rabat %4$s %6$sAfvis%7$s</p>"
 
 #: ../assets/lib/wck-api/fields/country select.php:14
 #: ../assets/lib/wck-api/fields/cpt select.php:17
 #: ../assets/lib/wck-api/fields/select.php:14 ../assets/lib/wck-api/fields/user
 #: select.php:15
 msgid "...Choose"
-msgstr "请选择"
+msgstr "...Vælg"
 
 #: ../features/class-list-table.php:526 ../features/class-list-table.php:941
 msgid "1 item"
-msgstr ""
+msgstr "1 emne"
 
 #: ../features/functions.php:492
 msgid "Very Weak"
-msgstr "非常弱"
+msgstr "Meget svag"
 
 #: ../features/functions.php:580
 msgid "This field is required"
-msgstr "必填选项"
+msgstr "Dette felt er obligatorisk"
 
 #: ../features/functions.php:600
 msgid "Cancel"
-msgstr "取消"
+msgstr "Annuller"
 
 #: ../features/functions.php:636
 msgid "To allow users to register for your website via Profile Builder, you first must enable user registration. Go to %1$sSettings -> General%2$s tab, and under Membership make sure to check “Anyone can register”. %3$sDismiss%4$s"
-msgstr ""
+msgstr "For at tillade bruger at registrere sig på dit site via Profile Builder, skal du først aktiverer brugerregistrering. Gå til %1$sIndstillinger -> Generel%2$s fane, og under Medlemskab sørge for at markere “Alle kan registrere sig\". %3$sAfvis%4$s"
 
 #: ../front-end/login.php:96
 msgid "Invalid username."
-msgstr "不正确的用户名"
+msgstr "Ugyldigt brugernavn"
 
 #: ../front-end/login.php:101 ../front-end/login.php:105
 msgid "username"
-msgstr "用户名"
+msgstr "brugernavn"
 
 #: ../front-end/login.php:101
 msgid "email"
-msgstr "邮件"
+msgstr "e-mail"
 
 #: ../front-end/login.php:208
 msgid "Lost your password?"
-msgstr "忘记密码？"
+msgstr "Mistet din adgangskode?"
 
 #: ../index.php:34
 msgid " is also activated. You need to deactivate it before activating this version of the plugin."
-msgstr ""
+msgstr "er også aktiveret. Du skal deaktivere det før aktivering af plugin'et."
 
 #: ../modules/email-customizer/admin-email-customizer.php:54
 #: ../modules/email-customizer/user-email-customizer.php:54
 msgid "Must be a valid email address or the tag {{reply_to}} which defaults to the administrator email"
-msgstr ""
+msgstr "Skal være en gyldig e-mail adresse eller {{reply_to}} som default for administrator e-mailen"
 
 #: ../features/email-confirmation/email-confirmation.php:510
 #: ../features/email-confirmation/email-confirmation.php:513
@@ -451,111 +465,111 @@ msgstr ""
 #: ../modules/email-customizer/email-customizer.php:402
 #: ../modules/email-customizer/email-customizer.php:416
 msgid "Your selected password at signup"
-msgstr "您在注册时输入的密码"
+msgstr "Din valgte adgangskode ved oprettelse"
 
 #: ../modules/email-customizer/user-email-customizer.php:38
 msgid "These settings are also replicated in the \"Admin Email Customizer\" settings-page upon save."
-msgstr ""
+msgstr "Disse indstillinger gemmes ligeledes på indstillingssiden på 'Admin Email Customizer', når de gemmes."
 
 #: ../modules/multiple-forms/edit-profile-forms.php:270
 msgid "This form is empty."
-msgstr "这个表格是空的"
+msgstr "Denne formular er tom."
 
 #: ../modules/multiple-forms/multiple-forms.php:416
 msgid "Delete all items"
-msgstr "删除所有条目"
+msgstr "Slet alle emner"
 
 #: ../modules/multiple-forms/multiple-forms.php:416
 msgid "Delete all"
-msgstr "全部删除"
+msgstr "Slet alt"
 
 #: ../modules/multiple-forms/register-forms.php:226
 msgid "Choose..."
-msgstr "请选择"
+msgstr "Vælg..."
 
 #: ../modules/user-listing/userlisting.php:1283
 msgid "Set the number of users to be displayed on every paginated part of the all-userlisting"
-msgstr ""
+msgstr "Angiv antallet af brugere som vises på hver side af den samlede brugeroversigt"
 
 #: ../admin/admin-bar.php:10
 msgid "Show/Hide the Admin Bar on the Front-End"
-msgstr "显示/隐藏管理员工具栏在前端"
+msgstr "Vis/Skjul 'Admin menu' på 'Front-end'"
 
 #: ../admin/admin-bar.php:10 ../admin/admin-bar.php:47
 msgid "Admin Bar Settings"
-msgstr "管理员工具栏设置"
+msgstr "Admin menu indstillinger "
 
 #: ../admin/admin-bar.php:57
 msgid "User-Role"
-msgstr "用户角色"
+msgstr "Brugerrolle"
 
 #: ../admin/admin-bar.php:58
 msgid "Visibility"
-msgstr "可见"
+msgstr "Synlighed"
 
 #: ../admin/admin-bar.php:73
 msgid "Default"
-msgstr "默认"
+msgstr "Default"
 
 #: ../admin/admin-bar.php:74
 msgid "Show"
-msgstr "显示"
+msgstr "Vis"
 
 #: ../admin/admin-bar.php:75
 msgid "Hide"
-msgstr "隐藏"
+msgstr "Skjul"
 
 #: ../admin/admin-bar.php:86 ../admin/general-settings.php:189
 #: ../admin/register-version.php:95 ../features/functions.php:593
 #: ../modules/custom-redirects/custom-redirects.php:136
 #: ../modules/modules.php:142
 msgid "Save Changes"
-msgstr "保存更改"
+msgstr "Gem ændringer"
 
 #: ../admin/admin-functions.php:34
 msgid "Login is set to be done using the E-mail. This field will NOT appear in the front-end! ( you can change these settings under the \"%s\" tab )"
-msgstr "登录允许使用电子邮件。这字段不会显示在前端！ ( 你可以改变这些设置，在 \"%s\" 选项卡中 )"
+msgstr "Login er indstillet til at blive foretaget ved hjælp af e-mail. Dette felt vil IKKE fremgå af 'front-end'! (du kan ændre disse indstillinger på \"%s\" fanen)"
 
 #: ../admin/admin-functions.php:34 ../admin/general-settings.php:10
 #: ../admin/general-settings.php:38
 msgid "General Settings"
-msgstr "常规设置"
+msgstr "Generelle indstillinger"
 
 #: ../admin/admin-functions.php:112 ../admin/general-settings.php:175
 msgid "Very weak"
-msgstr "非常弱"
+msgstr "Meget svag"
 
 #: ../admin/admin-functions.php:112 ../admin/general-settings.php:176
 #: ../features/functions.php:492
 msgid "Weak"
-msgstr "弱"
+msgstr "Svag"
 
 #: ../admin/admin-functions.php:112 ../admin/general-settings.php:177
 #: ../features/functions.php:492
 msgid "Medium"
-msgstr "中"
+msgstr "Middel"
 
 #: ../admin/admin-functions.php:112 ../admin/general-settings.php:178
 #: ../features/functions.php:492
 msgid "Strong"
-msgstr "强"
+msgstr "Stærk"
 
 #: ../admin/admin-functions.php:162
 msgid "Add Field"
-msgstr "添加字段"
+msgstr "Tilføj felt"
 
 #: ../admin/admin-functions.php:164
 #: ../modules/class-mustache-templates/class-mustache-templates.php:374
 msgid "Save Settings"
-msgstr "保存设置"
+msgstr "Gem indstillinger"
 
 #: ../admin/basic-info.php:10
 msgid "Basic Information"
-msgstr "基本信息"
+msgstr "Basis information"
 
 #: ../admin/basic-info.php:29
 msgid "Version %s"
-msgstr "版本 %s"
+msgstr "Version %s"
 
 #: ../admin/basic-info.php:30
 msgid "<strong>Profile Builder </strong>"
@@ -563,119 +577,119 @@ msgstr "<strong>Profile Builder </strong>"
 
 #: ../admin/basic-info.php:31
 msgid "The best way to add front-end registration, edit profile and login forms."
-msgstr "最好的前端注册、编辑个人资料与登陆表单的实现方式。"
+msgstr "Den bedste måde at tilføje 'front-end' registrering, redigere profile og login formularer på."
 
 #: ../admin/basic-info.php:33
 msgid "For Modern User Interaction"
-msgstr "新颖的用户交互。"
+msgstr "Til 'Modern User Interaction'"
 
 #: ../admin/basic-info.php:36 ../features/login-widget/login-widget.php:59
 msgid "Login"
-msgstr "登陆"
+msgstr "Log ind"
 
 #: ../admin/basic-info.php:37
 msgid "Friction-less login using <strong class=\"nowrap\">[wppb-login]</strong> shortcode or a widget."
-msgstr "快捷登陆使用 <strong class=\"nowrap\">[wppb-login]</strong> 简码或者小工具。"
+msgstr "Problemfri log ind funktion - brug <strong class=\"nowrap\">[wppb-login]</strong> 'shortcode' eller en 'widget'."
 
 #: ../admin/basic-info.php:40
 msgid "Registration"
-msgstr "注册"
+msgstr "Registrering"
 
 #: ../admin/basic-info.php:41
 msgid "Beautiful registration forms fully customizable using the <strong class=\"nowrap\">[wppb-register]</strong> shortcode."
-msgstr "漂亮的注册表单，完全可自定义使用 <strong class=\"nowrap\">[wppb-register]</strong> 简码。"
+msgstr "Flotte tilpassede registreringsformularer - brug <strong class=\"nowrap\">[wppb-register]</strong> 'shortcode'."
 
 #: ../admin/basic-info.php:44
 msgid "Edit Profile"
-msgstr "编辑个人资料"
+msgstr "Rediger profil"
 
 #: ../admin/basic-info.php:45
 msgid "Straight forward edit profile forms using <strong class=\"nowrap\">[wppb-edit-profile]</strong> shortcode."
-msgstr "编辑个人资料直接可以使用 <strong class=\"nowrap\">[wppb-edit-profile]</strong> 简码."
+msgstr "Problemfri profil redigering  - brug <strong class=\"nowrap\">[wppb-edit-profile]</strong> 'shortcode'."
 
 #: ../admin/basic-info.php:51
 msgid "Extra Features"
-msgstr "额外字段"
+msgstr "Ekstra funktioner"
 
 #: ../admin/basic-info.php:52
 msgid "Features that give you more control over your users, increased security and help you fight user registration spam."
-msgstr "特性，让您对您的用户更多的控制，增强安全性，帮助用户注册与限制垃圾邮件。"
+msgstr "Funktioner som giver dig mere kontrol over dine brugere, forbedret sikkerhed og hjælper dig med at bekæmpe spam ved brugerregistrering."
 
 #: ../admin/basic-info.php:53
 msgid "Enable extra features"
-msgstr "启用额外功能"
+msgstr "Aktiver ekstra funktioner"
 
 #: ../admin/basic-info.php:57
 msgid "Recover Password"
-msgstr "恢复密码"
+msgstr "Genskab adgangskode"
 
 #: ../admin/basic-info.php:58
 msgid "Allow users to recover their password in the front-end using the [wppb-recover-password]."
-msgstr "允许用户恢复密码在前端使用简码 [wppb-recover-password]。"
+msgstr "Tillad brugere at genskabe deres adgangskode direkte fra 'front-end' ved at bruge [wppb-recover-password]."
 
 #: ../admin/basic-info.php:61
 msgid "Admin Approval (*)"
-msgstr "管理员审批 (*)"
+msgstr "Admin godkendelse (*)"
 
 #: ../admin/basic-info.php:62
 msgid "You decide who is a user on your website. Get notified via email or approve multiple users at once from the WordPress UI."
-msgstr "你决定在你的网站用户是谁。从WordPress 界面通过电子邮件或批准的多个用户获得通知。"
+msgstr "Du bestemmer hvem der er bruger på dit site. Få besked via e-mail eller godkende flere brugere ad gangen fra WordPress UI."
 
 #: ../admin/basic-info.php:65
 msgid "Email Confirmation"
-msgstr "电子邮件确认"
+msgstr "E-mail bekræftelse"
 
 #: ../admin/basic-info.php:66
 msgid "Make sure users sign up with genuine emails. On registration users will receive a notification to confirm their email address."
-msgstr "确保用户注册是使用真实的电子邮件。注册用户将收到一个通知，确认他们的电子邮件地址。"
+msgstr "Sørg for at brugere registrerer med en ægte e-mail adresse. Ved registrering vil brugerne modtage en e-mail, hvori de skal bekræfte deres e-mail adresse."
 
 #: ../admin/basic-info.php:69
 msgid "Minimum Password Length and Strength Meter"
-msgstr "最小密码长度和强度表"
+msgstr "Minimum længde og styrke på adgangskode"
 
 #: ../admin/basic-info.php:70
 msgid "Eliminate weak passwords altogether by setting a minimum password length and enforcing a certain password strength."
-msgstr "消除弱密码最小密码长度，并强制执行设定的密码强度。"
+msgstr "Undgå svage adgangskoder ved at sætte et krav om min. længde samt sætte et krav om en vis styrke på adgangskoden."
 
 #: ../admin/basic-info.php:73
 msgid "Login with Email or Username"
-msgstr "通过电子邮件或用户名登录"
+msgstr "Log ind med e-mail eller brugernavn"
 
 #: ../admin/basic-info.php:74
 msgid "Allow users to log in with their email or username when accessing your site."
-msgstr "当用户访问您的网站时，允许用户登录他们的用户名和电子邮件。"
+msgstr "Tillad brugere at logge ind med deres e-mail eller brugernavn når de logger ind på dit site."
 
 #: ../admin/basic-info.php:87
 msgid "Customize Your Forms The Way You Want (*)"
-msgstr "自定义表格用你想要的方式（*）"
+msgstr "Tilpas dine formularer som du ønsker det (*)"
 
 #: ../admin/basic-info.php:88
 msgid "With Extra Profile Fields you can create the exact registration form your project needs."
-msgstr "额外个人资料字段，根据您的项目需求你可以创建精确的登注册表单。"
+msgstr "Med ekstra profil felter kan du lave nøjagtigt den registreringsformular, som dit projekt har brug for. "
 
 #: ../admin/basic-info.php:90
 msgid "Extra Profile Fields are available in Hobbyist or PRO versions"
-msgstr "额外个人资料字段需要激活 Hobbyist 或者 PRO 版本才可用"
+msgstr "Ekstra profilfelter er tilgængelig i Hobbyist og PRO versionerne"
 
 #: ../admin/basic-info.php:92
 msgid "Get started with extra fields"
-msgstr "开始使用额外字段"
+msgstr "Kom i gang med ekstra felter"
 
 #: ../admin/basic-info.php:95
 msgid "Avatar Upload"
-msgstr "头像上传"
+msgstr "Avatar upload"
 
 #: ../admin/basic-info.php:96
 msgid "Generic Uploads"
-msgstr "常规上传"
+msgstr "Generisk upload"
 
 #: ../admin/basic-info.php:97
 msgid "Agree To Terms Checkbox"
-msgstr "同意使用条款"
+msgstr "Accept af betingelser tjekboks"
 
 #: ../admin/basic-info.php:98
 msgid "Datepicker"
-msgstr "日期选择器"
+msgstr "Datovælger"
 
 #: ../admin/basic-info.php:99
 msgid "reCAPTCHA"
@@ -683,47 +697,47 @@ msgstr "reCAPTCHA"
 
 #: ../admin/basic-info.php:100
 msgid "Country Select"
-msgstr "国家选择"
+msgstr "Landevalg"
 
 #: ../admin/basic-info.php:101
 msgid "Timezone Select"
-msgstr "时区选择"
+msgstr "Tidszone valg"
 
 #: ../admin/basic-info.php:102
 msgid "Input / Hidden Input"
-msgstr "输入/隐藏输入"
+msgstr "Input / Skjult input"
 
 #: ../admin/basic-info.php:103
 msgid "Checkbox"
-msgstr "复选框"
+msgstr "Tjekboks"
 
 #: ../admin/basic-info.php:104
 msgid "Select"
-msgstr "选择"
+msgstr "Vælg"
 
 #: ../admin/basic-info.php:105
 msgid "Radio Buttons"
-msgstr "单选按钮"
+msgstr "'Radio' knapper"
 
 #: ../admin/basic-info.php:106
 msgid "Textarea"
-msgstr "文本框"
+msgstr "Tekstområde"
 
 #: ../admin/basic-info.php:115
 msgid "Powerful Modules (**)"
-msgstr "强大的模块（**）"
+msgstr "Stærke moduler (**)"
 
 #: ../admin/basic-info.php:116
 msgid "Everything you will need to manage your users is probably already available using the Pro Modules."
-msgstr "使用一切你需要的工具，用于管理你的用户的模块。"
+msgstr "Alt hvad du behøver for at håndtere dine brugere er formentlig allerede tilgængeligt ved at bruge Pro Moduler."
 
 #: ../admin/basic-info.php:118
 msgid "Enable your modules"
-msgstr "启用你的模块"
+msgstr "Aktiver dine moduler"
 
 #: ../admin/basic-info.php:121
 msgid "Find out more about PRO Modules"
-msgstr "了解关于专业版模块的更多内容"
+msgstr "Fin ud af mere om PRO Moduler"
 
 #: ../admin/basic-info.php:126 ../modules/modules.php:111
 #: ../modules/user-listing/userlisting.php:11
@@ -731,61 +745,61 @@ msgstr "了解关于专业版模块的更多内容"
 #: ../modules/user-listing/userlisting.php:17
 #: ../modules/user-listing/userlisting.php:23
 msgid "User Listing"
-msgstr "用户列表"
+msgstr "Brugeroversigt"
 
 #: ../admin/basic-info.php:128
 msgid "Easy to edit templates for listing your website users as well as creating single user pages. Shortcode based, offering many options to customize your listings."
-msgstr "易于编辑模列表您的网站用户，以及创建单用户页面模板。基于简码，提供了许多选项来定制您的列表。"
+msgstr "Brugervenlige skabeloner gør det muligt at liste dit websites bruger ligesom du kan skabe enkelt bruger sider. Og så er det 'Shortcode' baseret, som gør det muligt for dig at tilpasse dine lister/oversigter.  "
 
 #: ../admin/basic-info.php:130
 msgid "To create a page containing the users registered to this current site/blog, insert the following shortcode in a page of your chosing: <strong class=\"nowrap\">[wppb-list-users]</strong>."
-msgstr "创建一个页面包含已注册在当前的网站/博客用户列表，将下面的短码放进页面："
+msgstr "For at lave en side indeholdende registrerede brugere to den nuværende site/blog, skal du indsætte følgende 'shortcode' på en side efter dit valg:<strong class=\"nowrap\">[wppb-list-users]</strong>."
 
 #: ../admin/basic-info.php:134
 msgid "Email Customizer"
-msgstr "电子邮件定制"
+msgstr "E-mail opsætning"
 
 #: ../admin/basic-info.php:135
 msgid "Personalize all emails sent to your users or admins. On registration, email confirmation, admin approval / un-approval."
-msgstr "个性化邮件发送到你的用户或管理员。注册，电子邮件确认，管理员批准/拒绝。"
+msgstr "Personaliser alle e-mails sendt til dine brugere eller administratorer. Ved registrering, e-mail bekræftelse, administrator godkendelse / afvisning."
 
 #: ../admin/basic-info.php:138
 #: ../modules/custom-redirects/custom-redirects.php:29
 #: ../modules/modules.php:32 ../modules/modules.php:132
 msgid "Custom Redirects"
-msgstr "自定义重定向"
+msgstr "Brugertilpassede omdirigeringer ('redirects')"
 
 #: ../admin/basic-info.php:139
 msgid "Keep your users out of the WordPress dashboard, redirect them to the front-page after login or registration, everything is just a few clicks away."
-msgstr "让你的用户离开 WordPress 仪表盘，重定向到他们的前端页面，登录注册一切都只需几个点击。"
+msgstr "Hold dine brugere ud af Wordpress' kontrolpanel ('dashboard'), omdiriger dem til forsiden efter login eller registrering. Alt dette er kun nogle få klik væk."
 
 #: ../admin/basic-info.php:144 ../modules/modules.php:97
 msgid "Multiple Registration Forms"
-msgstr "多个注册形式"
+msgstr "Forskellige registreringsformularer"
 
 #: ../admin/basic-info.php:145
 msgid "Set up multiple registration forms with different fields for certain user roles. Capture different information from different types of users."
-msgstr "设置多个注册表单为某些用户角色不同的字段。获取来自不同类型的用户不同的信息。"
+msgstr "Opsæt forskellige registreringsformularer med forskellige felter tilpasset bestemte brugeroller. Indsaml forskelligt information fra forskellige brugertyper."
 
 #: ../admin/basic-info.php:148 ../modules/modules.php:104
 msgid "Multiple Edit-profile Forms"
-msgstr "多个编辑个人资料形式"
+msgstr "Forskellige profil redigerings formularer"
 
 #: ../admin/basic-info.php:149
 msgid "Allow different user roles to edit their specific information. Set up multiple edit-profile forms with different fields for certain user roles."
-msgstr "允许不同的用户角色去编辑他们的具体信息。设置多个编辑表单一不同的作用字段。"
+msgstr "Tillad forskellige brugerroller at redigere deres specifikke information. Opsæt forskellige profil redigerings formularer med forskellige felter tilpasset bestemte brugerroller."
 
 #: ../admin/basic-info.php:161
 msgid " * only available in the %1$sHobbyist and Pro versions%2$s."
-msgstr " * 仅获得在 %1$sHobbyist 与专业版本 %2$s."
+msgstr " * kun tilgængelig %1$sHobbyist and Pro versionerne%2$s."
 
 #: ../admin/basic-info.php:162
 msgid "** only available in the %1$sPro version%2$s."
-msgstr "** 仅激活在 %1$s专业版本 %2$s."
+msgstr "** kun tilgængelig i %1$sPro version%2$s."
 
 #: ../admin/general-settings.php:42
 msgid "Load Profile Builder's own CSS file in the front-end:"
-msgstr "在前端载入 Profile Builder 的CSS文件："
+msgstr "Brug Profile Builders egen CSS fil i 'front-end':"
 
 #: ../admin/general-settings.php:45 ../admin/general-settings.php:60
 #: ../admin/general-settings.php:114
@@ -793,65 +807,65 @@ msgstr "在前端载入 Profile Builder 的CSS文件："
 #: ../modules/multiple-forms/register-forms.php:226
 #: ../modules/user-listing/userlisting.php:1288
 msgid "Yes"
-msgstr "是"
+msgstr "Ja"
 
 #: ../admin/general-settings.php:47
 msgid "You can find the default file here: %1$s"
-msgstr "你可以在这里找到默认的文件: %1$s"
+msgstr "Du kan finde default filen her: %1$s"
 
 #: ../admin/general-settings.php:56
 msgid "\"Email Confirmation\" Activated:"
-msgstr "\"邮件确认\" 激活:"
+msgstr "\"E-mail bekræftelse\" aktiveret:"
 
 #: ../admin/general-settings.php:61 ../admin/general-settings.php:115
 #: ../modules/multiple-forms/register-forms.php:225
 #: ../modules/multiple-forms/register-forms.php:226
 msgid "No"
-msgstr "不"
+msgstr "Nej"
 
 #: ../admin/general-settings.php:64
 msgid "On single-site installations this works with front-end forms only. Recommended to redirect WP default registration to a Profile Builder one using \"Custom Redirects\" addon."
-msgstr "在单个站点安装本工作会在前端形成。建议转向 WP 默认注册使用 Profile Builder 的 \"自定义转向\" 模块。"
+msgstr "På 'single-site' installationer virker dette kun med 'front-end' formularer. Anbefalet at omdirigere WP default registrering til en adresse opsat i Profile Builder ved at anvende den brugertilpassede omdirigerings tilføjelse ('Custom Redirects')."
 
 #: ../admin/general-settings.php:65
 msgid "The \"Email Confirmation\" feature is active (by default) on WPMU installations."
-msgstr "这个 \"邮件确认\" 功能默认在 WPMU 安装是默认开启的。"
+msgstr "\"E-mail bekræftelse\" funktionen er aktive (som standard) på WPMU installationer."
 
 #: ../admin/general-settings.php:67
 msgid "You can find a list of unconfirmed email addresses %1$sUsers > All Users > Email Confirmation%2$s."
-msgstr "您可以找到还没确认邮箱地址的列表 %1$s用户 > 所有用户 > 邮箱确认%2$s."
+msgstr "Du kan finde en liste over ubekræftede e-mail adresser %1$sUsers > All Users > Email Confirmation%2$s."
 
 #: ../admin/general-settings.php:79
 msgid "\"Email Confirmation\" Landing Page:"
-msgstr "\"邮件确认\" 登陆页面:"
+msgstr "\"E-mail bekræftelse\" landings side:"
 
 #: ../admin/general-settings.php:84
 msgid "Existing Pages"
-msgstr "现有页面"
+msgstr "Eksisterende sider"
 
 #: ../admin/general-settings.php:99
 msgid "Specify the page where the users will be directed when confirming the email account. This page can differ from the register page(s) and can be changed at any time. If none selected, a simple confirmation page will be displayed for the user."
-msgstr "指定供用户确认邮件的转向页面。此页面可不同于注册页面(s)并且可随时改变。如果没有指定，将显示给用户一个简单确认页。"
+msgstr "Angiv siden hvortil brugere bliver omdirigeret til når de bekræfter e-mail kontoen. Denne side kan være forskellig fra registrerings siden (siderne) og kan altid ændres. Hvis ingen er valgt vises der en simpel bekræftelsesside for brugeren."
 
 #: ../admin/general-settings.php:110
 msgid "\"Admin Approval\" Activated:"
-msgstr "\"管理员审批\" 激活:"
+msgstr "\"Administrator godkendelse\" aktiveret:"
 
 #: ../admin/general-settings.php:118
 msgid "You can find a list of users at %1$sUsers > All Users > Admin Approval%2$s."
-msgstr "您可以找到用户在 %1$s用户 > 所有用户 > 管理员审批%2$s."
+msgstr "Du kan finde en liste med brugere på %1$sUsers > All Users > Admin Approval%2$s."
 
 #: ../admin/general-settings.php:130
 msgid "\"Admin Approval\" Feature:"
-msgstr "\"管理员审批\" 功能 :"
+msgstr "\"Administrator godkendelse\" funktion:"
 
 #: ../admin/general-settings.php:133
 msgid "You decide who is a user on your website. Get notified via email or approve multiple users at once from the WordPress UI. Enable Admin Approval by upgrading to %1$sHobbyist or PRO versions%2$s."
-msgstr "您控制您的用户在网站上的角色。获得游戏通知或者一次性批量审批多用户。启用管理审批功能需要升级到 %1$sHobbyist 或者 专业版本%2$s。"
+msgstr "Du bestemmer hvem der er bruger på dit website. Bliv informeret via e-mail eller godkend flere brugere samlet ('bulk') via WordPress UI. Aktiver 'Administrator godkendelse' ved at opgradere til %1$sHobbyist or PRO versions%2$s."
 
 #: ../admin/general-settings.php:140
 msgid "Allow Users to Log in With:"
-msgstr "允许用户使用什么登陆："
+msgstr "Tillad brugere at logge ind med:"
 
 #: ../admin/general-settings.php:145 ../admin/manage-fields.php:146
 #: ../features/admin-approval/class-admin-approval.php:177
@@ -861,223 +875,223 @@ msgstr "允许用户使用什么登陆："
 #: ../modules/user-listing/userlisting.php:596
 #: ../modules/user-listing/userlisting.php:1244
 msgid "Username"
-msgstr "姓名"
+msgstr "Brugernavn"
 
 #: ../admin/general-settings.php:146 ../front-end/login.php:170
 #: ../modules/email-customizer/email-customizer.php:29
 #: ../modules/user-listing/userlisting.php:602
 #: ../modules/user-listing/userlisting.php:1245
 msgid "Email"
-msgstr "电子邮件"
+msgstr "E-mail"
 
 #: ../admin/general-settings.php:158
 msgid "Minimum Password Length:"
-msgstr "最小密码长度："
+msgstr "Min. længde på adgangskode:"
 
 #: ../admin/general-settings.php:163
 msgid "Enter the minimum characters the password should have. Leave empty for no minimum limit"
-msgstr "输入密码必须最少字符。留空为没有限制"
+msgstr "Angiv minimum antallet af karakterer som adgangskoden skal bestå af. Lad feltet være tomt for ikke at have minimumsbegrænsning."
 
 #: ../admin/general-settings.php:170
 msgid "Minimum Password Strength:"
-msgstr "最小密码强度："
+msgstr "Minimum styrke på adgangskode:"
 
 #: ../admin/general-settings.php:174
 msgid "Disabled"
-msgstr "关闭"
+msgstr "Deaktiver"
 
 #: ../admin/manage-fields.php:12
 msgid "Manage Fields"
-msgstr "管理字段"
+msgstr "Håndter felter"
 
 #: ../admin/manage-fields.php:13
 msgid "Manage Default and Extra Fields"
-msgstr "管理默认与额外字段"
+msgstr "Håndter standard ('default') og ekstra felter"
 
 #: ../admin/manage-fields.php:85
 msgid "Field Title"
-msgstr "字段标题"
+msgstr "Felt titel"
 
 #: ../admin/manage-fields.php:85
 msgid "Title of the field"
-msgstr "字段的标题"
+msgstr "Feltets titel"
 
 #: ../admin/manage-fields.php:86
 #: ../modules/multiple-forms/edit-profile-forms.php:241
 #: ../modules/multiple-forms/register-forms.php:262
 msgid "Field"
-msgstr "字段"
+msgstr "Felt"
 
 #: ../admin/manage-fields.php:87
 msgid "Meta-name"
-msgstr "Meta-name"
+msgstr "Meta-navn"
 
 #: ../admin/manage-fields.php:87
 msgid "Use this in conjuction with WordPress functions to display the value in the page of your choosing<br/>Auto-completed but in some cases editable (in which case it must be uniqe)<br/>Changing this might take long in case of a very big user-count"
-msgstr "使用这个结合 WordPress 功能去显示您选择的页面中的值<br/> 自动完成，但在某些情况下可编辑（在这情况下它必须是唯一的）<br/> 在用户数量大的情况下，改变这个可能需要很长时间"
+msgstr "Bruges i sammen med WordPress funktioner til at vise værdien på siden du vælger<br/> Udfyldes automatisk, men i visse tilfælde redigerbart (i sådanne tilfælde skal det være unikt)<br/>Ændring af dette kan take lang tid i tilfælde af et meget stort antal brugere."
 
 #: ../admin/manage-fields.php:88
 #: ../modules/multiple-forms/edit-profile-forms.php:242
 #: ../modules/multiple-forms/register-forms.php:263
 msgid "ID"
-msgstr "编号"
+msgstr "ID"
 
 #: ../admin/manage-fields.php:88
 #: ../modules/multiple-forms/edit-profile-forms.php:242
 #: ../modules/multiple-forms/register-forms.php:263
 msgid "A unique, auto-generated ID for this particular field<br/>You can use this in conjuction with filters to target this element if needed<br/>Can't be edited"
-msgstr "一个独特的、为特定的字段自动生成ID<br/>如果需要可以使用过滤器调用这个目标<br/>不能编辑"
+msgstr "En unik autogenereret ID for dette bestemte felt<br/>Du kan bruge dette sammen med filtre for at målrette dette element, hvis nødvendigt.<br/>Kan ikke redigeres  "
 
 #: ../admin/manage-fields.php:89
 msgid "Description"
-msgstr "描述"
+msgstr "Beskrivelse"
 
 #: ../admin/manage-fields.php:89
 msgid "Enter a (detailed) description of the option for end users to read<br/>Optional"
-msgstr "输入（详细）的最终用户阅读选项的描述<br/>可选"
+msgstr "Angiv en (detaljeret) beskrivelse til slutbrugerne af muligheden<br/>Valgfri"
 
 #: ../admin/manage-fields.php:90
 msgid "Row Count"
-msgstr "行数"
+msgstr "Række antal"
 
 #: ../admin/manage-fields.php:90
 msgid "Specify the number of rows for a 'Textarea' field<br/>If not specified, defaults to 5"
-msgstr "指定 'Textarea' 字段的行数<br/>如果没有指定，缺省为5"
+msgstr "Angiv antallet af rækker i feltet 'Textarea'<br/>Hvis ikke angivet er default 5 rækker"
 
 #: ../admin/manage-fields.php:91
 msgid "Allowed Image Extensions"
-msgstr "允许的图像扩展"
+msgstr "Tilladte billedformater ('extensions')"
 
 #: ../admin/manage-fields.php:92
 msgid "Allowed Upload Extensions"
-msgstr "允许的上传扩展"
+msgstr "Tilladte upload formater ('extensions')"
 
 #: ../admin/manage-fields.php:93
 msgid "Avatar Size"
-msgstr "头像大小"
+msgstr "Avatar størrelse"
 
 #: ../admin/manage-fields.php:93
 msgid "Enter a value (between 20 and 200) for the size of the 'Avatar'<br/>If not specified, defaults to 100"
-msgstr "输入 '头像' 大小数值 ( 20 与 200 之间 ) <br/>如果没指定，默认是100"
+msgstr "Angiv en værdi (mellem 20 og 200) for størrelsen af 'Avatar'<br/>Hvis ikke angivet er default sat til 100"
 
 #: ../admin/manage-fields.php:94
 msgid "Date-format"
-msgstr "日期格式"
+msgstr "Datoformat"
 
 #: ../admin/manage-fields.php:94
 msgid "Specify the format of the date when using Datepicker<br/>Valid options: mm/dd/yy, mm/yy/dd, dd/yy/mm, dd/mm/yy, yy/dd/mm, yy/mm/dd<br/>If not specified, defaults to mm/dd/yy"
-msgstr "当使用日期选择器指定日期格式<br/>有效选项: mm/dd/yy, mm/yy/dd, dd/yy/mm, dd/mm/yy, yy/dd/mm, yy/mm/dd<br/>如无指定，默认是 mm/dd/yy"
+msgstr "Angiv datoformatet når du bruge datovælger ('Datepicker')<br/>Gyldige formater: mm/dd/yy, mm/yy/dd, dd/yy/mm, dd/mm/yy, yy/dd/mm, yy/mm/dd<br/>Hvis ikke angivet er default sat til mm/dd/yy"
 
 #: ../admin/manage-fields.php:95
 msgid "Terms of Agreement"
-msgstr "协议条款"
+msgstr "Aftalebetingelser"
 
 #: ../admin/manage-fields.php:95
 msgid "Enter a detailed description of the temrs of agreement for the user to read.<br/>Links can be inserted by using standard HTML syntax: &lt;a href=\"custom_url\"&gt;custom_text&lt;/a&gt;"
-msgstr "输入一个供用户查看的协议内容。<br/> 连接可以使用 HTML 语法，例如：&lt;a href=\"custom_url\"&gt;custom_text&lt;/a&gt;"
+msgstr "Angiv en detaljeret beskrivelse til brugerne af aftalebetingelserne.<br/>Link kan indsætte ved at anvende standard HTML syntax: &lt;a href=\"custom_url\"&gt;custom_text&lt;/a&gt;"
 
 #: ../admin/manage-fields.php:96
 msgid "Options"
-msgstr "选项"
+msgstr "Valgmuligheder"
 
 #: ../admin/manage-fields.php:97
 msgid "Labels"
-msgstr "标签"
+msgstr "Labels"
 
 #: ../admin/manage-fields.php:97
 msgid "Enter a comma separated list of labels<br/>Visible for the user"
-msgstr "输入一个逗号分隔标签 <br/> 对用户可见的"
+msgstr "Angiv et komme separeret liste med labels<br/>Synlig for brugeren"
 
 #: ../admin/manage-fields.php:102
 msgid "Default Value"
-msgstr "默认值"
+msgstr "Standard værdi"
 
 #: ../admin/manage-fields.php:102
 msgid "Default value of the field"
-msgstr "该字段的默认值"
+msgstr "Feltets standardværdi"
 
 #: ../admin/manage-fields.php:103
 msgid "Default Option"
-msgstr "默认选项"
+msgstr "Standard indstillingsvalg"
 
 #: ../admin/manage-fields.php:103
 msgid "Specify the option which should be selected by default"
-msgstr "指定选项的默认选择值"
+msgstr "Angiv indstillingen som skal vælges som standard"
 
 #: ../admin/manage-fields.php:104
 msgid "Default Option(s)"
-msgstr "默认选项(s)"
+msgstr "Standard indstillingsvalg (flere)"
 
 #: ../admin/manage-fields.php:104
 msgid "Specify the option which should be checked by default<br/>If there are multiple values, separate them with a ',' (comma)"
-msgstr "指定选项默认是否勾选<br/>如果有多个值的选项，使用“，”分开（逗号）"
+msgstr "Angiv indstillingen som skal vælges som standard<br/>Hvis der er flere valgmuligheder, separer dem med ',' (et komma)"
 
 #: ../admin/manage-fields.php:105
 msgid "Default Content"
-msgstr "默认内容"
+msgstr "Standard indhold"
 
 #: ../admin/manage-fields.php:105
 msgid "Default value of the textarea"
-msgstr "文本默认值"
+msgstr "Standard værdi for tekstområdet ('textarea')"
 
 #: ../admin/manage-fields.php:106
 msgid "Required"
-msgstr "必须"
+msgstr "Krævet"
 
 #: ../admin/manage-fields.php:106
 msgid "Whether the field is required or not"
-msgstr "该字段是否必须"
+msgstr "Om feltet er krævet eller ikke"
 
 #: ../admin/manage-fields.php:107
 msgid "Overwrite Existing"
-msgstr "覆盖现有"
+msgstr "Overskriv eksisterende"
 
 #: ../admin/manage-fields.php:107
 msgid "Selecting 'Yes' will add the field to the list, but will overwrite any other field in the database that has the same meta-name<br/>Use this at your own risk"
-msgstr "选择“是”将增加字段到列表中，但将覆盖在数据库中具有相同名称的任何其他领域的 meta-name<br/>使用需自己承担风险"
+msgstr "Ved at vælge 'Ja' tilføjes feltet til listen, men vil overskrive ethvert andet felt i databasen som har det samme meta-navn<br/>Brug dette på eget ansvar"
 
 #: ../admin/manage-fields.php:113
 msgid "Field Properties"
-msgstr "字段属性"
+msgstr "Felt indstillinger"
 
 #: ../admin/manage-fields.php:126
 msgid "Registration & Edit Profile"
-msgstr "注册与编辑资料"
+msgstr "Registrering & ændre profil"
 
 #: ../admin/manage-fields.php:145
 msgid "Name"
-msgstr "姓名"
+msgstr "Navn"
 
 #: ../admin/manage-fields.php:146
 msgid "Usernames cannot be changed."
-msgstr " 用户名不可更改。"
+msgstr "Brugernavn kan ikke ændres"
 
 #: ../admin/manage-fields.php:147
 msgid "First Name"
-msgstr "名字"
+msgstr "Fornavn"
 
 #: ../admin/manage-fields.php:148
 msgid "Last Name"
-msgstr "姓氏"
+msgstr "Efternavn"
 
 #: ../admin/manage-fields.php:149 ../modules/user-listing/userlisting.php:635
 msgid "Nickname"
-msgstr "昵称"
+msgstr "Kælenavn"
 
 #: ../admin/manage-fields.php:150
 msgid "Display name publicly as"
-msgstr "公开显示为"
+msgstr "Vis navn offentligt som"
 
 #: ../admin/manage-fields.php:151
 msgid "Contact Info"
-msgstr "联系信息"
+msgstr "Kontakt info"
 
 #: ../admin/manage-fields.php:152
 #: ../features/admin-approval/class-admin-approval.php:180
 #: ../features/email-confirmation/class-email-confirmation.php:168
 #: ../modules/user-listing/userlisting.php:98
 msgid "E-mail"
-msgstr "电子邮件"
+msgstr "E-mail"
 
 #: ../admin/manage-fields.php:153
 #: ../modules/email-customizer/email-customizer.php:32
@@ -1085,7 +1099,7 @@ msgstr "电子邮件"
 #: ../modules/user-listing/userlisting.php:617
 #: ../modules/user-listing/userlisting.php:1246
 msgid "Website"
-msgstr "站点"
+msgstr "Website"
 
 #: ../admin/manage-fields.php:157
 msgid "AIM"
@@ -1093,7 +1107,7 @@ msgstr "AIM"
 
 #: ../admin/manage-fields.php:158
 msgid "Yahoo IM"
-msgstr "雅虎通讯"
+msgstr "Yahoo IM"
 
 #: ../admin/manage-fields.php:159
 msgid "Jabber / Google Talk"
@@ -1101,87 +1115,87 @@ msgstr "Jabber / Google Talk"
 
 #: ../admin/manage-fields.php:162
 msgid "About Yourself"
-msgstr "关于您自己"
+msgstr "Om dig selv"
 
 #: ../admin/manage-fields.php:163 ../modules/user-listing/userlisting.php:104
 #: ../modules/user-listing/userlisting.php:620
 #: ../modules/user-listing/userlisting.php:1247
 msgid "Biographical Info"
-msgstr "个人说明"
+msgstr "Biografi info"
 
 #: ../admin/manage-fields.php:163
 msgid "Share a little biographical information to fill out your profile. This may be shown publicly."
-msgstr "分享关于您的一些信息。可能会被公开。"
+msgstr "Del en lille biografisk information for at fylde din profil ud. Dette kan blive vist offentligt."
 
 #: ../admin/manage-fields.php:164 ../front-end/recover.php:75
 #: ../modules/email-customizer/email-customizer.php:30
 msgid "Password"
-msgstr "新密码"
+msgstr "Kodeord"
 
 #: ../admin/manage-fields.php:164
 msgid "Type your password."
-msgstr "重复新密码"
+msgstr "Skriv din kodeord."
 
 #: ../admin/manage-fields.php:165 ../front-end/recover.php:80
 msgid "Repeat Password"
-msgstr "重复新密码"
+msgstr "Gentag dit kodeord"
 
 #: ../admin/manage-fields.php:165
 msgid "Type your password again. "
-msgstr "再输入一遍新密码。"
+msgstr "Skriv dit kodeord igen."
 
 #: ../admin/manage-fields.php:322 ../admin/manage-fields.php:466
 msgid "You must select a field\n"
-msgstr "你必须选择一个字段\n"
+msgstr "Du skal vælge et felt\n"
 
 #: ../admin/manage-fields.php:332
 msgid "Please choose a different field type as this one already exists in your form (must be unique)\n"
-msgstr "请选择一个不同的字段类型，这个已经存在你的表格（必须是唯一的）\n"
+msgstr "Vælg venligst en anden felttype, da denne allerede eksistere i din formular. (skal være unik)\n"
 
 #: ../admin/manage-fields.php:343
 msgid "The entered avatar size is not between 20 and 200\n"
-msgstr "输入的头像大小不是20与200之间 \n"
+msgstr "Den indsatte avatar størrelse er ikke mellem 20 og 200\n"
 
 #: ../admin/manage-fields.php:346
 msgid "The entered avatar size is not numerical\n"
-msgstr "输入的头像大小不是数值\n"
+msgstr "Det indtastede rækkenummer er ikke nummereret\n"
 
 #: ../admin/manage-fields.php:354
 msgid "The entered row number is not numerical\n"
-msgstr "输入的行数不是数值\n"
+msgstr "Det indsatte række nummer er ikke nummeret\n"
 
 #: ../admin/manage-fields.php:357
 msgid "You must enter a value for the row number\n"
-msgstr "您必须输入一个值的行数\n"
+msgstr "Du skal indtaste en værdi for rækkenummeret\n"
 
 #: ../admin/manage-fields.php:375
 msgid "The entered value for the Datepicker is not a valid date-format\n"
-msgstr "日期选择器输入的值不是有效的日期格式\n"
+msgstr "Den indsatte værdi for datovælgeren er ikke korret datoformat\n"
 
 #: ../admin/manage-fields.php:378
 msgid "You must enter a value for the date-format\n"
-msgstr "您必须输入一个日期格式的值\n"
+msgstr "Du skal indskrive en værdi for datoformatet\n"
 
 #: ../admin/manage-fields.php:406 ../admin/manage-fields.php:414
 #: ../admin/manage-fields.php:424
 msgid "That meta-name is already in use\n"
-msgstr "meta-name 已在使用\n"
+msgstr "Det meta-navn er allerede i brug\n"
 
 #: ../admin/manage-fields.php:446
 msgid "The following option(s) did not coincide with the ones in the options list: %s\n"
-msgstr "下列选项(s)不符合的选项清单: %s\n"
+msgstr "Følgende indstillinger stemte ikke overens med dem i indstillingslisten: %s\n"
 
 #: ../admin/manage-fields.php:450
 msgid "The following option did not coincide with the ones in the options list: %s\n"
-msgstr "下列选项不符合的选项清单: %s\n"
+msgstr "Følgende indstillinger stemte ikke overens med dem i indstillingslisten: %s \n"
 
 #: ../admin/manage-fields.php:473
 msgid "That field is already added in this form\n"
-msgstr "这个字段已经加入这个\n"
+msgstr "Det felt er allerede tilføjet denne formular\n"
 
 #: ../admin/manage-fields.php:522
 msgid "<pre>Title</pre><pre>Type</pre><pre>Meta Name</pre><pre class=\"wppb-mb-head-required\">Required</pre>"
-msgstr "<pre>标题</pre><pre>类型</pre><pre>Meta Name</pre><pre class=\"wppb-mb-head-required\">必须</pre>"
+msgstr "<pre>titel</pre><pre>Type</pre><pre>Meta navn</pre><pre class=\"wppb-mb-head-required\">nødvendigt</pre>"
 
 #: ../admin/manage-fields.php:522
 #: ../assets/lib/wck-api/wordpress-creation-kit.php:440
@@ -1190,7 +1204,7 @@ msgstr "<pre>标题</pre><pre>类型</pre><pre>Meta Name</pre><pre class=\"wppb-
 #: ../features/functions.php:614 ../features/functions.php:621
 #: ../modules/multiple-forms/multiple-forms.php:416
 msgid "Edit"
-msgstr "编辑"
+msgstr "Rediger"
 
 #: ../admin/manage-fields.php:522
 #: ../assets/lib/wck-api/wordpress-creation-kit.php:440
@@ -1201,104 +1215,104 @@ msgstr "编辑"
 #: ../features/email-confirmation/class-email-confirmation.php:217
 #: ../features/functions.php:607 ../features/functions.php:621
 msgid "Delete"
-msgstr "删除"
+msgstr "Slet"
 
 #: ../admin/manage-fields.php:537
 msgid "Use these shortcodes on the pages you want the forms to be displayed:"
-msgstr "使用这些简码在页面中你想要的形式显示："
+msgstr "Benyt disse shortcodes på siden du vil have vist formularerne:"
 
 #: ../admin/manage-fields.php:543
 msgid "If you're interested in displaying different fields in the registration and edit profile forms, please use the Multiple Registration & Edit Profile Forms Addon."
-msgstr "如果你对注册、编辑资料时显示不同字段感兴趣，请使用多个注册和编辑资料形式的模块。"
+msgstr "Hvis du er interesseret i at vise forskellige felter på registrering og min profil formularerne, brug da venligst Multi registrering & min profil formular tilføjelser.  "
 
 #: ../admin/register-version.php:14
 msgid "Register Your Version"
-msgstr "注册您的版本"
+msgstr "Registrer din version"
 
 #: ../admin/register-version.php:14
 msgid "Register Version"
-msgstr "注册版本"
+msgstr "Registrer version"
 
 #: ../admin/register-version.php:70
 msgid "If you register this version of Profile Builder, you'll receive information regarding upgrades, patches, and technical support."
-msgstr "如果您注册这个版本的 Profile Builder ，您将收到有关升级，补丁，和技术支持。"
+msgstr "Hvis du registrere denne version af Profile Builder, så vil du modtage information vedrørende opgraderinger, patches og teknisk support."
 
 #: ../admin/register-version.php:72
 msgid " Serial Number:"
-msgstr "序号："
+msgstr "Serie Nummer:"
 
 #: ../admin/register-version.php:77
 msgid "The serial number was successfully validated!"
-msgstr "序号成功验证！"
+msgstr "Serienummeret blev godkendt!"
 
 #: ../admin/register-version.php:79
 msgid "The serial number entered couldn't be validated!"
-msgstr "序号无法验证！"
+msgstr "Serienummeret som du har indsat er ikke korrekt!"
 
 #: ../admin/register-version.php:83
 msgid "The serial number couldn't be validated because it expired!"
-msgstr "序号无法验证，因已过期！"
+msgstr "Serienummeret kunne ikke godkendes da det er udløbet!"
 
 #: ../admin/register-version.php:85
 msgid "The serial number couldn't be validated because process timed out. This is possible due to the server being down. Please try again later!"
-msgstr "序号无法验证，因为连接超时。这可能是由于服务器维护。请稍后再试！"
+msgstr "Serienummeret kunne ikke valideres på grund af process time-out. Dette skyldes formentlig at serveren er nede. Venligst prøv igen senere!"
 
 #: ../admin/register-version.php:87
 msgid "(e.g. RMPB-15-SN-253a55baa4fbe7bf595b2aabb8d72985)"
-msgstr "(例如： RMPB-15-SN-253a55baa4fbe7bf595b2aabb8d72985)"
+msgstr "(f.eks.: RMPB-15-SN-253a55baa4fbe7bf595b2aabb8d72985)"
 
 #: ../assets/lib/wck-api/wordpress-creation-kit.php:440
 #: ../features/functions.php:621
 msgid "Content"
-msgstr "内容"
+msgstr "Indhold"
 
 #: ../assets/lib/wck-api/wordpress-creation-kit.php:529
 msgid "Edit this item"
-msgstr "编辑此项目"
+msgstr "Rediger denne"
 
 #: ../assets/lib/wck-api/wordpress-creation-kit.php:530
 msgid "Delete this item"
-msgstr "删除此项目"
+msgstr "Slet denne"
 
 #: ../assets/lib/wck-api/wordpress-creation-kit.php:671
 msgid "Please enter a value for the required field "
-msgstr "请为这个字段输入所需的值"
+msgstr "Venligst indsæt en værdi for feltet"
 
 #: ../assets/lib/wck-api/fields/upload.php:37
 msgid "Remove"
-msgstr "移除"
+msgstr "Fjern"
 
 #: ../assets/lib/wck-api/wordpress-creation-kit.php:1150
 msgid "Syncronize WCK"
-msgstr "同步 WCK"
+msgstr "Synkroniser WCK"
 
 #: ../assets/lib/wck-api/wordpress-creation-kit.php:1162
 msgid "Syncronize WCK Translation"
-msgstr "同步 WCK 翻译"
+msgstr "Synkroniser WCK oversættelse"
 
 #: ../assets/lib/wck-api/fields/nested repeater.php:8
 msgid "You can add the information for the %s after you add a entry"
-msgstr "您可以添加信息到 %s"
+msgstr "Du kan tilføje information for %s efter du har indsat en indtastning"
 
 #: ../assets/lib/wck-api/fields/upload.php:54
 msgid "Upload "
-msgstr "上传"
+msgstr "Upload"
 
 #: ../features/class-list-table.php:184
 msgid "No items found."
-msgstr "找不到项目。"
+msgstr "Intet fundet."
 
 #: ../features/class-list-table.php:308
 msgid "Bulk Actions"
-msgstr "批量动作"
+msgstr "Mængde aktion"
 
 #: ../features/class-list-table.php:318
 msgid "Apply"
-msgstr "应用"
+msgstr "Tilføj"
 
 #: ../features/class-list-table.php:402
 msgid "Show all dates"
-msgstr "显示所有日期"
+msgstr "Vis alle datoer"
 
 #: ../features/class-list-table.php:415
 msgid "%1$s %2$d"
@@ -1306,23 +1320,23 @@ msgstr "%1$s %2$d"
 
 #: ../features/class-list-table.php:431
 msgid "List View"
-msgstr "列表查看"
+msgstr "Listevisning"
 
 #: ../features/class-list-table.php:432
 msgid "Excerpt View"
-msgstr "摘录查看"
+msgstr "Uddragsvisning"
 
 #: ../features/class-list-table.php:458
 msgid "%s pending"
-msgstr "%s 等待中"
+msgstr "%s afventer"
 
 #: ../features/class-list-table.php:566
 msgid "%1$s of %2$s"
-msgstr "%1$s 的 %2$s"
+msgstr "%1$s of %2$s"
 
 #: ../features/class-list-table.php:713
 msgid "Select All"
-msgstr "选择所有"
+msgstr "Vælg alt"
 
 #: ../features/functions.php:199 ../features/functions.php:200
 msgid "Profile Builder"
@@ -1330,236 +1344,236 @@ msgstr "Profile Builder"
 
 #: ../features/functions.php:273
 msgid "The user-validation has failed - the avatar was not deleted!"
-msgstr "用户验证失败 - 头像没有被删除！"
+msgstr "Brugergodkendelsen er fejlet - Avatar blev ikke slettet!"
 
 #: ../features/functions.php:284
 msgid "The user-validation has failed - the attachment was not deleted!"
-msgstr "用户验证失败 - 附件没有被删除！"
+msgstr "Brugervalideringen er fejlet - avatar'en blev ikke slettet!"
 
 #: ../features/functions.php:467
 msgid "Strength indicator"
-msgstr "强度指标"
+msgstr "Styrkeindikator"
 
 #: ../features/admin-approval/admin-approval.php:7
 #: ../features/admin-approval/class-admin-approval.php:496
 msgid "Admin Approval"
-msgstr "管理员审批"
+msgstr "Admin godkendelse"
 
 #: ../features/admin-approval/admin-approval.php:21
 #: ../features/email-confirmation/email-confirmation.php:58
 msgid "Do you want to"
-msgstr "您想要"
+msgstr "Vil du"
 
 #: ../features/admin-approval/admin-approval.php:44
 msgid "Your session has expired! Please refresh the page and try again"
-msgstr "您的会话已过期！请刷新页面重试"
+msgstr "Din session er udløbet! Venligst opdater siden og prøv igen"
 
 #: ../features/admin-approval/admin-approval.php:55
 msgid "User successfully approved!"
-msgstr "用户成功批准！"
+msgstr "Bruger godkendt!"
 
 #: ../features/admin-approval/admin-approval.php:63
 msgid "User successfully unapproved!"
-msgstr "用户成功拒绝！"
+msgstr "Bruger ikke godkendt!"
 
 #: ../features/admin-approval/admin-approval.php:69
 msgid "User successfully deleted!"
-msgstr "用户成功删除！"
+msgstr "Bruger slettet!"
 
 #: ../features/admin-approval/admin-approval.php:74
 #: ../features/admin-approval/admin-approval.php:139
 #: ../features/email-confirmation/email-confirmation.php:135
 msgid "You either don't have permission for that action or there was an error!"
-msgstr "你没有权限操作，或出现一个错误！"
+msgstr "Enten har du ikke tilladelse til dette eller der var en felj!"
 
 #: ../features/admin-approval/admin-approval.php:86
 msgid "Your session has expired! Please refresh the page and try again."
-msgstr "您的会话已过期！请刷新页面重试"
+msgstr "Din session er udløbet! Opdater venligst siden og prøv igen."
 
 #: ../features/admin-approval/admin-approval.php:106
 msgid "Users successfully approved!"
-msgstr "用户成功批准！"
+msgstr "Brugere godkendt!"
 
 #: ../features/admin-approval/admin-approval.php:121
 msgid "Users successfully unapproved!"
-msgstr "用户成功拒绝！"
+msgstr "Brugere ikke godkendt med succes!"
 
 #: ../features/admin-approval/admin-approval.php:134
 msgid "Users successfully deleted!"
-msgstr "用户成功删除！"
+msgstr "Brugere slettet!"
 
 #: ../features/admin-approval/admin-approval.php:149
 msgid "Your account on %1$s has been approved!"
-msgstr "您在 %1$s 的帐号成功通过！"
+msgstr "Din konto på %1$s er blevet godkendt!"
 
 #: ../features/admin-approval/admin-approval.php:150
 #: ../features/admin-approval/admin-approval.php:153
 msgid "approved"
-msgstr "已批准"
+msgstr "godkendt"
 
 #: ../features/admin-approval/admin-approval.php:152
 msgid "An administrator has just approved your account on %1$s (%2$s)."
-msgstr "管理员已经批准您在 %1$s (%2$s) 的帐号。"
+msgstr "En administrator har netop godkendt din konto på %1$s (%2$s)."
 
 #: ../features/admin-approval/admin-approval.php:156
 msgid "Your account on %1$s has been unapproved!"
-msgstr "您在 %1$s 的帐号被拒绝！"
+msgstr "Din konto på %1$s er blevet 'ikke-godkendt'!"
 
 #: ../features/admin-approval/admin-approval.php:157
 #: ../features/admin-approval/admin-approval.php:160
 msgid "unapproved"
-msgstr "已拒绝"
+msgstr "'ikke-godkendt'"
 
 #: ../features/admin-approval/admin-approval.php:159
 msgid "An administrator has just unapproved your account on %1$s (%2$s)."
-msgstr "管理员已拒绝您在 %1$s (%2$s) 的帐号。"
+msgstr "En administrator har netop sat din konto til 'ikke-godkendt' på %1$s (%2$s)."
 
 #: ../features/admin-approval/admin-approval.php:176
 msgid "<strong>ERROR</strong>: Your account has to be confirmed by an administrator before you can log in."
-msgstr "<strong>错误</strong>: 您的帐号需要管理员批准后才能登陆使用。"
+msgstr "<strong>ERROR</strong>: Din konto skal godkendes af en administrator før du kan logge ind."
 
 #: ../features/admin-approval/admin-approval.php:188
 msgid "Your account has to be confirmed by an administrator before you can use the \"Password Recovery\" feature."
-msgstr "您的帐号在管理员确认前可以使用 \"密码找回\" 功能."
+msgstr "Din konto skal først være godkendt af en administrator før du kan bruge 'Genskab adgangskode'"
 
 #: ../features/admin-approval/class-admin-approval.php:124
 msgid "delete this user?"
-msgstr "删除这个用户？"
+msgstr "slet denne bruger?"
 
 #: ../features/admin-approval/class-admin-approval.php:127
 msgid "unapprove this user?"
-msgstr "拒绝这个用户？"
+msgstr "sæt denne bruge til 'ikke-godkendt'?"
 
 #: ../features/admin-approval/class-admin-approval.php:127
 #: ../features/admin-approval/class-admin-approval.php:234
 msgid "Unapprove"
-msgstr "拒绝"
+msgstr "Ophæv godkendelsen"
 
 #: ../features/admin-approval/class-admin-approval.php:129
 msgid "approve this user?"
-msgstr "允许这个用户？"
+msgstr "godkend denne bruger?"
 
 #: ../features/admin-approval/class-admin-approval.php:129
 #: ../features/admin-approval/class-admin-approval.php:233
 msgid "Approve"
-msgstr "允许"
+msgstr "Godkend"
 
 #: ../features/admin-approval/class-admin-approval.php:178
 #: ../modules/user-listing/userlisting.php:608
 #: ../modules/user-listing/userlisting.php:1249
 msgid "Firstname"
-msgstr "名子"
+msgstr "Fornavn"
 
 #: ../features/admin-approval/class-admin-approval.php:179
 #: ../modules/user-listing/userlisting.php:611
 #: ../modules/user-listing/userlisting.php:1250
 msgid "Lastname"
-msgstr "姓氏"
+msgstr "Efternavn"
 
 #: ../features/admin-approval/class-admin-approval.php:181
 #: ../modules/user-listing/userlisting.php:124
 #: ../modules/user-listing/userlisting.php:638
 #: ../modules/user-listing/userlisting.php:1253
 msgid "Role"
-msgstr "角色"
+msgstr "Rolle"
 
 #: ../features/admin-approval/class-admin-approval.php:182
 #: ../features/email-confirmation/class-email-confirmation.php:169
 msgid "Registered"
-msgstr "已注册"
+msgstr "Registreret"
 
 #: ../features/admin-approval/class-admin-approval.php:183
 msgid "User-status"
-msgstr "用户状态"
+msgstr "Brugerstatus"
 
 #: ../features/admin-approval/class-admin-approval.php:263
 msgid "Do you want to bulk approve the selected users?"
-msgstr "你想批量允许所选用户？"
+msgstr "Ønsker du at godkende de valgte brugere på én gang?"
 
 #: ../features/admin-approval/class-admin-approval.php:271
 msgid "Do you want to bulk unapprove the selected users?"
-msgstr "你想批量拒绝所选用户？"
+msgstr "Ønsker du at ophæve godkendelsen af de valgte brugere på én gang?"
 
 #: ../features/admin-approval/class-admin-approval.php:277
 msgid "Do you want to bulk delete the selected users?"
-msgstr "你想批量删除所选用户？"
+msgstr "Ønsker du at slette de valgte brugere på én gang?"
 
 #: ../features/admin-approval/class-admin-approval.php:285
 #: ../features/email-confirmation/class-email-confirmation.php:278
 msgid "Sorry, but you don't have permission to do that!"
-msgstr "抱歉，您没有相应的操作权限！"
+msgstr "Beklager, men du har ikke rettighederne til at gøre dette!"
 
 #: ../features/admin-approval/class-admin-approval.php:325
 msgid "Approved"
-msgstr "已允许"
+msgstr "Godkendt"
 
 #: ../features/admin-approval/class-admin-approval.php:327
 msgid "Unapproved"
-msgstr "已拒绝"
+msgstr "Ikke godkendt"
 
 #: ../features/admin-approval/class-admin-approval.php:499
 #: ../features/email-confirmation/class-email-confirmation.php:469
 msgid "All Users"
-msgstr "所有用户"
+msgstr "Alle brugere"
 
 #: ../features/email-confirmation/class-email-confirmation.php:120
 msgid "delete this user from the _signups table?"
-msgstr "在 the _signups 表单中 删除这个用户？"
+msgstr "slet denne bruger fra tilmeldingstabellen (_signups table)?"
 
 #: ../features/email-confirmation/class-email-confirmation.php:121
 msgid "confirm this email yourself?"
-msgstr "确认自己的电子邮件？"
+msgstr "bekræft selv denne e-mail?"
 
 #: ../features/email-confirmation/class-email-confirmation.php:121
 #: ../features/email-confirmation/class-email-confirmation.php:218
 msgid "Confirm Email"
-msgstr "确认电子邮件"
+msgstr "Bekræft e-mail"
 
 #: ../features/email-confirmation/class-email-confirmation.php:122
 msgid "resend the activation link?"
-msgstr "重新发送激活链接？"
+msgstr "gen-send aktiveringslinket?"
 
 #: ../features/email-confirmation/class-email-confirmation.php:122
 #: ../features/email-confirmation/class-email-confirmation.php:219
 msgid "Resend Activation Email"
-msgstr "发送激活邮件"
+msgstr "Gen-send aktiverings e-mailen"
 
 #: ../features/email-confirmation/class-email-confirmation.php:249
 msgid "%s couldn't be deleted"
-msgstr "%s 不能删除"
+msgstr "%s kunne ikke slettes"
 
 #: ../features/email-confirmation/class-email-confirmation.php:253
 msgid "All users have been successfully deleted"
-msgstr "所有的用户已成功删除"
+msgstr "Alle brugere er blevet slettet uden problemer"
 
 #: ../features/email-confirmation/class-email-confirmation.php:263
 msgid "The selected users have been activated"
-msgstr "所选的用户已被激活"
+msgstr "De valgte brugere er blevet aktiveret"
 
 #: ../features/email-confirmation/class-email-confirmation.php:274
 msgid "The selected users have had their activation emails resent"
-msgstr "所选用户已经重新发送激活电子邮件"
+msgstr "De valgte brugere har fået deres aktiverings e-mail gensendt"
 
 #: ../features/email-confirmation/class-email-confirmation.php:466
 #: ../features/email-confirmation/email-confirmation.php:47
 msgid "Users with Unconfirmed Email Address"
-msgstr "没经确认邮箱的用户"
+msgstr "Brugere med ubekræftede e-mail adresser"
 
 #: ../features/email-confirmation/email-confirmation.php:110
 msgid "There was an error performing that action!"
-msgstr "执行操作时出错！"
+msgstr "Der opstod en fejl ved udførelsen af denne handling!"
 
 #: ../features/email-confirmation/email-confirmation.php:118
 msgid "The selected user couldn't be deleted"
-msgstr "所选用户不能删除"
+msgstr "De valgte brugere kunne ikke slettes"
 
 #: ../features/email-confirmation/email-confirmation.php:129
 msgid "Email notification resent to user"
-msgstr "电子邮件通知重发给用户"
+msgstr "E-mail besked er gensendt til bruger"
 
 #: ../features/email-confirmation/email-confirmation.php:364
 msgid "[%1$s] Activate %2$s"
-msgstr "[%1$s] 激活 %2$s"
+msgstr "[%1$s] Aktivér %2$s"
 
 #: ../features/email-confirmation/email-confirmation.php:367
 msgid ""
@@ -1569,310 +1583,310 @@ msgid ""
 "\n"
 "After you activate it you will receive yet *another email* with your login."
 msgstr ""
-"要激活你的帐户，请点击下面的链接：\n"
+"For at aktivere din bruger bedes du klikke på følgende link:\n"
 "\n"
-"%s%s%s \n"
+"%s%s%s\n"
 "\n"
-"当你点击后，您将收到登陆的 *另一封电子邮件* 。"
+"Efter du har aktiveret den vil du modtage *endnu en e-mail* med din login."
 
 #: ../features/email-confirmation/email-confirmation.php:406
 #: ../front-end/register.php:68
 msgid "Could not create user!"
-msgstr "无法创建用户！"
+msgstr "Kunne ikke oprette bruger!"
 
 #: ../features/email-confirmation/email-confirmation.php:409
 msgid "That username is already activated!"
-msgstr "用户名已经被激活！"
+msgstr "Dette brugernavn er allerede i brug!"
 
 #: ../features/email-confirmation/email-confirmation.php:438
 msgid "There was an error while trying to activate the user"
-msgstr "试图激活用户时出现一个错误"
+msgstr "Der skete en fejl ved forsøg på at aktivere brugeren"
 
 #: ../features/email-confirmation/email-confirmation.php:483
 #: ../modules/email-customizer/admin-email-customizer.php:73
 msgid "A new subscriber has (been) registered!"
-msgstr "一个新的用户已经（被）注册！"
+msgstr "En ny abonnent ('subscriber') er blevet registreret!"
 
 #: ../features/email-confirmation/email-confirmation.php:486
 msgid "New subscriber on %1$s.<br/><br/>Username:%2$s<br/>E-mail:%3$s<br/>"
-msgstr "新用户在 %1$s.<br/><br/>用户名:%2$s<br/>邮箱:%3$s<br/>"
+msgstr "Ny abonnent ('subscriber') på %1$s.<br/><br/>Brugernavn:%2$s<br/>E-mail:%3$s<br/>"
 
 #: ../features/email-confirmation/email-confirmation.php:491
 msgid "The \"Admin Approval\" feature was activated at the time of registration, so please remember that you need to approve this user before he/she can log in!"
-msgstr "管理员审批”的功能是注册时激活，所以请记住，你必须批准该用户，他/她才能进行登录！"
+msgstr "\"Administrator godkendelses\" funktionen blev aktiveret på registreringstidspunktet, så vær venlig at huske at du skal godkende denne bruger før han/hun kan logge ind!"
 
 #: ../features/email-confirmation/email-confirmation.php:506
 msgid "[%1$s] Your new account information"
-msgstr "[%1$s] 您的新帐户信息"
+msgstr "[%1$s] Din nye konto information"
 
 #: ../features/email-confirmation/email-confirmation.php:512
 msgid "Welcome to %1$s!<br/><br/><br/>Your username is:%2$s and password:%3$s"
-msgstr "欢迎来到 %1$s!<br/><br/><br/>您的用户名是:%2$s 密码是:%3$s"
+msgstr "Velkommen til %1$s!<br/><br/><br/>Dit brugernavn er:%2$s og adgangskoden er:%3$s"
 
 #: ../features/email-confirmation/email-confirmation.php:521
 #: ../front-end/register.php:103
 msgid "Before you can access your account, an administrator needs to approve it. You will be notified via email."
-msgstr "需要管理员审核通过才能访问您的帐户。您将收到一封电子邮件。"
+msgstr "Før du kan tilgå din konto skal en administrator først godkende det. Du bliver adviseret via a-mail."
 
 #: ../features/login-widget/login-widget.php:10
 msgid "This login widget lets you add a login form in the sidebar."
-msgstr "该登录控件是允许您添加在侧边栏的登录表单。"
+msgstr "Denne login widget gør det muligt for dig at tilføje en formular i din sidebar."
 
 #: ../features/login-widget/login-widget.php:15
 msgid "Profile Builder Login Widget"
-msgstr "Profile Builder 登陆小工具"
+msgstr "Profile Builder login widget"
 
 #: ../front-end/class-formbuilder.php:287 ../front-end/login.php:202
 msgid "Register"
-msgstr "注册"
+msgstr "Registrer"
 
 #: ../features/login-widget/login-widget.php:63
 msgid "Title:"
-msgstr "标题："
+msgstr "Titel:"
 
 #: ../features/login-widget/login-widget.php:68
 msgid "After login redirect URL (optional):"
-msgstr "登录后的重定向URL（可选）："
+msgstr "Efter login URL omdirigering (valgfri):"
 
 #: ../features/login-widget/login-widget.php:73
 msgid "Register page URL (optional):"
-msgstr "注册页面URL（可选）："
+msgstr "Registrerings side URL (valgfri):"
 
 #: ../features/login-widget/login-widget.php:78
 msgid "Password Recovery page URL (optional):"
-msgstr "密码恢复页URL（可选）："
+msgstr "Adgangskode genskabnings side URL (valgfri)"
 
 #: ../features/upgrades/upgrades-functions.php:91
 #: ../features/upgrades/upgrades-functions.php:134
 msgid "The usernames cannot be changed."
-msgstr "用户名不可更改。"
+msgstr "Brugernavnene kan ikke ændres."
 
 #: ../front-end/class-formbuilder.php:89
 msgid "Only an administrator can add new users."
-msgstr "只有管理员可以添加新用户。"
+msgstr "Kun administrator kan tilføje nye brugere."
 
 #: ../front-end/class-formbuilder.php:99
 msgid "Users can register themselves or you can manually create users here."
-msgstr "用户可以注册自己注册，或您可以在这里手动创建用户。"
+msgstr "Brugere kan registrere sig selv eller du kan manuelt oprette brugere her."
 
 #: ../front-end/class-formbuilder.php:102
 msgid "Users cannot currently register themselves, but you can manually create users here."
-msgstr "用户无法自己注册，但你可以在这里手动创建用户。"
+msgstr "Brugere kan ikke i øjeblikket registrere sig selv, men du kan manuelt oprette brugere her."
 
 #: ../front-end/class-formbuilder.php:114
 msgid "You are currently logged in as %1s. You don't need another account. %2s"
-msgstr "您当前登陆为 %1s。您不需要其它帐号。 %2s"
+msgstr "Du er i øjeblikket logget ind som %1s. Du har ikke brug for en anden konto. %2s"
 
 #: ../front-end/class-formbuilder.php:114
 msgid "Log out of this account."
-msgstr "退出这个帐号。"
+msgstr "Log ud fra denne konto."
 
 #: ../front-end/class-formbuilder.php:114
 msgid "Logout"
-msgstr "退出"
+msgstr "Log ud"
 
 #: ../front-end/class-formbuilder.php:120
 msgid "You must be logged in to edit your profile."
-msgstr "您必须在登陆状态下编辑个人资料。"
+msgstr "Du skal være logget ind for at redigere din profil."
 
 #: ../front-end/class-formbuilder.php:142
 msgid "here"
-msgstr "这里"
+msgstr "her"
 
 #: ../front-end/class-formbuilder.php:144
 msgid "You will soon be redirected automatically. If you see this page for more than %1$d seconds, please click %2$s.%3$s"
-msgstr "您很快将会自动重定向。如果你看到这个页面超过 %1$d 秒，请点击 %2$s.%3$s"
+msgstr "Du vil snart blive omdirigeret automatisk. Hvis du ser denne side i mere end %1$d seconds, klik venligst %2$s.%3$s"
 
 #: ../front-end/class-formbuilder.php:233
 #: ../front-end/class-formbuilder.php:240
 msgid "The account %1s has been successfully created!"
-msgstr "帐号 %1s 创建成功！"
+msgstr "Kontoen %1s er oprettet uden problemer!"
 
 #: ../front-end/class-formbuilder.php:236
 #: ../front-end/class-formbuilder.php:246
 msgid "Before you can access your account %1s, you need to confirm your email address. Please check your inbox and click the activation link."
-msgstr "访问您的帐号 %1s 前，您需要确认您的邮箱地址。请检查您的邮箱并点击激活连接。"
+msgstr "Før du kan tilgå din konto %1s, skal du bekræfte din e-mail adresse. Tjek venligst din indbakke og klik på aktiveringslinket."
 
 #: ../front-end/class-formbuilder.php:242
 msgid "Before you can access your account %1s, an administrator has to approve it. You will be notified via email."
-msgstr "访问您的帐号 %1s 前，需要管理员审批通过。您将收到邮件。"
+msgstr "Før du kan tilgå din konto %1s, skal en administrator godkende den. Du vil blive adviseret via e-mail."
 
 #: ../front-end/class-formbuilder.php:256
 msgid "Your profile has been successfully updated!"
-msgstr "个人资料已更新！"
+msgstr "Din profil er blevet opdateret uden problemer!"
 
 #: ../front-end/class-formbuilder.php:266
 msgid "There was an error in the submitted form"
-msgstr "在递交表单时出错"
+msgstr "Der var en fejl i den sendte formular. "
 
 #: ../front-end/class-formbuilder.php:287
 msgid "Add User"
-msgstr "所有用户"
+msgstr "Tilføj bruger"
 
 #: ../admin/add-ons.php:170 ../front-end/class-formbuilder.php:290
 msgid "Update"
-msgstr "更新个人资料"
+msgstr "Opdater"
 
 #: ../front-end/class-formbuilder.php:333
 #: ../front-end/extra-fields/extra-fields.php:35
 msgid "The avatar was successfully deleted!"
-msgstr "头像成功删除！"
+msgstr "'Avataren' blev slettet uden problemer."
 
 #: ../front-end/class-formbuilder.php:333
 #: ../front-end/extra-fields/extra-fields.php:37
 msgid "The following attachment was successfully deleted:"
-msgstr "成功删除以下附件："
+msgstr "Følgende vedhæftning blev slettet uden problemer:"
 
 #: ../front-end/class-formbuilder.php:345
 msgid "Send these credentials via email."
-msgstr "通过电子邮件发送这些凭据。"
+msgstr "Send disse legitimationsoplysninger via e-mail."
 
 #: ../front-end/extra-fields/extra-fields.php:99 ../front-end/login.php:89
 #: ../front-end/login.php:96 ../front-end/login.php:110
 #: ../front-end/recover.php:17 ../front-end/recover.php:227
 msgid "ERROR"
-msgstr "错误"
+msgstr "FEJL"
 
 #: ../front-end/login.php:89
 msgid "The password you entered is incorrect."
-msgstr "你输入的密码不正确。"
+msgstr "Adgangskoden du angav er forkert."
 
 #: ../front-end/login.php:90 ../front-end/login.php:97
 msgid "Password Lost and Found."
-msgstr "密码遗失。"
+msgstr "Adgangskode 'mistet og fundet'"
 
 #: ../front-end/login.php:90 ../front-end/login.php:97
 msgid "Lost your password"
-msgstr "忘记您的密码"
+msgstr "Mistet din adgangskode"
 
 #: ../front-end/login.php:110
 msgid "Both fields are empty."
-msgstr "字段均空"
+msgstr "Begge felter er tomme."
 
 #: ../front-end/login.php:242
 msgid "You are currently logged in as %1$s. %2$s"
-msgstr "您当前登录为 %1$s. %2$s"
+msgstr "Du er i øjeblikket logget ind som %1$s. %2$s"
 
 #: ../front-end/login.php:241 ../front-end/logout.php:17
 msgid "Log out of this account"
-msgstr "退出这个帐户"
+msgstr "Log ud af denne konto"
 
 #: ../front-end/login.php:241
 msgid "Log out"
-msgstr "退出"
+msgstr "Log ud"
 
 #: ../front-end/recover.php:17
 msgid "Your account has to be confirmed by an administrator before you can use the \"Password Reset\" feature."
-msgstr "您的帐户需被管理员审批后才可使用 \"密码重置\" 功能。"
+msgstr "Din konto skal først godkendes af en administrator før du kan bruge \"Genskab adgangskode\""
 
 #: ../front-end/recover.php:91
 msgid "Reset Password"
-msgstr "重置密码"
+msgstr "Genskab adgangskode"
 
 #: ../front-end/recover.php:111
 msgid "Please enter your username or email address."
-msgstr "请输入您的用户名或电子邮件地址。"
+msgstr "Venligst angiv dit brugernavn eller e-mail adresse."
 
 #: ../front-end/recover.php:112
 msgid "You will receive a link to create a new password via email."
-msgstr "你将收到一封创建一个新密码连接的电子邮件。"
+msgstr "Du modtager et link via e-mail, så du kan oprette en ny adgangskode"
 
 #: ../front-end/recover.php:119
 msgid "Username or E-mail"
-msgstr "用户或邮箱地址"
+msgstr "Brugernavn eller e-mail"
 
 #: ../front-end/recover.php:125
 msgid "Get New Password"
-msgstr "获取新密码"
+msgstr "Anmod om ny adgangskode"
 
 #: ../front-end/recover.php:166
 msgid "The username entered wasn't found in the database!"
-msgstr "输入的用户名不存在数据库中！"
+msgstr "Det angivne brugernavn blev ikke fundet i databasen!"
 
 #: ../front-end/recover.php:166
 msgid "Please check that you entered the correct username."
-msgstr "请检查您已输入正确的用户名。"
+msgstr "Tjek venligst at du angav det korrekte brugernavn."
 
 #: ../front-end/recover.php:181
 msgid "Check your e-mail for the confirmation link."
-msgstr "检查你的邮件中的确认链接。"
+msgstr "Tjek din e-mail for bekræftelseslink."
 
 #: ../front-end/recover.php:215
 msgid "Someone requested that the password be reset for the following account: <b>%1$s</b><br/>If this was a mistake, just ignore this email and nothing will happen.<br/>To reset your password, visit the following link:%2$s"
-msgstr "有人要求以下帐号密码进行重置: <b>%1$s</b><br/>如果不是您自己的操作，请忽略。<br/>需要重置您的密码的话，请点击 :%2$s"
+msgstr "Nogen anmodede om at adgangskoden skulle genskabes for følgende konto: <b>%1$s</b><br/>Hvis dette var en fejltagelse, så se bare bort fra denne e-mail og intet vil ske. <br/>For at genskabe din adgangskode, følge dette link:%2$s"
 
 #: ../front-end/recover.php:218
 msgid "Password Reset from \"%1$s\""
-msgstr "从 \"%1$s\" 密码重置"
+msgstr "Adgangskode genskab fra \"%1$s\""
 
 #: ../front-end/recover.php:227
 msgid "There was an error while trying to send the activation link to %1$s!"
-msgstr "发送激活链接时出现错误 %1$s!"
+msgstr "Der opstod en fejl, da aktivireingslinket blev forsøgt sendt til  %1$s!"
 
 #: ../front-end/recover.php:188
 msgid "The email address entered wasn't found in the database!"
-msgstr "邮箱地址无法在数据库中找到"
+msgstr "Den angivne e-mail adresse blev ikke fundet i databasen!"
 
 #: ../front-end/recover.php:188
 msgid "Please check that you entered the correct email address."
-msgstr "请检查您输入（正确）电子邮件地址。"
+msgstr "Tjek venligst at du angav den korrekte e-mail adresse."
 
 #: ../front-end/recover.php:255
 msgid "Your password has been successfully changed!"
-msgstr "您已经成功地更改密码！"
+msgstr "Din adgangskode er ændret uden problemer!"
 
 #: ../front-end/recover.php:274
 msgid "You have successfully reset your password to: %1$s"
-msgstr "您已经成功地将密码更改成：%1$s"
+msgstr "Du har med succes genskabt din adgangskode til: %1$s"
 
 #: ../front-end/recover.php:277 ../front-end/recover.php:291
 msgid "Password Successfully Reset for %1$s on \"%2$s\""
-msgstr "密码成功重置  %1$s 在 \"%2$s\""
+msgstr "Adgangskoden ændret uden problemer for %1$s på \"%2$s\""
 
 #: ../front-end/recover.php:288
 msgid "%1$s has requested a password change via the password reset feature.<br/>His/her new password is:%2$s"
-msgstr "%1$s 请求通过密码重置功能修改密码。<br/>他的密码是:%2$s"
+msgstr "%1$s har anmodet om ændring af adgangskoden via 'Genskab adgangskode'.<br/>Hans/hendes nye adgagnskode er:%2$s"
 
 #: ../front-end/recover.php:307
 msgid "The entered passwords don't match!"
-msgstr "输入的密码不匹配！"
+msgstr "Den angivne adgangskode matcher ikke!"
 
 #: ../front-end/recover.php:352
 msgid "ERROR:"
-msgstr "错误："
+msgstr "FEJL:"
 
 #: ../front-end/recover.php:352
 msgid "Invalid key!"
-msgstr "无效密钥！"
+msgstr "Ugyldig nøgle!"
 
 #: ../front-end/register.php:46
 msgid "Invalid activation key!"
-msgstr "无效的激活密钥！"
+msgstr "Ugyldig aktiveringsnøgle!"
 
 #: ../front-end/register.php:50
 msgid "This username is now active!"
-msgstr "这个用户名现在被激活！"
+msgstr "Dette brugernavn er nu aktivt!"
 
 #: ../front-end/register.php:71
 msgid "This username is already activated!"
-msgstr "这个用户名已经被激活！"
+msgstr "Dette brugernavn er allerede aktiveret!"
 
 #: ../front-end/register.php:102
 msgid "Your email was successfully confirmed."
-msgstr "您的电子邮件已确认。"
+msgstr "Din e-mail blev bekræftet uden problemer."
 
 #: ../front-end/register.php:112
 msgid "There was an error while trying to activate the user."
-msgstr "尝试激活用户时出现一个错误。"
+msgstr "Der skete en fejl under forsøget på at aktivere brugeren."
 
 #: ../front-end/default-fields/email/email.php:42
 msgid "The email you entered is not a valid email address."
-msgstr "您输入的电子邮件不是一个有效的电子邮件地址。"
+msgstr "E-mailen, som du angav, er ikke en gyldig e-mail adresse."
 
 #: ../front-end/default-fields/email/email.php:55
 #: ../front-end/default-fields/email/email.php:60
 msgid "This email is already reserved to be used soon."
-msgstr "此邮箱地址已被保留使用。"
+msgstr "Denne e-mail er allerede reserveret til snart at blive anvendt."
 
 #: ../front-end/default-fields/email/email.php:55
 #: ../front-end/default-fields/email/email.php:60
@@ -1881,63 +1895,63 @@ msgstr "此邮箱地址已被保留使用。"
 #: ../front-end/default-fields/username/username.php:44
 #: ../front-end/default-fields/username/username.php:54
 msgid "Please try a different one!"
-msgstr "请尝试一个不同的！"
+msgstr "Venligst prøv en anden!"
 
 #: ../front-end/default-fields/email/email.php:68
 #: ../front-end/default-fields/email/email.php:79
 msgid "This email is already in use."
-msgstr "电子邮件已被使用。"
+msgstr "Denne e-mail er allerede i brug."
 
 #: ../front-end/default-fields/password-repeat/password-repeat.php:35
 #: ../front-end/default-fields/password-repeat/password-repeat.php:39
 msgid "The passwords do not match"
-msgstr "密码不匹配"
+msgstr "Adgangskoden matcher ikke"
 
 #: ../front-end/default-fields/username/username.php:44
 msgid "This username already exists."
-msgstr "用户名已经存在。"
+msgstr "Dette brugernavn eksisterer allerede."
 
 #: ../front-end/default-fields/username/username.php:54
 msgid "This username is already reserved to be used soon."
-msgstr "这个用户名已经被保留。"
+msgstr "Dette brugernavn er allerede reserveret til snart at blive anvendt."
 
 #: ../front-end/extra-fields/avatar/avatar.php:65
 #: ../front-end/extra-fields/avatar/avatar.php:103
 #: ../front-end/extra-fields/upload/upload.php:29
 #: ../front-end/extra-fields/upload/upload.php:68
 msgid "max upload size"
-msgstr "最大上传大小"
+msgstr "maks. upload størrelse"
 
 #: ../front-end/extra-fields/avatar/avatar.php:71
 msgid "Current avatar: No uploaded avatar"
-msgstr "当前头像：没有上传头像"
+msgstr "Nuværende avatar: Ingen uploadet avatar"
 
 #: ../front-end/extra-fields/avatar/avatar.php:76
 #: ../front-end/extra-fields/avatar/avatar.php:110
 msgid "Avatar"
-msgstr "头像"
+msgstr "Avatar"
 
 #: ../front-end/extra-fields/avatar/avatar.php:80
 #: ../front-end/extra-fields/avatar/avatar.php:85
 #: ../front-end/extra-fields/avatar/avatar.php:113
 #: ../front-end/extra-fields/avatar/avatar.php:115
 msgid "Click to see the current avatar"
-msgstr "点击查看当前头像"
+msgstr "Klik for at se nuværende avatar"
 
 #: ../front-end/extra-fields/avatar/avatar.php:82
 #: ../front-end/extra-fields/avatar/avatar.php:113
 msgid "The avatar can't be deleted (It was marked as required by the administrator)"
-msgstr "头像不能被删除（它被标记为只允许管理员操作）"
+msgstr "Avataren kan ikke slettes (Det er markeret som krævet af administratoren)"
 
 #: ../front-end/extra-fields/avatar/avatar.php:87
 #: ../front-end/extra-fields/avatar/avatar.php:115
 msgid "Are you sure you want to delete this avatar?"
-msgstr "您确定要删除这个头像？"
+msgstr "Er du sikker på at du vil slette denne avatar?"
 
 #: ../front-end/extra-fields/avatar/avatar.php:88
 #: ../front-end/extra-fields/avatar/avatar.php:115
 msgid "Click to delete the current avatar"
-msgstr "点击删除当前头像"
+msgstr "Klik for at slette den nuværende avatar"
 
 #: ../front-end/extra-fields/avatar/avatar.php:96
 #: ../front-end/extra-fields/checkbox/checkbox.php:44
@@ -1952,36 +1966,36 @@ msgstr "点击删除当前头像"
 #: ../front-end/extra-fields/upload/upload.php:62
 #: ../front-end/extra-fields/wysiwyg/wysiwyg.php:33
 msgid "required"
-msgstr "必须"
+msgstr "krævet"
 
 #: ../front-end/extra-fields/avatar/avatar.php:106
 msgid "Current avatar"
-msgstr "当前头像"
+msgstr "Nuværende avatar"
 
 #: ../front-end/extra-fields/avatar/avatar.php:106
 msgid "No uploaded avatar"
-msgstr "没有上传头像"
+msgstr "Ingen uploadet avatar"
 
 #: ../front-end/extra-fields/avatar/avatar.php:212
 #: ../front-end/extra-fields/upload/upload.php:173
 msgid "The extension of the file did not match"
-msgstr "文件扩展名不匹配"
+msgstr "Filformatet matchede ikke"
 
 #: ../front-end/extra-fields/avatar/avatar.php:215
 #: ../front-end/extra-fields/avatar/avatar.php:218
 #: ../front-end/extra-fields/upload/upload.php:177
 #: ../front-end/extra-fields/upload/upload.php:180
 msgid "The file uploaded exceeds the upload_max_filesize directive in php.ini"
-msgstr "文件上传大小限制超过 upload_max_filesize 在 php.ini 的设置"
+msgstr "Den uploadede fil overskrider den tilladte maksimale filstørrelse 'max_file_size' i php.ini"
 
 #: ../front-end/extra-fields/avatar/avatar.php:221
 #: ../front-end/extra-fields/upload/upload.php:183
 msgid "The file uploaded exceeds the MAX_FILE_SIZE directive in php.ini"
-msgstr "文件上传方件最大限制超过 MAX_FILE_SIZE 在 php.ini 的设置"
+msgstr "Den uploadede fil overskrider 'MAX_FILE_SIZE' direktivet i php.ini"
 
 #: ../front-end/extra-fields/avatar/avatar.php:224
 msgid "The file could only partially be uploaded "
-msgstr "文件只能被分段上传"
+msgstr "Filen kunne kun delvist uploades"
 
 #: ../front-end/extra-fields/avatar/avatar.php:227
 #: ../front-end/extra-fields/avatar/avatar.php:251
@@ -1990,46 +2004,46 @@ msgstr "文件只能被分段上传"
 #: ../front-end/extra-fields/upload/upload.php:213
 #: ../front-end/extra-fields/upload/upload.php:216
 msgid "No file was selected"
-msgstr "没有选择文件"
+msgstr "Der er ikke valgt nogen fil"
 
 #: ../front-end/extra-fields/avatar/avatar.php:230
 #: ../front-end/extra-fields/upload/upload.php:192
 msgid "The temporary upload folder is missing from the system"
-msgstr "系统丢失临时文件缓存"
+msgstr "Den midlertidig upload mappe mangler i systemet"
 
 #: ../front-end/extra-fields/avatar/avatar.php:233
 #: ../front-end/extra-fields/upload/upload.php:195
 msgid "The file failed to write to the disk"
-msgstr "磁盘无法写入文件"
+msgstr "Filen fejlede i at skrive til disken"
 
 #: ../front-end/extra-fields/avatar/avatar.php:236
 #: ../front-end/extra-fields/upload/upload.php:198
 msgid "A PHP extension stopped the file upload"
-msgstr "一个PHP扩展暂停文件上传"
+msgstr "En PHP 'extension' stoppede filens upload"
 
 #: ../front-end/extra-fields/avatar/avatar.php:239
 msgid "Unknown error occurred"
-msgstr "发生未知错误"
+msgstr "Der opstod en ukendt fejl"
 
 #: ../front-end/extra-fields/recaptcha/recaptcha.php:47
 msgid "To use reCAPTCHA you must get an API key from"
-msgstr "使用 reCAPTCHA 你必须获得一个API密钥"
+msgstr "For at bruge 'reCAPTCHA' skal du først have en API nøgle fra"
 
 #: ../front-end/extra-fields/recaptcha/recaptcha.php:77
 msgid "For security reasons, you must pass the remote ip to reCAPTCHA!"
-msgstr "安全原因，您必须通过远程IP到reCAPTCHA!"
+msgstr "Af sikkerhedsmæssige grunde skal du angive 'remote' ip til 'reCAPTCHA'!"
 
 #: ../front-end/extra-fields/recaptcha/recaptcha.php:139
 msgid "To use reCAPTCHA you must get an API public key from:"
-msgstr "使用reCAPTCHA，你必须得到一个API公开密钥："
+msgstr "For at bruge 'reCAPTCHA' skal du have en offentlig API nøgle fra:"
 
 #: ../front-end/extra-fields/recaptcha/recaptcha.php:142
 msgid "To use reCAPTCHA you must get an API private key from:"
-msgstr "使用reCAPTCHA，你必须得到一个API私人密钥："
+msgstr "For at bruge 'reCAPTCHA' skal du have en privat API nøgle fra:"
 
 #: ../front-end/extra-fields/upload/upload.php:35
 msgid "Current file: No uploaded attachment"
-msgstr "当前文件：没有上传附件"
+msgstr "Nuværende fil: Intet uploaded"
 
 #: ../front-end/extra-fields/upload/upload.php:39
 #: ../front-end/extra-fields/upload/upload.php:48
@@ -2037,61 +2051,61 @@ msgstr "当前文件：没有上传附件"
 #: ../front-end/extra-fields/upload/upload.php:75
 #: ../front-end/extra-fields/upload/upload.php:77
 msgid "Current file"
-msgstr "当前文件"
+msgstr "Nuværende fil"
 
 #: ../front-end/extra-fields/upload/upload.php:42
 #: ../front-end/extra-fields/upload/upload.php:51
 #: ../front-end/extra-fields/upload/upload.php:75
 #: ../front-end/extra-fields/upload/upload.php:77
 msgid "Click to see the current attachment"
-msgstr "点击查看当前附件"
+msgstr "Klik for at se den nuværende vedhæftede"
 
 #: ../front-end/extra-fields/upload/upload.php:44
 #: ../front-end/extra-fields/upload/upload.php:75
 msgid "The attachment can't be deleted (It was marked as required by the administrator)"
-msgstr "附件不能删除（被标记为管理员权限）"
+msgstr "Det vedhæftede kan ikke slattes (Det var markeret som krævet af administrator)"
 
 #: ../front-end/extra-fields/upload/upload.php:53
 #: ../front-end/extra-fields/upload/upload.php:77
 msgid "Are you sure you want to delete this attachment?"
-msgstr "您确定要删除此附件吗？"
+msgstr "Er du sikker på at du vil slette vedhæftede?"
 
 #: ../front-end/extra-fields/upload/upload.php:54
 #: ../front-end/extra-fields/upload/upload.php:77
 msgid "Click to delete the current attachment"
-msgstr "单击删除当前附件"
+msgstr "Klik for at slette nuværende vedhæftning"
 
 #: ../front-end/extra-fields/upload/upload.php:71
 msgid "No uploaded attachment"
-msgstr "没有上传附件"
+msgstr "Ingen uploadede vedhæftninger"
 
 #: ../front-end/extra-fields/upload/upload.php:164
 msgid "The extension of the file is not allowed"
-msgstr "文件扩展名不允许"
+msgstr "Filformatet på denne fil er ikke tilladt"
 
 #: ../front-end/extra-fields/upload/upload.php:186
 msgid "The file could only partially be uploaded"
-msgstr "该文件只能被分段上传"
+msgstr "Filen kunne kun delvist uploades"
 
 #: ../front-end/extra-fields/upload/upload.php:201
 msgid "This field wasn't updated because an unknown error occured"
-msgstr "发生未知错误导致这个字段没有更新"
+msgstr "Denne fil blev ikke uploaded på grund af en opstået ukendt fejl"
 
 #: ../modules/modules.php:11 ../modules/modules.php:80
 msgid "Modules"
-msgstr "模块"
+msgstr "Moduler"
 
 #: ../modules/modules.php:81
 msgid "Here you can activate / deactivate available modules for Profile Builder."
-msgstr "在这里你可以激活/停用 Profile Builder 模块。"
+msgstr "Her kan du aktivere / deaktivere tilgængelige moduler i Profile Builder."
 
 #: ../modules/modules.php:91
 msgid "Name/Description"
-msgstr "名称/描述"
+msgstr "Navn/Beskrivelse"
 
 #: ../modules/modules.php:92
 msgid "Status"
-msgstr "状态"
+msgstr "Status"
 
 #: ../modules/custom-redirects/custom-redirects.php:48
 #: ../modules/custom-redirects/custom-redirects.php:58
@@ -2104,7 +2118,7 @@ msgstr "状态"
 #: ../modules/modules.php:113 ../modules/modules.php:120
 #: ../modules/modules.php:127 ../modules/modules.php:134
 msgid "Active"
-msgstr "激活"
+msgstr "Aktiv"
 
 #: ../modules/custom-redirects/custom-redirects.php:49
 #: ../modules/custom-redirects/custom-redirects.php:59
@@ -2117,106 +2131,106 @@ msgstr "激活"
 #: ../modules/modules.php:114 ../modules/modules.php:121
 #: ../modules/modules.php:128 ../modules/modules.php:135
 msgid "Inactive"
-msgstr "关闭"
+msgstr "Inaktiv"
 
 #: ../modules/email-customizer/admin-email-customizer.php:11
 #: ../modules/email-customizer/admin-email-customizer.php:12
 #: ../modules/modules.php:118
 msgid "Admin Email Customizer"
-msgstr "管理员邮件定制"
+msgstr "Opsætning af administrator e-mails"
 
 #: ../modules/email-customizer/user-email-customizer.php:11
 #: ../modules/email-customizer/user-email-customizer.php:12
 #: ../modules/modules.php:125
 msgid "User Email Customizer"
-msgstr "用户邮件定制"
+msgstr "Opsætning af bruger e-mails"
 
 #: ../assets/lib/wck-api/wordpress-creation-kit.php:337
 #: ../modules/class-mustache-templates/class-mustache-templates.php:242
 msgid "Save"
-msgstr "保存"
+msgstr "Gem"
 
 #: ../modules/custom-redirects/custom-redirects.php:35
 msgid "Redirects on custom page requests:"
-msgstr "自定义页面重定向请求："
+msgstr "Opsætning af omdirigering til tilpassede Profile Builder sider med 'short codes'"
 
 #: ../modules/custom-redirects/custom-redirects.php:39
 #: ../modules/custom-redirects/custom-redirects.php:85
 msgid "Action"
-msgstr "动作"
+msgstr "Handling"
 
 #: ../modules/custom-redirects/custom-redirects.php:40
 #: ../modules/custom-redirects/custom-redirects.php:86
 #: ../modules/multiple-forms/edit-profile-forms.php:202
 #: ../modules/multiple-forms/register-forms.php:226
 msgid "Redirect"
-msgstr "重定向"
+msgstr "Omdiriger"
 
 #: ../modules/custom-redirects/custom-redirects.php:41
 #: ../modules/custom-redirects/custom-redirects.php:87
 #: ../modules/multiple-forms/edit-profile-forms.php:204
 #: ../modules/multiple-forms/register-forms.php:228
 msgid "URL"
-msgstr "网址"
+msgstr "URL"
 
 #: ../modules/custom-redirects/custom-redirects.php:46
 msgid "After Registration:"
-msgstr "注册后："
+msgstr "Efter registrering:"
 
 #: ../modules/custom-redirects/custom-redirects.php:56
 msgid "After Login:"
-msgstr "登录后："
+msgstr "Efter log ind:"
 
 #: ../modules/custom-redirects/custom-redirects.php:66
 msgid "Recover Password (*)"
-msgstr "重置密码 (*)"
+msgstr "Genskab adgangskode (*)"
 
 #: ../modules/custom-redirects/custom-redirects.php:77
 msgid "When activated this feature will redirect the user on both the default Wordpress password recovery page and the \"Lost password?\" link used by Profile Builder on the front-end login page."
-msgstr "当激活这个功能，当用户进入在 WordPress 默认的密码恢复页与  \"忘记密码?\" 连接将重定向使用 Profile Builder  前端登陆页面。"
+msgstr "Når denne funktion er aktiveret, vil brugeren blive omdirigeret fra såvel Wordpress' standardside for genskabning af adgangskode som fra 'Mistet adgangskode' linket som bruges af Profile Builder på log ind siden på 'front-end'."
 
 #: ../modules/custom-redirects/custom-redirects.php:81
 msgid "Redirects on default WordPress page requests:"
-msgstr "WordPress 默认页面的重定向："
+msgstr "Opsætning af omdirigering fra WordPress standardside (til Profile Builder formularer):"
 
 #: ../modules/custom-redirects/custom-redirects.php:92
 msgid "Default WordPress Login Page"
-msgstr "WordPress 默认登录页面的重定向："
+msgstr "Standard WordPress log ind side"
 
 #: ../modules/custom-redirects/custom-redirects.php:102
 msgid "Default WordPress Logout Page"
-msgstr "WordPress 默认退出页面的重定向："
+msgstr "Standard WordPress log ud side"
 
 #: ../modules/custom-redirects/custom-redirects.php:112
 msgid "Default WordPress Register Page"
-msgstr "WordPress 默认注册页面的重定向："
+msgstr "Standard WordPress registreringsside"
 
 #: ../modules/custom-redirects/custom-redirects.php:122
 msgid "Default WordPress Dashboard (*)"
-msgstr "WordPress 默认后台的重定向："
+msgstr "Standard WordPress kontrolpanel (*)"
 
 #: ../modules/custom-redirects/custom-redirects.php:133
 msgid "Redirects every user-role EXCEPT the ones with administrator privileges (can manage options)."
-msgstr "将所有用户角色，除具有管理员权限用户（管理）。"
+msgstr "Omdirigerer hver eneste brugerrolle UNDTAGEN de som har administrator rettigheder (kan håndtere 'options')"
 
 #: ../modules/email-customizer/admin-email-customizer.php:38
 msgid "These settings are also replicated in the \"User Email Customizer\" settings-page upon save."
-msgstr "这些设置也复制在\"用户邮件定制\" 设置页中保存。"
+msgstr "Disse indstillinger bliver samtidig også gemt i \"Opsætning af bruger e-mails\" når de gemmes."
 
 #: ../modules/email-customizer/admin-email-customizer.php:41
 #: ../modules/email-customizer/user-email-customizer.php:41
 msgid "From (name)"
-msgstr "来自（名子）"
+msgstr "Fra (navn)"
 
 #: ../modules/email-customizer/admin-email-customizer.php:49
 #: ../modules/email-customizer/user-email-customizer.php:49
 msgid "From (reply-to email)"
-msgstr "来自（回复邮件）"
+msgstr "Fra (svar-til e-mail)"
 
 #: ../modules/email-customizer/admin-email-customizer.php:57
 #: ../modules/email-customizer/user-email-customizer.php:57
 msgid "Common Settings"
-msgstr "常用设置"
+msgstr "Fælles indstillinger"
 
 #: ../modules/email-customizer/admin-email-customizer.php:60
 msgid ""
@@ -2226,9 +2240,9 @@ msgid ""
 "<p>E-mail:{{user_email}}</p>\n"
 msgstr ""
 "\n"
-"<p>新用户在 {{site_name}}.</p>\n"
-"<p>用户名:{{username}}</p>\n"
-"<p>邮箱:{{user_email}}</p>\n"
+"<p>Ny abonnent på {{site_name}}.</p>\n"
+"<p>Brugernavn:{{username}}</p>\n"
+"<p>E-mail:{{user_email}}</p>\n"
 
 #: ../modules/email-customizer/admin-email-customizer.php:69
 #: ../modules/email-customizer/admin-email-customizer.php:99
@@ -2241,11 +2255,11 @@ msgstr ""
 #: ../modules/email-customizer/user-email-customizer.php:214
 #: ../modules/email-customizer/user-email-customizer.php:241
 msgid "Email Subject"
-msgstr "邮件主题"
+msgstr "E-mail emne"
 
 #: ../modules/email-customizer/admin-email-customizer.php:84
 msgid "Default Registration & Registration with Email Confirmation"
-msgstr "默认注册与邮件确认注册"
+msgstr "Standard registrering & registrering med e-mail bekræftelse"
 
 #: ../modules/email-customizer/admin-email-customizer.php:87
 msgid ""
@@ -2257,55 +2271,55 @@ msgid ""
 "so please remember that you need to approve this user before he/she can log in!</p>\n"
 msgstr ""
 "\n"
-"<p>新用户在 {{site_name}}.</p>\n"
-"<p>用户名:{{username}}</p>\n"
-"<p>邮箱:{{user_email}}</p>\n"
-"<p>管理审核功能已被激活，\n"
-"请记住，您需要批准这个用户，他才能登陆!</p>\n"
+"<p>Ny abonnent på {{site_name}}.</p>\n"
+"<p>Brugernavn:{{username}}</p>\n"
+"<p>E-mail:{{user_email}}</p>\n"
+"<p>Administrator godkendelsesfunktione blev aktiveret på tidspunktet for registrering,\n"
+"så husk venligst at du skal godkende denne bruger før han/hun kan logge ind!</p>\n"
 
 #: ../modules/email-customizer/admin-email-customizer.php:114
 #: ../modules/email-customizer/user-email-customizer.php:143
 msgid "Registration with Admin Approval"
-msgstr "注册需管理员审批"
+msgstr "Registrering med administrator godkendelse"
 
 #: ../modules/email-customizer/email-customizer.php:7
 msgid "Available Tags"
-msgstr "可用标签"
+msgstr "Tilgængelige 'tags'"
 
 #: ../features/email-confirmation/class-email-confirmation.php:91
 #: ../features/email-confirmation/class-email-confirmation.php:170
 #: ../modules/email-customizer/email-customizer.php:11
 msgid "User Meta"
-msgstr "User Meta"
+msgstr "Bruger 'meta'"
 
 #: ../modules/email-customizer/email-customizer.php:21
 msgid "Site Url"
-msgstr "网站地址"
+msgstr "Site URL"
 
 #: ../modules/email-customizer/email-customizer.php:22
 msgid "Site Name"
-msgstr "网站名称"
+msgstr "Site navn"
 
 #: ../modules/email-customizer/email-customizer.php:25
 #: ../modules/user-listing/userlisting.php:133
 msgid "User Id"
-msgstr "用户名称"
+msgstr "Bruger ID"
 
 #: ../modules/email-customizer/email-customizer.php:33
 msgid "Reply To"
-msgstr "回复"
+msgstr "Svar til"
 
 #: ../modules/email-customizer/email-customizer.php:36
 msgid "Activation Key"
-msgstr "激活密钥"
+msgstr "Aktiveringsnøgle"
 
 #: ../modules/email-customizer/email-customizer.php:37
 msgid "Activation Url"
-msgstr "激活URL"
+msgstr "Aktiverings URL"
 
 #: ../modules/email-customizer/email-customizer.php:38
 msgid "Activation Link"
-msgstr "激活链接"
+msgstr "Aktiveringslink"
 
 #: ../modules/email-customizer/user-email-customizer.php:64
 msgid ""
@@ -2314,12 +2328,12 @@ msgid ""
 "<p>Your username is:{{username}} and password:{{password}}</p>\n"
 msgstr ""
 "\n"
-"<h3>欢迎来到 {{site_name}}!</h3>\n"
-"<p>您的用户名是:{{username}} 密码是:{{password}}</p>\n"
+"<h3>Velkommen til {{site_name}}!</h3>\n"
+"<p>Dit brugernavn er:{{username}} og adgangskode:{{password}}</p>\n"
 
 #: ../modules/email-customizer/user-email-customizer.php:85
 msgid "Default Registration"
-msgstr "默认注册"
+msgstr "Standard registrering"
 
 #: ../modules/email-customizer/user-email-customizer.php:91
 msgid ""
@@ -2329,17 +2343,17 @@ msgid ""
 "<p>After you activate, you will receive another email with your credentials.</p>\n"
 msgstr ""
 "\n"
-"<p>激活您的帐户，请点击下面连接:<br/>\n"
+"<p>For at aktivere din bruger klik venligst på følgende link:<br/>\n"
 "{{{activation_link}}}</p>\n"
-"<p>在您激活完成后，将会收到另外一封凭据邮件。</p>\n"
+"<p>Efter du aktiverer vil du modtage endnu en e-mail med dine legitimationsoplysninger.</p>\n"
 
 #: ../modules/email-customizer/user-email-customizer.php:103
 msgid "[{{site_name}}] Activate {{username}}"
-msgstr "[{{site_name}}] 激活 {{username}}"
+msgstr "[{{site_name}}] Aktivér {{username}}"
 
 #: ../modules/email-customizer/user-email-customizer.php:114
 msgid "Registration with Email Confirmation"
-msgstr "电子邮件确认注册"
+msgstr "Registrering med e-mail bekræftelse"
 
 #: ../modules/email-customizer/user-email-customizer.php:120
 msgid ""
@@ -2349,13 +2363,13 @@ msgid ""
 "<p>Before you can access your account, an administrator needs to approve it. You will be notified via email.</p>\n"
 msgstr ""
 "\n"
-"<h3>欢迎来到 {{site_name}}!</h3>\n"
-"<p>您的用户名:{{username}} 密码:{{password}}</p>\n"
-"<p>在您访问您的帐号前，需要管理审批。您将会收邮件通知。</p>\n"
+"<h3>Velkommen til {{site_name}}!</h3>\n"
+"<p>Dit brugernavn er:{{username}} og adgangskode:{{password}}</p>\n"
+"<p>Før du kan tilgå din konto skal en administrator først godkende den. Du vil få yderligere besked via e-mail.</p>\n"
 
 #: ../modules/email-customizer/user-email-customizer.php:132
 msgid "A new account has been created for you on {{site_name}}"
-msgstr "一个新的帐号在您的 {{site_name}} 上建立"
+msgstr "En ny konto er blevet oprettet til dig på {{site_name}}"
 
 #: ../modules/email-customizer/user-email-customizer.php:148
 msgid ""
@@ -2364,16 +2378,16 @@ msgid ""
 "<p>An administrator has just approved your account: {{username}} on {{site_name}}.</p>\n"
 msgstr ""
 "\n"
-"<h3>好消息 !</h3>\n"
-"<p>管理员已经批准您的帐号： {{username}} 在 {{site_name}}.</p>\n"
+"<h3>Gode nyheder!</h3>\n"
+"<p>En administrator har netop godkendt din konto: {{username}} på {{site_name}}.</p>\n"
 
 #: ../modules/email-customizer/user-email-customizer.php:159
 msgid "Your account on {{site_name}} has been approved!"
-msgstr "您在 {{site_name}} 的帐号已经被通过！"
+msgstr "Din konto på {{site_name}} er blevet godkendt!"
 
 #: ../modules/email-customizer/user-email-customizer.php:170
 msgid "User Approval Notification"
-msgstr "用户批准通知"
+msgstr "Meddelelse om brugergodkendelse"
 
 #: ../modules/email-customizer/user-email-customizer.php:175
 msgid ""
@@ -2382,203 +2396,203 @@ msgid ""
 "<p>Unfortunatelly an administrator has just unapproved your account: {{username}} on {{site_name}}.</p>\n"
 msgstr ""
 "\n"
-"<h3>您好，</h3>\n"
-"<p>抱歉，管理员未批准您的帐号: {{username}} 在 {{site_name}}.</p>\n"
+"<h3>Hej,</h3>\n"
+"<p>En administrator har desværre ophævet godkendelsen af din konto: {{username}} på {{site_name}}.</p>\n"
 
 #: ../modules/email-customizer/user-email-customizer.php:187
 msgid "Your account on {{site_name}} has been unapproved!"
-msgstr "您在 {{site_name}} 的帐号被拒绝！"
+msgstr "Din konto på {{site_name}} er ikke længere godkendt!"
 
 #: ../modules/email-customizer/user-email-customizer.php:198
 msgid "Unapproved User Notification"
-msgstr "被拒绝的用户通知"
+msgstr "Meddelelse om ophævelse af brugerkonto"
 
 #: ../modules/multiple-forms/edit-profile-forms.php:11
 #: ../modules/multiple-forms/edit-profile-forms.php:12
 msgid "Edit-profile Form"
-msgstr "编辑资料表单"
+msgstr "Formular til profilredigering"
 
 #: ../modules/multiple-forms/edit-profile-forms.php:13
 #: ../modules/multiple-forms/register-forms.php:13
 #: ../modules/user-listing/userlisting.php:13
 msgid "Add New"
-msgstr "新增加"
+msgstr "Tilføj ny"
 
 #: ../modules/multiple-forms/edit-profile-forms.php:14
 msgid "Add new Edit-profile Form"
-msgstr "添加新的编辑资料表单"
+msgstr "Tilføj ny formular til profilredigering"
 
 #: ../modules/multiple-forms/edit-profile-forms.php:15
 msgid "Edit the Edit-profile Forms"
-msgstr "编辑的编辑个人资料表单"
+msgstr "Rediger profilredigerings formularer"
 
 #: ../modules/multiple-forms/edit-profile-forms.php:16
 msgid "New Edit-profile Form"
-msgstr "新的编辑资料表单"
+msgstr "Ny profilredigerings formular"
 
 #: ../modules/multiple-forms/edit-profile-forms.php:17
 #: ../modules/multiple-forms/edit-profile-forms.php:23
 msgid "Edit-profile Forms"
-msgstr "编辑资料表单"
+msgstr "Profilredigerings formularer"
 
 #: ../modules/multiple-forms/edit-profile-forms.php:18
 msgid "View the Edit-profile Form"
-msgstr "查看编辑资料表单"
+msgstr "Vis profilredigerings formular"
 
 #: ../modules/multiple-forms/edit-profile-forms.php:19
 msgid "Search the Edit-profile Forms"
-msgstr "搜索编辑资料表单"
+msgstr "Søg profilredigerings formularer"
 
 #: ../modules/multiple-forms/edit-profile-forms.php:20
 msgid "No Edit-profile Form found"
-msgstr "没有编辑个人资料表单"
+msgstr "Ingen profilredigerings formular fundet"
 
 #: ../modules/multiple-forms/edit-profile-forms.php:21
 msgid "No Edit-profile Forms found in trash"
-msgstr "在回收站中没有编辑个人资料表单"
+msgstr "Ingen profilredigerings formular fundet i papirkurven"
 
 #: ../modules/multiple-forms/edit-profile-forms.php:131
 #: ../modules/multiple-forms/register-forms.php:134
 #: ../modules/user-listing/userlisting.php:1140
 msgid "Shortcode"
-msgstr "简码"
+msgstr "'Shortcode'"
 
 #: ../modules/multiple-forms/edit-profile-forms.php:151
 #: ../modules/multiple-forms/register-forms.php:155
 #: ../modules/user-listing/userlisting.php:1161
 msgid "(no title)"
-msgstr "（没有标题）"
+msgstr "(ingen titel)"
 
 #: ../modules/multiple-forms/edit-profile-forms.php:171
 #: ../modules/multiple-forms/register-forms.php:174
 #: ../modules/user-listing/userlisting.php:1181
 msgid "The shortcode will be available after you publish this form."
-msgstr "简码将在您发布表单后可用。"
+msgstr "'Shortcode' er tilgængelig efter du har publiceret denne formular."
 
 #: ../modules/multiple-forms/edit-profile-forms.php:173
 #: ../modules/multiple-forms/register-forms.php:176
 #: ../modules/user-listing/userlisting.php:1183
 msgid "Use this shortcode on the page you want the form to be displayed:"
-msgstr "使用这个简码在页面上，将会获得您想要的表单显示效果："
+msgstr "Brug denne 'shortcode' på den side du ønsker formularen vist:"
 
 #: ../modules/multiple-forms/edit-profile-forms.php:177
 #: ../modules/multiple-forms/register-forms.php:180
 #: ../modules/user-listing/userlisting.php:1187
 msgid "<span style=\"color:red;\">Note:</span> changing the form title also changes the shortcode!"
-msgstr "<span style=\"color:red;\">注意:</span> 改变表单标题也将改变简码！"
+msgstr "<span style=\"color:red;\">Bemærk:</span> ændring af denne formulars titel ændrer også 'shortcode'!"
 
 #: ../modules/multiple-forms/edit-profile-forms.php:183
 #: ../modules/multiple-forms/register-forms.php:186
 #: ../modules/user-listing/userlisting.php:1220
 msgid "Form Shortcode"
-msgstr "表单简码"
+msgstr "Formular 'shortcode'"
 
 #: ../modules/multiple-forms/edit-profile-forms.php:202
 #: ../modules/multiple-forms/register-forms.php:226
 msgid "Whether to redirect the user to a specific page or not"
-msgstr "是否将用户重定向到特定页"
+msgstr "Hvorvidt brugeren skal omdirigeres til en bestemt side eller ikke"
 
 #: ../modules/multiple-forms/edit-profile-forms.php:203
 #: ../modules/multiple-forms/register-forms.php:227
 msgid "Display Messages"
-msgstr "显示消息"
+msgstr "Vis meddelelser"
 
 #: ../modules/multiple-forms/edit-profile-forms.php:203
 #: ../modules/multiple-forms/register-forms.php:227
 msgid "Allowed time to display any success messages (in seconds)"
-msgstr "允许用时间去显示成功信息提示（秒）"
+msgstr "Tilladt visningstid (i sekunder) for alle problemfrie meddelelser"
 
 #: ../modules/multiple-forms/edit-profile-forms.php:204
 msgid "Specify the URL of the page users will be redirected once they updated their profile using this form<br/>Use the following format: http://www.mysite.com"
-msgstr "指定页面用于用户一旦更新他们的资料使用这个表单转向<br/>使用这种格式: http://www.mysite.com"
+msgstr "Specificer sidens URL som brugere vil blive omdirigeret til så snart de opdaterer deres profil fra denne formular<br/>Brug følgende format: http://www.mysite.com"
 
 #: ../modules/multiple-forms/edit-profile-forms.php:211
 msgid "After Profile Update..."
-msgstr "档案更新后…"
+msgstr "Efter profilopdatering..."
 
 #: ../modules/multiple-forms/edit-profile-forms.php:237
 #: ../modules/multiple-forms/register-forms.php:258
 msgid "Add New Field to the List"
-msgstr "添加新字段到列表"
+msgstr "Tilføj nyt felt til listen"
 
 #: ../modules/multiple-forms/edit-profile-forms.php:241
 #: ../modules/multiple-forms/register-forms.php:262
 msgid "Choose one of the supported fields you manage <a href=\""
-msgstr "选择一个支持字段去管理 <a href=\""
+msgstr "Vælg en af de understøttede felter som du administrerer <a href=\""
 
 #: ../modules/multiple-forms/multiple-forms.php:416
 msgid "<pre>Title (Type)</pre>"
-msgstr "<pre>标题 (类型)</pre>"
+msgstr "<pre>Titel (Type)</pre>"
 
 #: ../modules/multiple-forms/multiple-forms.php:232
 msgid "You need to specify the title of the form before creating it"
-msgstr "你需要在创建前指定表单的标题"
+msgstr "Du skal specificere formularens titel før du opretter den"
 
 #: ../modules/multiple-forms/register-forms.php:11
 #: ../modules/multiple-forms/register-forms.php:12
 msgid "Registration Form"
-msgstr "注册表单"
+msgstr "Registreringsformular"
 
 #: ../modules/multiple-forms/register-forms.php:14
 msgid "Add new Registration Form"
-msgstr "增加新的注册表单"
+msgstr "Tilføj ny registreringsformular"
 
 #: ../modules/multiple-forms/register-forms.php:15
 msgid "Edit the Registration Forms"
-msgstr "编缉注册表单"
+msgstr "Rediger registreringsformularer"
 
 #: ../modules/multiple-forms/register-forms.php:16
 msgid "New Registration Form"
-msgstr "新注册表单"
+msgstr "Ny registreringsformular"
 
 #: ../modules/multiple-forms/register-forms.php:17
 #: ../modules/multiple-forms/register-forms.php:23
 msgid "Registration Forms"
-msgstr "注册表单"
+msgstr "Registreringsformularer"
 
 #: ../modules/multiple-forms/register-forms.php:18
 msgid "View the Registration Form"
-msgstr "查看注册表单"
+msgstr "Vis registrerinsformularen"
 
 #: ../modules/multiple-forms/register-forms.php:19
 msgid "Search the Registration Forms"
-msgstr "搜索注册表单"
+msgstr "Søg registreringsformularer"
 
 #: ../modules/multiple-forms/register-forms.php:20
 msgid "No Registration Form found"
-msgstr "没有找到注册表单"
+msgstr "Ingen registreringsformular funder"
 
 #: ../modules/multiple-forms/register-forms.php:21
 msgid "No Registration Forms found in trash"
-msgstr "在回收站没有找到注册表单"
+msgstr "Ingen registreringsformularer fundet i papirkurven"
 
 #: ../modules/multiple-forms/register-forms.php:215
 msgid "Default Role"
-msgstr "默认角色"
+msgstr "Standard rolle"
 
 #: ../modules/multiple-forms/register-forms.php:224
 msgid "Set Role"
-msgstr "设置角色"
+msgstr "Indstil rolle"
 
 #: ../modules/multiple-forms/register-forms.php:224
 msgid "Choose what role the user will have after (s)he registered<br/>If not specified, defaults to the role set in the WordPress settings"
-msgstr "选择用户注册后的角色<br/>如无指定，将默认使用 WordPress 的设定"
+msgstr "Vælg hvilken rolle brugeren får efter han/hun har registreret sig<br/>Hvis ikke specificeret, anvendes rollen der er sat som 'default' i WordPress indstillingerne"
 
 #: ../modules/multiple-forms/register-forms.php:225
 msgid "Automatically Log In"
-msgstr "自动登录"
+msgstr "Automatisk log ind"
 
 #: ../modules/multiple-forms/register-forms.php:225
 msgid "Whether to automatically log in the newly registered user or not<br/>Only works on single-sites without \"Admin Approval\" and \"Email Confirmation\" features activated<br/>WARNING: Caching the registration form will make automatic login not work"
-msgstr "是否记录用户新注册 <br/> 只使用于单网站，并且没有开启  \"管理员审批\" 与 \"邮箱确认\" 功能 <br/>警告：缓存注册表单会让自动登录不正常"
+msgstr "Hvorvidt nyligt registrerede brugere skal logges automatisk ind eller ikke<br/>Virker kun på 'single-sites' hvor \"Administrator godkendelse\" og \"E-mail bekræftelse\" ikke er aktiveret<br/>ADVARSEL: 'Caching' af registreringsformularer vil bevirke, at den automatiske log ind funktion ikke vil fungere"
 
 #: ../modules/multiple-forms/register-forms.php:228
 msgid "Specify the URL of the page users will be redirected once registered using this form<br/>Use the following format: http://www.mysite.com"
-msgstr "指定用户注册页面地址将被重定向<br/>使用下列格式: http://www.mysite.com"
+msgstr "Specificer sidens URL som brugere vil blive omdirigeret til så snart de er registreret via denne formular.<br/>Brug følgende format: http://www.mysite.com"
 
 #: ../modules/multiple-forms/register-forms.php:234
 msgid "After Registration..."
-msgstr "注册后…"
+msgstr "Efter registrering..."
 
 #: ../modules/user-listing/class-userlisting.php:470
 #: ../modules/user-listing/userlisting.php:709
@@ -2586,277 +2600,277 @@ msgstr "注册后…"
 #: ../modules/user-listing/userlisting.php:996
 #: ../modules/user-listing/userlisting.php:1340
 msgid "Search Users by All Fields"
-msgstr "在所有字段中搜索用户"
+msgstr "Søg brugere ved at bruge 'Alle felter'"
 
 #: ../modules/user-listing/userlisting.php:14
 msgid "Add new User Listing"
-msgstr "增加新的用户列表"
+msgstr "Tilføj ny brugeroversigt"
 
 #: ../modules/user-listing/userlisting.php:15
 msgid "Edit the User Listing"
-msgstr "编辑用户列表"
+msgstr "Rediger brugeroversigten"
 
 #: ../modules/user-listing/userlisting.php:16
 msgid "New User Listing"
-msgstr "新的用户列表"
+msgstr "Ny brugeroversigt"
 
 #: ../modules/user-listing/userlisting.php:18
 msgid "View the User Listing"
-msgstr "查看用户列表"
+msgstr "Vis brugeroversigten"
 
 #: ../modules/user-listing/userlisting.php:19
 msgid "Search the User Listing"
-msgstr "搜索用户列表"
+msgstr "Søg i brugeroversigt"
 
 #: ../modules/user-listing/userlisting.php:20
 msgid "No User Listing found"
-msgstr "没有找到用户列表"
+msgstr "Ingen brugeroversigt fundet"
 
 #: ../modules/user-listing/userlisting.php:21
 msgid "No User Listing found in trash"
-msgstr "没有在回收站找到用户列表"
+msgstr "Ingen brugeroversigt fundet i papirkurven"
 
 #: ../modules/user-listing/userlisting.php:95
 msgid "Display name as"
-msgstr "显示名称为"
+msgstr "Vis navn som"
 
 #: ../modules/user-listing/userlisting.php:125
 #: ../modules/user-listing/userlisting.php:1248
 msgid "Registration Date"
-msgstr "注册日期"
+msgstr "Registreringsdato"
 
 #: ../modules/user-listing/userlisting.php:126
 #: ../modules/user-listing/userlisting.php:1252
 msgid "Number of Posts"
-msgstr "帖子数"
+msgstr "Antal poster"
 
 #: ../modules/user-listing/userlisting.php:130
 msgid "More Info"
-msgstr "更多信息"
+msgstr "Mere info"
 
 #: ../modules/user-listing/userlisting.php:131
 msgid "More Info Url"
-msgstr "更多信息网址"
+msgstr "Mere info URL"
 
 #: ../modules/user-listing/userlisting.php:132
 msgid "Avatar or Gravatar"
-msgstr "头像或 Gravatar"
+msgstr "Avatar eller Gravatar"
 
 #: ../modules/user-listing/userlisting.php:161
 msgid "Meta Variables"
-msgstr "Meta 变量"
+msgstr "Meta variabler"
 
 #: ../modules/user-listing/userlisting.php:167
 msgid "Sort Variables"
-msgstr "分类变量"
+msgstr "Sortér variabler"
 
 #: ../modules/user-listing/userlisting.php:171
 #: ../modules/user-listing/userlisting.php:198
 msgid "Extra Functions"
-msgstr "额外功能"
+msgstr "Ekstra funktioner"
 
 #: ../modules/user-listing/userlisting.php:173
 msgid "Pagination"
-msgstr "分页"
+msgstr "Sideopdeling"
 
 #: ../modules/user-listing/userlisting.php:174
 msgid "Search all Fields"
-msgstr "搜索所有字段"
+msgstr "Søg 'Alle felter'"
 
 #: ../modules/user-listing/userlisting.php:200
 msgid "Go Back Link"
-msgstr "返回链接"
+msgstr "Tilbage link"
 
 #: ../modules/user-listing/userlisting.php:218
 msgid "All-userlisting Template"
-msgstr "所有用户列表模板"
+msgstr "Skabelon for flere-brugeroversigt"
 
 #: ../modules/user-listing/userlisting.php:221
 msgid "Single-userlisting Template"
-msgstr "单用户列表模板"
+msgstr "Skabelon for enkelt-brugeroversigt"
 
 #: ../modules/user-listing/userlisting.php:338
 msgid "You do not have permission to view this user list"
-msgstr "您没有权限查看该用户列表"
+msgstr "Du har ikke rettigheder til at se denne brugeroversigt"
 
 #: ../modules/user-listing/userlisting.php:351
 msgid "You do not have the required user role to view this user list"
-msgstr "没有所需的用户权限查看用户列表"
+msgstr "Du har ikke den krævede brugerrolle for at se denne brugeroversigt"
 
 #: ../modules/user-listing/userlisting.php:599
 msgid "First/Lastname"
-msgstr "名字/姓氏"
+msgstr "For-/Efternavn"
 
 #: ../modules/user-listing/userlisting.php:605
 msgid "Sign-up Date"
-msgstr "注册日期"
+msgstr "Tilmeldingsdato"
 
 #: ../modules/user-listing/userlisting.php:614
 #: ../modules/user-listing/userlisting.php:1251
 msgid "Display Name"
-msgstr "显示名称"
+msgstr "Vis navn som"
 
 #: ../modules/user-listing/userlisting.php:623
 msgid "Posts"
-msgstr "帖子"
+msgstr "Poster"
 
 #: ../modules/user-listing/userlisting.php:626
 #: ../modules/user-listing/userlisting.php:1257
 msgid "Aim"
-msgstr "Aim"
+msgstr "'Aim'"
 
 #: ../modules/user-listing/userlisting.php:629
 #: ../modules/user-listing/userlisting.php:1258
 msgid "Yim"
-msgstr "Yim"
+msgstr "'Yim'"
 
 #: ../modules/user-listing/userlisting.php:632
 #: ../modules/user-listing/userlisting.php:1259
 msgid "Jabber"
-msgstr "Jabber"
+msgstr "'Jabber'"
 
 #: ../modules/user-listing/userlisting.php:812
 msgid "Click here to see more information about this user"
-msgstr "点击这里查看此用户的更多信息"
+msgstr "Klik her for at se mere information om denne bruger"
 
 #: ../modules/user-listing/userlisting.php:812
 msgid "More..."
-msgstr "更多..."
+msgstr "Mere..."
 
 #: ../modules/user-listing/userlisting.php:815
 msgid "Click here to see more information about this user."
-msgstr "点击这里查看此用户的更多信息。"
+msgstr "Klik her for at se mere information om denne bruger."
 
 #: ../modules/user-listing/userlisting.php:907
 #: ../modules/user-listing/userlisting.php:910
 msgid "Click here to go back"
-msgstr "点击这里返回"
+msgstr "Klik her for at gå tilbage"
 
 #: ../modules/user-listing/userlisting.php:907
 msgid "Back"
-msgstr "返回"
+msgstr "Tilbage"
 
 #: ../modules/user-listing/userlisting.php:940
 msgid "&laquo;&laquo; First"
-msgstr "&laquo;&laquo; 首页"
+msgstr "&laquo;&laquo; Først"
 
 #: ../modules/user-listing/userlisting.php:941
 msgid "&laquo; Prev"
-msgstr "&laquo; 上一页"
+msgstr "&laquo; Forrige"
 
 #: ../modules/user-listing/userlisting.php:942
 msgid "Next &raquo; "
-msgstr "下一页 &raquo; "
+msgstr "Næste &raquo; "
 
 #: ../modules/user-listing/userlisting.php:943
 msgid "Last &raquo;&raquo;"
-msgstr "最后 &raquo;&raquo;"
+msgstr "Sidste &raquo;&raquo;"
 
 #: ../modules/user-listing/userlisting.php:972
 msgid "You don't have any pagination settings on this userlisting!"
-msgstr "您不需在用户列表中设置分页"
+msgstr "Du har ingen sideopdeling (paginering) på denne brugeroversigt!"
 
 #: ../modules/user-listing/userlisting.php:1013
 msgid "Search"
-msgstr "搜索"
+msgstr "Søg"
 
 #: ../modules/user-listing/userlisting.php:1014
 msgid "Clear Results"
-msgstr "清除结果"
+msgstr "Ryd resultatet"
 
 #: ../modules/user-listing/userlisting.php:1190
 #: ../modules/user-listing/userlisting.php:1194
 msgid "Extra shortcode parameters"
-msgstr "额外简码参数"
+msgstr "Ekstra 'shortcode' parametre"
 
 #: ../modules/user-listing/userlisting.php:1197
 msgid "displays users having a certain meta-value within a certain (extra) meta-field"
-msgstr "显示用户在某一（额外）元字段（meta-field）"
+msgstr "viser brugere med en bestemt meta-værdi inden for et bestemt (ekstra) meta-felt"
 
 #: ../modules/user-listing/userlisting.php:1198
 msgid "Example:"
-msgstr "例子："
+msgstr "Eksempel:"
 
 #: ../modules/user-listing/userlisting.php:1200
 msgid "Remember though, that the field-value combination must exist in the database."
-msgstr "记住，该字段值的组合必须存在于数据库中。"
+msgstr "Husk dog, at feltværdi kombinationen skal eksistere i databasen."
 
 #: ../modules/user-listing/userlisting.php:1269
 msgid "Random (very slow on large databases > 10K user)"
-msgstr "随机 （在大于 10K 的用户数据库中将会很慢 ）"
+msgstr "Vilkårlig (meget langsom på store databaser > 10K brugere)"
 
 #: ../modules/user-listing/userlisting.php:1282
 msgid "Roles to Display"
-msgstr "角色显示："
+msgstr "Roller der skal vises"
 
 #: ../modules/user-listing/userlisting.php:1282
 msgid "Restrict the userlisting to these selected roles only<br/>If not specified, defaults to all existing roles"
-msgstr "限制用户列表中的特定角色<br/>如果没有指定，默认为全部现有的角色"
+msgstr "Begræns brugeroversigter til kun at omfatte disse udvalgte roller<br/>Hvis ikke specificeret, så bruges alle eksisterende roller"
 
 #: ../modules/user-listing/userlisting.php:1283
 msgid "Number of Users/Page"
-msgstr "用户/页面数"
+msgstr "Antal brugere/side"
 
 #: ../modules/user-listing/userlisting.php:1284
 msgid "Default Sorting Criteria"
-msgstr "默认分类标准"
+msgstr "Standard sorteringskriterie"
 
 #: ../modules/user-listing/userlisting.php:1284
 msgid "Set the default sorting criteria<br/>This can temporarily be changed for each new session"
-msgstr "设置默认的排序标准<br/>这可以暂时被每一个新的会话更改"
+msgstr "Sæt standard sorteringskriteriet<br/>Denne kan ændres midlertidigt for hver ny session"
 
 #: ../modules/user-listing/userlisting.php:1285
 msgid "Default Sorting Order"
-msgstr "默认排列顺序"
+msgstr "Standard sorteringsorden"
 
 #: ../modules/user-listing/userlisting.php:1285
 msgid "Set the default sorting order<br/>This can temporarily be changed for each new session"
-msgstr "设置默认排列顺序<br/>这可以在每个新会话时被改变"
+msgstr "Sæt standard sorteringsorden<br/>Denne kan ændres midlertidigt for hver ny session"
 
 #: ../modules/user-listing/userlisting.php:1286
 msgid "Avatar Size (All-userlisting)"
-msgstr "头像大小（所有用户列表）"
+msgstr "Avatar størrelse (Flere-brugeroversigt)"
 
 #: ../modules/user-listing/userlisting.php:1286
 msgid "Set the avatar size on the all-userlisting only"
-msgstr "设置在所有用户列表的头像大小"
+msgstr "Sæt avatar størrelsen på kun flere-brugeroversigten "
 
 #: ../modules/user-listing/userlisting.php:1287
 msgid "Avatar Size (Single-userlisting)"
-msgstr "头像大小（单用户列表）"
+msgstr "Avatar størrelse (enkelt-brugeroversigt)"
 
 #: ../modules/user-listing/userlisting.php:1287
 msgid "Set the avatar size on the single-userlisting only"
-msgstr "设置在单用户列表的头像大小"
+msgstr "Sæt avatar størrelsen på kun enkelt-brugeroversigten"
 
 #: ../modules/user-listing/userlisting.php:1288
 msgid "Visible only to logged in users?"
-msgstr "只有登录用户可见的？"
+msgstr "Synlig kun for brugere, der er logget ind?"
 
 #: ../modules/user-listing/userlisting.php:1288
 msgid "The userlisting will only be visible only to the logged in users"
-msgstr "用户列表只有登录用户可见的"
+msgstr "Brugeroversigten vil kun være synlig for brugere, der er logget ind"
 
 #: ../modules/user-listing/userlisting.php:1289
 msgid "Visible to following Roles"
-msgstr "以下角色可见"
+msgstr "Synlig for følgende roller"
 
 #: ../modules/user-listing/userlisting.php:1289
 msgid "The userlisting will only be visible to the following roles"
-msgstr "用户列表只允许以下角色可见"
+msgstr "Brugeroversigten vil kun være synlig for følgende roller"
 
 #: ../modules/user-listing/userlisting.php:1295
 msgid "Userlisting Settings"
-msgstr "用户列表设置"
+msgstr "Opsætning af brugeroversigt"
 
 #: ../modules/user-listing/userlisting.php:1316
 msgid "You need to activate the Userlisting feature from within the \"Modules\" tab!"
-msgstr "您需要激活用户列表功能在 \"模块\" 选项卡!"
+msgstr "Du skal aktivere brugeroversigts funktionen inde på fanen \"Moduler\"!"
 
 #: ../modules/user-listing/userlisting.php:1316
 msgid "You can find it in the Profile Builder menu."
-msgstr "你可以在 Profile Builder 菜单中找到它。"
+msgstr "Du kan finde det i Profile Builder menuen."
 
 #: ../modules/user-listing/userlisting.php:1479
 msgid "No results found!"
-msgstr "无任何结果！"
+msgstr "Ingen resultater fundet!"
