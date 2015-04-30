@@ -170,6 +170,9 @@
                 if ($result->get_error_message('captcha_blank'))
                     $error_message = $result->get_error_message('captcha_blank');
 
+                if( empty($error_message) )
+                    return $message;
+
                 if ($message == '<p class="wppb-warning">wppb_captcha_error</p>')
                     $message = '<p class="wppb-warning">' . $error_message . '</p>';
                 else

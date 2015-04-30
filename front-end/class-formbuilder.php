@@ -515,7 +515,7 @@ class Profile_Builder_Form_Creator{
                     </select>
                 </p>
                 <script type="text/javascript">jQuery('#wppb-edit-user').change(function () {
-                        window.location.href = "<?php echo add_query_arg( array( 'edit_user' => '=' ) ) ?>" + jQuery(this).val();
+                        window.location.href = "<?php echo esc_js( esc_url_raw( add_query_arg( array( 'edit_user' => '=' ) ) ) ) ?>" + jQuery(this).val();
                     });</script>
             </form>
         <?php

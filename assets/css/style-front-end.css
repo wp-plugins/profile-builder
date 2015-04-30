@@ -409,6 +409,50 @@ ul.wppb-profile li h3:first-child{
     padding-top:20px;
     border-top:1px solid #d2d2d2;
 }
+
+@media screen and ( max-width: 720px ) {
+
+    .wppb-table {
+        border: 0;
+    }
+
+    .wppb-table thead {
+        display: none
+    }
+
+    .wppb-table tr {
+        display: block;
+        margin-bottom: 30px;
+    }
+
+    .wppb-table td {
+        display: block;
+        text-align: right;
+        border-bottom: 0;
+    }
+
+    .wppb-table td:last-of-type {
+        border-bottom: 1px solid #e1e1e1;
+    }
+
+    .wppb-table .wppb-posts,
+    .wppb-table .wppb-moreinfo{
+        text-align: right;
+    }
+
+    .wppb-table td:before {
+        content: attr(data-label);
+        float: left;
+    }
+
+    .wppb-table td:after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+
+}
+
 /*--------------------------------------------------------------
 6.0 Media Queries
 --------------------------------------------------------------*/

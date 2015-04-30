@@ -34,7 +34,7 @@ if( !empty ( $value ) ){
 }
 $element .= '<div id="'. esc_attr( $upload_info_div_id ) .'" class="upload-field-details">'. $thumbnail .'<p><span class="file-name">'. $file_name .'</span><span class="file-type">'. $file_type . '</span>';
 if( !empty ( $value ) )
-	$element .= '<span class="wck-remove-upload">'.__( 'Remove', 'wck' ).'</span>';
+	$element .= '<span class="wck-remove-upload">'.__( 'Remove', 'profilebuilder' ).'</span>';
 $element .= '</p></div>';
 /* the upload link. we send through get the hidden input id, details div id and meta name */
 if( !empty( $details['attach_to_post'] ) ){
@@ -51,7 +51,7 @@ $media_upload_url = 'media-upload.php?'.$attach_to_post.'type=file&amp;mb_type='
 
 $media_upload_url = admin_url( $media_upload_url );
 	
-$element .= '<a id="upload_'. esc_attr(Wordpress_Creation_Kit_PB::wck_generate_slug( $details['title'], $details ) ) .'_button" class="button" onclick="tb_show(\'\', \''.$media_upload_url.'\');">'. __( 'Upload ', 'wck' ) . $details['title'] .' </a>';
+$element .= '<a id="upload_'. esc_attr(Wordpress_Creation_Kit_PB::wck_generate_slug( $details['title'], $details ) ) .'_button" class="button" onclick="tb_show(\'\', \''.$media_upload_url.'\');">'. __( 'Upload ', 'profilebuilder' ) . $details['title'] .' </a>';
 
 /* add js global var for the hidden input, and info container div */
 $element .= '<script type="text/javascript">';				

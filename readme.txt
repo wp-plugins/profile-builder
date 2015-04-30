@@ -5,8 +5,8 @@ Donate link: http://www.cozmoslabs.com/wordpress-profile-builder/
 Tags: registration, user profile, user registration, custom field registration, customize profile, user fields, extra user fields, builder, profile builder, custom user profile, user profile page, edit profile, custom registration, custom registration form, custom registration page, registration page, user custom fields, user listing, front-end user listing, user login, user registration form, front-end login, login redirect, login widget, front-end register, front-end registration, front-end edit profile, front-end user registration, custom redirects, user email, avatar upload, email confirmation, user approval, customize registration email, minimum password length, minimum password strength, password strength meter, multiple registration forms, register, register form, member directory
 
 Requires at least: 3.1
-Tested up to: 4.2
-Stable tag: 2.1.5
+Tested up to: 4.2.1
+Stable tag: 2.1.6
 
 Simple to use profile plugin allowing front-end login, user registration and edit profile by using shortcodes.
  
@@ -114,11 +114,19 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 10. Profile Builder Login Widget
 
 == Changelog ==
+= 2.1.6 =
+* Updated translation files.
+* Bulk approve email in Email Confirmation now functions as expected
+* Now the Addons Page in Profile Builder is compatible with Multisite.
+* Added filter to add extra css classes directly on the fields input: apply_filters( 'wppb_fields_extra_css_class', '', $field )
+* The Show Meta button in the Email Confirmation admin screen no longer throws js errors when site in other language.
+* Fixed bug that was preventing Checkboxes, Selects and Radios to not save correctly if they had special chars in their values
+
 = 2.1.5 =
-Added compatibility with "Captcha" plugin
-Fixed issue on Add-Ons Page that prevented addons to be activated right after install
-Fixed issue on multisite where Adminstrator roles were able to edit other users from frontend
-Added filters to edit other users dropdown:'wppb_display_edit_other_users_dropdown' and 'wppb_edit_profile_user_dropdown_role'
+* Added compatibility with "Captcha" plugin
+* Fixed issue on Add-Ons Page that prevented addons to be activated right after install
+* Fixed issue on multisite where Adminstrator roles were able to edit other users from frontend
+* Added filters to edit other users dropdown:'wppb_display_edit_other_users_dropdown' and 'wppb_edit_profile_user_dropdown_role'
 
 = 2.1.4 =
 * Fixed vulnerability regarding activating/deactivationg addons through ajax. We added nonces and permission checks.

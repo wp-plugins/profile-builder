@@ -56,7 +56,7 @@ function wppb_retrieve_activation_key( $requested_user_login ){
  */
 function wppb_create_recover_password_form( $user, $post_data ){
 	?>
-	<form enctype="multipart/form-data" method="post" id="wppb-recover-password" class="wppb-user-forms" action="<?php echo add_query_arg( 'finalAction', 'yes', wppb_curpageurl() ); ?>">
+	<form enctype="multipart/form-data" method="post" id="wppb-recover-password" class="wppb-user-forms" action="<?php echo esc_url( add_query_arg( 'finalAction', 'yes', wppb_curpageurl() ) ); ?>">
 		<ul>
 	<?php
 
@@ -106,7 +106,7 @@ function wppb_create_recover_password_form( $user, $post_data ){
  */
  function wppb_create_generate_password_form( $post_data ){
 	?>
-	<form enctype="multipart/form-data" method="post" id="wppb-recover-password" class="wppb-user-forms" action="<?php echo add_query_arg( 'submitted', 'yes', wppb_curpageurl() ); ?>">
+	<form enctype="multipart/form-data" method="post" id="wppb-recover-password" class="wppb-user-forms" action="<?php echo esc_url( add_query_arg( 'submitted', 'yes', wppb_curpageurl() ) ); ?>">
 	<?php
 	$recover_notification = '<p>' . __( 'Please enter your username or email address.', 'profilebuilder' );
 	$recover_notification .= '<br/>'.__( 'You will receive a link to create a new password via email.', 'profilebuilder' ).'</p>';
@@ -212,7 +212,7 @@ function wppb_front_end_password_recovery(){
                 $key = wppb_retrieve_activation_key( $requestedUserLogin );
 
                 //send primary email message
-                $recoveruserMailMessage1  = sprintf( __('Someone requested that the password be reset for the following account: <b>%1$s</b><br/>If this was a mistake, just ignore this email and nothing will happen.<br/>To reset your password, visit the following link:%2$s', 'profilebuilder'), $display_username_email, '<a href="'.add_query_arg( array( 'loginName' => $requestedUserLogin, 'key' => $key ), wppb_curpageurl() ).'">'.add_query_arg( array( 'loginName' => $requestedUserLogin, 'key' => $key ), wppb_curpageurl() ).'</a>');
+                $recoveruserMailMessage1  = sprintf( __('Someone requested that the password be reset for the following account: <b>%1$s</b><br/>If this was a mistake, just ignore this email and nothing will happen.<br/>To reset your password, visit the following link:%2$s', 'profilebuilder'), $display_username_email, '<a href="'.esc_url( add_query_arg( array( 'loginName' => $requestedUserLogin, 'key' => $key ), wppb_curpageurl() ) ).'">'.esc_url( add_query_arg( array( 'loginName' => $requestedUserLogin, 'key' => $key ), wppb_curpageurl() ) ).'</a>');
                 $recoveruserMailMessage1  = apply_filters( 'wppb_recover_password_message_content_sent_to_user1', $recoveruserMailMessage1, $requestedUserID, $requestedUserLogin, $requestedUserEmail );
 
                 $recoveruserMailMessageTitle1 = sprintf(__('Password Reset from "%1$s"', 'profilebuilder'), $blogname = wp_specialchars_decode(get_option('blogname'), ENT_QUOTES));

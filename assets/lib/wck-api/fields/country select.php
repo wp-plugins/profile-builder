@@ -11,7 +11,7 @@ $element .= '<select name="'. $single_prefix . esc_attr( Wordpress_Creation_Kit_
 if( !empty( $frontend_prefix ) )
 	$element .=	$frontend_prefix;  
 $element .= esc_attr( Wordpress_Creation_Kit_PB::wck_generate_slug( $details['title'], $details ) ) .'" class="mb-country-select mb-field" >';
-$element .= '<option value="">'. __('...Choose', 'wck') .'</option>';
+$element .= '<option value="">'. __('...Choose', 'profilebuilder') .'</option>';
 if( !empty( $country_list ) ){					
 	foreach( $country_list as $option ){							
 		$element .= '<option value="'. esc_attr( $option ) .'"  '. selected( $option, $value, false ) .' >'. esc_html( $option ) .'</option>';					

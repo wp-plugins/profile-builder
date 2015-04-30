@@ -12,7 +12,7 @@ if( !empty( $user_query->results ) ){
 	if( !empty( $frontend_prefix ) )
 		$element .=	$frontend_prefix; 
 	$element .= esc_attr( Wordpress_Creation_Kit_PB::wck_generate_slug( $details['title'], $details ) ) .'" class="mb-user-select mb-field" >';
-	$element .= '<option value="">'. __('...Choose', 'wck') .'</option>';
+	$element .= '<option value="">'. __('...Choose', 'profilebuilder') .'</option>';
 	foreach( $user_query->results as $user ){
 		$element .= '<option value="'. esc_attr( $user->ID ) .'"  '. selected( $user->ID, $value, false ) .' >'. esc_html( $user->display_name ) .'</option>';					
 	}				

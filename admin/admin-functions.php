@@ -172,7 +172,7 @@ function wppb_admin_rate_us( $footer_text ) {
     global $current_screen;
 
     if ($current_screen->parent_base == 'profile-builder'){
-        $rate_text = sprintf( __( 'If you enjoy using <strong> %1$s </strong> please <a href="%2$s" target="_blank">rate us on WordPress.org</a> to help us reach more people. More happy users means more features, less bugs and better support for everyone. ', 'profilebuilder' ),
+        $rate_text = sprintf( __( 'If you enjoy using <strong> %1$s </strong> please <a href="%2$s" target="_blank">rate us on WordPress.org</a>. More happy users means more features, less bugs and better support for everyone. ', 'profilebuilder' ),
             PROFILE_BUILDER,
             'https://wordpress.org/support/view/plugin-reviews/profile-builder?filter=5#postform'
         );
