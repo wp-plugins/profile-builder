@@ -32,9 +32,12 @@ add_filter( 'wppb_output_form_field_default-biographical-info', 'wppb_descriptio
 
 
 /* handle field validation */
-function wppb_check_description_value( $message, $field, $request_data, $form_location ){	
-	if ( ( isset( $request_data['description'] ) && ( trim( $request_data['description'] ) == '' ) ) && ( $field['required'] == 'Yes' ) )
-		return wppb_required_field_error($field["field-title"]);
+function wppb_check_description_value( $message, $field, $request_data, $form_location ){
+    if( $field['required'] == 'Yes' ){
+        if( ( isset( $request_data['description'] ) && ( trim( $request_data['description'] ) == '' ) ) || !isset( $request_data['description'] ) ){
+            return wppb_required_field_error($field["field-title"]);
+        }
+    }
 
     return $message;
 }

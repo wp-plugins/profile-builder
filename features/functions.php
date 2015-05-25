@@ -39,6 +39,12 @@ function wppb_add_plugin_stylesheet() {
 		wp_register_style( 'wppb_stylesheet', WPPB_PLUGIN_URL . 'assets/css/style-front-end.css' );
 		wp_enqueue_style( 'wppb_stylesheet' );
 	}
+	if( is_rtl() ) {
+		if ( ( file_exists( WPPB_PLUGIN_DIR . '/assets/css/rtl.css' ) ) && ( isset( $wppb_generalSettings['extraFieldsLayout'] ) && ( $wppb_generalSettings['extraFieldsLayout'] == 'default' ) ) ){
+			wp_register_style( 'wppb_stylesheet_rtl', WPPB_PLUGIN_URL . 'assets/css/rtl.css' );
+			wp_enqueue_style( 'wppb_stylesheet_rtl' );
+		}
+	}
 }
 
 
@@ -196,8 +202,8 @@ function wppb_add_activation_message( $content ){
 
 // Create a new, top-level page
 $args = array(							
-			'page_title'	=> __( 'Profile Builder', 'profilebuilder' ),
-			'menu_title'	=> __( 'Profile Builder', 'profilebuilder' ),
+			'page_title'	=> 'Profile Builder',
+			'menu_title'	=> 'Profile Builder',
 			'capability'	=> 'manage_options',
 			'menu_slug' 	=> 'profile-builder',
 			'page_type'		=> 'menu_page',
@@ -297,9 +303,6 @@ add_action( 'wp_ajax_hook_wppb_delete', 'wppb_delete' );
 
 //the function used to overwrite the avatar across the wp installation
 function wppb_changeDefaultAvatar( $avatar, $id_or_email, $size, $default, $alt ){
-
-	global $wpdb;
-  
 	/* Get user info. */ 
 	if(is_object($id_or_email)){
 		$my_user_id = $id_or_email->user_id;
@@ -318,12 +321,27 @@ function wppb_changeDefaultAvatar( $avatar, $id_or_email, $size, $default, $alt 
 	if ( $wppb_manage_fields != 'not_found' ){
 		foreach( $wppb_manage_fields as $value ){
 			if ( $value['field'] == 'Avatar'){
-				$customUserAvatar = get_user_meta( $my_user_id, 'resized_avatar_'.$value['id'], true );
-                $customUserAvatarRelativePath = get_user_meta( $my_user_id, 'resized_avatar_'.$value['id'].'_relative_path', true );
 
-				if ( ( ($customUserAvatar != '') || ($customUserAvatar != null) ) && file_exists($customUserAvatarRelativePath) ){
-					$avatar = "<img alt='{$alt}' src='{$customUserAvatar}' class='avatar avatar-{$size} photo avatar-default' height='{$size}' width='{$size}' />";
-				}
+                $customUserAvatar = get_user_meta( $my_user_id, $value['meta-name'], true );
+                if( !empty( $customUserAvatar ) ){
+                    if( is_numeric( $customUserAvatar ) ){
+                        $img_attr = wp_get_attachment_image_src( $customUserAvatar, 'wppb-avatar-size-'.$size );
+                        if( $img_attr[3] === false ){
+                            $img_attr = wp_get_attachment_image_src( $customUserAvatar, 'thumbnail' );
+                            $avatar = "<img alt='{$alt}' src='{$img_attr[0]}' class='avatar avatar-{$size} photo avatar-default' height='{$size}' width='{$size}' />";
+                        }
+                        else
+                            $avatar = "<img alt='{$alt}' src='{$img_attr[0]}' class='avatar avatar-{$size} photo avatar-default' height='{$img_attr[2]}' width='{$img_attr[1]}' />";
+                    }
+                    else {
+                        $customUserAvatar = get_user_meta($my_user_id, 'resized_avatar_' . $value['id'], true);
+                        $customUserAvatarRelativePath = get_user_meta($my_user_id, 'resized_avatar_' . $value['id'] . '_relative_path', true);
+
+                        if ((($customUserAvatar != '') || ($customUserAvatar != null)) && file_exists($customUserAvatarRelativePath)) {
+                            $avatar = "<img alt='{$alt}' src='{$customUserAvatar}' class='avatar avatar-{$size} photo avatar-default' height='{$size}' width='{$size}' />";
+                        }
+                    }
+                }
 			}
 		}
 	}
@@ -580,6 +598,13 @@ function wppb_required_field_error($field_title='') {
     $required_error = apply_filters('wppb_required_error' , __('This field is required','profilebuilder') , $field_title);
 
     return $required_error;
+
+}
+/* Function for displaying reCAPTCHA error on Login and Recover Password forms */
+function wppb_recaptcha_field_error($field_title='') {
+    $recaptcha_error = apply_filters('wppb_recaptcha_error' , __('Please enter a (valid) reCAPTCHA value','profilebuilder') , $field_title);
+
+    return $recaptcha_error;
 
 }
 

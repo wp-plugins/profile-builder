@@ -58,8 +58,11 @@ add_filter( 'wppb_output_form_field_default-display-name-publicly-as', 'wppb_dis
 
 /* handle field validation */
 function wppb_check_display_name_value( $message, $field, $request_data, $form_location ){
-	if ( ( isset( $request_data['display_name'] ) && ( trim( $request_data['display_name'] ) == '' ) ) && ( $field['required'] == 'Yes' ) )
-		return wppb_required_field_error($field["field-title"]);
+    if( $field['required'] == 'Yes' ){
+        if( ( isset( $request_data['display_name'] ) && ( trim( $request_data['display_name'] ) == '' ) ) || !isset( $request_data['display_name'] ) ){
+            return wppb_required_field_error($field["field-title"]);
+        }
+    }
 
     return $message;
 }

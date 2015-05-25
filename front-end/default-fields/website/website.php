@@ -32,9 +32,12 @@ add_filter( 'wppb_output_form_field_default-website', 'wppb_website_handler', 10
 
 
 /* handle field validation */
-function wppb_check_website_value( $message, $field, $request_data, $form_location ){	
-	if ( ( isset( $request_data['website'] ) && ( trim( $request_data['website'] ) == '' ) ) && ( $field['required'] == 'Yes' ) )
-		return wppb_required_field_error($field["field-title"]);
+function wppb_check_website_value( $message, $field, $request_data, $form_location ){
+    if( $field['required'] == 'Yes' ){
+        if( ( isset( $request_data['website'] ) && ( trim( $request_data['website'] ) == '' ) ) || !isset( $request_data['website'] ) ){
+            return wppb_required_field_error($field["field-title"]);
+        }
+    }
 
     return $message;
 }

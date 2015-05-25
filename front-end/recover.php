@@ -119,7 +119,7 @@ function wppb_create_recover_password_form( $user, $post_data ){
 				<label for="username_email">'.__( 'Username or E-mail', 'profilebuilder' ).'</label>
 				<input class="text-input" name="username_email" type="text" id="username_email" value="'.trim( $username_email ).'" />
 			</li><!-- .username_email --></ul>';
-	echo apply_filters( 'wppb_recover_password_gemerate_password_input', $recover_input, trim( $username_email ) );
+	echo apply_filters( 'wppb_recover_password_generate_password_input', $recover_input, trim( $username_email ) );
 		?>
 	<p class="form-submit">
 		<?php $button_name = __('Get New Password', 'profilebuilder'); ?>

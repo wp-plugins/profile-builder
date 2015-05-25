@@ -32,9 +32,12 @@ add_filter( 'wppb_output_form_field_default-aim', 'wppb_aim_handler', 10, 6 );
 
 
 /* handle field validation */
-function wppb_check_aim_value( $message, $field, $request_data, $form_location ){	
-	if ( ( isset( $request_data['aim'] ) && ( trim( $request_data['aim'] ) == '' ) ) && ( $field['required'] == 'Yes' ) )
-		return wppb_required_field_error($field["field-title"]);
+function wppb_check_aim_value( $message, $field, $request_data, $form_location ){
+    if( $field['required'] == 'Yes' ){
+        if( ( isset( $request_data['aim'] ) && ( trim( $request_data['aim'] ) == '' ) ) || !isset( $request_data['aim'] ) ){
+            return wppb_required_field_error($field["field-title"]);
+        }
+    }
 
     return $message;
 }

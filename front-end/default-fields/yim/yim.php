@@ -32,9 +32,12 @@ add_filter( 'wppb_output_form_field_default-yahoo-im', 'wppb_yim_handler', 10, 6
 
 
 /* handle field validation */
-function wppb_check_yim_value( $message, $field, $request_data, $form_location ){	
-	if ( ( isset( $request_data['yim'] ) && ( trim( $request_data['yim'] ) == '' ) ) && ( $field['required'] == 'Yes' ) )
-		return wppb_required_field_error($field["field-title"]);
+function wppb_check_yim_value( $message, $field, $request_data, $form_location ){
+    if( $field['required'] == 'Yes' ){
+        if( ( isset( $request_data['yim'] ) && ( trim( $request_data['yim'] ) == '' ) ) || !isset( $request_data['yim'] ) ){
+            return wppb_required_field_error($field["field-title"]);
+        }
+    }
 
     return $message;
 }

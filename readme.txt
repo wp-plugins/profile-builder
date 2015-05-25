@@ -5,8 +5,8 @@ Donate link: http://www.cozmoslabs.com/wordpress-profile-builder/
 Tags: registration, user profile, user registration, custom field registration, customize profile, user fields, extra user fields, builder, profile builder, custom user profile, user profile page, edit profile, custom registration, custom registration form, custom registration page, registration page, user custom fields, user listing, front-end user listing, user login, user registration form, front-end login, login redirect, login widget, front-end register, front-end registration, front-end edit profile, front-end user registration, custom redirects, user email, avatar upload, email confirmation, user approval, customize registration email, minimum password length, minimum password strength, password strength meter, multiple registration forms, register, register form, member directory
 
 Requires at least: 3.1
-Tested up to: 4.2.1
-Stable tag: 2.1.6
+Tested up to: 4.2.2
+Stable tag: 2.1.7
 
 Simple to use profile plugin allowing front-end login, user registration and edit profile by using shortcodes.
  
@@ -114,6 +114,13 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 10. Profile Builder Login Widget
 
 == Changelog ==
+= 2.1.7 =
+Added reCaptcha support for default login, register and lost password forms as well as PB forms + our own login widget
+Added RTL support for Profile Buider Forms
+Fixed a problem regarding required fields
+Added filter on add custom field values on user signup 'wppb_add_to_user_signup_form_meta'
+Fixed issue where username was sent instead of email when Login with Email was set in the user emails
+
 = 2.1.6 =
 * Updated translation files.
 * Bulk approve email in Email Confirmation now functions as expected

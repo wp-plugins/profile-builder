@@ -33,9 +33,13 @@ add_filter( 'wppb_output_form_field_default-username', 'wppb_username_handler', 
 /* handle field validation */
 function wppb_check_username_value( $message, $field, $request_data, $form_location ){
 	global $wpdb;
-	
-	if ( ( isset( $request_data['username'] ) && ( trim( $request_data['username'] ) == '' ) ) && ( $field['required'] == 'Yes' ) )
-		return wppb_required_field_error($field["field-title"]);
+
+    if( $field['required'] == 'Yes' ){
+        if( ( isset( $request_data['username'] ) && ( trim( $request_data['username'] ) == '' ) ) || ( $form_location == 'register' && !isset( $request_data['username'] ) ) ){
+            return wppb_required_field_error($field["field-title"]);
+        }
+
+    }
 
     if( !empty( $request_data['username'] ) ){
         if( $form_location == 'register' )

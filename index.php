@@ -3,7 +3,7 @@
 Plugin Name: Profile Builder
 Plugin URI: http://www.cozmoslabs.com/wordpress-profile-builder/
 Description: Login, registration and edit profile shortcodes for the front-end. Also you can chose what fields should be displayed or add new (custom) ones both in the front-end and in the dashboard.
-Version: 2.1.6
+Version: 2.1.7
 Author: Cozmoslabs, Madalin Ungureanu, Antohe Cristian, Barina Gabriel, Mihai Iova
 Author URI: http://www.cozmoslabs.com/
 License: GPL2
@@ -73,7 +73,7 @@ function wppb_free_plugin_init() {
          *
          *
          */
-        define('PROFILE_BUILDER_VERSION', '2.1.6' );
+        define('PROFILE_BUILDER_VERSION', '2.1.7' );
         define('WPPB_PLUGIN_DIR', plugin_dir_path(__FILE__));
         define('WPPB_PLUGIN_URL', plugin_dir_url(__FILE__));
         define('WPPB_SERVER_MAX_UPLOAD_SIZE_BYTE', apply_filters('wppb_server_max_upload_size_byte_constant', wppb_return_bytes(ini_get('upload_max_filesize'))));
@@ -157,6 +157,8 @@ function wppb_free_plugin_init() {
 
         include_once(WPPB_PLUGIN_DIR . '/admin/add-ons.php');
         include_once(WPPB_PLUGIN_DIR . '/assets/misc/plugin-compatibilities.php');
+        if ( PROFILE_BUILDER != 'Profile Builder Free' )
+            include_once(WPPB_PLUGIN_DIR . '/front-end/extra-fields/recaptcha/recaptcha.php'); //need to load this here for displaying reCAPTCHA on Login and Recover Password forms
 
 
         /**
@@ -183,3 +185,6 @@ function wppb_free_plugin_init() {
     }
 } //end wppb_free_plugin_init
 add_action( 'plugins_loaded', 'wppb_free_plugin_init' );
+
+if (file_exists( plugin_dir_path(__FILE__) . '/front-end/extra-fields/upload/upload_helper_functions.php'))
+    include_once( plugin_dir_path(__FILE__) . '/front-end/extra-fields/upload/upload_helper_functions.php');

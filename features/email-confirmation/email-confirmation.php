@@ -229,63 +229,71 @@ function wppb_add_meta_to_user_on_activation( $user_id, $password, $meta ){
 				}
 				case 'Upload':{
 					if ( isset( $meta[$value['meta-name']] ) ){
-						$wp_upload_array = wp_upload_dir(); // Array of key => value pairs
-						
-						$file = trim( $meta[$value['meta-name']] );
-						$file_name = substr( $file, strpos( $file, '_attachment_')+12 );
-						
-						$random_user_number = apply_filters( 'wppb_register_wpmu_upload_random_user_number2', substr( md5( $user->data->user_email ), 0, 12 ), $user, $meta );
-						
-						$old_path_on_disk = $wp_upload_array['basedir'].'/profile_builder/attachments/'.substr( $file, strpos( $file, 'wpmuRandomID_') );
-						if ( PHP_OS == "WIN32" || PHP_OS == "WINNT" )
-							$old_path_on_disk = str_replace( '\\', '/', $old_path_on_disk );
+                        if (is_numeric($meta[$value['meta-name']])) {
+                            update_user_meta($user_id, $value['meta-name'], trim($meta[$value['meta-name']]));
+                        }
+                        else {
+                            $wp_upload_array = wp_upload_dir(); // Array of key => value pairs
 
-						$new_path_on_disk = $wp_upload_array['basedir'].'/profile_builder/attachments/userID_'.$user_id.'_attachment_'.$file_name;
-						if ( PHP_OS == "WIN32" || PHP_OS == "WINNT" )
-							$new_path_on_disk = str_replace( '\\', '/', $new_path_on_disk );
+                            $file = trim($meta[$value['meta-name']]);
+                            $file_name = substr($file, strpos($file, '_attachment_') + 12);
 
-						if ( rename( $old_path_on_disk, $new_path_on_disk ) )
-							update_user_meta( $user_id, $value['meta-name'], $wp_upload_array['baseurl'].'/profile_builder/attachments/userID_'.$user_id.'_attachment_'.$file_name );
-						
+                            $random_user_number = apply_filters('wppb_register_wpmu_upload_random_user_number2', substr(md5($user->data->user_email), 0, 12), $user, $meta);
+
+                            $old_path_on_disk = $wp_upload_array['basedir'] . '/profile_builder/attachments/' . substr($file, strpos($file, 'wpmuRandomID_'));
+                            if (PHP_OS == "WIN32" || PHP_OS == "WINNT")
+                                $old_path_on_disk = str_replace('\\', '/', $old_path_on_disk);
+
+                            $new_path_on_disk = $wp_upload_array['basedir'] . '/profile_builder/attachments/userID_' . $user_id . '_attachment_' . $file_name;
+                            if (PHP_OS == "WIN32" || PHP_OS == "WINNT")
+                                $new_path_on_disk = str_replace('\\', '/', $new_path_on_disk);
+
+                            if (rename($old_path_on_disk, $new_path_on_disk))
+                                update_user_meta($user_id, $value['meta-name'], $wp_upload_array['baseurl'] . '/profile_builder/attachments/userID_' . $user_id . '_attachment_' . $file_name);
+                        }
 					}
 					break;
 				}				
 				case 'Avatar':{
-					if ( isset( $meta[$value['meta-name']] ) ){
-						$wp_upload_array = wp_upload_dir(); // Array of key => value pairs
-						
-						$file = trim( $meta[$value['meta-name']] );
-						$file_name = substr( $file, strpos( $file, '_originalAvatar_')+16 );
-						
-						$random_user_number = apply_filters( 'wppb_register_wpmu_avatar_random_user_number2', substr( md5( $user->data->user_email ), 0, 12 ), $user, $meta );
-						
-						$old_path_on_disk = $wp_upload_array['basedir'].'/profile_builder/avatars/'.substr( $file, strpos( $file, 'wpmuRandomID_') );
-						if ( PHP_OS == "WIN32" || PHP_OS == "WINNT" )
-							$old_path_on_disk = str_replace( '\\', '/', $old_path_on_disk );
+					if ( isset( $meta[$value['meta-name']] ) ) {
+                        if (is_numeric($meta[$value['meta-name']])) {
+                            update_user_meta($user_id, $value['meta-name'], trim($meta[$value['meta-name']]));
+                        } else {
+                            $wp_upload_array = wp_upload_dir(); // Array of key => value pairs
 
-						$new_path_on_disk = $wp_upload_array['basedir'].'/profile_builder/avatars/userID_'.$user_id.'_originalAvatar_'.$file_name;
-						if ( PHP_OS == "WIN32" || PHP_OS == "WINNT" )
-							$new_path_on_disk = str_replace( '\\', '/', $new_path_on_disk );
+                            $file = trim($meta[$value['meta-name']]);
+                            $file_name = substr($file, strpos($file, '_originalAvatar_') + 16);
 
-						if ( rename( $old_path_on_disk, $new_path_on_disk ) ){
-							$wp_filetype = wp_check_filetype(basename( $file_name ), null );
-							$attachment = array('post_mime_type' => $wp_filetype['type'],
-												'post_title' => $file_name,
-												'post_content' => '',
-												'post_status' => 'inherit'
-												);
+                            $random_user_number = apply_filters('wppb_register_wpmu_avatar_random_user_number2', substr(md5($user->data->user_email), 0, 12), $user, $meta);
 
-							$attach_id = wp_insert_attachment( $attachment, $new_path_on_disk );
-						
-							$avatar = image_downsize( $attach_id, 'thumbnail' );
+                            $old_path_on_disk = $wp_upload_array['basedir'] . '/profile_builder/avatars/' . substr($file, strpos($file, 'wpmuRandomID_'));
+                            if (PHP_OS == "WIN32" || PHP_OS == "WINNT")
+                                $old_path_on_disk = str_replace('\\', '/', $old_path_on_disk);
 
-							update_user_meta( $user_id, $value['meta-name'], $avatar[0] );
-							update_user_meta( $user_id, 'avatar_directory_path_'.$value['id'], $new_path_on_disk );
-							update_user_meta( $user_id, 'resized_avatar_'.$value['id'].'_relative_path', $new_path_on_disk );
-							wppb_resize_avatar( $user_id );
-						}
-					}				
-					break;
+                            $new_path_on_disk = $wp_upload_array['basedir'] . '/profile_builder/avatars/userID_' . $user_id . '_originalAvatar_' . $file_name;
+                            if (PHP_OS == "WIN32" || PHP_OS == "WINNT")
+                                $new_path_on_disk = str_replace('\\', '/', $new_path_on_disk);
+
+                            if (rename($old_path_on_disk, $new_path_on_disk)) {
+                                $wp_filetype = wp_check_filetype(basename($file_name), null);
+                                $attachment = array('post_mime_type' => $wp_filetype['type'],
+                                    'post_title' => $file_name,
+                                    'post_content' => '',
+                                    'post_status' => 'inherit'
+                                );
+
+                                $attach_id = wp_insert_attachment($attachment, $new_path_on_disk);
+
+                                $avatar = image_downsize($attach_id, 'thumbnail');
+
+                                update_user_meta($user_id, $value['meta-name'], $avatar[0]);
+                                update_user_meta($user_id, 'avatar_directory_path_' . $value['id'], $new_path_on_disk);
+                                update_user_meta($user_id, 'resized_avatar_' . $value['id'] . '_relative_path', $new_path_on_disk);
+                                wppb_resize_avatar($user_id);
+                            }
+                        }
+                        break;
+                    }
 				}
                 default:
                     do_action( 'wppb_add_meta_on_user_activation_'.Wordpress_Creation_Kit_PB::wck_generate_slug( $value['field'] ), $user_id, $password, $meta );
