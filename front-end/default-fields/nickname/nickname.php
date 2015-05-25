@@ -31,9 +31,12 @@ add_filter( 'wppb_output_form_field_default-nickname', 'wppb_nickname_handler', 
 
 
 /* handle field validation */
-function wppb_check_nickname_value( $message, $field, $request_data, $form_location ){	
-	if ( ( isset( $request_data['nickname'] ) && ( trim( $request_data['nickname'] ) == '' ) ) && ( $field['required'] == 'Yes' ) )
-		return wppb_required_field_error($field["field-title"]);
+function wppb_check_nickname_value( $message, $field, $request_data, $form_location ){
+    if( $field['required'] == 'Yes' ){
+        if( ( isset( $request_data['nickname'] ) && ( trim( $request_data['nickname'] ) == '' ) ) || !isset( $request_data['nickname'] ) ){
+            return wppb_required_field_error($field["field-title"]);
+        }
+    }
 
     return $message;
 }

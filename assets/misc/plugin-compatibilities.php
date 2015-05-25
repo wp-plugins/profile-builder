@@ -125,7 +125,7 @@
             return $output;
         }
 
-        add_filter('wppb_recover_password_gemerate_password_input', 'wppb_captcha_add_form_recover_password', 10, 2);
+        add_filter('wppb_recover_password_generate_password_input', 'wppb_captcha_add_form_recover_password', 10, 2);
     }
 
     /*
@@ -173,7 +173,7 @@
                 if( empty($error_message) )
                     return $message;
 
-                if ($message == '<p class="wppb-warning">wppb_captcha_error</p>')
+                if ( ($message == '<p class="wppb-warning">wppb_captcha_error</p>') || ($message == '<p class="wppb-warning">wppb_recaptcha_error</p>') )
                     $message = '<p class="wppb-warning">' . $error_message . '</p>';
                 else
                     $message = $message . '<p class="wppb-warning">' . $error_message . '</p>';
@@ -211,3 +211,32 @@
 
         add_filter('wppb_recover_password_sent_message1', 'wppb_captcha_recover_password_sent_message_1');
     }
+
+
+
+	/****************************************************
+	 * Plugin Name: Easy Digital Downloads
+	 * Plugin URI: https://wordpress.org/plugins/easy-digital-downloads/
+	 ****************************************************/
+
+		/* Function that checks if a user is approved before loggin in, when admin approval is on */
+		function wppb_check_edd_login_form( $auth_cookie, $expire, $expiration, $user_id, $scheme ) {
+			$wppb_generalSettings = get_option('wppb_general_settings', 'not_found');
+
+			if( $wppb_generalSettings != 'not_found' ) {
+				if( ! empty( $wppb_generalSettings['adminApproval'] ) && ( $wppb_generalSettings['adminApproval'] == 'yes' ) ) {
+					if( isset( $_REQUEST['edd_login_nonce'] ) ) {
+						if( wp_get_object_terms( $user_id, 'user_status' ) ) {
+							if( isset( $_REQUEST['edd_redirect'] ) ) {
+								wp_redirect( $_REQUEST['edd_redirect'] );
+								edd_set_error( 'user_unapproved', __('Your account has to be confirmed by an administrator before you can log in.', 'profilebuilder') );
+								edd_get_errors();
+								edd_die();
+							}
+						}
+					}
+				}
+			}
+		}
+		add_action( 'set_auth_cookie', 'wppb_check_edd_login_form', 10, 5 );
+		add_action( 'set_logged_in_cookie', 'wppb_check_edd_login_form', 10, 5 );

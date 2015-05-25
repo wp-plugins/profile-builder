@@ -31,9 +31,12 @@ add_filter( 'wppb_output_form_field_default-last-name', 'wppb_last_name_handler'
 
 
 /* handle field validation */
-function wppb_check_last_name_value( $message, $field, $request_data, $form_location ){	
-	if ( ( isset( $request_data['last_name'] ) && ( trim( $request_data['last_name'] ) == '' ) ) && ( $field['required'] == 'Yes' ) )
-		return wppb_required_field_error($field["field-title"]);
+function wppb_check_last_name_value( $message, $field, $request_data, $form_location ){
+    if( $field['required'] == 'Yes' ){
+        if( ( isset( $request_data['last_name'] ) && ( trim( $request_data['last_name'] ) == '' ) ) || !isset( $request_data['last_name'] ) ){
+            return wppb_required_field_error($field["field-title"]);
+        }
+    }
 
     return $message;
 }

@@ -647,6 +647,11 @@ class Wordpress_Creation_Kit_PB{
 		wp_enqueue_script('jquery-ui-datepicker');		
 		wp_enqueue_style( 'jquery-style', plugins_url( '/assets/datepicker/datepicker.css', __FILE__ ) );
 
+
+        /* media upload */
+        wp_enqueue_media();
+        wp_enqueue_script('wck-upload-field', plugins_url('/fields/upload.js', __FILE__), array('jquery') );
+
 	}	
 
 	/* Helper function for required fields */
@@ -940,7 +945,7 @@ class Wordpress_Creation_Kit_PB{
 				}
 			}
 		}
-		
+
 		exit;
 	}
 

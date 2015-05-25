@@ -190,18 +190,8 @@ input#send_credentials_via_email{
 	font-style:italic;
 }
 
-.wppb-form-field .wppb-avatar-nofile,
-.wppb-form-field .wppb-avatar-file,
-.wppb-form-field .wppb-upload-nofile,
-.wppb-form-field .wppb-upload-file{
-	font-size:100%;
-	font-style:normal;
-	margin:10px 0 10px 30%;
-}
-
-.wppb-file-icons{
-	padding-left:10px;
-	box-shadow:none !important;
+.wppb_upload_button{
+    display:inline-block;
 }
 
 .wppb-user-forms .wppb-checkboxes li,
