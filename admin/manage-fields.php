@@ -571,13 +571,37 @@ add_action("wck_after_adding_form", "wppb_remove_properties_from_added_form", 10
  */
 add_filter( 'update_option_wppb_manage_fields', 'wppb_wpml_compat_with_fields', 10, 2 );
 function wppb_wpml_compat_with_fields( $oldvalue, $_newvalue ){
-    if ( is_array( $_newvalue ) ){
+    $default_fields = 	array(
+							'Default - Name (Heading)',
+							'Default - Contact Info (Heading)',
+							'Default - About Yourself (Heading)',
+							'Default - Username',
+							'Default - First Name',
+							'Default - Last Name',
+							'Default - Nickname',
+							'Default - E-mail',
+							'Default - Website',
+							'Default - AIM',
+							'Default - Yahoo IM',
+							'Default - Jabber / Google Talk',
+							'Default - Password',
+							'Default - Repeat Password',
+							'Default - Biographical Info',
+							'Default - Display name publicly as'
+	);
+
+	if ( is_array( $_newvalue ) ){
         foreach ( $_newvalue as $field ){
             $field_title = $field['field-title'];
             $field_description = $field['description'];
+			if ( in_array($field['field'], $default_fields) ){
+				$prefix = 'default_field_';
+			} else {
+				$prefix = 'custom_field_';
+			}
             if (function_exists('icl_register_string')){
-                icl_register_string('plugin profile-builder-pro', 'custom_field_'.$field['id'].'_title_translation' , $field_title);
-                icl_register_string('plugin profile-builder-pro', 'custom_field_'.$field['id'].'_description_translation', $field_description);
+                icl_register_string('plugin profile-builder-pro', $prefix . $field['id'].'_title_translation' , $field_title);
+                icl_register_string('plugin profile-builder-pro', $prefix . $field['id'].'_description_translation', $field_description);
             }
         }
     }

@@ -166,7 +166,11 @@ class Profile_Builder_Form_Creator{
 
         /* define redirect location */
         if ( $this->args['redirect_activated'] == 'No' ){
-            $location = home_url();
+            if (isset($_POST['_wp_http_referer'])){
+				$location = $_POST['_wp_http_referer'];
+			} else {
+				$location = home_url();
+			}
         }else if ( $this->args['redirect_activated'] == '-' ){
             if( !empty( $this->args['custom_redirect_after_register_url'] ) )
                 $location = $this->args['custom_redirect_after_register_url'];
@@ -176,6 +180,8 @@ class Profile_Builder_Form_Creator{
         else{
             $location = ( wppb_check_missing_http( $this->args['redirect_url'] ) ? 'http://'.$this->args['redirect_url'] : $this->args['redirect_url'] );
         }
+
+		$location = apply_filters('wppb_login_after_reg_redirect_url', $location, $this);
 
         $location .= "/?autologin=true&uid=$user->ID&_wpnonce=$nonce";
 
@@ -357,10 +363,10 @@ class Profile_Builder_Form_Creator{
 	
 	function wppb_test_required_form_values( $global_request ){
 		$output_field_errors = array();
-		
+
 		if( !empty( $this->args['form_fields'] ) ){
 			foreach( $this->args['form_fields'] as $field ){
-				$error_for_field = apply_filters( 'wppb_check_form_field_'.Wordpress_Creation_Kit_PB::wck_generate_slug( $field['field'] ), '', $field, $global_request, $this->args['form_type'] );
+				$error_for_field = apply_filters( 'wppb_check_form_field_'.Wordpress_Creation_Kit_PB::wck_generate_slug( $field['field'] ), '', $field, $global_request, $this->args['form_type'], $this->args['role'], $this->wppb_get_desired_user_id() );
 				
 				if( !empty( $error_for_field ) )
 					$output_field_errors[$field['id']] = '<span class="wppb-form-error">' . $error_for_field  . '</span>';
@@ -515,7 +521,7 @@ class Profile_Builder_Form_Creator{
                     </select>
                 </p>
                 <script type="text/javascript">jQuery('#wppb-edit-user').change(function () {
-                        window.location.href = "<?php echo esc_js( esc_url_raw( add_query_arg( array( 'edit_user' => '=' ) ) ) ) ?>" + jQuery(this).val();
+						window.location.href = "<?php echo htmlspecialchars_decode( esc_js( esc_url_raw( add_query_arg( array( 'edit_user' => '=' ) ) ) ) ) ?>" + jQuery(this).val();
                     });</script>
             </form>
         <?php

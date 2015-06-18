@@ -6,7 +6,7 @@ Tags: registration, user profile, user registration, custom field registration, 
 
 Requires at least: 3.1
 Tested up to: 4.2.2
-Stable tag: 2.1.7
+Stable tag: 2.1.8
 
 Simple to use profile plugin allowing front-end login, user registration and edit profile by using shortcodes.
  
@@ -114,12 +114,24 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 10. Profile Builder Login Widget
 
 == Changelog ==
+= 2.1.8 =
+* Added filter to wppb_curpageurl() function to easily modify returned URL: apply_filters('wppb_curpageurl', $pageURL)
+* Fixed a issue with default fields not having labels and descriptions localized sometimes
+* Removed link to author page in logged in user shortcode
+* Shortcodes on Basic Info page should no longer be translated
+* Replaced home_url with site_url in login.php
+* Fixed an error when admin was editing another user from the front end sometimes we got 'This email is already reserved to be used soon.'
+* Select a User to edit (as admin) adds HTML special char (&amp;) in URL when should not
+* Added filters that can be used to stop emails being sent to users or admins
+* Redirect registration form after login to same page. Also added a filter on the url
+
+
 = 2.1.7 =
-Added reCaptcha support for default login, register and lost password forms as well as PB forms + our own login widget
-Added RTL support for Profile Buider Forms
-Fixed a problem regarding required fields
-Added filter on add custom field values on user signup 'wppb_add_to_user_signup_form_meta'
-Fixed issue where username was sent instead of email when Login with Email was set in the user emails
+* Added reCaptcha support for default login, register and lost password forms as well as PB forms + our own login widget
+* Added RTL support for Profile Buider Forms
+* Fixed a problem regarding required fields
+* Added filter on add custom field values on user signup 'wppb_add_to_user_signup_form_meta'
+* Fixed issue where username was sent instead of email when Login with Email was set in the user emails
 
 = 2.1.6 =
 * Updated translation files.

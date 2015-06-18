@@ -34,15 +34,15 @@ function wppb_basic_info_content() {
 		<div class="wppb-row wppb-3-col">
 			<div>
 				<h3><?php _e( 'Login', 'profilebuilder' ); ?></h3>
-				<p><?php _e( 'Friction-less login using <strong class="nowrap">[wppb-login]</strong> shortcode or a widget.', 'profilebuilder' ); ?></p>
+				<p><?php printf( __( 'Friction-less login using %s shortcode or a widget.', 'profilebuilder' ), '<strong class="nowrap">[wppb-login]</strong>' ); ?></p>
 			</div>
 			<div>
 				<h3><?php _e( 'Registration', 'profilebuilder'  ); ?></h3>
-				<p><?php _e( 'Beautiful registration forms fully customizable using the <strong class="nowrap">[wppb-register]</strong> shortcode.', 'profilebuilder' ); ?></p>
+				<p><?php printf( __( 'Beautiful registration forms fully customizable using the %s shortcode.', 'profilebuilder' ), '<strong class="nowrap">[wppb-register]</strong>' ); ?></p>
 			</div>
 			<div>
 				<h3><?php _e( 'Edit Profile', 'profilebuilder' ); ?></h3>
-				<p><?php _e( 'Straight forward edit profile forms using <strong class="nowrap">[wppb-edit-profile]</strong> shortcode.', 'profilebuilder' ); ?></p>
+				<p><?php printf( __( 'Straight forward edit profile forms using %s shortcode.', 'profilebuilder' ), '<strong class="nowrap">[wppb-edit-profile]</strong>' ); ?></p>
 			</div>
 		</div>
 		<?php ob_start(); ?>
@@ -55,7 +55,7 @@ function wppb_basic_info_content() {
 		<div class="wppb-row wppb-3-col">
 			<div>
 				<h3><?php _e( 'Recover Password', 'profilebuilder' ); ?></h3>
-				<p><?php _e( 'Allow users to recover their password in the front-end using the [wppb-recover-password].', 'profilebuilder' ); ?></p>
+				<p><?php printf( __( 'Allow users to recover their password in the front-end using the %s.', 'profilebuilder' ), '<strong class="nowrap">[wppb-recover-password]</strong>' ); ?></p>
 			</div>
 			<div>
 				<h3><?php _e( 'Admin Approval (*)', 'profilebuilder' ); ?></h3>
@@ -127,7 +127,7 @@ function wppb_basic_info_content() {
 				<?php if ($version == 'Free'): ?>
 				<p><?php _e( 'Easy to edit templates for listing your website users as well as creating single user pages. Shortcode based, offering many options to customize your listings.', 'profilebuilder' ); ?></p>
 				<?php else : ?>
-				<p><?php _e( 'To create a page containing the users registered to this current site/blog, insert the following shortcode in a page of your chosing: <strong class="nowrap">[wppb-list-users]</strong>.', 'profilebuilder' ); ?></p>
+				<p><?php printf( __( 'To create a page containing the users registered to this current site/blog, insert the following shortcode in a page of your chosing: %s.', 'profilebuilder' ), '<strong class="nowrap">[wppb-list-users]</strong>' ); ?></p>
 				<?php endif;?>
 			</div>
 			<div>
