@@ -228,10 +228,10 @@ input#send_credentials_via_email{
 }
 
 
-#recaptcha_widget_div{
+.g-recaptcha{
 	display: inline-block;
 }
-#recaptcha_widget_div iframe{
+.g-recaptcha iframe{
     margin-bottom: 0;
 }
 

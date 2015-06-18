@@ -229,68 +229,77 @@ function wppb_add_meta_to_user_on_activation( $user_id, $password, $meta ){
 				}
 				case 'Upload':{
 					if ( isset( $meta[$value['meta-name']] ) ){
-                        if (is_numeric($meta[$value['meta-name']])) {
-                            update_user_meta($user_id, $value['meta-name'], trim($meta[$value['meta-name']]));
+                        if( !empty( $meta[$value['meta-name']] ) ) {
+                            if (is_numeric($meta[$value['meta-name']])) {
+                                update_user_meta($user_id, $value['meta-name'], trim($meta[$value['meta-name']]));
+                            } else {
+                                $wp_upload_array = wp_upload_dir(); // Array of key => value pairs
+
+                                $file = trim($meta[$value['meta-name']]);
+                                $file_name = substr($file, strpos($file, '_attachment_') + 12);
+
+                                $random_user_number = apply_filters('wppb_register_wpmu_upload_random_user_number2', substr(md5($user->data->user_email), 0, 12), $user, $meta);
+
+                                $old_path_on_disk = $wp_upload_array['basedir'] . '/profile_builder/attachments/' . substr($file, strpos($file, 'wpmuRandomID_'));
+                                if (PHP_OS == "WIN32" || PHP_OS == "WINNT")
+                                    $old_path_on_disk = str_replace('\\', '/', $old_path_on_disk);
+
+                                $new_path_on_disk = $wp_upload_array['basedir'] . '/profile_builder/attachments/userID_' . $user_id . '_attachment_' . $file_name;
+                                if (PHP_OS == "WIN32" || PHP_OS == "WINNT")
+                                    $new_path_on_disk = str_replace('\\', '/', $new_path_on_disk);
+
+                                if (rename($old_path_on_disk, $new_path_on_disk))
+                                    update_user_meta($user_id, $value['meta-name'], $wp_upload_array['baseurl'] . '/profile_builder/attachments/userID_' . $user_id . '_attachment_' . $file_name);
+                            }
                         }
-                        else {
-                            $wp_upload_array = wp_upload_dir(); // Array of key => value pairs
-
-                            $file = trim($meta[$value['meta-name']]);
-                            $file_name = substr($file, strpos($file, '_attachment_') + 12);
-
-                            $random_user_number = apply_filters('wppb_register_wpmu_upload_random_user_number2', substr(md5($user->data->user_email), 0, 12), $user, $meta);
-
-                            $old_path_on_disk = $wp_upload_array['basedir'] . '/profile_builder/attachments/' . substr($file, strpos($file, 'wpmuRandomID_'));
-                            if (PHP_OS == "WIN32" || PHP_OS == "WINNT")
-                                $old_path_on_disk = str_replace('\\', '/', $old_path_on_disk);
-
-                            $new_path_on_disk = $wp_upload_array['basedir'] . '/profile_builder/attachments/userID_' . $user_id . '_attachment_' . $file_name;
-                            if (PHP_OS == "WIN32" || PHP_OS == "WINNT")
-                                $new_path_on_disk = str_replace('\\', '/', $new_path_on_disk);
-
-                            if (rename($old_path_on_disk, $new_path_on_disk))
-                                update_user_meta($user_id, $value['meta-name'], $wp_upload_array['baseurl'] . '/profile_builder/attachments/userID_' . $user_id . '_attachment_' . $file_name);
+                        else{
+                            update_user_meta( $user_id, $value['meta-name'], '' );
                         }
 					}
 					break;
 				}				
 				case 'Avatar':{
 					if ( isset( $meta[$value['meta-name']] ) ) {
-                        if (is_numeric($meta[$value['meta-name']])) {
-                            update_user_meta($user_id, $value['meta-name'], trim($meta[$value['meta-name']]));
-                        } else {
-                            $wp_upload_array = wp_upload_dir(); // Array of key => value pairs
+                        if( !empty( $meta[$value['meta-name']] ) ) {
+                            if (is_numeric($meta[$value['meta-name']])) {
+                                update_user_meta($user_id, $value['meta-name'], trim($meta[$value['meta-name']]));
+                            } else {
+                                $wp_upload_array = wp_upload_dir(); // Array of key => value pairs
 
-                            $file = trim($meta[$value['meta-name']]);
-                            $file_name = substr($file, strpos($file, '_originalAvatar_') + 16);
+                                $file = trim($meta[$value['meta-name']]);
+                                $file_name = substr($file, strpos($file, '_originalAvatar_') + 16);
 
-                            $random_user_number = apply_filters('wppb_register_wpmu_avatar_random_user_number2', substr(md5($user->data->user_email), 0, 12), $user, $meta);
+                                $random_user_number = apply_filters('wppb_register_wpmu_avatar_random_user_number2', substr(md5($user->data->user_email), 0, 12), $user, $meta);
 
-                            $old_path_on_disk = $wp_upload_array['basedir'] . '/profile_builder/avatars/' . substr($file, strpos($file, 'wpmuRandomID_'));
-                            if (PHP_OS == "WIN32" || PHP_OS == "WINNT")
-                                $old_path_on_disk = str_replace('\\', '/', $old_path_on_disk);
+                                $old_path_on_disk = $wp_upload_array['basedir'] . '/profile_builder/avatars/' . substr($file, strpos($file, 'wpmuRandomID_'));
+                                if (PHP_OS == "WIN32" || PHP_OS == "WINNT")
+                                    $old_path_on_disk = str_replace('\\', '/', $old_path_on_disk);
 
-                            $new_path_on_disk = $wp_upload_array['basedir'] . '/profile_builder/avatars/userID_' . $user_id . '_originalAvatar_' . $file_name;
-                            if (PHP_OS == "WIN32" || PHP_OS == "WINNT")
-                                $new_path_on_disk = str_replace('\\', '/', $new_path_on_disk);
+                                $new_path_on_disk = $wp_upload_array['basedir'] . '/profile_builder/avatars/userID_' . $user_id . '_originalAvatar_' . $file_name;
+                                if (PHP_OS == "WIN32" || PHP_OS == "WINNT")
+                                    $new_path_on_disk = str_replace('\\', '/', $new_path_on_disk);
 
-                            if (rename($old_path_on_disk, $new_path_on_disk)) {
-                                $wp_filetype = wp_check_filetype(basename($file_name), null);
-                                $attachment = array('post_mime_type' => $wp_filetype['type'],
-                                    'post_title' => $file_name,
-                                    'post_content' => '',
-                                    'post_status' => 'inherit'
-                                );
+                                if (rename($old_path_on_disk, $new_path_on_disk)) {
+                                    $wp_filetype = wp_check_filetype(basename($file_name), null);
+                                    $attachment = array('post_mime_type' => $wp_filetype['type'],
+                                        'post_title' => $file_name,
+                                        'post_content' => '',
+                                        'post_status' => 'inherit'
+                                    );
 
-                                $attach_id = wp_insert_attachment($attachment, $new_path_on_disk);
+                                    $attach_id = wp_insert_attachment($attachment, $new_path_on_disk);
 
-                                $avatar = image_downsize($attach_id, 'thumbnail');
+                                    $avatar = image_downsize($attach_id, 'thumbnail');
 
-                                update_user_meta($user_id, $value['meta-name'], $avatar[0]);
-                                update_user_meta($user_id, 'avatar_directory_path_' . $value['id'], $new_path_on_disk);
-                                update_user_meta($user_id, 'resized_avatar_' . $value['id'] . '_relative_path', $new_path_on_disk);
-                                wppb_resize_avatar($user_id);
+                                    update_user_meta($user_id, $value['meta-name'], $avatar[0]);
+                                    update_user_meta($user_id, 'avatar_directory_path_' . $value['id'], $new_path_on_disk);
+                                    update_user_meta($user_id, 'resized_avatar_' . $value['id'] . '_relative_path', $new_path_on_disk);
+                                    wppb_resize_avatar($user_id);
+                                }
                             }
+                        }
+                        else{
+                            update_user_meta( $user_id, $value['meta-name'], '' );
                         }
                         break;
                     }
@@ -375,7 +384,9 @@ function wppb_signup_user_notification( $user, $user_email, $activation_key, $me
 	$message = sprintf( __( "To activate your user, please click the following link:\n\n%s%s%s\n\nAfter you activate it you will receive yet *another email* with your login.", "profilebuilder" ), '<a href="'.$registration_page_url.'">', $registration_page_url, '</a>.' );
     $message = apply_filters( 'wppb_signup_user_notification_email_content', $message, $user_email, $user, $activation_key, $registration_page_url, $meta, $from_name, 'wppb_user_emailc_registr_w_email_confirm_email_content' );
 
-	wppb_mail( $user_email, $subject, $message, $from_name, '', $user, '', $user_email, 'register_w_email_confirmation', $registration_page_url, $meta );
+	$message_context = 'email_user_activate';
+
+	wppb_mail( $user_email, $subject, $message, $from_name, $message_context, '', $user, '', $user_email, 'register_w_email_confirmation', $registration_page_url, $meta );
 	
 	return true;
 }
@@ -492,18 +503,22 @@ function wppb_notify_user_registration_email( $bloginfo, $user_name, $email, $se
 	$message_subject = apply_filters ('wppb_register_admin_email_subject_without_admin_approval', $message_subject, $email, $password, $message_from, 'wppb_admin_emailc_default_registration_email_subject' );
 	
 	$message_content = sprintf( __( 'New subscriber on %1$s.<br/><br/>Username:%2$s<br/>E-mail:%3$s<br/>', 'profilebuilder'), $message_from, $user_name, $email );
-	
-	if ( $adminApproval == 'yes' ){
+
+	$message_context = 'email_admin_new_subscriber';
+
+	if ( $adminApproval == 'yes' ) {
 		$message_subject = apply_filters( 'wppb_register_admin_email_subject_with_admin_approval', $message_subject, $email, $password, $message_from, 'wppb_admin_emailc_registration_with_admin_approval_email_subject' );
 	
 		$message_content .= '<br/>' . __( 'The "Admin Approval" feature was activated at the time of registration, so please remember that you need to approve this user before he/she can log in!', 'profilebuilder') ."\r\n";
 		$message_content = apply_filters( 'wppb_register_admin_email_message_with_admin_approval', $message_content, $email, $password, $message_from, 'wppb_admin_emailc_registration_with_admin_approval_email_content' );
-	}else
+
+		$message_context = 'email_admin_approve';
+	} else {
 		$message_content = apply_filters( 'wppb_register_admin_email_message_without_admin_approval', $message_content, $email, $password, $message_from, 'wppb_admin_emailc_default_registration_email_content' );
-	
+	}
 
 	if ( trim( $message_content ) != '' )
-		wppb_mail( get_option('admin_email'), $message_subject, $message_content, $message_from );
+		wppb_mail( get_option('admin_email'), $message_subject, $message_content, $message_from, $message_context );
 
 		
 	
@@ -521,19 +536,23 @@ function wppb_notify_user_registration_email( $bloginfo, $user_name, $email, $se
         if ( $password === __( 'Your selected password at signup', 'profilebuilder' ) ) {
             $password = NULL;
         }
-		
+
+		$user_message_context = 'email_user_account_info';
+
 		if ( $adminApproval == 'yes' ){
 			$user_message_subject = apply_filters( 'wppb_register_user_email_subject_with_admin_approval', $user_message_subject, $email, $password, $user_message_subject, 'wppb_user_emailc_registration_with_admin_approval_email_subject' );
 
 			if( ! current_user_can( 'delete_users' ) ) {
 				$user_message_content .= '<br/><br/>' . __( 'Before you can access your account, an administrator needs to approve it. You will be notified via email.', 'profilebuilder' );
+
+				$user_message_context = 'email_user_need_approval';
 			}
+
 			$user_message_content = apply_filters( 'wppb_register_user_email_message_with_admin_approval', $user_message_content, $email, $password, $user_message_subject, 'wppb_user_emailc_registration_with_admin_approval_email_content' );
-		
 		}else
 			$user_message_content = apply_filters( 'wppb_register_user_email_message_without_admin_approval', $user_message_content, $email, $password, $user_message_subject, 'wppb_user_emailc_default_registration_email_content' );
-			
-		$message_sent = wppb_mail( $email, $user_message_subject, $user_message_content, $user_message_from );
+
+		$message_sent = wppb_mail( $email, $user_message_subject, $user_message_content, $user_message_from, $user_message_context );
 		
 		return ( ( $message_sent ) ? 2 : 1 );
 	}

@@ -56,8 +56,11 @@ function wppb_check_email_value( $message, $field, $request_data, $form_location
             }
             else if ( $form_location == 'edit_profile' ){
                 $current_user = wp_get_current_user();
-                if ( $current_user->user_email != $request_data['email'] )
-                    return __( 'This email is already reserved to be used soon.', 'profilebuilder' ) .'<br/>'. __( 'Please try a different one!', 'profilebuilder' );
+
+				if( ! current_user_can( 'edit_users' ) ) {
+					if ( $current_user->user_email != $request_data['email'] )
+						return __( 'This email is already reserved to be used soon.', 'profilebuilder' ) .'<br/>'. __( 'Please try a different one!', 'profilebuilder' );
+				}
             }
         }
 	}

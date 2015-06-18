@@ -74,7 +74,7 @@ function wppb_login_redirect( $redirect_to, $redirect_url, $user ){
             $wppb_generalSettings = get_option('wppb_general_settings');
 
             if (isset($wppb_generalSettings['loginWith'])) {
-                $LostPassURL = home_url('/wp-login.php?action=lostpassword');
+                $LostPassURL = site_url('/wp-login.php?action=lostpassword');
 
                 // if the Login shortcode has a lostpassword argument set, give the lost password error link that value
                 if (!empty($_POST['wppb_lostpassword_url'])) {
@@ -90,7 +90,7 @@ function wppb_login_redirect( $redirect_to, $redirect_url, $user ){
                     $error_string .= '<a href="' . $LostPassURL . '" title="' . __('Password Lost and Found.', 'profilebuilder') . '">' . __('Lost your password', 'profilebuilder') . '</a>?';
 
                     // change the recover password link
-                    $error_string = str_replace(home_url('/wp-login.php?action=lostpassword'), $LostPassURL, $error_string);
+                    $error_string = str_replace(site_url('/wp-login.php?action=lostpassword'), $LostPassURL, $error_string);
                 }
                 if ($user->get_error_code() == 'invalid_username') {
                     $error_string = '<strong>' . __('ERROR', 'profilebuilder') . '</strong>: ' . __('Invalid username.', 'profilebuilder') . ' ';
@@ -237,9 +237,8 @@ function wppb_front_end_login( $atts ){
 			$display_name = $wppb_user->display_name;
 
 		$logged_in_message = '<p class="wppb-alert">';
-        $user_url = '<a href="'.$authorPostsUrl = get_author_posts_url( $wppb_user->ID ).'" class="wppb-author-url" title="'.$display_name.'">'.$display_name.'</a>';
         $logout_url = '<a href="'.wp_logout_url( $redirectTo = wppb_curpageurl() ).'" class="wppb-logout-url" title="'.__( 'Log out of this account', 'profilebuilder' ).'">'. __( 'Log out', 'profilebuilder').' &raquo;</a>';
-        $logged_in_message .= sprintf(__( 'You are currently logged in as %1$s. %2$s', 'profilebuilder' ), $user_url, $logout_url );
+        $logged_in_message .= sprintf(__( 'You are currently logged in as %1$s. %2$s', 'profilebuilder' ), $display_name, $logout_url );
         $logged_in_message .= '</p><!-- .wppb-alert-->';
 		
 		return apply_filters( 'wppb_login_message', $logged_in_message, $wppb_user->ID, $display_name );

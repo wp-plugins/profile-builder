@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Profile Builder package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2015-04-08 09:06:01+0000\n"
+"PO-Revision-Date: 2015-06-11 10:34:23+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -581,7 +581,7 @@ msgstr "Login"
 
 #: ../admin/basic-info.php:37
 msgid "Friction-less login using <strong class=\"nowrap\">[wppb-login]</strong> shortcode or a widget."
-msgstr "Unkomplizierte Anmeldung mit dem Shortcode oder Widget <strong class=\"nowrap\"> [Wppb-Login]</strong>"
+msgstr "Unkomplizierte Anmeldung mit dem Shortcode oder Widget <strong class=\"nowrap\">[wppb-login]</strong>"
 
 #: ../admin/basic-info.php:40
 msgid "Registration"
@@ -589,7 +589,7 @@ msgstr "Registrierung"
 
 #: ../admin/basic-info.php:41
 msgid "Beautiful registration forms fully customizable using the <strong class=\"nowrap\">[wppb-register]</strong> shortcode."
-msgstr "Schöne Registrierungsformulare vollständig anpassbar mit dem Shortcode <strong class=\"nowrap\"> [Wppb-Register]</strong>."
+msgstr "Schöne Registrierungsformulare vollständig anpassbar mit dem Shortcode <strong class=\"nowrap\">[wppb-register]</strong>."
 
 #: ../admin/basic-info.php:44
 msgid "Edit Profile"
@@ -597,7 +597,7 @@ msgstr "Profil bearbeiten"
 
 #: ../admin/basic-info.php:45
 msgid "Straight forward edit profile forms using <strong class=\"nowrap\">[wppb-edit-profile]</strong> shortcode."
-msgstr "Bearbeiten Sie einfach die Profil-Formulare indem Sie <strong class=\"nowrap\"> [Wppb-bearbeiten-Profil]</strong> Shortcode verwenden."
+msgstr "Bearbeiten Sie einfach die Profil-Formulare indem Sie <strong class=\"nowrap\">[wppb-edit-profile]</strong> Shortcode verwenden."
 
 #: ../admin/basic-info.php:51
 msgid "Extra Features"
@@ -617,7 +617,7 @@ msgstr "Passwort wiederherstellen"
 
 #: ../admin/basic-info.php:58
 msgid "Allow users to recover their password in the front-end using the [wppb-recover-password]."
-msgstr "Erlaubt den Benutzern ihr Kennwort im Front-End mit dem Shortcode [Wppb-Wiederherstellung-Kennwort] wiederherzustellen."
+msgstr "Erlaubt den Benutzern ihr Kennwort im Front-End mit dem Shortcode [wppb-recover-password] wiederherzustellen."
 
 #: ../admin/basic-info.php:61
 msgid "Admin Approval (*)"
@@ -745,7 +745,7 @@ msgstr "Einfache editierbare Vorlagen für die Auflistung Ihrer Website-Benutzer
 
 #: ../admin/basic-info.php:130
 msgid "To create a page containing the users registered to this current site/blog, insert the following shortcode in a page of your chosing: <strong class=\"nowrap\">[wppb-list-users]</strong>."
-msgstr "Um eine Seite mit dem Benutzer die bereitgs auf dieser Seite/Blog registriert sind, zu erstellen, fügen Sie folgenden Shortcode in einer Seite Ihrer Auswahl ein: <strong class=\"nowrap\"> [Wppb-Liste-Users]</strong>."
+msgstr "Um eine Seite mit dem Benutzer die bereitgs auf dieser Seite/Blog registriert sind, zu erstellen, fügen Sie folgenden Shortcode in einer Seite Ihrer Auswahl ein: <strong class=\"nowrap\">[wppb-list-users]</strong>."
 
 #: ../admin/basic-info.php:134
 msgid "Email Customizer"

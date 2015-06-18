@@ -78,14 +78,16 @@ if(!function_exists('wppb_curpageurl')){
 			$pageURL .= "s";
 			
 		$pageURL .= "://";
-		
+
 		if ($_SERVER["SERVER_PORT"] != "80")
 			$pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
 			
 		else
 			$pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
 		
-		return $pageURL;
+		if ( function_exists('apply_filters') ) apply_filters('wppb_curpageurl', $pageURL);
+
+        return $pageURL;
 	}
 }
 
@@ -152,18 +154,18 @@ if ( is_admin() ){
  * @param string $message_from
  *
  */
-function wppb_mail($to, $subject, $message, $message_from){
-	$to = apply_filters ( 'wppb_send_email_to', $to );
-	$send_email = apply_filters ( 'wppb_send_email', true, $to, $subject, $message );
-	
+function wppb_mail( $to, $subject, $message, $message_from, $context = null ) {
+	$to = apply_filters( 'wppb_send_email_to', $to );
+	$send_email = apply_filters( 'wppb_send_email', true, $to, $subject, $message, $context );
+
 	$message = apply_filters( 'wppb_email_message', $message );
 
 	do_action( 'wppb_before_sending_email', $to, $subject, $message, $send_email );
 	
-	if ( $send_email ){
+	if ( $send_email ) {
 		//we add this filter to enable html encoding
-		add_filter( 'wp_mail_content_type', create_function( '', 'return "text/html"; ' ) );	
-		
+		add_filter( 'wp_mail_content_type', create_function( '', 'return "text/html"; ' ) );
+
 		$sent = wp_mail( $to , $subject, $message );
 	}
 	
@@ -239,8 +241,8 @@ function wppb_print_cpt_script( $hook ){
 	if ( $hook == 'profile-builder_page_manage-fields' ){
 		wp_enqueue_script( 'wppb-manage-fields-live-change', WPPB_PLUGIN_URL . 'assets/js/jquery-manage-fields-live-change.js', array(), PROFILE_BUILDER_VERSION, true );
 	}
-	
-	if ( ( $hook == 'profile-builder_page_manage-fields' ) || ( $hook == 'profile-builder_page_profile-builder-basic-info' ) || ( $hook == 'profile-builder_page_profile-builder-modules' ) || ( $hook == 'profile-builder_page_profile-builder-general-settings' ) || ( $hook == 'profile-builder_page_profile-builder-admin-bar-settings' ) || ( $hook == 'profile-builder_page_profile-builder-register' ) || ( $hook == 'profile-builder_page_profile-builder-wppb_userListing' ) || ( $hook == 'profile-builder_page_profile-builder-wppb_customRedirect' ) || ( $hook == 'profile-builder_page_profile-builder-wppb_emailCustomizer' ) || ( $hook == 'profile-builder_page_profile-builder-wppb_emailCustomizerAdmin' ) || ( $hook == 'profile-builder_page_profile-builder-add-ons' ) ){
+
+	if ( ( $hook == 'profile-builder_page_manage-fields' ) || ( $hook == 'profile-builder_page_profile-builder-basic-info' ) || ( $hook == 'profile-builder_page_profile-builder-modules' ) || ( $hook == 'profile-builder_page_profile-builder-general-settings' ) || ( $hook == 'profile-builder_page_profile-builder-admin-bar-settings' ) || ( $hook == 'profile-builder_page_profile-builder-register' ) || ( $hook == 'profile-builder_page_profile-builder-wppb_userListing' ) || ( $hook == 'profile-builder_page_profile-builder-wppb_customRedirect' ) || ( $hook == 'profile-builder_page_profile-builder-wppb_emailCustomizer' ) || ( $hook == 'profile-builder_page_profile-builder-wppb_emailCustomizerAdmin' ) || ( $hook == 'profile-builder_page_profile-builder-add-ons' ) || ( $hook == 'profile-builder_page_profile-builder-woocommerce-sync') ){
 		wp_enqueue_style( 'wppb-back-end-style', WPPB_PLUGIN_URL . 'assets/css/style-back-end.css', false, PROFILE_BUILDER_VERSION );
 	}
 	
