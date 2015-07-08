@@ -6,7 +6,7 @@ Tags: registration, user profile, user registration, custom field registration, 
 
 Requires at least: 3.1
 Tested up to: 4.2.2
-Stable tag: 2.1.8
+Stable tag: 2.1.9
 
 Simple to use profile plugin allowing front-end login, user registration and edit profile by using shortcodes.
  
@@ -114,6 +114,11 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 10. Profile Builder Login Widget
 
 == Changelog ==
+= 2.1.9 =
+* Add attribute filter to each Profile Builder form input: apply_filters( 'wppb_extra_attribute', '', $field )
+* Added Japanese translation
+* Updated translation files
+
 = 2.1.8 =
 * Added filter to wppb_curpageurl() function to easily modify returned URL: apply_filters('wppb_curpageurl', $pageURL)
 * Fixed a issue with default fields not having labels and descriptions localized sometimes

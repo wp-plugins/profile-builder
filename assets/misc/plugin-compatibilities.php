@@ -62,7 +62,9 @@
 
         function wppb_captcha_register_form_display_error() {
 
-            if ( isset( $_REQUEST['action'] ) && $_REQUEST['action'] == 'register') {
+            $cptch_options = get_option('cptch_options');
+
+            if ( isset( $_REQUEST['action'] ) && $_REQUEST['action'] == 'register' && (1 == $cptch_options['cptch_register_form']) ) {
 
                 $result = cptch_register_post('', '', new WP_Error());
 
@@ -87,7 +89,9 @@
 
         function wppb_captcha_register_form_check_value($output_field_errors) {
 
-            if (isset($_REQUEST['action']) && $_REQUEST['action'] == 'register') {
+            $cptch_options = get_option('cptch_options');
+
+            if (isset($_REQUEST['action']) && $_REQUEST['action'] == 'register' && (1 == $cptch_options['cptch_register_form']) ) {
 
                 $result = cptch_register_post('', '', new WP_Error());
 
@@ -114,7 +118,6 @@
 
         function wppb_captcha_add_form_recover_password($output, $username_email = '') {
 
-
             $cptch_options = get_option('cptch_options');
 
             if (1 == $cptch_options['cptch_lost_password_form']) {
@@ -136,7 +139,9 @@
 
         function wppb_captcha_recover_password_message_no($messageNo) {
 
-            if (isset($_REQUEST['action']) && $_REQUEST['action'] == 'recover_password') {
+            $cptch_options = get_option('cptch_options');
+
+            if (isset($_REQUEST['action']) && $_REQUEST['action'] == 'recover_password' && (1 == $cptch_options['cptch_lost_password_form']) ) {
 
                 $result = cptch_register_post('', '', new WP_Error());
 
@@ -159,7 +164,9 @@
 
         function wppb_captcha_recover_password_displayed_message1($message) {
 
-            if (isset($_REQUEST['action']) && $_REQUEST['action'] == 'recover_password') {
+            $cptch_options = get_option('cptch_options');
+
+            if (isset($_REQUEST['action']) && $_REQUEST['action'] == 'recover_password' && (1 == $cptch_options['cptch_lost_password_form']) ) {
 
                 $result = cptch_register_post('', '', new WP_Error());
                 $error_message = '';
@@ -197,7 +204,9 @@
 
         function wppb_captcha_recover_password_sent_message_1($message) {
 
-            if (isset($_REQUEST['action']) && $_REQUEST['action'] == 'recover_password') {
+            $cptch_options = get_option('cptch_options');
+
+            if (isset($_REQUEST['action']) && $_REQUEST['action'] == 'recover_password' && (1 == $cptch_options['cptch_lost_password_form']) ) {
 
                 $result = cptch_register_post('', '', new WP_Error());
 

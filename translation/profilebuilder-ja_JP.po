@@ -1,8 +1,8 @@
-# Translation of Profile Builder in Chinese (China)
+# Translation of Profile Builder in Japanese
 # This file is distributed under the same license as the Profile Builder package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2015-07-07 13:21:49+0000\n"
+"PO-Revision-Date: 2015-07-07 13:20:27+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -12,144 +12,144 @@ msgstr ""
 
 #: ../admin/add-ons.php:144
 msgid "Download Now"
-msgstr "现在下载"
+msgstr "すぐにダウンロードする"
 
 #: ../admin/admin-functions.php:175
 msgid "If you enjoy using <strong> %1$s </strong> please <a href=\"%2$s\" target=\"_blank\">rate us on WordPress.org</a>. More happy users means more features, less bugs and better support for everyone. "
-msgstr ""
+msgstr "<strong> %1$s </strong>をお楽しみいただけましたら、より多くの方に知ってもらえるよう<a href=\"%2$s\" target=\"_blank\">WordPress.orgで評価</a>をお願いいたします。ユーザが増えることで、より多くの機能、少ないバグ、そしてより良いサポートが実現します。"
 
 #: ../admin/manage-fields.php:68
 msgid "Choose one of the supported field types"
-msgstr "请选择其中一个支持的类型"
+msgstr "対応した記入欄タイプを選択してください"
 
 #: ../admin/manage-fields.php:70
 msgid ". Extra Field Types are available in <a href=\"%s\">Hobbyist or PRO versions</a>."
-msgstr "网站秘钥"
+msgstr "プロフィールの項目追加は<a href=\"%s\">HobbyistとPROバージョン</a>でのみ利用可能です"
 
 #: ../admin/manage-fields.php:98
 msgid "Site Key"
-msgstr "网站秘钥"
+msgstr "サイト鍵"
 
 #: ../admin/manage-fields.php:98
 msgid "The site key from Google, <a href=\"http://www.google.com/recaptcha\" target=\"_blank\">www.google.com/recaptcha</a>"
-msgstr "网站秘钥"
+msgstr "Googleからのサイトキー、<a href=\"http://www.google.com/recaptcha\" target=\"_blank\">www.google.com/recaptcha</a>"
 
 #: ../admin/manage-fields.php:99
 msgid "Secret Key"
-msgstr ""
+msgstr "Secret Key"
 
 #: ../admin/manage-fields.php:99
 msgid "The secret key from Google, <a href=\"http://www.google.com/recaptcha\" target=\"_blank\">www.google.com/recaptcha</a>"
-msgstr ""
+msgstr "GoogleからのSecret Key, <a href=\"http://www.google.com/recaptcha\" target=\"_blank\">www.google.com/recaptcha</a>"
 
 #: ../admin/manage-fields.php:365
 msgid "You must enter the site key\n"
-msgstr ""
+msgstr "サイトキーを入力してください\n"
 
 #: ../admin/manage-fields.php:367
 msgid "You must enter the secret key\n"
-msgstr ""
+msgstr "秘密キー（Secret Key）を入力してください\n"
 
 #: ../admin/add-ons.php:10 ../admin/add-ons.php:32
 msgid "Add-Ons"
-msgstr "插件"
+msgstr "アドオン"
 
 #: ../admin/add-ons.php:34 ../admin/add-ons.php:124
 msgid "Activate"
-msgstr "激活"
+msgstr "アクティベート"
 
 #: ../admin/add-ons.php:36
 msgid "Downloading and installing..."
-msgstr "正在下载并安装..."
+msgstr "ダウンロードとインストール中..."
 
 #: ../admin/add-ons.php:37
 msgid "Installation complete"
-msgstr "安装完成"
+msgstr "インストール完了"
 
 #: ../admin/add-ons.php:39
 msgid "Add-On is Active"
-msgstr "插件已激活"
+msgstr "アドオンは有効です。"
 
 #: ../admin/add-ons.php:40
 msgid "Add-On has been activated"
-msgstr "插件已激活"
+msgstr "アドオンが有効化されました"
 
 #: ../admin/add-ons.php:41
 msgid "Retry Install"
-msgstr "重新安装"
+msgstr "インストール再試行"
 
 #: ../admin/add-ons.php:43 ../admin/add-ons.php:135
 msgid "Add-On is <strong>active</strong>"
-msgstr ""
+msgstr "アドオンは <strong>有効です</strong>"
 
 #: ../admin/add-ons.php:44 ../admin/add-ons.php:133
 msgid "Add-On is <strong>inactive</strong>"
-msgstr ""
+msgstr "アドオンは <strong>無効です</strong>"
 
 #: ../admin/add-ons.php:46 ../admin/add-ons.php:128
 msgid "Deactivate"
-msgstr "未启用"
+msgstr "ディアクティベート"
 
 #: ../admin/add-ons.php:47
 msgid "Add-On has been deactivated."
-msgstr "插件已关闭"
+msgstr "アドオンは無効化されました。"
 
 #: ../admin/add-ons.php:59
 msgid "Something went wrong, we could not connect to the server. Please try again later."
-msgstr "现在无法连接服务器，请稍候重试"
+msgstr "何らかの原因でサーバーに接続できませんでした。後ほど再度お試しください。"
 
 #: ../admin/add-ons.php:144 ../admin/add-ons.php:147
 msgid "Buy Now"
-msgstr "立即购买"
+msgstr "すぐに購入する"
 
 #: ../admin/add-ons.php:147
 msgid "Install Now"
-msgstr "立即安装"
+msgstr "すぐにインストールする"
 
 #: ../admin/add-ons.php:153
 msgid "Compatible with your version of Profile Builder."
-msgstr "与您现版本的Profile Builder兼容"
+msgstr "お使いのProfile Builderと互換性があります。"
 
 #: ../admin/add-ons.php:162
 msgid "Upgrade Profile Builder"
-msgstr "更新Profile Builder"
+msgstr "Profile Builderを更新"
 
 #: ../admin/add-ons.php:163
 msgid "Not compatible with Profile Builder"
-msgstr "与Profile Builder不兼容"
+msgstr "Profile Builderと互換性がありません"
 
 #: ../admin/add-ons.php:171
 msgid "Not compatible with your version of Profile Builder."
-msgstr "于您现版本的Profile Builder不兼容"
+msgstr "お使いのProfile Builderバージョンとは互換性がありません。"
 
 #: ../admin/add-ons.php:172
 msgid "Minimum required Profile Builder version:"
-msgstr "所需Profile Builder最低版本"
+msgstr "対応するProfile Builderの最低バージョン:"
 
 #: ../admin/add-ons.php:177
 msgid "Could not install add-on. Retry or <a href=\"%s\" target=\"_blank\">install manually</a>."
-msgstr "无法安装插件，请重试或 <a href=\"%s\" target=\"_blank\">install manually</a>."
+msgstr "アドオンをインストールできませんでした。再度実行するか<a href=\"%s\" target=\"_blank\">手動インストール</a>をお試しください。"
 
 #: ../front-end/default-fields/email/email.php:46
 msgid "You must enter a valid email address."
-msgstr "请输入有效的邮箱地址"
+msgstr "正しいメールアドレスを入力してください。"
 
 #: ../front-end/default-fields/username/username.php:47
 msgid "This username is invalid because it uses illegal characters."
-msgstr "用户名无效，因为含有非法字符"
+msgstr "このユーザ名には使用できない文字が含まれています。"
 
 #: ../front-end/default-fields/username/username.php:47
 msgid "Please enter a valid username."
-msgstr "请输入有效的用户名"
+msgstr "有効なユーザ名を入力してください。"
 
 #: ../front-end/extra-fields/user-role/user-role.php:65
 #: ../front-end/extra-fields/user-role/user-role.php:78
 msgid "Only administrators can see this field on edit profile forms."
-msgstr "只有管理员才能看到编辑信息的表格项"
+msgstr "プロフィール編集フォームのこのフィールドを見られるのは管理者のみです。"
 
 #: ../front-end/extra-fields/user-role/user-role.php:74
 msgid "As an administrator you cannot change your role."
-msgstr "作为管理员，您无法改变您的角色"
+msgstr "管理者として、あなた自身の権限は変更できません。"
 
 #: ../modules/email-customizer/admin-email-customizer.php:117
 msgid ""
@@ -157,22 +157,25 @@ msgid ""
 "<p>{{username}} has requested a password change via the password reset feature.</p>\n"
 "<p>His/her new password is: {{password}}</p>\n"
 msgstr ""
+"\n"
+"<p>{{username}} がパスワードリセット機能によるパスワードの変更を要求しました。</p>\n"
+"<p>彼／彼女の新しいパスワードは {{password}}です。</p>\n"
 
 #: ../modules/email-customizer/admin-email-customizer.php:141
 msgid "Admin Notification for User Password Reset"
-msgstr ""
+msgstr "ユーザのパスワードリセットに対する通知"
 
 #: ../modules/email-customizer/email-customizer.php:42
 msgid "Reset Key"
-msgstr ""
+msgstr "リセットキー"
 
 #: ../modules/email-customizer/email-customizer.php:43
 msgid "Reset Url"
-msgstr ""
+msgstr "リセットURL"
 
 #: ../modules/email-customizer/email-customizer.php:44
 msgid "Reset Link"
-msgstr ""
+msgstr "リセットリンク"
 
 #: ../modules/email-customizer/user-email-customizer.php:204
 msgid ""
@@ -183,267 +186,275 @@ msgid ""
 "<p>To reset your password, visit the following address:<br/>\n"
 "{{{reset_link}}}</p>\n"
 msgstr ""
+"\n"
+"<p>次のアカウントのパスワードリセットが要求されました: {{site_name}}<br/>\n"
+"ユーザ名: {{username}}</p>\n"
+"<p>このこれが間違いなら単に無視してください。何も処理されません。</p>\n"
+"<p>パスワードリセットを実行するには、下記のアドレスにアクセスしてください。:<br/>\n"
+"{{{reset_link}}}</p>\n"
 
 #: ../modules/email-customizer/user-email-customizer.php:218
 msgid "[{{site_name}}] Password Reset"
-msgstr ""
+msgstr "[{{site_name}}] パスワードリセット"
 
 #: ../modules/email-customizer/user-email-customizer.php:229
 msgid "Password Reset Email"
-msgstr "密码重设邮件"
+msgstr "パスワードリセットメール"
 
 #: ../modules/email-customizer/user-email-customizer.php:235
 msgid ""
 "\n"
 "<p>You have successfully reset your password to: {{password}}</p>\n"
 msgstr ""
+"\n"
+"<p>以下のパスワードにリセットしました: {{password}}</p>\n"
 
 #: ../modules/email-customizer/user-email-customizer.php:245
 msgid "[{{site_name}}] Password Reset Successfully"
-msgstr ""
+msgstr "[{{site_name}}] パスワードリセットは完了しました"
 
 #: ../modules/email-customizer/user-email-customizer.php:256
 msgid "Password Reset Success Email"
-msgstr "密码重设成功确认邮件"
+msgstr "パスワードリセット成功メール"
 
 #: ../modules/user-listing/userlisting.php:134
 msgid "User Nicename"
-msgstr "用户昵称"
+msgstr "ニックネーム"
 
 #: ../modules/user-listing/userlisting.php:442
 msgid "None"
-msgstr ""
+msgstr "なし"
 
 #: ../admin/admin-functions.php:106
 msgid "<strong>ERROR</strong>: The password must have the minimum length of %s characters"
-msgstr "<strong>错误</strong>: 密码必须有 %s 个字符"
+msgstr "<strong>エラー</strong>: パスワードは最低%s文字必要です。"
 
 #: ../admin/admin-functions.php:123
 msgid "<strong>ERROR</strong>: The password must have a minimum strength of %s"
-msgstr "<strong>错误</strong>: 密码必须满足强度 %s"
+msgstr "<strong>エラー</strong>: パスワードは最低%s文字必要です。"
 
 #: ../admin/general-settings.php:144
 msgid "Username and Email"
-msgstr "用户名和邮箱"
+msgstr "ユーザー名とメールアドレス"
 
 #: ../admin/general-settings.php:149
 msgid "\"Username and Email\" - users can Log In with both Username and Email."
-msgstr "\"用户名和邮箱\" - 同时以用户名和邮箱登陆"
+msgstr "\"ユーザ名とメールアドレス\" - ユーザーはユーザー名とメールアドレスのどちらでもログインできます。"
 
 #: ../admin/general-settings.php:150
 msgid "\"Username\" - users can Log In only with Username."
-msgstr "\"用户名\" - 只能以用户名登陆"
+msgstr "\"ユーザー名\" - ユーザーはユーザー名でのみログインできます。"
 
 #: ../admin/general-settings.php:151
 msgid "\"Email\" - users can Log In only with Email."
-msgstr "\"邮箱\" - 用户只能用邮箱登陆"
+msgstr "\"メールアドレス\" - ユーザはメールアドレスでのみログインできます。"
 
 #: ../admin/manage-fields.php:91
 msgid "Specify the extension(s) you want to limit to upload<br/>Example: .ext1,.ext2,.ext3<br/>If not specified, defaults to: .jpg,.jpeg,.gif,.png (.*)"
-msgstr "指定你想限制的文件后缀<br/>例如: .ext1,.ext2,.ext3<br/>如果不指定，默认为: .jpg,.jpeg,.gif,.png (.*)"
+msgstr "アップロード可能にしたいファイル拡張子を指定してください。<br/>例: .ext1,.ext2,.ext3<br/>指定しない場合は.jpg,.jpeg,.gif,.png (.*)となります。"
 
 #: ../admin/manage-fields.php:92
 msgid "Specify the extension(s) you want to limit to upload<br/>Example: .ext1,.ext2,.ext3<br/>If not specified, defaults to all WordPress allowed file extensions (.*)"
-msgstr "指定你想限制的文件后缀<br/>例如: .ext1,.ext2,.ext3<br/>如果不指定，默认为Wordpress所允许的全部文件后缀"
+msgstr "アップロード可能にしたいファイル拡張子を指定してください。<br/>例: .ext1,.ext2,.ext3<br/>指定しない場合はWordPressがデフォルトで許可する拡張子になります (.*)。"
 
 #: ../admin/manage-fields.php:100
 msgid "User Roles"
-msgstr "用户角色"
+msgstr "ユーザ権限"
 
 #: ../admin/manage-fields.php:100
 msgid "Select which user roles to show to the user ( drag and drop to re-order )"
-msgstr "请选择要对用户显示哪个角色(可拖拽排序)"
+msgstr "ユーザーに提示するユーザー権限を選択してください。 ( ドラッグ＆ドロップして順序を入れ替え )"
 
 #: ../admin/manage-fields.php:101
 msgid "User Roles Order"
-msgstr "用户角色排序"
+msgstr "ユーザ権限順"
 
 #: ../admin/manage-fields.php:101
 msgid "Save the user role order from the user roles checkboxes"
-msgstr "从角色选择框来保存角色排序"
+msgstr ""
 
 #: ../admin/manage-fields.php:457
 msgid "Please select at least one user role\n"
-msgstr "请至少选择一个用户角色\n"
+msgstr "最低1つのユーザ権限を選択してください\n"
 
 #: ../admin/register-version.php:22
 msgid "Profile Builder Register"
-msgstr "Profile Builder 注册"
+msgstr "Profile Builder 登録"
 
 #: ../admin/register-version.php:81
 msgid "The serial number is about to expire soon!"
-msgstr "序列号即将到期"
+msgstr "シリアル番号がまもなく期限切れです！"
 
 #: ../admin/register-version.php:81
 msgid " Your serial number is about to expire, please %1$s Renew Your License%2$s."
-msgstr "您的序列号即将到期, 请 %1$s 更新您的许可 %2$s."
+msgstr "あなたのシリアル番号はもうすぐ期限切れとなります。%1$sライセンス更新%2$sをお願いします。"
 
 #: ../admin/register-version.php:83
 msgid " Your serial number is expired, please %1$s Renew Your License%2$s."
-msgstr "您的序列号已经过期, 请 %1$s 更新您的许可 %2$s. "
+msgstr "シリアル番号の有効期限が切れました。%1$s ライセンス更新%2$sを行ってください。."
 
 #: ../assets/lib/wck-api/wordpress-creation-kit.php:337
 msgid "Add Entry"
-msgstr "增加条目"
+msgstr "エントリを追加"
 
 #: ../features/email-confirmation/class-email-confirmation.php:91
 msgid "show"
-msgstr "显示"
+msgstr "表示"
 
 #: ../features/functions.php:632
 msgid "To allow users to register for your website via Profile Builder, you first must enable user registration. Go to %1$sNetwork Settings%2$s, and under Registration Settings make sure to check “User accounts may be registered”. %3$sDismiss%4$s"
-msgstr "为使用户可以通过Profile Builder注册，您首先需要开启“用户注册”。去到%1$s网络设置%2$s，常规，确保”任何人都可以注册“这个选项已被勾选。%3$s忽略%4$s"
+msgstr "ユーザがProfile Builderを通じてあなたのウェブサイトに登録できるようにするには、ユーザ登録を有効化する必要があります。%1$sネットワークの設定%2$sを開き、「登録の設定」の下の「ユーザーアカウントの新規登録を許可する。」をチェックしてください。 %3$s非表示%4$s"
 
 #: ../front-end/class-formbuilder.php:506
 msgid "User to edit:"
-msgstr "要编辑的用户"
+msgstr "編集するユーザ:"
 
 #: ../front-end/default-fields/password/password.php:44
 #: ../front-end/recover.php:244
 msgid "The password must have the minimum length of %s characters"
-msgstr "密码至少应包括%s个字符"
+msgstr "パスワードは最低%s文字必要です。"
 
 #: ../front-end/default-fields/password/password.php:48
 #: ../front-end/recover.php:248
 msgid "The password must have a minimum strength of %s"
-msgstr "密码至少满足强度 %s"
+msgstr "パスワードの強度が最低「%s」である必要があります。"
 
 #: ../front-end/extra-fields/user-role/user-role.php:106
 msgid "You cannot register this user role"
-msgstr "您不可以注册这个用户组"
+msgstr "このユーザー権限は登録できません。"
 
 #: ../front-end/login.php:105
 msgid "username or email"
-msgstr "用户名或邮件"
+msgstr "ユーザー名またはメールアドレス"
 
 #: ../front-end/login.php:174
 msgid "Username or Email"
-msgstr "用户名或邮件"
+msgstr "ユーザー名またはメールアドレス"
 
 #: ../front-end/logout.php:15
 msgid "You are currently logged in as %s. "
-msgstr "您现在的登陆名为 %s"
+msgstr "%s さんとしてログイン中です。"
 
 #: ../front-end/logout.php:15
 msgid "Log out &raquo;"
-msgstr "登出&raquo;"
+msgstr "ログアウト &raquo;"
 
 #: ../modules/email-customizer/email-customizer.php:31
 msgid "User Role"
-msgstr "用户角色"
+msgstr "権限グループ"
 
 #: ../modules/user-listing/userlisting.php:1192
 msgid "View all extra shortcode parameters"
-msgstr "查看其他的断码参数"
+msgstr "全てのショートコード用パラメーターを見る"
 
 #: ../modules/user-listing/userlisting.php:1206
 msgid "displays only the users that you specified the user_id for"
-msgstr "仅向指定用户ID显示"
+msgstr "user_idを指定したユーザのみを表示"
 
 #: ../modules/user-listing/userlisting.php:1212
 msgid "displays all users except the ones you specified the user_id for"
-msgstr "向除了指定用户ID之外的所有用户显示"
+msgstr "user_idで指定した以外の全てのユーザを表示"
 
 #: ../features/functions.php:506
 msgid "Minimum length of %d characters"
-msgstr "最少%d个字符"
+msgstr "最低%d文字必要です。"
 
 #: ../front-end/class-formbuilder.php:99 ../front-end/class-formbuilder.php:102
 msgid "This message is only visible by administrators"
-msgstr "只有管理员可以查看该信息"
+msgstr "このメッセージは管理者のみ閲覧できます"
 
 #: ../front-end/extra-fields/avatar/avatar.php:124
 msgid "The image file set in the %s field for this user could not be found on the server. The default WordPress avatar is being used at the moment."
-msgstr "服务器无法找到用户指定项中的图像文件，使用WordPress的默认图片"
+msgstr "このユーザの%s欄に指定された画像がサーバー上で見付かりません。WordPress標準のアバターが一時的に使用されます。"
 
 #: ../modules/user-listing/userlisting.php:364
 msgid "User not found"
-msgstr "找不到用户"
+msgstr "ユーザーが見つかりませんでした"
 
 #: ../modules/email-customizer/admin-email-customizer.php:38
 #: ../modules/email-customizer/user-email-customizer.php:38
 msgid "Valid tags {{reply_to}} and {{site_name}}"
-msgstr ""
+msgstr "使用可能なタグは {{reply_to}} と {{site_name}} です。"
 
 #: ../admin/admin-bar.php:48
 msgid "Choose which user roles view the admin bar in the front-end of the website."
-msgstr "选择哪个用户角色可以产看网站前台的管理员工具栏"
+msgstr "どの権限のユーザのサイト閲覧時に管理バーが表示されるか選択してください。"
 
 #: ../admin/manage-fields.php:96
 msgid "Enter a comma separated list of values<br/>This can be anything, as it is hidden from the user, but should not contain special characters or apostrophes"
-msgstr "因为用户无法看到您所输入的字符，您可以输入任意字符并以逗号“,\" 隔开，但这些字符不能包括特殊符号"
+msgstr "選択肢に対応する値をカンマで区切って入力してください。<br/>この値はhiddenフォームで使われ、ユーザに見えないのでどんなもの構いませんが、特殊文字とアポストロフィは含めない方が良いでしょう。"
 
 #: ../admin/manage-fields.php:394
 msgid "The meta-name cannot be empty\n"
-msgstr ""
+msgstr "メタネームは空欄にはできません\n"
 
 #: ../admin/register-version.php:69
 msgid "Now that you acquired a copy of %s, you should take the time and register it with the serial number you received"
-msgstr ""
+msgstr "%sをご購入いただきましたら、こちらでお受け取りになったシリアルナンバーを登録してください。"
 
 #: ../admin/register-version.php:243
 msgid "<p>Your <strong>Profile Builder</strong> serial number is invalid or missing. <br/>Please %1$sregister your copy%2$s to receive access to automatic updates and support. Need a license key? %3$sPurchase one now%4$s</p>"
-msgstr ""
+msgstr "<p><strong>Profile Builder</strong>のシリアルナンバーが未登録か誤っています。<br/>%1$sライセンス登録%2$s から登録し、自動アップデートやサポートをお受け取りください。まだライセンスキーをお持ちでない場合はこちらで購入できます。%3$s今すぐ購入%4$s</p>"
 
 #: ../admin/register-version.php:246
 msgid "<p>Your <strong>Profile Builder</strong> license has expired. <br/>Please %1$sRenew Your Licence%2$s to continue receiving access to product downloads, automatic updates and support. %3$sRenew now and get 50&#37; off %4$s %5$sDismiss%6$s</p>"
-msgstr ""
+msgstr "<p>あなたの<strong>Profile Builder</strong>ライセンスは有効期限が切れました。<br/>%1$sライセンス更新%2$sを行い、プロダクトのダウンロード、自動更新、サポートを御利用ください。%3$s今すぐ更新し50&#37; off %4$s %5$s非表示%6$s</p>"
 
 #: ../admin/register-version.php:251
 msgid "<p>Your <strong>Profile Builder</strong> license is about to expire on %5$s. <br/>Please %1$sRenew Your Licence%2$s to continue receiving access to product downloads, automatic updates and support. %3$sRenew now and get 50&#37; off %4$s %6$sDismiss%7$s</p>"
-msgstr ""
+msgstr "<p>あなたの<strong>Profile Builder</strong>ライセンスは%5$sに期限切れとなります。 <br/>プロダクトのダウンロード、自動更新、サポートのため、%1$sライセンス更新%2$sを行ってください。%3$s今すぐ更新し50&#37;割引き%4$s %6$s非表示%7$s</p>"
 
 #: ../assets/lib/wck-api/fields/country select.php:14
 #: ../assets/lib/wck-api/fields/cpt select.php:17
 #: ../assets/lib/wck-api/fields/select.php:14 ../assets/lib/wck-api/fields/user
 #: select.php:15
 msgid "...Choose"
-msgstr "请选择"
+msgstr "...選択してください"
 
 #: ../features/class-list-table.php:526 ../features/class-list-table.php:941
 msgid "1 item"
-msgstr ""
+msgstr "1アイテム"
 
 #: ../features/functions.php:492
 msgid "Very Weak"
-msgstr "非常弱"
+msgstr "とても弱い"
 
 #: ../features/functions.php:580
 msgid "This field is required"
-msgstr "必填选项"
+msgstr "この欄は必須です"
 
 #: ../features/functions.php:600
 msgid "Cancel"
-msgstr "取消"
+msgstr "キャンセル"
 
 #: ../features/functions.php:636
 msgid "To allow users to register for your website via Profile Builder, you first must enable user registration. Go to %1$sSettings -> General%2$s tab, and under Membership make sure to check “Anyone can register”. %3$sDismiss%4$s"
-msgstr ""
+msgstr "ユーザがProfile Builderを通じてあなたのウェブサイトに登録できるようにするには、ユーザ登録を有効化する必要があります。%1$s設定 -> 一般%2$sタブを開き、「メンバーシップ」の「だれでもユーザー登録ができるようにする」をチェックしてください。%3$s非表示%4$s"
 
 #: ../front-end/login.php:96
 msgid "Invalid username."
-msgstr "不正确的用户名"
+msgstr "不適格なユーザ名"
 
 #: ../front-end/login.php:101 ../front-end/login.php:105
 msgid "username"
-msgstr "用户名"
+msgstr "ユーザー名"
 
 #: ../front-end/login.php:101
 msgid "email"
-msgstr "邮件"
+msgstr "メール"
 
 #: ../front-end/login.php:208
 msgid "Lost your password?"
-msgstr "忘记密码？"
+msgstr "パスワードをお忘れですか？"
 
 #: ../index.php:34
 msgid " is also activated. You need to deactivate it before activating this version of the plugin."
-msgstr ""
+msgstr "が有効になっています。このバージョンのプラグインを有効にするには、それを無効化する必要があります。"
 
 #: ../modules/email-customizer/admin-email-customizer.php:54
 #: ../modules/email-customizer/user-email-customizer.php:54
 msgid "Must be a valid email address or the tag {{reply_to}} which defaults to the administrator email"
-msgstr ""
+msgstr "正しいメールアドレスか{{reply_to}}タグ（標準では管理者のメールアドレス）を入れてください。"
 
 #: ../features/email-confirmation/email-confirmation.php:510
 #: ../features/email-confirmation/email-confirmation.php:513
@@ -451,111 +462,111 @@ msgstr ""
 #: ../modules/email-customizer/email-customizer.php:402
 #: ../modules/email-customizer/email-customizer.php:416
 msgid "Your selected password at signup"
-msgstr "您在注册时输入的密码"
+msgstr "登録時に選択したパスワード"
 
 #: ../modules/email-customizer/user-email-customizer.php:38
 msgid "These settings are also replicated in the \"Admin Email Customizer\" settings-page upon save."
-msgstr ""
+msgstr "これらの設定を変更すると「メール文面編集（ユーザ宛）」設定ページにも反映されます。"
 
 #: ../modules/multiple-forms/edit-profile-forms.php:270
 msgid "This form is empty."
-msgstr "这个表格是空的"
+msgstr "フォームが空欄です。"
 
 #: ../modules/multiple-forms/multiple-forms.php:416
 msgid "Delete all items"
-msgstr "删除所有条目"
+msgstr "全項目削除"
 
 #: ../modules/multiple-forms/multiple-forms.php:416
 msgid "Delete all"
-msgstr "全部删除"
+msgstr "全削除"
 
 #: ../modules/multiple-forms/register-forms.php:226
 msgid "Choose..."
-msgstr "请选择"
+msgstr "選択..."
 
 #: ../modules/user-listing/userlisting.php:1283
 msgid "Set the number of users to be displayed on every paginated part of the all-userlisting"
-msgstr ""
+msgstr "全てのユーザ一覧のページネーション毎のユーザ表示数を指定してください。"
 
 #: ../admin/admin-bar.php:10
 msgid "Show/Hide the Admin Bar on the Front-End"
-msgstr "显示/隐藏管理员工具栏在前端"
+msgstr "公開ページでの管理バーの表示／非表示"
 
 #: ../admin/admin-bar.php:10 ../admin/admin-bar.php:47
 msgid "Admin Bar Settings"
-msgstr "管理员工具栏设置"
+msgstr "管理バー設定"
 
 #: ../admin/admin-bar.php:57
 msgid "User-Role"
-msgstr "用户角色"
+msgstr "ユーザー権限"
 
 #: ../admin/admin-bar.php:58
 msgid "Visibility"
-msgstr "可见"
+msgstr "表示"
 
 #: ../admin/admin-bar.php:73
 msgid "Default"
-msgstr "默认"
+msgstr "デフォルトに従う"
 
 #: ../admin/admin-bar.php:74
 msgid "Show"
-msgstr "显示"
+msgstr "表示"
 
 #: ../admin/admin-bar.php:75
 msgid "Hide"
-msgstr "隐藏"
+msgstr "非表示"
 
 #: ../admin/admin-bar.php:86 ../admin/general-settings.php:189
 #: ../admin/register-version.php:95 ../features/functions.php:593
 #: ../modules/custom-redirects/custom-redirects.php:136
 #: ../modules/modules.php:142
 msgid "Save Changes"
-msgstr "保存更改"
+msgstr "変更を保存"
 
 #: ../admin/admin-functions.php:34
 msgid "Login is set to be done using the E-mail. This field will NOT appear in the front-end! ( you can change these settings under the \"%s\" tab )"
-msgstr "登录允许使用电子邮件。这字段不会显示在前端！ ( 你可以改变这些设置，在 \"%s\" 选项卡中 )"
+msgstr "ログインはメールアドレスを用いるよう設定されました. この欄は公開部分には表示されません！ ( この設定は \"%s\" タブで変更できます )"
 
 #: ../admin/admin-functions.php:34 ../admin/general-settings.php:10
 #: ../admin/general-settings.php:38
 msgid "General Settings"
-msgstr "常规设置"
+msgstr "一般設定"
 
 #: ../admin/admin-functions.php:112 ../admin/general-settings.php:175
 msgid "Very weak"
-msgstr "非常弱"
+msgstr "とても弱い"
 
 #: ../admin/admin-functions.php:112 ../admin/general-settings.php:176
 #: ../features/functions.php:492
 msgid "Weak"
-msgstr "弱"
+msgstr "弱い"
 
 #: ../admin/admin-functions.php:112 ../admin/general-settings.php:177
 #: ../features/functions.php:492
 msgid "Medium"
-msgstr "中"
+msgstr "中程度"
 
 #: ../admin/admin-functions.php:112 ../admin/general-settings.php:178
 #: ../features/functions.php:492
 msgid "Strong"
-msgstr "强"
+msgstr "強固"
 
 #: ../admin/admin-functions.php:162
 msgid "Add Field"
-msgstr "添加字段"
+msgstr "欄を追加"
 
 #: ../admin/admin-functions.php:164
 #: ../modules/class-mustache-templates/class-mustache-templates.php:374
 msgid "Save Settings"
-msgstr "保存设置"
+msgstr "設定を保存"
 
 #: ../admin/basic-info.php:10
 msgid "Basic Information"
-msgstr "基本信息"
+msgstr "基本情報"
 
 #: ../admin/basic-info.php:29
 msgid "Version %s"
-msgstr "版本 %s"
+msgstr "バージョン %s"
 
 #: ../admin/basic-info.php:30
 msgid "<strong>Profile Builder </strong>"
@@ -563,119 +574,119 @@ msgstr "<strong>Profile Builder </strong>"
 
 #: ../admin/basic-info.php:31
 msgid "The best way to add front-end registration, edit profile and login forms."
-msgstr "最好的前端注册、编辑个人资料与登陆表单的实现方式。"
+msgstr "登録、プロフィール編集、ログインフォームをサイトに追加する最高の選択肢です。"
 
 #: ../admin/basic-info.php:33
 msgid "For Modern User Interaction"
-msgstr "新颖的用户交互。"
+msgstr "現代的なユーザインタラクション"
 
 #: ../admin/basic-info.php:36 ../features/login-widget/login-widget.php:59
 msgid "Login"
-msgstr "登陆"
+msgstr "ログイン"
 
 #: ../admin/basic-info.php:37
 msgid "Friction-less login using <strong class=\"nowrap\">[wppb-login]</strong> shortcode or a widget."
-msgstr "快捷登陆使用 <strong class=\"nowrap\">[wppb-login]</strong> 简码或者小工具。"
+msgstr "<strong class=\"nowrap\">[wppb-login]</strong> ショートコードやウィジェットで、スムーズなログインフォーム"
 
 #: ../admin/basic-info.php:40
 msgid "Registration"
-msgstr "注册"
+msgstr "利用登録"
 
 #: ../admin/basic-info.php:41
 msgid "Beautiful registration forms fully customizable using the <strong class=\"nowrap\">[wppb-register]</strong> shortcode."
-msgstr "漂亮的注册表单，完全可自定义使用 <strong class=\"nowrap\">[wppb-register]</strong> 简码。"
+msgstr "<strong class=\"nowrap\">[wppb-register]</strong>ショートコードで、美しくフルカスタマイズ可能な登録フォーム"
 
 #: ../admin/basic-info.php:44
 msgid "Edit Profile"
-msgstr "编辑个人资料"
+msgstr "プロフィール編集"
 
 #: ../admin/basic-info.php:45
 msgid "Straight forward edit profile forms using <strong class=\"nowrap\">[wppb-edit-profile]</strong> shortcode."
-msgstr "编辑个人资料直接可以使用 <strong class=\"nowrap\">[wppb-edit-profile]</strong> 简码."
+msgstr "<strong class=\"nowrap\">[wppb-edit-profile]</strong>ショートコードで、簡単なプロフィール編集フォーム"
 
 #: ../admin/basic-info.php:51
 msgid "Extra Features"
-msgstr "额外字段"
+msgstr "追加機能"
 
 #: ../admin/basic-info.php:52
 msgid "Features that give you more control over your users, increased security and help you fight user registration spam."
-msgstr "特性，让您对您的用户更多的控制，增强安全性，帮助用户注册与限制垃圾邮件。"
+msgstr "サイトユーザに関する操作権をあなたに与え、セキュリティを強化し、登録スパムと戦うお手伝いをする追加機能を備えています。"
 
 #: ../admin/basic-info.php:53
 msgid "Enable extra features"
-msgstr "启用额外功能"
+msgstr "追加機能を設定"
 
 #: ../admin/basic-info.php:57
 msgid "Recover Password"
-msgstr "恢复密码"
+msgstr "パスワード忘れ対応"
 
 #: ../admin/basic-info.php:58
 msgid "Allow users to recover their password in the front-end using the [wppb-recover-password]."
-msgstr "允许用户恢复密码在前端使用简码 [wppb-recover-password]。"
+msgstr "[wppb-recover-password] ショートコードを使い、ユーザがパスワードを忘れた際のリセットを公開ページ上で対応できます。"
 
 #: ../admin/basic-info.php:61
 msgid "Admin Approval (*)"
-msgstr "管理员审批 (*)"
+msgstr "管理者承認 (*)"
 
 #: ../admin/basic-info.php:62
 msgid "You decide who is a user on your website. Get notified via email or approve multiple users at once from the WordPress UI."
-msgstr "你决定在你的网站用户是谁。从WordPress 界面通过电子邮件或批准的多个用户获得通知。"
+msgstr "誰がこのサイトを利用できるか管理者が選別します。メールでの通知を受け取るか、WordPress UI上でまとめて承認することができます。"
 
 #: ../admin/basic-info.php:65
 msgid "Email Confirmation"
-msgstr "电子邮件确认"
+msgstr "メールアドレス確認"
 
 #: ../admin/basic-info.php:66
 msgid "Make sure users sign up with genuine emails. On registration users will receive a notification to confirm their email address."
-msgstr "确保用户注册是使用真实的电子邮件。注册用户将收到一个通知，确认他们的电子邮件地址。"
+msgstr "本物のメールアドレスによる登録を確実にします。登録時、ユーザはメールアドレス確認の通知メールを受け取ります。"
 
 #: ../admin/basic-info.php:69
 msgid "Minimum Password Length and Strength Meter"
-msgstr "最小密码长度和强度表"
+msgstr "最低パスワード長と強度メーター"
 
 #: ../admin/basic-info.php:70
 msgid "Eliminate weak passwords altogether by setting a minimum password length and enforcing a certain password strength."
-msgstr "消除弱密码最小密码长度，并强制执行设定的密码强度。"
+msgstr "最低パスワード文字数とパスワード強度を設定することで、単純すぎるパスワードの使用を防止できます。"
 
 #: ../admin/basic-info.php:73
 msgid "Login with Email or Username"
-msgstr "通过电子邮件或用户名登录"
+msgstr "メールアドレスまたはユーザー名でログイン"
 
 #: ../admin/basic-info.php:74
 msgid "Allow users to log in with their email or username when accessing your site."
-msgstr "当用户访问您的网站时，允许用户登录他们的用户名和电子邮件。"
+msgstr "あなたのサイトにユーザがアクセスする際、メールアドレスまたはユーザ名でログインできます。"
 
 #: ../admin/basic-info.php:87
 msgid "Customize Your Forms The Way You Want (*)"
-msgstr "自定义表格用你想要的方式（*）"
+msgstr "フォームも自由自在にカスタマイズ (*)"
 
 #: ../admin/basic-info.php:88
 msgid "With Extra Profile Fields you can create the exact registration form your project needs."
-msgstr "额外个人资料字段，根据您的项目需求你可以创建精确的登注册表单。"
+msgstr "プロフィール項目追加機能で、登録フォームに必要な欄を追加することができます。"
 
 #: ../admin/basic-info.php:90
 msgid "Extra Profile Fields are available in Hobbyist or PRO versions"
-msgstr "额外个人资料字段需要激活 Hobbyist 或者 PRO 版本才可用"
+msgstr "プロフィールの項目追加はHobbyistとPROバージョンでのみ利用可能です"
 
 #: ../admin/basic-info.php:92
 msgid "Get started with extra fields"
-msgstr "开始使用额外字段"
+msgstr "追加記入欄を使用"
 
 #: ../admin/basic-info.php:95
 msgid "Avatar Upload"
-msgstr "头像上传"
+msgstr "アバター画像アップロード"
 
 #: ../admin/basic-info.php:96
 msgid "Generic Uploads"
-msgstr "常规上传"
+msgstr "ファイルアップロード"
 
 #: ../admin/basic-info.php:97
 msgid "Agree To Terms Checkbox"
-msgstr "同意使用条款"
+msgstr "利用許諾チェックボックス"
 
 #: ../admin/basic-info.php:98
 msgid "Datepicker"
-msgstr "日期选择器"
+msgstr "日付ピッカー"
 
 #: ../admin/basic-info.php:99
 msgid "reCAPTCHA"
@@ -683,47 +694,47 @@ msgstr "reCAPTCHA"
 
 #: ../admin/basic-info.php:100
 msgid "Country Select"
-msgstr "国家选择"
+msgstr "国選択"
 
 #: ../admin/basic-info.php:101
 msgid "Timezone Select"
-msgstr "时区选择"
+msgstr "タイムゾーン選択"
 
 #: ../admin/basic-info.php:102
 msgid "Input / Hidden Input"
-msgstr "输入/隐藏输入"
+msgstr "テキスト（一行）／不可視"
 
 #: ../admin/basic-info.php:103
 msgid "Checkbox"
-msgstr "复选框"
+msgstr "チェックボックス"
 
 #: ../admin/basic-info.php:104
 msgid "Select"
-msgstr "选择"
+msgstr "プルダウンメニュー"
 
 #: ../admin/basic-info.php:105
 msgid "Radio Buttons"
-msgstr "单选按钮"
+msgstr "ラジオボタン"
 
 #: ../admin/basic-info.php:106
 msgid "Textarea"
-msgstr "文本框"
+msgstr "テキスト（複数行）"
 
 #: ../admin/basic-info.php:115
 msgid "Powerful Modules (**)"
-msgstr "强大的模块（**）"
+msgstr "強力な追加モジュール (**)"
 
 #: ../admin/basic-info.php:116
 msgid "Everything you will need to manage your users is probably already available using the Pro Modules."
-msgstr "使用一切你需要的工具，用于管理你的用户的模块。"
+msgstr "あなたのユーザを管理するのに必要なものが、PROバージョンには既に用意されているでしょう。"
 
 #: ../admin/basic-info.php:118
 msgid "Enable your modules"
-msgstr "启用你的模块"
+msgstr "モジュール設定"
 
 #: ../admin/basic-info.php:121
 msgid "Find out more about PRO Modules"
-msgstr "了解关于专业版模块的更多内容"
+msgstr "PROバージョンについて詳しく見る"
 
 #: ../admin/basic-info.php:126 ../modules/modules.php:111
 #: ../modules/user-listing/userlisting.php:11
@@ -731,61 +742,61 @@ msgstr "了解关于专业版模块的更多内容"
 #: ../modules/user-listing/userlisting.php:17
 #: ../modules/user-listing/userlisting.php:23
 msgid "User Listing"
-msgstr "用户列表"
+msgstr "ユーザー一覧表示"
 
 #: ../admin/basic-info.php:128
 msgid "Easy to edit templates for listing your website users as well as creating single user pages. Shortcode based, offering many options to customize your listings."
-msgstr "易于编辑模列表您的网站用户，以及创建单用户页面模板。基于简码，提供了许多选项来定制您的列表。"
+msgstr ""
 
 #: ../admin/basic-info.php:130
 msgid "To create a page containing the users registered to this current site/blog, insert the following shortcode in a page of your chosing: <strong class=\"nowrap\">[wppb-list-users]</strong>."
-msgstr "创建一个页面包含已注册在当前的网站/博客用户列表，将下面的短码放进页面："
+msgstr "このサイト／ブログに登録したユーザを閲覧するページを作るには、<strong class=\"nowrap\">[wppb-list-users]</strong>ショートコードを任意のページに挿入します。"
 
 #: ../admin/basic-info.php:134
 msgid "Email Customizer"
-msgstr "电子邮件定制"
+msgstr "メール文面編集"
 
 #: ../admin/basic-info.php:135
 msgid "Personalize all emails sent to your users or admins. On registration, email confirmation, admin approval / un-approval."
-msgstr "个性化邮件发送到你的用户或管理员。注册，电子邮件确认，管理员批准/拒绝。"
+msgstr "新規登録、Eメール確認時、管理者承認／不承認などユーザや管理者宛に送信される全てのメール文面をカスタマイズできます。"
 
 #: ../admin/basic-info.php:138
 #: ../modules/custom-redirects/custom-redirects.php:29
 #: ../modules/modules.php:32 ../modules/modules.php:132
 msgid "Custom Redirects"
-msgstr "自定义重定向"
+msgstr "カスタム・リダイレクト"
 
 #: ../admin/basic-info.php:139
 msgid "Keep your users out of the WordPress dashboard, redirect them to the front-page after login or registration, everything is just a few clicks away."
-msgstr "让你的用户离开 WordPress 仪表盘，重定向到他们的前端页面，登录注册一切都只需几个点击。"
+msgstr "一般ユーザにWordPressダッシュボードを見せなくし、ログイン後、登録後などに任意の公開ページに簡単にリダイレクトできます。"
 
 #: ../admin/basic-info.php:144 ../modules/modules.php:97
 msgid "Multiple Registration Forms"
-msgstr "多个注册形式"
+msgstr "複数の登録フォーム"
 
 #: ../admin/basic-info.php:145
 msgid "Set up multiple registration forms with different fields for certain user roles. Capture different information from different types of users."
-msgstr "设置多个注册表单为某些用户角色不同的字段。获取来自不同类型的用户不同的信息。"
+msgstr "ユーザの権限毎に異なる記入欄を備えた個別の登録フォームを用意することができます。様々なユーザタイプ毎に異なる情報を取得することが可能です。"
 
 #: ../admin/basic-info.php:148 ../modules/modules.php:104
 msgid "Multiple Edit-profile Forms"
-msgstr "多个编辑个人资料形式"
+msgstr "複数のプロフィール編集フォーム"
 
 #: ../admin/basic-info.php:149
 msgid "Allow different user roles to edit their specific information. Set up multiple edit-profile forms with different fields for certain user roles."
-msgstr "允许不同的用户角色去编辑他们的具体信息。设置多个编辑表单一不同的作用字段。"
+msgstr "ユーザの権限毎に異なる記入欄を備えた個別のプロフィール編集フォームを用意することができます。様々なユーザタイプ毎に異なる情報を記入させることが可能です。"
 
 #: ../admin/basic-info.php:161
 msgid " * only available in the %1$sHobbyist and Pro versions%2$s."
-msgstr " * 仅获得在 %1$sHobbyist 与专业版本 %2$s."
+msgstr " *印の項目は%1$sHobbyistとProバージョン%2$sでのみ利用可能です。"
 
 #: ../admin/basic-info.php:162
 msgid "** only available in the %1$sPro version%2$s."
-msgstr "** 仅激活在 %1$s专业版本 %2$s."
+msgstr "**印の項目は%1$sProバージョン%2$sでのみ利用可能です。"
 
 #: ../admin/general-settings.php:42
 msgid "Load Profile Builder's own CSS file in the front-end:"
-msgstr "在前端载入 Profile Builder 的CSS文件："
+msgstr "Profile Builder固有のCSSを公開ページで読み込む:"
 
 #: ../admin/general-settings.php:45 ../admin/general-settings.php:60
 #: ../admin/general-settings.php:114
@@ -793,65 +804,65 @@ msgstr "在前端载入 Profile Builder 的CSS文件："
 #: ../modules/multiple-forms/register-forms.php:226
 #: ../modules/user-listing/userlisting.php:1288
 msgid "Yes"
-msgstr "是"
+msgstr "はい"
 
 #: ../admin/general-settings.php:47
 msgid "You can find the default file here: %1$s"
-msgstr "你可以在这里找到默认的文件: %1$s"
+msgstr "初期ファイルはこちら: %1$s"
 
 #: ../admin/general-settings.php:56
 msgid "\"Email Confirmation\" Activated:"
-msgstr "\"邮件确认\" 激活:"
+msgstr "\"Eメール確認\"機能 有効化:"
 
 #: ../admin/general-settings.php:61 ../admin/general-settings.php:115
 #: ../modules/multiple-forms/register-forms.php:225
 #: ../modules/multiple-forms/register-forms.php:226
 msgid "No"
-msgstr "不"
+msgstr "いいえ"
 
 #: ../admin/general-settings.php:64
 msgid "On single-site installations this works with front-end forms only. Recommended to redirect WP default registration to a Profile Builder one using \"Custom Redirects\" addon."
-msgstr "在单个站点安装本工作会在前端形成。建议转向 WP 默认注册使用 Profile Builder 的 \"自定义转向\" 模块。"
+msgstr "シングルサイト・インストールのサイトでは、公開フォームのみで機能します。\"カスタム・リダイレクト\"を使用し、WordPressの標準登録画面からProfile Builderのものへリダイレクトすることをおすすめします。"
 
 #: ../admin/general-settings.php:65
 msgid "The \"Email Confirmation\" feature is active (by default) on WPMU installations."
-msgstr "这个 \"邮件确认\" 功能默认在 WPMU 安装是默认开启的。"
+msgstr "\"Eメール確認\"機能はWPMUインストールでは（デフォルトで）有効です。"
 
 #: ../admin/general-settings.php:67
 msgid "You can find a list of unconfirmed email addresses %1$sUsers > All Users > Email Confirmation%2$s."
-msgstr "您可以找到还没确认邮箱地址的列表 %1$s用户 > 所有用户 > 邮箱确认%2$s."
+msgstr "未確認のメールアドレス一覧は、%1$sユーザー > ユーザー一覧 > アドレス未確認ユーザー%2$s で確認できます。"
 
 #: ../admin/general-settings.php:79
 msgid "\"Email Confirmation\" Landing Page:"
-msgstr "\"邮件确认\" 登陆页面:"
+msgstr "\"Eメール確認\"機能 ランディングページ:"
 
 #: ../admin/general-settings.php:84
 msgid "Existing Pages"
-msgstr "现有页面"
+msgstr "存在するページ"
 
 #: ../admin/general-settings.php:99
 msgid "Specify the page where the users will be directed when confirming the email account. This page can differ from the register page(s) and can be changed at any time. If none selected, a simple confirmation page will be displayed for the user."
-msgstr "指定供用户确认邮件的转向页面。此页面可不同于注册页面(s)并且可随时改变。如果没有指定，将显示给用户一个简单确认页。"
+msgstr "Eメール確認後にリダイレクトされるページを指定してください。これは登録ページと違っていてもよく、またいつでも変更できます。なにも指定していない場合、シンプルは確認ページが表示されます。"
 
 #: ../admin/general-settings.php:110
 msgid "\"Admin Approval\" Activated:"
-msgstr "\"管理员审批\" 激活:"
+msgstr "\"管理者承認\" 機能 有効化:"
 
 #: ../admin/general-settings.php:118
 msgid "You can find a list of users at %1$sUsers > All Users > Admin Approval%2$s."
-msgstr "您可以找到用户在 %1$s用户 > 所有用户 > 管理员审批%2$s."
+msgstr "ユーザーの一覧は %1$sユーザー > ユーザー一覧 > 監視者承認%2$sで見ることができます。"
 
 #: ../admin/general-settings.php:130
 msgid "\"Admin Approval\" Feature:"
-msgstr "\"管理员审批\" 功能 :"
+msgstr "\"管理者承認\" 機能:"
 
 #: ../admin/general-settings.php:133
 msgid "You decide who is a user on your website. Get notified via email or approve multiple users at once from the WordPress UI. Enable Admin Approval by upgrading to %1$sHobbyist or PRO versions%2$s."
-msgstr "您控制您的用户在网站上的角色。获得游戏通知或者一次性批量审批多用户。启用管理审批功能需要升级到 %1$sHobbyist 或者 专业版本%2$s。"
+msgstr "誰がこのサイトを利用できるか管理者が選別します。メールでの通知を受け取るか、WordPress UI上でまとめて承認することができます。この機能は%1$sHobbyist または PRO バージョン%2$sで有効化できます。"
 
 #: ../admin/general-settings.php:140
 msgid "Allow Users to Log in With:"
-msgstr "允许用户使用什么登陆："
+msgstr "ユーザーログイン方法:"
 
 #: ../admin/general-settings.php:145 ../admin/manage-fields.php:146
 #: ../features/admin-approval/class-admin-approval.php:177
@@ -861,80 +872,80 @@ msgstr "允许用户使用什么登陆："
 #: ../modules/user-listing/userlisting.php:596
 #: ../modules/user-listing/userlisting.php:1244
 msgid "Username"
-msgstr "姓名"
+msgstr "ユーザー名"
 
 #: ../admin/general-settings.php:146 ../front-end/login.php:170
 #: ../modules/email-customizer/email-customizer.php:29
 #: ../modules/user-listing/userlisting.php:602
 #: ../modules/user-listing/userlisting.php:1245
 msgid "Email"
-msgstr "电子邮件"
+msgstr "メールアドレス"
 
 #: ../admin/general-settings.php:158
 msgid "Minimum Password Length:"
-msgstr "最小密码长度："
+msgstr "最低パスワード長:"
 
 #: ../admin/general-settings.php:163
 msgid "Enter the minimum characters the password should have. Leave empty for no minimum limit"
-msgstr "输入密码必须最少字符。留空为没有限制"
+msgstr "パスワードの最低文字数を入力。指定しない場合は空欄。"
 
 #: ../admin/general-settings.php:170
 msgid "Minimum Password Strength:"
-msgstr "最小密码强度："
+msgstr "パスワードの最低強度:"
 
 #: ../admin/general-settings.php:174
 msgid "Disabled"
-msgstr "关闭"
+msgstr "無効"
 
 #: ../admin/manage-fields.php:12
 msgid "Manage Fields"
-msgstr "管理字段"
+msgstr "記入欄設定"
 
 #: ../admin/manage-fields.php:13
 msgid "Manage Default and Extra Fields"
-msgstr "管理默认与额外字段"
+msgstr "記入欄設定"
 
 #: ../admin/manage-fields.php:85
 msgid "Field Title"
-msgstr "字段标题"
+msgstr "欄名称"
 
 #: ../admin/manage-fields.php:85
 msgid "Title of the field"
-msgstr "字段的标题"
+msgstr "欄の名称"
 
 #: ../admin/manage-fields.php:86
 #: ../modules/multiple-forms/edit-profile-forms.php:241
 #: ../modules/multiple-forms/register-forms.php:262
 msgid "Field"
-msgstr "字段"
+msgstr "記入欄"
 
 #: ../admin/manage-fields.php:87
 msgid "Meta-name"
-msgstr "Meta-name"
+msgstr "メタネーム"
 
 #: ../admin/manage-fields.php:87
 msgid "Use this in conjuction with WordPress functions to display the value in the page of your choosing<br/>Auto-completed but in some cases editable (in which case it must be uniqe)<br/>Changing this might take long in case of a very big user-count"
-msgstr "使用这个结合 WordPress 功能去显示您选择的页面中的值<br/> 自动完成，但在某些情况下可编辑（在这情况下它必须是唯一的）<br/> 在用户数量大的情况下，改变这个可能需要很长时间"
+msgstr "この値をページに表示するにはWordPressの関数を組み合わせて御利用ください。<br />原則として自動入力されますが、時として（ユニークなものを指定しなければならない場合）、編集可能になります。<br/>これを変更するとユーザ数によっては非常に長い時間がかかる場合があります。"
 
 #: ../admin/manage-fields.php:88
 #: ../modules/multiple-forms/edit-profile-forms.php:242
 #: ../modules/multiple-forms/register-forms.php:263
 msgid "ID"
-msgstr "编号"
+msgstr "ID"
 
 #: ../admin/manage-fields.php:88
 #: ../modules/multiple-forms/edit-profile-forms.php:242
 #: ../modules/multiple-forms/register-forms.php:263
 msgid "A unique, auto-generated ID for this particular field<br/>You can use this in conjuction with filters to target this element if needed<br/>Can't be edited"
-msgstr "一个独特的、为特定的字段自动生成ID<br/>如果需要可以使用过滤器调用这个目标<br/>不能编辑"
+msgstr "この記入欄固有の自動生成されたIDです<br/>フィルターでこの要素を指し示すのに使用できます。<br/>編集不可"
 
 #: ../admin/manage-fields.php:89
 msgid "Description"
-msgstr "描述"
+msgstr "説明"
 
 #: ../admin/manage-fields.php:89
 msgid "Enter a (detailed) description of the option for end users to read<br/>Optional"
-msgstr "输入（详细）的最终用户阅读选项的描述<br/>可选"
+msgstr "一般ユーザが何を記入すれば良いかの詳しい説明を記入してください（任意）"
 
 #: ../admin/manage-fields.php:90
 msgid "Row Count"
@@ -942,142 +953,142 @@ msgstr "行数"
 
 #: ../admin/manage-fields.php:90
 msgid "Specify the number of rows for a 'Textarea' field<br/>If not specified, defaults to 5"
-msgstr "指定 'Textarea' 字段的行数<br/>如果没有指定，缺省为5"
+msgstr "'Textarea'型記入欄の行数<br/>指定しない場合は5行になります。"
 
 #: ../admin/manage-fields.php:91
 msgid "Allowed Image Extensions"
-msgstr "允许的图像扩展"
+msgstr "対応画像拡張子"
 
 #: ../admin/manage-fields.php:92
 msgid "Allowed Upload Extensions"
-msgstr "允许的上传扩展"
+msgstr "アップロード可能な拡張子"
 
 #: ../admin/manage-fields.php:93
 msgid "Avatar Size"
-msgstr "头像大小"
+msgstr "アバターサイズ"
 
 #: ../admin/manage-fields.php:93
 msgid "Enter a value (between 20 and 200) for the size of the 'Avatar'<br/>If not specified, defaults to 100"
-msgstr "输入 '头像' 大小数值 ( 20 与 200 之间 ) <br/>如果没指定，默认是100"
+msgstr "アバター画像サイズの値を入力してください（20から200の間）<br/>指定しない場合のデフォルトは100です。"
 
 #: ../admin/manage-fields.php:94
 msgid "Date-format"
-msgstr "日期格式"
+msgstr "日付様式"
 
 #: ../admin/manage-fields.php:94
 msgid "Specify the format of the date when using Datepicker<br/>Valid options: mm/dd/yy, mm/yy/dd, dd/yy/mm, dd/mm/yy, yy/dd/mm, yy/mm/dd<br/>If not specified, defaults to mm/dd/yy"
-msgstr "当使用日期选择器指定日期格式<br/>有效选项: mm/dd/yy, mm/yy/dd, dd/yy/mm, dd/mm/yy, yy/dd/mm, yy/mm/dd<br/>如无指定，默认是 mm/dd/yy"
+msgstr "デートピッカーを利用する場合の日付書式を指定してください。<br/>利用可能な選択肢: mm/dd/yy, mm/yy/dd, dd/yy/mm, dd/mm/yy, yy/dd/mm, yy/mm/dd<br/>指定しないのデフォルトはmm/dd/yyです。"
 
 #: ../admin/manage-fields.php:95
 msgid "Terms of Agreement"
-msgstr "协议条款"
+msgstr "利用許諾"
 
 #: ../admin/manage-fields.php:95
 msgid "Enter a detailed description of the temrs of agreement for the user to read.<br/>Links can be inserted by using standard HTML syntax: &lt;a href=\"custom_url\"&gt;custom_text&lt;/a&gt;"
-msgstr "输入一个供用户查看的协议内容。<br/> 连接可以使用 HTML 语法，例如：&lt;a href=\"custom_url\"&gt;custom_text&lt;/a&gt;"
+msgstr "ユーザに読ませたい利用許諾書を入力します。<br/>リンクは標準的なHTML文法で挿入できます。: &lt;a href=\"custom_url\"&gt;custom_text&lt;/a&gt;"
 
 #: ../admin/manage-fields.php:96
 msgid "Options"
-msgstr "选项"
+msgstr "選択肢（記録）"
 
 #: ../admin/manage-fields.php:97
 msgid "Labels"
-msgstr "标签"
+msgstr "選択肢（表示）"
 
 #: ../admin/manage-fields.php:97
 msgid "Enter a comma separated list of labels<br/>Visible for the user"
-msgstr "输入一个逗号分隔标签 <br/> 对用户可见的"
+msgstr "選択肢をカンマで区切って入力してください。<br/>ユーザに提示される値です。"
 
 #: ../admin/manage-fields.php:102
 msgid "Default Value"
-msgstr "默认值"
+msgstr "初期値"
 
 #: ../admin/manage-fields.php:102
 msgid "Default value of the field"
-msgstr "该字段的默认值"
+msgstr "記入欄のデフォルト値"
 
 #: ../admin/manage-fields.php:103
 msgid "Default Option"
-msgstr "默认选项"
+msgstr "デフォルトの選択肢"
 
 #: ../admin/manage-fields.php:103
 msgid "Specify the option which should be selected by default"
-msgstr "指定选项的默认选择值"
+msgstr "デフォルトで選択状態にしたい選択肢を指定してください。"
 
 #: ../admin/manage-fields.php:104
 msgid "Default Option(s)"
-msgstr "默认选项(s)"
+msgstr "デフォルトの選択肢（複数）"
 
 #: ../admin/manage-fields.php:104
 msgid "Specify the option which should be checked by default<br/>If there are multiple values, separate them with a ',' (comma)"
-msgstr "指定选项默认是否勾选<br/>如果有多个值的选项，使用“，”分开（逗号）"
+msgstr "デフォルトで選択状態にしたい選択肢を指定してください。<br/>複数の値を指定する場合は',' (半角カンマ)で区切ってください。"
 
 #: ../admin/manage-fields.php:105
 msgid "Default Content"
-msgstr "默认内容"
+msgstr "デフォルトの値"
 
 #: ../admin/manage-fields.php:105
 msgid "Default value of the textarea"
-msgstr "文本默认值"
+msgstr "テキストエリアのデフォルト値"
 
 #: ../admin/manage-fields.php:106
 msgid "Required"
-msgstr "必须"
+msgstr "必須"
 
 #: ../admin/manage-fields.php:106
 msgid "Whether the field is required or not"
-msgstr "该字段是否必须"
+msgstr "この記入欄が必須かどうか"
 
 #: ../admin/manage-fields.php:107
 msgid "Overwrite Existing"
-msgstr "覆盖现有"
+msgstr "上書き"
 
 #: ../admin/manage-fields.php:107
 msgid "Selecting 'Yes' will add the field to the list, but will overwrite any other field in the database that has the same meta-name<br/>Use this at your own risk"
-msgstr "选择“是”将增加字段到列表中，但将覆盖在数据库中具有相同名称的任何其他领域的 meta-name<br/>使用需自己承担风险"
+msgstr "「Yes」を指定すると、データベース上で同じmeta-nameをもつ他のフィールドを上書きします。<br />自己責任でお使いください。"
 
 #: ../admin/manage-fields.php:113
 msgid "Field Properties"
-msgstr "字段属性"
+msgstr "記入欄の属性"
 
 #: ../admin/manage-fields.php:126
 msgid "Registration & Edit Profile"
-msgstr "注册与编辑资料"
+msgstr "プロファイルの登録と編集"
 
 #: ../admin/manage-fields.php:145
 msgid "Name"
-msgstr "姓名"
+msgstr "名前"
 
 #: ../admin/manage-fields.php:146
 msgid "Usernames cannot be changed."
-msgstr " 用户名不可更改。"
+msgstr "ユーザ名は変更できません。"
 
 #: ../admin/manage-fields.php:147
 msgid "First Name"
-msgstr "名字"
+msgstr "名"
 
 #: ../admin/manage-fields.php:148
 msgid "Last Name"
-msgstr "姓氏"
+msgstr "姓"
 
 #: ../admin/manage-fields.php:149 ../modules/user-listing/userlisting.php:635
 msgid "Nickname"
-msgstr "昵称"
+msgstr "ニックネーム"
 
 #: ../admin/manage-fields.php:150
 msgid "Display name publicly as"
-msgstr "公开显示为"
+msgstr "この名前で公開表示"
 
 #: ../admin/manage-fields.php:151
 msgid "Contact Info"
-msgstr "联系信息"
+msgstr "連絡先"
 
 #: ../admin/manage-fields.php:152
 #: ../features/admin-approval/class-admin-approval.php:180
 #: ../features/email-confirmation/class-email-confirmation.php:168
 #: ../modules/user-listing/userlisting.php:98
 msgid "E-mail"
-msgstr "电子邮件"
+msgstr "メールアドレス"
 
 #: ../admin/manage-fields.php:153
 #: ../modules/email-customizer/email-customizer.php:32
@@ -1085,7 +1096,7 @@ msgstr "电子邮件"
 #: ../modules/user-listing/userlisting.php:617
 #: ../modules/user-listing/userlisting.php:1246
 msgid "Website"
-msgstr "站点"
+msgstr "Webサイト"
 
 #: ../admin/manage-fields.php:157
 msgid "AIM"
@@ -1093,7 +1104,7 @@ msgstr "AIM"
 
 #: ../admin/manage-fields.php:158
 msgid "Yahoo IM"
-msgstr "雅虎通讯"
+msgstr "Yahoo IM"
 
 #: ../admin/manage-fields.php:159
 msgid "Jabber / Google Talk"
@@ -1101,87 +1112,87 @@ msgstr "Jabber / Google Talk"
 
 #: ../admin/manage-fields.php:162
 msgid "About Yourself"
-msgstr "关于您自己"
+msgstr "あなたについて"
 
 #: ../admin/manage-fields.php:163 ../modules/user-listing/userlisting.php:104
 #: ../modules/user-listing/userlisting.php:620
 #: ../modules/user-listing/userlisting.php:1247
 msgid "Biographical Info"
-msgstr "个人说明"
+msgstr "略歴"
 
 #: ../admin/manage-fields.php:163
 msgid "Share a little biographical information to fill out your profile. This may be shown publicly."
-msgstr "分享关于您的一些信息。可能会被公开。"
+msgstr ""
 
 #: ../admin/manage-fields.php:164 ../front-end/recover.php:75
 #: ../modules/email-customizer/email-customizer.php:30
 msgid "Password"
-msgstr "新密码"
+msgstr "パスワード"
 
 #: ../admin/manage-fields.php:164
 msgid "Type your password."
-msgstr "重复新密码"
+msgstr "パスワードを入力してください。"
 
 #: ../admin/manage-fields.php:165 ../front-end/recover.php:80
 msgid "Repeat Password"
-msgstr "重复新密码"
+msgstr "パスワード（確認）"
 
 #: ../admin/manage-fields.php:165
 msgid "Type your password again. "
-msgstr "再输入一遍新密码。"
+msgstr "パスワードを再入力してください。"
 
 #: ../admin/manage-fields.php:322 ../admin/manage-fields.php:466
 msgid "You must select a field\n"
-msgstr "你必须选择一个字段\n"
+msgstr "記入欄を選択してください\n"
 
 #: ../admin/manage-fields.php:332
 msgid "Please choose a different field type as this one already exists in your form (must be unique)\n"
-msgstr "请选择一个不同的字段类型，这个已经存在你的表格（必须是唯一的）\n"
+msgstr "他の記入欄タイプを選択してください（既にあるものと重複はできません）。\n"
 
 #: ../admin/manage-fields.php:343
 msgid "The entered avatar size is not between 20 and 200\n"
-msgstr "输入的头像大小不是20与200之间 \n"
+msgstr "入力したアバターサイズが20から200の間ではありません\n"
 
 #: ../admin/manage-fields.php:346
 msgid "The entered avatar size is not numerical\n"
-msgstr "输入的头像大小不是数值\n"
+msgstr "入力されたアバターサイズが数値ではありませんl\n"
 
 #: ../admin/manage-fields.php:354
 msgid "The entered row number is not numerical\n"
-msgstr "输入的行数不是数值\n"
+msgstr "入力された行数が数値ではありませんl\n"
 
 #: ../admin/manage-fields.php:357
 msgid "You must enter a value for the row number\n"
-msgstr "您必须输入一个值的行数\n"
+msgstr "数字で入力してください。\n"
 
 #: ../admin/manage-fields.php:375
 msgid "The entered value for the Datepicker is not a valid date-format\n"
-msgstr "日期选择器输入的值不是有效的日期格式\n"
+msgstr "日付欄に指定された値が正しい日付書式ではありません\n"
 
 #: ../admin/manage-fields.php:378
 msgid "You must enter a value for the date-format\n"
-msgstr "您必须输入一个日期格式的值\n"
+msgstr "正しい書式で日付を入力してください。\n"
 
 #: ../admin/manage-fields.php:406 ../admin/manage-fields.php:414
 #: ../admin/manage-fields.php:424
 msgid "That meta-name is already in use\n"
-msgstr "meta-name 已在使用\n"
+msgstr "そのメタネームは既に存在します。\n"
 
 #: ../admin/manage-fields.php:446
 msgid "The following option(s) did not coincide with the ones in the options list: %s\n"
-msgstr "下列选项(s)不符合的选项清单: %s\n"
+msgstr "以下の選択肢が一覧のにあるものと一致しません: %s\n"
 
 #: ../admin/manage-fields.php:450
 msgid "The following option did not coincide with the ones in the options list: %s\n"
-msgstr "下列选项不符合的选项清单: %s\n"
+msgstr "以下の選択肢が一覧のにあるものと一致しません: %s\n"
 
 #: ../admin/manage-fields.php:473
 msgid "That field is already added in this form\n"
-msgstr "这个字段已经加入这个\n"
+msgstr "この記入欄はこのフォームに追加済みです\n"
 
 #: ../admin/manage-fields.php:522
 msgid "<pre>Title</pre><pre>Type</pre><pre>Meta Name</pre><pre class=\"wppb-mb-head-required\">Required</pre>"
-msgstr "<pre>标题</pre><pre>类型</pre><pre>Meta Name</pre><pre class=\"wppb-mb-head-required\">必须</pre>"
+msgstr "<pre>ラベル</pre><pre>タイプ</pre><pre>メタネーム</pre><pre class=\"wppb-mb-head-required\">必須指定</pre>"
 
 #: ../admin/manage-fields.php:522
 #: ../assets/lib/wck-api/wordpress-creation-kit.php:440
@@ -1190,7 +1201,7 @@ msgstr "<pre>标题</pre><pre>类型</pre><pre>Meta Name</pre><pre class=\"wppb-
 #: ../features/functions.php:614 ../features/functions.php:621
 #: ../modules/multiple-forms/multiple-forms.php:416
 msgid "Edit"
-msgstr "编辑"
+msgstr "編集"
 
 #: ../admin/manage-fields.php:522
 #: ../assets/lib/wck-api/wordpress-creation-kit.php:440
@@ -1201,51 +1212,51 @@ msgstr "编辑"
 #: ../features/email-confirmation/class-email-confirmation.php:217
 #: ../features/functions.php:607 ../features/functions.php:621
 msgid "Delete"
-msgstr "删除"
+msgstr "削除"
 
 #: ../admin/manage-fields.php:537
 msgid "Use these shortcodes on the pages you want the forms to be displayed:"
-msgstr "使用这些简码在页面中你想要的形式显示："
+msgstr "フォームを表示したいページに以下のショートコードを貼り付けてください："
 
 #: ../admin/manage-fields.php:543
 msgid "If you're interested in displaying different fields in the registration and edit profile forms, please use the Multiple Registration & Edit Profile Forms Addon."
-msgstr "如果你对注册、编辑资料时显示不同字段感兴趣，请使用多个注册和编辑资料形式的模块。"
+msgstr "プロフィールの登録と編集フォームに異なる記入欄を表示したい場合は、Multiple Registration & Edit Profile Formsアドオンをご利用ください。"
 
 #: ../admin/register-version.php:14
 msgid "Register Your Version"
-msgstr "注册您的版本"
+msgstr "ライセンスの登録"
 
 #: ../admin/register-version.php:14
 msgid "Register Version"
-msgstr "注册版本"
+msgstr "ライセンス登録"
 
 #: ../admin/register-version.php:70
 msgid "If you register this version of Profile Builder, you'll receive information regarding upgrades, patches, and technical support."
-msgstr "如果您注册这个版本的 Profile Builder ，您将收到有关升级，补丁，和技术支持。"
+msgstr "登録すると、アップグレードの案内、修正プログラム、テクニカルサポートが受けられます。"
 
 #: ../admin/register-version.php:72
 msgid " Serial Number:"
-msgstr "序号："
+msgstr "シリアルナンバー:"
 
 #: ../admin/register-version.php:77
 msgid "The serial number was successfully validated!"
-msgstr "序号成功验证！"
+msgstr "シリアル番号は正常に承認されました！"
 
 #: ../admin/register-version.php:79
 msgid "The serial number entered couldn't be validated!"
-msgstr "序号无法验证！"
+msgstr "シリアル番号が承認されませんでした！"
 
 #: ../admin/register-version.php:83
 msgid "The serial number couldn't be validated because it expired!"
-msgstr "序号无法验证，因已过期！"
+msgstr "シリアルナンバーが期限切れで承認されませんでした。"
 
 #: ../admin/register-version.php:85
 msgid "The serial number couldn't be validated because process timed out. This is possible due to the server being down. Please try again later!"
-msgstr "序号无法验证，因为连接超时。这可能是由于服务器维护。请稍后再试！"
+msgstr "シリアル番号の承認がタイムアウトしました。おそらくサーバーの不具合によるものです。後ほど再度お試しください。"
 
 #: ../admin/register-version.php:87
 msgid "(e.g. RMPB-15-SN-253a55baa4fbe7bf595b2aabb8d72985)"
-msgstr "(例如： RMPB-15-SN-253a55baa4fbe7bf595b2aabb8d72985)"
+msgstr "(例. RMPB-15-SN-253a55baa4fbe7bf595b2aabb8d72985)"
 
 #: ../assets/lib/wck-api/wordpress-creation-kit.php:440
 #: ../features/functions.php:621
@@ -1254,51 +1265,51 @@ msgstr "内容"
 
 #: ../assets/lib/wck-api/wordpress-creation-kit.php:529
 msgid "Edit this item"
-msgstr "编辑此项目"
+msgstr "この項目を編集"
 
 #: ../assets/lib/wck-api/wordpress-creation-kit.php:530
 msgid "Delete this item"
-msgstr "删除此项目"
+msgstr "この項目を削除"
 
 #: ../assets/lib/wck-api/wordpress-creation-kit.php:671
 msgid "Please enter a value for the required field "
-msgstr "请为这个字段输入所需的值"
+msgstr "必須欄に入力してください。"
 
 #: ../assets/lib/wck-api/fields/upload.php:37
 msgid "Remove"
-msgstr "移除"
+msgstr "削除"
 
 #: ../assets/lib/wck-api/wordpress-creation-kit.php:1150
 msgid "Syncronize WCK"
-msgstr "同步 WCK"
+msgstr "WCK同期"
 
 #: ../assets/lib/wck-api/wordpress-creation-kit.php:1162
 msgid "Syncronize WCK Translation"
-msgstr "同步 WCK 翻译"
+msgstr "WCK翻訳同期"
 
 #: ../assets/lib/wck-api/fields/nested repeater.php:8
 msgid "You can add the information for the %s after you add a entry"
-msgstr "您可以添加信息到 %s"
+msgstr "エントリの追加後、%sの情報を追加することができます"
 
 #: ../assets/lib/wck-api/fields/upload.php:54
 msgid "Upload "
-msgstr "上传"
+msgstr "アップロード"
 
 #: ../features/class-list-table.php:184
 msgid "No items found."
-msgstr "找不到项目。"
+msgstr "項目が見つかりません"
 
 #: ../features/class-list-table.php:308
 msgid "Bulk Actions"
-msgstr "批量动作"
+msgstr "一括操作"
 
 #: ../features/class-list-table.php:318
 msgid "Apply"
-msgstr "应用"
+msgstr "適用"
 
 #: ../features/class-list-table.php:402
 msgid "Show all dates"
-msgstr "显示所有日期"
+msgstr "全てのの日付を用事"
 
 #: ../features/class-list-table.php:415
 msgid "%1$s %2$d"
@@ -1306,23 +1317,23 @@ msgstr "%1$s %2$d"
 
 #: ../features/class-list-table.php:431
 msgid "List View"
-msgstr "列表查看"
+msgstr "一覧表示"
 
 #: ../features/class-list-table.php:432
 msgid "Excerpt View"
-msgstr "摘录查看"
+msgstr "抜粋ビュー"
 
 #: ../features/class-list-table.php:458
 msgid "%s pending"
-msgstr "%s 等待中"
+msgstr "%s保留中"
 
 #: ../features/class-list-table.php:566
 msgid "%1$s of %2$s"
-msgstr "%1$s 的 %2$s"
+msgstr "%1$s of %2$s"
 
 #: ../features/class-list-table.php:713
 msgid "Select All"
-msgstr "选择所有"
+msgstr "全て選択"
 
 #: ../features/functions.php:199 ../features/functions.php:200
 msgid "Profile Builder"
@@ -1330,236 +1341,236 @@ msgstr "Profile Builder"
 
 #: ../features/functions.php:273
 msgid "The user-validation has failed - the avatar was not deleted!"
-msgstr "用户验证失败 - 头像没有被删除！"
+msgstr "ユーザチェックに失敗しました - アバターは削除されませんでした！"
 
 #: ../features/functions.php:284
 msgid "The user-validation has failed - the attachment was not deleted!"
-msgstr "用户验证失败 - 附件没有被删除！"
+msgstr "ユーザチェックに失敗しました - 添付ファイルは削除されませんでした！"
 
 #: ../features/functions.php:467
 msgid "Strength indicator"
-msgstr "强度指标"
+msgstr "強度インジゲーター"
 
 #: ../features/admin-approval/admin-approval.php:7
 #: ../features/admin-approval/class-admin-approval.php:496
 msgid "Admin Approval"
-msgstr "管理员审批"
+msgstr "管理者承認"
 
 #: ../features/admin-approval/admin-approval.php:21
 #: ../features/email-confirmation/email-confirmation.php:58
 msgid "Do you want to"
-msgstr "您想要"
+msgstr ""
 
 #: ../features/admin-approval/admin-approval.php:44
 msgid "Your session has expired! Please refresh the page and try again"
-msgstr "您的会话已过期！请刷新页面重试"
+msgstr "セッションの有効期限が切れました！ページをリロードして再度お試しください。"
 
 #: ../features/admin-approval/admin-approval.php:55
 msgid "User successfully approved!"
-msgstr "用户成功批准！"
+msgstr "ユーザーを承認しました！"
 
 #: ../features/admin-approval/admin-approval.php:63
 msgid "User successfully unapproved!"
-msgstr "用户成功拒绝！"
+msgstr "ユーザーを不承認しました！"
 
 #: ../features/admin-approval/admin-approval.php:69
 msgid "User successfully deleted!"
-msgstr "用户成功删除！"
+msgstr "ユーザーを削除しました！"
 
 #: ../features/admin-approval/admin-approval.php:74
 #: ../features/admin-approval/admin-approval.php:139
 #: ../features/email-confirmation/email-confirmation.php:135
 msgid "You either don't have permission for that action or there was an error!"
-msgstr "你没有权限操作，或出现一个错误！"
+msgstr "その処理を実行する権限がない、もしくはエラーが発生しました！"
 
 #: ../features/admin-approval/admin-approval.php:86
 msgid "Your session has expired! Please refresh the page and try again."
-msgstr "您的会话已过期！请刷新页面重试"
+msgstr "セッションの有効期限が切れました！ページをリロードして再度お試しください。"
 
 #: ../features/admin-approval/admin-approval.php:106
 msgid "Users successfully approved!"
-msgstr "用户成功批准！"
+msgstr "ユーザの承認が完了しました！"
 
 #: ../features/admin-approval/admin-approval.php:121
 msgid "Users successfully unapproved!"
-msgstr "用户成功拒绝！"
+msgstr "ユーザの不承認が完了しました！"
 
 #: ../features/admin-approval/admin-approval.php:134
 msgid "Users successfully deleted!"
-msgstr "用户成功删除！"
+msgstr "ユーザの削除が完了しました！"
 
 #: ../features/admin-approval/admin-approval.php:149
 msgid "Your account on %1$s has been approved!"
-msgstr "您在 %1$s 的帐号成功通过！"
+msgstr "%1$sのあなたのアカウントは承認されました！"
 
 #: ../features/admin-approval/admin-approval.php:150
 #: ../features/admin-approval/admin-approval.php:153
 msgid "approved"
-msgstr "已批准"
+msgstr "承認済み"
 
 #: ../features/admin-approval/admin-approval.php:152
 msgid "An administrator has just approved your account on %1$s (%2$s)."
-msgstr "管理员已经批准您在 %1$s (%2$s) 的帐号。"
+msgstr "%1$s (%2$s)上のあなたのアカウントを管理者が承認しました。"
 
 #: ../features/admin-approval/admin-approval.php:156
 msgid "Your account on %1$s has been unapproved!"
-msgstr "您在 %1$s 的帐号被拒绝！"
+msgstr "%1$sのアカウントが承認されませんでした！"
 
 #: ../features/admin-approval/admin-approval.php:157
 #: ../features/admin-approval/admin-approval.php:160
 msgid "unapproved"
-msgstr "已拒绝"
+msgstr "不承認"
 
 #: ../features/admin-approval/admin-approval.php:159
 msgid "An administrator has just unapproved your account on %1$s (%2$s)."
-msgstr "管理员已拒绝您在 %1$s (%2$s) 的帐号。"
+msgstr "%1$s (%2$s)上のあなたのアカウントを管理者が不承認としました。"
 
 #: ../features/admin-approval/admin-approval.php:176
 msgid "<strong>ERROR</strong>: Your account has to be confirmed by an administrator before you can log in."
-msgstr "<strong>错误</strong>: 您的帐号需要管理员批准后才能登陆使用。"
+msgstr "<strong>エラー</strong>: あなたのアカウントは事前に管理者の承認を受ける必要があります。"
 
 #: ../features/admin-approval/admin-approval.php:188
 msgid "Your account has to be confirmed by an administrator before you can use the \"Password Recovery\" feature."
-msgstr "您的帐号在管理员确认前可以使用 \"密码找回\" 功能."
+msgstr "あなたのアカウントはパスワードリカバリーの手続きをとる前に、管理者により確認されました。"
 
 #: ../features/admin-approval/class-admin-approval.php:124
 msgid "delete this user?"
-msgstr "删除这个用户？"
+msgstr "このユーザを削除しますか？"
 
 #: ../features/admin-approval/class-admin-approval.php:127
 msgid "unapprove this user?"
-msgstr "拒绝这个用户？"
+msgstr "このユーザを不承認にしますか？"
 
 #: ../features/admin-approval/class-admin-approval.php:127
 #: ../features/admin-approval/class-admin-approval.php:234
 msgid "Unapprove"
-msgstr "拒绝"
+msgstr "不承認"
 
 #: ../features/admin-approval/class-admin-approval.php:129
 msgid "approve this user?"
-msgstr "允许这个用户？"
+msgstr "このユーザを承認しますか？"
 
 #: ../features/admin-approval/class-admin-approval.php:129
 #: ../features/admin-approval/class-admin-approval.php:233
 msgid "Approve"
-msgstr "允许"
+msgstr "承認"
 
 #: ../features/admin-approval/class-admin-approval.php:178
 #: ../modules/user-listing/userlisting.php:608
 #: ../modules/user-listing/userlisting.php:1249
 msgid "Firstname"
-msgstr "名子"
+msgstr "名"
 
 #: ../features/admin-approval/class-admin-approval.php:179
 #: ../modules/user-listing/userlisting.php:611
 #: ../modules/user-listing/userlisting.php:1250
 msgid "Lastname"
-msgstr "姓氏"
+msgstr "姓"
 
 #: ../features/admin-approval/class-admin-approval.php:181
 #: ../modules/user-listing/userlisting.php:124
 #: ../modules/user-listing/userlisting.php:638
 #: ../modules/user-listing/userlisting.php:1253
 msgid "Role"
-msgstr "角色"
+msgstr "権限"
 
 #: ../features/admin-approval/class-admin-approval.php:182
 #: ../features/email-confirmation/class-email-confirmation.php:169
 msgid "Registered"
-msgstr "已注册"
+msgstr "登録日時"
 
 #: ../features/admin-approval/class-admin-approval.php:183
 msgid "User-status"
-msgstr "用户状态"
+msgstr "ユーザ状態"
 
 #: ../features/admin-approval/class-admin-approval.php:263
 msgid "Do you want to bulk approve the selected users?"
-msgstr "你想批量允许所选用户？"
+msgstr "選択したユーザを一括で承認しますか？"
 
 #: ../features/admin-approval/class-admin-approval.php:271
 msgid "Do you want to bulk unapprove the selected users?"
-msgstr "你想批量拒绝所选用户？"
+msgstr "選択したユーザを一括で不承認にしますか？"
 
 #: ../features/admin-approval/class-admin-approval.php:277
 msgid "Do you want to bulk delete the selected users?"
-msgstr "你想批量删除所选用户？"
+msgstr "選択したユーザを一括で削除しますか？"
 
 #: ../features/admin-approval/class-admin-approval.php:285
 #: ../features/email-confirmation/class-email-confirmation.php:278
 msgid "Sorry, but you don't have permission to do that!"
-msgstr "抱歉，您没有相应的操作权限！"
+msgstr "申し訳ありません、それはあなたの権限では行えません！"
 
 #: ../features/admin-approval/class-admin-approval.php:325
 msgid "Approved"
-msgstr "已允许"
+msgstr "承認"
 
 #: ../features/admin-approval/class-admin-approval.php:327
 msgid "Unapproved"
-msgstr "已拒绝"
+msgstr "不承認"
 
 #: ../features/admin-approval/class-admin-approval.php:499
 #: ../features/email-confirmation/class-email-confirmation.php:469
 msgid "All Users"
-msgstr "所有用户"
+msgstr "全ユーザ"
 
 #: ../features/email-confirmation/class-email-confirmation.php:120
 msgid "delete this user from the _signups table?"
-msgstr "在 the _signups 表单中 删除这个用户？"
+msgstr "_signupsテーブルからこのユーザを削除しますか？"
 
 #: ../features/email-confirmation/class-email-confirmation.php:121
 msgid "confirm this email yourself?"
-msgstr "确认自己的电子邮件？"
+msgstr "このメールをあなた自身で確認しますか？"
 
 #: ../features/email-confirmation/class-email-confirmation.php:121
 #: ../features/email-confirmation/class-email-confirmation.php:218
 msgid "Confirm Email"
-msgstr "确认电子邮件"
+msgstr "確認Eメール"
 
 #: ../features/email-confirmation/class-email-confirmation.php:122
 msgid "resend the activation link?"
-msgstr "重新发送激活链接？"
+msgstr "アクティベーションリンクを再送しますか？"
 
 #: ../features/email-confirmation/class-email-confirmation.php:122
 #: ../features/email-confirmation/class-email-confirmation.php:219
 msgid "Resend Activation Email"
-msgstr "发送激活邮件"
+msgstr "アクティベーションメールの再送"
 
 #: ../features/email-confirmation/class-email-confirmation.php:249
 msgid "%s couldn't be deleted"
-msgstr "%s 不能删除"
+msgstr "%sが削除できませんでした。"
 
 #: ../features/email-confirmation/class-email-confirmation.php:253
 msgid "All users have been successfully deleted"
-msgstr "所有的用户已成功删除"
+msgstr "全てのユーザを削除しました"
 
 #: ../features/email-confirmation/class-email-confirmation.php:263
 msgid "The selected users have been activated"
-msgstr "所选的用户已被激活"
+msgstr "選択したユーザは有効化されました。"
 
 #: ../features/email-confirmation/class-email-confirmation.php:274
 msgid "The selected users have had their activation emails resent"
-msgstr "所选用户已经重新发送激活电子邮件"
+msgstr "選択したユーザに有効化メールが再送信されました。"
 
 #: ../features/email-confirmation/class-email-confirmation.php:466
 #: ../features/email-confirmation/email-confirmation.php:47
 msgid "Users with Unconfirmed Email Address"
-msgstr "没经确认邮箱的用户"
+msgstr "アドレス未確認ユーザー"
 
 #: ../features/email-confirmation/email-confirmation.php:110
 msgid "There was an error performing that action!"
-msgstr "执行操作时出错！"
+msgstr "その処理を実行する際にエラーが起きました！"
 
 #: ../features/email-confirmation/email-confirmation.php:118
 msgid "The selected user couldn't be deleted"
-msgstr "所选用户不能删除"
+msgstr "選択したユーザが削除できませんでした"
 
 #: ../features/email-confirmation/email-confirmation.php:129
 msgid "Email notification resent to user"
-msgstr "电子邮件通知重发给用户"
+msgstr "Eメール通知がユーザに再送されました。"
 
 #: ../features/email-confirmation/email-confirmation.php:364
 msgid "[%1$s] Activate %2$s"
-msgstr "[%1$s] 激活 %2$s"
+msgstr "[%1$s] 有効化 %2$s"
 
 #: ../features/email-confirmation/email-confirmation.php:367
 msgid ""
@@ -1569,310 +1580,310 @@ msgid ""
 "\n"
 "After you activate it you will receive yet *another email* with your login."
 msgstr ""
-"要激活你的帐户，请点击下面的链接：\n"
+"あなたのアカウントを有効化するには、下記のリンクをクリックしてください。:\n"
 "\n"
-"%s%s%s \n"
+"%s%s%s\n"
 "\n"
-"当你点击后，您将收到登陆的 *另一封电子邮件* 。"
+"アクティベート完了後、ユーザ名入りのメールが別途送信されます。"
 
 #: ../features/email-confirmation/email-confirmation.php:406
 #: ../front-end/register.php:68
 msgid "Could not create user!"
-msgstr "无法创建用户！"
+msgstr "ユーザを作成できません！"
 
 #: ../features/email-confirmation/email-confirmation.php:409
 msgid "That username is already activated!"
-msgstr "用户名已经被激活！"
+msgstr "このユーザー名は承認済みです！"
 
 #: ../features/email-confirmation/email-confirmation.php:438
 msgid "There was an error while trying to activate the user"
-msgstr "试图激活用户时出现一个错误"
+msgstr "ユーザをアクティベートする際にエラーが発生しました"
 
 #: ../features/email-confirmation/email-confirmation.php:483
 #: ../modules/email-customizer/admin-email-customizer.php:73
 msgid "A new subscriber has (been) registered!"
-msgstr "一个新的用户已经（被）注册！"
+msgstr "新しい購読者が登録されました！"
 
 #: ../features/email-confirmation/email-confirmation.php:486
 msgid "New subscriber on %1$s.<br/><br/>Username:%2$s<br/>E-mail:%3$s<br/>"
-msgstr "新用户在 %1$s.<br/><br/>用户名:%2$s<br/>邮箱:%3$s<br/>"
+msgstr "%1$sに新規登録がありました。<br/><br/>ユーザー名:%2$s<br/>E-メールアドレス:%3$s<br/>"
 
 #: ../features/email-confirmation/email-confirmation.php:491
 msgid "The \"Admin Approval\" feature was activated at the time of registration, so please remember that you need to approve this user before he/she can log in!"
-msgstr "管理员审批”的功能是注册时激活，所以请记住，你必须批准该用户，他/她才能进行登录！"
+msgstr "登録地の\"管理者承認\"機能が有効化されました。あなたが承認するまでユーザはログインすることはできません！"
 
 #: ../features/email-confirmation/email-confirmation.php:506
 msgid "[%1$s] Your new account information"
-msgstr "[%1$s] 您的新帐户信息"
+msgstr "[%1$s] あなたの新アカウント情報"
 
 #: ../features/email-confirmation/email-confirmation.php:512
 msgid "Welcome to %1$s!<br/><br/><br/>Your username is:%2$s and password:%3$s"
-msgstr "欢迎来到 %1$s!<br/><br/><br/>您的用户名是:%2$s 密码是:%3$s"
+msgstr "ようこそ、%1$sへ！<br/><br/><br/>あなたのユーザ名は%2$s、パスワードは%3$sとなります。"
 
 #: ../features/email-confirmation/email-confirmation.php:521
 #: ../front-end/register.php:103
 msgid "Before you can access your account, an administrator needs to approve it. You will be notified via email."
-msgstr "需要管理员审核通过才能访问您的帐户。您将收到一封电子邮件。"
+msgstr "ご登録いただいたアカウントのご利用には、管理者の承認が必要です。eメールにて通知が届きます。"
 
 #: ../features/login-widget/login-widget.php:10
 msgid "This login widget lets you add a login form in the sidebar."
-msgstr "该登录控件是允许您添加在侧边栏的登录表单。"
+msgstr "このログインウィジェットはサイドバーにログインフォームを表示します。"
 
 #: ../features/login-widget/login-widget.php:15
 msgid "Profile Builder Login Widget"
-msgstr "Profile Builder 登陆小工具"
+msgstr "Profile Buiderログインウィジェット"
 
 #: ../front-end/class-formbuilder.php:287 ../front-end/login.php:202
 msgid "Register"
-msgstr "注册"
+msgstr "新規登録"
 
 #: ../features/login-widget/login-widget.php:63
 msgid "Title:"
-msgstr "标题："
+msgstr "タイトル："
 
 #: ../features/login-widget/login-widget.php:68
 msgid "After login redirect URL (optional):"
-msgstr "登录后的重定向URL（可选）："
+msgstr "ログイン後リダイレクト先URL(オプション):"
 
 #: ../features/login-widget/login-widget.php:73
 msgid "Register page URL (optional):"
-msgstr "注册页面URL（可选）："
+msgstr "登録ページURL(オプション):"
 
 #: ../features/login-widget/login-widget.php:78
 msgid "Password Recovery page URL (optional):"
-msgstr "密码恢复页URL（可选）："
+msgstr "パスワード復旧ページURL (オプション):"
 
 #: ../features/upgrades/upgrades-functions.php:91
 #: ../features/upgrades/upgrades-functions.php:134
 msgid "The usernames cannot be changed."
-msgstr "用户名不可更改。"
+msgstr "ユーザ名は変更できません。"
 
 #: ../front-end/class-formbuilder.php:89
 msgid "Only an administrator can add new users."
-msgstr "只有管理员可以添加新用户。"
+msgstr "管理者のみがユーザを新規追加できます。"
 
 #: ../front-end/class-formbuilder.php:99
 msgid "Users can register themselves or you can manually create users here."
-msgstr "用户可以注册自己注册，或您可以在这里手动创建用户。"
+msgstr "こちらで新規ユーザ登録ができます。"
 
 #: ../front-end/class-formbuilder.php:102
 msgid "Users cannot currently register themselves, but you can manually create users here."
-msgstr "用户无法自己注册，但你可以在这里手动创建用户。"
+msgstr "ユーザが自身で登録することができませでした。しかしあなたは手動でユーザを作成することができます。"
 
 #: ../front-end/class-formbuilder.php:114
 msgid "You are currently logged in as %1s. You don't need another account. %2s"
-msgstr "您当前登陆为 %1s。您不需要其它帐号。 %2s"
+msgstr "あなたは現在%1sとしてログインしています。 別のアカウントは必要ありません。%2s"
 
 #: ../front-end/class-formbuilder.php:114
 msgid "Log out of this account."
-msgstr "退出这个帐号。"
+msgstr "このアカウントをログアウトする"
 
 #: ../front-end/class-formbuilder.php:114
 msgid "Logout"
-msgstr "退出"
+msgstr "ログアウト"
 
 #: ../front-end/class-formbuilder.php:120
 msgid "You must be logged in to edit your profile."
-msgstr "您必须在登陆状态下编辑个人资料。"
+msgstr "プロフィールの編集にはログインが必要です。"
 
 #: ../front-end/class-formbuilder.php:142
 msgid "here"
-msgstr "这里"
+msgstr "ここ"
 
 #: ../front-end/class-formbuilder.php:144
 msgid "You will soon be redirected automatically. If you see this page for more than %1$d seconds, please click %2$s.%3$s"
-msgstr "您很快将会自动重定向。如果你看到这个页面超过 %1$d 秒，请点击 %2$s.%3$s"
+msgstr "ページは自動遷移します。このページが %1$d 秒以上見えている時は、以下をクリックしてください %2$s.%3$s"
 
 #: ../front-end/class-formbuilder.php:233
 #: ../front-end/class-formbuilder.php:240
 msgid "The account %1s has been successfully created!"
-msgstr "帐号 %1s 创建成功！"
+msgstr "アカウント %1s が作成されました！"
 
 #: ../front-end/class-formbuilder.php:236
 #: ../front-end/class-formbuilder.php:246
 msgid "Before you can access your account %1s, you need to confirm your email address. Please check your inbox and click the activation link."
-msgstr "访问您的帐号 %1s 前，您需要确认您的邮箱地址。请检查您的邮箱并点击激活连接。"
+msgstr "ご登録いただいたアカウント%1sのご利用には、メールアドレスの確認が必要です。メールボックスに届いたメールに記載されたアクティベーション用のリンクをクリックしてください。"
 
 #: ../front-end/class-formbuilder.php:242
 msgid "Before you can access your account %1s, an administrator has to approve it. You will be notified via email."
-msgstr "访问您的帐号 %1s 前，需要管理员审批通过。您将收到邮件。"
+msgstr "ご登録いただいたアカウント%1sのご利用には、管理者の承認が必要です。eメールにて通知が届きます。"
 
 #: ../front-end/class-formbuilder.php:256
 msgid "Your profile has been successfully updated!"
-msgstr "个人资料已更新！"
+msgstr "プロファイルは正常に更新されました！"
 
 #: ../front-end/class-formbuilder.php:266
 msgid "There was an error in the submitted form"
-msgstr "在递交表单时出错"
+msgstr "入力内容にエラーがあります。"
 
 #: ../front-end/class-formbuilder.php:287
 msgid "Add User"
-msgstr "所有用户"
+msgstr "ユーザー追加"
 
 #: ../admin/add-ons.php:170 ../front-end/class-formbuilder.php:290
 msgid "Update"
-msgstr "更新个人资料"
+msgstr "更新"
 
 #: ../front-end/class-formbuilder.php:333
 #: ../front-end/extra-fields/extra-fields.php:35
 msgid "The avatar was successfully deleted!"
-msgstr "头像成功删除！"
+msgstr "アバターを正常に削除しました！"
 
 #: ../front-end/class-formbuilder.php:333
 #: ../front-end/extra-fields/extra-fields.php:37
 msgid "The following attachment was successfully deleted:"
-msgstr "成功删除以下附件："
+msgstr "以下の添付ファイルを正常に削除しました:"
 
 #: ../front-end/class-formbuilder.php:345
 msgid "Send these credentials via email."
-msgstr "通过电子邮件发送这些凭据。"
+msgstr "承認情報をメールで送信"
 
 #: ../front-end/extra-fields/extra-fields.php:99 ../front-end/login.php:89
 #: ../front-end/login.php:96 ../front-end/login.php:110
 #: ../front-end/recover.php:17 ../front-end/recover.php:227
 msgid "ERROR"
-msgstr "错误"
+msgstr "エラー"
 
 #: ../front-end/login.php:89
 msgid "The password you entered is incorrect."
-msgstr "你输入的密码不正确。"
+msgstr "入力されたパスワードが間違っています。"
 
 #: ../front-end/login.php:90 ../front-end/login.php:97
 msgid "Password Lost and Found."
-msgstr "密码遗失。"
+msgstr "パスワード紛失対応"
 
 #: ../front-end/login.php:90 ../front-end/login.php:97
 msgid "Lost your password"
-msgstr "忘记您的密码"
+msgstr "パスワードをお忘れですか"
 
 #: ../front-end/login.php:110
 msgid "Both fields are empty."
-msgstr "字段均空"
+msgstr "両方の欄とも未記入です。"
 
 #: ../front-end/login.php:242
 msgid "You are currently logged in as %1$s. %2$s"
-msgstr "您当前登录为 %1$s. %2$s"
+msgstr "%1$sさんとしてログイン中です。%2$s"
 
 #: ../front-end/login.php:241 ../front-end/logout.php:17
 msgid "Log out of this account"
-msgstr "退出这个帐户"
+msgstr "このアカウントをログアウトする"
 
 #: ../front-end/login.php:241
 msgid "Log out"
-msgstr "退出"
+msgstr "ログアウト"
 
 #: ../front-end/recover.php:17
 msgid "Your account has to be confirmed by an administrator before you can use the \"Password Reset\" feature."
-msgstr "您的帐户需被管理员审批后才可使用 \"密码重置\" 功能。"
+msgstr "あなたのアカウントはパスワードリセットの手続きをとる前に、管理者により確認されました。"
 
 #: ../front-end/recover.php:91
 msgid "Reset Password"
-msgstr "重置密码"
+msgstr "パスワードをリセット"
 
 #: ../front-end/recover.php:111
 msgid "Please enter your username or email address."
-msgstr "请输入您的用户名或电子邮件地址。"
+msgstr "ユーザー名またはメールアドレスを入力してください。"
 
 #: ../front-end/recover.php:112
 msgid "You will receive a link to create a new password via email."
-msgstr "你将收到一封创建一个新密码连接的电子邮件。"
+msgstr "新しいパスワードを設定する為のリンクがメールで送信されます。"
 
 #: ../front-end/recover.php:119
 msgid "Username or E-mail"
-msgstr "用户或邮箱地址"
+msgstr "ユーザー名またはメールアドレス"
 
 #: ../front-end/recover.php:125
 msgid "Get New Password"
-msgstr "获取新密码"
+msgstr "新しいパスワードを取得"
 
 #: ../front-end/recover.php:166
 msgid "The username entered wasn't found in the database!"
-msgstr "输入的用户名不存在数据库中！"
+msgstr "入力されたユーザ名はデータベース上で見付かりません！"
 
 #: ../front-end/recover.php:166
 msgid "Please check that you entered the correct username."
-msgstr "请检查您已输入正确的用户名。"
+msgstr "正しいユーザー名を入力したか確認してください。"
 
 #: ../front-end/recover.php:181
 msgid "Check your e-mail for the confirmation link."
-msgstr "检查你的邮件中的确认链接。"
+msgstr "確認リンクをメールでチェックしてください。"
 
 #: ../front-end/recover.php:215
 msgid "Someone requested that the password be reset for the following account: <b>%1$s</b><br/>If this was a mistake, just ignore this email and nothing will happen.<br/>To reset your password, visit the following link:%2$s"
-msgstr "有人要求以下帐号密码进行重置: <b>%1$s</b><br/>如果不是您自己的操作，请忽略。<br/>需要重置您的密码的话，请点击 :%2$s"
+msgstr "次のアカウントのパスワードリセットが要求されました。: <b>%1$s</b><br/>もし間違いであれば、このメールは無視して結構です。<br/>パスワードをリセットする場合は、こちらのリンクをクリックしてください。:%2$s"
 
 #: ../front-end/recover.php:218
 msgid "Password Reset from \"%1$s\""
-msgstr "从 \"%1$s\" 密码重置"
+msgstr "\"%1$s\"からのパスワードリセット"
 
 #: ../front-end/recover.php:227
 msgid "There was an error while trying to send the activation link to %1$s!"
-msgstr "发送激活链接时出现错误 %1$s!"
+msgstr "%1$sにアクティベーションリンクを送信しようとしてエラーが発生しました！"
 
 #: ../front-end/recover.php:188
 msgid "The email address entered wasn't found in the database!"
-msgstr "邮箱地址无法在数据库中找到"
+msgstr "そのメールアドレスはデータベース上で見付かりません！"
 
 #: ../front-end/recover.php:188
 msgid "Please check that you entered the correct email address."
-msgstr "请检查您输入（正确）电子邮件地址。"
+msgstr "正しいEメールアドレスを入力したか確認してください。"
 
 #: ../front-end/recover.php:255
 msgid "Your password has been successfully changed!"
-msgstr "您已经成功地更改密码！"
+msgstr "パスワードは正常に更新されました！"
 
 #: ../front-end/recover.php:274
 msgid "You have successfully reset your password to: %1$s"
-msgstr "您已经成功地将密码更改成：%1$s"
+msgstr "%1$sに対するパスワードを正常にリセットしました。"
 
 #: ../front-end/recover.php:277 ../front-end/recover.php:291
 msgid "Password Successfully Reset for %1$s on \"%2$s\""
-msgstr "密码成功重置  %1$s 在 \"%2$s\""
+msgstr "\"%2$s\"の%1$sのパスワードがリセットされました。"
 
 #: ../front-end/recover.php:288
 msgid "%1$s has requested a password change via the password reset feature.<br/>His/her new password is:%2$s"
-msgstr "%1$s 请求通过密码重置功能修改密码。<br/>他的密码是:%2$s"
+msgstr "%1$sさんがパスワードリセット機能によりパスワードの変更を要求しました。<br/>新しいパスワード:%2$s"
 
 #: ../front-end/recover.php:307
 msgid "The entered passwords don't match!"
-msgstr "输入的密码不匹配！"
+msgstr "入力されたパスワードが異なります！"
 
 #: ../front-end/recover.php:352
 msgid "ERROR:"
-msgstr "错误："
+msgstr "エラー："
 
 #: ../front-end/recover.php:352
 msgid "Invalid key!"
-msgstr "无效密钥！"
+msgstr "無効なキー！"
 
 #: ../front-end/register.php:46
 msgid "Invalid activation key!"
-msgstr "无效的激活密钥！"
+msgstr "無効なアクティベーションキー！"
 
 #: ../front-end/register.php:50
 msgid "This username is now active!"
-msgstr "这个用户名现在被激活！"
+msgstr "このユーザー名は有効です！"
 
 #: ../front-end/register.php:71
 msgid "This username is already activated!"
-msgstr "这个用户名已经被激活！"
+msgstr "このユーザ名は既に有効化されています！"
 
 #: ../front-end/register.php:102
 msgid "Your email was successfully confirmed."
-msgstr "您的电子邮件已确认。"
+msgstr "あなたのメールアドレス確認が正常に完了しました。"
 
 #: ../front-end/register.php:112
 msgid "There was an error while trying to activate the user."
-msgstr "尝试激活用户时出现一个错误。"
+msgstr "ユーザを有効にする際にエラーがありました。"
 
 #: ../front-end/default-fields/email/email.php:42
 msgid "The email you entered is not a valid email address."
-msgstr "您输入的电子邮件不是一个有效的电子邮件地址。"
+msgstr "入力したメールアドレスは有効なものではありません。"
 
 #: ../front-end/default-fields/email/email.php:55
 #: ../front-end/default-fields/email/email.php:60
 msgid "This email is already reserved to be used soon."
-msgstr "此邮箱地址已被保留使用。"
+msgstr "このメールアドレスは予約済みです。"
 
 #: ../front-end/default-fields/email/email.php:55
 #: ../front-end/default-fields/email/email.php:60
@@ -1881,63 +1892,63 @@ msgstr "此邮箱地址已被保留使用。"
 #: ../front-end/default-fields/username/username.php:44
 #: ../front-end/default-fields/username/username.php:54
 msgid "Please try a different one!"
-msgstr "请尝试一个不同的！"
+msgstr "他のものをお試しください！"
 
 #: ../front-end/default-fields/email/email.php:68
 #: ../front-end/default-fields/email/email.php:79
 msgid "This email is already in use."
-msgstr "电子邮件已被使用。"
+msgstr "このメールアドレスは登録済みです。"
 
 #: ../front-end/default-fields/password-repeat/password-repeat.php:35
 #: ../front-end/default-fields/password-repeat/password-repeat.php:39
 msgid "The passwords do not match"
-msgstr "密码不匹配"
+msgstr "パスワードが合致しません。"
 
 #: ../front-end/default-fields/username/username.php:44
 msgid "This username already exists."
-msgstr "用户名已经存在。"
+msgstr "このユーザ名は既に存在します。"
 
 #: ../front-end/default-fields/username/username.php:54
 msgid "This username is already reserved to be used soon."
-msgstr "这个用户名已经被保留。"
+msgstr "このユーザ名は既に予約されています。"
 
 #: ../front-end/extra-fields/avatar/avatar.php:65
 #: ../front-end/extra-fields/avatar/avatar.php:103
 #: ../front-end/extra-fields/upload/upload.php:29
 #: ../front-end/extra-fields/upload/upload.php:68
 msgid "max upload size"
-msgstr "最大上传大小"
+msgstr "最大アップロードサイズ"
 
 #: ../front-end/extra-fields/avatar/avatar.php:71
 msgid "Current avatar: No uploaded avatar"
-msgstr "当前头像：没有上传头像"
+msgstr "現在のアバター: アップロードなし"
 
 #: ../front-end/extra-fields/avatar/avatar.php:76
 #: ../front-end/extra-fields/avatar/avatar.php:110
 msgid "Avatar"
-msgstr "头像"
+msgstr "アバター"
 
 #: ../front-end/extra-fields/avatar/avatar.php:80
 #: ../front-end/extra-fields/avatar/avatar.php:85
 #: ../front-end/extra-fields/avatar/avatar.php:113
 #: ../front-end/extra-fields/avatar/avatar.php:115
 msgid "Click to see the current avatar"
-msgstr "点击查看当前头像"
+msgstr "現在のアバターを見る"
 
 #: ../front-end/extra-fields/avatar/avatar.php:82
 #: ../front-end/extra-fields/avatar/avatar.php:113
 msgid "The avatar can't be deleted (It was marked as required by the administrator)"
-msgstr "头像不能被删除（它被标记为只允许管理员操作）"
+msgstr "このアバターは削除できません（管理者によって必須指定されています）"
 
 #: ../front-end/extra-fields/avatar/avatar.php:87
 #: ../front-end/extra-fields/avatar/avatar.php:115
 msgid "Are you sure you want to delete this avatar?"
-msgstr "您确定要删除这个头像？"
+msgstr "このアバターを削除してよろしいですか？"
 
 #: ../front-end/extra-fields/avatar/avatar.php:88
 #: ../front-end/extra-fields/avatar/avatar.php:115
 msgid "Click to delete the current avatar"
-msgstr "点击删除当前头像"
+msgstr "現在のアバターを削除する"
 
 #: ../front-end/extra-fields/avatar/avatar.php:96
 #: ../front-end/extra-fields/checkbox/checkbox.php:44
@@ -1952,36 +1963,36 @@ msgstr "点击删除当前头像"
 #: ../front-end/extra-fields/upload/upload.php:62
 #: ../front-end/extra-fields/wysiwyg/wysiwyg.php:33
 msgid "required"
-msgstr "必须"
+msgstr "必須"
 
 #: ../front-end/extra-fields/avatar/avatar.php:106
 msgid "Current avatar"
-msgstr "当前头像"
+msgstr "現在のアバター"
 
 #: ../front-end/extra-fields/avatar/avatar.php:106
 msgid "No uploaded avatar"
-msgstr "没有上传头像"
+msgstr "アップロードされたアバターはありません"
 
 #: ../front-end/extra-fields/avatar/avatar.php:212
 #: ../front-end/extra-fields/upload/upload.php:173
 msgid "The extension of the file did not match"
-msgstr "文件扩展名不匹配"
+msgstr "ファイルの拡張子がマッチしません"
 
 #: ../front-end/extra-fields/avatar/avatar.php:215
 #: ../front-end/extra-fields/avatar/avatar.php:218
 #: ../front-end/extra-fields/upload/upload.php:177
 #: ../front-end/extra-fields/upload/upload.php:180
 msgid "The file uploaded exceeds the upload_max_filesize directive in php.ini"
-msgstr "文件上传大小限制超过 upload_max_filesize 在 php.ini 的设置"
+msgstr "このファイルアップロードはphp.iniのupload_max_filesizeでの制限をオーバーしました。"
 
 #: ../front-end/extra-fields/avatar/avatar.php:221
 #: ../front-end/extra-fields/upload/upload.php:183
 msgid "The file uploaded exceeds the MAX_FILE_SIZE directive in php.ini"
-msgstr "文件上传方件最大限制超过 MAX_FILE_SIZE 在 php.ini 的设置"
+msgstr "このファイルアップロードはphp.iniのMAX_FILE_SIZEでの制限をオーバーしました。"
 
 #: ../front-end/extra-fields/avatar/avatar.php:224
 msgid "The file could only partially be uploaded "
-msgstr "文件只能被分段上传"
+msgstr "このファイルは一部分のみアップロードされました。"
 
 #: ../front-end/extra-fields/avatar/avatar.php:227
 #: ../front-end/extra-fields/avatar/avatar.php:251
@@ -1990,46 +2001,46 @@ msgstr "文件只能被分段上传"
 #: ../front-end/extra-fields/upload/upload.php:213
 #: ../front-end/extra-fields/upload/upload.php:216
 msgid "No file was selected"
-msgstr "没有选择文件"
+msgstr "ファイルが選択されていません"
 
 #: ../front-end/extra-fields/avatar/avatar.php:230
 #: ../front-end/extra-fields/upload/upload.php:192
 msgid "The temporary upload folder is missing from the system"
-msgstr "系统丢失临时文件缓存"
+msgstr "システムの一時アップロードフォルダーがありません。"
 
 #: ../front-end/extra-fields/avatar/avatar.php:233
 #: ../front-end/extra-fields/upload/upload.php:195
 msgid "The file failed to write to the disk"
-msgstr "磁盘无法写入文件"
+msgstr "ファイルの保存に失敗しました"
 
 #: ../front-end/extra-fields/avatar/avatar.php:236
 #: ../front-end/extra-fields/upload/upload.php:198
 msgid "A PHP extension stopped the file upload"
-msgstr "一个PHP扩展暂停文件上传"
+msgstr "PHPエクステンションがファイルのアップロードを停止しました。"
 
 #: ../front-end/extra-fields/avatar/avatar.php:239
 msgid "Unknown error occurred"
-msgstr "发生未知错误"
+msgstr "不明のエラーが発生"
 
 #: ../front-end/extra-fields/recaptcha/recaptcha.php:47
 msgid "To use reCAPTCHA you must get an API key from"
-msgstr "使用 reCAPTCHA 你必须获得一个API密钥"
+msgstr "reCAPTCHAの利用には、APIキーの取得が必要です"
 
 #: ../front-end/extra-fields/recaptcha/recaptcha.php:77
 msgid "For security reasons, you must pass the remote ip to reCAPTCHA!"
-msgstr "安全原因，您必须通过远程IP到reCAPTCHA!"
+msgstr "セキュリティ保護のため、リモートIPをreCAPTCHAに渡す必要があります。"
 
 #: ../front-end/extra-fields/recaptcha/recaptcha.php:139
 msgid "To use reCAPTCHA you must get an API public key from:"
-msgstr "使用reCAPTCHA，你必须得到一个API公开密钥："
+msgstr "reCAPTCHAの利用には、以下よりAPI公開キー（public key）の取得が必要です"
 
 #: ../front-end/extra-fields/recaptcha/recaptcha.php:142
 msgid "To use reCAPTCHA you must get an API private key from:"
-msgstr "使用reCAPTCHA，你必须得到一个API私人密钥："
+msgstr "reCAPTCHAの利用には、以下よりAPI 秘密キー（private key）の取得が必要です"
 
 #: ../front-end/extra-fields/upload/upload.php:35
 msgid "Current file: No uploaded attachment"
-msgstr "当前文件：没有上传附件"
+msgstr "現在のファイル: アップロードされた添付ファイルはありません。"
 
 #: ../front-end/extra-fields/upload/upload.php:39
 #: ../front-end/extra-fields/upload/upload.php:48
@@ -2037,61 +2048,61 @@ msgstr "当前文件：没有上传附件"
 #: ../front-end/extra-fields/upload/upload.php:75
 #: ../front-end/extra-fields/upload/upload.php:77
 msgid "Current file"
-msgstr "当前文件"
+msgstr "現在のファイル"
 
 #: ../front-end/extra-fields/upload/upload.php:42
 #: ../front-end/extra-fields/upload/upload.php:51
 #: ../front-end/extra-fields/upload/upload.php:75
 #: ../front-end/extra-fields/upload/upload.php:77
 msgid "Click to see the current attachment"
-msgstr "点击查看当前附件"
+msgstr "現在の添付ファイルを見る"
 
 #: ../front-end/extra-fields/upload/upload.php:44
 #: ../front-end/extra-fields/upload/upload.php:75
 msgid "The attachment can't be deleted (It was marked as required by the administrator)"
-msgstr "附件不能删除（被标记为管理员权限）"
+msgstr "この添付は削除できません（管理者によって必須指定されています）"
 
 #: ../front-end/extra-fields/upload/upload.php:53
 #: ../front-end/extra-fields/upload/upload.php:77
 msgid "Are you sure you want to delete this attachment?"
-msgstr "您确定要删除此附件吗？"
+msgstr "この添付を削除してよろしいですか？"
 
 #: ../front-end/extra-fields/upload/upload.php:54
 #: ../front-end/extra-fields/upload/upload.php:77
 msgid "Click to delete the current attachment"
-msgstr "单击删除当前附件"
+msgstr "クリックして現在の添付を削除"
 
 #: ../front-end/extra-fields/upload/upload.php:71
 msgid "No uploaded attachment"
-msgstr "没有上传附件"
+msgstr "アップロードされた添付はありません"
 
 #: ../front-end/extra-fields/upload/upload.php:164
 msgid "The extension of the file is not allowed"
-msgstr "文件扩展名不允许"
+msgstr "拡張子が許可されていません"
 
 #: ../front-end/extra-fields/upload/upload.php:186
 msgid "The file could only partially be uploaded"
-msgstr "该文件只能被分段上传"
+msgstr "このファイルは一部分のみアップロードされました。"
 
 #: ../front-end/extra-fields/upload/upload.php:201
 msgid "This field wasn't updated because an unknown error occured"
-msgstr "发生未知错误导致这个字段没有更新"
+msgstr "不明なエラーが発生し、この記入欄は更新されませんでした"
 
 #: ../modules/modules.php:11 ../modules/modules.php:80
 msgid "Modules"
-msgstr "模块"
+msgstr "モジュール"
 
 #: ../modules/modules.php:81
 msgid "Here you can activate / deactivate available modules for Profile Builder."
-msgstr "在这里你可以激活/停用 Profile Builder 模块。"
+msgstr "こちらでProfule Builderモジュールの有効化／無効化ができます。"
 
 #: ../modules/modules.php:91
 msgid "Name/Description"
-msgstr "名称/描述"
+msgstr "名前／説明"
 
 #: ../modules/modules.php:92
 msgid "Status"
-msgstr "状态"
+msgstr "ステータス"
 
 #: ../modules/custom-redirects/custom-redirects.php:48
 #: ../modules/custom-redirects/custom-redirects.php:58
@@ -2104,7 +2115,7 @@ msgstr "状态"
 #: ../modules/modules.php:113 ../modules/modules.php:120
 #: ../modules/modules.php:127 ../modules/modules.php:134
 msgid "Active"
-msgstr "激活"
+msgstr "有効"
 
 #: ../modules/custom-redirects/custom-redirects.php:49
 #: ../modules/custom-redirects/custom-redirects.php:59
@@ -2117,19 +2128,19 @@ msgstr "激活"
 #: ../modules/modules.php:114 ../modules/modules.php:121
 #: ../modules/modules.php:128 ../modules/modules.php:135
 msgid "Inactive"
-msgstr "关闭"
+msgstr "無効"
 
 #: ../modules/email-customizer/admin-email-customizer.php:11
 #: ../modules/email-customizer/admin-email-customizer.php:12
 #: ../modules/modules.php:118
 msgid "Admin Email Customizer"
-msgstr "管理员邮件定制"
+msgstr "メール文面編集（管理者宛）"
 
 #: ../modules/email-customizer/user-email-customizer.php:11
 #: ../modules/email-customizer/user-email-customizer.php:12
 #: ../modules/modules.php:125
 msgid "User Email Customizer"
-msgstr "用户邮件定制"
+msgstr "メール文面編集（ユーザ宛）"
 
 #: ../assets/lib/wck-api/wordpress-creation-kit.php:337
 #: ../modules/class-mustache-templates/class-mustache-templates.php:242
@@ -2138,85 +2149,85 @@ msgstr "保存"
 
 #: ../modules/custom-redirects/custom-redirects.php:35
 msgid "Redirects on custom page requests:"
-msgstr "自定义页面重定向请求："
+msgstr "カスタムページ経由リクエストのリダイレクト:"
 
 #: ../modules/custom-redirects/custom-redirects.php:39
 #: ../modules/custom-redirects/custom-redirects.php:85
 msgid "Action"
-msgstr "动作"
+msgstr "アクション"
 
 #: ../modules/custom-redirects/custom-redirects.php:40
 #: ../modules/custom-redirects/custom-redirects.php:86
 #: ../modules/multiple-forms/edit-profile-forms.php:202
 #: ../modules/multiple-forms/register-forms.php:226
 msgid "Redirect"
-msgstr "重定向"
+msgstr "リダイレクト"
 
 #: ../modules/custom-redirects/custom-redirects.php:41
 #: ../modules/custom-redirects/custom-redirects.php:87
 #: ../modules/multiple-forms/edit-profile-forms.php:204
 #: ../modules/multiple-forms/register-forms.php:228
 msgid "URL"
-msgstr "网址"
+msgstr "URL"
 
 #: ../modules/custom-redirects/custom-redirects.php:46
 msgid "After Registration:"
-msgstr "注册后："
+msgstr "登録後:"
 
 #: ../modules/custom-redirects/custom-redirects.php:56
 msgid "After Login:"
-msgstr "登录后："
+msgstr "ログイン後:"
 
 #: ../modules/custom-redirects/custom-redirects.php:66
 msgid "Recover Password (*)"
-msgstr "重置密码 (*)"
+msgstr "パスワード復旧 (*)"
 
 #: ../modules/custom-redirects/custom-redirects.php:77
 msgid "When activated this feature will redirect the user on both the default Wordpress password recovery page and the \"Lost password?\" link used by Profile Builder on the front-end login page."
-msgstr "当激活这个功能，当用户进入在 WordPress 默认的密码恢复页与  \"忘记密码?\" 连接将重定向使用 Profile Builder  前端登陆页面。"
+msgstr "この機能を有効にした場合、Wordpress標準のパスワード復旧ページと、Profile Builderによるログインページの\"パスワードをお忘れですか？\"リンクの両方のユーザをリダイレクトします。"
 
 #: ../modules/custom-redirects/custom-redirects.php:81
 msgid "Redirects on default WordPress page requests:"
-msgstr "WordPress 默认页面的重定向："
+msgstr "WordPres標準ページ経由リクエストのリダイレクト:"
 
 #: ../modules/custom-redirects/custom-redirects.php:92
 msgid "Default WordPress Login Page"
-msgstr "WordPress 默认登录页面的重定向："
+msgstr "WordPress標準のログインページ"
 
 #: ../modules/custom-redirects/custom-redirects.php:102
 msgid "Default WordPress Logout Page"
-msgstr "WordPress 默认退出页面的重定向："
+msgstr "WordPress標準のログアウトページ"
 
 #: ../modules/custom-redirects/custom-redirects.php:112
 msgid "Default WordPress Register Page"
-msgstr "WordPress 默认注册页面的重定向："
+msgstr "WordPress標準の登録ページ"
 
 #: ../modules/custom-redirects/custom-redirects.php:122
 msgid "Default WordPress Dashboard (*)"
-msgstr "WordPress 默认后台的重定向："
+msgstr "WordPress標準のダッシュボード (*)"
 
 #: ../modules/custom-redirects/custom-redirects.php:133
 msgid "Redirects every user-role EXCEPT the ones with administrator privileges (can manage options)."
-msgstr "将所有用户角色，除具有管理员权限用户（管理）。"
+msgstr "管理者権限を持たない全てのユーザをリダイレクトします。"
 
 #: ../modules/email-customizer/admin-email-customizer.php:38
 msgid "These settings are also replicated in the \"User Email Customizer\" settings-page upon save."
-msgstr "这些设置也复制在\"用户邮件定制\" 设置页中保存。"
+msgstr "これらの設定を変更すると「メール文面編集（管理者宛）」設定ページにも反映されます。"
 
 #: ../modules/email-customizer/admin-email-customizer.php:41
 #: ../modules/email-customizer/user-email-customizer.php:41
 msgid "From (name)"
-msgstr "来自（名子）"
+msgstr "差出人 (name)"
 
 #: ../modules/email-customizer/admin-email-customizer.php:49
 #: ../modules/email-customizer/user-email-customizer.php:49
 msgid "From (reply-to email)"
-msgstr "来自（回复邮件）"
+msgstr "差出人 (reply-to email)"
 
 #: ../modules/email-customizer/admin-email-customizer.php:57
 #: ../modules/email-customizer/user-email-customizer.php:57
 msgid "Common Settings"
-msgstr "常用设置"
+msgstr "共通設定"
 
 #: ../modules/email-customizer/admin-email-customizer.php:60
 msgid ""
@@ -2226,9 +2237,9 @@ msgid ""
 "<p>E-mail:{{user_email}}</p>\n"
 msgstr ""
 "\n"
-"<p>新用户在 {{site_name}}.</p>\n"
-"<p>用户名:{{username}}</p>\n"
-"<p>邮箱:{{user_email}}</p>\n"
+"<p>{{site_name}}の新規登録がありました。</p>\n"
+"<p>ユーザー名:{{username}}</p>\n"
+"<p>メールアドレス:{{user_email}}</p>\n"
 
 #: ../modules/email-customizer/admin-email-customizer.php:69
 #: ../modules/email-customizer/admin-email-customizer.php:99
@@ -2241,11 +2252,11 @@ msgstr ""
 #: ../modules/email-customizer/user-email-customizer.php:214
 #: ../modules/email-customizer/user-email-customizer.php:241
 msgid "Email Subject"
-msgstr "邮件主题"
+msgstr "メールタイトル"
 
 #: ../modules/email-customizer/admin-email-customizer.php:84
 msgid "Default Registration & Registration with Email Confirmation"
-msgstr "默认注册与邮件确认注册"
+msgstr "標準登録およびメール確認付き登録"
 
 #: ../modules/email-customizer/admin-email-customizer.php:87
 msgid ""
@@ -2257,20 +2268,20 @@ msgid ""
 "so please remember that you need to approve this user before he/she can log in!</p>\n"
 msgstr ""
 "\n"
-"<p>新用户在 {{site_name}}.</p>\n"
-"<p>用户名:{{username}}</p>\n"
-"<p>邮箱:{{user_email}}</p>\n"
-"<p>管理审核功能已被激活，\n"
-"请记住，您需要批准这个用户，他才能登陆!</p>\n"
+"<p>{{site_name}}に新規登録がありました。</p>\n"
+"<p>ユーザ名:{{username}}</p>\n"
+"<p>メールアドレス:{{user_email}}</p>\n"
+"<p>登録時点で管理者承認機能が有効でしたので、,\n"
+"あなたが承認するまでは彼／彼女はログインすることができません。</p>\n"
 
 #: ../modules/email-customizer/admin-email-customizer.php:114
 #: ../modules/email-customizer/user-email-customizer.php:143
 msgid "Registration with Admin Approval"
-msgstr "注册需管理员审批"
+msgstr "登録に管理者の承認"
 
 #: ../modules/email-customizer/email-customizer.php:7
 msgid "Available Tags"
-msgstr "可用标签"
+msgstr "有効なタグ"
 
 #: ../features/email-confirmation/class-email-confirmation.php:91
 #: ../features/email-confirmation/class-email-confirmation.php:170
@@ -2280,32 +2291,32 @@ msgstr "User Meta"
 
 #: ../modules/email-customizer/email-customizer.php:21
 msgid "Site Url"
-msgstr "网站地址"
+msgstr "サイトURL"
 
 #: ../modules/email-customizer/email-customizer.php:22
 msgid "Site Name"
-msgstr "网站名称"
+msgstr "サイト名"
 
 #: ../modules/email-customizer/email-customizer.php:25
 #: ../modules/user-listing/userlisting.php:133
 msgid "User Id"
-msgstr "用户名称"
+msgstr "ユーザーID"
 
 #: ../modules/email-customizer/email-customizer.php:33
 msgid "Reply To"
-msgstr "回复"
+msgstr "Reply To"
 
 #: ../modules/email-customizer/email-customizer.php:36
 msgid "Activation Key"
-msgstr "激活密钥"
+msgstr "アクティベーションキー"
 
 #: ../modules/email-customizer/email-customizer.php:37
 msgid "Activation Url"
-msgstr "激活URL"
+msgstr "アクティベーションURL"
 
 #: ../modules/email-customizer/email-customizer.php:38
 msgid "Activation Link"
-msgstr "激活链接"
+msgstr "アクティベーションリンク"
 
 #: ../modules/email-customizer/user-email-customizer.php:64
 msgid ""
@@ -2314,12 +2325,12 @@ msgid ""
 "<p>Your username is:{{username}} and password:{{password}}</p>\n"
 msgstr ""
 "\n"
-"<h3>欢迎来到 {{site_name}}!</h3>\n"
-"<p>您的用户名是:{{username}} 密码是:{{password}}</p>\n"
+"<h3>ようこそ、{{site_name}}へ！</h3>\n"
+"<p>あなたのユーザ名は{{username}}、パスワードは{{password}}になります。</p>\n"
 
 #: ../modules/email-customizer/user-email-customizer.php:85
 msgid "Default Registration"
-msgstr "默认注册"
+msgstr "標準登録"
 
 #: ../modules/email-customizer/user-email-customizer.php:91
 msgid ""
@@ -2329,17 +2340,17 @@ msgid ""
 "<p>After you activate, you will receive another email with your credentials.</p>\n"
 msgstr ""
 "\n"
-"<p>激活您的帐户，请点击下面连接:<br/>\n"
+"<p>作成したアカウントのアクティベートの為に、下記のリンクをクリックしてください。<br/>\n"
 "{{{activation_link}}}</p>\n"
-"<p>在您激活完成后，将会收到另外一封凭据邮件。</p>\n"
+"<p>アクティベート完了後、あなたの認証情報が記載されたメールが別途届きます。</p>\n"
 
 #: ../modules/email-customizer/user-email-customizer.php:103
 msgid "[{{site_name}}] Activate {{username}}"
-msgstr "[{{site_name}}] 激活 {{username}}"
+msgstr "[{{site_name}}]のユーザー{{username}}の有効化"
 
 #: ../modules/email-customizer/user-email-customizer.php:114
 msgid "Registration with Email Confirmation"
-msgstr "电子邮件确认注册"
+msgstr "Eメール確認有りの登録"
 
 #: ../modules/email-customizer/user-email-customizer.php:120
 msgid ""
@@ -2349,13 +2360,13 @@ msgid ""
 "<p>Before you can access your account, an administrator needs to approve it. You will be notified via email.</p>\n"
 msgstr ""
 "\n"
-"<h3>欢迎来到 {{site_name}}!</h3>\n"
-"<p>您的用户名:{{username}} 密码:{{password}}</p>\n"
-"<p>在您访问您的帐号前，需要管理审批。您将会收邮件通知。</p>\n"
+"<h3>ようこそ、{{site_name}}へ！</h3>\n"
+"<p>あなたのユーザー名は{{username}}、パスワードは{{password}}です。</p>\n"
+"<p>ご登録いただいたアカウントのご利用には、管理者の承認が必要です。eメールにて通知が届きます。</p>\n"
 
 #: ../modules/email-customizer/user-email-customizer.php:132
 msgid "A new account has been created for you on {{site_name}}"
-msgstr "一个新的帐号在您的 {{site_name}} 上建立"
+msgstr "{{site_name}}用のあなたの新しいアカウントが作成されました。"
 
 #: ../modules/email-customizer/user-email-customizer.php:148
 msgid ""
@@ -2364,16 +2375,16 @@ msgid ""
 "<p>An administrator has just approved your account: {{username}} on {{site_name}}.</p>\n"
 msgstr ""
 "\n"
-"<h3>好消息 !</h3>\n"
-"<p>管理员已经批准您的帐号： {{username}} 在 {{site_name}}.</p>\n"
+"<h3>おめでとうございます！</h3>\n"
+"<p>{{site_name}}の管理者があなたのアカウント{{username}}を承認しました。</p>\n"
 
 #: ../modules/email-customizer/user-email-customizer.php:159
 msgid "Your account on {{site_name}} has been approved!"
-msgstr "您在 {{site_name}} 的帐号已经被通过！"
+msgstr "{{site_name}}のあなたのアカウントが承認されました！"
 
 #: ../modules/email-customizer/user-email-customizer.php:170
 msgid "User Approval Notification"
-msgstr "用户批准通知"
+msgstr "ユーザー承認通知"
 
 #: ../modules/email-customizer/user-email-customizer.php:175
 msgid ""
@@ -2382,203 +2393,203 @@ msgid ""
 "<p>Unfortunatelly an administrator has just unapproved your account: {{username}} on {{site_name}}.</p>\n"
 msgstr ""
 "\n"
-"<h3>您好，</h3>\n"
-"<p>抱歉，管理员未批准您的帐号: {{username}} 在 {{site_name}}.</p>\n"
+"<h3>こんにちは,</h3>\n"
+"<p>残念ながら{{site_name}}の管理者はあなたのアカウント{{username}}を不承認としました。</p>\n"
 
 #: ../modules/email-customizer/user-email-customizer.php:187
 msgid "Your account on {{site_name}} has been unapproved!"
-msgstr "您在 {{site_name}} 的帐号被拒绝！"
+msgstr "{{site_name}}のあなたのアカウントが承認されませんでした！"
 
 #: ../modules/email-customizer/user-email-customizer.php:198
 msgid "Unapproved User Notification"
-msgstr "被拒绝的用户通知"
+msgstr "ユーザー不承認通知"
 
 #: ../modules/multiple-forms/edit-profile-forms.php:11
 #: ../modules/multiple-forms/edit-profile-forms.php:12
 msgid "Edit-profile Form"
-msgstr "编辑资料表单"
+msgstr "プロフィール編集フォーム"
 
 #: ../modules/multiple-forms/edit-profile-forms.php:13
 #: ../modules/multiple-forms/register-forms.php:13
 #: ../modules/user-listing/userlisting.php:13
 msgid "Add New"
-msgstr "新增加"
+msgstr "新規追加"
 
 #: ../modules/multiple-forms/edit-profile-forms.php:14
 msgid "Add new Edit-profile Form"
-msgstr "添加新的编辑资料表单"
+msgstr "プロフィール編集フォームを追加"
 
 #: ../modules/multiple-forms/edit-profile-forms.php:15
 msgid "Edit the Edit-profile Forms"
-msgstr "编辑的编辑个人资料表单"
+msgstr "プロフィール編集フォームを編集"
 
 #: ../modules/multiple-forms/edit-profile-forms.php:16
 msgid "New Edit-profile Form"
-msgstr "新的编辑资料表单"
+msgstr "新規プロフィール編集フォーム"
 
 #: ../modules/multiple-forms/edit-profile-forms.php:17
 #: ../modules/multiple-forms/edit-profile-forms.php:23
 msgid "Edit-profile Forms"
-msgstr "编辑资料表单"
+msgstr "プロフィール編集フォーム"
 
 #: ../modules/multiple-forms/edit-profile-forms.php:18
 msgid "View the Edit-profile Form"
-msgstr "查看编辑资料表单"
+msgstr "プロフィール編集フォームを見る"
 
 #: ../modules/multiple-forms/edit-profile-forms.php:19
 msgid "Search the Edit-profile Forms"
-msgstr "搜索编辑资料表单"
+msgstr "プロフィール編集フォームを検索"
 
 #: ../modules/multiple-forms/edit-profile-forms.php:20
 msgid "No Edit-profile Form found"
-msgstr "没有编辑个人资料表单"
+msgstr "プロフィール編集フォームが見つかりません"
 
 #: ../modules/multiple-forms/edit-profile-forms.php:21
 msgid "No Edit-profile Forms found in trash"
-msgstr "在回收站中没有编辑个人资料表单"
+msgstr "ゴミ箱にプロフィール編集フォームが見つかりません"
 
 #: ../modules/multiple-forms/edit-profile-forms.php:131
 #: ../modules/multiple-forms/register-forms.php:134
 #: ../modules/user-listing/userlisting.php:1140
 msgid "Shortcode"
-msgstr "简码"
+msgstr "ショートコード"
 
 #: ../modules/multiple-forms/edit-profile-forms.php:151
 #: ../modules/multiple-forms/register-forms.php:155
 #: ../modules/user-listing/userlisting.php:1161
 msgid "(no title)"
-msgstr "（没有标题）"
+msgstr "(無題)"
 
 #: ../modules/multiple-forms/edit-profile-forms.php:171
 #: ../modules/multiple-forms/register-forms.php:174
 #: ../modules/user-listing/userlisting.php:1181
 msgid "The shortcode will be available after you publish this form."
-msgstr "简码将在您发布表单后可用。"
+msgstr "ショートコードはこのフォームを公開後に有効となります。"
 
 #: ../modules/multiple-forms/edit-profile-forms.php:173
 #: ../modules/multiple-forms/register-forms.php:176
 #: ../modules/user-listing/userlisting.php:1183
 msgid "Use this shortcode on the page you want the form to be displayed:"
-msgstr "使用这个简码在页面上，将会获得您想要的表单显示效果："
+msgstr "フォームを表示したいページにこのショートコードを挿入してください:"
 
 #: ../modules/multiple-forms/edit-profile-forms.php:177
 #: ../modules/multiple-forms/register-forms.php:180
 #: ../modules/user-listing/userlisting.php:1187
 msgid "<span style=\"color:red;\">Note:</span> changing the form title also changes the shortcode!"
-msgstr "<span style=\"color:red;\">注意:</span> 改变表单标题也将改变简码！"
+msgstr "<span style=\"color:red;\">メモ:</span> タイトルを変更するとショートコードも変更されます！"
 
 #: ../modules/multiple-forms/edit-profile-forms.php:183
 #: ../modules/multiple-forms/register-forms.php:186
 #: ../modules/user-listing/userlisting.php:1220
 msgid "Form Shortcode"
-msgstr "表单简码"
+msgstr "フォーム・ショートコード"
 
 #: ../modules/multiple-forms/edit-profile-forms.php:202
 #: ../modules/multiple-forms/register-forms.php:226
 msgid "Whether to redirect the user to a specific page or not"
-msgstr "是否将用户重定向到特定页"
+msgstr "ユーザを特定のページにリダイレクトするかを指定します。"
 
 #: ../modules/multiple-forms/edit-profile-forms.php:203
 #: ../modules/multiple-forms/register-forms.php:227
 msgid "Display Messages"
-msgstr "显示消息"
+msgstr "表示メッセージ"
 
 #: ../modules/multiple-forms/edit-profile-forms.php:203
 #: ../modules/multiple-forms/register-forms.php:227
 msgid "Allowed time to display any success messages (in seconds)"
-msgstr "允许用时间去显示成功信息提示（秒）"
+msgstr "成功メッセージの表示時間（秒）"
 
 #: ../modules/multiple-forms/edit-profile-forms.php:204
 msgid "Specify the URL of the page users will be redirected once they updated their profile using this form<br/>Use the following format: http://www.mysite.com"
-msgstr "指定页面用于用户一旦更新他们的资料使用这个表单转向<br/>使用这种格式: http://www.mysite.com"
+msgstr "このフォームでプロフィールを更新した後にリダイレクトされるページを指定します。<br />次の形式で指定: http://www.mysite.com"
 
 #: ../modules/multiple-forms/edit-profile-forms.php:211
 msgid "After Profile Update..."
-msgstr "档案更新后…"
+msgstr "プロフォール更新後..."
 
 #: ../modules/multiple-forms/edit-profile-forms.php:237
 #: ../modules/multiple-forms/register-forms.php:258
 msgid "Add New Field to the List"
-msgstr "添加新字段到列表"
+msgstr "リストに欄を追加"
 
 #: ../modules/multiple-forms/edit-profile-forms.php:241
 #: ../modules/multiple-forms/register-forms.php:262
 msgid "Choose one of the supported fields you manage <a href=\""
-msgstr "选择一个支持字段去管理 <a href=\""
+msgstr "編集したい記入欄を選んでください  <a href=\""
 
 #: ../modules/multiple-forms/multiple-forms.php:416
 msgid "<pre>Title (Type)</pre>"
-msgstr "<pre>标题 (类型)</pre>"
+msgstr "<pre>タイトル (タイプ)</pre>"
 
 #: ../modules/multiple-forms/multiple-forms.php:232
 msgid "You need to specify the title of the form before creating it"
-msgstr "你需要在创建前指定表单的标题"
+msgstr "フォーム作成前にタイトルを指定する必要があります"
 
 #: ../modules/multiple-forms/register-forms.php:11
 #: ../modules/multiple-forms/register-forms.php:12
 msgid "Registration Form"
-msgstr "注册表单"
+msgstr "登録フォーム"
 
 #: ../modules/multiple-forms/register-forms.php:14
 msgid "Add new Registration Form"
-msgstr "增加新的注册表单"
+msgstr "登録フォームを追加"
 
 #: ../modules/multiple-forms/register-forms.php:15
 msgid "Edit the Registration Forms"
-msgstr "编缉注册表单"
+msgstr "登録フォームを編集"
 
 #: ../modules/multiple-forms/register-forms.php:16
 msgid "New Registration Form"
-msgstr "新注册表单"
+msgstr "新規登録フォーム"
 
 #: ../modules/multiple-forms/register-forms.php:17
 #: ../modules/multiple-forms/register-forms.php:23
 msgid "Registration Forms"
-msgstr "注册表单"
+msgstr "登録フォーム"
 
 #: ../modules/multiple-forms/register-forms.php:18
 msgid "View the Registration Form"
-msgstr "查看注册表单"
+msgstr "登録フォームを見る"
 
 #: ../modules/multiple-forms/register-forms.php:19
 msgid "Search the Registration Forms"
-msgstr "搜索注册表单"
+msgstr "登録フォームを検索"
 
 #: ../modules/multiple-forms/register-forms.php:20
 msgid "No Registration Form found"
-msgstr "没有找到注册表单"
+msgstr "登録フォームが見つかりません。"
 
 #: ../modules/multiple-forms/register-forms.php:21
 msgid "No Registration Forms found in trash"
-msgstr "在回收站没有找到注册表单"
+msgstr "ゴミ箱に登録フォームが見つかりません。"
 
 #: ../modules/multiple-forms/register-forms.php:215
 msgid "Default Role"
-msgstr "默认角色"
+msgstr "デフォルト権限"
 
 #: ../modules/multiple-forms/register-forms.php:224
 msgid "Set Role"
-msgstr "设置角色"
+msgstr "権限をセットする"
 
 #: ../modules/multiple-forms/register-forms.php:224
 msgid "Choose what role the user will have after (s)he registered<br/>If not specified, defaults to the role set in the WordPress settings"
-msgstr "选择用户注册后的角色<br/>如无指定，将默认使用 WordPress 的设定"
+msgstr "登録したユーザに割り当てられる権限を選択してください。選択しなかった場合、WordPress設定のデフォルトが適用されます。"
 
 #: ../modules/multiple-forms/register-forms.php:225
 msgid "Automatically Log In"
-msgstr "自动登录"
+msgstr "自動でログイン"
 
 #: ../modules/multiple-forms/register-forms.php:225
 msgid "Whether to automatically log in the newly registered user or not<br/>Only works on single-sites without \"Admin Approval\" and \"Email Confirmation\" features activated<br/>WARNING: Caching the registration form will make automatic login not work"
-msgstr "是否记录用户新注册 <br/> 只使用于单网站，并且没有开启  \"管理员审批\" 与 \"邮箱确认\" 功能 <br/>警告：缓存注册表单会让自动登录不正常"
+msgstr "新規登録ユーザが自動的にログインするかどうかを指定します。\"管理者承認\"機能\"と\"Eメール確認\"機能が無効化されたシングルサイトでのみ機能します。注意: 登録フォームをキャッシュすると自動ログイン機能は機能しません。"
 
 #: ../modules/multiple-forms/register-forms.php:228
 msgid "Specify the URL of the page users will be redirected once registered using this form<br/>Use the following format: http://www.mysite.com"
-msgstr "指定用户注册页面地址将被重定向<br/>使用下列格式: http://www.mysite.com"
+msgstr "このフォームで新規登録した後にリダイレクトされるページを指定します。<br />次の形式で指定: http://www.mysite.com"
 
 #: ../modules/multiple-forms/register-forms.php:234
 msgid "After Registration..."
-msgstr "注册后…"
+msgstr "登録後..."
 
 #: ../modules/user-listing/class-userlisting.php:470
 #: ../modules/user-listing/userlisting.php:709
@@ -2586,129 +2597,129 @@ msgstr "注册后…"
 #: ../modules/user-listing/userlisting.php:996
 #: ../modules/user-listing/userlisting.php:1340
 msgid "Search Users by All Fields"
-msgstr "在所有字段中搜索用户"
+msgstr "全ての欄でユーザを検索"
 
 #: ../modules/user-listing/userlisting.php:14
 msgid "Add new User Listing"
-msgstr "增加新的用户列表"
+msgstr "新しいユーザ一覧を追加"
 
 #: ../modules/user-listing/userlisting.php:15
 msgid "Edit the User Listing"
-msgstr "编辑用户列表"
+msgstr "ユーザ一覧の編集"
 
 #: ../modules/user-listing/userlisting.php:16
 msgid "New User Listing"
-msgstr "新的用户列表"
+msgstr "新規ユーザ一覧"
 
 #: ../modules/user-listing/userlisting.php:18
 msgid "View the User Listing"
-msgstr "查看用户列表"
+msgstr "ユーザー一覧を表示"
 
 #: ../modules/user-listing/userlisting.php:19
 msgid "Search the User Listing"
-msgstr "搜索用户列表"
+msgstr "ユーザー一覧を検索"
 
 #: ../modules/user-listing/userlisting.php:20
 msgid "No User Listing found"
-msgstr "没有找到用户列表"
+msgstr "ユーザ一覧が見つかりません"
 
 #: ../modules/user-listing/userlisting.php:21
 msgid "No User Listing found in trash"
-msgstr "没有在回收站找到用户列表"
+msgstr "ゴミ箱にユーザ一覧が見つかりません"
 
 #: ../modules/user-listing/userlisting.php:95
 msgid "Display name as"
-msgstr "显示名称为"
+msgstr "表示名"
 
 #: ../modules/user-listing/userlisting.php:125
 #: ../modules/user-listing/userlisting.php:1248
 msgid "Registration Date"
-msgstr "注册日期"
+msgstr "登録日"
 
 #: ../modules/user-listing/userlisting.php:126
 #: ../modules/user-listing/userlisting.php:1252
 msgid "Number of Posts"
-msgstr "帖子数"
+msgstr "投稿数"
 
 #: ../modules/user-listing/userlisting.php:130
 msgid "More Info"
-msgstr "更多信息"
+msgstr "追加情報"
 
 #: ../modules/user-listing/userlisting.php:131
 msgid "More Info Url"
-msgstr "更多信息网址"
+msgstr "追加情報URL"
 
 #: ../modules/user-listing/userlisting.php:132
 msgid "Avatar or Gravatar"
-msgstr "头像或 Gravatar"
+msgstr "アバター or Gravatar"
 
 #: ../modules/user-listing/userlisting.php:161
 msgid "Meta Variables"
-msgstr "Meta 变量"
+msgstr "記入欄タグ(Meta Variables)"
 
 #: ../modules/user-listing/userlisting.php:167
 msgid "Sort Variables"
-msgstr "分类变量"
+msgstr "ソートタグ (Sort Variables)"
 
 #: ../modules/user-listing/userlisting.php:171
 #: ../modules/user-listing/userlisting.php:198
 msgid "Extra Functions"
-msgstr "额外功能"
+msgstr "追加機能タグ (Extra Functions)"
 
 #: ../modules/user-listing/userlisting.php:173
 msgid "Pagination"
-msgstr "分页"
+msgstr "ページ分割"
 
 #: ../modules/user-listing/userlisting.php:174
 msgid "Search all Fields"
-msgstr "搜索所有字段"
+msgstr "全ての欄を検索"
 
 #: ../modules/user-listing/userlisting.php:200
 msgid "Go Back Link"
-msgstr "返回链接"
+msgstr "戻るリンク"
 
 #: ../modules/user-listing/userlisting.php:218
 msgid "All-userlisting Template"
-msgstr "所有用户列表模板"
+msgstr "一覧画面のテンプレート"
 
 #: ../modules/user-listing/userlisting.php:221
 msgid "Single-userlisting Template"
-msgstr "单用户列表模板"
+msgstr "個別画面のテンプレート"
 
 #: ../modules/user-listing/userlisting.php:338
 msgid "You do not have permission to view this user list"
-msgstr "您没有权限查看该用户列表"
+msgstr "このユーザー一覧を閲覧する権限がありません。"
 
 #: ../modules/user-listing/userlisting.php:351
 msgid "You do not have the required user role to view this user list"
-msgstr "没有所需的用户权限查看用户列表"
+msgstr "ユーザー一覧を閲覧するのに必要な権限がありません"
 
 #: ../modules/user-listing/userlisting.php:599
 msgid "First/Lastname"
-msgstr "名字/姓氏"
+msgstr "名/姓"
 
 #: ../modules/user-listing/userlisting.php:605
 msgid "Sign-up Date"
-msgstr "注册日期"
+msgstr "登録日"
 
 #: ../modules/user-listing/userlisting.php:614
 #: ../modules/user-listing/userlisting.php:1251
 msgid "Display Name"
-msgstr "显示名称"
+msgstr "表示名"
 
 #: ../modules/user-listing/userlisting.php:623
 msgid "Posts"
-msgstr "帖子"
+msgstr "投稿数"
 
 #: ../modules/user-listing/userlisting.php:626
 #: ../modules/user-listing/userlisting.php:1257
 msgid "Aim"
-msgstr "Aim"
+msgstr "AIM"
 
 #: ../modules/user-listing/userlisting.php:629
 #: ../modules/user-listing/userlisting.php:1258
 msgid "Yim"
-msgstr "Yim"
+msgstr "Yahoo! Messenger"
 
 #: ../modules/user-listing/userlisting.php:632
 #: ../modules/user-listing/userlisting.php:1259
@@ -2717,146 +2728,146 @@ msgstr "Jabber"
 
 #: ../modules/user-listing/userlisting.php:812
 msgid "Click here to see more information about this user"
-msgstr "点击这里查看此用户的更多信息"
+msgstr "このユーザについてもっと見るにはここをクリック"
 
 #: ../modules/user-listing/userlisting.php:812
 msgid "More..."
-msgstr "更多..."
+msgstr "詳細..."
 
 #: ../modules/user-listing/userlisting.php:815
 msgid "Click here to see more information about this user."
-msgstr "点击这里查看此用户的更多信息。"
+msgstr "このユーザーの詳細はここをクリック"
 
 #: ../modules/user-listing/userlisting.php:907
 #: ../modules/user-listing/userlisting.php:910
 msgid "Click here to go back"
-msgstr "点击这里返回"
+msgstr "戻るにはここをクリック"
 
 #: ../modules/user-listing/userlisting.php:907
 msgid "Back"
-msgstr "返回"
+msgstr "戻る"
 
 #: ../modules/user-listing/userlisting.php:940
 msgid "&laquo;&laquo; First"
-msgstr "&laquo;&laquo; 首页"
+msgstr "&laquo;&laquo; 最初"
 
 #: ../modules/user-listing/userlisting.php:941
 msgid "&laquo; Prev"
-msgstr "&laquo; 上一页"
+msgstr "&laquo; 前"
 
 #: ../modules/user-listing/userlisting.php:942
 msgid "Next &raquo; "
-msgstr "下一页 &raquo; "
+msgstr "次 &raquo; "
 
 #: ../modules/user-listing/userlisting.php:943
 msgid "Last &raquo;&raquo;"
-msgstr "最后 &raquo;&raquo;"
+msgstr "最後 &raquo;&raquo;"
 
 #: ../modules/user-listing/userlisting.php:972
 msgid "You don't have any pagination settings on this userlisting!"
-msgstr "您不需在用户列表中设置分页"
+msgstr "このユーザー一覧に対するページネーションの設定がありません。"
 
 #: ../modules/user-listing/userlisting.php:1013
 msgid "Search"
-msgstr "搜索"
+msgstr "検索"
 
 #: ../modules/user-listing/userlisting.php:1014
 msgid "Clear Results"
-msgstr "清除结果"
+msgstr "結果をクリア"
 
 #: ../modules/user-listing/userlisting.php:1190
 #: ../modules/user-listing/userlisting.php:1194
 msgid "Extra shortcode parameters"
-msgstr "额外简码参数"
+msgstr "その他のショートコード用パラメーター"
 
 #: ../modules/user-listing/userlisting.php:1197
 msgid "displays users having a certain meta-value within a certain (extra) meta-field"
-msgstr "显示用户在某一（额外）元字段（meta-field）"
+msgstr "特定の(extra) meta-fieldが特定のmeta-valueをもつユーザのみ表示"
 
 #: ../modules/user-listing/userlisting.php:1198
 msgid "Example:"
-msgstr "例子："
+msgstr "例:"
 
 #: ../modules/user-listing/userlisting.php:1200
 msgid "Remember though, that the field-value combination must exist in the database."
-msgstr "记住，该字段值的组合必须存在于数据库中。"
+msgstr ""
 
 #: ../modules/user-listing/userlisting.php:1269
 msgid "Random (very slow on large databases > 10K user)"
-msgstr "随机 （在大于 10K 的用户数据库中将会很慢 ）"
+msgstr "ランダム (1万ユーザ以上の大きなデータベースではとても遅い)"
 
 #: ../modules/user-listing/userlisting.php:1282
 msgid "Roles to Display"
-msgstr "角色显示："
+msgstr "表示対象にする権限:"
 
 #: ../modules/user-listing/userlisting.php:1282
 msgid "Restrict the userlisting to these selected roles only<br/>If not specified, defaults to all existing roles"
-msgstr "限制用户列表中的特定角色<br/>如果没有指定，默认为全部现有的角色"
+msgstr "このユーザ一覧を選択した権限のみに制限してください。<br/>指定しない場合は、全ての権限のデフォルトになります。"
 
 #: ../modules/user-listing/userlisting.php:1283
 msgid "Number of Users/Page"
-msgstr "用户/页面数"
+msgstr "1ページに表示するユーザ数:"
 
 #: ../modules/user-listing/userlisting.php:1284
 msgid "Default Sorting Criteria"
-msgstr "默认分类标准"
+msgstr "デフォルトのソート基準"
 
 #: ../modules/user-listing/userlisting.php:1284
 msgid "Set the default sorting criteria<br/>This can temporarily be changed for each new session"
-msgstr "设置默认的排序标准<br/>这可以暂时被每一个新的会话更改"
+msgstr "デフォルトのソート基準を指定してください。<br />この指定はセッション毎に一時的に変更できます。"
 
 #: ../modules/user-listing/userlisting.php:1285
 msgid "Default Sorting Order"
-msgstr "默认排列顺序"
+msgstr "初期ソート順"
 
 #: ../modules/user-listing/userlisting.php:1285
 msgid "Set the default sorting order<br/>This can temporarily be changed for each new session"
-msgstr "设置默认排列顺序<br/>这可以在每个新会话时被改变"
+msgstr "デフォルトのソート順を指定してください。この指定はセッション毎に一時的に変更できます。"
 
 #: ../modules/user-listing/userlisting.php:1286
 msgid "Avatar Size (All-userlisting)"
-msgstr "头像大小（所有用户列表）"
+msgstr "アバター画像サイズ（一覧画面）"
 
 #: ../modules/user-listing/userlisting.php:1286
 msgid "Set the avatar size on the all-userlisting only"
-msgstr "设置在所有用户列表的头像大小"
+msgstr "一覧画面で表示するアバター画像のサイズを指定してください。"
 
 #: ../modules/user-listing/userlisting.php:1287
 msgid "Avatar Size (Single-userlisting)"
-msgstr "头像大小（单用户列表）"
+msgstr "アバター画像サイズ（個別画面）"
 
 #: ../modules/user-listing/userlisting.php:1287
 msgid "Set the avatar size on the single-userlisting only"
-msgstr "设置在单用户列表的头像大小"
+msgstr "個別画面で表示するアバター画像のサイズを指定してください。"
 
 #: ../modules/user-listing/userlisting.php:1288
 msgid "Visible only to logged in users?"
-msgstr "只有登录用户可见的？"
+msgstr "ログイン中のユーザーにのみ表示"
 
 #: ../modules/user-listing/userlisting.php:1288
 msgid "The userlisting will only be visible only to the logged in users"
-msgstr "用户列表只有登录用户可见的"
+msgstr "ユーザー一覧をログインしたユーザにだけ表示します"
 
 #: ../modules/user-listing/userlisting.php:1289
 msgid "Visible to following Roles"
-msgstr "以下角色可见"
+msgstr ""
 
 #: ../modules/user-listing/userlisting.php:1289
 msgid "The userlisting will only be visible to the following roles"
-msgstr "用户列表只允许以下角色可见"
+msgstr "ユーザー一覧を以下の権限ユーザにだけ表示します"
 
 #: ../modules/user-listing/userlisting.php:1295
 msgid "Userlisting Settings"
-msgstr "用户列表设置"
+msgstr "ユーザー一覧設定"
 
 #: ../modules/user-listing/userlisting.php:1316
 msgid "You need to activate the Userlisting feature from within the \"Modules\" tab!"
-msgstr "您需要激活用户列表功能在 \"模块\" 选项卡!"
+msgstr "「モジュール」タブの「ユーザー一覧表示」機能を有効にする必要があります！"
 
 #: ../modules/user-listing/userlisting.php:1316
 msgid "You can find it in the Profile Builder menu."
-msgstr "你可以在 Profile Builder 菜单中找到它。"
+msgstr "Profile Builderメニューの中にあります。"
 
 #: ../modules/user-listing/userlisting.php:1479
 msgid "No results found!"
-msgstr "无任何结果！"
+msgstr "見つかりませんでした。"

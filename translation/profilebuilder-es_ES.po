@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Profile Builder package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2015-04-20 12:59:30+0000\n"
+"PO-Revision-Date: 2015-05-25 07:24:15+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -12,7 +12,7 @@ msgstr ""
 
 #: ../admin/add-ons.php:144
 msgid "Download Now"
-msgstr ""
+msgstr "Descargar"
 
 #: ../admin/admin-functions.php:175
 msgid "If you enjoy using <strong> %1$s </strong> please <a href=\"%2$s\" target=\"_blank\">rate us on WordPress.org</a>. More happy users means more features, less bugs and better support for everyone. "
@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../admin/manage-fields.php:68
 msgid "Choose one of the supported field types"
-msgstr ""
+msgstr "Escoja uno de los campos disponibles"
 
 #: ../admin/manage-fields.php:70
 msgid ". Extra Field Types are available in <a href=\"%s\">Hobbyist or PRO versions</a>."
@@ -28,7 +28,7 @@ msgstr ""
 
 #: ../admin/manage-fields.php:98
 msgid "Site Key"
-msgstr ""
+msgstr "Sitio clave"
 
 #: ../admin/manage-fields.php:98
 msgid "The site key from Google, <a href=\"http://www.google.com/recaptcha\" target=\"_blank\">www.google.com/recaptcha</a>"
@@ -36,7 +36,7 @@ msgstr ""
 
 #: ../admin/manage-fields.php:99
 msgid "Secret Key"
-msgstr ""
+msgstr "Clave secreta"
 
 #: ../admin/manage-fields.php:99
 msgid "The secret key from Google, <a href=\"http://www.google.com/recaptcha\" target=\"_blank\">www.google.com/recaptcha</a>"
@@ -346,7 +346,7 @@ msgstr "muestra todos los usuarios excepto aquellos para los que usted ha especi
 
 #: ../features/functions.php:506
 msgid "Minimum length of %d characters"
-msgstr "Mínima fortaleza de %d caracteres"
+msgstr "Mínimo de %d caracteres. "
 
 #: ../front-end/class-formbuilder.php:99 ../front-end/class-formbuilder.php:102
 msgid "This message is only visible by administrators"

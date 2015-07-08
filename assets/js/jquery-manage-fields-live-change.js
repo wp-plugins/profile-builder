@@ -266,6 +266,7 @@ var fields 	=	{
 																						'.row-field-title',
 																						'.row-meta-name',
 																						'.row-description',
+                                                                                        '.row-default-option-country',
 																						'.row-required',
 																						'.row-overwrite-existing'
 																					]
@@ -275,6 +276,7 @@ var fields 	=	{
 																						'.row-field-title',
 																						'.row-meta-name',
 																						'.row-description',
+                                                                                        '.row-default-option-timezone',
 																						'.row-required',
 																						'.row-overwrite-existing'
 																					]

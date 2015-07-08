@@ -18,9 +18,11 @@ function wppb_jabber_handler( $output, $form_location, $field, $user_id, $field_
 		if ( array_key_exists( $field['id'], $field_check_errors ) )
 			$error_mark = '<img src="'.WPPB_PLUGIN_URL.'assets/images/pencil_delete.png" title="'.wppb_required_field_error($field["field-title"]).'"/>';
 
+		$extra_attr = apply_filters( 'wppb_extra_attribute', '', $field );
+
         $output = '
 			<label for="jabber">'.$item_title.$error_mark.'</label>
-			<input class="text-input" name="jabber" maxlength="'. apply_filters( 'wppb_maximum_character_length', 70 ) .'" type="text" class="default_field_jabber" id="jabber" value="'. esc_attr( wp_unslash( $input_value ) ) .'" />';
+			<input class="text-input" name="jabber" maxlength="'. apply_filters( 'wppb_maximum_character_length', 70 ) .'" type="text" class="default_field_jabber" id="jabber" value="'. esc_attr( wp_unslash( $input_value ) ) .'" '. $extra_attr .'/>';
         if( !empty( $item_description ) )
             $output .= '<span class="wppb-description-delimiter">'. $item_description .'</span>';
 
