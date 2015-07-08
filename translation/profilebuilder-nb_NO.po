@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Profile Builder package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2015-04-30 07:30:21+0000\n"
+"PO-Revision-Date: 2015-07-07 13:21:54+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -12,31 +12,31 @@ msgstr ""
 
 #: ../admin/add-ons.php:144
 msgid "Download Now"
-msgstr ""
+msgstr "Last ned nå"
 
 #: ../admin/admin-functions.php:175
 msgid "If you enjoy using <strong> %1$s </strong> please <a href=\"%2$s\" target=\"_blank\">rate us on WordPress.org</a>. More happy users means more features, less bugs and better support for everyone. "
-msgstr ""
+msgstr "Liker du <strong> %1$s </strong>? I så fall: spre ordet og gi oss en <a href=\"%2$s\" target=\"_blank\">rating  WordPress.org</a>. Jo flere fornøyde brukere vi har, jo flere features kan vi utvikle, flere bugs kan utraderes og alle får bedre support."
 
 #: ../admin/manage-fields.php:68
 msgid "Choose one of the supported field types"
-msgstr ""
+msgstr "Velg en type felt"
 
 #: ../admin/manage-fields.php:70
 msgid ". Extra Field Types are available in <a href=\"%s\">Hobbyist or PRO versions</a>."
-msgstr ""
+msgstr ". Flere typer felt finnes i <a href=\"%s\">Hobbyist og PRO versjonen</a>."
 
 #: ../admin/manage-fields.php:98
 msgid "Site Key"
-msgstr ""
+msgstr "Site Key"
 
 #: ../admin/manage-fields.php:98
 msgid "The site key from Google, <a href=\"http://www.google.com/recaptcha\" target=\"_blank\">www.google.com/recaptcha</a>"
-msgstr ""
+msgstr "\"Site Key\" fra Google, <a href=\"http://www.google.com/recaptcha\" target=\"_blank\">www.google.com/recaptcha</a>"
 
 #: ../admin/manage-fields.php:99
 msgid "Secret Key"
-msgstr ""
+msgstr "Secret Key"
 
 #: ../admin/manage-fields.php:99
 msgid "The secret key from Google, <a href=\"http://www.google.com/recaptcha\" target=\"_blank\">www.google.com/recaptcha</a>"
@@ -44,11 +44,11 @@ msgstr ""
 
 #: ../admin/manage-fields.php:365
 msgid "You must enter the site key\n"
-msgstr ""
+msgstr "Du må legge inn \"site key\"\n"
 
 #: ../admin/manage-fields.php:367
 msgid "You must enter the secret key\n"
-msgstr ""
+msgstr "Du må legge inn \"Secret Key\"\n"
 
 #: ../admin/add-ons.php:10 ../admin/add-ons.php:32
 msgid "Add-Ons"
@@ -404,14 +404,14 @@ msgstr ""
 
 #: ../admin/register-version.php:251
 msgid "<p>Your <strong>Profile Builder</strong> license is about to expire on %5$s. <br/>Please %1$sRenew Your Licence%2$s to continue receiving access to product downloads, automatic updates and support. %3$sRenew now and get 50&#37; off %4$s %6$sDismiss%7$s</p>"
-msgstr ""
+msgstr "<p>Din<strong>Profile Builder</strong> lisens vil utløpe den %5$s. <br/>Vennligst%1$sForny din lisens%2$s for å motta fortsatt tilgang op nedlastinger, automatisk oppdatering og support. %3$sForny nå og motta 50&#37; i avslag%4$s %6$sNei takk%7$s</p>"
 
 #: ../assets/lib/wck-api/fields/country select.php:14
 #: ../assets/lib/wck-api/fields/cpt select.php:17
 #: ../assets/lib/wck-api/fields/select.php:14 ../assets/lib/wck-api/fields/user
 #: select.php:15
 msgid "...Choose"
-msgstr ""
+msgstr "...velg"
 
 #: ../features/class-list-table.php:526 ../features/class-list-table.php:941
 msgid "1 item"

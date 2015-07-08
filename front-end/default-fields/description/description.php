@@ -11,7 +11,9 @@ function wppb_description_handler( $output, $form_location, $field, $user_id, $f
 		$input_value = $field['default-value'];
 		
 	$input_value = ( isset( $request_data['description'] ) ? trim( $request_data['description'] ) : $input_value );
-	
+
+	$extra_attr = apply_filters( 'wppb_extra_attribute', '', $field );
+
 	if ( $form_location != 'back_end' ){
 		$error_mark = ( ( $field['required'] == 'Yes' ) ? '<span class="wppb-required" title="'.wppb_required_field_error($field["field-title"]).'">*</span>' : '' );
 					
@@ -20,7 +22,7 @@ function wppb_description_handler( $output, $form_location, $field, $user_id, $f
 
         $output = '
 			<label for="description">'.$item_title.$error_mark.'</label>
-			<textarea rows="'.$field['row-count'].'" name="description" maxlength="'. apply_filters( 'wppb_maximum_character_length', '', $field ) .'" class="default_field_description" id="description" wrap="virtual">'. esc_textarea( wp_unslash( $input_value ) ).'</textarea>';
+			<textarea rows="'.$field['row-count'].'" name="description" maxlength="'. apply_filters( 'wppb_maximum_character_length', '', $field ) .'" class="default_field_description" id="description" wrap="virtual" '. $extra_attr .'>'. esc_textarea( wp_unslash( $input_value ) ).'</textarea>';
         if( !empty( $item_description ) )
             $output .= '<span class="wppb-description-delimiter">'. $item_description .'</span>';
 

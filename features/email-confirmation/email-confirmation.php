@@ -386,7 +386,7 @@ function wppb_signup_user_notification( $user, $user_email, $activation_key, $me
 
 	$message_context = 'email_user_activate';
 
-	wppb_mail( $user_email, $subject, $message, $from_name, $message_context, '', $user, '', $user_email, 'register_w_email_confirmation', $registration_page_url, $meta );
+	wppb_mail( $user_email, $subject, $message, $from_name, $message_context );
 	
 	return true;
 }

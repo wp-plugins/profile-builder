@@ -104,7 +104,9 @@ function wppb_manage_fields_submenu(){
         array( 'type' => 'text', 'slug' => 'default-value', 'title' => __( 'Default Value', 'profilebuilder' ), 'description' => __( "Default value of the field", 'profilebuilder' ) ),
         array( 'type' => 'text', 'slug' => 'default-option', 'title' => __( 'Default Option', 'profilebuilder' ), 'description' => __( "Specify the option which should be selected by default", 'profilebuilder' ) ),
         array( 'type' => 'text', 'slug' => 'default-options', 'title' => __( 'Default Option(s)', 'profilebuilder' ), 'description' => __( "Specify the option which should be checked by default<br/>If there are multiple values, separate them with a ',' (comma)", 'profilebuilder' ) ),
-        array( 'type' => 'textarea', 'slug' => 'default-content', 'title' => __( 'Default Content', 'profilebuilder' ), 'description' => __( "Default value of the textarea", 'profilebuilder' ) ),
+		array( 'type' => 'select', 'slug' => 'default-option-country', 'title' => __( 'Default Option', 'profilebuilder' ), 'options' => wppb_country_select_options( 'back_end' ), 'description' => __( "Default option of the field", 'profilebuilder' ) ),
+		array( 'type' => 'select', 'slug' => 'default-option-timezone', 'title' => __( 'Default Option', 'profilebuilder' ), 'options' => wppb_timezone_select_options( 'back_end' ), 'description' => __( "Default option of the field", 'profilebuilder' ) ),
+		array( 'type' => 'textarea', 'slug' => 'default-content', 'title' => __( 'Default Content', 'profilebuilder' ), 'description' => __( "Default value of the textarea", 'profilebuilder' ) ),
         array( 'type' => 'select', 'slug' => 'required', 'title' => __( 'Required', 'profilebuilder' ), 'options' => array( 'No', 'Yes' ), 'default' => 'No', 'description' => __( 'Whether the field is required or not', 'profilebuilder' ) ),
         array( 'type' => 'select', 'slug' => 'overwrite-existing', 'title' => __( 'Overwrite Existing', 'profilebuilder' ), 'options' => array( 'No', 'Yes' ), 'default' => 'No', 'description' => __( "Selecting 'Yes' will add the field to the list, but will overwrite any other field in the database that has the same meta-name<br/>Use this at your own risk", 'profilebuilder' ) ),
     ) );
@@ -210,7 +212,6 @@ function wppb_get_meta_name(){
 		return 'custom_field_' . $id;
 	}
 }
-
 
 /**
  * Function that returns a unique, incremented ID
