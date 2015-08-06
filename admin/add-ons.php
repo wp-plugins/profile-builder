@@ -269,6 +269,8 @@ add_action( 'wp_ajax_wppb_add_on_deactivate', 'wppb_add_on_deactivate' );
  */
 function wppb_add_on_download_zip_file() {
 
+    check_ajax_referer( 'wppb-activate-addon', 'nonce' );
+
     // Set the response to success and change it later if needed
     $response = $_POST['wppb_add_on_index'];
     $add_on_index = $response;
@@ -276,6 +278,9 @@ function wppb_add_on_download_zip_file() {
     // Setup variables from POST
     $wppb_add_on_download_url = $_POST['wppb_add_on_download_url'];
     $wppb_add_on_zip_name = $_POST['wppb_add_on_zip_name'];
+
+    if( strpos( $wppb_add_on_download_url, 'http://www.cozmoslabs.com/' ) === false )
+        wp_die();
 
 
     // Get .zip file

@@ -202,6 +202,7 @@ function wppb_front_end_password_recovery(){
                 $requestedUserID = $query[0]->ID;
                 $requestedUserLogin = $query[0]->user_login;
                 $requestedUserEmail = $query[0]->user_email;
+                $requestedUserNicename = $query[0]->user_nicename;
 
                 if( $wppb_generalSettings['loginWith'] == 'username' )
                     $display_username_email = $query[0]->user_login;
@@ -212,7 +213,7 @@ function wppb_front_end_password_recovery(){
                 $key = wppb_retrieve_activation_key( $requestedUserLogin );
 
                 //send primary email message
-                $recoveruserMailMessage1  = sprintf( __('Someone requested that the password be reset for the following account: <b>%1$s</b><br/>If this was a mistake, just ignore this email and nothing will happen.<br/>To reset your password, visit the following link:%2$s', 'profilebuilder'), $display_username_email, '<a href="'.esc_url( add_query_arg( array( 'loginName' => $requestedUserLogin, 'key' => $key ), wppb_curpageurl() ) ).'">'.esc_url( add_query_arg( array( 'loginName' => $requestedUserLogin, 'key' => $key ), wppb_curpageurl() ) ).'</a>');
+                $recoveruserMailMessage1  = sprintf( __('Someone requested that the password be reset for the following account: <b>%1$s</b><br/>If this was a mistake, just ignore this email and nothing will happen.<br/>To reset your password, visit the following link:%2$s', 'profilebuilder'), $display_username_email, '<a href="'.esc_url( add_query_arg( array( 'loginName' => $requestedUserNicename, 'key' => $key ), wppb_curpageurl() ) ).'">'.esc_url( add_query_arg( array( 'loginName' => $requestedUserNicename, 'key' => $key ), wppb_curpageurl() ) ).'</a>');
                 $recoveruserMailMessage1  = apply_filters( 'wppb_recover_password_message_content_sent_to_user1', $recoveruserMailMessage1, $requestedUserID, $requestedUserLogin, $requestedUserEmail );
 
                 $recoveruserMailMessageTitle1 = sprintf(__('Password Reset from "%1$s"', 'profilebuilder'), $blogname = wp_specialchars_decode(get_option('blogname'), ENT_QUOTES));
@@ -323,9 +324,9 @@ function wppb_front_end_password_recovery(){
 				//get the login name and key and verify if they match the ones in the database
 
 				$key = $_GET['key'];
-				$login = $_GET['loginName'];
+				$login_nicename = $_GET['loginName'];
 
-				$user = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM $wpdb->users WHERE user_activation_key = %s AND user_login = %s", $key, $login ) );
+				$user = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM $wpdb->users WHERE user_activation_key = %s AND user_nicename = %s", $key, $login_nicename ) );
 
 				if( !empty( $user ) ){
 					//check if the "finalAction" variable is not in the address bar, if it is, don't display the form anymore

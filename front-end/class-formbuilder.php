@@ -279,6 +279,7 @@ class Profile_Builder_Form_Creator{
         ?>
         <form enctype="multipart/form-data" method="post" id="<?php if( $this->args['form_type'] == 'register' ) echo 'wppb-register-user';  else if( $this->args['form_type'] == 'edit_profile' ) echo 'wppb-edit-user'; if( isset($this->args['form_name']) && $this->args['form_name'] != "unspecified" ) echo '-' . $this->args['form_name']; ?>" class="wppb-user-forms<?php if( $this->args['form_type'] == 'register' ) echo ' wppb-register-user';  else if( $this->args['form_type'] == 'edit_profile' ) echo ' wppb-edit-user';?>" action="<?php echo apply_filters( 'wppb_form_action', '' ); ?>">
 			<?php
+            do_action( 'wppb_form_args_before_output', $this->args );
 			echo apply_filters( 'wppb_before_form_fields', '<ul>', $this->args['form_type'] );
 			$this->wppb_output_form_fields( $_REQUEST, $field_check_errors );
 			echo apply_filters( 'wppb_after_form_fields', '</ul>', $this->args['form_type'] );

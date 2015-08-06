@@ -119,7 +119,33 @@ function wppb_general_settings_content() {
 				<ul>
 			</td>
 		</tr>
-	
+
+		<tr class="dynamic2">
+			<th scope="row">
+				<?php _e( '"Admin Approval" on User Role:', 'profilebuilder' ); ?>
+			</th>
+			<td>
+				<div id="wrap">
+					<?php
+					$wppb_userRoles = wppb_adminApproval_onUserRole();
+
+					if( ! empty( $wppb_userRoles ) ) {
+						foreach( $wppb_userRoles as $role => $role_name ) {
+							echo '<label><input type="checkbox" id="adminApprovalOnUserRoleCheckbox" name="wppb_general_settings[adminApprovalOnUserRole][]" class="wppb-checkboxes" value="' . $role . '"';
+							if( ! empty( $wppb_generalSettings['adminApprovalOnUserRole'] ) && in_array( $role, $wppb_generalSettings['adminApprovalOnUserRole'] ) )	echo ' checked';
+							if( empty( $wppb_generalSettings['adminApprovalOnUserRole'] ) )		echo ' checked';
+							echo '>';
+							echo $role_name . '</label><br>';
+						}
+					}
+					?>
+				</div>
+				<ul>
+					<li class="description"><?php printf( __( 'Select on what user roles to activate Admin Approval.', 'profilebuilder' ) ) ?></li>
+					<ul>
+			</td>
+		</tr>
+
 	<?php } ?>
 
 	<?php
@@ -218,3 +244,23 @@ function wppb_general_settings_admin_notices() {
     settings_errors( 'wppb_general_settings' );
 }
 add_action( 'admin_notices', 'wppb_general_settings_admin_notices' );
+
+
+/*
+ * Function that return user roles
+ *
+ * @since v.2.2.0
+ *
+ * @return array
+ */
+function wppb_adminApproval_onUserRole() {
+	global $wp_roles;
+
+	$wp_roles = new WP_Roles();
+
+	$roles = $wp_roles->get_names();
+
+	unset( $roles['administrator'] );
+
+	return $roles;
+}
