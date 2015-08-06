@@ -141,13 +141,13 @@
 	min-height:10px;
 }
 
-#wppb_manage_fields li.row-user-roles label,
-#container_wppb_manage_fields li.row-user-roles label {
+#wppb_manage_fields .ui-sortable label,
+#container_wppb_manage_fields .ui-sortable label {
     background: #fff;
 }
 
-#wppb_manage_fields li.row-user-roles .sortable-handle,
-#container_wppb_manage_fields li.row-user-roles .sortable-handle {
+#wppb_manage_fields .sortable-handle,
+#container_wppb_manage_fields .sortable-handle {
     display: inline-block;
     width: 16px;
     height: 16px;

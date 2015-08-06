@@ -77,9 +77,22 @@ function wppb_activate_signup( $key ) {
 		
 		// if admin approval is activated, then block the user untill he gets approved
 		$wppb_generalSettings = get_option('wppb_general_settings');
-		if ( isset( $wppb_generalSettings['adminApproval'] ) && ( $wppb_generalSettings['adminApproval'] == 'yes' ) ){
-			wp_set_object_terms( $user_id, array( 'unapproved' ), 'user_status', false );
-			clean_object_term_cache( $user_id, 'user_status' );
+		if( isset( $wppb_generalSettings['adminApproval'] ) && ( $wppb_generalSettings['adminApproval'] == 'yes' ) ){
+			$user_data = get_userdata( $user_id );
+
+			if( $wppb_generalSettings != 'not_found' && ! empty( $wppb_generalSettings['adminApprovalOnUserRole'] ) ) {
+				foreach( $user_data->roles as $role ) {
+					if( in_array( $role, $wppb_generalSettings['adminApprovalOnUserRole'] ) ) {
+						wp_set_object_terms( $user_id, array( 'unapproved' ), 'user_status', false);
+						clean_object_term_cache( $user_id, 'user_status' );
+					} else {
+						add_filter( 'wppb_register_success_message', 'wppb_noAdminApproval_successMessage' );
+					}
+				}
+			} else {
+				wp_set_object_terms( $user_id, array( 'unapproved' ), 'user_status', false);
+				clean_object_term_cache( $user_id, 'user_status' );
+			}
 		}
 
         if ( !isset( $wppb_generalSettings['adminApproval'] ) )
@@ -100,12 +113,31 @@ function wppb_activate_signup( $key ) {
 		
 		if ( $inserted_user ){
 			$success_message = apply_filters('wppb_success_email_confirmation', '<p class="wppb-success">'. __('Your email was successfully confirmed.', 'profilebuilder') .'</p><!-- .success -->');
-            $admin_approval_message = apply_filters('wppb_email_confirmation_with_admin_approval', '<p class="alert">'. __('Before you can access your account, an administrator needs to approve it. You will be notified via email.', 'profilebuilder') . '</p>' );
+            $admin_approval_message = apply_filters('wppb_email_confirmation_with_admin_approval', '<p class="wppb-success">'. __('Before you can access your account, an administrator needs to approve it. You will be notified via email.', 'profilebuilder') . '</p>' );
 
             $wppb_general_settings = get_option( 'wppb_general_settings', 'false' );
+
             if ( !empty( $wppb_general_settings['adminApproval'] ) && $wppb_general_settings['adminApproval'] == 'yes' ){
-                return $success_message . $admin_approval_message;
+				$user_data = get_userdata( $user_id );
+
+				if( $wppb_general_settings != 'not_found' && ! empty( $wppb_general_settings['adminApprovalOnUserRole'] ) ) {
+					foreach( $user_data->roles as $role ) {
+						if( in_array( $role, $wppb_general_settings['adminApprovalOnUserRole'] ) ) {
+							return $success_message . $admin_approval_message;
+						} else {
+							wp_set_object_terms( $user_id, NULL, 'user_status' );
+							clean_object_term_cache( $user_id, 'user_status' );
+
+							return $success_message;
+						}
+					}
+				} else {
+					return $success_message . $admin_approval_message;
+				}
             } else {
+				wp_set_object_terms( $user_id, NULL, 'user_status' );
+				clean_object_term_cache( $user_id, 'user_status' );
+
                 return $success_message;
             }
         } else {

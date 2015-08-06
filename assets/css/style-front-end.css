@@ -227,6 +227,16 @@ input#send_credentials_via_email{
 	margin-left:0;
 }
 
+.wppb-checkbox-terms-and-conditions label {
+    width: 100%;
+}
+
+.wppb-form-field.wppb-checkbox-terms-and-conditions input[type="checkbox"].custom_field_toa {
+    float:none;
+    width:auto;
+    margin-right:10px
+}
+
 
 .g-recaptcha{
 	display: inline-block;

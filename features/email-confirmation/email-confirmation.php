@@ -317,7 +317,10 @@ function wppb_signup_user( $username, $user_email, $meta = '' ) {
 	global $wpdb;
 
 	// Format data
-	$user = preg_replace( '/\s+/', '', sanitize_user( $username, true ) );
+	$user = sanitize_user( $username, true );
+    if( is_multisite() )
+	    $user = preg_replace( '/\s+/', '', $user );
+
 	$user_email = sanitize_email( $user_email );
 	$activation_key = substr( md5( time() . rand() . $user_email ), 0, 16 );
 	$meta = serialize( $meta );
@@ -433,13 +436,6 @@ function wppb_manual_activate_signup( $activation_key ) {
 			$retVal = ( is_multisite() ? $wpdb->update( $wpdb->signups, array('active' => 1, 'activated' => $now), array('activation_key' => $activation_key) ) : $wpdb->update( $wpdb->base_prefix.'signups', array('active' => 1, 'activated' => $now), array('activation_key' => $activation_key) ) );
 
 			wppb_add_meta_to_user_on_activation( $user_id, '', $meta );
-			
-			// if admin approval is activated, then block the user untill he gets approved
-			$wppb_general_settings = get_option( 'wppb_general_settings' );
-			if( isset( $wppb_general_settings['adminApproval'] ) && ( $wppb_general_settings['adminApproval'] == 'yes' ) ){
-				wp_set_object_terms( $user_id, array( 'unapproved' ), 'user_status', false);
-				clean_object_term_cache( $user_id, 'user_status' );
-			}
 
             /* copy the hashed password from signup meta to wp user table */
             if( !empty( $meta['user_pass'] ) ){
@@ -470,8 +466,11 @@ function wppb_manual_activate_signup( $activation_key ) {
 function wppb_create_user( $user_name, $password, $email) {
     if( is_email( $user_name ) )
         $user_name = apply_filters( 'wppb_generated_random_username', Wordpress_Creation_Kit_PB::wck_generate_slug( trim( $user_name ) ), $user_name );
-    else
-	    $user_name = preg_replace( '/\s+/', '', sanitize_user( $user_name, true ) );
+    else {
+        $user_name = sanitize_user($user_name, true);
+        if( is_multisite() )
+            $user_name = preg_replace( '/\s+/', '', $user_name );
+    }
 
 
 	$user_id = wp_create_user( $user_name, $password, $email );
@@ -507,12 +506,34 @@ function wppb_notify_user_registration_email( $bloginfo, $user_name, $email, $se
 	$message_context = 'email_admin_new_subscriber';
 
 	if ( $adminApproval == 'yes' ) {
-		$message_subject = apply_filters( 'wppb_register_admin_email_subject_with_admin_approval', $message_subject, $email, $password, $message_from, 'wppb_admin_emailc_registration_with_admin_approval_email_subject' );
-	
-		$message_content .= '<br/>' . __( 'The "Admin Approval" feature was activated at the time of registration, so please remember that you need to approve this user before he/she can log in!', 'profilebuilder') ."\r\n";
-		$message_content = apply_filters( 'wppb_register_admin_email_message_with_admin_approval', $message_content, $email, $password, $message_from, 'wppb_admin_emailc_registration_with_admin_approval_email_content' );
+		$user_data = get_user_by( 'email', $email );
 
-		$message_context = 'email_admin_approve';
+		$wppb_generalSettings = get_option( 'wppb_general_settings', 'not_found' );
+
+		$adminApproval_mailAdmin = 0;
+
+		if( $wppb_generalSettings != 'not_found' && ! empty( $wppb_generalSettings['adminApprovalOnUserRole'] ) ) {
+			foreach( $user_data->roles as $role ) {
+				if( in_array( $role, $wppb_generalSettings['adminApprovalOnUserRole'] ) ) {
+					if( ! current_user_can( 'delete_users' ) ) {
+						$adminApproval_mailAdmin = 1;
+					}
+				}
+			}
+		} else {
+			if( ! current_user_can( 'delete_users' ) ) {
+				$adminApproval_mailAdmin = 1;
+			}
+		}
+
+		if( $adminApproval_mailAdmin == 1 ) {
+			$message_subject = apply_filters( 'wppb_register_admin_email_subject_with_admin_approval', $message_subject, $email, $password, $message_from, 'wppb_admin_emailc_registration_with_admin_approval_email_subject' );
+
+			$message_content .= wppb_adminApproval_adminEmailContent();
+			$message_content = apply_filters( 'wppb_register_admin_email_message_with_admin_approval', $message_content, $email, $password, $message_from, 'wppb_admin_emailc_registration_with_admin_approval_email_content' );
+
+			$message_context = 'email_admin_approve';
+		}
 	} else {
 		$message_content = apply_filters( 'wppb_register_admin_email_message_without_admin_approval', $message_content, $email, $password, $message_from, 'wppb_admin_emailc_default_registration_email_content' );
 	}
@@ -540,22 +561,58 @@ function wppb_notify_user_registration_email( $bloginfo, $user_name, $email, $se
 		$user_message_context = 'email_user_account_info';
 
 		if ( $adminApproval == 'yes' ){
-			$user_message_subject = apply_filters( 'wppb_register_user_email_subject_with_admin_approval', $user_message_subject, $email, $password, $user_message_subject, 'wppb_user_emailc_registration_with_admin_approval_email_subject' );
+			$user_data = get_user_by( 'email', $email );
 
-			if( ! current_user_can( 'delete_users' ) ) {
-				$user_message_content .= '<br/><br/>' . __( 'Before you can access your account, an administrator needs to approve it. You will be notified via email.', 'profilebuilder' );
+			$wppb_generalSettings = get_option( 'wppb_general_settings', 'not_found' );
 
-				$user_message_context = 'email_user_need_approval';
+			$adminApproval_mailUser = 0;
+
+			if( $wppb_generalSettings != 'not_found' && ! empty( $wppb_generalSettings['adminApprovalOnUserRole'] ) ) {
+				foreach( $user_data->roles as $role ) {
+					if( in_array( $role, $wppb_generalSettings['adminApprovalOnUserRole'] ) ) {
+						if( ! current_user_can( 'delete_users' ) ) {
+							$adminApproval_mailUser = 1;
+						}
+					}
+				}
+			} else {
+				if( ! current_user_can( 'delete_users' ) ) {
+					$adminApproval_mailUser = 1;
+				}
 			}
 
-			$user_message_content = apply_filters( 'wppb_register_user_email_message_with_admin_approval', $user_message_content, $email, $password, $user_message_subject, 'wppb_user_emailc_registration_with_admin_approval_email_content' );
-		}else
+			if( $adminApproval_mailUser == 1 ) {
+				$user_message_subject = apply_filters( 'wppb_register_user_email_subject_with_admin_approval', $user_message_subject, $email, $password, $user_message_subject, 'wppb_user_emailc_registration_with_admin_approval_email_subject' );
+
+				$user_message_content .= wppb_adminApproval_userEmailContent();
+
+				$user_message_context = 'email_user_need_approval';
+
+				$user_message_content = apply_filters( 'wppb_register_user_email_message_with_admin_approval', $user_message_content, $email, $password, $user_message_subject, 'wppb_user_emailc_registration_with_admin_approval_email_content' );
+			}
+		} else
 			$user_message_content = apply_filters( 'wppb_register_user_email_message_without_admin_approval', $user_message_content, $email, $password, $user_message_subject, 'wppb_user_emailc_default_registration_email_content' );
 
 		$message_sent = wppb_mail( $email, $user_message_subject, $user_message_content, $user_message_from, $user_message_context );
 		
 		return ( ( $message_sent ) ? 2 : 1 );
 	}
+}
+
+
+// function with content to be added in email sent to admin if "Admin Approval" is on
+function wppb_adminApproval_adminEmailContent() {
+	$emailContent = '<br/>' . __( 'The "Admin Approval" feature was activated at the time of registration, so please remember that you need to approve this user before he/she can log in!', 'profilebuilder') ."\r\n";
+
+	return $emailContent;
+}
+
+
+// function with content to be added in email sent to user if "Admin Approval" is on
+function wppb_adminApproval_userEmailContent() {
+	$emailContent = '<br/><br/>' . __( 'Before you can access your account, an administrator needs to approve it. You will be notified via email.', 'profilebuilder' );
+
+	return $emailContent;
 }
 // END FUNCTIONS USED BOTH ON THE REGISTRATION PAGE AND THE EMAIL CONFIRMATION TABLE
 

@@ -69,6 +69,7 @@ function wppb_add_on_download_and_install( $button ) {
     var file_name = $download_button.attr('data-add-on-slug') + '.zip';
     var add_on_name = $download_button.attr('data-add-on-name');
     var add_on_index = $download_button.parents('.wppb-add-on').index('.wppb-add-on');
+    var nonce = $download_button.data('nonce');
 
     $download_button
         .attr('disabled', true);
@@ -86,7 +87,7 @@ function wppb_add_on_download_and_install( $button ) {
     wppb_add_on_set_status_message( $download_button, 'dashicons-download', jQuery('#wppb-add-on-downloading-message-text').text(), fade_in_out_speed, fade_in_out_speed );
 
 
-    jQuery.post( ajaxurl, { action: 'wppb_add_on_download_zip_file', wppb_add_on_download_url: download_url, wppb_add_on_zip_name: file_name, wppb_add_on_name: add_on_name, wppb_add_on_index: add_on_index }, function( response ) {
+    jQuery.post( ajaxurl, { action: 'wppb_add_on_download_zip_file', wppb_add_on_download_url: download_url, wppb_add_on_zip_name: file_name, wppb_add_on_name: add_on_name, wppb_add_on_index: add_on_index, nonce: nonce }, function( response ) {
 
         // Check if we have any errors and display a message to the user
         if( response.indexOf('error') === 0 ) {

@@ -79,6 +79,15 @@ function wppb_manage_fields_submenu(){
         if( $user_role_slug !== 'administrator' )
             array_push( $user_roles, '%' . $user_role['name'] . '%' . $user_role_slug );
 
+
+	// country select
+	$default_country_array = wppb_country_select_options( 'back_end' );
+	foreach( $default_country_array as $iso_country_code => $country_name ) {
+		$default_country_values[] = $iso_country_code;
+		$default_country_options[] = $country_name;
+	}
+
+
 	// set up the fields array
 	$fields = apply_filters( 'wppb_manage_fields', array(
 
@@ -104,7 +113,7 @@ function wppb_manage_fields_submenu(){
         array( 'type' => 'text', 'slug' => 'default-value', 'title' => __( 'Default Value', 'profilebuilder' ), 'description' => __( "Default value of the field", 'profilebuilder' ) ),
         array( 'type' => 'text', 'slug' => 'default-option', 'title' => __( 'Default Option', 'profilebuilder' ), 'description' => __( "Specify the option which should be selected by default", 'profilebuilder' ) ),
         array( 'type' => 'text', 'slug' => 'default-options', 'title' => __( 'Default Option(s)', 'profilebuilder' ), 'description' => __( "Specify the option which should be checked by default<br/>If there are multiple values, separate them with a ',' (comma)", 'profilebuilder' ) ),
-		array( 'type' => 'select', 'slug' => 'default-option-country', 'title' => __( 'Default Option', 'profilebuilder' ), 'options' => wppb_country_select_options( 'back_end' ), 'description' => __( "Default option of the field", 'profilebuilder' ) ),
+		array( 'type' => 'select', 'slug' => 'default-option-country', 'title' => __( 'Default Option', 'profilebuilder' ), 'values' => ( isset( $default_country_values ) ) ? $default_country_values : '', 'options' => ( isset( $default_country_options ) ) ? $default_country_options : '', 'description' => __( "Default option of the field", 'profilebuilder' ) ),
 		array( 'type' => 'select', 'slug' => 'default-option-timezone', 'title' => __( 'Default Option', 'profilebuilder' ), 'options' => wppb_timezone_select_options( 'back_end' ), 'description' => __( "Default option of the field", 'profilebuilder' ) ),
 		array( 'type' => 'textarea', 'slug' => 'default-content', 'title' => __( 'Default Content', 'profilebuilder' ), 'description' => __( "Default value of the textarea", 'profilebuilder' ) ),
         array( 'type' => 'select', 'slug' => 'required', 'title' => __( 'Required', 'profilebuilder' ), 'options' => array( 'No', 'Yes' ), 'default' => 'No', 'description' => __( 'Whether the field is required or not', 'profilebuilder' ) ),
@@ -212,6 +221,289 @@ function wppb_get_meta_name(){
 		return 'custom_field_' . $id;
 	}
 }
+
+
+/**
+ * Function that returns an array with countries
+ *
+ * @since v.2.0
+ *
+ * @return array
+ */
+function wppb_country_select_options( $form_location ) {
+	$country_array = apply_filters( 'wppb_'.$form_location.'_country_select_array',
+		array(
+			''	 => '',
+			'AF' => __( 'Afghanistan', 'profilebuilder' ),
+			'AX' => __( 'Aland Islands', 'profilebuilder' ),
+			'AL' => __( 'Albania', 'profilebuilder' ),
+			'DZ' => __( 'Algeria', 'profilebuilder' ),
+			'AS' => __( 'American Samoa', 'profilebuilder' ),
+			'AD' => __( 'Andorra', 'profilebuilder' ),
+			'AO' => __( 'Angola', 'profilebuilder' ),
+			'AI' => __( 'Anguilla', 'profilebuilder' ),
+			'AQ' => __( 'Antarctica', 'profilebuilder' ),
+			'AG' => __( 'Antigua and Barbuda', 'profilebuilder' ),
+			'AR' => __( 'Argentina', 'profilebuilder' ),
+			'AM' => __( 'Armenia', 'profilebuilder' ),
+			'AW' => __( 'Aruba', 'profilebuilder' ),
+			'AU' => __( 'Australia', 'profilebuilder' ),
+			'AT' => __( 'Austria', 'profilebuilder' ),
+			'AZ' => __( 'Azerbaijan', 'profilebuilder' ),
+			'BS' => __( 'Bahamas', 'profilebuilder' ),
+			'BH' => __( 'Bahrain', 'profilebuilder' ),
+			'BD' => __( 'Bangladesh', 'profilebuilder' ),
+			'BB' => __( 'Barbados', 'profilebuilder' ),
+			'BY' => __( 'Belarus', 'profilebuilder' ),
+			'BE' => __( 'Belgium', 'profilebuilder' ),
+			'BZ' => __( 'Belize', 'profilebuilder' ),
+			'BJ' => __( 'Benin', 'profilebuilder' ),
+			'BM' => __( 'Bermuda', 'profilebuilder' ),
+			'BT' => __( 'Bhutan', 'profilebuilder' ),
+			'BO' => __( 'Bolivia', 'profilebuilder' ),
+			'BQ' => __( 'Bonaire, Saint Eustatius and Saba', 'profilebuilder' ),
+			'BA' => __( 'Bosnia and Herzegovina', 'profilebuilder' ),
+			'BW' => __( 'Botswana', 'profilebuilder' ),
+			'BV' => __( 'Bouvet Island', 'profilebuilder' ),
+			'BR' => __( 'Brazil', 'profilebuilder' ),
+			'IO' => __( 'British Indian Ocean Territory', 'profilebuilder' ),
+			'VG' => __( 'British Virgin Islands', 'profilebuilder' ),
+			'BN' => __( 'Brunei', 'profilebuilder' ),
+			'BG' => __( 'Bulgaria', 'profilebuilder' ),
+			'BF' => __( 'Burkina Faso', 'profilebuilder' ),
+			'BI' => __( 'Burundi', 'profilebuilder' ),
+			'KH' => __( 'Cambodia', 'profilebuilder' ),
+			'CM' => __( 'Cameroon', 'profilebuilder' ),
+			'CA' => __( 'Canada', 'profilebuilder' ),
+			'CV' => __( 'Cape Verde', 'profilebuilder' ),
+			'KY' => __( 'Cayman Islands', 'profilebuilder' ),
+			'CF' => __( 'Central African Republic', 'profilebuilder' ),
+			'TD' => __( 'Chad', 'profilebuilder' ),
+			'CL' => __( 'Chile', 'profilebuilder' ),
+			'CN' => __( 'China', 'profilebuilder' ),
+			'CX' => __( 'Christmas Island', 'profilebuilder' ),
+			'CC' => __( 'Cocos Islands', 'profilebuilder' ),
+			'CO' => __( 'Colombia', 'profilebuilder' ),
+			'KM' => __( 'Comoros', 'profilebuilder' ),
+			'CK' => __( 'Cook Islands', 'profilebuilder' ),
+			'CR' => __( 'Costa Rica', 'profilebuilder' ),
+			'HR' => __( 'Croatia', 'profilebuilder' ),
+			'CU' => __( 'Cuba', 'profilebuilder' ),
+			'CW' => __( 'Curacao', 'profilebuilder' ),
+			'CY' => __( 'Cyprus', 'profilebuilder' ),
+			'CZ' => __( 'Czech Republic', 'profilebuilder' ),
+			'CD' => __( 'Democratic Republic of the Congo', 'profilebuilder' ),
+			'DK' => __( 'Denmark', 'profilebuilder' ),
+			'DJ' => __( 'Djibouti', 'profilebuilder' ),
+			'DM' => __( 'Dominica', 'profilebuilder' ),
+			'DO' => __( 'Dominican Republic', 'profilebuilder' ),
+			'TL' => __( 'East Timor', 'profilebuilder' ),
+			'EC' => __( 'Ecuador', 'profilebuilder' ),
+			'EG' => __( 'Egypt', 'profilebuilder' ),
+			'SV' => __( 'El Salvador', 'profilebuilder' ),
+			'GQ' => __( 'Equatorial Guinea', 'profilebuilder' ),
+			'ER' => __( 'Eritrea', 'profilebuilder' ),
+			'EE' => __( 'Estonia', 'profilebuilder' ),
+			'ET' => __( 'Ethiopia', 'profilebuilder' ),
+			'FK' => __( 'Falkland Islands', 'profilebuilder' ),
+			'FO' => __( 'Faroe Islands', 'profilebuilder' ),
+			'FJ' => __( 'Fiji', 'profilebuilder' ),
+			'FI' => __( 'Finland', 'profilebuilder' ),
+			'FR' => __( 'France', 'profilebuilder' ),
+			'GF' => __( 'French Guiana', 'profilebuilder' ),
+			'PF' => __( 'French Polynesia', 'profilebuilder' ),
+			'TF' => __( 'French Southern Territories', 'profilebuilder' ),
+			'GA' => __( 'Gabon', 'profilebuilder' ),
+			'GM' => __( 'Gambia', 'profilebuilder' ),
+			'GE' => __( 'Georgia', 'profilebuilder' ),
+			'DE' => __( 'Germany', 'profilebuilder' ),
+			'GH' => __( 'Ghana', 'profilebuilder' ),
+			'GI' => __( 'Gibraltar', 'profilebuilder' ),
+			'GR' => __( 'Greece', 'profilebuilder' ),
+			'GL' => __( 'Greenland', 'profilebuilder' ),
+			'GD' => __( 'Grenada', 'profilebuilder' ),
+			'GP' => __( 'Guadeloupe', 'profilebuilder' ),
+			'GU' => __( 'Guam', 'profilebuilder' ),
+			'GT' => __( 'Guatemala', 'profilebuilder' ),
+			'GG' => __( 'Guernsey', 'profilebuilder' ),
+			'GN' => __( 'Guinea', 'profilebuilder' ),
+			'GW' => __( 'Guinea-Bissau', 'profilebuilder' ),
+			'GY' => __( 'Guyana', 'profilebuilder' ),
+			'HT' => __( 'Haiti', 'profilebuilder' ),
+			'HM' => __( 'Heard Island and McDonald Islands', 'profilebuilder' ),
+			'HN' => __( 'Honduras', 'profilebuilder' ),
+			'HK' => __( 'Hong Kong', 'profilebuilder' ),
+			'HU' => __( 'Hungary', 'profilebuilder' ),
+			'IS' => __( 'Iceland', 'profilebuilder' ),
+			'IN' => __( 'India', 'profilebuilder' ),
+			'ID' => __( 'Indonesia', 'profilebuilder' ),
+			'IR' => __( 'Iran', 'profilebuilder' ),
+			'IQ' => __( 'Iraq', 'profilebuilder' ),
+			'IE' => __( 'Ireland', 'profilebuilder' ),
+			'IM' => __( 'Isle of Man', 'profilebuilder' ),
+			'IL' => __( 'Israel', 'profilebuilder' ),
+			'IT' => __( 'Italy', 'profilebuilder' ),
+			'CI' => __( 'Ivory Coast', 'profilebuilder' ),
+			'JM' => __( 'Jamaica', 'profilebuilder' ),
+			'JP' => __( 'Japan', 'profilebuilder' ),
+			'JE' => __( 'Jersey', 'profilebuilder' ),
+			'JO' => __( 'Jordan', 'profilebuilder' ),
+			'KZ' => __( 'Kazakhstan', 'profilebuilder' ),
+			'KE' => __( 'Kenya', 'profilebuilder' ),
+			'KI' => __( 'Kiribati', 'profilebuilder' ),
+			'XK' => __( 'Kosovo', 'profilebuilder' ),
+			'KW' => __( 'Kuwait', 'profilebuilder' ),
+			'KG' => __( 'Kyrgyzstan', 'profilebuilder' ),
+			'LA' => __( 'Laos', 'profilebuilder' ),
+			'LV' => __( 'Latvia', 'profilebuilder' ),
+			'LB' => __( 'Lebanon', 'profilebuilder' ),
+			'LS' => __( 'Lesotho', 'profilebuilder' ),
+			'LR' => __( 'Liberia', 'profilebuilder' ),
+			'LY' => __( 'Libya', 'profilebuilder' ),
+			'LI' => __( 'Liechtenstein', 'profilebuilder' ),
+			'LT' => __( 'Lithuania', 'profilebuilder' ),
+			'LU' => __( 'Luxembourg', 'profilebuilder' ),
+			'MO' => __( 'Macao', 'profilebuilder' ),
+			'MK' => __( 'Macedonia', 'profilebuilder' ),
+			'MG' => __( 'Madagascar', 'profilebuilder' ),
+			'MW' => __( 'Malawi', 'profilebuilder' ),
+			'MY' => __( 'Malaysia', 'profilebuilder' ),
+			'MV' => __( 'Maldives', 'profilebuilder' ),
+			'ML' => __( 'Mali', 'profilebuilder' ),
+			'MT' => __( 'Malta', 'profilebuilder' ),
+			'MH' => __( 'Marshall Islands', 'profilebuilder' ),
+			'MQ' => __( 'Martinique', 'profilebuilder' ),
+			'MR' => __( 'Mauritania', 'profilebuilder' ),
+			'MU' => __( 'Mauritius', 'profilebuilder' ),
+			'YT' => __( 'Mayotte', 'profilebuilder' ),
+			'MX' => __( 'Mexico', 'profilebuilder' ),
+			'FM' => __( 'Micronesia', 'profilebuilder' ),
+			'MD' => __( 'Moldova', 'profilebuilder' ),
+			'MC' => __( 'Monaco', 'profilebuilder' ),
+			'MN' => __( 'Mongolia', 'profilebuilder' ),
+			'ME' => __( 'Montenegro', 'profilebuilder' ),
+			'MS' => __( 'Montserrat', 'profilebuilder' ),
+			'MA' => __( 'Morocco', 'profilebuilder' ),
+			'MZ' => __( 'Mozambique', 'profilebuilder' ),
+			'MM' => __( 'Myanmar', 'profilebuilder' ),
+			'NA' => __( 'Namibia', 'profilebuilder' ),
+			'NR' => __( 'Nauru', 'profilebuilder' ),
+			'NP' => __( 'Nepal', 'profilebuilder' ),
+			'NL' => __( 'Netherlands', 'profilebuilder' ),
+			'NC' => __( 'New Caledonia', 'profilebuilder' ),
+			'NZ' => __( 'New Zealand', 'profilebuilder' ),
+			'NI' => __( 'Nicaragua', 'profilebuilder' ),
+			'NE' => __( 'Niger', 'profilebuilder' ),
+			'NG' => __( 'Nigeria', 'profilebuilder' ),
+			'NU' => __( 'Niue', 'profilebuilder' ),
+			'NF' => __( 'Norfolk Island', 'profilebuilder' ),
+			'KP' => __( 'North Korea', 'profilebuilder' ),
+			'MP' => __( 'Northern Mariana Islands', 'profilebuilder' ),
+			'NO' => __( 'Norway', 'profilebuilder' ),
+			'OM' => __( 'Oman', 'profilebuilder' ),
+			'PK' => __( 'Pakistan', 'profilebuilder' ),
+			'PW' => __( 'Palau', 'profilebuilder' ),
+			'PS' => __( 'Palestinian Territory', 'profilebuilder' ),
+			'PA' => __( 'Panama', 'profilebuilder' ),
+			'PG' => __( 'Papua New Guinea', 'profilebuilder' ),
+			'PY' => __( 'Paraguay', 'profilebuilder' ),
+			'PE' => __( 'Peru', 'profilebuilder' ),
+			'PH' => __( 'Philippines', 'profilebuilder' ),
+			'PN' => __( 'Pitcairn', 'profilebuilder' ),
+			'PL' => __( 'Poland', 'profilebuilder' ),
+			'PT' => __( 'Portugal', 'profilebuilder' ),
+			'PR' => __( 'Puerto Rico', 'profilebuilder' ),
+			'QA' => __( 'Qatar', 'profilebuilder' ),
+			'CG' => __( 'Republic of the Congo', 'profilebuilder' ),
+			'RE' => __( 'Reunion', 'profilebuilder' ),
+			'RO' => __( 'Romania', 'profilebuilder' ),
+			'RU' => __( 'Russia', 'profilebuilder' ),
+			'RW' => __( 'Rwanda', 'profilebuilder' ),
+			'BL' => __( 'Saint Barthelemy', 'profilebuilder' ),
+			'SH' => __( 'Saint Helena', 'profilebuilder' ),
+			'KN' => __( 'Saint Kitts and Nevis', 'profilebuilder' ),
+			'LC' => __( 'Saint Lucia', 'profilebuilder' ),
+			'MF' => __( 'Saint Martin', 'profilebuilder' ),
+			'PM' => __( 'Saint Pierre and Miquelon', 'profilebuilder' ),
+			'VC' => __( 'Saint Vincent and the Grenadines', 'profilebuilder' ),
+			'WS' => __( 'Samoa', 'profilebuilder' ),
+			'SM' => __( 'San Marino', 'profilebuilder' ),
+			'ST' => __( 'Sao Tome and Principe', 'profilebuilder' ),
+			'SA' => __( 'Saudi Arabia', 'profilebuilder' ),
+			'SN' => __( 'Senegal', 'profilebuilder' ),
+			'RS' => __( 'Serbia', 'profilebuilder' ),
+			'SC' => __( 'Seychelles', 'profilebuilder' ),
+			'SL' => __( 'Sierra Leone', 'profilebuilder' ),
+			'SG' => __( 'Singapore', 'profilebuilder' ),
+			'SX' => __( 'Sint Maarten', 'profilebuilder' ),
+			'SK' => __( 'Slovakia', 'profilebuilder' ),
+			'SI' => __( 'Slovenia', 'profilebuilder' ),
+			'SB' => __( 'Solomon Islands', 'profilebuilder' ),
+			'SO' => __( 'Somalia', 'profilebuilder' ),
+			'ZA' => __( 'South Africa', 'profilebuilder' ),
+			'GS' => __( 'South Georgia and the South Sandwich Islands', 'profilebuilder' ),
+			'KR' => __( 'South Korea', 'profilebuilder' ),
+			'SS' => __( 'South Sudan', 'profilebuilder' ),
+			'ES' => __( 'Spain', 'profilebuilder' ),
+			'LK' => __( 'Sri Lanka', 'profilebuilder' ),
+			'SD' => __( 'Sudan', 'profilebuilder' ),
+			'SR' => __( 'Suriname', 'profilebuilder' ),
+			'SJ' => __( 'Svalbard and Jan Mayen', 'profilebuilder' ),
+			'SZ' => __( 'Swaziland', 'profilebuilder' ),
+			'SE' => __( 'Sweden', 'profilebuilder' ),
+			'CH' => __( 'Switzerland', 'profilebuilder' ),
+			'SY' => __( 'Syria', 'profilebuilder' ),
+			'TW' => __( 'Taiwan', 'profilebuilder' ),
+			'TJ' => __( 'Tajikistan', 'profilebuilder' ),
+			'TZ' => __( 'Tanzania', 'profilebuilder' ),
+			'TH' => __( 'Thailand', 'profilebuilder' ),
+			'TG' => __( 'Togo', 'profilebuilder' ),
+			'TK' => __( 'Tokelau', 'profilebuilder' ),
+			'TO' => __( 'Tonga', 'profilebuilder' ),
+			'TT' => __( 'Trinidad and Tobago', 'profilebuilder' ),
+			'TN' => __( 'Tunisia', 'profilebuilder' ),
+			'TR' => __( 'Turkey', 'profilebuilder' ),
+			'TM' => __( 'Turkmenistan', 'profilebuilder' ),
+			'TC' => __( 'Turks and Caicos Islands', 'profilebuilder' ),
+			'TV' => __( 'Tuvalu', 'profilebuilder' ),
+			'VI' => __( 'U.S. Virgin Islands', 'profilebuilder' ),
+			'UG' => __( 'Uganda', 'profilebuilder' ),
+			'UA' => __( 'Ukraine', 'profilebuilder' ),
+			'AE' => __( 'United Arab Emirates', 'profilebuilder' ),
+			'GB' => __( 'United Kingdom', 'profilebuilder' ),
+			'US' => __( 'United States', 'profilebuilder' ),
+			'UM' => __( 'United States Minor Outlying Islands', 'profilebuilder' ),
+			'UY' => __( 'Uruguay', 'profilebuilder' ),
+			'UZ' => __( 'Uzbekistan', 'profilebuilder' ),
+			'VU' => __( 'Vanuatu', 'profilebuilder' ),
+			'VA' => __( 'Vatican', 'profilebuilder' ),
+			'VE' => __( 'Venezuela', 'profilebuilder' ),
+			'VN' => __( 'Vietnam', 'profilebuilder' ),
+			'WF' => __( 'Wallis and Futuna', 'profilebuilder' ),
+			'EH' => __( 'Western Sahara', 'profilebuilder' ),
+			'YE' => __( 'Yemen', 'profilebuilder' ),
+			'ZM' => __( 'Zambia', 'profilebuilder' ),
+			'ZW' => __( 'Zimbabwe', 'profilebuilder' ),
+		)
+	);
+
+	return $country_array;
+}
+
+
+/**
+ * Function that returns an array with timezone options
+ *
+ * @since v.2.0
+ *
+ * @return array
+ */
+function wppb_timezone_select_options( $form_location ) {
+	$timezone_array = apply_filters( 'wppb_'.$form_location.'_timezone_select_array', array ( '(GMT -12:00) Eniwetok, Kwajalein', '(GMT -11:00) Midway Island, Samoa', '(GMT -10:00) Hawaii', '(GMT -9:00) Alaska', '(GMT -8:00) Pacific Time (US & Canada)', '(GMT -7:00) Mountain Time (US & Canada)', '(GMT -6:00) Central Time (US & Canada), Mexico City', '(GMT -5:00) Eastern Time (US & Canada), Bogota, Lima', '(GMT -4:00) Atlantic Time (Canada), Caracas, La Paz', '(GMT -3:30) Newfoundland', '(GMT -3:00) Brazil, Buenos Aires, Georgetown', '(GMT -2:00) Mid-Atlantic', '(GMT -1:00) Azores, Cape Verde Islands', '(GMT) Western Europe Time, London, Lisbon, Casablanca', '(GMT +1:00) Brussels, Copenhagen, Madrid, Paris', '(GMT +2:00) Kaliningrad, South Africa', '(GMT +3:00) Baghdad, Riyadh, Moscow, St. Petersburg', '(GMT +3:30) Tehran', '(GMT +4:00) Abu Dhabi, Muscat, Baku, Tbilisi', '(GMT +4:30) Kabul', '(GMT +5:00) Ekaterinburg, Islamabad, Karachi, Tashkent', '(GMT +5:30) Bombay, Calcutta, Madras, New Delhi', '(GMT +5:45) Kathmandu', '(GMT +6:00) Almaty, Dhaka, Colombo', '(GMT +7:00) Bangkok, Hanoi, Jakarta', '(GMT +8:00) Beijing, Perth, Singapore, Hong Kong', '(GMT +9:00) Tokyo, Seoul, Osaka, Sapporo, Yakutsk', '(GMT +9:30) Adelaide, Darwin', '(GMT +10:00) Eastern Australia, Guam, Vladivostok', '(GMT +11:00) Magadan, Solomon Islands, New Caledonia', '(GMT +12:00) Auckland, Wellington, Fiji, Kamchatka' ) );
+
+	return $timezone_array;
+}
+
 
 /**
  * Function that returns a unique, incremented ID
@@ -543,7 +835,14 @@ function wppb_add_content_before_manage_fields(){
         <li><strong class="nowrap">[wppb-edit-profile]</strong></li>
         <li><strong class="nowrap">[wppb-register role="author"]</strong></li>
    </ul>
-   <p><?php _e("If you're interested in displaying different fields in the registration and edit profile forms, please use the Multiple Registration & Edit Profile Forms Addon.", 'profilebuilder'); ?></p>
+   <p>
+       <?php
+       if( PROFILE_BUILDER == 'Profile Builder Pro' )
+           _e("If you're interested in displaying different fields in the registration and edit profile forms, please use the Multiple Registration & Edit Profile Forms Addon.", 'profilebuilder');
+       else
+           _e( "With Profile Builder Pro v2 you can display different fields in the registration and edit profile forms, using the Multiple Registration & Edit Profile Forms module.", "profilebuilder" )
+       ?>
+   </p>
 <?php
 }
 add_action('wck_metabox_content_wppb_manage_fields_info', 'wppb_add_content_before_manage_fields');

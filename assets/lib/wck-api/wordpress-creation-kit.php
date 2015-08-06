@@ -1035,7 +1035,7 @@ class Wordpress_Creation_Kit_PB{
                             foreach ($this->args['meta_array'] as $meta_field){
                                 /* in the $_POST the names for the fields are prefixed with the meta_name for the single metaboxes in case there are multiple metaboxes that contain fields wit hthe same name */
                                 $single_field_name = $this->args['meta_name'] .'_'. Wordpress_Creation_Kit_PB::wck_generate_slug( $meta_field['title'],$meta_field );
-                                if (!empty($_POST[$single_field_name])) {
+                                if (isset($_POST[$single_field_name])) {
                                     /* checkbox needs to be stored as string not array */
                                     if( $meta_field['type'] == 'checkbox' )
                                         $_POST[$single_field_name] = implode( ', ', $_POST[$single_field_name] );
