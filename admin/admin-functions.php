@@ -34,6 +34,11 @@ function wppb_manage_fields_display_field_title_slug( $form, $i, $value ){
 				$form .= '<div id="wppb-login-email-nag" class="wppb-backend-notice">' . sprintf( __( 'Login is set to be done using the E-mail. This field will NOT appear in the front-end! ( you can change these settings under the "%s" tab )', 'profilebuilder' ), '<a href="'.admin_url( 'admin.php?page=profile-builder-general-settings' ).'" target="_blank">' . __('General Settings', 'profilebuilder') . '</a>' ) . '</div>';
 	}
 
+	// add a notice to 'Default - Display name publicly as' field
+	global $wppb_results_field;
+	if ( $wppb_results_field == 'Default - Display name publicly as' )
+		$form .= '<div id="wppb-display-name-nag" class="wppb-backend-notice">' . __( 'Display name publicly as - only appears on the Edit Profile page!', 'profilebuilder' ) . '</div>';
+
 	return $form;
 }
 add_filter( "wck_before_listed_wppb_manage_fields_element_0", 'wppb_manage_fields_display_field_title_slug', 10, 3 );
@@ -41,6 +46,23 @@ add_filter( "wck_before_listed_wppb_epf_fields_element_0", 'wppb_manage_fields_d
 add_filter( "wck_before_listed_wppb_rf_fields_element_0", 'wppb_manage_fields_display_field_title_slug', 10, 3 );
 
 
+/**
+ * Check if field type is 'Default - Display name publicly as' so we can add a notification for it
+ *
+ * @since v.2.2
+ *
+ * @param string $wck_element_class
+ * @param string $meta
+ * @param array $results
+ * @param integer $element_id
+ *
+ */
+function wppb_manage_fields_display_name_notice( $wck_element_class, $meta, $results, $element_id ) {
+	global $wppb_results_field;
+
+	$wppb_results_field = $results[$element_id]['field'];
+}
+add_filter( 'wck_element_class_wppb_manage_fields', 'wppb_manage_fields_display_name_notice', 10, 4 );
 
 
 

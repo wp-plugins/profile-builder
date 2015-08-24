@@ -6,14 +6,14 @@ add_action( 'widgets_init', 'wppb_register_login_widget' );
 
 class wppb_login_widget extends WP_Widget {
 
-	function wppb_login_widget() {
+	function __construct() {
 		$widget_ops = array( 'classname' => 'login', 'description' => __( 'This login widget lets you add a login form in the sidebar.', 'profilebuilder' ) );
 		$control_ops = array( 'width' => 300, 'height' => 350, 'id_base' => 'wppb-login-widget' );
-		
+
 		do_action( 'wppb_login_widget_settings', $widget_ops, $control_ops);
-		
-		$this->WP_Widget( 'wppb-login-widget', __('Profile Builder Login Widget', 'profilebuilder'), $widget_ops, $control_ops );
-		
+
+		parent::__construct( 'wppb-login-widget', __('Profile Builder Login Widget', 'profilebuilder'), $widget_ops, $control_ops );
+
 	}
 
 	function widget( $args, $instance ) {
