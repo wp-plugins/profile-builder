@@ -479,7 +479,7 @@ class Wordpress_Creation_Kit_PB{
 					
 				/* filter display value */			
 				$value = apply_filters( "wck_displayed_value_{$meta}_element_{$j}", $value );
-				
+
 				/* display it differently based on field type*/
 				if( $details['type'] == 'upload' ){	
 					$display_value = self::wck_get_entry_field_upload($value);
@@ -495,7 +495,7 @@ class Wordpress_Creation_Kit_PB{
 
                 $display_value = apply_filters( "wck_pre_displayed_value_{$meta}_element_{$field['slug']}", $display_value );
 
-				$list = apply_filters( "wck_before_listed_{$meta}_element_{$j}", $list, $element_id, $value );		
+				$list = apply_filters( "wck_before_listed_{$meta}_element_{$j}", $list, $element_id, $value );
 				/*check for nested repeater type and set it acordingly */
 							if( strpos( $details['type'], 'CFC-') === 0 )
 									$details['type'] = 'nested-repeater';
@@ -503,9 +503,9 @@ class Wordpress_Creation_Kit_PB{
 				$list .= '<li class="row-'. esc_attr( Wordpress_Creation_Kit_PB::wck_generate_slug( $details['title'], $details ) ) .'" data-type="'.$details['type'].'"><strong>'.$details['title'].': </strong>'.$display_value.' </li>' . "\r\n";
 				
 				$list = apply_filters( "wck_after_listed_{$meta}_element_{$j}", $list, $element_id, $value );
-				
-				$j++;	
-				
+
+				$j++;
+
 				/* In CFC/OPC we need the field title. Find it out and output it if found */
 				if ($meta == 'wck_cfc_fields') {
 					if( !empty( $results[$element_id][Wordpress_Creation_Kit_PB::wck_generate_slug( $details['title'], $details )] ) ){
@@ -517,20 +517,20 @@ class Wordpress_Creation_Kit_PB{
 			}
 		}
 		$list .= '</ul>';
-		
+
 		/* check if we have nested repeaters */
 		if( function_exists( 'wck_nr_check_for_nested_repeaters' ) ){
 			if( wck_nr_check_for_nested_repeaters( $fields ) === true ){
 				$list .= wck_nr_handle_repeaters( $meta, $id, $fields, $results, $element_id );
 			}
 		}
-		
+
 		$list .= '</td>';				
 		$list .= '<td style="text-align:center;vertical-align:middle;" class="wck-edit"><a href="javascript:void(0)" class="button-secondary"  onclick=\'showUpdateFormMeta("'.esc_js($meta).'", "'.esc_js($id).'", "'.esc_js($element_id).'", "'.esc_js($edit_nonce).'")\' title="'. __( 'Edit this item', 'profilebuilder' ) .'">'. apply_filters( 'wck_edit_button', __('Edit','wck'), $meta ) .'</a></td>';
 		$list .= '<td style="text-align:center;vertical-align:middle;" class="wck-delete"><a href="javascript:void(0)" class="mbdelete" onclick=\'removeMeta("'.esc_js($meta).'", "'.esc_js($id).'", "'.esc_js($element_id).'", "'.esc_js($delete_nonce).'")\' title="'. __( 'Delete this item', 'profilebuilder' ) .'">'. apply_filters( 'wck_delete_button', __( 'Delete', 'wck' ), $meta) .'</a></td>';
-			
+
 		$list .= "</tr> \r\n";
-	
+
 		return $list;
 	}
 
