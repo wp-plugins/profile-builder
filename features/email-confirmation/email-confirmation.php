@@ -154,7 +154,7 @@ function wppb_add_meta_to_user_on_activation( $user_id, $password, $meta ){
 	if( !empty( $meta['nickname'] ) )
 		update_user_meta( $user_id, 'nickname', $meta['nickname'] );
 	if( !empty( $meta['user_url'] ) )
-		update_user_meta( $user_id, 'user_url', $meta['user_url'] );
+		wp_update_user(array('ID' => $user_id, 'user_url' => $meta['user_url']));
 	if( !empty( $meta['aim'] ) )
 		update_user_meta( $user_id, 'aim', $meta['aim'] );
 	if( !empty( $meta['yim'] ) )

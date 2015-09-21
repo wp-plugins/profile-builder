@@ -470,22 +470,18 @@ class Profile_Builder_Form_Creator{
     /**
      * Function that returns the id for the current logged in user or for edit profile forms for administrator it can return the id of a selected user
      */
-    function wppb_get_desired_user_id(){
-        if( $this->args['form_type'] == 'edit_profile' ){
-            $display_edit_users_dropdown = apply_filters( 'wppb_display_edit_other_users_dropdown', true );
-            if( !$display_edit_users_dropdown )
-                return get_current_user_id();
+	function wppb_get_desired_user_id(){
+		if( $this->args['form_type'] == 'edit_profile' ){
+			//only admins
+			if( ( !is_multisite() && current_user_can( 'edit_users' ) ) || ( is_multisite() && current_user_can( 'manage_network' ) ) ) {
+				if( isset( $_GET['edit_user'] ) && ! empty( $_GET['edit_user'] ) ){
+					return $_GET['edit_user'];
+				}
+			}
+		}
 
-            //only admins
-            if( ( !is_multisite() && current_user_can( 'edit_users' ) ) || ( is_multisite() && current_user_can( 'manage_network' ) ) ) {
-                if( isset( $_GET['edit_user'] ) && ! empty( $_GET['edit_user'] ) ){
-                    return $_GET['edit_user'];
-                }
-            }
-        }
-
-        return get_current_user_id();
-    }
+		return get_current_user_id();
+	}
 
     function wppb_edit_profile_select_user_to_edit(){
 
