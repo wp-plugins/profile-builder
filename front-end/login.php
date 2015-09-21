@@ -10,8 +10,8 @@ function wppb_login_form_bottom( $form_part, $args ){
 		
 		$form_part = '<input type="hidden" name="wppb_login" value="true"/>';
 		$form_part .= '<input type="hidden" name="wppb_form_location" value="'. $form_location .'"/>';
-		$form_part .= '<input type="hidden" name="wppb_request_url" value="'.wppb_curpageurl().'"/>';
-        $form_part .= '<input type="hidden" name="wppb_lostpassword_url" value="'.$args['lostpassword_url'].'"/>';
+		$form_part .= '<input type="hidden" name="wppb_request_url" value="'. esc_url( wppb_curpageurl() ).'"/>';
+        $form_part .= '<input type="hidden" name="wppb_lostpassword_url" value="'.esc_url( $args['lostpassword_url'] ).'"/>';
 	}
 	
 	return $form_part;
