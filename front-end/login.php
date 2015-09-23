@@ -7,13 +7,13 @@ function wppb_login_form_bottom( $form_part, $args ){
 			$form_location = 'page';
 		else
 			$form_location = 'widget';
-		
+
 		$form_part = '<input type="hidden" name="wppb_login" value="true"/>';
 		$form_part .= '<input type="hidden" name="wppb_form_location" value="'. $form_location .'"/>';
 		$form_part .= '<input type="hidden" name="wppb_request_url" value="'.wppb_curpageurl().'"/>';
         $form_part .= '<input type="hidden" name="wppb_lostpassword_url" value="'.$args['lostpassword_url'].'"/>';
 	}
-	
+
 	return $form_part;
 }
 add_filter( 'login_form_bottom', 'wppb_login_form_bottom', 10, 2 );
@@ -30,10 +30,10 @@ function wppb_change_login_with_email(){
 			// if this setting is active, the posted username is, in fact the user's email
 			if( isset( $wppb_generalSettings['loginWith'] ) && ( $wppb_generalSettings['loginWith'] == 'email' ) ){
 				$username = $wpdb->get_var( $wpdb->prepare( "SELECT user_login FROM $wpdb->users WHERE user_email= %s LIMIT 1", trim( $_POST['log'] ) ) );
-				
+
 				if( !empty( $username ) )
 					$_POST['log'] = $username;
-				
+
 				else {
 					// if we don't have a username for the email entered we can't have an empty username because we will receive a field empty error
 					$_POST['log'] = 'this_is_an_invalid_email'.time();
@@ -143,6 +143,8 @@ function wppb_front_end_login( $atts ){
         //Add support for "redirect_url" parameter for Login shortcode (will do the same thing as "redirect" - for consistency with Register, Edit Profile shortcodes)
         if ( !empty($redirect_url) ) $redirect = $redirect_url;
 
+        $redirect = apply_filters('wppb_redirect_url_after_login', $redirect);
+
 		// maybe set up the redirect argument
 		if( empty( $redirect ) ){
             if( PROFILE_BUILDER == 'Profile Builder Pro' ) {
@@ -162,9 +164,9 @@ function wppb_front_end_login( $atts ){
                 }
             }
 		}
-		else	
+		else
 			$form_args['redirect'] = trim( $redirect );
-			
+
 		// change the label argument for username is login with email is enabled
 		if ( isset( $wppb_generalSettings['loginWith'] ) && ( $wppb_generalSettings['loginWith'] == 'email' ) )
 			$form_args['label_username'] = __( 'Email', 'profilebuilder' );
@@ -175,7 +177,7 @@ function wppb_front_end_login( $atts ){
 
 		// initialize our form variable
 		$login_form = '';
-		
+
 		// display our login errors
 		if( isset( $_GET['loginerror'] ) || isset( $_POST['loginerror'] ) ){
             $loginerror = isset( $_GET['loginerror'] ) ? $_GET['loginerror'] : $_POST['loginerror'];
@@ -212,17 +214,17 @@ function wppb_front_end_login( $atts ){
 
         $login_form .= '</div>';
 		return $login_form;
-	
+
 	}else{
 		$user_ID = get_current_user_id();
 		$wppb_user = get_userdata( $user_ID );
-		
+
 		if( isset( $wppb_generalSettings['loginWith'] ) && ( $wppb_generalSettings['loginWith'] == 'email' ) )
 			$display_name = $wppb_user->user_email;
-		
+
 		elseif($wppb_user->display_name !== '')
 			$display_name = $wppb_user->user_login;
-		
+
 		else
 			$display_name = $wppb_user->display_name;
 
@@ -240,8 +242,8 @@ function wppb_front_end_login( $atts ){
         $logout_url = '<a href="'.wp_logout_url( $redirectTo = wppb_curpageurl() ).'" class="wppb-logout-url" title="'.__( 'Log out of this account', 'profilebuilder' ).'">'. __( 'Log out', 'profilebuilder').' &raquo;</a>';
         $logged_in_message .= sprintf(__( 'You are currently logged in as %1$s. %2$s', 'profilebuilder' ), $display_name, $logout_url );
         $logged_in_message .= '</p><!-- .wppb-alert-->';
-		
+
 		return apply_filters( 'wppb_login_message', $logged_in_message, $wppb_user->ID, $display_name );
-		
+
 	}
 }
