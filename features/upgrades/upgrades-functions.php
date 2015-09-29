@@ -88,7 +88,7 @@ function wppb_pro_hobbyist_free_v2_0(){
 			$backed_up_manage_fields = wppb_add_existing_default_fields( $backed_up_manage_fields, 'Default - Name (Heading)', '', 'No' );
 		
 			if ( $old_default_fields['username'] == 'show' )
-				$backed_up_manage_fields = wppb_add_existing_default_fields( $backed_up_manage_fields, 'Default - Username', '', ucfirst( trim( $old_default_fields['usernameRequired'] ) ), __( 'The usernames cannot be changed.', 'profilebuilder' ) );
+				$backed_up_manage_fields = wppb_add_existing_default_fields( $backed_up_manage_fields, 'Default - Username', '', ucfirst( trim( $old_default_fields['usernameRequired'] ) ), __( 'The usernames cannot be changed.', 'profile-builder' ) );
 				
 			if ( $old_default_fields['firstname'] == 'show' )
 				$backed_up_manage_fields = wppb_add_existing_default_fields( $backed_up_manage_fields, 'Default - First Name', 'first_name', ucfirst( trim( $old_default_fields['firstnameRequired'] ) ) );
@@ -131,7 +131,7 @@ function wppb_pro_hobbyist_free_v2_0(){
 		
 		}else{
 			$backed_up_manage_fields = wppb_add_existing_default_fields( $backed_up_manage_fields, 'Default - Name (Heading)', '', 'No' );
-			$backed_up_manage_fields = wppb_add_existing_default_fields( $backed_up_manage_fields, 'Default - Username', '', 'Yes', __( 'The usernames cannot be changed.', 'profilebuilder' ) );
+			$backed_up_manage_fields = wppb_add_existing_default_fields( $backed_up_manage_fields, 'Default - Username', '', 'Yes', __( 'The usernames cannot be changed.', 'profile-builder' ) );
 			$backed_up_manage_fields = wppb_add_existing_default_fields( $backed_up_manage_fields, 'Default - First Name', 'first_name', 'No' );
 			$backed_up_manage_fields = wppb_add_existing_default_fields( $backed_up_manage_fields, 'Default - Last Name', 'last_name', 'No' );
 			$backed_up_manage_fields = wppb_add_existing_default_fields( $backed_up_manage_fields, 'Default - Nickname', 'nickname', 'No' );

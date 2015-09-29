@@ -7,7 +7,7 @@
  * @return void
  */
 function wppb_show_hide_admin_bar_submenu_page() {
-	add_submenu_page( 'profile-builder', __( 'Show/Hide the Admin Bar on the Front-End', 'profilebuilder' ), __( 'Admin Bar Settings', 'profilebuilder' ), 'manage_options', 'profile-builder-admin-bar-settings', 'wppb_show_hide_admin_bar_content' ); 
+	add_submenu_page( 'profile-builder', __( 'Show/Hide the Admin Bar on the Front-End', 'profile-builder' ), __( 'Admin Bar Settings', 'profile-builder' ), 'manage_options', 'profile-builder-admin-bar-settings', 'wppb_show_hide_admin_bar_content' );
 }
 add_action( 'admin_menu', 'wppb_show_hide_admin_bar_submenu_page', 4 );
 
@@ -44,8 +44,8 @@ function wppb_show_hide_admin_bar_content() {
 	
 	<div class="wrap wppb-wrap wppb-admin-bar">
 	
-		<h2><?php _e( 'Admin Bar Settings', 'profilebuilder' );?></h2>
-		<p><?php _e( 'Choose which user roles view the admin bar in the front-end of the website.', 'profilebuilder' ); ?>
+		<h2><?php _e( 'Admin Bar Settings', 'profile-builder' );?></h2>
+		<p><?php _e( 'Choose which user roles view the admin bar in the front-end of the website.', 'profile-builder' ); ?>
 		<form method="post" action="options.php#show-hide-admin-bar">
 		<?php	
 			$admin_bar_settings = get_option( 'wppb_display_admin_settings' );
@@ -54,8 +54,8 @@ function wppb_show_hide_admin_bar_content() {
 		<table class="widefat">
 			<thead>
 				<tr>
-					<th class="row-title" scope="col"><?php _e('User-Role', 'profilebuilder');?></th>
-					<th scope="col"><?php _e('Visibility', 'profilebuilder');?></th>
+					<th class="row-title" scope="col"><?php _e('User-Role', 'profile-builder');?></th>
+					<th scope="col"><?php _e('Visibility', 'profile-builder');?></th>
 				</tr>
 			</thead>
 				<tbody>
@@ -70,9 +70,9 @@ function wppb_show_hide_admin_bar_content() {
 						echo'<tr'.$alt_class.'>
 								<td>'.translate_user_role($key).'</td>
 								<td>
-									<span><input id="rd'.$key.'" type="radio" name="wppb_display_admin_settings['.$key.']" value="default"'.( ( !$setting_exists || $admin_bar_settings[$key] == 'default' ) ? ' checked' : '' ).'/><label for="rd'.$key.'">'.__( 'Default', 'profilebuilder' ).'</label></span>
-									<span><input id="rs'.$key.'" type="radio" name="wppb_display_admin_settings['.$key.']" value="show"'.( ( $setting_exists && $admin_bar_settings[$key] == 'show') ? ' checked' : '' ).'/><label for="rs'.$key.'">'.__( 'Show', 'profilebuilder' ).'</label></span>
-									<span><input id="rh'.$key.'" type="radio" name="wppb_display_admin_settings['.$key.']" value="hide"'.( ( $setting_exists && $admin_bar_settings[$key] == 'hide') ? ' checked' : '' ).'/><label for="rh'.$key.'">'.__( 'Hide', 'profilebuilder' ).'</label></span>
+									<span><input id="rd'.$key.'" type="radio" name="wppb_display_admin_settings['.$key.']" value="default"'.( ( !$setting_exists || $admin_bar_settings[$key] == 'default' ) ? ' checked' : '' ).'/><label for="rd'.$key.'">'.__( 'Default', 'profile-builder' ).'</label></span>
+									<span><input id="rs'.$key.'" type="radio" name="wppb_display_admin_settings['.$key.']" value="show"'.( ( $setting_exists && $admin_bar_settings[$key] == 'show') ? ' checked' : '' ).'/><label for="rs'.$key.'">'.__( 'Show', 'profile-builder' ).'</label></span>
+									<span><input id="rh'.$key.'" type="radio" name="wppb_display_admin_settings['.$key.']" value="hide"'.( ( $setting_exists && $admin_bar_settings[$key] == 'hide') ? ' checked' : '' ).'/><label for="rh'.$key.'">'.__( 'Hide', 'profile-builder' ).'</label></span>
 								</td>
 							</tr>';
 					}

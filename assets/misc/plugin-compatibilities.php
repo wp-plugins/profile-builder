@@ -238,7 +238,7 @@
 						if( wp_get_object_terms( $user_id, 'user_status' ) ) {
 							if( isset( $_REQUEST['edd_redirect'] ) ) {
 								wp_redirect( $_REQUEST['edd_redirect'] );
-								edd_set_error( 'user_unapproved', __('Your account has to be confirmed by an administrator before you can log in.', 'profilebuilder') );
+								edd_set_error( 'user_unapproved', __('Your account has to be confirmed by an administrator before you can log in.', 'profile-builder') );
 								edd_get_errors();
 								edd_die();
 							}

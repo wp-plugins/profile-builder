@@ -47,22 +47,22 @@ function wppb_check_username_value( $message, $field, $request_data, $form_locat
         if( $form_location == 'register' )
             $search_by_user_login = get_users( 'search='.$request_data['username'] );
         if( !empty( $search_by_user_login ) ){
-            return __( 'This username already exists.', 'profilebuilder' ) .'<br/>'. __( 'Please try a different one!', 'profilebuilder' );
+            return __( 'This username already exists.', 'profile-builder' ) .'<br/>'. __( 'Please try a different one!', 'profile-builder' );
         }
 		if( ! validate_username( $request_data['username'] ) ) {
-			return __( 'This username is invalid because it uses illegal characters.', 'profilebuilder' ) .'<br/>'. __( 'Please enter a valid username.', 'profilebuilder' );
+			return __( 'This username is invalid because it uses illegal characters.', 'profile-builder' ) .'<br/>'. __( 'Please enter a valid username.', 'profile-builder' );
 		}
 
         $wppb_generalSettings = get_option('wppb_general_settings');
         if ( is_multisite() || ( !is_multisite() && $wppb_generalSettings['emailConfirmation'] == 'yes'  ) ){
 
             if( is_multisite() && $request_data['username'] != preg_replace( '/\s+/', '', $request_data['username'] ) ){
-                return __( 'This username is invalid because it uses illegal characters.', 'profilebuilder' ) .'<br/>'. __( 'Please enter a valid username.', 'profilebuilder' );
+                return __( 'This username is invalid because it uses illegal characters.', 'profile-builder' ) .'<br/>'. __( 'Please enter a valid username.', 'profile-builder' );
             }
 
             $userSignup = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM ".$wpdb->prefix."signups WHERE user_login = %s", $request_data['username'] ) );
             if ( !empty( $userSignup ) ){
-                return __( 'This username is already reserved to be used soon.', 'profilebuilder') .'<br/>'. __( 'Please try a different one!', 'profilebuilder' );
+                return __( 'This username is already reserved to be used soon.', 'profile-builder') .'<br/>'. __( 'Please try a different one!', 'profile-builder' );
             }
         }
     }

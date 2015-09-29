@@ -31,13 +31,13 @@ function wppb_manage_fields_display_field_title_slug( $form, $i, $value ){
 	if ( $wppb_generalSettings != 'not_found' ){
 		if ( $wppb_generalSettings['loginWith'] == 'email' )
 			if ( ( $value == 'Username ( Default - Username )' ) || ( $value == 'Username' ) )
-				$form .= '<div id="wppb-login-email-nag" class="wppb-backend-notice">' . sprintf( __( 'Login is set to be done using the E-mail. This field will NOT appear in the front-end! ( you can change these settings under the "%s" tab )', 'profilebuilder' ), '<a href="'.admin_url( 'admin.php?page=profile-builder-general-settings' ).'" target="_blank">' . __('General Settings', 'profilebuilder') . '</a>' ) . '</div>';
+				$form .= '<div id="wppb-login-email-nag" class="wppb-backend-notice">' . sprintf( __( 'Login is set to be done using the E-mail. This field will NOT appear in the front-end! ( you can change these settings under the "%s" tab )', 'profile-builder' ), '<a href="'.admin_url( 'admin.php?page=profile-builder-general-settings' ).'" target="_blank">' . __('General Settings', 'profile-builder') . '</a>' ) . '</div>';
 	}
 
 	// add a notice to 'Default - Display name publicly as' field
 	global $wppb_results_field;
 	if ( $wppb_results_field == 'Default - Display name publicly as' )
-		$form .= '<div id="wppb-display-name-nag" class="wppb-backend-notice">' . __( 'Display name publicly as - only appears on the Edit Profile page!', 'profilebuilder' ) . '</div>';
+		$form .= '<div id="wppb-display-name-nag" class="wppb-backend-notice">' . __( 'Display name publicly as - only appears on the Edit Profile page!', 'profile-builder' ) . '</div>';
 
 	return $form;
 }
@@ -125,13 +125,13 @@ function wppb_password_check_extra_conditions( $errors, $user ){
         $wppb_generalSettings = get_option( 'wppb_general_settings' );
         if( !empty( $wppb_generalSettings['minimum_password_length'] ) ){
             if( strlen( $password ) < $wppb_generalSettings['minimum_password_length'] )
-                $errors->add( 'pass', sprintf( __( '<strong>ERROR</strong>: The password must have the minimum length of %s characters', 'profilebuilder' ), $wppb_generalSettings['minimum_password_length'] ) );
+                $errors->add( 'pass', sprintf( __( '<strong>ERROR</strong>: The password must have the minimum length of %s characters', 'profile-builder' ), $wppb_generalSettings['minimum_password_length'] ) );
         }
 
         if( isset( $_POST['wppb_password_strength'] ) && !empty( $wppb_generalSettings['minimum_password_strength'] ) ){
 
             $password_strength_array = array( 'short' => 0, 'bad' => 1, 'good' => 2, 'strong' => 3 );
-            $password_strength_text = array( 'short' => __( 'Very weak', 'profilebuilder' ), 'bad' => __( 'Weak', 'profilebuilder' ), 'good' => __( 'Medium', 'profilebuilder' ), 'strong' => __( 'Strong', 'profilebuilder' ) );
+            $password_strength_text = array( 'short' => __( 'Very weak', 'profile-builder' ), 'bad' => __( 'Weak', 'profile-builder' ), 'good' => __( 'Medium', 'profile-builder' ), 'strong' => __( 'Strong', 'profile-builder' ) );
 
             foreach( $password_strength_text as $psr_key => $psr_text ){
                 if( $psr_text == $_POST['wppb_password_strength'] ){
@@ -142,7 +142,7 @@ function wppb_password_check_extra_conditions( $errors, $user ){
 
             if( !empty( $password_strength_result_slug ) ){
                 if( $password_strength_array[$password_strength_result_slug] < $password_strength_array[$wppb_generalSettings['minimum_password_strength']] )
-                    $errors->add( 'pass', sprintf( __( '<strong>ERROR</strong>: The password must have a minimum strength of %s', 'profilebuilder' ), $password_strength_text[$wppb_generalSettings['minimum_password_strength']] ) );
+                    $errors->add( 'pass', sprintf( __( '<strong>ERROR</strong>: The password must have a minimum strength of %s', 'profile-builder' ), $password_strength_text[$wppb_generalSettings['minimum_password_strength']] ) );
             }
         }
     }
@@ -181,9 +181,9 @@ function wppb_add_hidden_password_strength_on_backend(){
 add_filter( 'wck_add_entry_button', 'wppb_change_add_entry_button', 10, 2 );
 function wppb_change_add_entry_button( $string, $meta ){
     if( $meta == 'wppb_manage_fields' || $meta == 'wppb_epf_fields' || $meta == 'wppb_rf_fields' ){
-        return __( "Add Field", 'profilebuilder' );
+        return __( "Add Field", 'profile-builder' );
     }elseif( $meta == 'wppb_epf_page_settings' || $meta == 'wppb_rf_page_settings' || $meta == 'wppb_ul_page_settings' ){
-        return __( "Save Settings", 'profilebuilder' );
+        return __( "Save Settings", 'profile-builder' );
     }
 
     return $string;
@@ -194,7 +194,7 @@ function wppb_admin_rate_us( $footer_text ) {
     global $current_screen;
 
     if ($current_screen->parent_base == 'profile-builder'){
-        $rate_text = sprintf( __( 'If you enjoy using <strong> %1$s </strong> please <a href="%2$s" target="_blank">rate us on WordPress.org</a>. More happy users means more features, less bugs and better support for everyone. ', 'profilebuilder' ),
+        $rate_text = sprintf( __( 'If you enjoy using <strong> %1$s </strong> please <a href="%2$s" target="_blank">rate us on WordPress.org</a>. More happy users means more features, less bugs and better support for everyone. ', 'profile-builder' ),
             PROFILE_BUILDER,
             'https://wordpress.org/support/view/plugin-reviews/profile-builder?filter=5#postform'
         );

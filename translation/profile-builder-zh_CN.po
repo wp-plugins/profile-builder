@@ -1,0 +1,3824 @@
+# Translation of Profile Builder in Chinese (China)
+# This file is distributed under the same license as the Profile Builder package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2015-09-29 11:53:21+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: GlotPress/0.1\n"
+"Project-Id-Version: Profile Builder\n"
+
+#: ../admin/admin-functions.php:40
+msgid "Display name publicly as - only appears on the Edit Profile page!"
+msgstr ""
+
+#: ../admin/basic-info.php:37
+msgid "Friction-less login using %s shortcode or a widget."
+msgstr ""
+
+#: ../admin/basic-info.php:41
+msgid "Beautiful registration forms fully customizable using the %s shortcode."
+msgstr ""
+
+#: ../admin/basic-info.php:45
+msgid "Straight forward edit profile forms using %s shortcode."
+msgstr ""
+
+#: ../admin/basic-info.php:58
+msgid "Allow users to recover their password in the front-end using the %s."
+msgstr ""
+
+#: ../admin/basic-info.php:130
+msgid "To create a page containing the users registered to this current site/blog, insert the following shortcode in a page of your chosing: %s."
+msgstr ""
+
+#: ../admin/general-settings.php:125
+msgid "\"Admin Approval\" on User Role:"
+msgstr ""
+
+#: ../admin/general-settings.php:144
+msgid "Select on what user roles to activate Admin Approval."
+msgstr ""
+
+#: ../admin/manage-fields.php:109
+msgid "Display on PB forms"
+msgstr ""
+
+#: ../admin/manage-fields.php:109
+msgid "PB Login"
+msgstr ""
+
+#: ../admin/manage-fields.php:109
+msgid "PB Register"
+msgstr ""
+
+#: ../admin/manage-fields.php:109
+msgid "PB Recover Password"
+msgstr ""
+
+#: ../admin/manage-fields.php:109
+msgid "Select on which Profile Builder forms to display reCAPTCHA"
+msgstr ""
+
+#: ../admin/manage-fields.php:110
+msgid "Display on default WP forms"
+msgstr ""
+
+#: ../admin/manage-fields.php:110
+msgid "Default WP Login"
+msgstr ""
+
+#: ../admin/manage-fields.php:110
+msgid "Default WP Register"
+msgstr ""
+
+#: ../admin/manage-fields.php:110
+msgid "Default WP Recover Password"
+msgstr ""
+
+#: ../admin/manage-fields.php:110
+msgid "Select on which default WP forms to display reCAPTCHA"
+msgstr ""
+
+#: ../admin/manage-fields.php:116 ../admin/manage-fields.php:117
+msgid "Default option of the field"
+msgstr ""
+
+#: ../admin/manage-fields.php:237
+msgid "Afghanistan"
+msgstr "Afghanistan"
+
+#: ../admin/manage-fields.php:238
+msgid "Aland Islands"
+msgstr "Aland Islands"
+
+#: ../admin/manage-fields.php:239
+msgid "Albania"
+msgstr "Albania"
+
+#: ../admin/manage-fields.php:240
+msgid "Algeria"
+msgstr "Algeria"
+
+#: ../admin/manage-fields.php:241
+msgid "American Samoa"
+msgstr "American Samoa"
+
+#: ../admin/manage-fields.php:242
+msgid "Andorra"
+msgstr "Andorra"
+
+#: ../admin/manage-fields.php:243
+msgid "Angola"
+msgstr "Angola"
+
+#: ../admin/manage-fields.php:244
+msgid "Anguilla"
+msgstr "Anguilla"
+
+#: ../admin/manage-fields.php:245
+msgid "Antarctica"
+msgstr "Antarctica"
+
+#: ../admin/manage-fields.php:246
+msgid "Antigua and Barbuda"
+msgstr "Antigua and Barbuda"
+
+#: ../admin/manage-fields.php:247
+msgid "Argentina"
+msgstr "Argentina"
+
+#: ../admin/manage-fields.php:248
+msgid "Armenia"
+msgstr "Armenia"
+
+#: ../admin/manage-fields.php:249
+msgid "Aruba"
+msgstr "Aruba"
+
+#: ../admin/manage-fields.php:250
+msgid "Australia"
+msgstr "Australia"
+
+#: ../admin/manage-fields.php:251
+msgid "Austria"
+msgstr "Austria"
+
+#: ../admin/manage-fields.php:252
+msgid "Azerbaijan"
+msgstr "Azerbaijan"
+
+#: ../admin/manage-fields.php:253
+msgid "Bahamas"
+msgstr "Bahamas"
+
+#: ../admin/manage-fields.php:254
+msgid "Bahrain"
+msgstr "Bahrain"
+
+#: ../admin/manage-fields.php:255
+msgid "Bangladesh"
+msgstr "Bangladesh"
+
+#: ../admin/manage-fields.php:256
+msgid "Barbados"
+msgstr "Barbados"
+
+#: ../admin/manage-fields.php:257
+msgid "Belarus"
+msgstr "Belarus"
+
+#: ../admin/manage-fields.php:258
+msgid "Belgium"
+msgstr "Belgium"
+
+#: ../admin/manage-fields.php:259
+msgid "Belize"
+msgstr "Belize"
+
+#: ../admin/manage-fields.php:260
+msgid "Benin"
+msgstr "Benin"
+
+#: ../admin/manage-fields.php:261
+msgid "Bermuda"
+msgstr "Bermuda"
+
+#: ../admin/manage-fields.php:262
+msgid "Bhutan"
+msgstr "Bhutan"
+
+#: ../admin/manage-fields.php:263
+msgid "Bolivia"
+msgstr "Bolivia"
+
+#: ../admin/manage-fields.php:264
+msgid "Bonaire, Saint Eustatius and Saba"
+msgstr "Bonaire, Saint Eustatius and Saba"
+
+#: ../admin/manage-fields.php:265
+msgid "Bosnia and Herzegovina"
+msgstr "Bosnia and Herzegovina"
+
+#: ../admin/manage-fields.php:266
+msgid "Botswana"
+msgstr "Botswana"
+
+#: ../admin/manage-fields.php:267
+msgid "Bouvet Island"
+msgstr "Bouvet Island"
+
+#: ../admin/manage-fields.php:268
+msgid "Brazil"
+msgstr "Brazil"
+
+#: ../admin/manage-fields.php:269
+msgid "British Indian Ocean Territory"
+msgstr "British Indian Ocean Territory"
+
+#: ../admin/manage-fields.php:270
+msgid "British Virgin Islands"
+msgstr "British Virgin Islands"
+
+#: ../admin/manage-fields.php:271
+msgid "Brunei"
+msgstr "Brunei"
+
+#: ../admin/manage-fields.php:272
+msgid "Bulgaria"
+msgstr "Bulgaria"
+
+#: ../admin/manage-fields.php:273
+msgid "Burkina Faso"
+msgstr "Burkina Faso"
+
+#: ../admin/manage-fields.php:274
+msgid "Burundi"
+msgstr "Burundi"
+
+#: ../admin/manage-fields.php:275
+msgid "Cambodia"
+msgstr "Cambodia"
+
+#: ../admin/manage-fields.php:276
+msgid "Cameroon"
+msgstr "Cameroon"
+
+#: ../admin/manage-fields.php:277
+msgid "Canada"
+msgstr "Canada"
+
+#: ../admin/manage-fields.php:278
+msgid "Cape Verde"
+msgstr "Cape Verde"
+
+#: ../admin/manage-fields.php:279
+msgid "Cayman Islands"
+msgstr "Cayman Islands"
+
+#: ../admin/manage-fields.php:280
+msgid "Central African Republic"
+msgstr "Central African Republic"
+
+#: ../admin/manage-fields.php:281
+msgid "Chad"
+msgstr "Chad"
+
+#: ../admin/manage-fields.php:282
+msgid "Chile"
+msgstr "Chile"
+
+#: ../admin/manage-fields.php:283
+msgid "China"
+msgstr "China"
+
+#: ../admin/manage-fields.php:284
+msgid "Christmas Island"
+msgstr "Christmas Island"
+
+#: ../admin/manage-fields.php:285
+msgid "Cocos Islands"
+msgstr "Cocos Islands"
+
+#: ../admin/manage-fields.php:286
+msgid "Colombia"
+msgstr "Colombia"
+
+#: ../admin/manage-fields.php:287
+msgid "Comoros"
+msgstr "Comoros"
+
+#: ../admin/manage-fields.php:288
+msgid "Cook Islands"
+msgstr "Cook Islands"
+
+#: ../admin/manage-fields.php:289
+msgid "Costa Rica"
+msgstr "Costa Rica"
+
+#: ../admin/manage-fields.php:290
+msgid "Croatia"
+msgstr "Croatia"
+
+#: ../admin/manage-fields.php:291
+msgid "Cuba"
+msgstr "Cuba"
+
+#: ../admin/manage-fields.php:292
+msgid "Curacao"
+msgstr "Curacao"
+
+#: ../admin/manage-fields.php:293
+msgid "Cyprus"
+msgstr "Cyprus"
+
+#: ../admin/manage-fields.php:294
+msgid "Czech Republic"
+msgstr "Czech Republic"
+
+#: ../admin/manage-fields.php:295
+msgid "Democratic Republic of the Congo"
+msgstr "Democratic Republic of the Congo"
+
+#: ../admin/manage-fields.php:296
+msgid "Denmark"
+msgstr "Denmark"
+
+#: ../admin/manage-fields.php:297
+msgid "Djibouti"
+msgstr "Djibouti"
+
+#: ../admin/manage-fields.php:298
+msgid "Dominica"
+msgstr "Dominica"
+
+#: ../admin/manage-fields.php:299
+msgid "Dominican Republic"
+msgstr "Dominican Republic"
+
+#: ../admin/manage-fields.php:300
+msgid "East Timor"
+msgstr "East Timor"
+
+#: ../admin/manage-fields.php:301
+msgid "Ecuador"
+msgstr "Ecuador"
+
+#: ../admin/manage-fields.php:302
+msgid "Egypt"
+msgstr "Egypt"
+
+#: ../admin/manage-fields.php:303
+msgid "El Salvador"
+msgstr "El Salvador"
+
+#: ../admin/manage-fields.php:304
+msgid "Equatorial Guinea"
+msgstr "Equatorial Guinea"
+
+#: ../admin/manage-fields.php:305
+msgid "Eritrea"
+msgstr "Eritrea"
+
+#: ../admin/manage-fields.php:306
+msgid "Estonia"
+msgstr "Estonia"
+
+#: ../admin/manage-fields.php:307
+msgid "Ethiopia"
+msgstr "Ethiopia"
+
+#: ../admin/manage-fields.php:308
+msgid "Falkland Islands"
+msgstr "Falkland Islands"
+
+#: ../admin/manage-fields.php:309
+msgid "Faroe Islands"
+msgstr "Faroe Islands"
+
+#: ../admin/manage-fields.php:310
+msgid "Fiji"
+msgstr "Fiji"
+
+#: ../admin/manage-fields.php:311
+msgid "Finland"
+msgstr "Finland"
+
+#: ../admin/manage-fields.php:312
+msgid "France"
+msgstr "France"
+
+#: ../admin/manage-fields.php:313
+msgid "French Guiana"
+msgstr "French Guiana"
+
+#: ../admin/manage-fields.php:314
+msgid "French Polynesia"
+msgstr "French Polynesia"
+
+#: ../admin/manage-fields.php:315
+msgid "French Southern Territories"
+msgstr "French Southern Territories"
+
+#: ../admin/manage-fields.php:316
+msgid "Gabon"
+msgstr "Gabon"
+
+#: ../admin/manage-fields.php:317
+msgid "Gambia"
+msgstr "Gambia"
+
+#: ../admin/manage-fields.php:318
+msgid "Georgia"
+msgstr "Georgia"
+
+#: ../admin/manage-fields.php:319
+msgid "Germany"
+msgstr "Germany"
+
+#: ../admin/manage-fields.php:320
+msgid "Ghana"
+msgstr "Ghana"
+
+#: ../admin/manage-fields.php:321
+msgid "Gibraltar"
+msgstr "Gibraltar"
+
+#: ../admin/manage-fields.php:322
+msgid "Greece"
+msgstr "Greece"
+
+#: ../admin/manage-fields.php:323
+msgid "Greenland"
+msgstr "Greenland"
+
+#: ../admin/manage-fields.php:324
+msgid "Grenada"
+msgstr "Grenada"
+
+#: ../admin/manage-fields.php:325
+msgid "Guadeloupe"
+msgstr "Guadeloupe"
+
+#: ../admin/manage-fields.php:326
+msgid "Guam"
+msgstr "Guam"
+
+#: ../admin/manage-fields.php:327
+msgid "Guatemala"
+msgstr "Guatemala"
+
+#: ../admin/manage-fields.php:328
+msgid "Guernsey"
+msgstr "Guernsey"
+
+#: ../admin/manage-fields.php:329
+msgid "Guinea"
+msgstr "Guinea"
+
+#: ../admin/manage-fields.php:330
+msgid "Guinea-Bissau"
+msgstr "Guinea-Bissau"
+
+#: ../admin/manage-fields.php:331
+msgid "Guyana"
+msgstr "Guyana"
+
+#: ../admin/manage-fields.php:332
+msgid "Haiti"
+msgstr "Haiti"
+
+#: ../admin/manage-fields.php:333
+msgid "Heard Island and McDonald Islands"
+msgstr "Heard Island and McDonald Islands"
+
+#: ../admin/manage-fields.php:334
+msgid "Honduras"
+msgstr "Honduras"
+
+#: ../admin/manage-fields.php:335
+msgid "Hong Kong"
+msgstr "Hong Kong"
+
+#: ../admin/manage-fields.php:336
+msgid "Hungary"
+msgstr "Hungary"
+
+#: ../admin/manage-fields.php:337
+msgid "Iceland"
+msgstr "Iceland"
+
+#: ../admin/manage-fields.php:338
+msgid "India"
+msgstr "India"
+
+#: ../admin/manage-fields.php:339
+msgid "Indonesia"
+msgstr "Indonesia"
+
+#: ../admin/manage-fields.php:340
+msgid "Iran"
+msgstr "Iran"
+
+#: ../admin/manage-fields.php:341
+msgid "Iraq"
+msgstr "Iraq"
+
+#: ../admin/manage-fields.php:342
+msgid "Ireland"
+msgstr "Ireland"
+
+#: ../admin/manage-fields.php:343
+msgid "Isle of Man"
+msgstr "Isle of Man"
+
+#: ../admin/manage-fields.php:344
+msgid "Israel"
+msgstr "Israel"
+
+#: ../admin/manage-fields.php:345
+msgid "Italy"
+msgstr "Italy"
+
+#: ../admin/manage-fields.php:346
+msgid "Ivory Coast"
+msgstr "Ivory Coast"
+
+#: ../admin/manage-fields.php:347
+msgid "Jamaica"
+msgstr "Jamaica"
+
+#: ../admin/manage-fields.php:348
+msgid "Japan"
+msgstr "Japan"
+
+#: ../admin/manage-fields.php:349
+msgid "Jersey"
+msgstr "Jersey"
+
+#: ../admin/manage-fields.php:350
+msgid "Jordan"
+msgstr "Jordan"
+
+#: ../admin/manage-fields.php:351
+msgid "Kazakhstan"
+msgstr "Kazakhstan"
+
+#: ../admin/manage-fields.php:352
+msgid "Kenya"
+msgstr "Kenya"
+
+#: ../admin/manage-fields.php:353
+msgid "Kiribati"
+msgstr "Kiribati"
+
+#: ../admin/manage-fields.php:354
+msgid "Kosovo"
+msgstr "Kosovo"
+
+#: ../admin/manage-fields.php:355
+msgid "Kuwait"
+msgstr "Kuwait"
+
+#: ../admin/manage-fields.php:356
+msgid "Kyrgyzstan"
+msgstr "Kyrgyzstan"
+
+#: ../admin/manage-fields.php:357
+msgid "Laos"
+msgstr "Laos"
+
+#: ../admin/manage-fields.php:358
+msgid "Latvia"
+msgstr "Latvia"
+
+#: ../admin/manage-fields.php:359
+msgid "Lebanon"
+msgstr "Lebanon"
+
+#: ../admin/manage-fields.php:360
+msgid "Lesotho"
+msgstr "Lesotho"
+
+#: ../admin/manage-fields.php:361
+msgid "Liberia"
+msgstr "Liberia"
+
+#: ../admin/manage-fields.php:362
+msgid "Libya"
+msgstr "Libya"
+
+#: ../admin/manage-fields.php:363
+msgid "Liechtenstein"
+msgstr "Liechtenstein"
+
+#: ../admin/manage-fields.php:364
+msgid "Lithuania"
+msgstr "Lithuania"
+
+#: ../admin/manage-fields.php:365
+msgid "Luxembourg"
+msgstr "Luxembourg"
+
+#: ../admin/manage-fields.php:366
+msgid "Macao"
+msgstr "Macao"
+
+#: ../admin/manage-fields.php:367
+msgid "Macedonia"
+msgstr "Macedonia"
+
+#: ../admin/manage-fields.php:368
+msgid "Madagascar"
+msgstr "Madagascar"
+
+#: ../admin/manage-fields.php:369
+msgid "Malawi"
+msgstr "Malawi"
+
+#: ../admin/manage-fields.php:370
+msgid "Malaysia"
+msgstr "Malaysia"
+
+#: ../admin/manage-fields.php:371
+msgid "Maldives"
+msgstr "Maldives"
+
+#: ../admin/manage-fields.php:372
+msgid "Mali"
+msgstr "Mali"
+
+#: ../admin/manage-fields.php:373
+msgid "Malta"
+msgstr "Malta"
+
+#: ../admin/manage-fields.php:374
+msgid "Marshall Islands"
+msgstr "Marshall Islands"
+
+#: ../admin/manage-fields.php:375
+msgid "Martinique"
+msgstr "Martinique"
+
+#: ../admin/manage-fields.php:376
+msgid "Mauritania"
+msgstr "Mauritania"
+
+#: ../admin/manage-fields.php:377
+msgid "Mauritius"
+msgstr "Mauritius"
+
+#: ../admin/manage-fields.php:378
+msgid "Mayotte"
+msgstr "Mayotte"
+
+#: ../admin/manage-fields.php:379
+msgid "Mexico"
+msgstr "Mexico"
+
+#: ../admin/manage-fields.php:380
+msgid "Micronesia"
+msgstr "Micronesia"
+
+#: ../admin/manage-fields.php:381
+msgid "Moldova"
+msgstr "Moldova"
+
+#: ../admin/manage-fields.php:382
+msgid "Monaco"
+msgstr "Monaco"
+
+#: ../admin/manage-fields.php:383
+msgid "Mongolia"
+msgstr "Mongolia"
+
+#: ../admin/manage-fields.php:384
+msgid "Montenegro"
+msgstr "Montenegro"
+
+#: ../admin/manage-fields.php:385
+msgid "Montserrat"
+msgstr "Montserrat"
+
+#: ../admin/manage-fields.php:386
+msgid "Morocco"
+msgstr "Morocco"
+
+#: ../admin/manage-fields.php:387
+msgid "Mozambique"
+msgstr "Mozambique"
+
+#: ../admin/manage-fields.php:388
+msgid "Myanmar"
+msgstr "Myanmar"
+
+#: ../admin/manage-fields.php:389
+msgid "Namibia"
+msgstr "Namibia"
+
+#: ../admin/manage-fields.php:390
+msgid "Nauru"
+msgstr "Nauru"
+
+#: ../admin/manage-fields.php:391
+msgid "Nepal"
+msgstr "Nepal"
+
+#: ../admin/manage-fields.php:392
+msgid "Netherlands"
+msgstr "Netherlands"
+
+#: ../admin/manage-fields.php:393
+msgid "New Caledonia"
+msgstr "New Caledonia"
+
+#: ../admin/manage-fields.php:394
+msgid "New Zealand"
+msgstr "New Zealand"
+
+#: ../admin/manage-fields.php:395
+msgid "Nicaragua"
+msgstr "Nicaragua"
+
+#: ../admin/manage-fields.php:396
+msgid "Niger"
+msgstr "Niger"
+
+#: ../admin/manage-fields.php:397
+msgid "Nigeria"
+msgstr "Nigeria"
+
+#: ../admin/manage-fields.php:398
+msgid "Niue"
+msgstr "Niue"
+
+#: ../admin/manage-fields.php:399
+msgid "Norfolk Island"
+msgstr "Norfolk Island"
+
+#: ../admin/manage-fields.php:400
+msgid "North Korea"
+msgstr "North Korea"
+
+#: ../admin/manage-fields.php:401
+msgid "Northern Mariana Islands"
+msgstr "Northern Mariana Islands"
+
+#: ../admin/manage-fields.php:402
+msgid "Norway"
+msgstr "Norway"
+
+#: ../admin/manage-fields.php:403
+msgid "Oman"
+msgstr "Oman"
+
+#: ../admin/manage-fields.php:404
+msgid "Pakistan"
+msgstr "Pakistan"
+
+#: ../admin/manage-fields.php:405
+msgid "Palau"
+msgstr "Palau"
+
+#: ../admin/manage-fields.php:406
+msgid "Palestinian Territory"
+msgstr "Palestinian Territory"
+
+#: ../admin/manage-fields.php:407
+msgid "Panama"
+msgstr "Panama"
+
+#: ../admin/manage-fields.php:408
+msgid "Papua New Guinea"
+msgstr "Papua New Guinea"
+
+#: ../admin/manage-fields.php:409
+msgid "Paraguay"
+msgstr "Paraguay"
+
+#: ../admin/manage-fields.php:410
+msgid "Peru"
+msgstr "Peru"
+
+#: ../admin/manage-fields.php:411
+msgid "Philippines"
+msgstr "Philippines"
+
+#: ../admin/manage-fields.php:412
+msgid "Pitcairn"
+msgstr "Pitcairn"
+
+#: ../admin/manage-fields.php:413
+msgid "Poland"
+msgstr "Poland"
+
+#: ../admin/manage-fields.php:414
+msgid "Portugal"
+msgstr "Portugal"
+
+#: ../admin/manage-fields.php:415
+msgid "Puerto Rico"
+msgstr "Puerto Rico"
+
+#: ../admin/manage-fields.php:416
+msgid "Qatar"
+msgstr "Qatar"
+
+#: ../admin/manage-fields.php:417
+msgid "Republic of the Congo"
+msgstr "Republic of the Congo"
+
+#: ../admin/manage-fields.php:418
+msgid "Reunion"
+msgstr "Reunion"
+
+#: ../admin/manage-fields.php:419
+msgid "Romania"
+msgstr "Romania"
+
+#: ../admin/manage-fields.php:420
+msgid "Russia"
+msgstr "Russia"
+
+#: ../admin/manage-fields.php:421
+msgid "Rwanda"
+msgstr "Rwanda"
+
+#: ../admin/manage-fields.php:422
+msgid "Saint Barthelemy"
+msgstr "Saint Barthelemy"
+
+#: ../admin/manage-fields.php:423
+msgid "Saint Helena"
+msgstr "Saint Helena"
+
+#: ../admin/manage-fields.php:424
+msgid "Saint Kitts and Nevis"
+msgstr "Saint Kitts and Nevis"
+
+#: ../admin/manage-fields.php:425
+msgid "Saint Lucia"
+msgstr "Saint Lucia"
+
+#: ../admin/manage-fields.php:426
+msgid "Saint Martin"
+msgstr "Saint Martin"
+
+#: ../admin/manage-fields.php:427
+msgid "Saint Pierre and Miquelon"
+msgstr "Saint Pierre and Miquelon"
+
+#: ../admin/manage-fields.php:428
+msgid "Saint Vincent and the Grenadines"
+msgstr "Saint Vincent and the Grenadines"
+
+#: ../admin/manage-fields.php:429
+msgid "Samoa"
+msgstr "Samoa"
+
+#: ../admin/manage-fields.php:430
+msgid "San Marino"
+msgstr "San Marino"
+
+#: ../admin/manage-fields.php:431
+msgid "Sao Tome and Principe"
+msgstr "Sao Tome and Principe"
+
+#: ../admin/manage-fields.php:432
+msgid "Saudi Arabia"
+msgstr "Saudi Arabia"
+
+#: ../admin/manage-fields.php:433
+msgid "Senegal"
+msgstr "Senegal"
+
+#: ../admin/manage-fields.php:434
+msgid "Serbia"
+msgstr "Serbia"
+
+#: ../admin/manage-fields.php:435
+msgid "Seychelles"
+msgstr "Seychelles"
+
+#: ../admin/manage-fields.php:436
+msgid "Sierra Leone"
+msgstr "Sierra Leone"
+
+#: ../admin/manage-fields.php:437
+msgid "Singapore"
+msgstr "Singapore"
+
+#: ../admin/manage-fields.php:438
+msgid "Sint Maarten"
+msgstr "Sint Maarten"
+
+#: ../admin/manage-fields.php:439
+msgid "Slovakia"
+msgstr "Slovakia"
+
+#: ../admin/manage-fields.php:440
+msgid "Slovenia"
+msgstr "Slovenia"
+
+#: ../admin/manage-fields.php:441
+msgid "Solomon Islands"
+msgstr "Solomon Islands"
+
+#: ../admin/manage-fields.php:442
+msgid "Somalia"
+msgstr "Somalia"
+
+#: ../admin/manage-fields.php:443
+msgid "South Africa"
+msgstr "South Africa"
+
+#: ../admin/manage-fields.php:444
+msgid "South Georgia and the South Sandwich Islands"
+msgstr "South Georgia and the South Sandwich Islands"
+
+#: ../admin/manage-fields.php:445
+msgid "South Korea"
+msgstr "South Korea"
+
+#: ../admin/manage-fields.php:446
+msgid "South Sudan"
+msgstr "South Sudan"
+
+#: ../admin/manage-fields.php:447
+msgid "Spain"
+msgstr "Spain"
+
+#: ../admin/manage-fields.php:448
+msgid "Sri Lanka"
+msgstr "Sri Lanka"
+
+#: ../admin/manage-fields.php:449
+msgid "Sudan"
+msgstr "Sudan"
+
+#: ../admin/manage-fields.php:450
+msgid "Suriname"
+msgstr "Suriname"
+
+#: ../admin/manage-fields.php:451
+msgid "Svalbard and Jan Mayen"
+msgstr "Svalbard and Jan Mayen"
+
+#: ../admin/manage-fields.php:452
+msgid "Swaziland"
+msgstr "Swaziland"
+
+#: ../admin/manage-fields.php:453
+msgid "Sweden"
+msgstr "Sweden"
+
+#: ../admin/manage-fields.php:454
+msgid "Switzerland"
+msgstr "Switzerland"
+
+#: ../admin/manage-fields.php:455
+msgid "Syria"
+msgstr "Syria"
+
+#: ../admin/manage-fields.php:456
+msgid "Taiwan"
+msgstr "Taiwan"
+
+#: ../admin/manage-fields.php:457
+msgid "Tajikistan"
+msgstr "Tajikistan"
+
+#: ../admin/manage-fields.php:458
+msgid "Tanzania"
+msgstr "Tanzania"
+
+#: ../admin/manage-fields.php:459
+msgid "Thailand"
+msgstr "Thailand"
+
+#: ../admin/manage-fields.php:460
+msgid "Togo"
+msgstr "Togo"
+
+#: ../admin/manage-fields.php:461
+msgid "Tokelau"
+msgstr "Tokelau"
+
+#: ../admin/manage-fields.php:462
+msgid "Tonga"
+msgstr "Tonga"
+
+#: ../admin/manage-fields.php:463
+msgid "Trinidad and Tobago"
+msgstr "Trinidad and Tobago"
+
+#: ../admin/manage-fields.php:464
+msgid "Tunisia"
+msgstr "Tunisia"
+
+#: ../admin/manage-fields.php:465
+msgid "Turkey"
+msgstr "Turkey"
+
+#: ../admin/manage-fields.php:466
+msgid "Turkmenistan"
+msgstr "Turkmenistan"
+
+#: ../admin/manage-fields.php:467
+msgid "Turks and Caicos Islands"
+msgstr "Turks and Caicos Islands"
+
+#: ../admin/manage-fields.php:468
+msgid "Tuvalu"
+msgstr "Tuvalu"
+
+#: ../admin/manage-fields.php:469
+msgid "U.S. Virgin Islands"
+msgstr "U.S. Virgin Islands"
+
+#: ../admin/manage-fields.php:470
+msgid "Uganda"
+msgstr "Uganda"
+
+#: ../admin/manage-fields.php:471
+msgid "Ukraine"
+msgstr "Ukraine"
+
+#: ../admin/manage-fields.php:472
+msgid "United Arab Emirates"
+msgstr "United Arab Emirates"
+
+#: ../admin/manage-fields.php:473
+msgid "United Kingdom"
+msgstr "United Kingdom"
+
+#: ../admin/manage-fields.php:474
+msgid "United States"
+msgstr "United States"
+
+#: ../admin/manage-fields.php:475
+msgid "United States Minor Outlying Islands"
+msgstr "United States Minor Outlying Islands"
+
+#: ../admin/manage-fields.php:476
+msgid "Uruguay"
+msgstr "Uruguay"
+
+#: ../admin/manage-fields.php:477
+msgid "Uzbekistan"
+msgstr "Uzbekistan"
+
+#: ../admin/manage-fields.php:478
+msgid "Vanuatu"
+msgstr "Vanuatu"
+
+#: ../admin/manage-fields.php:479
+msgid "Vatican"
+msgstr "Vatican"
+
+#: ../admin/manage-fields.php:480
+msgid "Venezuela"
+msgstr "Venezuela"
+
+#: ../admin/manage-fields.php:481
+msgid "Vietnam"
+msgstr "Vietnam"
+
+#: ../admin/manage-fields.php:482
+msgid "Wallis and Futuna"
+msgstr "Wallis and Futuna"
+
+#: ../admin/manage-fields.php:483
+msgid "Western Sahara"
+msgstr "Western Sahara"
+
+#: ../admin/manage-fields.php:484
+msgid "Yemen"
+msgstr "Yemen"
+
+#: ../admin/manage-fields.php:485
+msgid "Zambia"
+msgstr "Zambia"
+
+#: ../admin/manage-fields.php:486
+msgid "Zimbabwe"
+msgstr "Zimbabwe"
+
+#: ../admin/manage-fields.php:843
+msgid "With Profile Builder Pro v2 you can display different fields in the registration and edit profile forms, using the Multiple Registration & Edit Profile Forms module."
+msgstr ""
+
+#: ../assets/misc/plugin-compatibilities.php:241
+msgid "Your account has to be confirmed by an administrator before you can log in."
+msgstr ""
+
+#: ../features/admin-approval/admin-approval.php:203
+msgid "Your account has been successfully created!"
+msgstr ""
+
+#: ../features/functions.php:607
+#: ../front-end/extra-fields/recaptcha/recaptcha.php:374
+#: ../front-end/extra-fields/recaptcha/recaptcha.php:379
+#: ../front-end/extra-fields/recaptcha/recaptcha.php:421
+#: ../front-end/extra-fields/recaptcha/recaptcha.php:458
+msgid "Please enter a (valid) reCAPTCHA value"
+msgstr ""
+
+#: ../front-end/extra-fields/recaptcha/recaptcha.php:421
+msgid "Click the BACK button on your browser, and try again."
+msgstr ""
+
+#: ../front-end/extra-fields/upload/upload_helper_functions.php:78
+#: ../front-end/extra-fields/upload/upload_helper_functions.php:87
+msgid "Sorry, you cannot upload this file type for this field."
+msgstr ""
+
+#: ../front-end/extra-fields/upload/upload_helper_functions.php:94
+msgid "An error occurred, please try again later."
+msgstr ""
+
+#: ../modules/user-listing/userlisting.php:253
+msgid "More"
+msgstr ""
+
+#: ../modules/user-listing/userlisting.php:338
+msgid "You do not have permission to view this user list."
+msgstr ""
+
+#: ../modules/user-listing/userlisting.php:351
+msgid "You do not have the required user role to view this user list."
+msgstr ""
+
+#: ../modules/user-listing/userlisting.php:1287
+msgid "Ascending"
+msgstr ""
+
+#: ../modules/user-listing/userlisting.php:1288
+msgid "Descending"
+msgstr ""
+
+#: ../admin/add-ons.php:144
+msgid "Download Now"
+msgstr "现在下载"
+
+#: ../admin/admin-functions.php:197
+msgid "If you enjoy using <strong> %1$s </strong> please <a href=\"%2$s\" target=\"_blank\">rate us on WordPress.org</a>. More happy users means more features, less bugs and better support for everyone. "
+msgstr ""
+
+#: ../admin/manage-fields.php:68
+msgid "Choose one of the supported field types"
+msgstr "请选择其中一个支持的类型"
+
+#: ../admin/manage-fields.php:70
+msgid ". Extra Field Types are available in <a href=\"%s\">Hobbyist or PRO versions</a>."
+msgstr "网站秘钥"
+
+#: ../admin/manage-fields.php:107
+msgid "Site Key"
+msgstr "网站秘钥"
+
+#: ../admin/manage-fields.php:107
+msgid "The site key from Google, <a href=\"http://www.google.com/recaptcha\" target=\"_blank\">www.google.com/recaptcha</a>"
+msgstr "网站秘钥"
+
+#: ../admin/manage-fields.php:108
+msgid "Secret Key"
+msgstr ""
+
+#: ../admin/manage-fields.php:108
+msgid "The secret key from Google, <a href=\"http://www.google.com/recaptcha\" target=\"_blank\">www.google.com/recaptcha</a>"
+msgstr ""
+
+#: ../admin/manage-fields.php:660
+msgid "You must enter the site key\n"
+msgstr ""
+
+#: ../admin/manage-fields.php:662
+msgid "You must enter the secret key\n"
+msgstr ""
+
+#: ../admin/add-ons.php:10 ../admin/add-ons.php:32
+msgid "Add-Ons"
+msgstr "插件"
+
+#: ../admin/add-ons.php:34 ../admin/add-ons.php:124
+msgid "Activate"
+msgstr "激活"
+
+#: ../admin/add-ons.php:36
+msgid "Downloading and installing..."
+msgstr "正在下载并安装..."
+
+#: ../admin/add-ons.php:37
+msgid "Installation complete"
+msgstr "安装完成"
+
+#: ../admin/add-ons.php:39
+msgid "Add-On is Active"
+msgstr "插件已激活"
+
+#: ../admin/add-ons.php:40
+msgid "Add-On has been activated"
+msgstr "插件已激活"
+
+#: ../admin/add-ons.php:41
+msgid "Retry Install"
+msgstr "重新安装"
+
+#: ../admin/add-ons.php:43 ../admin/add-ons.php:135
+msgid "Add-On is <strong>active</strong>"
+msgstr ""
+
+#: ../admin/add-ons.php:44 ../admin/add-ons.php:133
+msgid "Add-On is <strong>inactive</strong>"
+msgstr ""
+
+#: ../admin/add-ons.php:46 ../admin/add-ons.php:128
+msgid "Deactivate"
+msgstr "未启用"
+
+#: ../admin/add-ons.php:47
+msgid "Add-On has been deactivated."
+msgstr "插件已关闭"
+
+#: ../admin/add-ons.php:59
+msgid "Something went wrong, we could not connect to the server. Please try again later."
+msgstr "现在无法连接服务器，请稍候重试"
+
+#: ../admin/add-ons.php:144 ../admin/add-ons.php:147
+msgid "Buy Now"
+msgstr "立即购买"
+
+#: ../admin/add-ons.php:147
+msgid "Install Now"
+msgstr "立即安装"
+
+#: ../admin/add-ons.php:153
+msgid "Compatible with your version of Profile Builder."
+msgstr "与您现版本的Profile Builder兼容"
+
+#: ../admin/add-ons.php:162
+msgid "Upgrade Profile Builder"
+msgstr "更新Profile Builder"
+
+#: ../admin/add-ons.php:163
+msgid "Not compatible with Profile Builder"
+msgstr "与Profile Builder不兼容"
+
+#: ../admin/add-ons.php:171
+msgid "Not compatible with your version of Profile Builder."
+msgstr "于您现版本的Profile Builder不兼容"
+
+#: ../admin/add-ons.php:172
+msgid "Minimum required Profile Builder version:"
+msgstr "所需Profile Builder最低版本"
+
+#: ../admin/add-ons.php:177
+msgid "Could not install add-on. Retry or <a href=\"%s\" target=\"_blank\">install manually</a>."
+msgstr "无法安装插件，请重试或 <a href=\"%s\" target=\"_blank\">install manually</a>."
+
+#: ../front-end/default-fields/email/email.php:48
+msgid "You must enter a valid email address."
+msgstr "请输入有效的邮箱地址"
+
+#: ../front-end/default-fields/username/username.php:53
+#: ../front-end/default-fields/username/username.php:60
+msgid "This username is invalid because it uses illegal characters."
+msgstr "用户名无效，因为含有非法字符"
+
+#: ../front-end/default-fields/username/username.php:53
+#: ../front-end/default-fields/username/username.php:60
+msgid "Please enter a valid username."
+msgstr "请输入有效的用户名"
+
+#: ../front-end/extra-fields/user-role/user-role.php:67
+#: ../front-end/extra-fields/user-role/user-role.php:80
+msgid "Only administrators can see this field on edit profile forms."
+msgstr "只有管理员才能看到编辑信息的表格项"
+
+#: ../front-end/extra-fields/user-role/user-role.php:76
+msgid "As an administrator you cannot change your role."
+msgstr "作为管理员，您无法改变您的角色"
+
+#: ../modules/email-customizer/admin-email-customizer.php:117
+msgid ""
+"\n"
+"<p>{{username}} has requested a password change via the password reset feature.</p>\n"
+"<p>His/her new password is: {{password}}</p>\n"
+msgstr ""
+
+#: ../modules/email-customizer/admin-email-customizer.php:141
+msgid "Admin Notification for User Password Reset"
+msgstr ""
+
+#: ../modules/email-customizer/email-customizer.php:42
+msgid "Reset Key"
+msgstr ""
+
+#: ../modules/email-customizer/email-customizer.php:43
+msgid "Reset Url"
+msgstr ""
+
+#: ../modules/email-customizer/email-customizer.php:44
+msgid "Reset Link"
+msgstr ""
+
+#: ../modules/email-customizer/user-email-customizer.php:204
+msgid ""
+"\n"
+"<p>Someone requested that the password be reset for the following account: {{site_name}}<br/>\n"
+"Username: {{username}}</p>\n"
+"<p>If this was a mistake, just ignore this email and nothing will happen.</p>\n"
+"<p>To reset your password, visit the following address:<br/>\n"
+"{{{reset_link}}}</p>\n"
+msgstr ""
+
+#: ../modules/email-customizer/user-email-customizer.php:218
+msgid "[{{site_name}}] Password Reset"
+msgstr ""
+
+#: ../modules/email-customizer/user-email-customizer.php:229
+msgid "Password Reset Email"
+msgstr "密码重设邮件"
+
+#: ../modules/email-customizer/user-email-customizer.php:235
+msgid ""
+"\n"
+"<p>You have successfully reset your password to: {{password}}</p>\n"
+msgstr ""
+
+#: ../modules/email-customizer/user-email-customizer.php:245
+msgid "[{{site_name}}] Password Reset Successfully"
+msgstr ""
+
+#: ../modules/email-customizer/user-email-customizer.php:256
+msgid "Password Reset Success Email"
+msgstr "密码重设成功确认邮件"
+
+#: ../modules/user-listing/userlisting.php:134
+msgid "User Nicename"
+msgstr "用户昵称"
+
+#: ../modules/user-listing/userlisting.php:442
+msgid "None"
+msgstr ""
+
+#: ../admin/admin-functions.php:128
+msgid "<strong>ERROR</strong>: The password must have the minimum length of %s characters"
+msgstr "<strong>错误</strong>: 密码必须有 %s 个字符"
+
+#: ../admin/admin-functions.php:145
+msgid "<strong>ERROR</strong>: The password must have a minimum strength of %s"
+msgstr "<strong>错误</strong>: 密码必须满足强度 %s"
+
+#: ../admin/general-settings.php:170
+msgid "Username and Email"
+msgstr "用户名和邮箱"
+
+#: ../admin/general-settings.php:175
+msgid "\"Username and Email\" - users can Log In with both Username and Email."
+msgstr "\"用户名和邮箱\" - 同时以用户名和邮箱登陆"
+
+#: ../admin/general-settings.php:176
+msgid "\"Username\" - users can Log In only with Username."
+msgstr "\"用户名\" - 只能以用户名登陆"
+
+#: ../admin/general-settings.php:177
+msgid "\"Email\" - users can Log In only with Email."
+msgstr "\"邮箱\" - 用户只能用邮箱登陆"
+
+#: ../admin/manage-fields.php:100
+msgid "Specify the extension(s) you want to limit to upload<br/>Example: .ext1,.ext2,.ext3<br/>If not specified, defaults to: .jpg,.jpeg,.gif,.png (.*)"
+msgstr "指定你想限制的文件后缀<br/>例如: .ext1,.ext2,.ext3<br/>如果不指定，默认为: .jpg,.jpeg,.gif,.png (.*)"
+
+#: ../admin/manage-fields.php:101
+msgid "Specify the extension(s) you want to limit to upload<br/>Example: .ext1,.ext2,.ext3<br/>If not specified, defaults to all WordPress allowed file extensions (.*)"
+msgstr "指定你想限制的文件后缀<br/>例如: .ext1,.ext2,.ext3<br/>如果不指定，默认为Wordpress所允许的全部文件后缀"
+
+#: ../admin/manage-fields.php:111
+msgid "User Roles"
+msgstr "用户角色"
+
+#: ../admin/manage-fields.php:111
+msgid "Select which user roles to show to the user ( drag and drop to re-order )"
+msgstr "请选择要对用户显示哪个角色(可拖拽排序)"
+
+#: ../admin/manage-fields.php:112
+msgid "User Roles Order"
+msgstr "用户角色排序"
+
+#: ../admin/manage-fields.php:112
+msgid "Save the user role order from the user roles checkboxes"
+msgstr "从角色选择框来保存角色排序"
+
+#: ../admin/manage-fields.php:752
+msgid "Please select at least one user role\n"
+msgstr "请至少选择一个用户角色\n"
+
+#: ../admin/register-version.php:22
+msgid "Profile Builder Register"
+msgstr "Profile Builder 注册"
+
+#: ../admin/register-version.php:81
+msgid "The serial number is about to expire soon!"
+msgstr "序列号即将到期"
+
+#: ../admin/register-version.php:81
+msgid " Your serial number is about to expire, please %1$s Renew Your License%2$s."
+msgstr "您的序列号即将到期, 请 %1$s 更新您的许可 %2$s."
+
+#: ../admin/register-version.php:83
+msgid " Your serial number is expired, please %1$s Renew Your License%2$s."
+msgstr "您的序列号已经过期, 请 %1$s 更新您的许可 %2$s. "
+
+#: ../assets/lib/wck-api/wordpress-creation-kit.php:337
+msgid "Add Entry"
+msgstr "增加条目"
+
+#: ../features/email-confirmation/class-email-confirmation.php:91
+msgid "show"
+msgstr "显示"
+
+#: ../features/functions.php:659
+msgid "To allow users to register for your website via Profile Builder, you first must enable user registration. Go to %1$sNetwork Settings%2$s, and under Registration Settings make sure to check “User accounts may be registered”. %3$sDismiss%4$s"
+msgstr "为使用户可以通过Profile Builder注册，您首先需要开启“用户注册”。去到%1$s网络设置%2$s，常规，确保”任何人都可以注册“这个选项已被勾选。%3$s忽略%4$s"
+
+#: ../front-end/class-formbuilder.php:509
+msgid "User to edit:"
+msgstr "要编辑的用户"
+
+#: ../front-end/default-fields/password/password.php:46
+#: ../front-end/recover.php:245
+msgid "The password must have the minimum length of %s characters"
+msgstr "密码至少应包括%s个字符"
+
+#: ../front-end/default-fields/password/password.php:50
+#: ../front-end/recover.php:249
+msgid "The password must have a minimum strength of %s"
+msgstr "密码至少满足强度 %s"
+
+#: ../front-end/extra-fields/user-role/user-role.php:112
+msgid "You cannot register this user role"
+msgstr "您不可以注册这个用户组"
+
+#: ../front-end/login.php:105
+msgid "username or email"
+msgstr "用户名或邮件"
+
+#: ../front-end/login.php:174
+msgid "Username or Email"
+msgstr "用户名或邮件"
+
+#: ../front-end/logout.php:15
+msgid "You are currently logged in as %s. "
+msgstr "您现在的登陆名为 %s"
+
+#: ../front-end/logout.php:15
+msgid "Log out &raquo;"
+msgstr "登出&raquo;"
+
+#: ../modules/email-customizer/email-customizer.php:31
+msgid "User Role"
+msgstr "用户角色"
+
+#: ../modules/user-listing/userlisting.php:1207
+msgid "View all extra shortcode parameters"
+msgstr "查看其他的断码参数"
+
+#: ../modules/user-listing/userlisting.php:1221
+msgid "displays only the users that you specified the user_id for"
+msgstr "仅向指定用户ID显示"
+
+#: ../modules/user-listing/userlisting.php:1227
+msgid "displays all users except the ones you specified the user_id for"
+msgstr "向除了指定用户ID之外的所有用户显示"
+
+#: ../features/functions.php:526
+msgid "Minimum length of %d characters"
+msgstr "最少%d个字符"
+
+#: ../front-end/class-formbuilder.php:99 ../front-end/class-formbuilder.php:102
+msgid "This message is only visible by administrators"
+msgstr "只有管理员可以查看该信息"
+
+#: ../modules/user-listing/userlisting.php:364
+msgid "User not found"
+msgstr "找不到用户"
+
+#: ../modules/email-customizer/admin-email-customizer.php:38
+#: ../modules/email-customizer/user-email-customizer.php:38
+msgid "Valid tags {{reply_to}} and {{site_name}}"
+msgstr ""
+
+#: ../admin/admin-bar.php:48
+msgid "Choose which user roles view the admin bar in the front-end of the website."
+msgstr "选择哪个用户角色可以产看网站前台的管理员工具栏"
+
+#: ../admin/manage-fields.php:105
+msgid "Enter a comma separated list of values<br/>This can be anything, as it is hidden from the user, but should not contain special characters or apostrophes"
+msgstr "因为用户无法看到您所输入的字符，您可以输入任意字符并以逗号“,\" 隔开，但这些字符不能包括特殊符号"
+
+#: ../admin/manage-fields.php:689
+msgid "The meta-name cannot be empty\n"
+msgstr ""
+
+#: ../admin/register-version.php:69
+msgid "Now that you acquired a copy of %s, you should take the time and register it with the serial number you received"
+msgstr ""
+
+#: ../admin/register-version.php:243
+msgid "<p>Your <strong>Profile Builder</strong> serial number is invalid or missing. <br/>Please %1$sregister your copy%2$s to receive access to automatic updates and support. Need a license key? %3$sPurchase one now%4$s</p>"
+msgstr ""
+
+#: ../admin/register-version.php:246
+msgid "<p>Your <strong>Profile Builder</strong> license has expired. <br/>Please %1$sRenew Your Licence%2$s to continue receiving access to product downloads, automatic updates and support. %3$sRenew now and get 50&#37; off %4$s %5$sDismiss%6$s</p>"
+msgstr ""
+
+#: ../admin/register-version.php:251
+msgid "<p>Your <strong>Profile Builder</strong> license is about to expire on %5$s. <br/>Please %1$sRenew Your Licence%2$s to continue receiving access to product downloads, automatic updates and support. %3$sRenew now and get 50&#37; off %4$s %6$sDismiss%7$s</p>"
+msgstr ""
+
+#: ../assets/lib/wck-api/fields/country select.php:14
+#: ../assets/lib/wck-api/fields/cpt select.php:17
+#: ../assets/lib/wck-api/fields/select.php:14 ../assets/lib/wck-api/fields/user
+#: select.php:15
+msgid "...Choose"
+msgstr "请选择"
+
+#: ../features/class-list-table.php:526 ../features/class-list-table.php:941
+msgid "1 item"
+msgstr ""
+
+#: ../features/functions.php:512
+msgid "Very Weak"
+msgstr "非常弱"
+
+#: ../features/functions.php:600
+msgid "This field is required"
+msgstr "必填选项"
+
+#: ../features/functions.php:627
+msgid "Cancel"
+msgstr "取消"
+
+#: ../features/functions.php:663
+msgid "To allow users to register for your website via Profile Builder, you first must enable user registration. Go to %1$sSettings -> General%2$s tab, and under Membership make sure to check “Anyone can register”. %3$sDismiss%4$s"
+msgstr ""
+
+#: ../front-end/login.php:96
+msgid "Invalid username."
+msgstr "不正确的用户名"
+
+#: ../front-end/login.php:101 ../front-end/login.php:105
+msgid "username"
+msgstr "用户名"
+
+#: ../front-end/login.php:101
+msgid "email"
+msgstr "邮件"
+
+#: ../front-end/login.php:208
+msgid "Lost your password?"
+msgstr "忘记密码？"
+
+#: ../index.php:34
+msgid " is also activated. You need to deactivate it before activating this version of the plugin."
+msgstr ""
+
+#: ../modules/email-customizer/admin-email-customizer.php:54
+#: ../modules/email-customizer/user-email-customizer.php:54
+msgid "Must be a valid email address or the tag {{reply_to}} which defaults to the administrator email"
+msgstr ""
+
+#: ../features/email-confirmation/email-confirmation.php:554
+#: ../features/email-confirmation/email-confirmation.php:557
+#: ../modules/email-customizer/email-customizer.php:413
+#: ../modules/email-customizer/email-customizer.php:420
+#: ../modules/email-customizer/email-customizer.php:434
+msgid "Your selected password at signup"
+msgstr "您在注册时输入的密码"
+
+#: ../modules/email-customizer/user-email-customizer.php:38
+msgid "These settings are also replicated in the \"Admin Email Customizer\" settings-page upon save."
+msgstr ""
+
+#: ../modules/multiple-forms/edit-profile-forms.php:270
+msgid "This form is empty."
+msgstr "这个表格是空的"
+
+#: ../modules/multiple-forms/multiple-forms.php:416
+msgid "Delete all items"
+msgstr "删除所有条目"
+
+#: ../modules/multiple-forms/multiple-forms.php:416
+msgid "Delete all"
+msgstr "全部删除"
+
+#: ../modules/multiple-forms/register-forms.php:226
+msgid "Choose..."
+msgstr "请选择"
+
+#: ../modules/user-listing/userlisting.php:1298
+msgid "Set the number of users to be displayed on every paginated part of the all-userlisting"
+msgstr ""
+
+#: ../admin/admin-bar.php:10
+msgid "Show/Hide the Admin Bar on the Front-End"
+msgstr "显示/隐藏管理员工具栏在前端"
+
+#: ../admin/admin-bar.php:10 ../admin/admin-bar.php:47
+msgid "Admin Bar Settings"
+msgstr "管理员工具栏设置"
+
+#: ../admin/admin-bar.php:57
+msgid "User-Role"
+msgstr "用户角色"
+
+#: ../admin/admin-bar.php:58
+msgid "Visibility"
+msgstr "可见"
+
+#: ../admin/admin-bar.php:73
+msgid "Default"
+msgstr "默认"
+
+#: ../admin/admin-bar.php:74
+msgid "Show"
+msgstr "显示"
+
+#: ../admin/admin-bar.php:75
+msgid "Hide"
+msgstr "隐藏"
+
+#: ../admin/admin-bar.php:86 ../admin/general-settings.php:215
+#: ../admin/register-version.php:95 ../features/functions.php:620
+#: ../modules/custom-redirects/custom-redirects.php:136
+#: ../modules/modules.php:142
+msgid "Save Changes"
+msgstr "保存更改"
+
+#: ../admin/admin-functions.php:34
+msgid "Login is set to be done using the E-mail. This field will NOT appear in the front-end! ( you can change these settings under the \"%s\" tab )"
+msgstr "登录允许使用电子邮件。这字段不会显示在前端！ ( 你可以改变这些设置，在 \"%s\" 选项卡中 )"
+
+#: ../admin/admin-functions.php:34 ../admin/general-settings.php:10
+#: ../admin/general-settings.php:38
+msgid "General Settings"
+msgstr "常规设置"
+
+#: ../admin/admin-functions.php:134 ../admin/general-settings.php:201
+msgid "Very weak"
+msgstr "非常弱"
+
+#: ../admin/admin-functions.php:134 ../admin/general-settings.php:202
+#: ../features/functions.php:512
+msgid "Weak"
+msgstr "弱"
+
+#: ../admin/admin-functions.php:134 ../admin/general-settings.php:203
+#: ../features/functions.php:512
+msgid "Medium"
+msgstr "中"
+
+#: ../admin/admin-functions.php:134 ../admin/general-settings.php:204
+#: ../features/functions.php:512
+msgid "Strong"
+msgstr "强"
+
+#: ../admin/admin-functions.php:184
+msgid "Add Field"
+msgstr "添加字段"
+
+#: ../admin/admin-functions.php:186
+#: ../modules/class-mustache-templates/class-mustache-templates.php:374
+msgid "Save Settings"
+msgstr "保存设置"
+
+#: ../admin/basic-info.php:10
+msgid "Basic Information"
+msgstr "基本信息"
+
+#: ../admin/basic-info.php:29
+msgid "Version %s"
+msgstr "版本 %s"
+
+#: ../admin/basic-info.php:30
+msgid "<strong>Profile Builder </strong>"
+msgstr "<strong>Profile Builder </strong>"
+
+#: ../admin/basic-info.php:31
+msgid "The best way to add front-end registration, edit profile and login forms."
+msgstr "最好的前端注册、编辑个人资料与登陆表单的实现方式。"
+
+#: ../admin/basic-info.php:33
+msgid "For Modern User Interaction"
+msgstr "新颖的用户交互。"
+
+#: ../admin/basic-info.php:36 ../features/login-widget/login-widget.php:59
+msgid "Login"
+msgstr "登陆"
+
+#: ../admin/basic-info.php:40
+msgid "Registration"
+msgstr "注册"
+
+#: ../admin/basic-info.php:44
+msgid "Edit Profile"
+msgstr "编辑个人资料"
+
+#: ../admin/basic-info.php:51
+msgid "Extra Features"
+msgstr "额外字段"
+
+#: ../admin/basic-info.php:52
+msgid "Features that give you more control over your users, increased security and help you fight user registration spam."
+msgstr "特性，让您对您的用户更多的控制，增强安全性，帮助用户注册与限制垃圾邮件。"
+
+#: ../admin/basic-info.php:53
+msgid "Enable extra features"
+msgstr "启用额外功能"
+
+#: ../admin/basic-info.php:57
+msgid "Recover Password"
+msgstr "恢复密码"
+
+#: ../admin/basic-info.php:61
+msgid "Admin Approval (*)"
+msgstr "管理员审批 (*)"
+
+#: ../admin/basic-info.php:62
+msgid "You decide who is a user on your website. Get notified via email or approve multiple users at once from the WordPress UI."
+msgstr "你决定在你的网站用户是谁。从WordPress 界面通过电子邮件或批准的多个用户获得通知。"
+
+#: ../admin/basic-info.php:65
+msgid "Email Confirmation"
+msgstr "电子邮件确认"
+
+#: ../admin/basic-info.php:66
+msgid "Make sure users sign up with genuine emails. On registration users will receive a notification to confirm their email address."
+msgstr "确保用户注册是使用真实的电子邮件。注册用户将收到一个通知，确认他们的电子邮件地址。"
+
+#: ../admin/basic-info.php:69
+msgid "Minimum Password Length and Strength Meter"
+msgstr "最小密码长度和强度表"
+
+#: ../admin/basic-info.php:70
+msgid "Eliminate weak passwords altogether by setting a minimum password length and enforcing a certain password strength."
+msgstr "消除弱密码最小密码长度，并强制执行设定的密码强度。"
+
+#: ../admin/basic-info.php:73
+msgid "Login with Email or Username"
+msgstr "通过电子邮件或用户名登录"
+
+#: ../admin/basic-info.php:74
+msgid "Allow users to log in with their email or username when accessing your site."
+msgstr "当用户访问您的网站时，允许用户登录他们的用户名和电子邮件。"
+
+#: ../admin/basic-info.php:87
+msgid "Customize Your Forms The Way You Want (*)"
+msgstr "自定义表格用你想要的方式（*）"
+
+#: ../admin/basic-info.php:88
+msgid "With Extra Profile Fields you can create the exact registration form your project needs."
+msgstr "额外个人资料字段，根据您的项目需求你可以创建精确的登注册表单。"
+
+#: ../admin/basic-info.php:90
+msgid "Extra Profile Fields are available in Hobbyist or PRO versions"
+msgstr "额外个人资料字段需要激活 Hobbyist 或者 PRO 版本才可用"
+
+#: ../admin/basic-info.php:92
+msgid "Get started with extra fields"
+msgstr "开始使用额外字段"
+
+#: ../admin/basic-info.php:95
+msgid "Avatar Upload"
+msgstr "头像上传"
+
+#: ../admin/basic-info.php:96
+msgid "Generic Uploads"
+msgstr "常规上传"
+
+#: ../admin/basic-info.php:97
+msgid "Agree To Terms Checkbox"
+msgstr "同意使用条款"
+
+#: ../admin/basic-info.php:98
+msgid "Datepicker"
+msgstr "日期选择器"
+
+#: ../admin/basic-info.php:99
+msgid "reCAPTCHA"
+msgstr "reCAPTCHA"
+
+#: ../admin/basic-info.php:100
+msgid "Country Select"
+msgstr "国家选择"
+
+#: ../admin/basic-info.php:101
+msgid "Timezone Select"
+msgstr "时区选择"
+
+#: ../admin/basic-info.php:102
+msgid "Input / Hidden Input"
+msgstr "输入/隐藏输入"
+
+#: ../admin/basic-info.php:103
+msgid "Checkbox"
+msgstr "复选框"
+
+#: ../admin/basic-info.php:104
+msgid "Select"
+msgstr "选择"
+
+#: ../admin/basic-info.php:105
+msgid "Radio Buttons"
+msgstr "单选按钮"
+
+#: ../admin/basic-info.php:106
+msgid "Textarea"
+msgstr "文本框"
+
+#: ../admin/basic-info.php:115
+msgid "Powerful Modules (**)"
+msgstr "强大的模块（**）"
+
+#: ../admin/basic-info.php:116
+msgid "Everything you will need to manage your users is probably already available using the Pro Modules."
+msgstr "使用一切你需要的工具，用于管理你的用户的模块。"
+
+#: ../admin/basic-info.php:118
+msgid "Enable your modules"
+msgstr "启用你的模块"
+
+#: ../admin/basic-info.php:121
+msgid "Find out more about PRO Modules"
+msgstr "了解关于专业版模块的更多内容"
+
+#: ../admin/basic-info.php:126 ../modules/modules.php:111
+#: ../modules/user-listing/userlisting.php:11
+#: ../modules/user-listing/userlisting.php:12
+#: ../modules/user-listing/userlisting.php:17
+#: ../modules/user-listing/userlisting.php:23
+msgid "User Listing"
+msgstr "用户列表"
+
+#: ../admin/basic-info.php:128
+msgid "Easy to edit templates for listing your website users as well as creating single user pages. Shortcode based, offering many options to customize your listings."
+msgstr "易于编辑模列表您的网站用户，以及创建单用户页面模板。基于简码，提供了许多选项来定制您的列表。"
+
+#: ../admin/basic-info.php:134
+msgid "Email Customizer"
+msgstr "电子邮件定制"
+
+#: ../admin/basic-info.php:135
+msgid "Personalize all emails sent to your users or admins. On registration, email confirmation, admin approval / un-approval."
+msgstr "个性化邮件发送到你的用户或管理员。注册，电子邮件确认，管理员批准/拒绝。"
+
+#: ../admin/basic-info.php:138
+#: ../modules/custom-redirects/custom-redirects.php:29
+#: ../modules/modules.php:32 ../modules/modules.php:132
+msgid "Custom Redirects"
+msgstr "自定义重定向"
+
+#: ../admin/basic-info.php:139
+msgid "Keep your users out of the WordPress dashboard, redirect them to the front-page after login or registration, everything is just a few clicks away."
+msgstr "让你的用户离开 WordPress 仪表盘，重定向到他们的前端页面，登录注册一切都只需几个点击。"
+
+#: ../admin/basic-info.php:144 ../modules/modules.php:97
+msgid "Multiple Registration Forms"
+msgstr "多个注册形式"
+
+#: ../admin/basic-info.php:145
+msgid "Set up multiple registration forms with different fields for certain user roles. Capture different information from different types of users."
+msgstr "设置多个注册表单为某些用户角色不同的字段。获取来自不同类型的用户不同的信息。"
+
+#: ../admin/basic-info.php:148 ../modules/modules.php:104
+msgid "Multiple Edit-profile Forms"
+msgstr "多个编辑个人资料形式"
+
+#: ../admin/basic-info.php:149
+msgid "Allow different user roles to edit their specific information. Set up multiple edit-profile forms with different fields for certain user roles."
+msgstr "允许不同的用户角色去编辑他们的具体信息。设置多个编辑表单一不同的作用字段。"
+
+#: ../admin/basic-info.php:161
+msgid " * only available in the %1$sHobbyist and Pro versions%2$s."
+msgstr " * 仅获得在 %1$sHobbyist 与专业版本 %2$s."
+
+#: ../admin/basic-info.php:162
+msgid "** only available in the %1$sPro version%2$s."
+msgstr "** 仅激活在 %1$s专业版本 %2$s."
+
+#: ../admin/general-settings.php:42
+msgid "Load Profile Builder's own CSS file in the front-end:"
+msgstr "在前端载入 Profile Builder 的CSS文件："
+
+#: ../admin/general-settings.php:45 ../admin/general-settings.php:60
+#: ../admin/general-settings.php:114
+#: ../modules/multiple-forms/register-forms.php:225
+#: ../modules/multiple-forms/register-forms.php:226
+#: ../modules/user-listing/userlisting.php:1303
+msgid "Yes"
+msgstr "是"
+
+#: ../admin/general-settings.php:47
+msgid "You can find the default file here: %1$s"
+msgstr "你可以在这里找到默认的文件: %1$s"
+
+#: ../admin/general-settings.php:56
+msgid "\"Email Confirmation\" Activated:"
+msgstr "\"邮件确认\" 激活:"
+
+#: ../admin/general-settings.php:61 ../admin/general-settings.php:115
+#: ../modules/multiple-forms/register-forms.php:225
+#: ../modules/multiple-forms/register-forms.php:226
+msgid "No"
+msgstr "不"
+
+#: ../admin/general-settings.php:64
+msgid "On single-site installations this works with front-end forms only. Recommended to redirect WP default registration to a Profile Builder one using \"Custom Redirects\" addon."
+msgstr "在单个站点安装本工作会在前端形成。建议转向 WP 默认注册使用 Profile Builder 的 \"自定义转向\" 模块。"
+
+#: ../admin/general-settings.php:65
+msgid "The \"Email Confirmation\" feature is active (by default) on WPMU installations."
+msgstr "这个 \"邮件确认\" 功能默认在 WPMU 安装是默认开启的。"
+
+#: ../admin/general-settings.php:67
+msgid "You can find a list of unconfirmed email addresses %1$sUsers > All Users > Email Confirmation%2$s."
+msgstr "您可以找到还没确认邮箱地址的列表 %1$s用户 > 所有用户 > 邮箱确认%2$s."
+
+#: ../admin/general-settings.php:79
+msgid "\"Email Confirmation\" Landing Page:"
+msgstr "\"邮件确认\" 登陆页面:"
+
+#: ../admin/general-settings.php:84
+msgid "Existing Pages"
+msgstr "现有页面"
+
+#: ../admin/general-settings.php:99
+msgid "Specify the page where the users will be directed when confirming the email account. This page can differ from the register page(s) and can be changed at any time. If none selected, a simple confirmation page will be displayed for the user."
+msgstr "指定供用户确认邮件的转向页面。此页面可不同于注册页面(s)并且可随时改变。如果没有指定，将显示给用户一个简单确认页。"
+
+#: ../admin/general-settings.php:110
+msgid "\"Admin Approval\" Activated:"
+msgstr "\"管理员审批\" 激活:"
+
+#: ../admin/general-settings.php:118
+msgid "You can find a list of users at %1$sUsers > All Users > Admin Approval%2$s."
+msgstr "您可以找到用户在 %1$s用户 > 所有用户 > 管理员审批%2$s."
+
+#: ../admin/general-settings.php:156
+msgid "\"Admin Approval\" Feature:"
+msgstr "\"管理员审批\" 功能 :"
+
+#: ../admin/general-settings.php:159
+msgid "You decide who is a user on your website. Get notified via email or approve multiple users at once from the WordPress UI. Enable Admin Approval by upgrading to %1$sHobbyist or PRO versions%2$s."
+msgstr "您控制您的用户在网站上的角色。获得游戏通知或者一次性批量审批多用户。启用管理审批功能需要升级到 %1$sHobbyist 或者 专业版本%2$s。"
+
+#: ../admin/general-settings.php:166
+msgid "Allow Users to Log in With:"
+msgstr "允许用户使用什么登陆："
+
+#: ../admin/general-settings.php:171 ../admin/manage-fields.php:159
+#: ../features/admin-approval/class-admin-approval.php:177
+#: ../features/email-confirmation/class-email-confirmation.php:167
+#: ../modules/email-customizer/email-customizer.php:28
+#: ../modules/user-listing/userlisting.php:92
+#: ../modules/user-listing/userlisting.php:248
+#: ../modules/user-listing/userlisting.php:611
+#: ../modules/user-listing/userlisting.php:1259
+msgid "Username"
+msgstr "姓名"
+
+#: ../admin/general-settings.php:172 ../front-end/login.php:170
+#: ../modules/email-customizer/email-customizer.php:29
+#: ../modules/user-listing/userlisting.php:617
+#: ../modules/user-listing/userlisting.php:1260
+msgid "Email"
+msgstr "电子邮件"
+
+#: ../admin/general-settings.php:184
+msgid "Minimum Password Length:"
+msgstr "最小密码长度："
+
+#: ../admin/general-settings.php:189
+msgid "Enter the minimum characters the password should have. Leave empty for no minimum limit"
+msgstr "输入密码必须最少字符。留空为没有限制"
+
+#: ../admin/general-settings.php:196
+msgid "Minimum Password Strength:"
+msgstr "最小密码强度："
+
+#: ../admin/general-settings.php:200
+msgid "Disabled"
+msgstr "关闭"
+
+#: ../admin/manage-fields.php:12
+msgid "Manage Fields"
+msgstr "管理字段"
+
+#: ../admin/manage-fields.php:13
+msgid "Manage Default and Extra Fields"
+msgstr "管理默认与额外字段"
+
+#: ../admin/manage-fields.php:94
+msgid "Field Title"
+msgstr "字段标题"
+
+#: ../admin/manage-fields.php:94
+msgid "Title of the field"
+msgstr "字段的标题"
+
+#: ../admin/manage-fields.php:95
+#: ../modules/multiple-forms/edit-profile-forms.php:241
+#: ../modules/multiple-forms/register-forms.php:262
+msgid "Field"
+msgstr "字段"
+
+#: ../admin/manage-fields.php:96
+msgid "Meta-name"
+msgstr "Meta-name"
+
+#: ../admin/manage-fields.php:96
+msgid "Use this in conjuction with WordPress functions to display the value in the page of your choosing<br/>Auto-completed but in some cases editable (in which case it must be uniqe)<br/>Changing this might take long in case of a very big user-count"
+msgstr "使用这个结合 WordPress 功能去显示您选择的页面中的值<br/> 自动完成，但在某些情况下可编辑（在这情况下它必须是唯一的）<br/> 在用户数量大的情况下，改变这个可能需要很长时间"
+
+#: ../admin/manage-fields.php:97
+#: ../modules/multiple-forms/edit-profile-forms.php:242
+#: ../modules/multiple-forms/register-forms.php:263
+msgid "ID"
+msgstr "编号"
+
+#: ../admin/manage-fields.php:97
+#: ../modules/multiple-forms/edit-profile-forms.php:242
+#: ../modules/multiple-forms/register-forms.php:263
+msgid "A unique, auto-generated ID for this particular field<br/>You can use this in conjuction with filters to target this element if needed<br/>Can't be edited"
+msgstr "一个独特的、为特定的字段自动生成ID<br/>如果需要可以使用过滤器调用这个目标<br/>不能编辑"
+
+#: ../admin/manage-fields.php:98
+msgid "Description"
+msgstr "描述"
+
+#: ../admin/manage-fields.php:98
+msgid "Enter a (detailed) description of the option for end users to read<br/>Optional"
+msgstr "输入（详细）的最终用户阅读选项的描述<br/>可选"
+
+#: ../admin/manage-fields.php:99
+msgid "Row Count"
+msgstr "行数"
+
+#: ../admin/manage-fields.php:99
+msgid "Specify the number of rows for a 'Textarea' field<br/>If not specified, defaults to 5"
+msgstr "指定 'Textarea' 字段的行数<br/>如果没有指定，缺省为5"
+
+#: ../admin/manage-fields.php:100
+msgid "Allowed Image Extensions"
+msgstr "允许的图像扩展"
+
+#: ../admin/manage-fields.php:101
+msgid "Allowed Upload Extensions"
+msgstr "允许的上传扩展"
+
+#: ../admin/manage-fields.php:102
+msgid "Avatar Size"
+msgstr "头像大小"
+
+#: ../admin/manage-fields.php:102
+msgid "Enter a value (between 20 and 200) for the size of the 'Avatar'<br/>If not specified, defaults to 100"
+msgstr "输入 '头像' 大小数值 ( 20 与 200 之间 ) <br/>如果没指定，默认是100"
+
+#: ../admin/manage-fields.php:103
+msgid "Date-format"
+msgstr "日期格式"
+
+#: ../admin/manage-fields.php:103
+msgid "Specify the format of the date when using Datepicker<br/>Valid options: mm/dd/yy, mm/yy/dd, dd/yy/mm, dd/mm/yy, yy/dd/mm, yy/mm/dd<br/>If not specified, defaults to mm/dd/yy"
+msgstr "当使用日期选择器指定日期格式<br/>有效选项: mm/dd/yy, mm/yy/dd, dd/yy/mm, dd/mm/yy, yy/dd/mm, yy/mm/dd<br/>如无指定，默认是 mm/dd/yy"
+
+#: ../admin/manage-fields.php:104
+msgid "Terms of Agreement"
+msgstr "协议条款"
+
+#: ../admin/manage-fields.php:104
+msgid "Enter a detailed description of the temrs of agreement for the user to read.<br/>Links can be inserted by using standard HTML syntax: &lt;a href=\"custom_url\"&gt;custom_text&lt;/a&gt;"
+msgstr "输入一个供用户查看的协议内容。<br/> 连接可以使用 HTML 语法，例如：&lt;a href=\"custom_url\"&gt;custom_text&lt;/a&gt;"
+
+#: ../admin/manage-fields.php:105
+msgid "Options"
+msgstr "选项"
+
+#: ../admin/manage-fields.php:106
+msgid "Labels"
+msgstr "标签"
+
+#: ../admin/manage-fields.php:106
+msgid "Enter a comma separated list of labels<br/>Visible for the user"
+msgstr "输入一个逗号分隔标签 <br/> 对用户可见的"
+
+#: ../admin/manage-fields.php:113
+msgid "Default Value"
+msgstr "默认值"
+
+#: ../admin/manage-fields.php:113
+msgid "Default value of the field"
+msgstr "该字段的默认值"
+
+#: ../admin/manage-fields.php:114 ../admin/manage-fields.php:116
+#: ../admin/manage-fields.php:117
+msgid "Default Option"
+msgstr "默认选项"
+
+#: ../admin/manage-fields.php:114
+msgid "Specify the option which should be selected by default"
+msgstr "指定选项的默认选择值"
+
+#: ../admin/manage-fields.php:115
+msgid "Default Option(s)"
+msgstr "默认选项(s)"
+
+#: ../admin/manage-fields.php:115
+msgid "Specify the option which should be checked by default<br/>If there are multiple values, separate them with a ',' (comma)"
+msgstr "指定选项默认是否勾选<br/>如果有多个值的选项，使用“，”分开（逗号）"
+
+#: ../admin/manage-fields.php:118
+msgid "Default Content"
+msgstr "默认内容"
+
+#: ../admin/manage-fields.php:118
+msgid "Default value of the textarea"
+msgstr "文本默认值"
+
+#: ../admin/manage-fields.php:119
+msgid "Required"
+msgstr "必须"
+
+#: ../admin/manage-fields.php:119
+msgid "Whether the field is required or not"
+msgstr "该字段是否必须"
+
+#: ../admin/manage-fields.php:120
+msgid "Overwrite Existing"
+msgstr "覆盖现有"
+
+#: ../admin/manage-fields.php:120
+msgid "Selecting 'Yes' will add the field to the list, but will overwrite any other field in the database that has the same meta-name<br/>Use this at your own risk"
+msgstr "选择“是”将增加字段到列表中，但将覆盖在数据库中具有相同名称的任何其他领域的 meta-name<br/>使用需自己承担风险"
+
+#: ../admin/manage-fields.php:126
+msgid "Field Properties"
+msgstr "字段属性"
+
+#: ../admin/manage-fields.php:139
+msgid "Registration & Edit Profile"
+msgstr "注册与编辑资料"
+
+#: ../admin/manage-fields.php:158
+msgid "Name"
+msgstr "姓名"
+
+#: ../admin/manage-fields.php:159
+msgid "Usernames cannot be changed."
+msgstr " 用户名不可更改。"
+
+#: ../admin/manage-fields.php:160
+msgid "First Name"
+msgstr "名字"
+
+#: ../admin/manage-fields.php:161
+msgid "Last Name"
+msgstr "姓氏"
+
+#: ../admin/manage-fields.php:162 ../modules/user-listing/userlisting.php:650
+msgid "Nickname"
+msgstr "昵称"
+
+#: ../admin/manage-fields.php:163
+msgid "Display name publicly as"
+msgstr "公开显示为"
+
+#: ../admin/manage-fields.php:164
+msgid "Contact Info"
+msgstr "联系信息"
+
+#: ../admin/manage-fields.php:165
+#: ../features/admin-approval/class-admin-approval.php:180
+#: ../features/email-confirmation/class-email-confirmation.php:168
+#: ../modules/user-listing/userlisting.php:98
+msgid "E-mail"
+msgstr "电子邮件"
+
+#: ../admin/manage-fields.php:166
+#: ../modules/email-customizer/email-customizer.php:32
+#: ../modules/user-listing/userlisting.php:101
+#: ../modules/user-listing/userlisting.php:632
+#: ../modules/user-listing/userlisting.php:1261
+msgid "Website"
+msgstr "站点"
+
+#: ../admin/manage-fields.php:170
+msgid "AIM"
+msgstr "AIM"
+
+#: ../admin/manage-fields.php:171
+msgid "Yahoo IM"
+msgstr "雅虎通讯"
+
+#: ../admin/manage-fields.php:172
+msgid "Jabber / Google Talk"
+msgstr "Jabber / Google Talk"
+
+#: ../admin/manage-fields.php:175
+msgid "About Yourself"
+msgstr "关于您自己"
+
+#: ../admin/manage-fields.php:176 ../modules/user-listing/userlisting.php:104
+#: ../modules/user-listing/userlisting.php:635
+#: ../modules/user-listing/userlisting.php:1262
+msgid "Biographical Info"
+msgstr "个人说明"
+
+#: ../admin/manage-fields.php:176
+msgid "Share a little biographical information to fill out your profile. This may be shown publicly."
+msgstr "分享关于您的一些信息。可能会被公开。"
+
+#: ../admin/manage-fields.php:177 ../front-end/recover.php:75
+#: ../modules/email-customizer/email-customizer.php:30
+msgid "Password"
+msgstr "新密码"
+
+#: ../admin/manage-fields.php:177
+msgid "Type your password."
+msgstr "重复新密码"
+
+#: ../admin/manage-fields.php:178 ../front-end/recover.php:80
+msgid "Repeat Password"
+msgstr "重复新密码"
+
+#: ../admin/manage-fields.php:178
+msgid "Type your password again. "
+msgstr "再输入一遍新密码。"
+
+#: ../admin/manage-fields.php:617 ../admin/manage-fields.php:761
+msgid "You must select a field\n"
+msgstr "你必须选择一个字段\n"
+
+#: ../admin/manage-fields.php:627
+msgid "Please choose a different field type as this one already exists in your form (must be unique)\n"
+msgstr "请选择一个不同的字段类型，这个已经存在你的表格（必须是唯一的）\n"
+
+#: ../admin/manage-fields.php:638
+msgid "The entered avatar size is not between 20 and 200\n"
+msgstr "输入的头像大小不是20与200之间 \n"
+
+#: ../admin/manage-fields.php:641
+msgid "The entered avatar size is not numerical\n"
+msgstr "输入的头像大小不是数值\n"
+
+#: ../admin/manage-fields.php:649
+msgid "The entered row number is not numerical\n"
+msgstr "输入的行数不是数值\n"
+
+#: ../admin/manage-fields.php:652
+msgid "You must enter a value for the row number\n"
+msgstr "您必须输入一个值的行数\n"
+
+#: ../admin/manage-fields.php:670
+msgid "The entered value for the Datepicker is not a valid date-format\n"
+msgstr "日期选择器输入的值不是有效的日期格式\n"
+
+#: ../admin/manage-fields.php:673
+msgid "You must enter a value for the date-format\n"
+msgstr "您必须输入一个日期格式的值\n"
+
+#: ../admin/manage-fields.php:701 ../admin/manage-fields.php:709
+#: ../admin/manage-fields.php:719
+msgid "That meta-name is already in use\n"
+msgstr "meta-name 已在使用\n"
+
+#: ../admin/manage-fields.php:741
+msgid "The following option(s) did not coincide with the ones in the options list: %s\n"
+msgstr "下列选项(s)不符合的选项清单: %s\n"
+
+#: ../admin/manage-fields.php:745
+msgid "The following option did not coincide with the ones in the options list: %s\n"
+msgstr "下列选项不符合的选项清单: %s\n"
+
+#: ../admin/manage-fields.php:768
+msgid "That field is already added in this form\n"
+msgstr "这个字段已经加入这个\n"
+
+#: ../admin/manage-fields.php:817
+msgid "<pre>Title</pre><pre>Type</pre><pre>Meta Name</pre><pre class=\"wppb-mb-head-required\">Required</pre>"
+msgstr "<pre>标题</pre><pre>类型</pre><pre>Meta Name</pre><pre class=\"wppb-mb-head-required\">必须</pre>"
+
+#: ../admin/manage-fields.php:817
+#: ../assets/lib/wck-api/wordpress-creation-kit.php:440
+#: ../assets/lib/wck-api/wordpress-creation-kit.php:529
+#: ../features/admin-approval/class-admin-approval.php:119
+#: ../features/functions.php:641 ../features/functions.php:648
+#: ../modules/multiple-forms/multiple-forms.php:416
+msgid "Edit"
+msgstr "编辑"
+
+#: ../admin/manage-fields.php:817
+#: ../assets/lib/wck-api/wordpress-creation-kit.php:440
+#: ../assets/lib/wck-api/wordpress-creation-kit.php:530
+#: ../features/admin-approval/class-admin-approval.php:124
+#: ../features/admin-approval/class-admin-approval.php:235
+#: ../features/email-confirmation/class-email-confirmation.php:120
+#: ../features/email-confirmation/class-email-confirmation.php:217
+#: ../features/functions.php:634 ../features/functions.php:648
+msgid "Delete"
+msgstr "删除"
+
+#: ../admin/manage-fields.php:832
+msgid "Use these shortcodes on the pages you want the forms to be displayed:"
+msgstr "使用这些简码在页面中你想要的形式显示："
+
+#: ../admin/manage-fields.php:841
+msgid "If you're interested in displaying different fields in the registration and edit profile forms, please use the Multiple Registration & Edit Profile Forms Addon."
+msgstr "如果你对注册、编辑资料时显示不同字段感兴趣，请使用多个注册和编辑资料形式的模块。"
+
+#: ../admin/register-version.php:14
+msgid "Register Your Version"
+msgstr "注册您的版本"
+
+#: ../admin/register-version.php:14
+msgid "Register Version"
+msgstr "注册版本"
+
+#: ../admin/register-version.php:70
+msgid "If you register this version of Profile Builder, you'll receive information regarding upgrades, patches, and technical support."
+msgstr "如果您注册这个版本的 Profile Builder ，您将收到有关升级，补丁，和技术支持。"
+
+#: ../admin/register-version.php:72
+msgid " Serial Number:"
+msgstr "序号："
+
+#: ../admin/register-version.php:77
+msgid "The serial number was successfully validated!"
+msgstr "序号成功验证！"
+
+#: ../admin/register-version.php:79
+msgid "The serial number entered couldn't be validated!"
+msgstr "序号无法验证！"
+
+#: ../admin/register-version.php:83
+msgid "The serial number couldn't be validated because it expired!"
+msgstr "序号无法验证，因已过期！"
+
+#: ../admin/register-version.php:85
+msgid "The serial number couldn't be validated because process timed out. This is possible due to the server being down. Please try again later!"
+msgstr "序号无法验证，因为连接超时。这可能是由于服务器维护。请稍后再试！"
+
+#: ../admin/register-version.php:87
+msgid "(e.g. RMPB-15-SN-253a55baa4fbe7bf595b2aabb8d72985)"
+msgstr "(例如： RMPB-15-SN-253a55baa4fbe7bf595b2aabb8d72985)"
+
+#: ../assets/lib/wck-api/wordpress-creation-kit.php:440
+#: ../features/functions.php:648
+msgid "Content"
+msgstr "内容"
+
+#: ../assets/lib/wck-api/wordpress-creation-kit.php:529
+msgid "Edit this item"
+msgstr "编辑此项目"
+
+#: ../assets/lib/wck-api/wordpress-creation-kit.php:530
+msgid "Delete this item"
+msgstr "删除此项目"
+
+#: ../assets/lib/wck-api/wordpress-creation-kit.php:676
+msgid "Please enter a value for the required field "
+msgstr "请为这个字段输入所需的值"
+
+#: ../front-end/extra-fields/upload/upload.php:122
+msgid "Select File"
+msgstr "选择文件"
+
+#: ../assets/lib/wck-api/fields/upload.php:43
+#: ../front-end/extra-fields/upload/upload.php:112
+msgid "Remove"
+msgstr "移除"
+
+#: ../assets/lib/wck-api/wordpress-creation-kit.php:1155
+msgid "Syncronize WCK"
+msgstr "同步 WCK"
+
+#: ../assets/lib/wck-api/wordpress-creation-kit.php:1167
+msgid "Syncronize WCK Translation"
+msgstr "同步 WCK 翻译"
+
+#: ../assets/lib/wck-api/fields/nested repeater.php:8
+msgid "You can add the information for the %s after you add a entry"
+msgstr "您可以添加信息到 %s"
+
+#: ../assets/lib/wck-api/fields/upload.php:75
+#: ../front-end/extra-fields/upload/upload.php:128
+msgid "Upload "
+msgstr "上传"
+
+#: ../features/class-list-table.php:184
+msgid "No items found."
+msgstr "找不到项目。"
+
+#: ../features/class-list-table.php:308
+msgid "Bulk Actions"
+msgstr "批量动作"
+
+#: ../features/class-list-table.php:318
+msgid "Apply"
+msgstr "应用"
+
+#: ../features/class-list-table.php:402
+msgid "Show all dates"
+msgstr "显示所有日期"
+
+#: ../features/class-list-table.php:415
+msgid "%1$s %2$d"
+msgstr "%1$s %2$d"
+
+#: ../features/class-list-table.php:431
+msgid "List View"
+msgstr "列表查看"
+
+#: ../features/class-list-table.php:432
+msgid "Excerpt View"
+msgstr "摘录查看"
+
+#: ../features/class-list-table.php:458
+msgid "%s pending"
+msgstr "%s 等待中"
+
+#: ../features/class-list-table.php:566
+msgid "%1$s of %2$s"
+msgstr "%1$s 的 %2$s"
+
+#: ../features/class-list-table.php:713
+msgid "Select All"
+msgstr "选择所有"
+
+#: ../features/functions.php:281
+msgid "The user-validation has failed - the avatar was not deleted!"
+msgstr "用户验证失败 - 头像没有被删除！"
+
+#: ../features/functions.php:292
+msgid "The user-validation has failed - the attachment was not deleted!"
+msgstr "用户验证失败 - 附件没有被删除！"
+
+#: ../features/functions.php:487
+msgid "Strength indicator"
+msgstr "强度指标"
+
+#: ../features/admin-approval/admin-approval.php:7
+#: ../features/admin-approval/class-admin-approval.php:458
+msgid "Admin Approval"
+msgstr "管理员审批"
+
+#: ../features/admin-approval/admin-approval.php:21
+#: ../features/email-confirmation/email-confirmation.php:58
+msgid "Do you want to"
+msgstr "您想要"
+
+#: ../features/admin-approval/admin-approval.php:44
+msgid "Your session has expired! Please refresh the page and try again"
+msgstr "您的会话已过期！请刷新页面重试"
+
+#: ../features/admin-approval/admin-approval.php:55
+msgid "User successfully approved!"
+msgstr "用户成功批准！"
+
+#: ../features/admin-approval/admin-approval.php:63
+msgid "User successfully unapproved!"
+msgstr "用户成功拒绝！"
+
+#: ../features/admin-approval/admin-approval.php:69
+msgid "User successfully deleted!"
+msgstr "用户成功删除！"
+
+#: ../features/admin-approval/admin-approval.php:74
+#: ../features/admin-approval/admin-approval.php:118
+#: ../features/email-confirmation/email-confirmation.php:135
+msgid "You either don't have permission for that action or there was an error!"
+msgstr "你没有权限操作，或出现一个错误！"
+
+#: ../features/admin-approval/admin-approval.php:85
+msgid "Your session has expired! Please refresh the page and try again."
+msgstr "您的会话已过期！请刷新页面重试"
+
+#: ../features/admin-approval/admin-approval.php:97
+msgid "Users successfully approved!"
+msgstr "用户成功批准！"
+
+#: ../features/admin-approval/admin-approval.php:106
+msgid "Users successfully unapproved!"
+msgstr "用户成功拒绝！"
+
+#: ../features/admin-approval/admin-approval.php:114
+msgid "Users successfully deleted!"
+msgstr "用户成功删除！"
+
+#: ../features/admin-approval/admin-approval.php:134
+msgid "Your account on %1$s has been approved!"
+msgstr "您在 %1$s 的帐号成功通过！"
+
+#: ../features/admin-approval/admin-approval.php:135
+#: ../features/admin-approval/admin-approval.php:138
+msgid "approved"
+msgstr "已批准"
+
+#: ../features/admin-approval/admin-approval.php:137
+msgid "An administrator has just approved your account on %1$s (%2$s)."
+msgstr "管理员已经批准您在 %1$s (%2$s) 的帐号。"
+
+#: ../features/admin-approval/admin-approval.php:142
+msgid "Your account on %1$s has been unapproved!"
+msgstr "您在 %1$s 的帐号被拒绝！"
+
+#: ../features/admin-approval/admin-approval.php:143
+#: ../features/admin-approval/admin-approval.php:146
+msgid "unapproved"
+msgstr "已拒绝"
+
+#: ../features/admin-approval/admin-approval.php:145
+msgid "An administrator has just unapproved your account on %1$s (%2$s)."
+msgstr "管理员已拒绝您在 %1$s (%2$s) 的帐号。"
+
+#: ../features/admin-approval/admin-approval.php:164
+msgid "<strong>ERROR</strong>: Your account has to be confirmed by an administrator before you can log in."
+msgstr "<strong>错误</strong>: 您的帐号需要管理员批准后才能登陆使用。"
+
+#: ../features/admin-approval/admin-approval.php:176
+msgid "Your account has to be confirmed by an administrator before you can use the \"Password Recovery\" feature."
+msgstr "您的帐号在管理员确认前可以使用 \"密码找回\" 功能."
+
+#: ../features/admin-approval/class-admin-approval.php:124
+msgid "delete this user?"
+msgstr "删除这个用户？"
+
+#: ../features/admin-approval/class-admin-approval.php:127
+msgid "unapprove this user?"
+msgstr "拒绝这个用户？"
+
+#: ../features/admin-approval/class-admin-approval.php:127
+#: ../features/admin-approval/class-admin-approval.php:234
+msgid "Unapprove"
+msgstr "拒绝"
+
+#: ../features/admin-approval/class-admin-approval.php:129
+msgid "approve this user?"
+msgstr "允许这个用户？"
+
+#: ../features/admin-approval/class-admin-approval.php:129
+#: ../features/admin-approval/class-admin-approval.php:233
+msgid "Approve"
+msgstr "允许"
+
+#: ../features/admin-approval/class-admin-approval.php:178
+#: ../modules/user-listing/userlisting.php:249
+#: ../modules/user-listing/userlisting.php:623
+#: ../modules/user-listing/userlisting.php:1264
+msgid "Firstname"
+msgstr "名子"
+
+#: ../features/admin-approval/class-admin-approval.php:179
+#: ../modules/user-listing/userlisting.php:626
+#: ../modules/user-listing/userlisting.php:1265
+msgid "Lastname"
+msgstr "姓氏"
+
+#: ../features/admin-approval/class-admin-approval.php:181
+#: ../modules/user-listing/userlisting.php:124
+#: ../modules/user-listing/userlisting.php:250
+#: ../modules/user-listing/userlisting.php:653
+#: ../modules/user-listing/userlisting.php:1268
+msgid "Role"
+msgstr "角色"
+
+#: ../features/admin-approval/class-admin-approval.php:182
+#: ../features/email-confirmation/class-email-confirmation.php:169
+msgid "Registered"
+msgstr "已注册"
+
+#: ../features/admin-approval/class-admin-approval.php:183
+msgid "User-status"
+msgstr "用户状态"
+
+#: ../features/admin-approval/class-admin-approval.php:263
+msgid "Do you want to bulk approve the selected users?"
+msgstr "你想批量允许所选用户？"
+
+#: ../features/admin-approval/class-admin-approval.php:271
+msgid "Do you want to bulk unapprove the selected users?"
+msgstr "你想批量拒绝所选用户？"
+
+#: ../features/admin-approval/class-admin-approval.php:277
+msgid "Do you want to bulk delete the selected users?"
+msgstr "你想批量删除所选用户？"
+
+#: ../features/admin-approval/class-admin-approval.php:285
+#: ../features/email-confirmation/class-email-confirmation.php:278
+msgid "Sorry, but you don't have permission to do that!"
+msgstr "抱歉，您没有相应的操作权限！"
+
+#: ../features/admin-approval/class-admin-approval.php:341
+msgid "Approved"
+msgstr "已允许"
+
+#: ../features/admin-approval/class-admin-approval.php:343
+msgid "Unapproved"
+msgstr "已拒绝"
+
+#: ../features/admin-approval/class-admin-approval.php:461
+#: ../features/email-confirmation/class-email-confirmation.php:469
+msgid "All Users"
+msgstr "所有用户"
+
+#: ../features/email-confirmation/class-email-confirmation.php:120
+msgid "delete this user from the _signups table?"
+msgstr "在 the _signups 表单中 删除这个用户？"
+
+#: ../features/email-confirmation/class-email-confirmation.php:121
+msgid "confirm this email yourself?"
+msgstr "确认自己的电子邮件？"
+
+#: ../features/email-confirmation/class-email-confirmation.php:121
+#: ../features/email-confirmation/class-email-confirmation.php:218
+msgid "Confirm Email"
+msgstr "确认电子邮件"
+
+#: ../features/email-confirmation/class-email-confirmation.php:122
+msgid "resend the activation link?"
+msgstr "重新发送激活链接？"
+
+#: ../features/email-confirmation/class-email-confirmation.php:122
+#: ../features/email-confirmation/class-email-confirmation.php:219
+msgid "Resend Activation Email"
+msgstr "发送激活邮件"
+
+#: ../features/email-confirmation/class-email-confirmation.php:249
+msgid "%s couldn't be deleted"
+msgstr "%s 不能删除"
+
+#: ../features/email-confirmation/class-email-confirmation.php:253
+msgid "All users have been successfully deleted"
+msgstr "所有的用户已成功删除"
+
+#: ../features/email-confirmation/class-email-confirmation.php:263
+msgid "The selected users have been activated"
+msgstr "所选的用户已被激活"
+
+#: ../features/email-confirmation/class-email-confirmation.php:274
+msgid "The selected users have had their activation emails resent"
+msgstr "所选用户已经重新发送激活电子邮件"
+
+#: ../features/email-confirmation/class-email-confirmation.php:466
+#: ../features/email-confirmation/email-confirmation.php:47
+msgid "Users with Unconfirmed Email Address"
+msgstr "没经确认邮箱的用户"
+
+#: ../features/email-confirmation/email-confirmation.php:110
+msgid "There was an error performing that action!"
+msgstr "执行操作时出错！"
+
+#: ../features/email-confirmation/email-confirmation.php:118
+msgid "The selected user couldn't be deleted"
+msgstr "所选用户不能删除"
+
+#: ../features/email-confirmation/email-confirmation.php:129
+msgid "Email notification resent to user"
+msgstr "电子邮件通知重发给用户"
+
+#: ../features/email-confirmation/email-confirmation.php:384
+msgid "[%1$s] Activate %2$s"
+msgstr "[%1$s] 激活 %2$s"
+
+#: ../features/email-confirmation/email-confirmation.php:387
+msgid ""
+"To activate your user, please click the following link:\n"
+"\n"
+"%s%s%s\n"
+"\n"
+"After you activate it you will receive yet *another email* with your login."
+msgstr ""
+"要激活你的帐户，请点击下面的链接：\n"
+"\n"
+"%s%s%s \n"
+"\n"
+"当你点击后，您将收到登陆的 *另一封电子邮件* 。"
+
+#: ../features/email-confirmation/email-confirmation.php:428
+#: ../front-end/register.php:68
+msgid "Could not create user!"
+msgstr "无法创建用户！"
+
+#: ../features/email-confirmation/email-confirmation.php:431
+msgid "That username is already activated!"
+msgstr "用户名已经被激活！"
+
+#: ../features/email-confirmation/email-confirmation.php:453
+msgid "There was an error while trying to activate the user"
+msgstr "试图激活用户时出现一个错误"
+
+#: ../features/email-confirmation/email-confirmation.php:501
+#: ../modules/email-customizer/admin-email-customizer.php:73
+msgid "A new subscriber has (been) registered!"
+msgstr "一个新的用户已经（被）注册！"
+
+#: ../features/email-confirmation/email-confirmation.php:504
+msgid "New subscriber on %1$s.<br/><br/>Username:%2$s<br/>E-mail:%3$s<br/>"
+msgstr "新用户在 %1$s.<br/><br/>用户名:%2$s<br/>邮箱:%3$s<br/>"
+
+#: ../features/email-confirmation/email-confirmation.php:605
+msgid "The \"Admin Approval\" feature was activated at the time of registration, so please remember that you need to approve this user before he/she can log in!"
+msgstr "管理员审批”的功能是注册时激活，所以请记住，你必须批准该用户，他/她才能进行登录！"
+
+#: ../features/email-confirmation/email-confirmation.php:550
+msgid "[%1$s] Your new account information"
+msgstr "[%1$s] 您的新帐户信息"
+
+#: ../features/email-confirmation/email-confirmation.php:556
+msgid "Welcome to %1$s!<br/><br/><br/>Your username is:%2$s and password:%3$s"
+msgstr "欢迎来到 %1$s!<br/><br/><br/>您的用户名是:%2$s 密码是:%3$s"
+
+#: ../features/email-confirmation/email-confirmation.php:613
+#: ../front-end/register.php:116
+msgid "Before you can access your account, an administrator needs to approve it. You will be notified via email."
+msgstr "需要管理员审核通过才能访问您的帐户。您将收到一封电子邮件。"
+
+#: ../features/login-widget/login-widget.php:10
+msgid "This login widget lets you add a login form in the sidebar."
+msgstr "该登录控件是允许您添加在侧边栏的登录表单。"
+
+#: ../features/login-widget/login-widget.php:15
+msgid "Profile Builder Login Widget"
+msgstr "Profile Builder 登陆小工具"
+
+#: ../front-end/class-formbuilder.php:294 ../front-end/login.php:202
+msgid "Register"
+msgstr "注册"
+
+#: ../features/login-widget/login-widget.php:63
+msgid "Title:"
+msgstr "标题："
+
+#: ../features/login-widget/login-widget.php:68
+msgid "After login redirect URL (optional):"
+msgstr "登录后的重定向URL（可选）："
+
+#: ../features/login-widget/login-widget.php:73
+msgid "Register page URL (optional):"
+msgstr "注册页面URL（可选）："
+
+#: ../features/login-widget/login-widget.php:78
+msgid "Password Recovery page URL (optional):"
+msgstr "密码恢复页URL（可选）："
+
+#: ../features/upgrades/upgrades-functions.php:91
+#: ../features/upgrades/upgrades-functions.php:134
+msgid "The usernames cannot be changed."
+msgstr "用户名不可更改。"
+
+#: ../front-end/class-formbuilder.php:89
+msgid "Only an administrator can add new users."
+msgstr "只有管理员可以添加新用户。"
+
+#: ../front-end/class-formbuilder.php:99
+msgid "Users can register themselves or you can manually create users here."
+msgstr "用户可以注册自己注册，或您可以在这里手动创建用户。"
+
+#: ../front-end/class-formbuilder.php:102
+msgid "Users cannot currently register themselves, but you can manually create users here."
+msgstr "用户无法自己注册，但你可以在这里手动创建用户。"
+
+#: ../front-end/class-formbuilder.php:114
+msgid "You are currently logged in as %1s. You don't need another account. %2s"
+msgstr "您当前登陆为 %1s。您不需要其它帐号。 %2s"
+
+#: ../front-end/class-formbuilder.php:114
+msgid "Log out of this account."
+msgstr "退出这个帐号。"
+
+#: ../front-end/class-formbuilder.php:114
+msgid "Logout"
+msgstr "退出"
+
+#: ../front-end/class-formbuilder.php:120
+msgid "You must be logged in to edit your profile."
+msgstr "您必须在登陆状态下编辑个人资料。"
+
+#: ../front-end/class-formbuilder.php:142
+msgid "here"
+msgstr "这里"
+
+#: ../front-end/class-formbuilder.php:144
+msgid "You will soon be redirected automatically. If you see this page for more than %1$d seconds, please click %2$s.%3$s"
+msgstr "您很快将会自动重定向。如果你看到这个页面超过 %1$d 秒，请点击 %2$s.%3$s"
+
+#: ../front-end/class-formbuilder.php:239
+#: ../front-end/class-formbuilder.php:246
+msgid "The account %1s has been successfully created!"
+msgstr "帐号 %1s 创建成功！"
+
+#: ../front-end/class-formbuilder.php:242
+#: ../front-end/class-formbuilder.php:252
+msgid "Before you can access your account %1s, you need to confirm your email address. Please check your inbox and click the activation link."
+msgstr "访问您的帐号 %1s 前，您需要确认您的邮箱地址。请检查您的邮箱并点击激活连接。"
+
+#: ../front-end/class-formbuilder.php:248
+msgid "Before you can access your account %1s, an administrator has to approve it. You will be notified via email."
+msgstr "访问您的帐号 %1s 前，需要管理员审批通过。您将收到邮件。"
+
+#: ../front-end/class-formbuilder.php:262
+msgid "Your profile has been successfully updated!"
+msgstr "个人资料已更新！"
+
+#: ../front-end/class-formbuilder.php:272
+msgid "There was an error in the submitted form"
+msgstr "在递交表单时出错"
+
+#: ../front-end/class-formbuilder.php:294
+msgid "Add User"
+msgstr "所有用户"
+
+#: ../admin/add-ons.php:170 ../front-end/class-formbuilder.php:297
+msgid "Update"
+msgstr "更新个人资料"
+
+#: ../front-end/class-formbuilder.php:340
+#: ../front-end/extra-fields/extra-fields.php:35
+msgid "The avatar was successfully deleted!"
+msgstr "头像成功删除！"
+
+#: ../front-end/class-formbuilder.php:340
+#: ../front-end/extra-fields/extra-fields.php:37
+msgid "The following attachment was successfully deleted:"
+msgstr "成功删除以下附件："
+
+#: ../front-end/class-formbuilder.php:352
+msgid "Send these credentials via email."
+msgstr "通过电子邮件发送这些凭据。"
+
+#: ../front-end/extra-fields/extra-fields.php:99 ../front-end/login.php:89
+#: ../front-end/login.php:96 ../front-end/login.php:110
+#: ../front-end/recover.php:17 ../front-end/recover.php:228
+msgid "ERROR"
+msgstr "错误"
+
+#: ../front-end/login.php:89
+msgid "The password you entered is incorrect."
+msgstr "你输入的密码不正确。"
+
+#: ../front-end/login.php:90 ../front-end/login.php:97
+msgid "Password Lost and Found."
+msgstr "密码遗失。"
+
+#: ../front-end/login.php:90 ../front-end/login.php:97
+msgid "Lost your password"
+msgstr "忘记您的密码"
+
+#: ../front-end/login.php:110
+msgid "Both fields are empty."
+msgstr "字段均空"
+
+#: ../front-end/login.php:241
+msgid "You are currently logged in as %1$s. %2$s"
+msgstr "您当前登录为 %1$s. %2$s"
+
+#: ../front-end/login.php:240 ../front-end/logout.php:17
+msgid "Log out of this account"
+msgstr "退出这个帐户"
+
+#: ../front-end/login.php:240
+msgid "Log out"
+msgstr "退出"
+
+#: ../front-end/recover.php:17
+msgid "Your account has to be confirmed by an administrator before you can use the \"Password Reset\" feature."
+msgstr "您的帐户需被管理员审批后才可使用 \"密码重置\" 功能。"
+
+#: ../front-end/recover.php:91
+msgid "Reset Password"
+msgstr "重置密码"
+
+#: ../front-end/recover.php:111
+msgid "Please enter your username or email address."
+msgstr "请输入您的用户名或电子邮件地址。"
+
+#: ../front-end/recover.php:112
+msgid "You will receive a link to create a new password via email."
+msgstr "你将收到一封创建一个新密码连接的电子邮件。"
+
+#: ../front-end/recover.php:119
+msgid "Username or E-mail"
+msgstr "用户或邮箱地址"
+
+#: ../front-end/recover.php:125
+msgid "Get New Password"
+msgstr "获取新密码"
+
+#: ../front-end/recover.php:166
+msgid "The username entered wasn't found in the database!"
+msgstr "输入的用户名不存在数据库中！"
+
+#: ../front-end/recover.php:166
+msgid "Please check that you entered the correct username."
+msgstr "请检查您已输入正确的用户名。"
+
+#: ../front-end/recover.php:181
+msgid "Check your e-mail for the confirmation link."
+msgstr "检查你的邮件中的确认链接。"
+
+#: ../front-end/recover.php:216
+msgid "Someone requested that the password be reset for the following account: <b>%1$s</b><br/>If this was a mistake, just ignore this email and nothing will happen.<br/>To reset your password, visit the following link:%2$s"
+msgstr "有人要求以下帐号密码进行重置: <b>%1$s</b><br/>如果不是您自己的操作，请忽略。<br/>需要重置您的密码的话，请点击 :%2$s"
+
+#: ../front-end/recover.php:219
+msgid "Password Reset from \"%1$s\""
+msgstr "从 \"%1$s\" 密码重置"
+
+#: ../front-end/recover.php:228
+msgid "There was an error while trying to send the activation link to %1$s!"
+msgstr "发送激活链接时出现错误 %1$s!"
+
+#: ../front-end/recover.php:188
+msgid "The email address entered wasn't found in the database!"
+msgstr "邮箱地址无法在数据库中找到"
+
+#: ../front-end/recover.php:188
+msgid "Please check that you entered the correct email address."
+msgstr "请检查您输入（正确）电子邮件地址。"
+
+#: ../front-end/recover.php:256
+msgid "Your password has been successfully changed!"
+msgstr "您已经成功地更改密码！"
+
+#: ../front-end/recover.php:275
+msgid "You have successfully reset your password to: %1$s"
+msgstr "您已经成功地将密码更改成：%1$s"
+
+#: ../front-end/recover.php:278 ../front-end/recover.php:292
+msgid "Password Successfully Reset for %1$s on \"%2$s\""
+msgstr "密码成功重置  %1$s 在 \"%2$s\""
+
+#: ../front-end/recover.php:289
+msgid "%1$s has requested a password change via the password reset feature.<br/>His/her new password is:%2$s"
+msgstr "%1$s 请求通过密码重置功能修改密码。<br/>他的密码是:%2$s"
+
+#: ../front-end/recover.php:308
+msgid "The entered passwords don't match!"
+msgstr "输入的密码不匹配！"
+
+#: ../front-end/recover.php:353
+msgid "ERROR:"
+msgstr "错误："
+
+#: ../front-end/recover.php:353
+msgid "Invalid key!"
+msgstr "无效密钥！"
+
+#: ../front-end/register.php:46
+msgid "Invalid activation key!"
+msgstr "无效的激活密钥！"
+
+#: ../front-end/register.php:50
+msgid "This username is now active!"
+msgstr "这个用户名现在被激活！"
+
+#: ../front-end/register.php:71
+msgid "This username is already activated!"
+msgstr "这个用户名已经被激活！"
+
+#: ../front-end/register.php:115
+msgid "Your email was successfully confirmed."
+msgstr "您的电子邮件已确认。"
+
+#: ../front-end/register.php:144
+msgid "There was an error while trying to activate the user."
+msgstr "尝试激活用户时出现一个错误。"
+
+#: ../front-end/default-fields/email/email.php:44
+msgid "The email you entered is not a valid email address."
+msgstr "您输入的电子邮件不是一个有效的电子邮件地址。"
+
+#: ../front-end/default-fields/email/email.php:57
+#: ../front-end/default-fields/email/email.php:64
+msgid "This email is already reserved to be used soon."
+msgstr "此邮箱地址已被保留使用。"
+
+#: ../front-end/default-fields/email/email.php:57
+#: ../front-end/default-fields/email/email.php:64
+#: ../front-end/default-fields/email/email.php:73
+#: ../front-end/default-fields/email/email.php:84
+#: ../front-end/default-fields/username/username.php:50
+#: ../front-end/default-fields/username/username.php:65
+msgid "Please try a different one!"
+msgstr "请尝试一个不同的！"
+
+#: ../front-end/default-fields/email/email.php:73
+#: ../front-end/default-fields/email/email.php:84
+msgid "This email is already in use."
+msgstr "电子邮件已被使用。"
+
+#: ../front-end/default-fields/password-repeat/password-repeat.php:37
+#: ../front-end/default-fields/password-repeat/password-repeat.php:41
+msgid "The passwords do not match"
+msgstr "密码不匹配"
+
+#: ../front-end/default-fields/username/username.php:50
+msgid "This username already exists."
+msgstr "用户名已经存在。"
+
+#: ../front-end/default-fields/username/username.php:65
+msgid "This username is already reserved to be used soon."
+msgstr "这个用户名已经被保留。"
+
+#: ../modules/user-listing/userlisting.php:247
+msgid "Avatar"
+msgstr "头像"
+
+#: ../front-end/extra-fields/avatar/avatar.php:72
+#: ../front-end/extra-fields/checkbox/checkbox.php:45
+#: ../front-end/extra-fields/datepicker/datepicker.php:40
+#: ../front-end/extra-fields/input-hidden/input-hidden.php:34
+#: ../front-end/extra-fields/input/input.php:30
+#: ../front-end/extra-fields/radio/radio.php:44
+#: ../front-end/extra-fields/select-multiple/select-multiple.php:46
+#: ../front-end/extra-fields/select-timezone/select-timezone.php:44
+#: ../front-end/extra-fields/select/select.php:46
+#: ../front-end/extra-fields/textarea/textarea.php:30
+#: ../front-end/extra-fields/upload/upload.php:70
+#: ../front-end/extra-fields/wysiwyg/wysiwyg.php:33
+msgid "required"
+msgstr "必须"
+
+#: ../front-end/extra-fields/recaptcha/recaptcha.php:48
+msgid "To use reCAPTCHA you must get an API key from"
+msgstr "使用 reCAPTCHA 你必须获得一个API密钥"
+
+#: ../front-end/extra-fields/recaptcha/recaptcha.php:131
+msgid "For security reasons, you must pass the remote ip to reCAPTCHA!"
+msgstr "安全原因，您必须通过远程IP到reCAPTCHA!"
+
+#: ../front-end/extra-fields/recaptcha/recaptcha.php:192
+msgid "To use reCAPTCHA you must get an API public key from:"
+msgstr "使用reCAPTCHA，你必须得到一个API公开密钥："
+
+#: ../modules/modules.php:11 ../modules/modules.php:80
+msgid "Modules"
+msgstr "模块"
+
+#: ../modules/modules.php:81
+msgid "Here you can activate / deactivate available modules for Profile Builder."
+msgstr "在这里你可以激活/停用 Profile Builder 模块。"
+
+#: ../modules/modules.php:91
+msgid "Name/Description"
+msgstr "名称/描述"
+
+#: ../modules/modules.php:92
+msgid "Status"
+msgstr "状态"
+
+#: ../modules/custom-redirects/custom-redirects.php:48
+#: ../modules/custom-redirects/custom-redirects.php:58
+#: ../modules/custom-redirects/custom-redirects.php:68
+#: ../modules/custom-redirects/custom-redirects.php:94
+#: ../modules/custom-redirects/custom-redirects.php:104
+#: ../modules/custom-redirects/custom-redirects.php:114
+#: ../modules/custom-redirects/custom-redirects.php:124
+#: ../modules/modules.php:99 ../modules/modules.php:106
+#: ../modules/modules.php:113 ../modules/modules.php:120
+#: ../modules/modules.php:127 ../modules/modules.php:134
+msgid "Active"
+msgstr "激活"
+
+#: ../modules/custom-redirects/custom-redirects.php:49
+#: ../modules/custom-redirects/custom-redirects.php:59
+#: ../modules/custom-redirects/custom-redirects.php:69
+#: ../modules/custom-redirects/custom-redirects.php:95
+#: ../modules/custom-redirects/custom-redirects.php:105
+#: ../modules/custom-redirects/custom-redirects.php:115
+#: ../modules/custom-redirects/custom-redirects.php:125
+#: ../modules/modules.php:100 ../modules/modules.php:107
+#: ../modules/modules.php:114 ../modules/modules.php:121
+#: ../modules/modules.php:128 ../modules/modules.php:135
+msgid "Inactive"
+msgstr "关闭"
+
+#: ../modules/email-customizer/admin-email-customizer.php:11
+#: ../modules/email-customizer/admin-email-customizer.php:12
+#: ../modules/modules.php:118
+msgid "Admin Email Customizer"
+msgstr "管理员邮件定制"
+
+#: ../modules/email-customizer/user-email-customizer.php:11
+#: ../modules/email-customizer/user-email-customizer.php:12
+#: ../modules/modules.php:125
+msgid "User Email Customizer"
+msgstr "用户邮件定制"
+
+#: ../assets/lib/wck-api/wordpress-creation-kit.php:337
+#: ../modules/class-mustache-templates/class-mustache-templates.php:242
+msgid "Save"
+msgstr "保存"
+
+#: ../modules/custom-redirects/custom-redirects.php:35
+msgid "Redirects on custom page requests:"
+msgstr "自定义页面重定向请求："
+
+#: ../modules/custom-redirects/custom-redirects.php:39
+#: ../modules/custom-redirects/custom-redirects.php:85
+msgid "Action"
+msgstr "动作"
+
+#: ../modules/custom-redirects/custom-redirects.php:40
+#: ../modules/custom-redirects/custom-redirects.php:86
+#: ../modules/multiple-forms/edit-profile-forms.php:202
+#: ../modules/multiple-forms/register-forms.php:226
+msgid "Redirect"
+msgstr "重定向"
+
+#: ../modules/custom-redirects/custom-redirects.php:41
+#: ../modules/custom-redirects/custom-redirects.php:87
+#: ../modules/multiple-forms/edit-profile-forms.php:204
+#: ../modules/multiple-forms/register-forms.php:228
+msgid "URL"
+msgstr "网址"
+
+#: ../modules/custom-redirects/custom-redirects.php:46
+msgid "After Registration:"
+msgstr "注册后："
+
+#: ../modules/custom-redirects/custom-redirects.php:56
+msgid "After Login:"
+msgstr "登录后："
+
+#: ../modules/custom-redirects/custom-redirects.php:66
+msgid "Recover Password (*)"
+msgstr "重置密码 (*)"
+
+#: ../modules/custom-redirects/custom-redirects.php:77
+msgid "When activated this feature will redirect the user on both the default Wordpress password recovery page and the \"Lost password?\" link used by Profile Builder on the front-end login page."
+msgstr "当激活这个功能，当用户进入在 WordPress 默认的密码恢复页与  \"忘记密码?\" 连接将重定向使用 Profile Builder  前端登陆页面。"
+
+#: ../modules/custom-redirects/custom-redirects.php:81
+msgid "Redirects on default WordPress page requests:"
+msgstr "WordPress 默认页面的重定向："
+
+#: ../modules/custom-redirects/custom-redirects.php:92
+msgid "Default WordPress Login Page"
+msgstr "WordPress 默认登录页面的重定向："
+
+#: ../modules/custom-redirects/custom-redirects.php:102
+msgid "Default WordPress Logout Page"
+msgstr "WordPress 默认退出页面的重定向："
+
+#: ../modules/custom-redirects/custom-redirects.php:112
+msgid "Default WordPress Register Page"
+msgstr "WordPress 默认注册页面的重定向："
+
+#: ../modules/custom-redirects/custom-redirects.php:122
+msgid "Default WordPress Dashboard (*)"
+msgstr "WordPress 默认后台的重定向："
+
+#: ../modules/custom-redirects/custom-redirects.php:133
+msgid "Redirects every user-role EXCEPT the ones with administrator privileges (can manage options)."
+msgstr "将所有用户角色，除具有管理员权限用户（管理）。"
+
+#: ../modules/email-customizer/admin-email-customizer.php:38
+msgid "These settings are also replicated in the \"User Email Customizer\" settings-page upon save."
+msgstr "这些设置也复制在\"用户邮件定制\" 设置页中保存。"
+
+#: ../modules/email-customizer/admin-email-customizer.php:41
+#: ../modules/email-customizer/user-email-customizer.php:41
+msgid "From (name)"
+msgstr "来自（名子）"
+
+#: ../modules/email-customizer/admin-email-customizer.php:49
+#: ../modules/email-customizer/user-email-customizer.php:49
+msgid "From (reply-to email)"
+msgstr "来自（回复邮件）"
+
+#: ../modules/email-customizer/admin-email-customizer.php:57
+#: ../modules/email-customizer/user-email-customizer.php:57
+msgid "Common Settings"
+msgstr "常用设置"
+
+#: ../modules/email-customizer/admin-email-customizer.php:60
+msgid ""
+"\n"
+"<p>New subscriber on {{site_name}}.</p>\n"
+"<p>Username:{{username}}</p>\n"
+"<p>E-mail:{{user_email}}</p>\n"
+msgstr ""
+"\n"
+"<p>新用户在 {{site_name}}.</p>\n"
+"<p>用户名:{{username}}</p>\n"
+"<p>邮箱:{{user_email}}</p>\n"
+
+#: ../modules/email-customizer/admin-email-customizer.php:69
+#: ../modules/email-customizer/admin-email-customizer.php:99
+#: ../modules/email-customizer/admin-email-customizer.php:126
+#: ../modules/email-customizer/user-email-customizer.php:71
+#: ../modules/email-customizer/user-email-customizer.php:99
+#: ../modules/email-customizer/user-email-customizer.php:128
+#: ../modules/email-customizer/user-email-customizer.php:155
+#: ../modules/email-customizer/user-email-customizer.php:183
+#: ../modules/email-customizer/user-email-customizer.php:214
+#: ../modules/email-customizer/user-email-customizer.php:241
+msgid "Email Subject"
+msgstr "邮件主题"
+
+#: ../modules/email-customizer/admin-email-customizer.php:84
+msgid "Default Registration & Registration with Email Confirmation"
+msgstr "默认注册与邮件确认注册"
+
+#: ../modules/email-customizer/admin-email-customizer.php:87
+msgid ""
+"\n"
+"<p>New subscriber on {{site_name}}.</p>\n"
+"<p>Username:{{username}}</p>\n"
+"<p>E-mail:{{user_email}}</p>\n"
+"<p>The Admin Approval feature was activated at the time of registration,\n"
+"so please remember that you need to approve this user before he/she can log in!</p>\n"
+msgstr ""
+"\n"
+"<p>新用户在 {{site_name}}.</p>\n"
+"<p>用户名:{{username}}</p>\n"
+"<p>邮箱:{{user_email}}</p>\n"
+"<p>管理审核功能已被激活，\n"
+"请记住，您需要批准这个用户，他才能登陆!</p>\n"
+
+#: ../modules/email-customizer/admin-email-customizer.php:114
+#: ../modules/email-customizer/user-email-customizer.php:143
+msgid "Registration with Admin Approval"
+msgstr "注册需管理员审批"
+
+#: ../modules/email-customizer/email-customizer.php:7
+msgid "Available Tags"
+msgstr "可用标签"
+
+#: ../features/email-confirmation/class-email-confirmation.php:91
+#: ../features/email-confirmation/class-email-confirmation.php:170
+#: ../modules/email-customizer/email-customizer.php:11
+msgid "User Meta"
+msgstr "User Meta"
+
+#: ../modules/email-customizer/email-customizer.php:21
+msgid "Site Url"
+msgstr "网站地址"
+
+#: ../modules/email-customizer/email-customizer.php:22
+msgid "Site Name"
+msgstr "网站名称"
+
+#: ../modules/email-customizer/email-customizer.php:25
+#: ../modules/user-listing/userlisting.php:133
+msgid "User Id"
+msgstr "用户名称"
+
+#: ../modules/email-customizer/email-customizer.php:33
+msgid "Reply To"
+msgstr "回复"
+
+#: ../modules/email-customizer/email-customizer.php:36
+msgid "Activation Key"
+msgstr "激活密钥"
+
+#: ../modules/email-customizer/email-customizer.php:37
+msgid "Activation Url"
+msgstr "激活URL"
+
+#: ../modules/email-customizer/email-customizer.php:38
+msgid "Activation Link"
+msgstr "激活链接"
+
+#: ../modules/email-customizer/user-email-customizer.php:64
+msgid ""
+"\n"
+"<h3>Welcome to {{site_name}}!</h3>\n"
+"<p>Your username is:{{username}} and password:{{password}}</p>\n"
+msgstr ""
+"\n"
+"<h3>欢迎来到 {{site_name}}!</h3>\n"
+"<p>您的用户名是:{{username}} 密码是:{{password}}</p>\n"
+
+#: ../modules/email-customizer/user-email-customizer.php:85
+msgid "Default Registration"
+msgstr "默认注册"
+
+#: ../modules/email-customizer/user-email-customizer.php:91
+msgid ""
+"\n"
+"<p>To activate your user, please click the following link:<br/>\n"
+"{{{activation_link}}}</p>\n"
+"<p>After you activate, you will receive another email with your credentials.</p>\n"
+msgstr ""
+"\n"
+"<p>激活您的帐户，请点击下面连接:<br/>\n"
+"{{{activation_link}}}</p>\n"
+"<p>在您激活完成后，将会收到另外一封凭据邮件。</p>\n"
+
+#: ../modules/email-customizer/user-email-customizer.php:103
+msgid "[{{site_name}}] Activate {{username}}"
+msgstr "[{{site_name}}] 激活 {{username}}"
+
+#: ../modules/email-customizer/user-email-customizer.php:114
+msgid "Registration with Email Confirmation"
+msgstr "电子邮件确认注册"
+
+#: ../modules/email-customizer/user-email-customizer.php:120
+msgid ""
+"\n"
+"<h3>Welcome to {{site_name}}!</h3>\n"
+"<p>Your username is:{{username}} and password:{{password}}</p>\n"
+"<p>Before you can access your account, an administrator needs to approve it. You will be notified via email.</p>\n"
+msgstr ""
+"\n"
+"<h3>欢迎来到 {{site_name}}!</h3>\n"
+"<p>您的用户名:{{username}} 密码:{{password}}</p>\n"
+"<p>在您访问您的帐号前，需要管理审批。您将会收邮件通知。</p>\n"
+
+#: ../modules/email-customizer/user-email-customizer.php:132
+msgid "A new account has been created for you on {{site_name}}"
+msgstr "一个新的帐号在您的 {{site_name}} 上建立"
+
+#: ../modules/email-customizer/user-email-customizer.php:148
+msgid ""
+"\n"
+"<h3>Good News!</h3>\n"
+"<p>An administrator has just approved your account: {{username}} on {{site_name}}.</p>\n"
+msgstr ""
+"\n"
+"<h3>好消息 !</h3>\n"
+"<p>管理员已经批准您的帐号： {{username}} 在 {{site_name}}.</p>\n"
+
+#: ../modules/email-customizer/user-email-customizer.php:159
+msgid "Your account on {{site_name}} has been approved!"
+msgstr "您在 {{site_name}} 的帐号已经被通过！"
+
+#: ../modules/email-customizer/user-email-customizer.php:170
+msgid "User Approval Notification"
+msgstr "用户批准通知"
+
+#: ../modules/email-customizer/user-email-customizer.php:175
+msgid ""
+"\n"
+"<h3>Hello,</h3>\n"
+"<p>Unfortunatelly an administrator has just unapproved your account: {{username}} on {{site_name}}.</p>\n"
+msgstr ""
+"\n"
+"<h3>您好，</h3>\n"
+"<p>抱歉，管理员未批准您的帐号: {{username}} 在 {{site_name}}.</p>\n"
+
+#: ../modules/email-customizer/user-email-customizer.php:187
+msgid "Your account on {{site_name}} has been unapproved!"
+msgstr "您在 {{site_name}} 的帐号被拒绝！"
+
+#: ../modules/email-customizer/user-email-customizer.php:198
+msgid "Unapproved User Notification"
+msgstr "被拒绝的用户通知"
+
+#: ../modules/multiple-forms/edit-profile-forms.php:11
+#: ../modules/multiple-forms/edit-profile-forms.php:12
+msgid "Edit-profile Form"
+msgstr "编辑资料表单"
+
+#: ../modules/multiple-forms/edit-profile-forms.php:13
+#: ../modules/multiple-forms/register-forms.php:13
+#: ../modules/user-listing/userlisting.php:13
+msgid "Add New"
+msgstr "新增加"
+
+#: ../modules/multiple-forms/edit-profile-forms.php:14
+msgid "Add new Edit-profile Form"
+msgstr "添加新的编辑资料表单"
+
+#: ../modules/multiple-forms/edit-profile-forms.php:15
+msgid "Edit the Edit-profile Forms"
+msgstr "编辑的编辑个人资料表单"
+
+#: ../modules/multiple-forms/edit-profile-forms.php:16
+msgid "New Edit-profile Form"
+msgstr "新的编辑资料表单"
+
+#: ../modules/multiple-forms/edit-profile-forms.php:17
+#: ../modules/multiple-forms/edit-profile-forms.php:23
+msgid "Edit-profile Forms"
+msgstr "编辑资料表单"
+
+#: ../modules/multiple-forms/edit-profile-forms.php:18
+msgid "View the Edit-profile Form"
+msgstr "查看编辑资料表单"
+
+#: ../modules/multiple-forms/edit-profile-forms.php:19
+msgid "Search the Edit-profile Forms"
+msgstr "搜索编辑资料表单"
+
+#: ../modules/multiple-forms/edit-profile-forms.php:20
+msgid "No Edit-profile Form found"
+msgstr "没有编辑个人资料表单"
+
+#: ../modules/multiple-forms/edit-profile-forms.php:21
+msgid "No Edit-profile Forms found in trash"
+msgstr "在回收站中没有编辑个人资料表单"
+
+#: ../modules/multiple-forms/edit-profile-forms.php:131
+#: ../modules/multiple-forms/register-forms.php:134
+#: ../modules/user-listing/userlisting.php:1155
+msgid "Shortcode"
+msgstr "简码"
+
+#: ../modules/multiple-forms/edit-profile-forms.php:151
+#: ../modules/multiple-forms/register-forms.php:155
+#: ../modules/user-listing/userlisting.php:1176
+msgid "(no title)"
+msgstr "（没有标题）"
+
+#: ../modules/multiple-forms/edit-profile-forms.php:171
+#: ../modules/multiple-forms/register-forms.php:174
+#: ../modules/user-listing/userlisting.php:1196
+msgid "The shortcode will be available after you publish this form."
+msgstr "简码将在您发布表单后可用。"
+
+#: ../modules/multiple-forms/edit-profile-forms.php:173
+#: ../modules/multiple-forms/register-forms.php:176
+#: ../modules/user-listing/userlisting.php:1198
+msgid "Use this shortcode on the page you want the form to be displayed:"
+msgstr "使用这个简码在页面上，将会获得您想要的表单显示效果："
+
+#: ../modules/multiple-forms/edit-profile-forms.php:177
+#: ../modules/multiple-forms/register-forms.php:180
+#: ../modules/user-listing/userlisting.php:1202
+msgid "<span style=\"color:red;\">Note:</span> changing the form title also changes the shortcode!"
+msgstr "<span style=\"color:red;\">注意:</span> 改变表单标题也将改变简码！"
+
+#: ../modules/multiple-forms/edit-profile-forms.php:183
+#: ../modules/multiple-forms/register-forms.php:186
+#: ../modules/user-listing/userlisting.php:1235
+msgid "Form Shortcode"
+msgstr "表单简码"
+
+#: ../modules/multiple-forms/edit-profile-forms.php:202
+#: ../modules/multiple-forms/register-forms.php:226
+msgid "Whether to redirect the user to a specific page or not"
+msgstr "是否将用户重定向到特定页"
+
+#: ../modules/multiple-forms/edit-profile-forms.php:203
+#: ../modules/multiple-forms/register-forms.php:227
+msgid "Display Messages"
+msgstr "显示消息"
+
+#: ../modules/multiple-forms/edit-profile-forms.php:203
+#: ../modules/multiple-forms/register-forms.php:227
+msgid "Allowed time to display any success messages (in seconds)"
+msgstr "允许用时间去显示成功信息提示（秒）"
+
+#: ../modules/multiple-forms/edit-profile-forms.php:204
+msgid "Specify the URL of the page users will be redirected once they updated their profile using this form<br/>Use the following format: http://www.mysite.com"
+msgstr "指定页面用于用户一旦更新他们的资料使用这个表单转向<br/>使用这种格式: http://www.mysite.com"
+
+#: ../modules/multiple-forms/edit-profile-forms.php:211
+msgid "After Profile Update..."
+msgstr "档案更新后…"
+
+#: ../modules/multiple-forms/edit-profile-forms.php:237
+#: ../modules/multiple-forms/register-forms.php:258
+msgid "Add New Field to the List"
+msgstr "添加新字段到列表"
+
+#: ../modules/multiple-forms/edit-profile-forms.php:241
+#: ../modules/multiple-forms/register-forms.php:262
+msgid "Choose one of the supported fields you manage <a href=\""
+msgstr "选择一个支持字段去管理 <a href=\""
+
+#: ../modules/multiple-forms/multiple-forms.php:416
+msgid "<pre>Title (Type)</pre>"
+msgstr "<pre>标题 (类型)</pre>"
+
+#: ../modules/multiple-forms/multiple-forms.php:232
+msgid "You need to specify the title of the form before creating it"
+msgstr "你需要在创建前指定表单的标题"
+
+#: ../modules/multiple-forms/register-forms.php:11
+#: ../modules/multiple-forms/register-forms.php:12
+msgid "Registration Form"
+msgstr "注册表单"
+
+#: ../modules/multiple-forms/register-forms.php:14
+msgid "Add new Registration Form"
+msgstr "增加新的注册表单"
+
+#: ../modules/multiple-forms/register-forms.php:15
+msgid "Edit the Registration Forms"
+msgstr "编缉注册表单"
+
+#: ../modules/multiple-forms/register-forms.php:16
+msgid "New Registration Form"
+msgstr "新注册表单"
+
+#: ../modules/multiple-forms/register-forms.php:17
+#: ../modules/multiple-forms/register-forms.php:23
+msgid "Registration Forms"
+msgstr "注册表单"
+
+#: ../modules/multiple-forms/register-forms.php:18
+msgid "View the Registration Form"
+msgstr "查看注册表单"
+
+#: ../modules/multiple-forms/register-forms.php:19
+msgid "Search the Registration Forms"
+msgstr "搜索注册表单"
+
+#: ../modules/multiple-forms/register-forms.php:20
+msgid "No Registration Form found"
+msgstr "没有找到注册表单"
+
+#: ../modules/multiple-forms/register-forms.php:21
+msgid "No Registration Forms found in trash"
+msgstr "在回收站没有找到注册表单"
+
+#: ../modules/multiple-forms/register-forms.php:215
+msgid "Default Role"
+msgstr "默认角色"
+
+#: ../modules/multiple-forms/register-forms.php:224
+msgid "Set Role"
+msgstr "设置角色"
+
+#: ../modules/multiple-forms/register-forms.php:224
+msgid "Choose what role the user will have after (s)he registered<br/>If not specified, defaults to the role set in the WordPress settings"
+msgstr "选择用户注册后的角色<br/>如无指定，将默认使用 WordPress 的设定"
+
+#: ../modules/multiple-forms/register-forms.php:225
+msgid "Automatically Log In"
+msgstr "自动登录"
+
+#: ../modules/multiple-forms/register-forms.php:225
+msgid "Whether to automatically log in the newly registered user or not<br/>Only works on single-sites without \"Admin Approval\" and \"Email Confirmation\" features activated<br/>WARNING: Caching the registration form will make automatic login not work"
+msgstr "是否记录用户新注册 <br/> 只使用于单网站，并且没有开启  \"管理员审批\" 与 \"邮箱确认\" 功能 <br/>警告：缓存注册表单会让自动登录不正常"
+
+#: ../modules/multiple-forms/register-forms.php:228
+msgid "Specify the URL of the page users will be redirected once registered using this form<br/>Use the following format: http://www.mysite.com"
+msgstr "指定用户注册页面地址将被重定向<br/>使用下列格式: http://www.mysite.com"
+
+#: ../modules/multiple-forms/register-forms.php:234
+msgid "After Registration..."
+msgstr "注册后…"
+
+#: ../modules/user-listing/class-userlisting.php:470
+#: ../modules/user-listing/userlisting.php:724
+#: ../modules/user-listing/userlisting.php:968
+#: ../modules/user-listing/userlisting.php:1011
+#: ../modules/user-listing/userlisting.php:1355
+msgid "Search Users by All Fields"
+msgstr "在所有字段中搜索用户"
+
+#: ../modules/user-listing/userlisting.php:14
+msgid "Add new User Listing"
+msgstr "增加新的用户列表"
+
+#: ../modules/user-listing/userlisting.php:15
+msgid "Edit the User Listing"
+msgstr "编辑用户列表"
+
+#: ../modules/user-listing/userlisting.php:16
+msgid "New User Listing"
+msgstr "新的用户列表"
+
+#: ../modules/user-listing/userlisting.php:18
+msgid "View the User Listing"
+msgstr "查看用户列表"
+
+#: ../modules/user-listing/userlisting.php:19
+msgid "Search the User Listing"
+msgstr "搜索用户列表"
+
+#: ../modules/user-listing/userlisting.php:20
+msgid "No User Listing found"
+msgstr "没有找到用户列表"
+
+#: ../modules/user-listing/userlisting.php:21
+msgid "No User Listing found in trash"
+msgstr "没有在回收站找到用户列表"
+
+#: ../modules/user-listing/userlisting.php:95
+msgid "Display name as"
+msgstr "显示名称为"
+
+#: ../modules/user-listing/userlisting.php:125
+#: ../modules/user-listing/userlisting.php:1263
+msgid "Registration Date"
+msgstr "注册日期"
+
+#: ../modules/user-listing/userlisting.php:126
+#: ../modules/user-listing/userlisting.php:1267
+msgid "Number of Posts"
+msgstr "帖子数"
+
+#: ../modules/user-listing/userlisting.php:130
+msgid "More Info"
+msgstr "更多信息"
+
+#: ../modules/user-listing/userlisting.php:131
+msgid "More Info Url"
+msgstr "更多信息网址"
+
+#: ../modules/user-listing/userlisting.php:132
+msgid "Avatar or Gravatar"
+msgstr "头像或 Gravatar"
+
+#: ../modules/user-listing/userlisting.php:161
+msgid "Meta Variables"
+msgstr "Meta 变量"
+
+#: ../modules/user-listing/userlisting.php:167
+msgid "Sort Variables"
+msgstr "分类变量"
+
+#: ../modules/user-listing/userlisting.php:171
+#: ../modules/user-listing/userlisting.php:198
+msgid "Extra Functions"
+msgstr "额外功能"
+
+#: ../modules/user-listing/userlisting.php:173
+msgid "Pagination"
+msgstr "分页"
+
+#: ../modules/user-listing/userlisting.php:174
+msgid "Search all Fields"
+msgstr "搜索所有字段"
+
+#: ../modules/user-listing/userlisting.php:200
+msgid "Go Back Link"
+msgstr "返回链接"
+
+#: ../modules/user-listing/userlisting.php:218
+msgid "All-userlisting Template"
+msgstr "所有用户列表模板"
+
+#: ../modules/user-listing/userlisting.php:221
+msgid "Single-userlisting Template"
+msgstr "单用户列表模板"
+
+#: ../modules/user-listing/userlisting.php:614
+msgid "First/Lastname"
+msgstr "名字/姓氏"
+
+#: ../modules/user-listing/userlisting.php:252
+#: ../modules/user-listing/userlisting.php:620
+msgid "Sign-up Date"
+msgstr "注册日期"
+
+#: ../modules/user-listing/userlisting.php:629
+#: ../modules/user-listing/userlisting.php:1266
+msgid "Display Name"
+msgstr "显示名称"
+
+#: ../modules/user-listing/userlisting.php:251
+#: ../modules/user-listing/userlisting.php:638
+msgid "Posts"
+msgstr "帖子"
+
+#: ../modules/user-listing/userlisting.php:641
+#: ../modules/user-listing/userlisting.php:1272
+msgid "Aim"
+msgstr "Aim"
+
+#: ../modules/user-listing/userlisting.php:644
+#: ../modules/user-listing/userlisting.php:1273
+msgid "Yim"
+msgstr "Yim"
+
+#: ../modules/user-listing/userlisting.php:647
+#: ../modules/user-listing/userlisting.php:1274
+msgid "Jabber"
+msgstr "Jabber"
+
+#: ../modules/user-listing/userlisting.php:827
+msgid "Click here to see more information about this user"
+msgstr "点击这里查看此用户的更多信息"
+
+#: ../modules/user-listing/userlisting.php:827
+msgid "More..."
+msgstr "更多..."
+
+#: ../modules/user-listing/userlisting.php:830
+msgid "Click here to see more information about this user."
+msgstr "点击这里查看此用户的更多信息。"
+
+#: ../modules/user-listing/userlisting.php:922
+#: ../modules/user-listing/userlisting.php:925
+msgid "Click here to go back"
+msgstr "点击这里返回"
+
+#: ../modules/user-listing/userlisting.php:922
+msgid "Back"
+msgstr "返回"
+
+#: ../modules/user-listing/userlisting.php:955
+msgid "&laquo;&laquo; First"
+msgstr "&laquo;&laquo; 首页"
+
+#: ../modules/user-listing/userlisting.php:956
+msgid "&laquo; Prev"
+msgstr "&laquo; 上一页"
+
+#: ../modules/user-listing/userlisting.php:957
+msgid "Next &raquo; "
+msgstr "下一页 &raquo; "
+
+#: ../modules/user-listing/userlisting.php:958
+msgid "Last &raquo;&raquo;"
+msgstr "最后 &raquo;&raquo;"
+
+#: ../modules/user-listing/userlisting.php:987
+msgid "You don't have any pagination settings on this userlisting!"
+msgstr "您不需在用户列表中设置分页"
+
+#: ../modules/user-listing/userlisting.php:1028
+msgid "Search"
+msgstr "搜索"
+
+#: ../modules/user-listing/userlisting.php:1029
+msgid "Clear Results"
+msgstr "清除结果"
+
+#: ../modules/user-listing/userlisting.php:1205
+#: ../modules/user-listing/userlisting.php:1209
+msgid "Extra shortcode parameters"
+msgstr "额外简码参数"
+
+#: ../modules/user-listing/userlisting.php:1212
+msgid "displays users having a certain meta-value within a certain (extra) meta-field"
+msgstr "显示用户在某一（额外）元字段（meta-field）"
+
+#: ../modules/user-listing/userlisting.php:1213
+msgid "Example:"
+msgstr "例子："
+
+#: ../modules/user-listing/userlisting.php:1215
+msgid "Remember though, that the field-value combination must exist in the database."
+msgstr "记住，该字段值的组合必须存在于数据库中。"
+
+#: ../modules/user-listing/userlisting.php:1284
+msgid "Random (very slow on large databases > 10K user)"
+msgstr "随机 （在大于 10K 的用户数据库中将会很慢 ）"
+
+#: ../modules/user-listing/userlisting.php:1297
+msgid "Roles to Display"
+msgstr "角色显示："
+
+#: ../modules/user-listing/userlisting.php:1297
+msgid "Restrict the userlisting to these selected roles only<br/>If not specified, defaults to all existing roles"
+msgstr "限制用户列表中的特定角色<br/>如果没有指定，默认为全部现有的角色"
+
+#: ../modules/user-listing/userlisting.php:1298
+msgid "Number of Users/Page"
+msgstr "用户/页面数"
+
+#: ../modules/user-listing/userlisting.php:1299
+msgid "Default Sorting Criteria"
+msgstr "默认分类标准"
+
+#: ../modules/user-listing/userlisting.php:1299
+msgid "Set the default sorting criteria<br/>This can temporarily be changed for each new session"
+msgstr "设置默认的排序标准<br/>这可以暂时被每一个新的会话更改"
+
+#: ../modules/user-listing/userlisting.php:1300
+msgid "Default Sorting Order"
+msgstr "默认排列顺序"
+
+#: ../modules/user-listing/userlisting.php:1300
+msgid "Set the default sorting order<br/>This can temporarily be changed for each new session"
+msgstr "设置默认排列顺序<br/>这可以在每个新会话时被改变"
+
+#: ../modules/user-listing/userlisting.php:1301
+msgid "Avatar Size (All-userlisting)"
+msgstr "头像大小（所有用户列表）"
+
+#: ../modules/user-listing/userlisting.php:1301
+msgid "Set the avatar size on the all-userlisting only"
+msgstr "设置在所有用户列表的头像大小"
+
+#: ../modules/user-listing/userlisting.php:1302
+msgid "Avatar Size (Single-userlisting)"
+msgstr "头像大小（单用户列表）"
+
+#: ../modules/user-listing/userlisting.php:1302
+msgid "Set the avatar size on the single-userlisting only"
+msgstr "设置在单用户列表的头像大小"
+
+#: ../modules/user-listing/userlisting.php:1303
+msgid "Visible only to logged in users?"
+msgstr "只有登录用户可见的？"
+
+#: ../modules/user-listing/userlisting.php:1303
+msgid "The userlisting will only be visible only to the logged in users"
+msgstr "用户列表只有登录用户可见的"
+
+#: ../modules/user-listing/userlisting.php:1304
+msgid "Visible to following Roles"
+msgstr "以下角色可见"
+
+#: ../modules/user-listing/userlisting.php:1304
+msgid "The userlisting will only be visible to the following roles"
+msgstr "用户列表只允许以下角色可见"
+
+#: ../modules/user-listing/userlisting.php:1310
+msgid "Userlisting Settings"
+msgstr "用户列表设置"
+
+#: ../modules/user-listing/userlisting.php:1331
+msgid "You need to activate the Userlisting feature from within the \"Modules\" tab!"
+msgstr "您需要激活用户列表功能在 \"模块\" 选项卡!"
+
+#: ../modules/user-listing/userlisting.php:1331
+msgid "You can find it in the Profile Builder menu."
+msgstr "你可以在 Profile Builder 菜单中找到它。"
+
+#: ../modules/user-listing/userlisting.php:1494
+msgid "No results found!"
+msgstr "无任何结果！"

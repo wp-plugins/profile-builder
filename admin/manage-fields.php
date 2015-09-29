@@ -9,8 +9,8 @@
 function wppb_manage_fields_submenu(){
 	// create a new sub_menu page which holds the data for the default + extra fields
 	$args = array(
-				'menu_title' 	=> __( 'Manage Fields', 'profilebuilder' ),						
-				'page_title' 	=> __( 'Manage Default and Extra Fields', 'profilebuilder' ),						
+				'menu_title' 	=> __( 'Manage Fields', 'profile-builder' ),
+				'page_title' 	=> __( 'Manage Default and Extra Fields', 'profile-builder' ),
 				'menu_slug'		=> 'manage-fields',
 				'page_type'		=> 'submenu_page',
 				'capability'	=> 'manage_options',
@@ -65,9 +65,9 @@ function wppb_manage_fields_submenu(){
 	
 				
 	//Free to Pro call to action on Manage Fields page
-	$field_description = __('Choose one of the supported field types','profilebuilder');
+	$field_description = __('Choose one of the supported field types','profile-builder');
 	if( PROFILE_BUILDER == 'Profile Builder Free' ) {
-		$field_description .= sprintf( __('. Extra Field Types are available in <a href="%s">Hobbyist or PRO versions</a>.' , 'profilebuilder'), esc_url( 'http://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=manage-fields-link&utm_campaign=PBFree' ) );
+		$field_description .= sprintf( __('. Extra Field Types are available in <a href="%s">Hobbyist or PRO versions</a>.' , 'profile-builder'), esc_url( 'http://www.cozmoslabs.com/wordpress-profile-builder/?utm_source=wpbackend&utm_medium=clientsite&utm_content=manage-fields-link&utm_campaign=PBFree' ) );
 	}
 
 
@@ -91,39 +91,39 @@ function wppb_manage_fields_submenu(){
 	// set up the fields array
 	$fields = apply_filters( 'wppb_manage_fields', array(
 
-        array( 'type' => 'text', 'slug' => 'field-title', 'title' => __( 'Field Title', 'profilebuilder' ), 'description' => __( 'Title of the field', 'profilebuilder' ) ),
-        array( 'type' => 'select', 'slug' => 'field', 'title' => __( 'Field', 'profilebuilder' ), 'options' => apply_filters( 'wppb_manage_fields_types', $manage_field_types ), 'default-option' => true, 'description' => $field_description ),
-        array( 'type' => 'text', 'slug' => 'meta-name', 'title' => __( 'Meta-name', 'profilebuilder' ), 'default' => wppb_get_meta_name(), 'description' => __( 'Use this in conjuction with WordPress functions to display the value in the page of your choosing<br/>Auto-completed but in some cases editable (in which case it must be uniqe)<br/>Changing this might take long in case of a very big user-count', 'profilebuilder' ) ),
-        array( 'type' => 'text', 'slug' => 'id', 'title' => __( 'ID', 'profilebuilder' ), 'default' => wppb_get_unique_id(), 'description' => __( "A unique, auto-generated ID for this particular field<br/>You can use this in conjuction with filters to target this element if needed<br/>Can't be edited", 'profilebuilder' ), 'readonly' => true ),
-        array( 'type' => 'textarea', 'slug' => 'description', 'title' => __( 'Description', 'profilebuilder' ), 'description' => __( 'Enter a (detailed) description of the option for end users to read<br/>Optional', 'profilebuilder') ),
-        array( 'type' => 'text', 'slug' => 'row-count', 'title' => __( 'Row Count', 'profilebuilder' ), 'default' => 5, 'description' => __( "Specify the number of rows for a 'Textarea' field<br/>If not specified, defaults to 5", 'profilebuilder' ) ),
-        array( 'type' => 'text', 'slug' => 'allowed-image-extensions', 'title' => __( 'Allowed Image Extensions', 'profilebuilder' ), 'default' => '.*', 'description' => __( 'Specify the extension(s) you want to limit to upload<br/>Example: .ext1,.ext2,.ext3<br/>If not specified, defaults to: .jpg,.jpeg,.gif,.png (.*)', 'profilebuilder' ) ),
-        array( 'type' => 'text', 'slug' => 'allowed-upload-extensions', 'title' => __( 'Allowed Upload Extensions', 'profilebuilder' ), 'default' => '.*', 'description' => __( 'Specify the extension(s) you want to limit to upload<br/>Example: .ext1,.ext2,.ext3<br/>If not specified, defaults to all WordPress allowed file extensions (.*)', 'profilebuilder' ) ),
-        array( 'type' => 'text', 'slug' => 'avatar-size', 'title' => __( 'Avatar Size', 'profilebuilder' ), 'default' => 100, 'description' => __( "Enter a value (between 20 and 200) for the size of the 'Avatar'<br/>If not specified, defaults to 100", 'profilebuilder' ) ),
-        array( 'type' => 'text', 'slug' => 'date-format', 'title' => __( 'Date-format', 'profilebuilder' ), 'default' => 'mm/dd/yy', 'description' => __( 'Specify the format of the date when using Datepicker<br/>Valid options: mm/dd/yy, mm/yy/dd, dd/yy/mm, dd/mm/yy, yy/dd/mm, yy/mm/dd<br/>If not specified, defaults to mm/dd/yy', 'profilebuilder' ) ),
-        array( 'type' => 'textarea', 'slug' => 'terms-of-agreement', 'title' => __( 'Terms of Agreement', 'profilebuilder' ), 'description' => __( 'Enter a detailed description of the temrs of agreement for the user to read.<br/>Links can be inserted by using standard HTML syntax: &lt;a href="custom_url"&gt;custom_text&lt;/a&gt;', 'profilebuilder' ) ),
-        array( 'type' => 'text', 'slug' => 'options', 'title' => __( 'Options', 'profilebuilder' ), 'description' => __( "Enter a comma separated list of values<br/>This can be anything, as it is hidden from the user, but should not contain special characters or apostrophes", 'profilebuilder' ) ),
-        array( 'type' => 'text', 'slug' => 'labels', 'title' => __( 'Labels', 'profilebuilder' ), 'description' => __( "Enter a comma separated list of labels<br/>Visible for the user", 'profilebuilder' ) ),
-        array( 'type' => 'text', 'slug' => 'public-key', 'title' => __( 'Site Key', 'profilebuilder' ), 'description' => __( 'The site key from Google, <a href="http://www.google.com/recaptcha" target="_blank">www.google.com/recaptcha</a>', 'profilebuilder' ) ),
-        array( 'type' => 'text', 'slug' => 'private-key', 'title' => __( 'Secret Key', 'profilebuilder' ), 'description' => __( 'The secret key from Google, <a href="http://www.google.com/recaptcha" target="_blank">www.google.com/recaptcha</a>', 'profilebuilder' ) ),
-        array( 'type' => 'checkbox', 'slug' => 'captcha-pb-forms', 'title' => __( 'Display on PB forms', 'profilebuilder' ), 'options' => array( '%'.__('PB Login','profilebuilder').'%'.'pb_login', '%'.__('PB Register','profilebuilder').'%'.'pb_register', '%'.__('PB Recover Password','profilebuilder').'%'.'pb_recover_password' ), 'default' => 'pb_register', 'description' => __( "Select on which Profile Builder forms to display reCAPTCHA", 'profilebuilder' ) ),
-        array( 'type' => 'checkbox', 'slug' => 'captcha-wp-forms', 'title' => __( 'Display on default WP forms', 'profilebuilder' ), 'options' => array( '%'.__('Default WP Login', 'profilebuilder').'%'.'default_wp_login', '%'.__('Default WP Register', 'profilebuilder').'%'.'default_wp_register', '%'.__('Default WP Recover Password', 'profilebuilder').'%'.'default_wp_recover_password'), 'default' => 'default_wp_register', 'description' => __( "Select on which default WP forms to display reCAPTCHA", 'profilebuilder' ) ),
-        array( 'type' => 'checkbox', 'slug' => 'user-roles', 'title' => __( 'User Roles', 'profilebuilder' ), 'options' => $user_roles, 'description' => __( "Select which user roles to show to the user ( drag and drop to re-order )", 'profilebuilder' ) ),
-        array( 'type' => 'text', 'slug' => 'user-roles-sort-order', 'title' => __( 'User Roles Order', 'profilebuilder' ), 'description' => __( "Save the user role order from the user roles checkboxes", 'profilebuilder' ) ),
-        array( 'type' => 'text', 'slug' => 'default-value', 'title' => __( 'Default Value', 'profilebuilder' ), 'description' => __( "Default value of the field", 'profilebuilder' ) ),
-        array( 'type' => 'text', 'slug' => 'default-option', 'title' => __( 'Default Option', 'profilebuilder' ), 'description' => __( "Specify the option which should be selected by default", 'profilebuilder' ) ),
-        array( 'type' => 'text', 'slug' => 'default-options', 'title' => __( 'Default Option(s)', 'profilebuilder' ), 'description' => __( "Specify the option which should be checked by default<br/>If there are multiple values, separate them with a ',' (comma)", 'profilebuilder' ) ),
-		array( 'type' => 'select', 'slug' => 'default-option-country', 'title' => __( 'Default Option', 'profilebuilder' ), 'values' => ( isset( $default_country_values ) ) ? $default_country_values : '', 'options' => ( isset( $default_country_options ) ) ? $default_country_options : '', 'description' => __( "Default option of the field", 'profilebuilder' ) ),
-		array( 'type' => 'select', 'slug' => 'default-option-timezone', 'title' => __( 'Default Option', 'profilebuilder' ), 'options' => wppb_timezone_select_options( 'back_end' ), 'description' => __( "Default option of the field", 'profilebuilder' ) ),
-		array( 'type' => 'textarea', 'slug' => 'default-content', 'title' => __( 'Default Content', 'profilebuilder' ), 'description' => __( "Default value of the textarea", 'profilebuilder' ) ),
-        array( 'type' => 'select', 'slug' => 'required', 'title' => __( 'Required', 'profilebuilder' ), 'options' => array( 'No', 'Yes' ), 'default' => 'No', 'description' => __( 'Whether the field is required or not', 'profilebuilder' ) ),
-        array( 'type' => 'select', 'slug' => 'overwrite-existing', 'title' => __( 'Overwrite Existing', 'profilebuilder' ), 'options' => array( 'No', 'Yes' ), 'default' => 'No', 'description' => __( "Selecting 'Yes' will add the field to the list, but will overwrite any other field in the database that has the same meta-name<br/>Use this at your own risk", 'profilebuilder' ) ),
+        array( 'type' => 'text', 'slug' => 'field-title', 'title' => __( 'Field Title', 'profile-builder' ), 'description' => __( 'Title of the field', 'profile-builder' ) ),
+        array( 'type' => 'select', 'slug' => 'field', 'title' => __( 'Field', 'profile-builder' ), 'options' => apply_filters( 'wppb_manage_fields_types', $manage_field_types ), 'default-option' => true, 'description' => $field_description ),
+        array( 'type' => 'text', 'slug' => 'meta-name', 'title' => __( 'Meta-name', 'profile-builder' ), 'default' => wppb_get_meta_name(), 'description' => __( 'Use this in conjuction with WordPress functions to display the value in the page of your choosing<br/>Auto-completed but in some cases editable (in which case it must be uniqe)<br/>Changing this might take long in case of a very big user-count', 'profile-builder' ) ),
+        array( 'type' => 'text', 'slug' => 'id', 'title' => __( 'ID', 'profile-builder' ), 'default' => wppb_get_unique_id(), 'description' => __( "A unique, auto-generated ID for this particular field<br/>You can use this in conjuction with filters to target this element if needed<br/>Can't be edited", 'profile-builder' ), 'readonly' => true ),
+        array( 'type' => 'textarea', 'slug' => 'description', 'title' => __( 'Description', 'profile-builder' ), 'description' => __( 'Enter a (detailed) description of the option for end users to read<br/>Optional', 'profile-builder') ),
+        array( 'type' => 'text', 'slug' => 'row-count', 'title' => __( 'Row Count', 'profile-builder' ), 'default' => 5, 'description' => __( "Specify the number of rows for a 'Textarea' field<br/>If not specified, defaults to 5", 'profile-builder' ) ),
+        array( 'type' => 'text', 'slug' => 'allowed-image-extensions', 'title' => __( 'Allowed Image Extensions', 'profile-builder' ), 'default' => '.*', 'description' => __( 'Specify the extension(s) you want to limit to upload<br/>Example: .ext1,.ext2,.ext3<br/>If not specified, defaults to: .jpg,.jpeg,.gif,.png (.*)', 'profile-builder' ) ),
+        array( 'type' => 'text', 'slug' => 'allowed-upload-extensions', 'title' => __( 'Allowed Upload Extensions', 'profile-builder' ), 'default' => '.*', 'description' => __( 'Specify the extension(s) you want to limit to upload<br/>Example: .ext1,.ext2,.ext3<br/>If not specified, defaults to all WordPress allowed file extensions (.*)', 'profile-builder' ) ),
+        array( 'type' => 'text', 'slug' => 'avatar-size', 'title' => __( 'Avatar Size', 'profile-builder' ), 'default' => 100, 'description' => __( "Enter a value (between 20 and 200) for the size of the 'Avatar'<br/>If not specified, defaults to 100", 'profile-builder' ) ),
+        array( 'type' => 'text', 'slug' => 'date-format', 'title' => __( 'Date-format', 'profile-builder' ), 'default' => 'mm/dd/yy', 'description' => __( 'Specify the format of the date when using Datepicker<br/>Valid options: mm/dd/yy, mm/yy/dd, dd/yy/mm, dd/mm/yy, yy/dd/mm, yy/mm/dd<br/>If not specified, defaults to mm/dd/yy', 'profile-builder' ) ),
+        array( 'type' => 'textarea', 'slug' => 'terms-of-agreement', 'title' => __( 'Terms of Agreement', 'profile-builder' ), 'description' => __( 'Enter a detailed description of the temrs of agreement for the user to read.<br/>Links can be inserted by using standard HTML syntax: &lt;a href="custom_url"&gt;custom_text&lt;/a&gt;', 'profile-builder' ) ),
+        array( 'type' => 'text', 'slug' => 'options', 'title' => __( 'Options', 'profile-builder' ), 'description' => __( "Enter a comma separated list of values<br/>This can be anything, as it is hidden from the user, but should not contain special characters or apostrophes", 'profile-builder' ) ),
+        array( 'type' => 'text', 'slug' => 'labels', 'title' => __( 'Labels', 'profile-builder' ), 'description' => __( "Enter a comma separated list of labels<br/>Visible for the user", 'profile-builder' ) ),
+        array( 'type' => 'text', 'slug' => 'public-key', 'title' => __( 'Site Key', 'profile-builder' ), 'description' => __( 'The site key from Google, <a href="http://www.google.com/recaptcha" target="_blank">www.google.com/recaptcha</a>', 'profile-builder' ) ),
+        array( 'type' => 'text', 'slug' => 'private-key', 'title' => __( 'Secret Key', 'profile-builder' ), 'description' => __( 'The secret key from Google, <a href="http://www.google.com/recaptcha" target="_blank">www.google.com/recaptcha</a>', 'profile-builder' ) ),
+        array( 'type' => 'checkbox', 'slug' => 'captcha-pb-forms', 'title' => __( 'Display on PB forms', 'profile-builder' ), 'options' => array( '%'.__('PB Login','profile-builder').'%'.'pb_login', '%'.__('PB Register','profile-builder').'%'.'pb_register', '%'.__('PB Recover Password','profile-builder').'%'.'pb_recover_password' ), 'default' => 'pb_register', 'description' => __( "Select on which Profile Builder forms to display reCAPTCHA", 'profile-builder' ) ),
+        array( 'type' => 'checkbox', 'slug' => 'captcha-wp-forms', 'title' => __( 'Display on default WP forms', 'profile-builder' ), 'options' => array( '%'.__('Default WP Login', 'profile-builder').'%'.'default_wp_login', '%'.__('Default WP Register', 'profile-builder').'%'.'default_wp_register', '%'.__('Default WP Recover Password', 'profile-builder').'%'.'default_wp_recover_password'), 'default' => 'default_wp_register', 'description' => __( "Select on which default WP forms to display reCAPTCHA", 'profile-builder' ) ),
+        array( 'type' => 'checkbox', 'slug' => 'user-roles', 'title' => __( 'User Roles', 'profile-builder' ), 'options' => $user_roles, 'description' => __( "Select which user roles to show to the user ( drag and drop to re-order )", 'profile-builder' ) ),
+        array( 'type' => 'text', 'slug' => 'user-roles-sort-order', 'title' => __( 'User Roles Order', 'profile-builder' ), 'description' => __( "Save the user role order from the user roles checkboxes", 'profile-builder' ) ),
+        array( 'type' => 'text', 'slug' => 'default-value', 'title' => __( 'Default Value', 'profile-builder' ), 'description' => __( "Default value of the field", 'profile-builder' ) ),
+        array( 'type' => 'text', 'slug' => 'default-option', 'title' => __( 'Default Option', 'profile-builder' ), 'description' => __( "Specify the option which should be selected by default", 'profile-builder' ) ),
+        array( 'type' => 'text', 'slug' => 'default-options', 'title' => __( 'Default Option(s)', 'profile-builder' ), 'description' => __( "Specify the option which should be checked by default<br/>If there are multiple values, separate them with a ',' (comma)", 'profile-builder' ) ),
+		array( 'type' => 'select', 'slug' => 'default-option-country', 'title' => __( 'Default Option', 'profile-builder' ), 'values' => ( isset( $default_country_values ) ) ? $default_country_values : '', 'options' => ( isset( $default_country_options ) ) ? $default_country_options : '', 'description' => __( "Default option of the field", 'profile-builder' ) ),
+		array( 'type' => 'select', 'slug' => 'default-option-timezone', 'title' => __( 'Default Option', 'profile-builder' ), 'options' => wppb_timezone_select_options( 'back_end' ), 'description' => __( "Default option of the field", 'profile-builder' ) ),
+		array( 'type' => 'textarea', 'slug' => 'default-content', 'title' => __( 'Default Content', 'profile-builder' ), 'description' => __( "Default value of the textarea", 'profile-builder' ) ),
+        array( 'type' => 'select', 'slug' => 'required', 'title' => __( 'Required', 'profile-builder' ), 'options' => array( 'No', 'Yes' ), 'default' => 'No', 'description' => __( 'Whether the field is required or not', 'profile-builder' ) ),
+        array( 'type' => 'select', 'slug' => 'overwrite-existing', 'title' => __( 'Overwrite Existing', 'profile-builder' ), 'options' => array( 'No', 'Yes' ), 'default' => 'No', 'description' => __( "Selecting 'Yes' will add the field to the list, but will overwrite any other field in the database that has the same meta-name<br/>Use this at your own risk", 'profile-builder' ) ),
     ) );
 	
 	// create the new submenu with the above options
 	$args = array(
 		'metabox_id' 	=> 'manage-fields',
-		'metabox_title' => __( 'Field Properties', 'profilebuilder' ),
+		'metabox_title' => __( 'Field Properties', 'profile-builder' ),
 		'post_type' 	=> 'manage-fields',
 		'meta_name' 	=> 'wppb_manage_fields',
 		'meta_array' 	=> $fields,
@@ -136,7 +136,7 @@ function wppb_manage_fields_submenu(){
     // create the info side meta-box
     $args = array(
         'metabox_id' 	=> 'manage-fields-info',
-        'metabox_title' => __( 'Registration & Edit Profile', 'profilebuilder' ),
+        'metabox_title' => __( 'Registration & Edit Profile', 'profile-builder' ),
         'post_type' 	=> 'manage-fields',
         'meta_name' 	=> 'wppb_manage_fields_info',
         'meta_array' 	=> '',
@@ -155,27 +155,27 @@ add_action( 'init', 'wppb_manage_fields_submenu', 10 );
  * @return void
  */
 function wppb_prepopulate_fields(){
-	$prepopulated_fields[] = array( 'field' => 'Default - Name (Heading)', 'field-title' => __( 'Name', 'profilebuilder' ), 'meta-name' => '',	'overwrite-existing' => 'No', 'id' => '1', 'description' => '', 'row-count' => '5', 'allowed-image-extensions' => '.*',	'allowed-upload-extensions' => '.*', 'avatar-size' => '100', 'date-format' => 'mm/dd/yy', 'terms-of-agreement' => '', 'options' => '', 'labels' => '', 'public-key' => '', 'private-key' => '', 'default-value' => '', 'default-option' => '', 'default-options' => '', 'default-content' => '', 'required' => 'No' );
-	$prepopulated_fields[] = array( 'field' => 'Default - Username', 'field-title' => __( 'Username', 'profilebuilder' ), 'meta-name' => '', 'overwrite-existing' => 'No', 'id' => '2', 'description' => __( 'Usernames cannot be changed.', 'profilebuilder' ), 'row-count' => '5', 'allowed-image-extensions' => '.*', 'allowed-upload-extensions' => '.*', 'avatar-size' => '100', 'date-format' => 'mm/dd/yy', 'terms-of-agreement' => '', 'options' => '', 'labels' => '', 'public-key' => '', 'private-key' => '', 'default-value' => '', 'default-option' => '', 'default-options' => '', 'default-content' => '', 'required' => 'Yes' );
-	$prepopulated_fields[] = array( 'field' => 'Default - First Name', 'field-title' => __( 'First Name', 'profilebuilder' ), 'meta-name' => 'first_name', 'overwrite-existing' => 'No', 'id' => '3', 'description' => '', 'row-count' => '5', 'allowed-image-extensions' => '.*', 'allowed-upload-extensions' => '.*', 'avatar-size' => '100', 'date-format' => 'mm/dd/yy', 'terms-of-agreement' => '', 'options' => '', 'labels' => '', 'public-key' => '', 'private-key' => '', 'default-value' => '', 'default-option' => '', 'default-options' => '', 'default-content' => '', 'required' => 'No' );
-	$prepopulated_fields[] = array( 'field' => 'Default - Last Name', 'field-title' => __( 'Last Name', 'profilebuilder' ), 'meta-name' => 'last_name', 'overwrite-existing' => 'No', 'id' => '4', 'description' => '', 'row-count' => '5', 'allowed-image-extensions' => '.*', 'allowed-upload-extensions' => '.*', 'avatar-size' => '100', 'date-format' => 'mm/dd/yy', 'terms-of-agreement' => '', 'options' => '', 'labels' => '', 'public-key' => '', 'private-key' => '', 'default-value' => '', 'default-option' => '', 'default-options' => '', 'default-content' => '', 'required' => 'No' );
-	$prepopulated_fields[] = array( 'field' => 'Default - Nickname', 'field-title' => __( 'Nickname', 'profilebuilder' ), 'meta-name' => 'nickname', 'overwrite-existing' => 'No', 'id' => '5', 'description' => '', 'row-count' => '5', 'allowed-image-extensions' => '.*', 'allowed-upload-extensions' => '.*', 'avatar-size' => '100', 'date-format' => 'mm/dd/yy', 'terms-of-agreement' => '', 'options' => '', 'labels' => '', 'public-key' => '', 'private-key' => '', 'default-value' => '', 'default-option' => '', 'default-options' => '', 'default-content' => '', 'required' => 'Yes' );
-	$prepopulated_fields[] = array( 'field' => 'Default - Display name publicly as', 'field-title' => __( 'Display name publicly as', 'profilebuilder' ), 'meta-name' => '', 'overwrite-existing' => 'No', 'id' => '6', 'description' => '', 'row-count' => '5', 'allowed-image-extensions' => '.*', 'allowed-upload-extensions' => '.*', 'avatar-size' => '100', 'date-format' => 'mm/dd/yy', 'terms-of-agreement' => '', 'options' => '', 'labels' => '', 'public-key' => '', 'private-key' => '', 'default-value' => '', 'default-option' => '', 'default-options' => '', 'default-content' => '', 'required' => 'No' );
-	$prepopulated_fields[] = array( 'field' => 'Default - Contact Info (Heading)', 'field-title' => __( 'Contact Info', 'profilebuilder' ), 'meta-name' => '', 'overwrite-existing' => 'No', 'id' => '7', 'description' => '', 'row-count' => '5', 'allowed-image-extensions' => '.*', 'allowed-upload-extensions' => '.*', 'avatar-size' => '100', 'date-format' => 'mm/dd/yy', 'terms-of-agreement' => '', 'options' => '', 'labels' => '', 'public-key' => '', 'private-key' => '', 'default-value' => '', 'default-option' => '', 'default-options' => '', 'default-content' => '', 'required' => 'No' );
-	$prepopulated_fields[] = array( 'field' => 'Default - E-mail', 'field-title' => __( 'E-mail', 'profilebuilder' ), 'meta-name' => '', 'overwrite-existing' => 'No', 'id' => '8', 'description' => '', 'row-count' => '5', 'allowed-image-extensions' => '.*', 'allowed-upload-extensions' => '.*', 'avatar-size' => '100', 'date-format' => 'mm/dd/yy', 'terms-of-agreement' => '', 'options' => '', 'labels' => '', 'public-key' => '', 'private-key' => '', 'default-value' => '', 'default-option' => '', 'default-options' => '', 'default-content' => '', 'required' => 'Yes' );
-	$prepopulated_fields[] = array( 'field' => 'Default - Website', 'field-title' => __( 'Website', 'profilebuilder' ), 'meta-name' => '', 'overwrite-existing' => 'No', 'id' => '9', 'description' => '', 'row-count' => '5', 'allowed-image-extensions' => '.*', 'allowed-upload-extensions' => '.*', 'avatar-size' => '100', 'date-format' => 'mm/dd/yy', 'terms-of-agreement' => '', 'options' => '', 'labels' => '', 'public-key' => '', 'private-key' => '', 'default-value' => '', 'default-option' => '', 'default-options' => '', 'default-content' => '', 'required' => 'No' );
+	$prepopulated_fields[] = array( 'field' => 'Default - Name (Heading)', 'field-title' => __( 'Name', 'profile-builder' ), 'meta-name' => '',	'overwrite-existing' => 'No', 'id' => '1', 'description' => '', 'row-count' => '5', 'allowed-image-extensions' => '.*',	'allowed-upload-extensions' => '.*', 'avatar-size' => '100', 'date-format' => 'mm/dd/yy', 'terms-of-agreement' => '', 'options' => '', 'labels' => '', 'public-key' => '', 'private-key' => '', 'default-value' => '', 'default-option' => '', 'default-options' => '', 'default-content' => '', 'required' => 'No' );
+	$prepopulated_fields[] = array( 'field' => 'Default - Username', 'field-title' => __( 'Username', 'profile-builder' ), 'meta-name' => '', 'overwrite-existing' => 'No', 'id' => '2', 'description' => __( 'Usernames cannot be changed.', 'profile-builder' ), 'row-count' => '5', 'allowed-image-extensions' => '.*', 'allowed-upload-extensions' => '.*', 'avatar-size' => '100', 'date-format' => 'mm/dd/yy', 'terms-of-agreement' => '', 'options' => '', 'labels' => '', 'public-key' => '', 'private-key' => '', 'default-value' => '', 'default-option' => '', 'default-options' => '', 'default-content' => '', 'required' => 'Yes' );
+	$prepopulated_fields[] = array( 'field' => 'Default - First Name', 'field-title' => __( 'First Name', 'profile-builder' ), 'meta-name' => 'first_name', 'overwrite-existing' => 'No', 'id' => '3', 'description' => '', 'row-count' => '5', 'allowed-image-extensions' => '.*', 'allowed-upload-extensions' => '.*', 'avatar-size' => '100', 'date-format' => 'mm/dd/yy', 'terms-of-agreement' => '', 'options' => '', 'labels' => '', 'public-key' => '', 'private-key' => '', 'default-value' => '', 'default-option' => '', 'default-options' => '', 'default-content' => '', 'required' => 'No' );
+	$prepopulated_fields[] = array( 'field' => 'Default - Last Name', 'field-title' => __( 'Last Name', 'profile-builder' ), 'meta-name' => 'last_name', 'overwrite-existing' => 'No', 'id' => '4', 'description' => '', 'row-count' => '5', 'allowed-image-extensions' => '.*', 'allowed-upload-extensions' => '.*', 'avatar-size' => '100', 'date-format' => 'mm/dd/yy', 'terms-of-agreement' => '', 'options' => '', 'labels' => '', 'public-key' => '', 'private-key' => '', 'default-value' => '', 'default-option' => '', 'default-options' => '', 'default-content' => '', 'required' => 'No' );
+	$prepopulated_fields[] = array( 'field' => 'Default - Nickname', 'field-title' => __( 'Nickname', 'profile-builder' ), 'meta-name' => 'nickname', 'overwrite-existing' => 'No', 'id' => '5', 'description' => '', 'row-count' => '5', 'allowed-image-extensions' => '.*', 'allowed-upload-extensions' => '.*', 'avatar-size' => '100', 'date-format' => 'mm/dd/yy', 'terms-of-agreement' => '', 'options' => '', 'labels' => '', 'public-key' => '', 'private-key' => '', 'default-value' => '', 'default-option' => '', 'default-options' => '', 'default-content' => '', 'required' => 'Yes' );
+	$prepopulated_fields[] = array( 'field' => 'Default - Display name publicly as', 'field-title' => __( 'Display name publicly as', 'profile-builder' ), 'meta-name' => '', 'overwrite-existing' => 'No', 'id' => '6', 'description' => '', 'row-count' => '5', 'allowed-image-extensions' => '.*', 'allowed-upload-extensions' => '.*', 'avatar-size' => '100', 'date-format' => 'mm/dd/yy', 'terms-of-agreement' => '', 'options' => '', 'labels' => '', 'public-key' => '', 'private-key' => '', 'default-value' => '', 'default-option' => '', 'default-options' => '', 'default-content' => '', 'required' => 'No' );
+	$prepopulated_fields[] = array( 'field' => 'Default - Contact Info (Heading)', 'field-title' => __( 'Contact Info', 'profile-builder' ), 'meta-name' => '', 'overwrite-existing' => 'No', 'id' => '7', 'description' => '', 'row-count' => '5', 'allowed-image-extensions' => '.*', 'allowed-upload-extensions' => '.*', 'avatar-size' => '100', 'date-format' => 'mm/dd/yy', 'terms-of-agreement' => '', 'options' => '', 'labels' => '', 'public-key' => '', 'private-key' => '', 'default-value' => '', 'default-option' => '', 'default-options' => '', 'default-content' => '', 'required' => 'No' );
+	$prepopulated_fields[] = array( 'field' => 'Default - E-mail', 'field-title' => __( 'E-mail', 'profile-builder' ), 'meta-name' => '', 'overwrite-existing' => 'No', 'id' => '8', 'description' => '', 'row-count' => '5', 'allowed-image-extensions' => '.*', 'allowed-upload-extensions' => '.*', 'avatar-size' => '100', 'date-format' => 'mm/dd/yy', 'terms-of-agreement' => '', 'options' => '', 'labels' => '', 'public-key' => '', 'private-key' => '', 'default-value' => '', 'default-option' => '', 'default-options' => '', 'default-content' => '', 'required' => 'Yes' );
+	$prepopulated_fields[] = array( 'field' => 'Default - Website', 'field-title' => __( 'Website', 'profile-builder' ), 'meta-name' => '', 'overwrite-existing' => 'No', 'id' => '9', 'description' => '', 'row-count' => '5', 'allowed-image-extensions' => '.*', 'allowed-upload-extensions' => '.*', 'avatar-size' => '100', 'date-format' => 'mm/dd/yy', 'terms-of-agreement' => '', 'options' => '', 'labels' => '', 'public-key' => '', 'private-key' => '', 'default-value' => '', 'default-option' => '', 'default-options' => '', 'default-content' => '', 'required' => 'No' );
 	
 	// Default contact methods were removed in WP 3.6. A filter dictates contact methods.
 	if ( apply_filters( 'wppb_remove_default_contact_methods', get_site_option( 'initial_db_version' ) < 23588 ) ){
-		$prepopulated_fields[] = array( 'field' => 'Default - AIM', 'field-title' => __( 'AIM', 'profilebuilder' ), 'meta-name' => 'aim', 'overwrite-existing' => 'No', 'id' => '10', 'description' => '', 'row-count' => '5', 'allowed-image-extensions' => '.*', 'allowed-upload-extensions' => '.*', 'avatar-size' => '100', 'date-format' => 'mm/dd/yy', 'terms-of-agreement' => '', 'options' => '', 'labels' => '', 'public-key' => '', 'private-key' => '', 'default-value' => '', 'default-option' => '', 'default-options' => '', 'default-content' => '', 'required' => 'No' );
-		$prepopulated_fields[] = array( 'field' => 'Default - Yahoo IM', 'field-title' => __( 'Yahoo IM', 'profilebuilder' ), 'meta-name' => 'yim', 'overwrite-existing' => 'No', 'id' => '11', 'description' => '', 'row-count' => '5', 'allowed-image-extensions' => '.*', 'allowed-upload-extensions' => '.*', 'avatar-size' => '100', 'date-format' => 'mm/dd/yy', 'terms-of-agreement' => '', 'options' => '', 'labels' => '', 'public-key' => '', 'private-key' => '', 'default-value' => '', 'default-option' => '', 'default-options' => '', 'default-content' => '', 'required' => 'No' );
-		$prepopulated_fields[] = array( 'field' => 'Default - Jabber / Google Talk', 'field-title' => __( 'Jabber / Google Talk', 'profilebuilder' ), 'meta-name' => 'jabber', 'overwrite-existing' => 'No', 'id' => '12', 'description' => '', 'row-count' => '5', 'allowed-image-extensions' => '.*', 'allowed-upload-extensions' => '.*', 'avatar-size' => '100', 'date-format' => 'mm/dd/yy', 'terms-of-agreement' => '', 'options' => '', 'labels' => '', 'public-key' => '', 'private-key' => '', 'default-value' => '', 'default-option' => '', 'default-options' => '', 'default-content' => '', 'required' => 'No' );
+		$prepopulated_fields[] = array( 'field' => 'Default - AIM', 'field-title' => __( 'AIM', 'profile-builder' ), 'meta-name' => 'aim', 'overwrite-existing' => 'No', 'id' => '10', 'description' => '', 'row-count' => '5', 'allowed-image-extensions' => '.*', 'allowed-upload-extensions' => '.*', 'avatar-size' => '100', 'date-format' => 'mm/dd/yy', 'terms-of-agreement' => '', 'options' => '', 'labels' => '', 'public-key' => '', 'private-key' => '', 'default-value' => '', 'default-option' => '', 'default-options' => '', 'default-content' => '', 'required' => 'No' );
+		$prepopulated_fields[] = array( 'field' => 'Default - Yahoo IM', 'field-title' => __( 'Yahoo IM', 'profile-builder' ), 'meta-name' => 'yim', 'overwrite-existing' => 'No', 'id' => '11', 'description' => '', 'row-count' => '5', 'allowed-image-extensions' => '.*', 'allowed-upload-extensions' => '.*', 'avatar-size' => '100', 'date-format' => 'mm/dd/yy', 'terms-of-agreement' => '', 'options' => '', 'labels' => '', 'public-key' => '', 'private-key' => '', 'default-value' => '', 'default-option' => '', 'default-options' => '', 'default-content' => '', 'required' => 'No' );
+		$prepopulated_fields[] = array( 'field' => 'Default - Jabber / Google Talk', 'field-title' => __( 'Jabber / Google Talk', 'profile-builder' ), 'meta-name' => 'jabber', 'overwrite-existing' => 'No', 'id' => '12', 'description' => '', 'row-count' => '5', 'allowed-image-extensions' => '.*', 'allowed-upload-extensions' => '.*', 'avatar-size' => '100', 'date-format' => 'mm/dd/yy', 'terms-of-agreement' => '', 'options' => '', 'labels' => '', 'public-key' => '', 'private-key' => '', 'default-value' => '', 'default-option' => '', 'default-options' => '', 'default-content' => '', 'required' => 'No' );
 	}
 	
-	$prepopulated_fields[] = array( 'field' => 'Default - About Yourself (Heading)', 'field-title' => __( 'About Yourself', 'profilebuilder' ), 'meta-name' => '', 'overwrite-existing' => 'No', 'id' => '13', 'description' => '', 'row-count' => '5', 'allowed-image-extensions' => '.*', 'allowed-upload-extensions' => '.*', 'avatar-size' => '100', 'date-format' => 'mm/dd/yy', 'terms-of-agreement' => '', 'options' => '', 'labels' => '', 'public-key' => '', 'private-key' => '', 'default-value' => '', 'default-option' => '', 'default-options' => '', 'default-content' => '', 'required' => 'No' );
-	$prepopulated_fields[] = array( 'field' => 'Default - Biographical Info', 'field-title' => __( 'Biographical Info', 'profilebuilder' ), 'meta-name' => 'description', 'overwrite-existing' => 'No', 'id' => '14', 'description' => __( 'Share a little biographical information to fill out your profile. This may be shown publicly.', 'profilebuilder' ), 'row-count' => '5', 'allowed-image-extensions' => '.*', 'allowed-upload-extensions' => '.*', 'avatar-size' => '100', 'date-format' => 'mm/dd/yy', 'terms-of-agreement' => '', 'options' => '', 'labels' => '', 'public-key' => '', 'private-key' => '', 'default-value' => '', 'default-option' => '', 'default-options' => '', 'required' => 'No' );
-	$prepopulated_fields[] = array( 'field' => 'Default - Password', 'field-title' => __( 'Password', 'profilebuilder' ), 'meta-name' => '', 'overwrite-existing' => 'No', 'id' => '15', 'description' => __( 'Type your password.', 'profilebuilder' ), 'row-count' => '5', 'allowed-image-extensions' => '.*', 'allowed-upload-extensions' => '.*', 'avatar-size' => '100', 'date-format' => 'mm/dd/yy', 'terms-of-agreement' => '', 'options' => '', 'labels' => '', 'public-key' => '', 'private-key' => '', 'default-value' => '', 'default-option' => '', 'default-options' => '', 'default-content' => '', 'required' => 'Yes' );
-	$prepopulated_fields[] = array( 'field' => 'Default - Repeat Password', 'field-title' => __( 'Repeat Password', 'profilebuilder' ), 'meta-name' => '', 'overwrite-existing' => 'No', 'id' => '16', 'description' => __( 'Type your password again. ', 'profilebuilder' ), 'row-count' => '5', 'allowed-image-extensions' => '.*', 'allowed-upload-extensions' => '.*', 'avatar-size' => '100', 'date-format' => 'mm/dd/yy', 'terms-of-agreement' => '', 'options' => '', 'labels' => '', 'public-key' => '', 'private-key' => '', 'default-value' => '', 'default-option' => '', 'default-options' => '', 'default-content' => '', 'required' => 'Yes' );
+	$prepopulated_fields[] = array( 'field' => 'Default - About Yourself (Heading)', 'field-title' => __( 'About Yourself', 'profile-builder' ), 'meta-name' => '', 'overwrite-existing' => 'No', 'id' => '13', 'description' => '', 'row-count' => '5', 'allowed-image-extensions' => '.*', 'allowed-upload-extensions' => '.*', 'avatar-size' => '100', 'date-format' => 'mm/dd/yy', 'terms-of-agreement' => '', 'options' => '', 'labels' => '', 'public-key' => '', 'private-key' => '', 'default-value' => '', 'default-option' => '', 'default-options' => '', 'default-content' => '', 'required' => 'No' );
+	$prepopulated_fields[] = array( 'field' => 'Default - Biographical Info', 'field-title' => __( 'Biographical Info', 'profile-builder' ), 'meta-name' => 'description', 'overwrite-existing' => 'No', 'id' => '14', 'description' => __( 'Share a little biographical information to fill out your profile. This may be shown publicly.', 'profile-builder' ), 'row-count' => '5', 'allowed-image-extensions' => '.*', 'allowed-upload-extensions' => '.*', 'avatar-size' => '100', 'date-format' => 'mm/dd/yy', 'terms-of-agreement' => '', 'options' => '', 'labels' => '', 'public-key' => '', 'private-key' => '', 'default-value' => '', 'default-option' => '', 'default-options' => '', 'required' => 'No' );
+	$prepopulated_fields[] = array( 'field' => 'Default - Password', 'field-title' => __( 'Password', 'profile-builder' ), 'meta-name' => '', 'overwrite-existing' => 'No', 'id' => '15', 'description' => __( 'Type your password.', 'profile-builder' ), 'row-count' => '5', 'allowed-image-extensions' => '.*', 'allowed-upload-extensions' => '.*', 'avatar-size' => '100', 'date-format' => 'mm/dd/yy', 'terms-of-agreement' => '', 'options' => '', 'labels' => '', 'public-key' => '', 'private-key' => '', 'default-value' => '', 'default-option' => '', 'default-options' => '', 'default-content' => '', 'required' => 'Yes' );
+	$prepopulated_fields[] = array( 'field' => 'Default - Repeat Password', 'field-title' => __( 'Repeat Password', 'profile-builder' ), 'meta-name' => '', 'overwrite-existing' => 'No', 'id' => '16', 'description' => __( 'Type your password again. ', 'profile-builder' ), 'row-count' => '5', 'allowed-image-extensions' => '.*', 'allowed-upload-extensions' => '.*', 'avatar-size' => '100', 'date-format' => 'mm/dd/yy', 'terms-of-agreement' => '', 'options' => '', 'labels' => '', 'public-key' => '', 'private-key' => '', 'default-value' => '', 'default-option' => '', 'default-options' => '', 'default-content' => '', 'required' => 'Yes' );
 
 	add_option ( 'wppb_manage_fields', apply_filters ( 'wppb_prepopulated_fields', $prepopulated_fields ) );
 }
@@ -234,256 +234,256 @@ function wppb_country_select_options( $form_location ) {
 	$country_array = apply_filters( 'wppb_'.$form_location.'_country_select_array',
 		array(
 			''	 => '',
-			'AF' => __( 'Afghanistan', 'profilebuilder' ),
-			'AX' => __( 'Aland Islands', 'profilebuilder' ),
-			'AL' => __( 'Albania', 'profilebuilder' ),
-			'DZ' => __( 'Algeria', 'profilebuilder' ),
-			'AS' => __( 'American Samoa', 'profilebuilder' ),
-			'AD' => __( 'Andorra', 'profilebuilder' ),
-			'AO' => __( 'Angola', 'profilebuilder' ),
-			'AI' => __( 'Anguilla', 'profilebuilder' ),
-			'AQ' => __( 'Antarctica', 'profilebuilder' ),
-			'AG' => __( 'Antigua and Barbuda', 'profilebuilder' ),
-			'AR' => __( 'Argentina', 'profilebuilder' ),
-			'AM' => __( 'Armenia', 'profilebuilder' ),
-			'AW' => __( 'Aruba', 'profilebuilder' ),
-			'AU' => __( 'Australia', 'profilebuilder' ),
-			'AT' => __( 'Austria', 'profilebuilder' ),
-			'AZ' => __( 'Azerbaijan', 'profilebuilder' ),
-			'BS' => __( 'Bahamas', 'profilebuilder' ),
-			'BH' => __( 'Bahrain', 'profilebuilder' ),
-			'BD' => __( 'Bangladesh', 'profilebuilder' ),
-			'BB' => __( 'Barbados', 'profilebuilder' ),
-			'BY' => __( 'Belarus', 'profilebuilder' ),
-			'BE' => __( 'Belgium', 'profilebuilder' ),
-			'BZ' => __( 'Belize', 'profilebuilder' ),
-			'BJ' => __( 'Benin', 'profilebuilder' ),
-			'BM' => __( 'Bermuda', 'profilebuilder' ),
-			'BT' => __( 'Bhutan', 'profilebuilder' ),
-			'BO' => __( 'Bolivia', 'profilebuilder' ),
-			'BQ' => __( 'Bonaire, Saint Eustatius and Saba', 'profilebuilder' ),
-			'BA' => __( 'Bosnia and Herzegovina', 'profilebuilder' ),
-			'BW' => __( 'Botswana', 'profilebuilder' ),
-			'BV' => __( 'Bouvet Island', 'profilebuilder' ),
-			'BR' => __( 'Brazil', 'profilebuilder' ),
-			'IO' => __( 'British Indian Ocean Territory', 'profilebuilder' ),
-			'VG' => __( 'British Virgin Islands', 'profilebuilder' ),
-			'BN' => __( 'Brunei', 'profilebuilder' ),
-			'BG' => __( 'Bulgaria', 'profilebuilder' ),
-			'BF' => __( 'Burkina Faso', 'profilebuilder' ),
-			'BI' => __( 'Burundi', 'profilebuilder' ),
-			'KH' => __( 'Cambodia', 'profilebuilder' ),
-			'CM' => __( 'Cameroon', 'profilebuilder' ),
-			'CA' => __( 'Canada', 'profilebuilder' ),
-			'CV' => __( 'Cape Verde', 'profilebuilder' ),
-			'KY' => __( 'Cayman Islands', 'profilebuilder' ),
-			'CF' => __( 'Central African Republic', 'profilebuilder' ),
-			'TD' => __( 'Chad', 'profilebuilder' ),
-			'CL' => __( 'Chile', 'profilebuilder' ),
-			'CN' => __( 'China', 'profilebuilder' ),
-			'CX' => __( 'Christmas Island', 'profilebuilder' ),
-			'CC' => __( 'Cocos Islands', 'profilebuilder' ),
-			'CO' => __( 'Colombia', 'profilebuilder' ),
-			'KM' => __( 'Comoros', 'profilebuilder' ),
-			'CK' => __( 'Cook Islands', 'profilebuilder' ),
-			'CR' => __( 'Costa Rica', 'profilebuilder' ),
-			'HR' => __( 'Croatia', 'profilebuilder' ),
-			'CU' => __( 'Cuba', 'profilebuilder' ),
-			'CW' => __( 'Curacao', 'profilebuilder' ),
-			'CY' => __( 'Cyprus', 'profilebuilder' ),
-			'CZ' => __( 'Czech Republic', 'profilebuilder' ),
-			'CD' => __( 'Democratic Republic of the Congo', 'profilebuilder' ),
-			'DK' => __( 'Denmark', 'profilebuilder' ),
-			'DJ' => __( 'Djibouti', 'profilebuilder' ),
-			'DM' => __( 'Dominica', 'profilebuilder' ),
-			'DO' => __( 'Dominican Republic', 'profilebuilder' ),
-			'TL' => __( 'East Timor', 'profilebuilder' ),
-			'EC' => __( 'Ecuador', 'profilebuilder' ),
-			'EG' => __( 'Egypt', 'profilebuilder' ),
-			'SV' => __( 'El Salvador', 'profilebuilder' ),
-			'GQ' => __( 'Equatorial Guinea', 'profilebuilder' ),
-			'ER' => __( 'Eritrea', 'profilebuilder' ),
-			'EE' => __( 'Estonia', 'profilebuilder' ),
-			'ET' => __( 'Ethiopia', 'profilebuilder' ),
-			'FK' => __( 'Falkland Islands', 'profilebuilder' ),
-			'FO' => __( 'Faroe Islands', 'profilebuilder' ),
-			'FJ' => __( 'Fiji', 'profilebuilder' ),
-			'FI' => __( 'Finland', 'profilebuilder' ),
-			'FR' => __( 'France', 'profilebuilder' ),
-			'GF' => __( 'French Guiana', 'profilebuilder' ),
-			'PF' => __( 'French Polynesia', 'profilebuilder' ),
-			'TF' => __( 'French Southern Territories', 'profilebuilder' ),
-			'GA' => __( 'Gabon', 'profilebuilder' ),
-			'GM' => __( 'Gambia', 'profilebuilder' ),
-			'GE' => __( 'Georgia', 'profilebuilder' ),
-			'DE' => __( 'Germany', 'profilebuilder' ),
-			'GH' => __( 'Ghana', 'profilebuilder' ),
-			'GI' => __( 'Gibraltar', 'profilebuilder' ),
-			'GR' => __( 'Greece', 'profilebuilder' ),
-			'GL' => __( 'Greenland', 'profilebuilder' ),
-			'GD' => __( 'Grenada', 'profilebuilder' ),
-			'GP' => __( 'Guadeloupe', 'profilebuilder' ),
-			'GU' => __( 'Guam', 'profilebuilder' ),
-			'GT' => __( 'Guatemala', 'profilebuilder' ),
-			'GG' => __( 'Guernsey', 'profilebuilder' ),
-			'GN' => __( 'Guinea', 'profilebuilder' ),
-			'GW' => __( 'Guinea-Bissau', 'profilebuilder' ),
-			'GY' => __( 'Guyana', 'profilebuilder' ),
-			'HT' => __( 'Haiti', 'profilebuilder' ),
-			'HM' => __( 'Heard Island and McDonald Islands', 'profilebuilder' ),
-			'HN' => __( 'Honduras', 'profilebuilder' ),
-			'HK' => __( 'Hong Kong', 'profilebuilder' ),
-			'HU' => __( 'Hungary', 'profilebuilder' ),
-			'IS' => __( 'Iceland', 'profilebuilder' ),
-			'IN' => __( 'India', 'profilebuilder' ),
-			'ID' => __( 'Indonesia', 'profilebuilder' ),
-			'IR' => __( 'Iran', 'profilebuilder' ),
-			'IQ' => __( 'Iraq', 'profilebuilder' ),
-			'IE' => __( 'Ireland', 'profilebuilder' ),
-			'IM' => __( 'Isle of Man', 'profilebuilder' ),
-			'IL' => __( 'Israel', 'profilebuilder' ),
-			'IT' => __( 'Italy', 'profilebuilder' ),
-			'CI' => __( 'Ivory Coast', 'profilebuilder' ),
-			'JM' => __( 'Jamaica', 'profilebuilder' ),
-			'JP' => __( 'Japan', 'profilebuilder' ),
-			'JE' => __( 'Jersey', 'profilebuilder' ),
-			'JO' => __( 'Jordan', 'profilebuilder' ),
-			'KZ' => __( 'Kazakhstan', 'profilebuilder' ),
-			'KE' => __( 'Kenya', 'profilebuilder' ),
-			'KI' => __( 'Kiribati', 'profilebuilder' ),
-			'XK' => __( 'Kosovo', 'profilebuilder' ),
-			'KW' => __( 'Kuwait', 'profilebuilder' ),
-			'KG' => __( 'Kyrgyzstan', 'profilebuilder' ),
-			'LA' => __( 'Laos', 'profilebuilder' ),
-			'LV' => __( 'Latvia', 'profilebuilder' ),
-			'LB' => __( 'Lebanon', 'profilebuilder' ),
-			'LS' => __( 'Lesotho', 'profilebuilder' ),
-			'LR' => __( 'Liberia', 'profilebuilder' ),
-			'LY' => __( 'Libya', 'profilebuilder' ),
-			'LI' => __( 'Liechtenstein', 'profilebuilder' ),
-			'LT' => __( 'Lithuania', 'profilebuilder' ),
-			'LU' => __( 'Luxembourg', 'profilebuilder' ),
-			'MO' => __( 'Macao', 'profilebuilder' ),
-			'MK' => __( 'Macedonia', 'profilebuilder' ),
-			'MG' => __( 'Madagascar', 'profilebuilder' ),
-			'MW' => __( 'Malawi', 'profilebuilder' ),
-			'MY' => __( 'Malaysia', 'profilebuilder' ),
-			'MV' => __( 'Maldives', 'profilebuilder' ),
-			'ML' => __( 'Mali', 'profilebuilder' ),
-			'MT' => __( 'Malta', 'profilebuilder' ),
-			'MH' => __( 'Marshall Islands', 'profilebuilder' ),
-			'MQ' => __( 'Martinique', 'profilebuilder' ),
-			'MR' => __( 'Mauritania', 'profilebuilder' ),
-			'MU' => __( 'Mauritius', 'profilebuilder' ),
-			'YT' => __( 'Mayotte', 'profilebuilder' ),
-			'MX' => __( 'Mexico', 'profilebuilder' ),
-			'FM' => __( 'Micronesia', 'profilebuilder' ),
-			'MD' => __( 'Moldova', 'profilebuilder' ),
-			'MC' => __( 'Monaco', 'profilebuilder' ),
-			'MN' => __( 'Mongolia', 'profilebuilder' ),
-			'ME' => __( 'Montenegro', 'profilebuilder' ),
-			'MS' => __( 'Montserrat', 'profilebuilder' ),
-			'MA' => __( 'Morocco', 'profilebuilder' ),
-			'MZ' => __( 'Mozambique', 'profilebuilder' ),
-			'MM' => __( 'Myanmar', 'profilebuilder' ),
-			'NA' => __( 'Namibia', 'profilebuilder' ),
-			'NR' => __( 'Nauru', 'profilebuilder' ),
-			'NP' => __( 'Nepal', 'profilebuilder' ),
-			'NL' => __( 'Netherlands', 'profilebuilder' ),
-			'NC' => __( 'New Caledonia', 'profilebuilder' ),
-			'NZ' => __( 'New Zealand', 'profilebuilder' ),
-			'NI' => __( 'Nicaragua', 'profilebuilder' ),
-			'NE' => __( 'Niger', 'profilebuilder' ),
-			'NG' => __( 'Nigeria', 'profilebuilder' ),
-			'NU' => __( 'Niue', 'profilebuilder' ),
-			'NF' => __( 'Norfolk Island', 'profilebuilder' ),
-			'KP' => __( 'North Korea', 'profilebuilder' ),
-			'MP' => __( 'Northern Mariana Islands', 'profilebuilder' ),
-			'NO' => __( 'Norway', 'profilebuilder' ),
-			'OM' => __( 'Oman', 'profilebuilder' ),
-			'PK' => __( 'Pakistan', 'profilebuilder' ),
-			'PW' => __( 'Palau', 'profilebuilder' ),
-			'PS' => __( 'Palestinian Territory', 'profilebuilder' ),
-			'PA' => __( 'Panama', 'profilebuilder' ),
-			'PG' => __( 'Papua New Guinea', 'profilebuilder' ),
-			'PY' => __( 'Paraguay', 'profilebuilder' ),
-			'PE' => __( 'Peru', 'profilebuilder' ),
-			'PH' => __( 'Philippines', 'profilebuilder' ),
-			'PN' => __( 'Pitcairn', 'profilebuilder' ),
-			'PL' => __( 'Poland', 'profilebuilder' ),
-			'PT' => __( 'Portugal', 'profilebuilder' ),
-			'PR' => __( 'Puerto Rico', 'profilebuilder' ),
-			'QA' => __( 'Qatar', 'profilebuilder' ),
-			'CG' => __( 'Republic of the Congo', 'profilebuilder' ),
-			'RE' => __( 'Reunion', 'profilebuilder' ),
-			'RO' => __( 'Romania', 'profilebuilder' ),
-			'RU' => __( 'Russia', 'profilebuilder' ),
-			'RW' => __( 'Rwanda', 'profilebuilder' ),
-			'BL' => __( 'Saint Barthelemy', 'profilebuilder' ),
-			'SH' => __( 'Saint Helena', 'profilebuilder' ),
-			'KN' => __( 'Saint Kitts and Nevis', 'profilebuilder' ),
-			'LC' => __( 'Saint Lucia', 'profilebuilder' ),
-			'MF' => __( 'Saint Martin', 'profilebuilder' ),
-			'PM' => __( 'Saint Pierre and Miquelon', 'profilebuilder' ),
-			'VC' => __( 'Saint Vincent and the Grenadines', 'profilebuilder' ),
-			'WS' => __( 'Samoa', 'profilebuilder' ),
-			'SM' => __( 'San Marino', 'profilebuilder' ),
-			'ST' => __( 'Sao Tome and Principe', 'profilebuilder' ),
-			'SA' => __( 'Saudi Arabia', 'profilebuilder' ),
-			'SN' => __( 'Senegal', 'profilebuilder' ),
-			'RS' => __( 'Serbia', 'profilebuilder' ),
-			'SC' => __( 'Seychelles', 'profilebuilder' ),
-			'SL' => __( 'Sierra Leone', 'profilebuilder' ),
-			'SG' => __( 'Singapore', 'profilebuilder' ),
-			'SX' => __( 'Sint Maarten', 'profilebuilder' ),
-			'SK' => __( 'Slovakia', 'profilebuilder' ),
-			'SI' => __( 'Slovenia', 'profilebuilder' ),
-			'SB' => __( 'Solomon Islands', 'profilebuilder' ),
-			'SO' => __( 'Somalia', 'profilebuilder' ),
-			'ZA' => __( 'South Africa', 'profilebuilder' ),
-			'GS' => __( 'South Georgia and the South Sandwich Islands', 'profilebuilder' ),
-			'KR' => __( 'South Korea', 'profilebuilder' ),
-			'SS' => __( 'South Sudan', 'profilebuilder' ),
-			'ES' => __( 'Spain', 'profilebuilder' ),
-			'LK' => __( 'Sri Lanka', 'profilebuilder' ),
-			'SD' => __( 'Sudan', 'profilebuilder' ),
-			'SR' => __( 'Suriname', 'profilebuilder' ),
-			'SJ' => __( 'Svalbard and Jan Mayen', 'profilebuilder' ),
-			'SZ' => __( 'Swaziland', 'profilebuilder' ),
-			'SE' => __( 'Sweden', 'profilebuilder' ),
-			'CH' => __( 'Switzerland', 'profilebuilder' ),
-			'SY' => __( 'Syria', 'profilebuilder' ),
-			'TW' => __( 'Taiwan', 'profilebuilder' ),
-			'TJ' => __( 'Tajikistan', 'profilebuilder' ),
-			'TZ' => __( 'Tanzania', 'profilebuilder' ),
-			'TH' => __( 'Thailand', 'profilebuilder' ),
-			'TG' => __( 'Togo', 'profilebuilder' ),
-			'TK' => __( 'Tokelau', 'profilebuilder' ),
-			'TO' => __( 'Tonga', 'profilebuilder' ),
-			'TT' => __( 'Trinidad and Tobago', 'profilebuilder' ),
-			'TN' => __( 'Tunisia', 'profilebuilder' ),
-			'TR' => __( 'Turkey', 'profilebuilder' ),
-			'TM' => __( 'Turkmenistan', 'profilebuilder' ),
-			'TC' => __( 'Turks and Caicos Islands', 'profilebuilder' ),
-			'TV' => __( 'Tuvalu', 'profilebuilder' ),
-			'VI' => __( 'U.S. Virgin Islands', 'profilebuilder' ),
-			'UG' => __( 'Uganda', 'profilebuilder' ),
-			'UA' => __( 'Ukraine', 'profilebuilder' ),
-			'AE' => __( 'United Arab Emirates', 'profilebuilder' ),
-			'GB' => __( 'United Kingdom', 'profilebuilder' ),
-			'US' => __( 'United States', 'profilebuilder' ),
-			'UM' => __( 'United States Minor Outlying Islands', 'profilebuilder' ),
-			'UY' => __( 'Uruguay', 'profilebuilder' ),
-			'UZ' => __( 'Uzbekistan', 'profilebuilder' ),
-			'VU' => __( 'Vanuatu', 'profilebuilder' ),
-			'VA' => __( 'Vatican', 'profilebuilder' ),
-			'VE' => __( 'Venezuela', 'profilebuilder' ),
-			'VN' => __( 'Vietnam', 'profilebuilder' ),
-			'WF' => __( 'Wallis and Futuna', 'profilebuilder' ),
-			'EH' => __( 'Western Sahara', 'profilebuilder' ),
-			'YE' => __( 'Yemen', 'profilebuilder' ),
-			'ZM' => __( 'Zambia', 'profilebuilder' ),
-			'ZW' => __( 'Zimbabwe', 'profilebuilder' ),
+			'AF' => __( 'Afghanistan', 'profile-builder' ),
+			'AX' => __( 'Aland Islands', 'profile-builder' ),
+			'AL' => __( 'Albania', 'profile-builder' ),
+			'DZ' => __( 'Algeria', 'profile-builder' ),
+			'AS' => __( 'American Samoa', 'profile-builder' ),
+			'AD' => __( 'Andorra', 'profile-builder' ),
+			'AO' => __( 'Angola', 'profile-builder' ),
+			'AI' => __( 'Anguilla', 'profile-builder' ),
+			'AQ' => __( 'Antarctica', 'profile-builder' ),
+			'AG' => __( 'Antigua and Barbuda', 'profile-builder' ),
+			'AR' => __( 'Argentina', 'profile-builder' ),
+			'AM' => __( 'Armenia', 'profile-builder' ),
+			'AW' => __( 'Aruba', 'profile-builder' ),
+			'AU' => __( 'Australia', 'profile-builder' ),
+			'AT' => __( 'Austria', 'profile-builder' ),
+			'AZ' => __( 'Azerbaijan', 'profile-builder' ),
+			'BS' => __( 'Bahamas', 'profile-builder' ),
+			'BH' => __( 'Bahrain', 'profile-builder' ),
+			'BD' => __( 'Bangladesh', 'profile-builder' ),
+			'BB' => __( 'Barbados', 'profile-builder' ),
+			'BY' => __( 'Belarus', 'profile-builder' ),
+			'BE' => __( 'Belgium', 'profile-builder' ),
+			'BZ' => __( 'Belize', 'profile-builder' ),
+			'BJ' => __( 'Benin', 'profile-builder' ),
+			'BM' => __( 'Bermuda', 'profile-builder' ),
+			'BT' => __( 'Bhutan', 'profile-builder' ),
+			'BO' => __( 'Bolivia', 'profile-builder' ),
+			'BQ' => __( 'Bonaire, Saint Eustatius and Saba', 'profile-builder' ),
+			'BA' => __( 'Bosnia and Herzegovina', 'profile-builder' ),
+			'BW' => __( 'Botswana', 'profile-builder' ),
+			'BV' => __( 'Bouvet Island', 'profile-builder' ),
+			'BR' => __( 'Brazil', 'profile-builder' ),
+			'IO' => __( 'British Indian Ocean Territory', 'profile-builder' ),
+			'VG' => __( 'British Virgin Islands', 'profile-builder' ),
+			'BN' => __( 'Brunei', 'profile-builder' ),
+			'BG' => __( 'Bulgaria', 'profile-builder' ),
+			'BF' => __( 'Burkina Faso', 'profile-builder' ),
+			'BI' => __( 'Burundi', 'profile-builder' ),
+			'KH' => __( 'Cambodia', 'profile-builder' ),
+			'CM' => __( 'Cameroon', 'profile-builder' ),
+			'CA' => __( 'Canada', 'profile-builder' ),
+			'CV' => __( 'Cape Verde', 'profile-builder' ),
+			'KY' => __( 'Cayman Islands', 'profile-builder' ),
+			'CF' => __( 'Central African Republic', 'profile-builder' ),
+			'TD' => __( 'Chad', 'profile-builder' ),
+			'CL' => __( 'Chile', 'profile-builder' ),
+			'CN' => __( 'China', 'profile-builder' ),
+			'CX' => __( 'Christmas Island', 'profile-builder' ),
+			'CC' => __( 'Cocos Islands', 'profile-builder' ),
+			'CO' => __( 'Colombia', 'profile-builder' ),
+			'KM' => __( 'Comoros', 'profile-builder' ),
+			'CK' => __( 'Cook Islands', 'profile-builder' ),
+			'CR' => __( 'Costa Rica', 'profile-builder' ),
+			'HR' => __( 'Croatia', 'profile-builder' ),
+			'CU' => __( 'Cuba', 'profile-builder' ),
+			'CW' => __( 'Curacao', 'profile-builder' ),
+			'CY' => __( 'Cyprus', 'profile-builder' ),
+			'CZ' => __( 'Czech Republic', 'profile-builder' ),
+			'CD' => __( 'Democratic Republic of the Congo', 'profile-builder' ),
+			'DK' => __( 'Denmark', 'profile-builder' ),
+			'DJ' => __( 'Djibouti', 'profile-builder' ),
+			'DM' => __( 'Dominica', 'profile-builder' ),
+			'DO' => __( 'Dominican Republic', 'profile-builder' ),
+			'TL' => __( 'East Timor', 'profile-builder' ),
+			'EC' => __( 'Ecuador', 'profile-builder' ),
+			'EG' => __( 'Egypt', 'profile-builder' ),
+			'SV' => __( 'El Salvador', 'profile-builder' ),
+			'GQ' => __( 'Equatorial Guinea', 'profile-builder' ),
+			'ER' => __( 'Eritrea', 'profile-builder' ),
+			'EE' => __( 'Estonia', 'profile-builder' ),
+			'ET' => __( 'Ethiopia', 'profile-builder' ),
+			'FK' => __( 'Falkland Islands', 'profile-builder' ),
+			'FO' => __( 'Faroe Islands', 'profile-builder' ),
+			'FJ' => __( 'Fiji', 'profile-builder' ),
+			'FI' => __( 'Finland', 'profile-builder' ),
+			'FR' => __( 'France', 'profile-builder' ),
+			'GF' => __( 'French Guiana', 'profile-builder' ),
+			'PF' => __( 'French Polynesia', 'profile-builder' ),
+			'TF' => __( 'French Southern Territories', 'profile-builder' ),
+			'GA' => __( 'Gabon', 'profile-builder' ),
+			'GM' => __( 'Gambia', 'profile-builder' ),
+			'GE' => __( 'Georgia', 'profile-builder' ),
+			'DE' => __( 'Germany', 'profile-builder' ),
+			'GH' => __( 'Ghana', 'profile-builder' ),
+			'GI' => __( 'Gibraltar', 'profile-builder' ),
+			'GR' => __( 'Greece', 'profile-builder' ),
+			'GL' => __( 'Greenland', 'profile-builder' ),
+			'GD' => __( 'Grenada', 'profile-builder' ),
+			'GP' => __( 'Guadeloupe', 'profile-builder' ),
+			'GU' => __( 'Guam', 'profile-builder' ),
+			'GT' => __( 'Guatemala', 'profile-builder' ),
+			'GG' => __( 'Guernsey', 'profile-builder' ),
+			'GN' => __( 'Guinea', 'profile-builder' ),
+			'GW' => __( 'Guinea-Bissau', 'profile-builder' ),
+			'GY' => __( 'Guyana', 'profile-builder' ),
+			'HT' => __( 'Haiti', 'profile-builder' ),
+			'HM' => __( 'Heard Island and McDonald Islands', 'profile-builder' ),
+			'HN' => __( 'Honduras', 'profile-builder' ),
+			'HK' => __( 'Hong Kong', 'profile-builder' ),
+			'HU' => __( 'Hungary', 'profile-builder' ),
+			'IS' => __( 'Iceland', 'profile-builder' ),
+			'IN' => __( 'India', 'profile-builder' ),
+			'ID' => __( 'Indonesia', 'profile-builder' ),
+			'IR' => __( 'Iran', 'profile-builder' ),
+			'IQ' => __( 'Iraq', 'profile-builder' ),
+			'IE' => __( 'Ireland', 'profile-builder' ),
+			'IM' => __( 'Isle of Man', 'profile-builder' ),
+			'IL' => __( 'Israel', 'profile-builder' ),
+			'IT' => __( 'Italy', 'profile-builder' ),
+			'CI' => __( 'Ivory Coast', 'profile-builder' ),
+			'JM' => __( 'Jamaica', 'profile-builder' ),
+			'JP' => __( 'Japan', 'profile-builder' ),
+			'JE' => __( 'Jersey', 'profile-builder' ),
+			'JO' => __( 'Jordan', 'profile-builder' ),
+			'KZ' => __( 'Kazakhstan', 'profile-builder' ),
+			'KE' => __( 'Kenya', 'profile-builder' ),
+			'KI' => __( 'Kiribati', 'profile-builder' ),
+			'XK' => __( 'Kosovo', 'profile-builder' ),
+			'KW' => __( 'Kuwait', 'profile-builder' ),
+			'KG' => __( 'Kyrgyzstan', 'profile-builder' ),
+			'LA' => __( 'Laos', 'profile-builder' ),
+			'LV' => __( 'Latvia', 'profile-builder' ),
+			'LB' => __( 'Lebanon', 'profile-builder' ),
+			'LS' => __( 'Lesotho', 'profile-builder' ),
+			'LR' => __( 'Liberia', 'profile-builder' ),
+			'LY' => __( 'Libya', 'profile-builder' ),
+			'LI' => __( 'Liechtenstein', 'profile-builder' ),
+			'LT' => __( 'Lithuania', 'profile-builder' ),
+			'LU' => __( 'Luxembourg', 'profile-builder' ),
+			'MO' => __( 'Macao', 'profile-builder' ),
+			'MK' => __( 'Macedonia', 'profile-builder' ),
+			'MG' => __( 'Madagascar', 'profile-builder' ),
+			'MW' => __( 'Malawi', 'profile-builder' ),
+			'MY' => __( 'Malaysia', 'profile-builder' ),
+			'MV' => __( 'Maldives', 'profile-builder' ),
+			'ML' => __( 'Mali', 'profile-builder' ),
+			'MT' => __( 'Malta', 'profile-builder' ),
+			'MH' => __( 'Marshall Islands', 'profile-builder' ),
+			'MQ' => __( 'Martinique', 'profile-builder' ),
+			'MR' => __( 'Mauritania', 'profile-builder' ),
+			'MU' => __( 'Mauritius', 'profile-builder' ),
+			'YT' => __( 'Mayotte', 'profile-builder' ),
+			'MX' => __( 'Mexico', 'profile-builder' ),
+			'FM' => __( 'Micronesia', 'profile-builder' ),
+			'MD' => __( 'Moldova', 'profile-builder' ),
+			'MC' => __( 'Monaco', 'profile-builder' ),
+			'MN' => __( 'Mongolia', 'profile-builder' ),
+			'ME' => __( 'Montenegro', 'profile-builder' ),
+			'MS' => __( 'Montserrat', 'profile-builder' ),
+			'MA' => __( 'Morocco', 'profile-builder' ),
+			'MZ' => __( 'Mozambique', 'profile-builder' ),
+			'MM' => __( 'Myanmar', 'profile-builder' ),
+			'NA' => __( 'Namibia', 'profile-builder' ),
+			'NR' => __( 'Nauru', 'profile-builder' ),
+			'NP' => __( 'Nepal', 'profile-builder' ),
+			'NL' => __( 'Netherlands', 'profile-builder' ),
+			'NC' => __( 'New Caledonia', 'profile-builder' ),
+			'NZ' => __( 'New Zealand', 'profile-builder' ),
+			'NI' => __( 'Nicaragua', 'profile-builder' ),
+			'NE' => __( 'Niger', 'profile-builder' ),
+			'NG' => __( 'Nigeria', 'profile-builder' ),
+			'NU' => __( 'Niue', 'profile-builder' ),
+			'NF' => __( 'Norfolk Island', 'profile-builder' ),
+			'KP' => __( 'North Korea', 'profile-builder' ),
+			'MP' => __( 'Northern Mariana Islands', 'profile-builder' ),
+			'NO' => __( 'Norway', 'profile-builder' ),
+			'OM' => __( 'Oman', 'profile-builder' ),
+			'PK' => __( 'Pakistan', 'profile-builder' ),
+			'PW' => __( 'Palau', 'profile-builder' ),
+			'PS' => __( 'Palestinian Territory', 'profile-builder' ),
+			'PA' => __( 'Panama', 'profile-builder' ),
+			'PG' => __( 'Papua New Guinea', 'profile-builder' ),
+			'PY' => __( 'Paraguay', 'profile-builder' ),
+			'PE' => __( 'Peru', 'profile-builder' ),
+			'PH' => __( 'Philippines', 'profile-builder' ),
+			'PN' => __( 'Pitcairn', 'profile-builder' ),
+			'PL' => __( 'Poland', 'profile-builder' ),
+			'PT' => __( 'Portugal', 'profile-builder' ),
+			'PR' => __( 'Puerto Rico', 'profile-builder' ),
+			'QA' => __( 'Qatar', 'profile-builder' ),
+			'CG' => __( 'Republic of the Congo', 'profile-builder' ),
+			'RE' => __( 'Reunion', 'profile-builder' ),
+			'RO' => __( 'Romania', 'profile-builder' ),
+			'RU' => __( 'Russia', 'profile-builder' ),
+			'RW' => __( 'Rwanda', 'profile-builder' ),
+			'BL' => __( 'Saint Barthelemy', 'profile-builder' ),
+			'SH' => __( 'Saint Helena', 'profile-builder' ),
+			'KN' => __( 'Saint Kitts and Nevis', 'profile-builder' ),
+			'LC' => __( 'Saint Lucia', 'profile-builder' ),
+			'MF' => __( 'Saint Martin', 'profile-builder' ),
+			'PM' => __( 'Saint Pierre and Miquelon', 'profile-builder' ),
+			'VC' => __( 'Saint Vincent and the Grenadines', 'profile-builder' ),
+			'WS' => __( 'Samoa', 'profile-builder' ),
+			'SM' => __( 'San Marino', 'profile-builder' ),
+			'ST' => __( 'Sao Tome and Principe', 'profile-builder' ),
+			'SA' => __( 'Saudi Arabia', 'profile-builder' ),
+			'SN' => __( 'Senegal', 'profile-builder' ),
+			'RS' => __( 'Serbia', 'profile-builder' ),
+			'SC' => __( 'Seychelles', 'profile-builder' ),
+			'SL' => __( 'Sierra Leone', 'profile-builder' ),
+			'SG' => __( 'Singapore', 'profile-builder' ),
+			'SX' => __( 'Sint Maarten', 'profile-builder' ),
+			'SK' => __( 'Slovakia', 'profile-builder' ),
+			'SI' => __( 'Slovenia', 'profile-builder' ),
+			'SB' => __( 'Solomon Islands', 'profile-builder' ),
+			'SO' => __( 'Somalia', 'profile-builder' ),
+			'ZA' => __( 'South Africa', 'profile-builder' ),
+			'GS' => __( 'South Georgia and the South Sandwich Islands', 'profile-builder' ),
+			'KR' => __( 'South Korea', 'profile-builder' ),
+			'SS' => __( 'South Sudan', 'profile-builder' ),
+			'ES' => __( 'Spain', 'profile-builder' ),
+			'LK' => __( 'Sri Lanka', 'profile-builder' ),
+			'SD' => __( 'Sudan', 'profile-builder' ),
+			'SR' => __( 'Suriname', 'profile-builder' ),
+			'SJ' => __( 'Svalbard and Jan Mayen', 'profile-builder' ),
+			'SZ' => __( 'Swaziland', 'profile-builder' ),
+			'SE' => __( 'Sweden', 'profile-builder' ),
+			'CH' => __( 'Switzerland', 'profile-builder' ),
+			'SY' => __( 'Syria', 'profile-builder' ),
+			'TW' => __( 'Taiwan', 'profile-builder' ),
+			'TJ' => __( 'Tajikistan', 'profile-builder' ),
+			'TZ' => __( 'Tanzania', 'profile-builder' ),
+			'TH' => __( 'Thailand', 'profile-builder' ),
+			'TG' => __( 'Togo', 'profile-builder' ),
+			'TK' => __( 'Tokelau', 'profile-builder' ),
+			'TO' => __( 'Tonga', 'profile-builder' ),
+			'TT' => __( 'Trinidad and Tobago', 'profile-builder' ),
+			'TN' => __( 'Tunisia', 'profile-builder' ),
+			'TR' => __( 'Turkey', 'profile-builder' ),
+			'TM' => __( 'Turkmenistan', 'profile-builder' ),
+			'TC' => __( 'Turks and Caicos Islands', 'profile-builder' ),
+			'TV' => __( 'Tuvalu', 'profile-builder' ),
+			'VI' => __( 'U.S. Virgin Islands', 'profile-builder' ),
+			'UG' => __( 'Uganda', 'profile-builder' ),
+			'UA' => __( 'Ukraine', 'profile-builder' ),
+			'AE' => __( 'United Arab Emirates', 'profile-builder' ),
+			'GB' => __( 'United Kingdom', 'profile-builder' ),
+			'US' => __( 'United States', 'profile-builder' ),
+			'UM' => __( 'United States Minor Outlying Islands', 'profile-builder' ),
+			'UY' => __( 'Uruguay', 'profile-builder' ),
+			'UZ' => __( 'Uzbekistan', 'profile-builder' ),
+			'VU' => __( 'Vanuatu', 'profile-builder' ),
+			'VA' => __( 'Vatican', 'profile-builder' ),
+			'VE' => __( 'Venezuela', 'profile-builder' ),
+			'VN' => __( 'Vietnam', 'profile-builder' ),
+			'WF' => __( 'Wallis and Futuna', 'profile-builder' ),
+			'EH' => __( 'Western Sahara', 'profile-builder' ),
+			'YE' => __( 'Yemen', 'profile-builder' ),
+			'ZM' => __( 'Zambia', 'profile-builder' ),
+			'ZW' => __( 'Zimbabwe', 'profile-builder' ),
 		)
 	);
 
@@ -614,7 +614,7 @@ function wppb_check_field_on_edit_add( $message, $fields, $required_fields, $met
 	
 		// check for a valid field-type (fallback)
 		if ( $posted_values['field'] == '' )
-			$message .= __( "You must select a field\n", 'profilebuilder' );
+			$message .= __( "You must select a field\n", 'profile-builder' );
 		// END check for a valid field-type (fallback)
 		
 		$unique_field_list = wppb_return_unique_field_list();
@@ -624,7 +624,7 @@ function wppb_check_field_on_edit_add( $message, $fields, $required_fields, $met
 		if( $all_fields != 'not_set' ){
 			foreach( $all_fields as $field ){
 				if ( ( in_array ( $posted_values['field'], $unique_field_list ) ) && ( $posted_values['field'] == $field['field'] ) && ( $posted_values['id'] != $field['id'] ) ){
-					$message .= __( "Please choose a different field type as this one already exists in your form (must be unique)\n", 'profilebuilder' );
+					$message .= __( "Please choose a different field type as this one already exists in your form (must be unique)\n", 'profile-builder' );
 					break;
 				}
 			}
@@ -635,10 +635,10 @@ function wppb_check_field_on_edit_add( $message, $fields, $required_fields, $met
 		if ( $posted_values['field'] == 'Avatar' ){
 			if ( is_numeric( $posted_values['avatar-size'] ) ){
 				if ( ( $posted_values['avatar-size'] < 20 ) || ( $posted_values['avatar-size'] > 200 ) )
-					$message .= __( "The entered avatar size is not between 20 and 200\n", 'profilebuilder' );
+					$message .= __( "The entered avatar size is not between 20 and 200\n", 'profile-builder' );
 			
 			}else
-				$message .= __( "The entered avatar size is not numerical\n", 'profilebuilder' );
+				$message .= __( "The entered avatar size is not numerical\n", 'profile-builder' );
 
 		}
 		// END check for avatar size
@@ -646,10 +646,10 @@ function wppb_check_field_on_edit_add( $message, $fields, $required_fields, $met
 		// check for correct row value
 		if ( ( $posted_values['field'] == 'Default - Biographical Info' ) || ( $posted_values['field'] == 'Textarea' ) ){
 			if ( !is_numeric( $posted_values['row-count'] ) )
-				$message .= __( "The entered row number is not numerical\n", 'profilebuilder' );
+				$message .= __( "The entered row number is not numerical\n", 'profile-builder' );
 				
 			elseif ( trim( $posted_values['row-count'] ) == '' )
-				$message .= __( "You must enter a value for the row number\n", 'profilebuilder' );
+				$message .= __( "You must enter a value for the row number\n", 'profile-builder' );
 		}
 		// END check for correct row value
 		
@@ -657,9 +657,9 @@ function wppb_check_field_on_edit_add( $message, $fields, $required_fields, $met
 		// check for the public and private keys
 		if ( $posted_values['field'] == 'reCAPTCHA'){
 			if ( trim( $posted_values['public-key'] ) == '' )
-				$message .= __( "You must enter the site key\n", 'profilebuilder' );
+				$message .= __( "You must enter the site key\n", 'profile-builder' );
 			if ( trim( $posted_values['private-key'] ) == '' )
-				$message .= __( "You must enter the secret key\n", 'profilebuilder' );
+				$message .= __( "You must enter the secret key\n", 'profile-builder' );
 		}
 		// END check for the public and private keys
 		
@@ -667,10 +667,10 @@ function wppb_check_field_on_edit_add( $message, $fields, $required_fields, $met
 		if ( $posted_values['field'] == 'Datepicker' ){
 			$date_format = strtolower( $posted_values['date-format'] );			
 			if ( ( trim( $date_format ) != 'mm/dd/yy' ) && ( trim( $date_format ) != 'mm/yy/dd' ) && ( trim( $date_format ) != 'dd/yy/mm' ) && ( trim( $date_format ) != 'dd/mm/yy' ) && ( trim( $date_format ) != 'yy/dd/mm' ) && ( trim( $date_format ) != 'yy/mm/dd' ) )
-				$message .= __( "The entered value for the Datepicker is not a valid date-format\n", 'profilebuilder' );
+				$message .= __( "The entered value for the Datepicker is not a valid date-format\n", 'profile-builder' );
 			
 			elseif ( trim( $date_format ) == '' )
-				$message .= __( "You must enter a value for the date-format\n", 'profilebuilder' );
+				$message .= __( "You must enter a value for the date-format\n", 'profile-builder' );
 		}
 		// END check for the correct the date-format	
 		
@@ -686,7 +686,7 @@ function wppb_check_field_on_edit_add( $message, $fields, $required_fields, $met
                 $skip_empty_check_for_fields = array('Heading', 'Select (User Role)', 'reCAPTCHA');
 
                 if( !in_array( $posted_values['field'], $skip_empty_check_for_fields ) && empty( $posted_values['meta-name'] ) ) {
-                    $message .= __( "The meta-name cannot be empty\n", 'profilebuilder' );
+                    $message .= __( "The meta-name cannot be empty\n", 'profile-builder' );
                 }
 
 				// Default contact methods were removed in WP 3.6. A filter dictates contact methods.
@@ -698,7 +698,7 @@ function wppb_check_field_on_edit_add( $message, $fields, $required_fields, $met
 				
 				// if the desired meta-name is one of the following, automatically give an error
 				if ( in_array( trim( $posted_values['meta-name'] ), apply_filters ( 'wppb_unique_meta_name_list', $unique_meta_name_list ) ) )
-					$message .= __( "That meta-name is already in use\n", 'profilebuilder' );
+					$message .= __( "That meta-name is already in use\n", 'profile-builder' );
 				
 				else{
 					$found_in_custom_fields = false;
@@ -706,7 +706,7 @@ function wppb_check_field_on_edit_add( $message, $fields, $required_fields, $met
 					if( $all_fields != 'not_set' )
 						foreach( $all_fields as $field ){
 							if ( $posted_values['meta-name'] != '' && ( $field['meta-name'] == $posted_values['meta-name'] ) && ( $field['id'] != $posted_values['id'] ) ){
-								$message .= __( "That meta-name is already in use\n", 'profilebuilder' );
+								$message .= __( "That meta-name is already in use\n", 'profile-builder' );
 								$found_in_custom_fields = true;
 							
 							}elseif ( ( $field['meta-name'] == $posted_values['meta-name'] ) && ( $field['id'] == $posted_values['id'] ) )
@@ -716,7 +716,7 @@ function wppb_check_field_on_edit_add( $message, $fields, $required_fields, $met
 					if ( $found_in_custom_fields === false ){
 						$found_meta_name = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM $wpdb->usermeta WHERE meta_key = %s", $posted_values['meta-name'] ) );
 						if ( $found_meta_name != null )
-							$message .= __( "That meta-name is already in use\n", 'profilebuilder' );
+							$message .= __( "That meta-name is already in use\n", 'profile-builder' );
 					}
 				}
 			}
@@ -738,18 +738,18 @@ function wppb_check_field_on_edit_add( $message, $fields, $required_fields, $met
 			}
 		
 			if ( $not_found != '' )
-				$message .= sprintf( __( "The following option(s) did not coincide with the ones in the options list: %s\n", 'profilebuilder' ), trim( $not_found, ', ' ) );
+				$message .= sprintf( __( "The following option(s) did not coincide with the ones in the options list: %s\n", 'profile-builder' ), trim( $not_found, ', ' ) );
 			
 		}elseif ( ( $posted_values['field'] == 'Radio' ) || ( $posted_values['field'] == 'Select' ) ){
 			if ( ( trim( $posted_values['default-option'] ) != '' )  && ( !in_array( $posted_values['default-option'], array_map( 'trim', explode( ',', $posted_values['options'] ) ) ) ) )
-				$message .= sprintf( __( "The following option did not coincide with the ones in the options list: %s\n", 'profilebuilder' ), $posted_values['default-option'] );
+				$message .= sprintf( __( "The following option did not coincide with the ones in the options list: %s\n", 'profile-builder' ), $posted_values['default-option'] );
 		}
 		// END check for valid default option (checkbox, select, radio)
 
         // check to see if any user role is selected (user-role field)
         if( $posted_values['field'] == 'Select (User Role)' ) {
             if( empty( $posted_values['user-roles'] ) ) {
-                $message .= __( "Please select at least one user role\n", 'profilebuilder' );
+                $message .= __( "Please select at least one user role\n", 'profile-builder' );
             }
         }
         // END check to see if Administrator user role has been selected (user-role field)
@@ -758,14 +758,14 @@ function wppb_check_field_on_edit_add( $message, $fields, $required_fields, $met
 
 	}elseif ( ( $meta_name == 'wppb_rf_fields' ) || ( $meta_name == 'wppb_epf_fields' ) ){
 		if ( $posted_values['field'] == '' ){
-			$message .= __( "You must select a field\n", 'profilebuilder' );
+			$message .= __( "You must select a field\n", 'profile-builder' );
 			
 		}else{
 			$fields_so_far = get_post_meta ( $post_id, $meta_name, true );
 			
 			foreach ( $fields_so_far as $key => $value ){
 				if ( $value['field'] == $posted_values['field'] )
-					$message .= __( "That field is already added in this form\n", 'profilebuilder' );
+					$message .= __( "That field is already added in this form\n", 'profile-builder' );
 			}
 		}
 	}
@@ -814,7 +814,7 @@ add_action("wck_ajax_add_form_wppb_manage_fields", "wppb_hide_all_after_add" );
  * @return string
  */
 function wppb_manage_fields_header( $list_header ){
-	return '<thead><tr><th class="wck-number">#</th><th class="wck-content">'. __( '<pre>Title</pre><pre>Type</pre><pre>Meta Name</pre><pre class="wppb-mb-head-required">Required</pre>', 'profilebuilder' ) .'</th><th class="wck-edit">'. __( 'Edit', 'profilebuilder' ) .'</th><th class="wck-delete">'. __( 'Delete', 'profilebuilder' ) .'</th></tr></thead>';
+	return '<thead><tr><th class="wck-number">#</th><th class="wck-content">'. __( '<pre>Title</pre><pre>Type</pre><pre>Meta Name</pre><pre class="wppb-mb-head-required">Required</pre>', 'profile-builder' ) .'</th><th class="wck-edit">'. __( 'Edit', 'profile-builder' ) .'</th><th class="wck-delete">'. __( 'Delete', 'profile-builder' ) .'</th></tr></thead>';
 }
 add_action( 'wck_metabox_content_header_wppb_manage_fields', 'wppb_manage_fields_header' );
 
@@ -829,7 +829,7 @@ add_action( 'wck_metabox_content_header_wppb_manage_fields', 'wppb_manage_fields
  */
 function wppb_add_content_before_manage_fields(){
 ?>
-   <p><?php _e('Use these shortcodes on the pages you want the forms to be displayed:', 'profilebuilder'); ?></p>
+   <p><?php _e('Use these shortcodes on the pages you want the forms to be displayed:', 'profile-builder'); ?></p>
    <ul>
         <li><strong class="nowrap">[wppb-register]</strong></li>
         <li><strong class="nowrap">[wppb-edit-profile]</strong></li>
@@ -838,9 +838,9 @@ function wppb_add_content_before_manage_fields(){
    <p>
        <?php
        if( PROFILE_BUILDER == 'Profile Builder Pro' )
-           _e("If you're interested in displaying different fields in the registration and edit profile forms, please use the Multiple Registration & Edit Profile Forms Addon.", 'profilebuilder');
+           _e("If you're interested in displaying different fields in the registration and edit profile forms, please use the Multiple Registration & Edit Profile Forms Addon.", 'profile-builder');
        else
-           _e( "With Profile Builder Pro v2 you can display different fields in the registration and edit profile forms, using the Multiple Registration & Edit Profile Forms module.", "profilebuilder" )
+           _e( "With Profile Builder Pro v2 you can display different fields in the registration and edit profile forms, using the Multiple Registration & Edit Profile Forms module.", "profile-builder" )
        ?>
    </p>
 <?php

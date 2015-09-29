@@ -1,11 +1,11 @@
 ﻿=== Profile Builder - front-end user registration, login and edit profile === 
 Contributors: cozmoslabs, reflectionmedia, sareiodata, adispiac, madalin.ungureanu, iova.mihai, barinagabriel
 Donate link: http://www.cozmoslabs.com/wordpress-profile-builder/
-Tags: registration, user profile, user registration, custom field registration, customize profile, user fields, extra user fields, builder, profile builder, custom user profile, user profile page, edit profile, custom registration, custom registration form, custom registration page, registration page, user custom fields, user listing, front-end user listing, user login, user registration form, front-end login, login redirect, login widget, front-end register, front-end registration, front-end edit profile, front-end user registration, custom redirects, user email, avatar upload, email confirmation, user approval, customize registration email, minimum password length, minimum password strength, password strength meter, multiple registration forms, register, register form, member directory
+Tags: registration, user profile, user registration, custom field registration, customize profile, user fields, extra user fields, builder, profile builder, custom user profile, user profile page, edit profile, custom registration, custom registration form, custom registration page, registration page, user custom fields, user listing, front-end user listing, user login, user registration form, front-end login, login redirect, login widget, front-end register, front-end registration, front-end edit profile, front-end user registration, custom redirects, user email, avatar upload, email confirmation, user approval, customize registration email, minimum password length, minimum password strength, password strength meter, multiple registration forms, register, register form, register user, register users, login form, member directory, redirect user
 
 Requires at least: 3.1
 Tested up to: 4.3.1
-Stable tag: 2.2.3
+Stable tag: 2.2.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -16,7 +16,7 @@ Simple to use profile plugin allowing front-end login, user registration and edi
 **Profile Builder is WordPress user registration done right.**
 
 It lets you customize your website by adding a front-end menu for all your users, 
-giving them a more flexible way to modify their user profile or register new users (front-end user registration). 
+giving them a more flexible way to modify their user profile or register users (front-end user registration).
 Users with administrator rights can customize basic user fields or add custom user fields to the front-end forms.
 
 To achieve this, simply create a new page and give it an intuitive name(i.e. Edit Profile).
@@ -26,10 +26,10 @@ Publish the page and you are done!
 = Front-end User Registration, Login, Edit Profile and Password Recovery Shortcodes =
 You can use the following shortcode list:
 
-* **[wppb-edit-profile]** - to grant users front-end access to their profile (requires user to be logged in).
+* **[wppb-edit-profile]** - to grant users front-end access to their user profile (requires user to be logged in).
 * **[wppb-login]** - to add a front-end login form.
 * **[wppb-logout]** - to add logout functionality.
-* **[wppb-register]** - to add a front-end register form.
+* **[wppb-register]** - register users via a front-end register form.
 * **[wppb-recover-password]** - to add a password recovery form.
 
 Users with administrator rights have access to the following features:
@@ -41,7 +41,7 @@ Users with administrator rights have access to the following features:
 * assign users a specific role at registration (using **[wppb-register role="desired_role"]** shortcode argument for the register form)
 * redirect users after login, register and edit-profile using redirect_url shortcode argument ( e.g **[wppb-login redirect_url="www.example.com"]** )
 * add register and lost password links below the login form (using **[wppb-login register_url="www.example.com" lostpassword_url="www.example.com"]** shortcode arguments)
-* customizable login widget
+* customizable user login widget
 * add a custom stylesheet/inherit values from the current theme or use the default one built into this plugin.
 * chose which user roles view the admin bar in the front-end of the website (Admin Bar Settings page).
 * select which profile fields users can see/modify.
@@ -115,6 +115,9 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 10. Profile Builder Login Widget
 
 == Changelog ==
+= 2.2.4 =
+* Translation Updates
+
 = 2.2.3 =
 * Fixed website field not saving on registering with email confirmation
 * Fixed a potential security vulnerability

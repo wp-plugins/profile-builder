@@ -3,7 +3,7 @@
 Plugin Name: Profile Builder
 Plugin URI: http://www.cozmoslabs.com/wordpress-profile-builder/
 Description: Login, registration and edit profile shortcodes for the front-end. Also you can chose what fields should be displayed or add new (custom) ones both in the front-end and in the dashboard.
-Version: 2.2.3
+Version: 2.2.4
 Author: Cozmoslabs, Madalin Ungureanu, Antohe Cristian, Barina Gabriel, Mihai Iova
 Author URI: http://www.cozmoslabs.com/
 License: GPL2
@@ -31,7 +31,7 @@ function wppb_free_plugin_init() {
         {
             ?>
             <div class="error">
-                <p><?php _e( PROFILE_BUILDER . ' is also activated. You need to deactivate it before activating this version of the plugin.', 'profilebuilder'); ?></p>
+                <p><?php _e( PROFILE_BUILDER . ' is also activated. You need to deactivate it before activating this version of the plugin.', 'profile-builder'); ?></p>
             </div>
         <?php
         }
@@ -73,7 +73,7 @@ function wppb_free_plugin_init() {
          *
          *
          */
-        define('PROFILE_BUILDER_VERSION', '2.2.3' );
+        define('PROFILE_BUILDER_VERSION', '2.2.4' );
         define('WPPB_PLUGIN_DIR', plugin_dir_path(__FILE__));
         define('WPPB_PLUGIN_URL', plugin_dir_url(__FILE__));
         define('WPPB_SERVER_MAX_UPLOAD_SIZE_BYTE', apply_filters('wppb_server_max_upload_size_byte_constant', wppb_return_bytes(ini_get('upload_max_filesize'))));
@@ -81,7 +81,7 @@ function wppb_free_plugin_init() {
         define('WPPB_SERVER_MAX_POST_SIZE_BYTE', apply_filters('wppb_server_max_post_size_byte_constant', wppb_return_bytes(ini_get('post_max_size'))));
         define('WPPB_SERVER_MAX_POST_SIZE_MEGA', apply_filters('wppb_server_max_post_size_mega_constant', ini_get('post_max_size')));
         define('WPPB_TRANSLATE_DIR', WPPB_PLUGIN_DIR . '/translation');
-        define('WPPB_TRANSLATE_DOMAIN', 'profilebuilder');
+        define('WPPB_TRANSLATE_DOMAIN', 'profile-builder');
 
         /* include notices class */
         if (file_exists(WPPB_PLUGIN_DIR . '/assets/lib/class_notices.php'))
@@ -103,7 +103,7 @@ function wppb_free_plugin_init() {
          */
         function wppb_init_translation()
         {
-            load_plugin_textdomain('profilebuilder', false, basename(dirname(__FILE__)) . '/translation/');
+            load_plugin_textdomain('profile-builder', false, basename(dirname(__FILE__)) . '/translation/');
         }
 
         add_action('init', 'wppb_init_translation', 8);
