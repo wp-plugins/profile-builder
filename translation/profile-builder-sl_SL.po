@@ -1,0 +1,3835 @@
+# Translation of Profile Builder in Slovenian
+# This file is distributed under the same license as the Profile Builder package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2015-09-29 11:56:41+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
+"X-Generator: GlotPress/0.1\n"
+"Project-Id-Version: Profile Builder\n"
+
+#: ../admin/admin-functions.php:40
+msgid "Display name publicly as - only appears on the Edit Profile page!"
+msgstr ""
+
+#: ../admin/basic-info.php:37
+msgid "Friction-less login using %s shortcode or a widget."
+msgstr ""
+
+#: ../admin/basic-info.php:41
+msgid "Beautiful registration forms fully customizable using the %s shortcode."
+msgstr ""
+
+#: ../admin/basic-info.php:45
+msgid "Straight forward edit profile forms using %s shortcode."
+msgstr ""
+
+#: ../admin/basic-info.php:58
+msgid "Allow users to recover their password in the front-end using the %s."
+msgstr ""
+
+#: ../admin/basic-info.php:130
+msgid "To create a page containing the users registered to this current site/blog, insert the following shortcode in a page of your chosing: %s."
+msgstr ""
+
+#: ../admin/general-settings.php:125
+msgid "\"Admin Approval\" on User Role:"
+msgstr ""
+
+#: ../admin/general-settings.php:144
+msgid "Select on what user roles to activate Admin Approval."
+msgstr ""
+
+#: ../admin/manage-fields.php:109
+msgid "Display on PB forms"
+msgstr ""
+
+#: ../admin/manage-fields.php:109
+msgid "PB Login"
+msgstr ""
+
+#: ../admin/manage-fields.php:109
+msgid "PB Register"
+msgstr ""
+
+#: ../admin/manage-fields.php:109
+msgid "PB Recover Password"
+msgstr ""
+
+#: ../admin/manage-fields.php:109
+msgid "Select on which Profile Builder forms to display reCAPTCHA"
+msgstr ""
+
+#: ../admin/manage-fields.php:110
+msgid "Display on default WP forms"
+msgstr ""
+
+#: ../admin/manage-fields.php:110
+msgid "Default WP Login"
+msgstr ""
+
+#: ../admin/manage-fields.php:110
+msgid "Default WP Register"
+msgstr ""
+
+#: ../admin/manage-fields.php:110
+msgid "Default WP Recover Password"
+msgstr ""
+
+#: ../admin/manage-fields.php:110
+msgid "Select on which default WP forms to display reCAPTCHA"
+msgstr ""
+
+#: ../admin/manage-fields.php:116 ../admin/manage-fields.php:117
+msgid "Default option of the field"
+msgstr ""
+
+#: ../admin/manage-fields.php:237
+msgid "Afghanistan"
+msgstr "Afghanistan"
+
+#: ../admin/manage-fields.php:238
+msgid "Aland Islands"
+msgstr "Aland Islands"
+
+#: ../admin/manage-fields.php:239
+msgid "Albania"
+msgstr "Albania"
+
+#: ../admin/manage-fields.php:240
+msgid "Algeria"
+msgstr "Algeria"
+
+#: ../admin/manage-fields.php:241
+msgid "American Samoa"
+msgstr "American Samoa"
+
+#: ../admin/manage-fields.php:242
+msgid "Andorra"
+msgstr "Andorra"
+
+#: ../admin/manage-fields.php:243
+msgid "Angola"
+msgstr "Angola"
+
+#: ../admin/manage-fields.php:244
+msgid "Anguilla"
+msgstr "Anguilla"
+
+#: ../admin/manage-fields.php:245
+msgid "Antarctica"
+msgstr "Antarctica"
+
+#: ../admin/manage-fields.php:246
+msgid "Antigua and Barbuda"
+msgstr "Antigua and Barbuda"
+
+#: ../admin/manage-fields.php:247
+msgid "Argentina"
+msgstr "Argentina"
+
+#: ../admin/manage-fields.php:248
+msgid "Armenia"
+msgstr "Armenia"
+
+#: ../admin/manage-fields.php:249
+msgid "Aruba"
+msgstr "Aruba"
+
+#: ../admin/manage-fields.php:250
+msgid "Australia"
+msgstr "Australia"
+
+#: ../admin/manage-fields.php:251
+msgid "Austria"
+msgstr "Austria"
+
+#: ../admin/manage-fields.php:252
+msgid "Azerbaijan"
+msgstr "Azerbaijan"
+
+#: ../admin/manage-fields.php:253
+msgid "Bahamas"
+msgstr "Bahamas"
+
+#: ../admin/manage-fields.php:254
+msgid "Bahrain"
+msgstr "Bahrain"
+
+#: ../admin/manage-fields.php:255
+msgid "Bangladesh"
+msgstr "Bangladesh"
+
+#: ../admin/manage-fields.php:256
+msgid "Barbados"
+msgstr "Barbados"
+
+#: ../admin/manage-fields.php:257
+msgid "Belarus"
+msgstr "Belarus"
+
+#: ../admin/manage-fields.php:258
+msgid "Belgium"
+msgstr "Belgium"
+
+#: ../admin/manage-fields.php:259
+msgid "Belize"
+msgstr "Belize"
+
+#: ../admin/manage-fields.php:260
+msgid "Benin"
+msgstr "Benin"
+
+#: ../admin/manage-fields.php:261
+msgid "Bermuda"
+msgstr "Bermuda"
+
+#: ../admin/manage-fields.php:262
+msgid "Bhutan"
+msgstr "Bhutan"
+
+#: ../admin/manage-fields.php:263
+msgid "Bolivia"
+msgstr "Bolivia"
+
+#: ../admin/manage-fields.php:264
+msgid "Bonaire, Saint Eustatius and Saba"
+msgstr "Bonaire, Saint Eustatius and Saba"
+
+#: ../admin/manage-fields.php:265
+msgid "Bosnia and Herzegovina"
+msgstr "Bosnia and Herzegovina"
+
+#: ../admin/manage-fields.php:266
+msgid "Botswana"
+msgstr "Botswana"
+
+#: ../admin/manage-fields.php:267
+msgid "Bouvet Island"
+msgstr "Bouvet Island"
+
+#: ../admin/manage-fields.php:268
+msgid "Brazil"
+msgstr "Brazil"
+
+#: ../admin/manage-fields.php:269
+msgid "British Indian Ocean Territory"
+msgstr "British Indian Ocean Territory"
+
+#: ../admin/manage-fields.php:270
+msgid "British Virgin Islands"
+msgstr "British Virgin Islands"
+
+#: ../admin/manage-fields.php:271
+msgid "Brunei"
+msgstr "Brunei"
+
+#: ../admin/manage-fields.php:272
+msgid "Bulgaria"
+msgstr "Bulgaria"
+
+#: ../admin/manage-fields.php:273
+msgid "Burkina Faso"
+msgstr "Burkina Faso"
+
+#: ../admin/manage-fields.php:274
+msgid "Burundi"
+msgstr "Burundi"
+
+#: ../admin/manage-fields.php:275
+msgid "Cambodia"
+msgstr "Cambodia"
+
+#: ../admin/manage-fields.php:276
+msgid "Cameroon"
+msgstr "Cameroon"
+
+#: ../admin/manage-fields.php:277
+msgid "Canada"
+msgstr "Canada"
+
+#: ../admin/manage-fields.php:278
+msgid "Cape Verde"
+msgstr "Cape Verde"
+
+#: ../admin/manage-fields.php:279
+msgid "Cayman Islands"
+msgstr "Cayman Islands"
+
+#: ../admin/manage-fields.php:280
+msgid "Central African Republic"
+msgstr "Central African Republic"
+
+#: ../admin/manage-fields.php:281
+msgid "Chad"
+msgstr "Chad"
+
+#: ../admin/manage-fields.php:282
+msgid "Chile"
+msgstr "Chile"
+
+#: ../admin/manage-fields.php:283
+msgid "China"
+msgstr "China"
+
+#: ../admin/manage-fields.php:284
+msgid "Christmas Island"
+msgstr "Christmas Island"
+
+#: ../admin/manage-fields.php:285
+msgid "Cocos Islands"
+msgstr "Cocos Islands"
+
+#: ../admin/manage-fields.php:286
+msgid "Colombia"
+msgstr "Colombia"
+
+#: ../admin/manage-fields.php:287
+msgid "Comoros"
+msgstr "Comoros"
+
+#: ../admin/manage-fields.php:288
+msgid "Cook Islands"
+msgstr "Cook Islands"
+
+#: ../admin/manage-fields.php:289
+msgid "Costa Rica"
+msgstr "Costa Rica"
+
+#: ../admin/manage-fields.php:290
+msgid "Croatia"
+msgstr "Croatia"
+
+#: ../admin/manage-fields.php:291
+msgid "Cuba"
+msgstr "Cuba"
+
+#: ../admin/manage-fields.php:292
+msgid "Curacao"
+msgstr "Curacao"
+
+#: ../admin/manage-fields.php:293
+msgid "Cyprus"
+msgstr "Cyprus"
+
+#: ../admin/manage-fields.php:294
+msgid "Czech Republic"
+msgstr "Czech Republic"
+
+#: ../admin/manage-fields.php:295
+msgid "Democratic Republic of the Congo"
+msgstr "Democratic Republic of the Congo"
+
+#: ../admin/manage-fields.php:296
+msgid "Denmark"
+msgstr "Denmark"
+
+#: ../admin/manage-fields.php:297
+msgid "Djibouti"
+msgstr "Djibouti"
+
+#: ../admin/manage-fields.php:298
+msgid "Dominica"
+msgstr "Dominica"
+
+#: ../admin/manage-fields.php:299
+msgid "Dominican Republic"
+msgstr "Dominican Republic"
+
+#: ../admin/manage-fields.php:300
+msgid "East Timor"
+msgstr "East Timor"
+
+#: ../admin/manage-fields.php:301
+msgid "Ecuador"
+msgstr "Ecuador"
+
+#: ../admin/manage-fields.php:302
+msgid "Egypt"
+msgstr "Egypt"
+
+#: ../admin/manage-fields.php:303
+msgid "El Salvador"
+msgstr "El Salvador"
+
+#: ../admin/manage-fields.php:304
+msgid "Equatorial Guinea"
+msgstr "Equatorial Guinea"
+
+#: ../admin/manage-fields.php:305
+msgid "Eritrea"
+msgstr "Eritrea"
+
+#: ../admin/manage-fields.php:306
+msgid "Estonia"
+msgstr "Estonia"
+
+#: ../admin/manage-fields.php:307
+msgid "Ethiopia"
+msgstr "Ethiopia"
+
+#: ../admin/manage-fields.php:308
+msgid "Falkland Islands"
+msgstr "Falkland Islands"
+
+#: ../admin/manage-fields.php:309
+msgid "Faroe Islands"
+msgstr "Faroe Islands"
+
+#: ../admin/manage-fields.php:310
+msgid "Fiji"
+msgstr "Fiji"
+
+#: ../admin/manage-fields.php:311
+msgid "Finland"
+msgstr "Finland"
+
+#: ../admin/manage-fields.php:312
+msgid "France"
+msgstr "France"
+
+#: ../admin/manage-fields.php:313
+msgid "French Guiana"
+msgstr "French Guiana"
+
+#: ../admin/manage-fields.php:314
+msgid "French Polynesia"
+msgstr "French Polynesia"
+
+#: ../admin/manage-fields.php:315
+msgid "French Southern Territories"
+msgstr "French Southern Territories"
+
+#: ../admin/manage-fields.php:316
+msgid "Gabon"
+msgstr "Gabon"
+
+#: ../admin/manage-fields.php:317
+msgid "Gambia"
+msgstr "Gambia"
+
+#: ../admin/manage-fields.php:318
+msgid "Georgia"
+msgstr "Georgia"
+
+#: ../admin/manage-fields.php:319
+msgid "Germany"
+msgstr "Germany"
+
+#: ../admin/manage-fields.php:320
+msgid "Ghana"
+msgstr "Ghana"
+
+#: ../admin/manage-fields.php:321
+msgid "Gibraltar"
+msgstr "Gibraltar"
+
+#: ../admin/manage-fields.php:322
+msgid "Greece"
+msgstr "Greece"
+
+#: ../admin/manage-fields.php:323
+msgid "Greenland"
+msgstr "Greenland"
+
+#: ../admin/manage-fields.php:324
+msgid "Grenada"
+msgstr "Grenada"
+
+#: ../admin/manage-fields.php:325
+msgid "Guadeloupe"
+msgstr "Guadeloupe"
+
+#: ../admin/manage-fields.php:326
+msgid "Guam"
+msgstr "Guam"
+
+#: ../admin/manage-fields.php:327
+msgid "Guatemala"
+msgstr "Guatemala"
+
+#: ../admin/manage-fields.php:328
+msgid "Guernsey"
+msgstr "Guernsey"
+
+#: ../admin/manage-fields.php:329
+msgid "Guinea"
+msgstr "Guinea"
+
+#: ../admin/manage-fields.php:330
+msgid "Guinea-Bissau"
+msgstr "Guinea-Bissau"
+
+#: ../admin/manage-fields.php:331
+msgid "Guyana"
+msgstr "Guyana"
+
+#: ../admin/manage-fields.php:332
+msgid "Haiti"
+msgstr "Haiti"
+
+#: ../admin/manage-fields.php:333
+msgid "Heard Island and McDonald Islands"
+msgstr "Heard Island and McDonald Islands"
+
+#: ../admin/manage-fields.php:334
+msgid "Honduras"
+msgstr "Honduras"
+
+#: ../admin/manage-fields.php:335
+msgid "Hong Kong"
+msgstr "Hong Kong"
+
+#: ../admin/manage-fields.php:336
+msgid "Hungary"
+msgstr "Hungary"
+
+#: ../admin/manage-fields.php:337
+msgid "Iceland"
+msgstr "Iceland"
+
+#: ../admin/manage-fields.php:338
+msgid "India"
+msgstr "India"
+
+#: ../admin/manage-fields.php:339
+msgid "Indonesia"
+msgstr "Indonesia"
+
+#: ../admin/manage-fields.php:340
+msgid "Iran"
+msgstr "Iran"
+
+#: ../admin/manage-fields.php:341
+msgid "Iraq"
+msgstr "Iraq"
+
+#: ../admin/manage-fields.php:342
+msgid "Ireland"
+msgstr "Ireland"
+
+#: ../admin/manage-fields.php:343
+msgid "Isle of Man"
+msgstr "Isle of Man"
+
+#: ../admin/manage-fields.php:344
+msgid "Israel"
+msgstr "Israel"
+
+#: ../admin/manage-fields.php:345
+msgid "Italy"
+msgstr "Italy"
+
+#: ../admin/manage-fields.php:346
+msgid "Ivory Coast"
+msgstr "Ivory Coast"
+
+#: ../admin/manage-fields.php:347
+msgid "Jamaica"
+msgstr "Jamaica"
+
+#: ../admin/manage-fields.php:348
+msgid "Japan"
+msgstr "Japan"
+
+#: ../admin/manage-fields.php:349
+msgid "Jersey"
+msgstr "Jersey"
+
+#: ../admin/manage-fields.php:350
+msgid "Jordan"
+msgstr "Jordan"
+
+#: ../admin/manage-fields.php:351
+msgid "Kazakhstan"
+msgstr "Kazakhstan"
+
+#: ../admin/manage-fields.php:352
+msgid "Kenya"
+msgstr "Kenya"
+
+#: ../admin/manage-fields.php:353
+msgid "Kiribati"
+msgstr "Kiribati"
+
+#: ../admin/manage-fields.php:354
+msgid "Kosovo"
+msgstr "Kosovo"
+
+#: ../admin/manage-fields.php:355
+msgid "Kuwait"
+msgstr "Kuwait"
+
+#: ../admin/manage-fields.php:356
+msgid "Kyrgyzstan"
+msgstr "Kyrgyzstan"
+
+#: ../admin/manage-fields.php:357
+msgid "Laos"
+msgstr "Laos"
+
+#: ../admin/manage-fields.php:358
+msgid "Latvia"
+msgstr "Latvia"
+
+#: ../admin/manage-fields.php:359
+msgid "Lebanon"
+msgstr "Lebanon"
+
+#: ../admin/manage-fields.php:360
+msgid "Lesotho"
+msgstr "Lesotho"
+
+#: ../admin/manage-fields.php:361
+msgid "Liberia"
+msgstr "Liberia"
+
+#: ../admin/manage-fields.php:362
+msgid "Libya"
+msgstr "Libya"
+
+#: ../admin/manage-fields.php:363
+msgid "Liechtenstein"
+msgstr "Liechtenstein"
+
+#: ../admin/manage-fields.php:364
+msgid "Lithuania"
+msgstr "Lithuania"
+
+#: ../admin/manage-fields.php:365
+msgid "Luxembourg"
+msgstr "Luxembourg"
+
+#: ../admin/manage-fields.php:366
+msgid "Macao"
+msgstr "Macao"
+
+#: ../admin/manage-fields.php:367
+msgid "Macedonia"
+msgstr "Macedonia"
+
+#: ../admin/manage-fields.php:368
+msgid "Madagascar"
+msgstr "Madagascar"
+
+#: ../admin/manage-fields.php:369
+msgid "Malawi"
+msgstr "Malawi"
+
+#: ../admin/manage-fields.php:370
+msgid "Malaysia"
+msgstr "Malaysia"
+
+#: ../admin/manage-fields.php:371
+msgid "Maldives"
+msgstr "Maldives"
+
+#: ../admin/manage-fields.php:372
+msgid "Mali"
+msgstr "Mali"
+
+#: ../admin/manage-fields.php:373
+msgid "Malta"
+msgstr "Malta"
+
+#: ../admin/manage-fields.php:374
+msgid "Marshall Islands"
+msgstr "Marshall Islands"
+
+#: ../admin/manage-fields.php:375
+msgid "Martinique"
+msgstr "Martinique"
+
+#: ../admin/manage-fields.php:376
+msgid "Mauritania"
+msgstr "Mauritania"
+
+#: ../admin/manage-fields.php:377
+msgid "Mauritius"
+msgstr "Mauritius"
+
+#: ../admin/manage-fields.php:378
+msgid "Mayotte"
+msgstr "Mayotte"
+
+#: ../admin/manage-fields.php:379
+msgid "Mexico"
+msgstr "Mexico"
+
+#: ../admin/manage-fields.php:380
+msgid "Micronesia"
+msgstr "Micronesia"
+
+#: ../admin/manage-fields.php:381
+msgid "Moldova"
+msgstr "Moldova"
+
+#: ../admin/manage-fields.php:382
+msgid "Monaco"
+msgstr "Monaco"
+
+#: ../admin/manage-fields.php:383
+msgid "Mongolia"
+msgstr "Mongolia"
+
+#: ../admin/manage-fields.php:384
+msgid "Montenegro"
+msgstr "Montenegro"
+
+#: ../admin/manage-fields.php:385
+msgid "Montserrat"
+msgstr "Montserrat"
+
+#: ../admin/manage-fields.php:386
+msgid "Morocco"
+msgstr "Morocco"
+
+#: ../admin/manage-fields.php:387
+msgid "Mozambique"
+msgstr "Mozambique"
+
+#: ../admin/manage-fields.php:388
+msgid "Myanmar"
+msgstr "Myanmar"
+
+#: ../admin/manage-fields.php:389
+msgid "Namibia"
+msgstr "Namibia"
+
+#: ../admin/manage-fields.php:390
+msgid "Nauru"
+msgstr "Nauru"
+
+#: ../admin/manage-fields.php:391
+msgid "Nepal"
+msgstr "Nepal"
+
+#: ../admin/manage-fields.php:392
+msgid "Netherlands"
+msgstr "Netherlands"
+
+#: ../admin/manage-fields.php:393
+msgid "New Caledonia"
+msgstr "New Caledonia"
+
+#: ../admin/manage-fields.php:394
+msgid "New Zealand"
+msgstr "New Zealand"
+
+#: ../admin/manage-fields.php:395
+msgid "Nicaragua"
+msgstr "Nicaragua"
+
+#: ../admin/manage-fields.php:396
+msgid "Niger"
+msgstr "Niger"
+
+#: ../admin/manage-fields.php:397
+msgid "Nigeria"
+msgstr "Nigeria"
+
+#: ../admin/manage-fields.php:398
+msgid "Niue"
+msgstr "Niue"
+
+#: ../admin/manage-fields.php:399
+msgid "Norfolk Island"
+msgstr "Norfolk Island"
+
+#: ../admin/manage-fields.php:400
+msgid "North Korea"
+msgstr "North Korea"
+
+#: ../admin/manage-fields.php:401
+msgid "Northern Mariana Islands"
+msgstr "Northern Mariana Islands"
+
+#: ../admin/manage-fields.php:402
+msgid "Norway"
+msgstr "Norway"
+
+#: ../admin/manage-fields.php:403
+msgid "Oman"
+msgstr "Oman"
+
+#: ../admin/manage-fields.php:404
+msgid "Pakistan"
+msgstr "Pakistan"
+
+#: ../admin/manage-fields.php:405
+msgid "Palau"
+msgstr "Palau"
+
+#: ../admin/manage-fields.php:406
+msgid "Palestinian Territory"
+msgstr "Palestinian Territory"
+
+#: ../admin/manage-fields.php:407
+msgid "Panama"
+msgstr "Panama"
+
+#: ../admin/manage-fields.php:408
+msgid "Papua New Guinea"
+msgstr "Papua New Guinea"
+
+#: ../admin/manage-fields.php:409
+msgid "Paraguay"
+msgstr "Paraguay"
+
+#: ../admin/manage-fields.php:410
+msgid "Peru"
+msgstr "Peru"
+
+#: ../admin/manage-fields.php:411
+msgid "Philippines"
+msgstr "Philippines"
+
+#: ../admin/manage-fields.php:412
+msgid "Pitcairn"
+msgstr "Pitcairn"
+
+#: ../admin/manage-fields.php:413
+msgid "Poland"
+msgstr "Poland"
+
+#: ../admin/manage-fields.php:414
+msgid "Portugal"
+msgstr "Portugal"
+
+#: ../admin/manage-fields.php:415
+msgid "Puerto Rico"
+msgstr "Puerto Rico"
+
+#: ../admin/manage-fields.php:416
+msgid "Qatar"
+msgstr "Qatar"
+
+#: ../admin/manage-fields.php:417
+msgid "Republic of the Congo"
+msgstr "Republic of the Congo"
+
+#: ../admin/manage-fields.php:418
+msgid "Reunion"
+msgstr "Reunion"
+
+#: ../admin/manage-fields.php:419
+msgid "Romania"
+msgstr "Romania"
+
+#: ../admin/manage-fields.php:420
+msgid "Russia"
+msgstr "Russia"
+
+#: ../admin/manage-fields.php:421
+msgid "Rwanda"
+msgstr "Rwanda"
+
+#: ../admin/manage-fields.php:422
+msgid "Saint Barthelemy"
+msgstr "Saint Barthelemy"
+
+#: ../admin/manage-fields.php:423
+msgid "Saint Helena"
+msgstr "Saint Helena"
+
+#: ../admin/manage-fields.php:424
+msgid "Saint Kitts and Nevis"
+msgstr "Saint Kitts and Nevis"
+
+#: ../admin/manage-fields.php:425
+msgid "Saint Lucia"
+msgstr "Saint Lucia"
+
+#: ../admin/manage-fields.php:426
+msgid "Saint Martin"
+msgstr "Saint Martin"
+
+#: ../admin/manage-fields.php:427
+msgid "Saint Pierre and Miquelon"
+msgstr "Saint Pierre and Miquelon"
+
+#: ../admin/manage-fields.php:428
+msgid "Saint Vincent and the Grenadines"
+msgstr "Saint Vincent and the Grenadines"
+
+#: ../admin/manage-fields.php:429
+msgid "Samoa"
+msgstr "Samoa"
+
+#: ../admin/manage-fields.php:430
+msgid "San Marino"
+msgstr "San Marino"
+
+#: ../admin/manage-fields.php:431
+msgid "Sao Tome and Principe"
+msgstr "Sao Tome and Principe"
+
+#: ../admin/manage-fields.php:432
+msgid "Saudi Arabia"
+msgstr "Saudi Arabia"
+
+#: ../admin/manage-fields.php:433
+msgid "Senegal"
+msgstr "Senegal"
+
+#: ../admin/manage-fields.php:434
+msgid "Serbia"
+msgstr "Serbia"
+
+#: ../admin/manage-fields.php:435
+msgid "Seychelles"
+msgstr "Seychelles"
+
+#: ../admin/manage-fields.php:436
+msgid "Sierra Leone"
+msgstr "Sierra Leone"
+
+#: ../admin/manage-fields.php:437
+msgid "Singapore"
+msgstr "Singapore"
+
+#: ../admin/manage-fields.php:438
+msgid "Sint Maarten"
+msgstr "Sint Maarten"
+
+#: ../admin/manage-fields.php:439
+msgid "Slovakia"
+msgstr "Slovakia"
+
+#: ../admin/manage-fields.php:440
+msgid "Slovenia"
+msgstr "Slovenia"
+
+#: ../admin/manage-fields.php:441
+msgid "Solomon Islands"
+msgstr "Solomon Islands"
+
+#: ../admin/manage-fields.php:442
+msgid "Somalia"
+msgstr "Somalia"
+
+#: ../admin/manage-fields.php:443
+msgid "South Africa"
+msgstr "South Africa"
+
+#: ../admin/manage-fields.php:444
+msgid "South Georgia and the South Sandwich Islands"
+msgstr "South Georgia and the South Sandwich Islands"
+
+#: ../admin/manage-fields.php:445
+msgid "South Korea"
+msgstr "South Korea"
+
+#: ../admin/manage-fields.php:446
+msgid "South Sudan"
+msgstr "South Sudan"
+
+#: ../admin/manage-fields.php:447
+msgid "Spain"
+msgstr "Spain"
+
+#: ../admin/manage-fields.php:448
+msgid "Sri Lanka"
+msgstr "Sri Lanka"
+
+#: ../admin/manage-fields.php:449
+msgid "Sudan"
+msgstr "Sudan"
+
+#: ../admin/manage-fields.php:450
+msgid "Suriname"
+msgstr "Suriname"
+
+#: ../admin/manage-fields.php:451
+msgid "Svalbard and Jan Mayen"
+msgstr "Svalbard and Jan Mayen"
+
+#: ../admin/manage-fields.php:452
+msgid "Swaziland"
+msgstr "Swaziland"
+
+#: ../admin/manage-fields.php:453
+msgid "Sweden"
+msgstr "Sweden"
+
+#: ../admin/manage-fields.php:454
+msgid "Switzerland"
+msgstr "Switzerland"
+
+#: ../admin/manage-fields.php:455
+msgid "Syria"
+msgstr "Syria"
+
+#: ../admin/manage-fields.php:456
+msgid "Taiwan"
+msgstr "Taiwan"
+
+#: ../admin/manage-fields.php:457
+msgid "Tajikistan"
+msgstr "Tajikistan"
+
+#: ../admin/manage-fields.php:458
+msgid "Tanzania"
+msgstr "Tanzania"
+
+#: ../admin/manage-fields.php:459
+msgid "Thailand"
+msgstr "Thailand"
+
+#: ../admin/manage-fields.php:460
+msgid "Togo"
+msgstr "Togo"
+
+#: ../admin/manage-fields.php:461
+msgid "Tokelau"
+msgstr "Tokelau"
+
+#: ../admin/manage-fields.php:462
+msgid "Tonga"
+msgstr "Tonga"
+
+#: ../admin/manage-fields.php:463
+msgid "Trinidad and Tobago"
+msgstr "Trinidad and Tobago"
+
+#: ../admin/manage-fields.php:464
+msgid "Tunisia"
+msgstr "Tunisia"
+
+#: ../admin/manage-fields.php:465
+msgid "Turkey"
+msgstr "Turkey"
+
+#: ../admin/manage-fields.php:466
+msgid "Turkmenistan"
+msgstr "Turkmenistan"
+
+#: ../admin/manage-fields.php:467
+msgid "Turks and Caicos Islands"
+msgstr "Turks and Caicos Islands"
+
+#: ../admin/manage-fields.php:468
+msgid "Tuvalu"
+msgstr "Tuvalu"
+
+#: ../admin/manage-fields.php:469
+msgid "U.S. Virgin Islands"
+msgstr "U.S. Virgin Islands"
+
+#: ../admin/manage-fields.php:470
+msgid "Uganda"
+msgstr "Uganda"
+
+#: ../admin/manage-fields.php:471
+msgid "Ukraine"
+msgstr "Ukraine"
+
+#: ../admin/manage-fields.php:472
+msgid "United Arab Emirates"
+msgstr "United Arab Emirates"
+
+#: ../admin/manage-fields.php:473
+msgid "United Kingdom"
+msgstr "United Kingdom"
+
+#: ../admin/manage-fields.php:474
+msgid "United States"
+msgstr "United States"
+
+#: ../admin/manage-fields.php:475
+msgid "United States Minor Outlying Islands"
+msgstr "United States Minor Outlying Islands"
+
+#: ../admin/manage-fields.php:476
+msgid "Uruguay"
+msgstr "Uruguay"
+
+#: ../admin/manage-fields.php:477
+msgid "Uzbekistan"
+msgstr "Uzbekistan"
+
+#: ../admin/manage-fields.php:478
+msgid "Vanuatu"
+msgstr "Vanuatu"
+
+#: ../admin/manage-fields.php:479
+msgid "Vatican"
+msgstr "Vatican"
+
+#: ../admin/manage-fields.php:480
+msgid "Venezuela"
+msgstr "Venezuela"
+
+#: ../admin/manage-fields.php:481
+msgid "Vietnam"
+msgstr "Vietnam"
+
+#: ../admin/manage-fields.php:482
+msgid "Wallis and Futuna"
+msgstr "Wallis and Futuna"
+
+#: ../admin/manage-fields.php:483
+msgid "Western Sahara"
+msgstr "Western Sahara"
+
+#: ../admin/manage-fields.php:484
+msgid "Yemen"
+msgstr "Yemen"
+
+#: ../admin/manage-fields.php:485
+msgid "Zambia"
+msgstr "Zambia"
+
+#: ../admin/manage-fields.php:486
+msgid "Zimbabwe"
+msgstr "Zimbabwe"
+
+#: ../admin/manage-fields.php:843
+msgid "With Profile Builder Pro v2 you can display different fields in the registration and edit profile forms, using the Multiple Registration & Edit Profile Forms module."
+msgstr ""
+
+#: ../assets/misc/plugin-compatibilities.php:241
+msgid "Your account has to be confirmed by an administrator before you can log in."
+msgstr ""
+
+#: ../features/admin-approval/admin-approval.php:203
+msgid "Your account has been successfully created!"
+msgstr ""
+
+#: ../features/functions.php:607
+#: ../front-end/extra-fields/recaptcha/recaptcha.php:374
+#: ../front-end/extra-fields/recaptcha/recaptcha.php:379
+#: ../front-end/extra-fields/recaptcha/recaptcha.php:421
+#: ../front-end/extra-fields/recaptcha/recaptcha.php:458
+msgid "Please enter a (valid) reCAPTCHA value"
+msgstr ""
+
+#: ../front-end/extra-fields/recaptcha/recaptcha.php:421
+msgid "Click the BACK button on your browser, and try again."
+msgstr ""
+
+#: ../front-end/extra-fields/upload/upload_helper_functions.php:78
+#: ../front-end/extra-fields/upload/upload_helper_functions.php:87
+msgid "Sorry, you cannot upload this file type for this field."
+msgstr ""
+
+#: ../front-end/extra-fields/upload/upload_helper_functions.php:94
+msgid "An error occurred, please try again later."
+msgstr ""
+
+#: ../modules/user-listing/userlisting.php:253
+msgid "More"
+msgstr ""
+
+#: ../modules/user-listing/userlisting.php:338
+msgid "You do not have permission to view this user list."
+msgstr ""
+
+#: ../modules/user-listing/userlisting.php:351
+msgid "You do not have the required user role to view this user list."
+msgstr ""
+
+#: ../modules/user-listing/userlisting.php:1287
+msgid "Ascending"
+msgstr ""
+
+#: ../modules/user-listing/userlisting.php:1288
+msgid "Descending"
+msgstr ""
+
+#: ../admin/add-ons.php:144
+msgid "Download Now"
+msgstr "Prenesite sedaj"
+
+#: ../admin/admin-functions.php:197
+msgid "If you enjoy using <strong> %1$s </strong> please <a href=\"%2$s\" target=\"_blank\">rate us on WordPress.org</a>. More happy users means more features, less bugs and better support for everyone. "
+msgstr "Če ste zadovoljni z uporabo <strong> %1$s </strong> nas prosimo <a href=\"%2$s\" target=\"_blank\">ocenite na WordPress.org</a>. Več zadovoljnih uporabnikov pomeni več dodatnih funkcij, manj napak in boljšo podporo za vse."
+
+#: ../admin/manage-fields.php:68
+msgid "Choose one of the supported field types"
+msgstr "Izberite enega izmed podprtih tipov polj"
+
+#: ../admin/manage-fields.php:70
+msgid ". Extra Field Types are available in <a href=\"%s\">Hobbyist or PRO versions</a>."
+msgstr "Dodatni tipi polj so na voljo v <a href=\"%s\">Hobbyist ali PRO različici</a>."
+
+#: ../admin/manage-fields.php:107
+msgid "Site Key"
+msgstr "Ključ spletne strani"
+
+#: ../admin/manage-fields.php:107
+msgid "The site key from Google, <a href=\"http://www.google.com/recaptcha\" target=\"_blank\">www.google.com/recaptcha</a>"
+msgstr "Ključ Google strani, <a href=\"http://www.google.com/recaptcha\" target=\"_blank\">www.google.com/recaptcha</a>"
+
+#: ../admin/manage-fields.php:108
+msgid "Secret Key"
+msgstr "Skriti ključ"
+
+#: ../admin/manage-fields.php:108
+msgid "The secret key from Google, <a href=\"http://www.google.com/recaptcha\" target=\"_blank\">www.google.com/recaptcha</a>"
+msgstr "Skriti ključ iz Googla, <a href=\"http://www.google.com/recaptcha\" target=\"_blank\">www.google.com/recaptcha</a>"
+
+#: ../admin/manage-fields.php:660
+msgid "You must enter the site key\n"
+msgstr "Vnesti morate ključ spletne strani\n"
+
+#: ../admin/manage-fields.php:662
+msgid "You must enter the secret key\n"
+msgstr "Vnesti morate skrivni ključ\n"
+
+#: ../admin/add-ons.php:10 ../admin/add-ons.php:32
+msgid "Add-Ons"
+msgstr "Dodatki"
+
+#: ../admin/add-ons.php:34 ../admin/add-ons.php:124
+msgid "Activate"
+msgstr "Aktiviraj"
+
+#: ../admin/add-ons.php:36
+msgid "Downloading and installing..."
+msgstr "Prenašanje in nameščanje..."
+
+#: ../admin/add-ons.php:37
+msgid "Installation complete"
+msgstr "Namestitev končana"
+
+#: ../admin/add-ons.php:39
+msgid "Add-On is Active"
+msgstr "Dodatek je aktiven"
+
+#: ../admin/add-ons.php:40
+msgid "Add-On has been activated"
+msgstr "Dodatek je bil aktiviran"
+
+#: ../admin/add-ons.php:41
+msgid "Retry Install"
+msgstr "Ponoven poskus namestitve"
+
+#: ../admin/add-ons.php:43 ../admin/add-ons.php:135
+msgid "Add-On is <strong>active</strong>"
+msgstr "Dodatek je <strong>aktiven</strong>"
+
+#: ../admin/add-ons.php:44 ../admin/add-ons.php:133
+msgid "Add-On is <strong>inactive</strong>"
+msgstr "Dodatek je <strong>neaktiven</strong>"
+
+#: ../admin/add-ons.php:46 ../admin/add-ons.php:128
+msgid "Deactivate"
+msgstr "Deaktiviraj"
+
+#: ../admin/add-ons.php:47
+msgid "Add-On has been deactivated."
+msgstr "Dodatek je bil deaktiviran"
+
+#: ../admin/add-ons.php:59
+msgid "Something went wrong, we could not connect to the server. Please try again later."
+msgstr "Nekaj je šlo narobe, povezava na strežnik je bila neuspešna. Prosimo poizkusite kasneje."
+
+#: ../admin/add-ons.php:144 ../admin/add-ons.php:147
+msgid "Buy Now"
+msgstr "Kupite sedaj"
+
+#: ../admin/add-ons.php:147
+msgid "Install Now"
+msgstr "Namestite sedaj"
+
+#: ../admin/add-ons.php:153
+msgid "Compatible with your version of Profile Builder."
+msgstr "Združljivo z vašo različico Profile Builder"
+
+#: ../admin/add-ons.php:162
+msgid "Upgrade Profile Builder"
+msgstr "Posodobite Profile Builder"
+
+#: ../admin/add-ons.php:163
+msgid "Not compatible with Profile Builder"
+msgstr "Ni združljivo s Profile Builder"
+
+#: ../admin/add-ons.php:171
+msgid "Not compatible with your version of Profile Builder."
+msgstr "Ni združljivo z vašo različico Profile Builder"
+
+#: ../admin/add-ons.php:172
+msgid "Minimum required Profile Builder version:"
+msgstr "Minimalna zahtevana različica Profile Builder:"
+
+#: ../admin/add-ons.php:177
+msgid "Could not install add-on. Retry or <a href=\"%s\" target=\"_blank\">install manually</a>."
+msgstr "Namestitev dodatka je bila neuspešna. Poizkusite ponovno ali <a href=\"%s\" target=\"_blank\">namestite ročno</a>."
+
+#: ../front-end/default-fields/email/email.php:48
+msgid "You must enter a valid email address."
+msgstr "Vnesti morate veljaven e-naslov."
+
+#: ../front-end/default-fields/username/username.php:53
+#: ../front-end/default-fields/username/username.php:60
+msgid "This username is invalid because it uses illegal characters."
+msgstr "To uporabniško ime je neveljavno, ker vsebuje nedovoljene znake."
+
+#: ../front-end/default-fields/username/username.php:53
+#: ../front-end/default-fields/username/username.php:60
+msgid "Please enter a valid username."
+msgstr "Prosimo vpišite veljavno uporabniško ime."
+
+#: ../front-end/extra-fields/user-role/user-role.php:67
+#: ../front-end/extra-fields/user-role/user-role.php:80
+msgid "Only administrators can see this field on edit profile forms."
+msgstr "Samo skrbniki strani lahko vidijo to polje na urejanju profilnih obrazcev"
+
+#: ../front-end/extra-fields/user-role/user-role.php:76
+msgid "As an administrator you cannot change your role."
+msgstr "Kot skrbnik strani ne morete spremeniti svoje vloge."
+
+#: ../modules/email-customizer/admin-email-customizer.php:117
+msgid ""
+"\n"
+"<p>{{username}} has requested a password change via the password reset feature.</p>\n"
+"<p>His/her new password is: {{password}}</p>\n"
+msgstr ""
+"\n"
+"<p>{{username}} je prosil za spremembo gesla preko funkcije za zamenjavo gesla.</p>\n"
+"<p>Novo geslo je: {{password}}</p>\n"
+
+#: ../modules/email-customizer/admin-email-customizer.php:141
+msgid "Admin Notification for User Password Reset"
+msgstr "Obvestilo skrbniku strani za ponastavitev gesla uporabnika"
+
+#: ../modules/email-customizer/email-customizer.php:42
+msgid "Reset Key"
+msgstr "Ponastavitveni ključ"
+
+#: ../modules/email-customizer/email-customizer.php:43
+msgid "Reset Url"
+msgstr "Ponastavitveni spletni naslov"
+
+#: ../modules/email-customizer/email-customizer.php:44
+msgid "Reset Link"
+msgstr "Ponastavitvena povezava"
+
+#: ../modules/email-customizer/user-email-customizer.php:204
+msgid ""
+"\n"
+"<p>Someone requested that the password be reset for the following account: {{site_name}}<br/>\n"
+"Username: {{username}}</p>\n"
+"<p>If this was a mistake, just ignore this email and nothing will happen.</p>\n"
+"<p>To reset your password, visit the following address:<br/>\n"
+"{{{reset_link}}}</p>\n"
+msgstr ""
+"\n"
+"<p>Nekdo je sprožil zahtevo po ponastavitvi gesla za sledeči uporabniški račun: {{site_name}}<br/>\n"
+"Uporabniško ime: {{username}}</p>\n"
+"<p>Če je prišlo do napake, ignorirajte to e-pošto in nič se ne bo zgodilo.</p>\n"
+"<p>Za ponastavitev vašega gesla obiščite sledečo povezavo:<br/>\n"
+"{{{reset_link}}}</p>\n"
+
+#: ../modules/email-customizer/user-email-customizer.php:218
+msgid "[{{site_name}}] Password Reset"
+msgstr "[{{site_name}}] Ponastavitev gesla"
+
+#: ../modules/email-customizer/user-email-customizer.php:229
+msgid "Password Reset Email"
+msgstr "E-pošta za ponastavitev gesla"
+
+#: ../modules/email-customizer/user-email-customizer.php:235
+msgid ""
+"\n"
+"<p>You have successfully reset your password to: {{password}}</p>\n"
+msgstr ""
+"\n"
+"<p>Uspešno ste spremenili vaše geslo v: {{password}}</p>\n"
+
+#: ../modules/email-customizer/user-email-customizer.php:245
+msgid "[{{site_name}}] Password Reset Successfully"
+msgstr "[{{site_name}}] Uspešno ponastavljeno geslo"
+
+#: ../modules/email-customizer/user-email-customizer.php:256
+msgid "Password Reset Success Email"
+msgstr "E-pošta o uspešni ponastavitvi gesla"
+
+#: ../modules/user-listing/userlisting.php:134
+msgid "User Nicename"
+msgstr "Uporabnikovo olepšano ime"
+
+#: ../modules/user-listing/userlisting.php:442
+msgid "None"
+msgstr "Noben"
+
+#: ../admin/admin-functions.php:128
+msgid "<strong>ERROR</strong>: The password must have the minimum length of %s characters"
+msgstr "<strong>NAPAKA</strong>: Geslo mora vsebovati najmanj %s znakov"
+
+#: ../admin/admin-functions.php:145
+msgid "<strong>ERROR</strong>: The password must have a minimum strength of %s"
+msgstr "<strong>NAPAKA</strong>: Geslo mora biti najmanj %s v težavnosti"
+
+#: ../admin/general-settings.php:170
+msgid "Username and Email"
+msgstr "Uporabniško ime in e-naslov"
+
+#: ../admin/general-settings.php:175
+msgid "\"Username and Email\" - users can Log In with both Username and Email."
+msgstr "\"Uporabniško ime in e-naslov\" - uporabnik se lahko prijavi tako z uporabniškim imenom kot tudi z e-naslovom."
+
+#: ../admin/general-settings.php:176
+msgid "\"Username\" - users can Log In only with Username."
+msgstr "\"Uporabniško ime\" - uporabniki se lahko prijavijo le z njihovim uporabniškim imenom."
+
+#: ../admin/general-settings.php:177
+msgid "\"Email\" - users can Log In only with Email."
+msgstr "\"E-naslov\" - uporabniki se lahko prijavijo samo z e-poštnim naslovom"
+
+#: ../admin/manage-fields.php:100
+msgid "Specify the extension(s) you want to limit to upload<br/>Example: .ext1,.ext2,.ext3<br/>If not specified, defaults to: .jpg,.jpeg,.gif,.png (.*)"
+msgstr "Določite končnice na katere hočete omejiti naložene datoteke<br/>Primer: .ext1,.ext2,.ext3<br/>Če niso določene, so privzete končnice: .jpg,.jpeg,.gif,.png (.*)"
+
+#: ../admin/manage-fields.php:101
+msgid "Specify the extension(s) you want to limit to upload<br/>Example: .ext1,.ext2,.ext3<br/>If not specified, defaults to all WordPress allowed file extensions (.*)"
+msgstr "Določite končnice na katere hočete omejiti naložene datoteke<br/>Primer: .ext1,.ext2,.ext3<br/>Če niso določene, so privzete končnice vse dovoljene WordPress končnice (.*)"
+
+#: ../admin/manage-fields.php:111
+msgid "User Roles"
+msgstr "Vloge uporabnikov"
+
+#: ../admin/manage-fields.php:111
+msgid "Select which user roles to show to the user ( drag and drop to re-order )"
+msgstr "Izberite katere vloge uporabnikov se prikažejo uporabniku ( povleci in spusti za razvrstitev )"
+
+#: ../admin/manage-fields.php:112
+msgid "User Roles Order"
+msgstr "Vrstni red vlog uporabnikov"
+
+#: ../admin/manage-fields.php:112
+msgid "Save the user role order from the user roles checkboxes"
+msgstr "Shranite vrstni red vlog uporabnikov s pomočjo potrditvenih polj"
+
+#: ../admin/manage-fields.php:752
+msgid "Please select at least one user role\n"
+msgstr "Prosimo izberite vsaj eno vlogo uporabnika\n"
+
+#: ../admin/register-version.php:22
+msgid "Profile Builder Register"
+msgstr "Registriranje Profile Builder"
+
+#: ../admin/register-version.php:81
+msgid "The serial number is about to expire soon!"
+msgstr "Serijska številka bo kmalu potekla!"
+
+#: ../admin/register-version.php:81
+msgid " Your serial number is about to expire, please %1$s Renew Your License%2$s."
+msgstr "Vaša serijska številka bo kmalu potekla, prosimo %1$sObnovite vašo licenco%2$s."
+
+#: ../admin/register-version.php:83
+msgid " Your serial number is expired, please %1$s Renew Your License%2$s."
+msgstr "Vaša serijska številka je potekla, prosimo %1$sObnovite vašo licenco%2$s."
+
+#: ../assets/lib/wck-api/wordpress-creation-kit.php:337
+msgid "Add Entry"
+msgstr "Dodaj vnos"
+
+#: ../features/email-confirmation/class-email-confirmation.php:91
+msgid "show"
+msgstr "prikaži"
+
+#: ../features/functions.php:659
+msgid "To allow users to register for your website via Profile Builder, you first must enable user registration. Go to %1$sNetwork Settings%2$s, and under Registration Settings make sure to check “User accounts may be registered”. %3$sDismiss%4$s"
+msgstr "Da se bodo uporabniki lahko registrirali na vaši strani preko Profile Builder vtičnika, morate najprej omogočiti registracijo uporabnikov. Pojdite na %1$sNastavitve omrežja%2$s, in pod Registracijske nastavitve označite “Uporabniški računi so lahko registrirani”. %3$sSkrij%4$s"
+
+#: ../front-end/class-formbuilder.php:509
+msgid "User to edit:"
+msgstr "Uporabnik, ki ga urejate:"
+
+#: ../front-end/default-fields/password/password.php:46
+#: ../front-end/recover.php:245
+msgid "The password must have the minimum length of %s characters"
+msgstr "Geslo mora imeti najmanj %s znakov"
+
+#: ../front-end/default-fields/password/password.php:50
+#: ../front-end/recover.php:249
+msgid "The password must have a minimum strength of %s"
+msgstr "Geslo mora biti najmanj takšne težavnosti: %s"
+
+#: ../front-end/extra-fields/user-role/user-role.php:112
+msgid "You cannot register this user role"
+msgstr "Te uporabniške vloge ne morete registrirati"
+
+#: ../front-end/login.php:105
+msgid "username or email"
+msgstr "uporabniško ime ali e-naslov"
+
+#: ../front-end/login.php:174
+msgid "Username or Email"
+msgstr "Uporabniško ime ali e-naslov"
+
+#: ../front-end/logout.php:15
+msgid "You are currently logged in as %s. "
+msgstr "Trenutno ste prijavljeni kot %1$s."
+
+#: ../front-end/logout.php:15
+msgid "Log out &raquo;"
+msgstr "Izpis &raquo;"
+
+#: ../modules/email-customizer/email-customizer.php:31
+msgid "User Role"
+msgstr "Vloga uporabnika"
+
+#: ../modules/user-listing/userlisting.php:1207
+msgid "View all extra shortcode parameters"
+msgstr "Preglej vse parametre kratke kode (shortcode)"
+
+#: ../modules/user-listing/userlisting.php:1221
+msgid "displays only the users that you specified the user_id for"
+msgstr "prikaže samo uporabnike za katere ste določili user_id"
+
+#: ../modules/user-listing/userlisting.php:1227
+msgid "displays all users except the ones you specified the user_id for"
+msgstr "prikaže vse uporabnike razen tistih za katere ste določili user_id"
+
+#: ../features/functions.php:526
+msgid "Minimum length of %d characters"
+msgstr "Najmanjša dolžina %d znakov"
+
+#: ../front-end/class-formbuilder.php:99 ../front-end/class-formbuilder.php:102
+msgid "This message is only visible by administrators"
+msgstr "To sporočilo je vidno samo skrbnikom strani"
+
+#: ../modules/user-listing/userlisting.php:364
+msgid "User not found"
+msgstr "Uporabnik ni bil najden"
+
+#: ../modules/email-customizer/admin-email-customizer.php:38
+#: ../modules/email-customizer/user-email-customizer.php:38
+msgid "Valid tags {{reply_to}} and {{site_name}}"
+msgstr "Veljavni oznaki {{reply_to}} in {{site_name}}"
+
+#: ../admin/admin-bar.php:48
+msgid "Choose which user roles view the admin bar in the front-end of the website."
+msgstr "Izberite katere vloge uporabnikov (user roles) vidijo Admin Bar na sprednji strani (Front-End) spletne strani."
+
+#: ../admin/manage-fields.php:105
+msgid "Enter a comma separated list of values<br/>This can be anything, as it is hidden from the user, but should not contain special characters or apostrophes"
+msgstr "Vnesite seznam vrednosti ločenih z vejico<br/>To je lahko karkoli, ker je skrito pred uporabniki, ampak ne sme vsebovati posebnih znakov ali opuščajev (apostrofov)."
+
+#: ../admin/manage-fields.php:689
+msgid "The meta-name cannot be empty\n"
+msgstr "Meta-ime ne more biti prazno\n"
+
+#: ../admin/register-version.php:69
+msgid "Now that you acquired a copy of %s, you should take the time and register it with the serial number you received"
+msgstr "Sedaj ko ste pridobili svoj izvod %s, si vzamite čas in ga registrirajte z serijsko številko, ki ste jo dobili"
+
+#: ../admin/register-version.php:243
+msgid "<p>Your <strong>Profile Builder</strong> serial number is invalid or missing. <br/>Please %1$sregister your copy%2$s to receive access to automatic updates and support. Need a license key? %3$sPurchase one now%4$s</p>"
+msgstr "<p>Your <strong>Profile Builder</strong> serijska številka je neveljavna ali manjkajoča. <br/>Prosimo %1$sregistrirajte svoj izvod%2$s, da dobite dostop do samodejnih posodobitev in podpore. Potrebujete licenčni ključ? %3$sKupite sedaj%4$s</p>"
+
+#: ../admin/register-version.php:246
+msgid "<p>Your <strong>Profile Builder</strong> license has expired. <br/>Please %1$sRenew Your Licence%2$s to continue receiving access to product downloads, automatic updates and support. %3$sRenew now and get 50&#37; off %4$s %5$sDismiss%6$s</p>"
+msgstr "<p>Your <strong>Profile Builder</strong> licenca je potekla. <br/>Prosimo %1$sobnovite svojo licenco%2$s, da ste še naprej upravičeni do dostopa prenosa produktov, samodejnih posodobitev in podpore. %3$sObnovite sedaj in dobite 50&#37; %4$s popusta. %5$sSkrij%6$s</p>"
+
+#: ../admin/register-version.php:251
+msgid "<p>Your <strong>Profile Builder</strong> license is about to expire on %5$s. <br/>Please %1$sRenew Your Licence%2$s to continue receiving access to product downloads, automatic updates and support. %3$sRenew now and get 50&#37; off %4$s %6$sDismiss%7$s</p>"
+msgstr "<p>Your <strong>Profile Builder</strong> licenca bo potekla %5$s. <br/>Prosimo %1$sobnovite svojo licenco%2$s, da ste še naprej upravičeni do dostopa prenosa produktov, samodejnih posodobitev in podpore. %3$sObnovite sedaj in dobite 50&#37; %4$s popusta. %6$sSkrij%7$s</p>"
+
+#: ../assets/lib/wck-api/fields/country select.php:14
+#: ../assets/lib/wck-api/fields/cpt select.php:17
+#: ../assets/lib/wck-api/fields/select.php:14 ../assets/lib/wck-api/fields/user
+#: select.php:15
+msgid "...Choose"
+msgstr "...Izberite"
+
+#: ../features/class-list-table.php:526 ../features/class-list-table.php:941
+msgid "1 item"
+msgstr "1 element"
+
+#: ../features/functions.php:512
+msgid "Very Weak"
+msgstr "Zelo slabo"
+
+#: ../features/functions.php:600
+msgid "This field is required"
+msgstr "To polje je obvezno"
+
+#: ../features/functions.php:627
+msgid "Cancel"
+msgstr "Prekini"
+
+#: ../features/functions.php:663
+msgid "To allow users to register for your website via Profile Builder, you first must enable user registration. Go to %1$sSettings -> General%2$s tab, and under Membership make sure to check “Anyone can register”. %3$sDismiss%4$s"
+msgstr "Da se bodo uporabniki lahko registrirali na vaši strani preko Profile Builder vtičnika, morate najprej omogočiti registracijo uporabnikov. Pojdite na %1$sNastavitve%2$s, in pod Članstvo označite “Registrira se lahko kdorkoli”. %3$sSkrij%4$s"
+
+#: ../front-end/login.php:96
+msgid "Invalid username."
+msgstr "Neveljavno uporabniško ime."
+
+#: ../front-end/login.php:101 ../front-end/login.php:105
+msgid "username"
+msgstr "uporabniško ime"
+
+#: ../front-end/login.php:101
+msgid "email"
+msgstr "e-naslov"
+
+#: ../front-end/login.php:208
+msgid "Lost your password?"
+msgstr "Izgubljeno geslo?"
+
+#: ../index.php:34
+msgid " is also activated. You need to deactivate it before activating this version of the plugin."
+msgstr "je tudi aktiviran. Za aktivacijo te različice vtičnika morate najprej deaktivirati trenutnega."
+
+#: ../modules/email-customizer/admin-email-customizer.php:54
+#: ../modules/email-customizer/user-email-customizer.php:54
+msgid "Must be a valid email address or the tag {{reply_to}} which defaults to the administrator email"
+msgstr "Mora biti veljaven e-naslov ali oznaka {{reply_to}}, ki ima privzeto vrednost e-naslova skrbnika strani"
+
+#: ../features/email-confirmation/email-confirmation.php:554
+#: ../features/email-confirmation/email-confirmation.php:557
+#: ../modules/email-customizer/email-customizer.php:413
+#: ../modules/email-customizer/email-customizer.php:420
+#: ../modules/email-customizer/email-customizer.php:434
+msgid "Your selected password at signup"
+msgstr "Vaše izbrano geslo pri registraciji"
+
+#: ../modules/email-customizer/user-email-customizer.php:38
+msgid "These settings are also replicated in the \"Admin Email Customizer\" settings-page upon save."
+msgstr "Te nastavitve bodo podvojene tudi na \"Oblikovalec Skrbniškega E-naslova\" strani z nastavitvami ob shranitvi."
+
+#: ../modules/multiple-forms/edit-profile-forms.php:270
+msgid "This form is empty."
+msgstr "Ta obrazec je prazen."
+
+#: ../modules/multiple-forms/multiple-forms.php:416
+msgid "Delete all items"
+msgstr "Izbris vseh elementov"
+
+#: ../modules/multiple-forms/multiple-forms.php:416
+msgid "Delete all"
+msgstr "Izbriši vse"
+
+#: ../modules/multiple-forms/register-forms.php:226
+msgid "Choose..."
+msgstr "Izberi..."
+
+#: ../modules/user-listing/userlisting.php:1298
+msgid "Set the number of users to be displayed on every paginated part of the all-userlisting"
+msgstr "Nastavi število uporabnikov, ki se jih prikaže na vsaki oštevilčeni strani seznama uporabnikov"
+
+#: ../admin/admin-bar.php:10
+msgid "Show/Hide the Admin Bar on the Front-End"
+msgstr "Prikaži/skrij Admin Bar na sprednji strani (Front-End)"
+
+#: ../admin/admin-bar.php:10 ../admin/admin-bar.php:47
+msgid "Admin Bar Settings"
+msgstr "Admin Bar nastavitve"
+
+#: ../admin/admin-bar.php:57
+msgid "User-Role"
+msgstr "Vloga uporabnika"
+
+#: ../admin/admin-bar.php:58
+msgid "Visibility"
+msgstr "Vidnost"
+
+#: ../admin/admin-bar.php:73
+msgid "Default"
+msgstr "Privzeto"
+
+#: ../admin/admin-bar.php:74
+msgid "Show"
+msgstr "Prikaži"
+
+#: ../admin/admin-bar.php:75
+msgid "Hide"
+msgstr "Skrij"
+
+#: ../admin/admin-bar.php:86 ../admin/general-settings.php:215
+#: ../admin/register-version.php:95 ../features/functions.php:620
+#: ../modules/custom-redirects/custom-redirects.php:136
+#: ../modules/modules.php:142
+msgid "Save Changes"
+msgstr "Shrani spremembe"
+
+#: ../admin/admin-functions.php:34
+msgid "Login is set to be done using the E-mail. This field will NOT appear in the front-end! ( you can change these settings under the \"%s\" tab )"
+msgstr "Prijava je nastavljena na uporabo z e-naslovom. To polje se NE bo prikazalo na sprednji strani (Front-End)! ( te nastavitve lahko spremenite pod zavihkom \"%s\" )"
+
+#: ../admin/admin-functions.php:34 ../admin/general-settings.php:10
+#: ../admin/general-settings.php:38
+msgid "General Settings"
+msgstr "Splošne nastavitve"
+
+#: ../admin/admin-functions.php:134 ../admin/general-settings.php:201
+msgid "Very weak"
+msgstr "Zelo slabo"
+
+#: ../admin/admin-functions.php:134 ../admin/general-settings.php:202
+#: ../features/functions.php:512
+msgid "Weak"
+msgstr "Slabo"
+
+#: ../admin/admin-functions.php:134 ../admin/general-settings.php:203
+#: ../features/functions.php:512
+msgid "Medium"
+msgstr "Srednje"
+
+#: ../admin/admin-functions.php:134 ../admin/general-settings.php:204
+#: ../features/functions.php:512
+msgid "Strong"
+msgstr "Močno"
+
+#: ../admin/admin-functions.php:184
+msgid "Add Field"
+msgstr "Dodaj polje"
+
+#: ../admin/admin-functions.php:186
+#: ../modules/class-mustache-templates/class-mustache-templates.php:374
+msgid "Save Settings"
+msgstr "Shrani nastavitve"
+
+#: ../admin/basic-info.php:10
+msgid "Basic Information"
+msgstr "Osnovne informacije"
+
+#: ../admin/basic-info.php:29
+msgid "Version %s"
+msgstr "Različica %s"
+
+#: ../admin/basic-info.php:30
+msgid "<strong>Profile Builder </strong>"
+msgstr "<strong>Profile Builder </strong>"
+
+#: ../admin/basic-info.php:31
+msgid "The best way to add front-end registration, edit profile and login forms."
+msgstr "Najboljši način za registracijo na sprednji strani (Front-End), urejanje profila in obrazce za prijavo."
+
+#: ../admin/basic-info.php:33
+msgid "For Modern User Interaction"
+msgstr "Interakcija za moderne uporabnike"
+
+#: ../admin/basic-info.php:36 ../features/login-widget/login-widget.php:59
+msgid "Login"
+msgstr "Prijava"
+
+#: ../admin/basic-info.php:40
+msgid "Registration"
+msgstr "Registracija"
+
+#: ../admin/basic-info.php:44
+msgid "Edit Profile"
+msgstr "Uredi profil"
+
+#: ../admin/basic-info.php:51
+msgid "Extra Features"
+msgstr "Dodatne funkcije"
+
+#: ../admin/basic-info.php:52
+msgid "Features that give you more control over your users, increased security and help you fight user registration spam."
+msgstr "Funkcije, ki vam dajo več nadzora nad vašimi uporabniki, povečano varnost in pomagajo pri borbi proti nezaželenim prijavam."
+
+#: ../admin/basic-info.php:53
+msgid "Enable extra features"
+msgstr "Omogoči dodatne funkcije"
+
+#: ../admin/basic-info.php:57
+msgid "Recover Password"
+msgstr "Obnovitev gesla"
+
+#: ../admin/basic-info.php:61
+msgid "Admin Approval (*)"
+msgstr "Odobritev skrbnikov strani (*)"
+
+#: ../admin/basic-info.php:62
+msgid "You decide who is a user on your website. Get notified via email or approve multiple users at once from the WordPress UI."
+msgstr "Vi določite kdo bo postal uporabnik vaše strani. Prejmite obvestilo preko e-pošte ali odobrite več uporabnikov iz WordPress-a."
+
+#: ../admin/basic-info.php:65
+msgid "Email Confirmation"
+msgstr "Potrditev e-naslova"
+
+#: ../admin/basic-info.php:66
+msgid "Make sure users sign up with genuine emails. On registration users will receive a notification to confirm their email address."
+msgstr "Poskrbite, da se vaši uporabniki prijavljajo s pristnimi e-naslovi. Pri registraciji prejmejo uporabniki na e-naslov obvestilo, v katerem morajo potrditi svoj e-naslov."
+
+#: ../admin/basic-info.php:69
+msgid "Minimum Password Length and Strength Meter"
+msgstr "Najmanjša dolžina gesla ter prikaz težavnosti gesla"
+
+#: ../admin/basic-info.php:70
+msgid "Eliminate weak passwords altogether by setting a minimum password length and enforcing a certain password strength."
+msgstr "V celoti onemogočite slaba gesla z nastavitvijo najmanjše dolžine gesla in z zahtevo močnih gesel."
+
+#: ../admin/basic-info.php:73
+msgid "Login with Email or Username"
+msgstr "Prijava z e-naslovom ali uporabniškim imenom"
+
+#: ../admin/basic-info.php:74
+msgid "Allow users to log in with their email or username when accessing your site."
+msgstr "Dovolite uporabnikom, da se prijavijo z njihovim e-naslovom ali uporabniškim imenom pri prijavi na vašo stran."
+
+#: ../admin/basic-info.php:87
+msgid "Customize Your Forms The Way You Want (*)"
+msgstr "Prilagodite vaše obrazce po svojih željah (*)"
+
+#: ../admin/basic-info.php:88
+msgid "With Extra Profile Fields you can create the exact registration form your project needs."
+msgstr "Z dodatnimi profilnimi polji lahko ustvarite registracijski obrazec po vaši meri."
+
+#: ../admin/basic-info.php:90
+msgid "Extra Profile Fields are available in Hobbyist or PRO versions"
+msgstr "Dodatna profilna polja so na voljo v različicah Hobbyist ali PRO"
+
+#: ../admin/basic-info.php:92
+msgid "Get started with extra fields"
+msgstr "Začnite z uporabo dodatnih polj"
+
+#: ../admin/basic-info.php:95
+msgid "Avatar Upload"
+msgstr "Nastavitev prikazne slike"
+
+#: ../admin/basic-info.php:96
+msgid "Generic Uploads"
+msgstr "Splošni upload-i"
+
+#: ../admin/basic-info.php:97
+msgid "Agree To Terms Checkbox"
+msgstr "Strinjam se s pogoji uporabe Checkbox"
+
+#: ../admin/basic-info.php:98
+msgid "Datepicker"
+msgstr "Izbira datuma z vmesnikom"
+
+#: ../admin/basic-info.php:99
+msgid "reCAPTCHA"
+msgstr "reCAPTCHA"
+
+#: ../admin/basic-info.php:100
+msgid "Country Select"
+msgstr "Izbira države"
+
+#: ../admin/basic-info.php:101
+msgid "Timezone Select"
+msgstr "Izbira časovnega pasa"
+
+#: ../admin/basic-info.php:102
+msgid "Input / Hidden Input"
+msgstr "Vnosno polje / skrito vnosno polje"
+
+#: ../admin/basic-info.php:103
+msgid "Checkbox"
+msgstr "Checkbox"
+
+#: ../admin/basic-info.php:104
+msgid "Select"
+msgstr "Select"
+
+#: ../admin/basic-info.php:105
+msgid "Radio Buttons"
+msgstr "Izbirni gumbi (radio buttons)"
+
+#: ../admin/basic-info.php:106
+msgid "Textarea"
+msgstr "Textarea"
+
+#: ../admin/basic-info.php:115
+msgid "Powerful Modules (**)"
+msgstr "Zmogljivi moduli (**)"
+
+#: ../admin/basic-info.php:116
+msgid "Everything you will need to manage your users is probably already available using the Pro Modules."
+msgstr "Vse kar boste kadarkoli potrebovali za upravljanje z vašimi uporabniki je verjetno že na voljo v naboru Pro modulov."
+
+#: ../admin/basic-info.php:118
+msgid "Enable your modules"
+msgstr "Omogočite vaše module"
+
+#: ../admin/basic-info.php:121
+msgid "Find out more about PRO Modules"
+msgstr "Izvedite več o PRO modulih"
+
+#: ../admin/basic-info.php:126 ../modules/modules.php:111
+#: ../modules/user-listing/userlisting.php:11
+#: ../modules/user-listing/userlisting.php:12
+#: ../modules/user-listing/userlisting.php:17
+#: ../modules/user-listing/userlisting.php:23
+msgid "User Listing"
+msgstr "Seznam uporabnikov"
+
+#: ../admin/basic-info.php:128
+msgid "Easy to edit templates for listing your website users as well as creating single user pages. Shortcode based, offering many options to customize your listings."
+msgstr "Predloge z enostavnim urejanjem za ustvarjanje seznamov uporabnikov kot tudi za ustvarjanje strani za posamezne uporabnike. Temelječa na kratki kodi (shortcode), ta opcija ponuja veliko možnosti za upravljanje z vašimi seznami."
+
+#: ../admin/basic-info.php:134
+msgid "Email Customizer"
+msgstr "Spremenite e-poštna sporočila"
+
+#: ../admin/basic-info.php:135
+msgid "Personalize all emails sent to your users or admins. On registration, email confirmation, admin approval / un-approval."
+msgstr "Naredite vso e-pošto, ki je poslana vašim uporabnikom ter skrbnikom strani, bolj osebno. Registracija, potrditvena e-pošta, odobritev / zavrnitev skrbnika strani."
+
+#: ../admin/basic-info.php:138
+#: ../modules/custom-redirects/custom-redirects.php:29
+#: ../modules/modules.php:32 ../modules/modules.php:132
+msgid "Custom Redirects"
+msgstr "Preusmeritve po meri"
+
+#: ../admin/basic-info.php:139
+msgid "Keep your users out of the WordPress dashboard, redirect them to the front-page after login or registration, everything is just a few clicks away."
+msgstr "Ne dovolite, da vaši uporabniki vidijo WordPress nadzorno ploščo, preusmerite jih na sprednjo stran (Front-End) po prijavi ali registraciji - vse samo nekaj klikov stran."
+
+#: ../admin/basic-info.php:144 ../modules/modules.php:97
+msgid "Multiple Registration Forms"
+msgstr "Več registracijskih obrazcev"
+
+#: ../admin/basic-info.php:145
+msgid "Set up multiple registration forms with different fields for certain user roles. Capture different information from different types of users."
+msgstr "Postavite več registracijskih obrazcev z različnimi polji za določene vloge uporabnikov. Zajemite več različnih informacij od različnih tipov uporabnikov."
+
+#: ../admin/basic-info.php:148 ../modules/modules.php:104
+msgid "Multiple Edit-profile Forms"
+msgstr "Več obrazcev za urejanje profila"
+
+#: ../admin/basic-info.php:149
+msgid "Allow different user roles to edit their specific information. Set up multiple edit-profile forms with different fields for certain user roles."
+msgstr "Dovolite različnim vlogam uporabnikov urejanje njihovih specifičnih informacij. Postavite več obrazcev za urejanje profila z različnimi polji za različne tipe uporabnikov."
+
+#: ../admin/basic-info.php:161
+msgid " * only available in the %1$sHobbyist and Pro versions%2$s."
+msgstr "* na voljo samo v %1$sHobbyist in Pro različicah%2$s."
+
+#: ../admin/basic-info.php:162
+msgid "** only available in the %1$sPro version%2$s."
+msgstr "** na voljo samo v %1$sPro različici%2$s."
+
+#: ../admin/general-settings.php:42
+msgid "Load Profile Builder's own CSS file in the front-end:"
+msgstr "Naložite lastno Profile Builder CSS datoteko na sprednji strani (Front-End):"
+
+#: ../admin/general-settings.php:45 ../admin/general-settings.php:60
+#: ../admin/general-settings.php:114
+#: ../modules/multiple-forms/register-forms.php:225
+#: ../modules/multiple-forms/register-forms.php:226
+#: ../modules/user-listing/userlisting.php:1303
+msgid "Yes"
+msgstr "Da"
+
+#: ../admin/general-settings.php:47
+msgid "You can find the default file here: %1$s"
+msgstr "Originalno datoteko lahko najdete tu: %1$s"
+
+#: ../admin/general-settings.php:56
+msgid "\"Email Confirmation\" Activated:"
+msgstr "\"Potrditvena e-pošta\" aktivirana:"
+
+#: ../admin/general-settings.php:61 ../admin/general-settings.php:115
+#: ../modules/multiple-forms/register-forms.php:225
+#: ../modules/multiple-forms/register-forms.php:226
+msgid "No"
+msgstr "Ne"
+
+#: ../admin/general-settings.php:64
+msgid "On single-site installations this works with front-end forms only. Recommended to redirect WP default registration to a Profile Builder one using \"Custom Redirects\" addon."
+msgstr "Na spletnih straneh z enojno instalacijo deluje to samo pri obrazcih za sprednji prikaz (Front-End). Priporočeno je preusmeriti WP privzeto registracijo na tisto, ki jo uporablja Profile Builder z uporabo \"Custom Redirects\" dodatka."
+
+#: ../admin/general-settings.php:65
+msgid "The \"Email Confirmation\" feature is active (by default) on WPMU installations."
+msgstr "\"Potrditvena e-pošta\" je aktivna (privzeto) na WPMU namestitvah."
+
+#: ../admin/general-settings.php:67
+msgid "You can find a list of unconfirmed email addresses %1$sUsers > All Users > Email Confirmation%2$s."
+msgstr "Seznam nepotrjenih e-naslovov lahko najdete na %1$sUporabniki > Vsi uporabniki > Potrditvena e-pošta%2$s."
+
+#: ../admin/general-settings.php:79
+msgid "\"Email Confirmation\" Landing Page:"
+msgstr "Ciljna stran za \"Potrditveno e-pošto\""
+
+#: ../admin/general-settings.php:84
+msgid "Existing Pages"
+msgstr "Obstoječe strani"
+
+#: ../admin/general-settings.php:99
+msgid "Specify the page where the users will be directed when confirming the email account. This page can differ from the register page(s) and can be changed at any time. If none selected, a simple confirmation page will be displayed for the user."
+msgstr "Določite stran, kamor bodo uporabniki preusmerjeni po potrditvi svojega e-naslova. Ta stran se lahko razlikuje od strani za registracijo in je lahko spremenjena kadarkoli. Če ni izbrana nobena stran, se bo uporabniku prikazala preprosta potrditvena stran."
+
+#: ../admin/general-settings.php:110
+msgid "\"Admin Approval\" Activated:"
+msgstr "\"Odobritev s strani skrbnikov\" je bila aktivirana:"
+
+#: ../admin/general-settings.php:118
+msgid "You can find a list of users at %1$sUsers > All Users > Admin Approval%2$s."
+msgstr "Seznam e-naslovov uporabnikov lahko najdete na %1$sUporabniki > Vsi uporabniki > Potrditve skrbnikov strani%2$s."
+
+#: ../admin/general-settings.php:156
+msgid "\"Admin Approval\" Feature:"
+msgstr "\"Odobritev s strani skrbnikov\" možnost:"
+
+#: ../admin/general-settings.php:159
+msgid "You decide who is a user on your website. Get notified via email or approve multiple users at once from the WordPress UI. Enable Admin Approval by upgrading to %1$sHobbyist or PRO versions%2$s."
+msgstr "Vi določite kdo bo uporabnik na vaši strani. Prejmite obvestilo po e-pošti ali odobrite več uporabnikov hkrati preko WordPress UI. Omogočite Odobritev skrbnikov Strani z nadgradnjo na %1$sHobbyist ali PRO različico%2$s."
+
+#: ../admin/general-settings.php:166
+msgid "Allow Users to Log in With:"
+msgstr "Dovolite uporabnikom, da se prijavijo z:"
+
+#: ../admin/general-settings.php:171 ../admin/manage-fields.php:159
+#: ../features/admin-approval/class-admin-approval.php:177
+#: ../features/email-confirmation/class-email-confirmation.php:167
+#: ../modules/email-customizer/email-customizer.php:28
+#: ../modules/user-listing/userlisting.php:92
+#: ../modules/user-listing/userlisting.php:248
+#: ../modules/user-listing/userlisting.php:611
+#: ../modules/user-listing/userlisting.php:1259
+msgid "Username"
+msgstr "Uporabniško ime"
+
+#: ../admin/general-settings.php:172 ../front-end/login.php:170
+#: ../modules/email-customizer/email-customizer.php:29
+#: ../modules/user-listing/userlisting.php:617
+#: ../modules/user-listing/userlisting.php:1260
+msgid "Email"
+msgstr "E-naslov"
+
+#: ../admin/general-settings.php:184
+msgid "Minimum Password Length:"
+msgstr "Najmanjša dolžina gesla:"
+
+#: ../admin/general-settings.php:189
+msgid "Enter the minimum characters the password should have. Leave empty for no minimum limit"
+msgstr "Vnesite minimalno št., ki jih mora imeti geslo. Pustite prazno za brez omejitve"
+
+#: ../admin/general-settings.php:196
+msgid "Minimum Password Strength:"
+msgstr "Najmanjša težavnost gesla:"
+
+#: ../admin/general-settings.php:200
+msgid "Disabled"
+msgstr "Onemogočeno"
+
+#: ../admin/manage-fields.php:12
+msgid "Manage Fields"
+msgstr "Upravljajte s polji"
+
+#: ../admin/manage-fields.php:13
+msgid "Manage Default and Extra Fields"
+msgstr "Upravljajte s privzetimi in dodatnimi polji"
+
+#: ../admin/manage-fields.php:94
+msgid "Field Title"
+msgstr "Naslov polja"
+
+#: ../admin/manage-fields.php:94
+msgid "Title of the field"
+msgstr "Naslov polja"
+
+#: ../admin/manage-fields.php:95
+#: ../modules/multiple-forms/edit-profile-forms.php:241
+#: ../modules/multiple-forms/register-forms.php:262
+msgid "Field"
+msgstr "Polje"
+
+#: ../admin/manage-fields.php:96
+msgid "Meta-name"
+msgstr "Meta-ime"
+
+#: ../admin/manage-fields.php:96
+msgid "Use this in conjuction with WordPress functions to display the value in the page of your choosing<br/>Auto-completed but in some cases editable (in which case it must be uniqe)<br/>Changing this might take long in case of a very big user-count"
+msgstr "Uporabite to v povezavi z WordPress funkcijami za prikaz vrednosti na strani po vašem izboru <br/> Samodejno-zaključena, vendar je v nekaterih primerih mogoče urejati (v tem primeru mora biti edinstvena) <br/> Spreminjanje tega lahko traja nekaj časa v primeru zelo velikega uporabniškega računa"
+
+#: ../admin/manage-fields.php:97
+#: ../modules/multiple-forms/edit-profile-forms.php:242
+#: ../modules/multiple-forms/register-forms.php:263
+msgid "ID"
+msgstr "ID"
+
+#: ../admin/manage-fields.php:97
+#: ../modules/multiple-forms/edit-profile-forms.php:242
+#: ../modules/multiple-forms/register-forms.php:263
+msgid "A unique, auto-generated ID for this particular field<br/>You can use this in conjuction with filters to target this element if needed<br/>Can't be edited"
+msgstr "Edinstven, samodejno ustvarjen ID za to določeno polje<br/>Če je potrebno lahko uporabite to v povezavi s filtri za ciljanje tega elementa<br/>Ni mogoče urejati"
+
+#: ../admin/manage-fields.php:98
+msgid "Description"
+msgstr "Opis"
+
+#: ../admin/manage-fields.php:98
+msgid "Enter a (detailed) description of the option for end users to read<br/>Optional"
+msgstr "Vnesite (podroben) opis možnosti za končnega uporabnika<br/>Izbirno"
+
+#: ../admin/manage-fields.php:99
+msgid "Row Count"
+msgstr "Število vrstic"
+
+#: ../admin/manage-fields.php:99
+msgid "Specify the number of rows for a 'Textarea' field<br/>If not specified, defaults to 5"
+msgstr "Določite število vrstic za polje 'Textarea'<br/>Če ni določeno, je privzeta vrednost 5"
+
+#: ../admin/manage-fields.php:100
+msgid "Allowed Image Extensions"
+msgstr "Dovoljene končnice datotek za slike"
+
+#: ../admin/manage-fields.php:101
+msgid "Allowed Upload Extensions"
+msgstr "Dovoljene končnice datotek za nalaganje"
+
+#: ../admin/manage-fields.php:102
+msgid "Avatar Size"
+msgstr "Velikost prikazne slike"
+
+#: ../admin/manage-fields.php:102
+msgid "Enter a value (between 20 and 200) for the size of the 'Avatar'<br/>If not specified, defaults to 100"
+msgstr "Vnesite vrednost (med 20 in 200) za velikost prikazne slike<br/>Če ni določena vrednost, je privzeta vrednost 100"
+
+#: ../admin/manage-fields.php:103
+msgid "Date-format"
+msgstr "Format datuma"
+
+#: ../admin/manage-fields.php:103
+msgid "Specify the format of the date when using Datepicker<br/>Valid options: mm/dd/yy, mm/yy/dd, dd/yy/mm, dd/mm/yy, yy/dd/mm, yy/mm/dd<br/>If not specified, defaults to mm/dd/yy"
+msgstr "Določite obliko zapisa datuma pri uporabi vmesnika za izbiro datuma (Datepicker)<br/>Veljavne možnosti: mm/dd/yy, mm/yy/dd, dd/yy/mm, dd/mm/yy, yy/dd/mm, yy/mm/dd<br/>Če ni določena oblika zapisa, je privzeta vrednost mm/dd/yy"
+
+#: ../admin/manage-fields.php:104
+msgid "Terms of Agreement"
+msgstr "Splošni pogoji"
+
+#: ../admin/manage-fields.php:104
+msgid "Enter a detailed description of the temrs of agreement for the user to read.<br/>Links can be inserted by using standard HTML syntax: &lt;a href=\"custom_url\"&gt;custom_text&lt;/a&gt;"
+msgstr "Vnesite podroben opis pogojev uporabe za uporabnike.<br/>Povezave so lahko vnešene s strandardno HTML sintakso: &lt;a href=\"custom_url\"&gt;custom_text&lt;/a&gt;"
+
+#: ../admin/manage-fields.php:105
+msgid "Options"
+msgstr "Možnosti"
+
+#: ../admin/manage-fields.php:106
+msgid "Labels"
+msgstr "Oznake"
+
+#: ../admin/manage-fields.php:106
+msgid "Enter a comma separated list of labels<br/>Visible for the user"
+msgstr "Vnesite seznam vrednosti ločenih z vejico<br/>Vidno končnemu uporabniku"
+
+#: ../admin/manage-fields.php:113
+msgid "Default Value"
+msgstr "Privzeta vrednost"
+
+#: ../admin/manage-fields.php:113
+msgid "Default value of the field"
+msgstr "Privzeta vrednost polja"
+
+#: ../admin/manage-fields.php:114 ../admin/manage-fields.php:116
+#: ../admin/manage-fields.php:117
+msgid "Default Option"
+msgstr "Privzeta možnost"
+
+#: ../admin/manage-fields.php:114
+msgid "Specify the option which should be selected by default"
+msgstr "Določite možnost, ki naj bo izbrana kot privzeta"
+
+#: ../admin/manage-fields.php:115
+msgid "Default Option(s)"
+msgstr "Privzeta(e) možnost(i)"
+
+#: ../admin/manage-fields.php:115
+msgid "Specify the option which should be checked by default<br/>If there are multiple values, separate them with a ',' (comma)"
+msgstr "Določite katere možnosti naj bodo privzeto označene<br/>Če mislite napisate več možnosti, jih ločite z ',' (vejica)"
+
+#: ../admin/manage-fields.php:118
+msgid "Default Content"
+msgstr "Privzeta vsebina"
+
+#: ../admin/manage-fields.php:118
+msgid "Default value of the textarea"
+msgstr "Privzeta vrednost besedilnega polja"
+
+#: ../admin/manage-fields.php:119
+msgid "Required"
+msgstr "Zahtevano"
+
+#: ../admin/manage-fields.php:119
+msgid "Whether the field is required or not"
+msgstr "Ali je polje zahtevano ali ne"
+
+#: ../admin/manage-fields.php:120
+msgid "Overwrite Existing"
+msgstr "Prepiši obstoječe"
+
+#: ../admin/manage-fields.php:120
+msgid "Selecting 'Yes' will add the field to the list, but will overwrite any other field in the database that has the same meta-name<br/>Use this at your own risk"
+msgstr "Izbira 'Da' bo dodala polje na seznam, ampak če v bazi obstaja še eno polje z istim meta-imenom bo polje v bazi prepisano.<br/>Uporabite na lastno odgovornost"
+
+#: ../admin/manage-fields.php:126
+msgid "Field Properties"
+msgstr "Lastnosti polja"
+
+#: ../admin/manage-fields.php:139
+msgid "Registration & Edit Profile"
+msgstr "Registracija & urejanje profila"
+
+#: ../admin/manage-fields.php:158
+msgid "Name"
+msgstr "Ime"
+
+#: ../admin/manage-fields.php:159
+msgid "Usernames cannot be changed."
+msgstr "Uporabniškega imena se ne da spremeniti."
+
+#: ../admin/manage-fields.php:160
+msgid "First Name"
+msgstr "Ime"
+
+#: ../admin/manage-fields.php:161
+msgid "Last Name"
+msgstr "Priimek"
+
+#: ../admin/manage-fields.php:162 ../modules/user-listing/userlisting.php:650
+msgid "Nickname"
+msgstr "Vzdevek"
+
+#: ../admin/manage-fields.php:163
+msgid "Display name publicly as"
+msgstr "Prikaži ime javno kot"
+
+#: ../admin/manage-fields.php:164
+msgid "Contact Info"
+msgstr "Kontaktni podatki"
+
+#: ../admin/manage-fields.php:165
+#: ../features/admin-approval/class-admin-approval.php:180
+#: ../features/email-confirmation/class-email-confirmation.php:168
+#: ../modules/user-listing/userlisting.php:98
+msgid "E-mail"
+msgstr "E-naslov"
+
+#: ../admin/manage-fields.php:166
+#: ../modules/email-customizer/email-customizer.php:32
+#: ../modules/user-listing/userlisting.php:101
+#: ../modules/user-listing/userlisting.php:632
+#: ../modules/user-listing/userlisting.php:1261
+msgid "Website"
+msgstr "Spletna stran"
+
+#: ../admin/manage-fields.php:170
+msgid "AIM"
+msgstr "AIM"
+
+#: ../admin/manage-fields.php:171
+msgid "Yahoo IM"
+msgstr "Yahoo IM"
+
+#: ../admin/manage-fields.php:172
+msgid "Jabber / Google Talk"
+msgstr "Jabber / Google Talk"
+
+#: ../admin/manage-fields.php:175
+msgid "About Yourself"
+msgstr "O vas"
+
+#: ../admin/manage-fields.php:176 ../modules/user-listing/userlisting.php:104
+#: ../modules/user-listing/userlisting.php:635
+#: ../modules/user-listing/userlisting.php:1262
+msgid "Biographical Info"
+msgstr "Biografija"
+
+#: ../admin/manage-fields.php:176
+msgid "Share a little biographical information to fill out your profile. This may be shown publicly."
+msgstr "Delite malo svoje biografije, da zapolnite profil. Ta del bo lahko javno dostopen."
+
+#: ../admin/manage-fields.php:177 ../front-end/recover.php:75
+#: ../modules/email-customizer/email-customizer.php:30
+msgid "Password"
+msgstr "Geslo"
+
+#: ../admin/manage-fields.php:177
+msgid "Type your password."
+msgstr "Vpišite geslo."
+
+#: ../admin/manage-fields.php:178 ../front-end/recover.php:80
+msgid "Repeat Password"
+msgstr "Ponovite geslo"
+
+#: ../admin/manage-fields.php:178
+msgid "Type your password again. "
+msgstr "Ponovno vpišite geslo."
+
+#: ../admin/manage-fields.php:617 ../admin/manage-fields.php:761
+msgid "You must select a field\n"
+msgstr "Izbrati morate polje\n"
+
+#: ../admin/manage-fields.php:627
+msgid "Please choose a different field type as this one already exists in your form (must be unique)\n"
+msgstr "Prosimo izberite drugačen tip polja, ker to polje že obstaja v vašem obrazcu (mora biti unikatno)\n"
+
+#: ../admin/manage-fields.php:638
+msgid "The entered avatar size is not between 20 and 200\n"
+msgstr "Vnešena velikost prikazne slike ni med 20 in 200\n"
+
+#: ../admin/manage-fields.php:641
+msgid "The entered avatar size is not numerical\n"
+msgstr "Vnešena vrednost velikosti prikazne slike ni numerična\n"
+
+#: ../admin/manage-fields.php:649
+msgid "The entered row number is not numerical\n"
+msgstr "Vnešena vrednost za vrstico ni numerična\n"
+
+#: ../admin/manage-fields.php:652
+msgid "You must enter a value for the row number\n"
+msgstr "Vnesti morate vrednost za številko vrstice\n"
+
+#: ../admin/manage-fields.php:670
+msgid "The entered value for the Datepicker is not a valid date-format\n"
+msgstr "Vnešena vrednost za datumski vmesnik ni v veljavnem formatu datuma\n"
+
+#: ../admin/manage-fields.php:673
+msgid "You must enter a value for the date-format\n"
+msgstr "Vnesti morate vrednost za format datuma\n"
+
+#: ../admin/manage-fields.php:701 ../admin/manage-fields.php:709
+#: ../admin/manage-fields.php:719
+msgid "That meta-name is already in use\n"
+msgstr "To meta-ime je že v uporabi\n"
+
+#: ../admin/manage-fields.php:741
+msgid "The following option(s) did not coincide with the ones in the options list: %s\n"
+msgstr "Sledeče možnosti niso sovpadale s tistimi iz seznama možnosti: %s\n"
+
+#: ../admin/manage-fields.php:745
+msgid "The following option did not coincide with the ones in the options list: %s\n"
+msgstr "Sledeča možnost ni sovpadale s tistimi iz seznama možnosti: %s\n"
+
+#: ../admin/manage-fields.php:768
+msgid "That field is already added in this form\n"
+msgstr "To polje je že v tem obrazcu\n"
+
+#: ../admin/manage-fields.php:817
+msgid "<pre>Title</pre><pre>Type</pre><pre>Meta Name</pre><pre class=\"wppb-mb-head-required\">Required</pre>"
+msgstr "<pre>Naslov</pre><pre>Tip</pre><pre>Meta Ime</pre><pre class=\"wppb-mb-head-required\">Zahtevano</pre>"
+
+#: ../admin/manage-fields.php:817
+#: ../assets/lib/wck-api/wordpress-creation-kit.php:440
+#: ../assets/lib/wck-api/wordpress-creation-kit.php:529
+#: ../features/admin-approval/class-admin-approval.php:119
+#: ../features/functions.php:641 ../features/functions.php:648
+#: ../modules/multiple-forms/multiple-forms.php:416
+msgid "Edit"
+msgstr "Uredi"
+
+#: ../admin/manage-fields.php:817
+#: ../assets/lib/wck-api/wordpress-creation-kit.php:440
+#: ../assets/lib/wck-api/wordpress-creation-kit.php:530
+#: ../features/admin-approval/class-admin-approval.php:124
+#: ../features/admin-approval/class-admin-approval.php:235
+#: ../features/email-confirmation/class-email-confirmation.php:120
+#: ../features/email-confirmation/class-email-confirmation.php:217
+#: ../features/functions.php:634 ../features/functions.php:648
+msgid "Delete"
+msgstr "Izbriši"
+
+#: ../admin/manage-fields.php:832
+msgid "Use these shortcodes on the pages you want the forms to be displayed:"
+msgstr "Uporabite te kratke kode (shortcode) na straneh, kjer hočete, da se prikažejo obrazci:"
+
+#: ../admin/manage-fields.php:841
+msgid "If you're interested in displaying different fields in the registration and edit profile forms, please use the Multiple Registration & Edit Profile Forms Addon."
+msgstr "Če ste zainteresirani v prikaz različnih polj pri registracijskem obrazcu in obrazcu za urejanje profila, prosimo uporabite dodatek Obrazci za registracijo in urejanje profila."
+
+#: ../admin/register-version.php:14
+msgid "Register Your Version"
+msgstr "Registrirajte vašo različico"
+
+#: ../admin/register-version.php:14
+msgid "Register Version"
+msgstr "Registrirajte različico"
+
+#: ../admin/register-version.php:70
+msgid "If you register this version of Profile Builder, you'll receive information regarding upgrades, patches, and technical support."
+msgstr "Če registrirate to različico Profile Builder, boste deležni informacij o posodobitvah, popravkih in tehnične podpore."
+
+#: ../admin/register-version.php:72
+msgid " Serial Number:"
+msgstr "Serijska številka:"
+
+#: ../admin/register-version.php:77
+msgid "The serial number was successfully validated!"
+msgstr "Serijska številka je bila uspešno validirana!"
+
+#: ../admin/register-version.php:79
+msgid "The serial number entered couldn't be validated!"
+msgstr "Vnešena serijska številka ni bila validirana!"
+
+#: ../admin/register-version.php:83
+msgid "The serial number couldn't be validated because it expired!"
+msgstr "Serisjke številke ni bilo možno validirati, ker je potekla!"
+
+#: ../admin/register-version.php:85
+msgid "The serial number couldn't be validated because process timed out. This is possible due to the server being down. Please try again later!"
+msgstr "Serijske številke ni bilo možno validirati, ker je proces naletel na časovno omejitev. To se lahko zgodi zaradi napake v strežniku. Prosimo poizkusite ponovno kasneje!"
+
+#: ../admin/register-version.php:87
+msgid "(e.g. RMPB-15-SN-253a55baa4fbe7bf595b2aabb8d72985)"
+msgstr "(e.g. RMPB-15-SN-253a55baa4fbe7bf595b2aabb8d72985)"
+
+#: ../assets/lib/wck-api/wordpress-creation-kit.php:440
+#: ../features/functions.php:648
+msgid "Content"
+msgstr "Vsebina"
+
+#: ../assets/lib/wck-api/wordpress-creation-kit.php:529
+msgid "Edit this item"
+msgstr "Uredi ta element"
+
+#: ../assets/lib/wck-api/wordpress-creation-kit.php:530
+msgid "Delete this item"
+msgstr "Izbriši ta element"
+
+#: ../assets/lib/wck-api/wordpress-creation-kit.php:676
+msgid "Please enter a value for the required field "
+msgstr "Prosimo vnesite vrednost za zahtevano polje"
+
+#: ../front-end/extra-fields/upload/upload.php:122
+msgid "Select File"
+msgstr ""
+
+#: ../assets/lib/wck-api/fields/upload.php:43
+#: ../front-end/extra-fields/upload/upload.php:112
+msgid "Remove"
+msgstr "Odstrani"
+
+#: ../assets/lib/wck-api/wordpress-creation-kit.php:1155
+msgid "Syncronize WCK"
+msgstr "Sinhronizirajte WCK"
+
+#: ../assets/lib/wck-api/wordpress-creation-kit.php:1167
+msgid "Syncronize WCK Translation"
+msgstr "Sinhronizirajte WCK prevod"
+
+#: ../assets/lib/wck-api/fields/nested repeater.php:8
+msgid "You can add the information for the %s after you add a entry"
+msgstr "Informacije za %s lahko dodate šele ko dodate vnos"
+
+#: ../assets/lib/wck-api/fields/upload.php:75
+#: ../front-end/extra-fields/upload/upload.php:128
+msgid "Upload "
+msgstr "Naloži"
+
+#: ../features/class-list-table.php:184
+msgid "No items found."
+msgstr "Ni najdenih elementov."
+
+#: ../features/class-list-table.php:308
+msgid "Bulk Actions"
+msgstr "Več dejanj hkrati"
+
+#: ../features/class-list-table.php:318
+msgid "Apply"
+msgstr "Uporabite"
+
+#: ../features/class-list-table.php:402
+msgid "Show all dates"
+msgstr "Prikaži vse datume"
+
+#: ../features/class-list-table.php:415
+msgid "%1$s %2$d"
+msgstr "%1$s %2$d"
+
+#: ../features/class-list-table.php:431
+msgid "List View"
+msgstr "Pogled seznama"
+
+#: ../features/class-list-table.php:432
+msgid "Excerpt View"
+msgstr "Pogled izvlečka"
+
+#: ../features/class-list-table.php:458
+msgid "%s pending"
+msgstr "%s v čakanju"
+
+#: ../features/class-list-table.php:566
+msgid "%1$s of %2$s"
+msgstr "%1$s od %2$s"
+
+#: ../features/class-list-table.php:713
+msgid "Select All"
+msgstr "Izberi vse"
+
+#: ../features/functions.php:281
+msgid "The user-validation has failed - the avatar was not deleted!"
+msgstr "Validacija ni uspela - prikazna slika ni bila zbrisana!"
+
+#: ../features/functions.php:292
+msgid "The user-validation has failed - the attachment was not deleted!"
+msgstr "Validacija ni uspela - priloga ni bila zbrisana!"
+
+#: ../features/functions.php:487
+msgid "Strength indicator"
+msgstr "Indikator moči gesla"
+
+#: ../features/admin-approval/admin-approval.php:7
+#: ../features/admin-approval/class-admin-approval.php:458
+msgid "Admin Approval"
+msgstr "Odobritev skrbnika strani"
+
+#: ../features/admin-approval/admin-approval.php:21
+#: ../features/email-confirmation/email-confirmation.php:58
+msgid "Do you want to"
+msgstr "Ali hočete"
+
+#: ../features/admin-approval/admin-approval.php:44
+msgid "Your session has expired! Please refresh the page and try again"
+msgstr "Vaša seja je potekla! Prosimo ponovno naložite stran in poizkusite ponovno"
+
+#: ../features/admin-approval/admin-approval.php:55
+msgid "User successfully approved!"
+msgstr "Uporabnik uspešno odobren!"
+
+#: ../features/admin-approval/admin-approval.php:63
+msgid "User successfully unapproved!"
+msgstr "Uporabnik uspešno neodobren!"
+
+#: ../features/admin-approval/admin-approval.php:69
+msgid "User successfully deleted!"
+msgstr "Uporabnik uspešno izbrisan!"
+
+#: ../features/admin-approval/admin-approval.php:74
+#: ../features/admin-approval/admin-approval.php:118
+#: ../features/email-confirmation/email-confirmation.php:135
+msgid "You either don't have permission for that action or there was an error!"
+msgstr "Nimate zadosti pravic za dokončanje tega dejanja ali pa je prišlo do napake!"
+
+#: ../features/admin-approval/admin-approval.php:85
+msgid "Your session has expired! Please refresh the page and try again."
+msgstr "Vaša seja je potekla! Prosimo ponovno naložite stran in poizkusite ponovno"
+
+#: ../features/admin-approval/admin-approval.php:97
+msgid "Users successfully approved!"
+msgstr "Uporabniki uspešno odobreni!"
+
+#: ../features/admin-approval/admin-approval.php:106
+msgid "Users successfully unapproved!"
+msgstr "Uporabniki uspešno neodobreni!"
+
+#: ../features/admin-approval/admin-approval.php:114
+msgid "Users successfully deleted!"
+msgstr "Uporabniki uspešno izbrisani!"
+
+#: ../features/admin-approval/admin-approval.php:134
+msgid "Your account on %1$s has been approved!"
+msgstr "Vaš račun na %1$s je bil odobren!"
+
+#: ../features/admin-approval/admin-approval.php:135
+#: ../features/admin-approval/admin-approval.php:138
+msgid "approved"
+msgstr "odobren"
+
+#: ../features/admin-approval/admin-approval.php:137
+msgid "An administrator has just approved your account on %1$s (%2$s)."
+msgstr "Skrbnik strani je pravkar odobril vaš račun na %1$s (%2$s)."
+
+#: ../features/admin-approval/admin-approval.php:142
+msgid "Your account on %1$s has been unapproved!"
+msgstr "Vaš račun na %1$s ni bil odobren!"
+
+#: ../features/admin-approval/admin-approval.php:143
+#: ../features/admin-approval/admin-approval.php:146
+msgid "unapproved"
+msgstr "neodobren"
+
+#: ../features/admin-approval/admin-approval.php:145
+msgid "An administrator has just unapproved your account on %1$s (%2$s)."
+msgstr "Skrbnik strani ni odobril vašega računa na %1$s (%2$s)."
+
+#: ../features/admin-approval/admin-approval.php:164
+msgid "<strong>ERROR</strong>: Your account has to be confirmed by an administrator before you can log in."
+msgstr "<strong>NAPAKA</strong>: Vaš račun mora biti odobren s strani skrbnika strani preden se lahko prijavite."
+
+#: ../features/admin-approval/admin-approval.php:176
+msgid "Your account has to be confirmed by an administrator before you can use the \"Password Recovery\" feature."
+msgstr "Vaš uporabniški račun mora biti odobren s strani skrbnika strani preden lahko uporabite funkcijo \"Obnovitev gesla\"."
+
+#: ../features/admin-approval/class-admin-approval.php:124
+msgid "delete this user?"
+msgstr "izbriši tega uporabnika?"
+
+#: ../features/admin-approval/class-admin-approval.php:127
+msgid "unapprove this user?"
+msgstr "neodobri tega uporabnika?"
+
+#: ../features/admin-approval/class-admin-approval.php:127
+#: ../features/admin-approval/class-admin-approval.php:234
+msgid "Unapprove"
+msgstr "Neodobri"
+
+#: ../features/admin-approval/class-admin-approval.php:129
+msgid "approve this user?"
+msgstr "odobri tega uporabnika?"
+
+#: ../features/admin-approval/class-admin-approval.php:129
+#: ../features/admin-approval/class-admin-approval.php:233
+msgid "Approve"
+msgstr "Odobri"
+
+#: ../features/admin-approval/class-admin-approval.php:178
+#: ../modules/user-listing/userlisting.php:249
+#: ../modules/user-listing/userlisting.php:623
+#: ../modules/user-listing/userlisting.php:1264
+msgid "Firstname"
+msgstr "Ime"
+
+#: ../features/admin-approval/class-admin-approval.php:179
+#: ../modules/user-listing/userlisting.php:626
+#: ../modules/user-listing/userlisting.php:1265
+msgid "Lastname"
+msgstr "Priimek"
+
+#: ../features/admin-approval/class-admin-approval.php:181
+#: ../modules/user-listing/userlisting.php:124
+#: ../modules/user-listing/userlisting.php:250
+#: ../modules/user-listing/userlisting.php:653
+#: ../modules/user-listing/userlisting.php:1268
+msgid "Role"
+msgstr "Vloga"
+
+#: ../features/admin-approval/class-admin-approval.php:182
+#: ../features/email-confirmation/class-email-confirmation.php:169
+msgid "Registered"
+msgstr "Registriran"
+
+#: ../features/admin-approval/class-admin-approval.php:183
+msgid "User-status"
+msgstr "Status uporabnika"
+
+#: ../features/admin-approval/class-admin-approval.php:263
+msgid "Do you want to bulk approve the selected users?"
+msgstr "Ali hočete odobriti vse izbrane uporabnike?"
+
+#: ../features/admin-approval/class-admin-approval.php:271
+msgid "Do you want to bulk unapprove the selected users?"
+msgstr "Ali hočete neodobriti vse izbrane uporabnike?"
+
+#: ../features/admin-approval/class-admin-approval.php:277
+msgid "Do you want to bulk delete the selected users?"
+msgstr "Ali hočete izbrisati vse izbrane uporabnike?"
+
+#: ../features/admin-approval/class-admin-approval.php:285
+#: ../features/email-confirmation/class-email-confirmation.php:278
+msgid "Sorry, but you don't have permission to do that!"
+msgstr "Oprostite, ampak nimate pravic za dokočnanje tega dejanja!"
+
+#: ../features/admin-approval/class-admin-approval.php:341
+msgid "Approved"
+msgstr "Odobren"
+
+#: ../features/admin-approval/class-admin-approval.php:343
+msgid "Unapproved"
+msgstr "Neodobren"
+
+#: ../features/admin-approval/class-admin-approval.php:461
+#: ../features/email-confirmation/class-email-confirmation.php:469
+msgid "All Users"
+msgstr "Vsi uporabniki"
+
+#: ../features/email-confirmation/class-email-confirmation.php:120
+msgid "delete this user from the _signups table?"
+msgstr "izbriši tega uporabnika iz _signups tabele?"
+
+#: ../features/email-confirmation/class-email-confirmation.php:121
+msgid "confirm this email yourself?"
+msgstr "želite potrditi ta e-naslov?"
+
+#: ../features/email-confirmation/class-email-confirmation.php:121
+#: ../features/email-confirmation/class-email-confirmation.php:218
+msgid "Confirm Email"
+msgstr "Potrdite e-naslov"
+
+#: ../features/email-confirmation/class-email-confirmation.php:122
+msgid "resend the activation link?"
+msgstr "ponovno pošljem aktivacijsko povezavo?"
+
+#: ../features/email-confirmation/class-email-confirmation.php:122
+#: ../features/email-confirmation/class-email-confirmation.php:219
+msgid "Resend Activation Email"
+msgstr "Ponovno pošlji aktivacijsko e-pošto"
+
+#: ../features/email-confirmation/class-email-confirmation.php:249
+msgid "%s couldn't be deleted"
+msgstr "%s ni bilo mogoče izbrisati"
+
+#: ../features/email-confirmation/class-email-confirmation.php:253
+msgid "All users have been successfully deleted"
+msgstr "Vsi uporabniki so bili uspešno izbrisani"
+
+#: ../features/email-confirmation/class-email-confirmation.php:263
+msgid "The selected users have been activated"
+msgstr "Izbrani uporabniki so bili aktivirani"
+
+#: ../features/email-confirmation/class-email-confirmation.php:274
+msgid "The selected users have had their activation emails resent"
+msgstr "Izbranim uporabnikom so bile ponovno poslane potrditvene e-pošte"
+
+#: ../features/email-confirmation/class-email-confirmation.php:466
+#: ../features/email-confirmation/email-confirmation.php:47
+msgid "Users with Unconfirmed Email Address"
+msgstr "Uporabniki z nepotrjenimi e-naslovi"
+
+#: ../features/email-confirmation/email-confirmation.php:110
+msgid "There was an error performing that action!"
+msgstr "Prišlo je do napake pri zadnjem dejanju!"
+
+#: ../features/email-confirmation/email-confirmation.php:118
+msgid "The selected user couldn't be deleted"
+msgstr "Izbranega uporabnika ni bilo moč zbrisati"
+
+#: ../features/email-confirmation/email-confirmation.php:129
+msgid "Email notification resent to user"
+msgstr "Obvestilo preko e-pošte je bilo preposlano uporabniku"
+
+#: ../features/email-confirmation/email-confirmation.php:384
+msgid "[%1$s] Activate %2$s"
+msgstr "[%1$s] Aktiviraj %2$s"
+
+#: ../features/email-confirmation/email-confirmation.php:387
+msgid ""
+"To activate your user, please click the following link:\n"
+"\n"
+"%s%s%s\n"
+"\n"
+"After you activate it you will receive yet *another email* with your login."
+msgstr ""
+"Za aktivacijo vašega uporabniškega računa kliknite naslednjo povezavo::\n"
+"\n"
+"%s%s%s\n"
+"\n"
+"Po aktivaciji boste prejeli še dodatno e-pošto z vašimi prijavnimi podatki."
+
+#: ../features/email-confirmation/email-confirmation.php:428
+#: ../front-end/register.php:68
+msgid "Could not create user!"
+msgstr "Ni bilo moč ustvariti novega uporabnika!"
+
+#: ../features/email-confirmation/email-confirmation.php:431
+msgid "That username is already activated!"
+msgstr "To uporabniško ime je že aktivno!"
+
+#: ../features/email-confirmation/email-confirmation.php:453
+msgid "There was an error while trying to activate the user"
+msgstr "Prišlo je do napake pri aktiviranju uporabnika"
+
+#: ../features/email-confirmation/email-confirmation.php:501
+#: ../modules/email-customizer/admin-email-customizer.php:73
+msgid "A new subscriber has (been) registered!"
+msgstr "Nov naročnik se je registriral!"
+
+#: ../features/email-confirmation/email-confirmation.php:504
+msgid "New subscriber on %1$s.<br/><br/>Username:%2$s<br/>E-mail:%3$s<br/>"
+msgstr "Novi naročnik na %1$s.<br/><br/>Uporabniško ime:%2$s<br/>E-naslov:%3$s<br/>"
+
+#: ../features/email-confirmation/email-confirmation.php:605
+msgid "The \"Admin Approval\" feature was activated at the time of registration, so please remember that you need to approve this user before he/she can log in!"
+msgstr "\"Odobritev s strani skrbnikov\" možnost je bila aktivirana ob času registracije, tako da ne pozabite, da morate uporabnika odobriti preden se lahko prijavi!"
+
+#: ../features/email-confirmation/email-confirmation.php:550
+msgid "[%1$s] Your new account information"
+msgstr "[%1$s] Vaše nove informacije v računu"
+
+#: ../features/email-confirmation/email-confirmation.php:556
+msgid "Welcome to %1$s!<br/><br/><br/>Your username is:%2$s and password:%3$s"
+msgstr "Dobrodošli na %1$s!<br/><br/><br/>Vaše uporabniško ime je:%2$s in geslo:%3$s"
+
+#: ../features/email-confirmation/email-confirmation.php:613
+#: ../front-end/register.php:116
+msgid "Before you can access your account, an administrator needs to approve it. You will be notified via email."
+msgstr "Preden lahko uporabljate svoj račun ga mora odobriti skrbnik strani. Obveščeni boste po e-pošti."
+
+#: ../features/login-widget/login-widget.php:10
+msgid "This login widget lets you add a login form in the sidebar."
+msgstr "Ta prijavni gradnik vam omogoča dodajanje prijavnega obrazca v stransko vrstico."
+
+#: ../features/login-widget/login-widget.php:15
+msgid "Profile Builder Login Widget"
+msgstr "Prijavni gradnik Profile Builder"
+
+#: ../front-end/class-formbuilder.php:294 ../front-end/login.php:202
+msgid "Register"
+msgstr "Registriraj se"
+
+#: ../features/login-widget/login-widget.php:63
+msgid "Title:"
+msgstr "Naslov:"
+
+#: ../features/login-widget/login-widget.php:68
+msgid "After login redirect URL (optional):"
+msgstr "Preusmeritvena povezava po prijavi (opcijsko):"
+
+#: ../features/login-widget/login-widget.php:73
+msgid "Register page URL (optional):"
+msgstr "Registrirajte spletni naslov strani (izbirno):"
+
+#: ../features/login-widget/login-widget.php:78
+msgid "Password Recovery page URL (optional):"
+msgstr "Spletni naslov strani za obnovitev gesla (izbirno):"
+
+#: ../features/upgrades/upgrades-functions.php:91
+#: ../features/upgrades/upgrades-functions.php:134
+msgid "The usernames cannot be changed."
+msgstr "Uporabniškega imena se ne more spremeniti."
+
+#: ../front-end/class-formbuilder.php:89
+msgid "Only an administrator can add new users."
+msgstr "Samo skrbnik strani lahko doda nove uporabnike."
+
+#: ../front-end/class-formbuilder.php:99
+msgid "Users can register themselves or you can manually create users here."
+msgstr "Uporabniki se lahko registrirajo ali pa jih ročno ustvarite tu."
+
+#: ../front-end/class-formbuilder.php:102
+msgid "Users cannot currently register themselves, but you can manually create users here."
+msgstr "Uporabniki se trenutno ne morejo registrirati, lahko pa jih ročno dodate tu."
+
+#: ../front-end/class-formbuilder.php:114
+msgid "You are currently logged in as %1s. You don't need another account. %2s"
+msgstr "Trenutno ste prijavljeni kot %1s. Ne potrebujete drugega uporabniškega računa. %2s"
+
+#: ../front-end/class-formbuilder.php:114
+msgid "Log out of this account."
+msgstr "Odjavi se iz tega računa."
+
+#: ../front-end/class-formbuilder.php:114
+msgid "Logout"
+msgstr "Odjava"
+
+#: ../front-end/class-formbuilder.php:120
+msgid "You must be logged in to edit your profile."
+msgstr "Za urejanje profila morate biti prijavljeni."
+
+#: ../front-end/class-formbuilder.php:142
+msgid "here"
+msgstr "tukaj"
+
+#: ../front-end/class-formbuilder.php:144
+msgid "You will soon be redirected automatically. If you see this page for more than %1$d seconds, please click %2$s.%3$s"
+msgstr "Kmalu boste samodejno preusmerjeni. Če ostanete na tej strani več kot %1$d sekund, prosimo kliknite %2$s.%3$s"
+
+#: ../front-end/class-formbuilder.php:239
+#: ../front-end/class-formbuilder.php:246
+msgid "The account %1s has been successfully created!"
+msgstr "Račun %1s je bil uspećno ustvarjen!"
+
+#: ../front-end/class-formbuilder.php:242
+#: ../front-end/class-formbuilder.php:252
+msgid "Before you can access your account %1s, you need to confirm your email address. Please check your inbox and click the activation link."
+msgstr "Preden lahko uporabljate svoj račun %1s morate potrditi svoj e-poštni naslov. Prosimo preverite vašo mapo s prejeto e-pošto in kliknite na aktivacijsko povezavo."
+
+#: ../front-end/class-formbuilder.php:248
+msgid "Before you can access your account %1s, an administrator has to approve it. You will be notified via email."
+msgstr "Preden lahko uporabljate svoj račun %1s ga mora odobriti skrbnik strani. Obveščeni boste po e-pošti."
+
+#: ../front-end/class-formbuilder.php:262
+msgid "Your profile has been successfully updated!"
+msgstr "Vaš profil je bil uspešno posodobljen!"
+
+#: ../front-end/class-formbuilder.php:272
+msgid "There was an error in the submitted form"
+msgstr "Prišlo je do napake pri oddaji obrazca"
+
+#: ../front-end/class-formbuilder.php:294
+msgid "Add User"
+msgstr "Dodaj uporabnika"
+
+#: ../admin/add-ons.php:170 ../front-end/class-formbuilder.php:297
+msgid "Update"
+msgstr "Posodobi"
+
+#: ../front-end/class-formbuilder.php:340
+#: ../front-end/extra-fields/extra-fields.php:35
+msgid "The avatar was successfully deleted!"
+msgstr "Prikazna slika je bila uspešno zbrisana!"
+
+#: ../front-end/class-formbuilder.php:340
+#: ../front-end/extra-fields/extra-fields.php:37
+msgid "The following attachment was successfully deleted:"
+msgstr "Sledeča priloga je bila uspešno zbrisana:"
+
+#: ../front-end/class-formbuilder.php:352
+msgid "Send these credentials via email."
+msgstr "Pošlji te vpisne podatke po e-pošti."
+
+#: ../front-end/extra-fields/extra-fields.php:99 ../front-end/login.php:89
+#: ../front-end/login.php:96 ../front-end/login.php:110
+#: ../front-end/recover.php:17 ../front-end/recover.php:228
+msgid "ERROR"
+msgstr "NAPAKA"
+
+#: ../front-end/login.php:89
+msgid "The password you entered is incorrect."
+msgstr "Vnešeno geslo je nepravilno."
+
+#: ../front-end/login.php:90 ../front-end/login.php:97
+msgid "Password Lost and Found."
+msgstr "Geslo izgubljeno in najdeno"
+
+#: ../front-end/login.php:90 ../front-end/login.php:97
+msgid "Lost your password"
+msgstr "Izgubljeno geslo"
+
+#: ../front-end/login.php:110
+msgid "Both fields are empty."
+msgstr "Obe polji sta prazni."
+
+#: ../front-end/login.php:241
+msgid "You are currently logged in as %1$s. %2$s"
+msgstr "Trenutno ste prijavljeni kot %1$s. %2$s"
+
+#: ../front-end/login.php:240 ../front-end/logout.php:17
+msgid "Log out of this account"
+msgstr "Izpis iz tega računa"
+
+#: ../front-end/login.php:240
+msgid "Log out"
+msgstr "Izpis"
+
+#: ../front-end/recover.php:17
+msgid "Your account has to be confirmed by an administrator before you can use the \"Password Reset\" feature."
+msgstr "Vaš uporabniški račun mora biti odobren s strani skrbnika strani preden lahko uporabite funkcijo \"Ponastavitev gesla\"."
+
+#: ../front-end/recover.php:91
+msgid "Reset Password"
+msgstr "Ponastavi geslo"
+
+#: ../front-end/recover.php:111
+msgid "Please enter your username or email address."
+msgstr "Prosimo vpišite vaše uporabniško ime ali e-naslov"
+
+#: ../front-end/recover.php:112
+msgid "You will receive a link to create a new password via email."
+msgstr "Prejeli boste povezavo, da ustvarite novo geslo preko e-naslova"
+
+#: ../front-end/recover.php:119
+msgid "Username or E-mail"
+msgstr "Uporabniško ime ali e-naslov"
+
+#: ../front-end/recover.php:125
+msgid "Get New Password"
+msgstr "Pridobite novo geslo"
+
+#: ../front-end/recover.php:166
+msgid "The username entered wasn't found in the database!"
+msgstr "Vnešeno uporabniško ime ni bilo najdeno v bazi!"
+
+#: ../front-end/recover.php:166
+msgid "Please check that you entered the correct username."
+msgstr "Prosimo preverite ali ste vnesli pravilno uporabniško ime."
+
+#: ../front-end/recover.php:181
+msgid "Check your e-mail for the confirmation link."
+msgstr "Preverite vaš e-naslov za potrditveno povezavo."
+
+#: ../front-end/recover.php:216
+msgid "Someone requested that the password be reset for the following account: <b>%1$s</b><br/>If this was a mistake, just ignore this email and nothing will happen.<br/>To reset your password, visit the following link:%2$s"
+msgstr "Nekdo je oddal prošnjo za ponastavitev gesla za sledeči uporabniški račun: <b>%1$s</b><br/>Če je to bila pomota, ignorirajte to e-pošto in nič se ne bo zgodilo.<br/>Za ponastavitev gesla, obiščite sledečo povezavo:%2$s"
+
+#: ../front-end/recover.php:219
+msgid "Password Reset from \"%1$s\""
+msgstr "Ponastavitev gesla od \"%1$s\""
+
+#: ../front-end/recover.php:228
+msgid "There was an error while trying to send the activation link to %1$s!"
+msgstr "Prišlo je do napake pri pošiljanju aktivacijske povezave na %1$s!"
+
+#: ../front-end/recover.php:188
+msgid "The email address entered wasn't found in the database!"
+msgstr "Vnešeni e-naslov ni bil najden v bazi!"
+
+#: ../front-end/recover.php:188
+msgid "Please check that you entered the correct email address."
+msgstr "Prosimo preverite, da ste vnesli pravilen e-naslov."
+
+#: ../front-end/recover.php:256
+msgid "Your password has been successfully changed!"
+msgstr "Vaše geslo je bilo uspešno spremenjeno!"
+
+#: ../front-end/recover.php:275
+msgid "You have successfully reset your password to: %1$s"
+msgstr "Uspešno ste spremenili geslo v: %1$s"
+
+#: ../front-end/recover.php:278 ../front-end/recover.php:292
+msgid "Password Successfully Reset for %1$s on \"%2$s\""
+msgstr "Geslo je bilo uspešno ponastavljeno za %1$s na \"%2$s\""
+
+#: ../front-end/recover.php:289
+msgid "%1$s has requested a password change via the password reset feature.<br/>His/her new password is:%2$s"
+msgstr "%1$s je oddal prošnjo za spremembo gesla preko funkcije za ponastavitev gesla.<br/>Njegovo/Njeno novo geslo je:%2$s"
+
+#: ../front-end/recover.php:308
+msgid "The entered passwords don't match!"
+msgstr "Vnešeni gesli se ne ujemata!"
+
+#: ../front-end/recover.php:353
+msgid "ERROR:"
+msgstr "NAPAKA:"
+
+#: ../front-end/recover.php:353
+msgid "Invalid key!"
+msgstr "Neveljaven ključ!"
+
+#: ../front-end/register.php:46
+msgid "Invalid activation key!"
+msgstr "Neveljaven aktivacijski ključ!"
+
+#: ../front-end/register.php:50
+msgid "This username is now active!"
+msgstr "To uporabniško ime je sedaj aktivno!"
+
+#: ../front-end/register.php:71
+msgid "This username is already activated!"
+msgstr "To uporabniško ime je že aktivno!"
+
+#: ../front-end/register.php:115
+msgid "Your email was successfully confirmed."
+msgstr "Vaš e-naslov je bil uspešno potrjen."
+
+#: ../front-end/register.php:144
+msgid "There was an error while trying to activate the user."
+msgstr "Prišlo je do napake pri aktivaciji uporabnika."
+
+#: ../front-end/default-fields/email/email.php:44
+msgid "The email you entered is not a valid email address."
+msgstr "E-naslov, ki ste ga vnesli, ni veljaven."
+
+#: ../front-end/default-fields/email/email.php:57
+#: ../front-end/default-fields/email/email.php:64
+msgid "This email is already reserved to be used soon."
+msgstr "Ta e-naslov je že rezerviran in bo kmalu uporabljen."
+
+#: ../front-end/default-fields/email/email.php:57
+#: ../front-end/default-fields/email/email.php:64
+#: ../front-end/default-fields/email/email.php:73
+#: ../front-end/default-fields/email/email.php:84
+#: ../front-end/default-fields/username/username.php:50
+#: ../front-end/default-fields/username/username.php:65
+msgid "Please try a different one!"
+msgstr "Prosimo poskusite drugega!"
+
+#: ../front-end/default-fields/email/email.php:73
+#: ../front-end/default-fields/email/email.php:84
+msgid "This email is already in use."
+msgstr "Ta e-naslov je že v uporabi."
+
+#: ../front-end/default-fields/password-repeat/password-repeat.php:37
+#: ../front-end/default-fields/password-repeat/password-repeat.php:41
+msgid "The passwords do not match"
+msgstr "Gesli se ne ujemata"
+
+#: ../front-end/default-fields/username/username.php:50
+msgid "This username already exists."
+msgstr "To uporabniško ime že obstaja."
+
+#: ../front-end/default-fields/username/username.php:65
+msgid "This username is already reserved to be used soon."
+msgstr "To uporabniško ime je že rezervirano, da bo kmalu uporabljeno."
+
+#: ../modules/user-listing/userlisting.php:247
+msgid "Avatar"
+msgstr "Prikazna slika"
+
+#: ../front-end/extra-fields/avatar/avatar.php:72
+#: ../front-end/extra-fields/checkbox/checkbox.php:45
+#: ../front-end/extra-fields/datepicker/datepicker.php:40
+#: ../front-end/extra-fields/input-hidden/input-hidden.php:34
+#: ../front-end/extra-fields/input/input.php:30
+#: ../front-end/extra-fields/radio/radio.php:44
+#: ../front-end/extra-fields/select-multiple/select-multiple.php:46
+#: ../front-end/extra-fields/select-timezone/select-timezone.php:44
+#: ../front-end/extra-fields/select/select.php:46
+#: ../front-end/extra-fields/textarea/textarea.php:30
+#: ../front-end/extra-fields/upload/upload.php:70
+#: ../front-end/extra-fields/wysiwyg/wysiwyg.php:33
+msgid "required"
+msgstr "zahtevano"
+
+#: ../front-end/extra-fields/recaptcha/recaptcha.php:48
+msgid "To use reCAPTCHA you must get an API key from"
+msgstr "Za uporabo reCAPTCHA morate priskrbeti API ključ"
+
+#: ../front-end/extra-fields/recaptcha/recaptcha.php:131
+msgid "For security reasons, you must pass the remote ip to reCAPTCHA!"
+msgstr "Zavoljo varnostnih razlogov, morate priskrbeti oddaljeni ip za reCAPTCHA!"
+
+#: ../front-end/extra-fields/recaptcha/recaptcha.php:192
+msgid "To use reCAPTCHA you must get an API public key from:"
+msgstr "Za uporabo reCAPTCHA morate pridobiti API javni ključ od:"
+
+#: ../modules/modules.php:11 ../modules/modules.php:80
+msgid "Modules"
+msgstr "Moduli"
+
+#: ../modules/modules.php:81
+msgid "Here you can activate / deactivate available modules for Profile Builder."
+msgstr "Tukaj lahko aktivirate / deaktivirate module, ki so na voljo za Profile Builder"
+
+#: ../modules/modules.php:91
+msgid "Name/Description"
+msgstr "Ime/Opis"
+
+#: ../modules/modules.php:92
+msgid "Status"
+msgstr "Status"
+
+#: ../modules/custom-redirects/custom-redirects.php:48
+#: ../modules/custom-redirects/custom-redirects.php:58
+#: ../modules/custom-redirects/custom-redirects.php:68
+#: ../modules/custom-redirects/custom-redirects.php:94
+#: ../modules/custom-redirects/custom-redirects.php:104
+#: ../modules/custom-redirects/custom-redirects.php:114
+#: ../modules/custom-redirects/custom-redirects.php:124
+#: ../modules/modules.php:99 ../modules/modules.php:106
+#: ../modules/modules.php:113 ../modules/modules.php:120
+#: ../modules/modules.php:127 ../modules/modules.php:134
+msgid "Active"
+msgstr "Aktiven"
+
+#: ../modules/custom-redirects/custom-redirects.php:49
+#: ../modules/custom-redirects/custom-redirects.php:59
+#: ../modules/custom-redirects/custom-redirects.php:69
+#: ../modules/custom-redirects/custom-redirects.php:95
+#: ../modules/custom-redirects/custom-redirects.php:105
+#: ../modules/custom-redirects/custom-redirects.php:115
+#: ../modules/custom-redirects/custom-redirects.php:125
+#: ../modules/modules.php:100 ../modules/modules.php:107
+#: ../modules/modules.php:114 ../modules/modules.php:121
+#: ../modules/modules.php:128 ../modules/modules.php:135
+msgid "Inactive"
+msgstr "Neaktiven"
+
+#: ../modules/email-customizer/admin-email-customizer.php:11
+#: ../modules/email-customizer/admin-email-customizer.php:12
+#: ../modules/modules.php:118
+msgid "Admin Email Customizer"
+msgstr "Oblikovalec Skrbniškega E-naslova"
+
+#: ../modules/email-customizer/user-email-customizer.php:11
+#: ../modules/email-customizer/user-email-customizer.php:12
+#: ../modules/modules.php:125
+msgid "User Email Customizer"
+msgstr " Oblikovalec Uporabniškega E-naslova"
+
+#: ../assets/lib/wck-api/wordpress-creation-kit.php:337
+#: ../modules/class-mustache-templates/class-mustache-templates.php:242
+msgid "Save"
+msgstr "Shrani"
+
+#: ../modules/custom-redirects/custom-redirects.php:35
+msgid "Redirects on custom page requests:"
+msgstr "Preusmeri zahteve na prilagojeno stran:"
+
+#: ../modules/custom-redirects/custom-redirects.php:39
+#: ../modules/custom-redirects/custom-redirects.php:85
+msgid "Action"
+msgstr "Operacija"
+
+#: ../modules/custom-redirects/custom-redirects.php:40
+#: ../modules/custom-redirects/custom-redirects.php:86
+#: ../modules/multiple-forms/edit-profile-forms.php:202
+#: ../modules/multiple-forms/register-forms.php:226
+msgid "Redirect"
+msgstr "Preusmeritev"
+
+#: ../modules/custom-redirects/custom-redirects.php:41
+#: ../modules/custom-redirects/custom-redirects.php:87
+#: ../modules/multiple-forms/edit-profile-forms.php:204
+#: ../modules/multiple-forms/register-forms.php:228
+msgid "URL"
+msgstr "URL"
+
+#: ../modules/custom-redirects/custom-redirects.php:46
+msgid "After Registration:"
+msgstr "Po registraciji:"
+
+#: ../modules/custom-redirects/custom-redirects.php:56
+msgid "After Login:"
+msgstr "Po prijavi:"
+
+#: ../modules/custom-redirects/custom-redirects.php:66
+msgid "Recover Password (*)"
+msgstr "Ponovno pridobi geslo (*)"
+
+#: ../modules/custom-redirects/custom-redirects.php:77
+msgid "When activated this feature will redirect the user on both the default Wordpress password recovery page and the \"Lost password?\" link used by Profile Builder on the front-end login page."
+msgstr "Kadar je aktivirana ta možnost, bo uporabnik preusmerjen na privzeto WordPress stran za ponastavitev gesla in na povezavo \"Izgubljeno geslo?\", ki ga uporablja Profile Builder na sprednji strani (Front-End) prijavne strani."
+
+#: ../modules/custom-redirects/custom-redirects.php:81
+msgid "Redirects on default WordPress page requests:"
+msgstr "Preusmeri zahteve na privzeto WordPress stran:"
+
+#: ../modules/custom-redirects/custom-redirects.php:92
+msgid "Default WordPress Login Page"
+msgstr "Privzeta WordPress stran za prijavo"
+
+#: ../modules/custom-redirects/custom-redirects.php:102
+msgid "Default WordPress Logout Page"
+msgstr "Privzeta WordPress stran za odjavo"
+
+#: ../modules/custom-redirects/custom-redirects.php:112
+msgid "Default WordPress Register Page"
+msgstr "Privzeta WordPress stran za registracijo"
+
+#: ../modules/custom-redirects/custom-redirects.php:122
+msgid "Default WordPress Dashboard (*)"
+msgstr "Privzeta WordPress nadzorna plošča (*)"
+
+#: ../modules/custom-redirects/custom-redirects.php:133
+msgid "Redirects every user-role EXCEPT the ones with administrator privileges (can manage options)."
+msgstr "Preusmeri vse vloge uporabnikov RAZEN tistih z skrbniškimi pravicami (ki lahko spreminjajo nastavitve)."
+
+#: ../modules/email-customizer/admin-email-customizer.php:38
+msgid "These settings are also replicated in the \"User Email Customizer\" settings-page upon save."
+msgstr "Te nastavitve se shranijo tudi (kopirajo) v \"Oblikovalec Uporabniškega E-naslova\" stran z nastavitvami ob shranitvi."
+
+#: ../modules/email-customizer/admin-email-customizer.php:41
+#: ../modules/email-customizer/user-email-customizer.php:41
+msgid "From (name)"
+msgstr "Od (ime)"
+
+#: ../modules/email-customizer/admin-email-customizer.php:49
+#: ../modules/email-customizer/user-email-customizer.php:49
+msgid "From (reply-to email)"
+msgstr "Od (odgovori-na e-naslov)"
+
+#: ../modules/email-customizer/admin-email-customizer.php:57
+#: ../modules/email-customizer/user-email-customizer.php:57
+msgid "Common Settings"
+msgstr "Pogoste nastavitve"
+
+#: ../modules/email-customizer/admin-email-customizer.php:60
+msgid ""
+"\n"
+"<p>New subscriber on {{site_name}}.</p>\n"
+"<p>Username:{{username}}</p>\n"
+"<p>E-mail:{{user_email}}</p>\n"
+msgstr ""
+"\n"
+"<p>Nov naročnik na {{site_name}}.</p>\n"
+"<p>Uporabniško ime:{{username}}</p>\n"
+"<p>E-naslov:{{user_email}}</p>\n"
+
+#: ../modules/email-customizer/admin-email-customizer.php:69
+#: ../modules/email-customizer/admin-email-customizer.php:99
+#: ../modules/email-customizer/admin-email-customizer.php:126
+#: ../modules/email-customizer/user-email-customizer.php:71
+#: ../modules/email-customizer/user-email-customizer.php:99
+#: ../modules/email-customizer/user-email-customizer.php:128
+#: ../modules/email-customizer/user-email-customizer.php:155
+#: ../modules/email-customizer/user-email-customizer.php:183
+#: ../modules/email-customizer/user-email-customizer.php:214
+#: ../modules/email-customizer/user-email-customizer.php:241
+msgid "Email Subject"
+msgstr "Zadeva e-pošte"
+
+#: ../modules/email-customizer/admin-email-customizer.php:84
+msgid "Default Registration & Registration with Email Confirmation"
+msgstr "Privzeta registracija & registracija s potrditveno e-pošto"
+
+#: ../modules/email-customizer/admin-email-customizer.php:87
+msgid ""
+"\n"
+"<p>New subscriber on {{site_name}}.</p>\n"
+"<p>Username:{{username}}</p>\n"
+"<p>E-mail:{{user_email}}</p>\n"
+"<p>The Admin Approval feature was activated at the time of registration,\n"
+"so please remember that you need to approve this user before he/she can log in!</p>\n"
+msgstr ""
+"\n"
+"<p>Nov naročnik na {{site_name}}.</p>\n"
+"<p>Uporabniško ime:{{username}}</p>\n"
+"<p>E-naslov:{{user_email}}</p>\n"
+"<p>Opcija za odobritev s strani skrbnika strani je bila aktivirana ob času registracije,\n"
+"zato ne pozabite, da morate uporabnika potrditi preden se lahko prijavi!</p>\n"
+
+#: ../modules/email-customizer/admin-email-customizer.php:114
+#: ../modules/email-customizer/user-email-customizer.php:143
+msgid "Registration with Admin Approval"
+msgstr "Registracija z odobritvijo skrbnika strani"
+
+#: ../modules/email-customizer/email-customizer.php:7
+msgid "Available Tags"
+msgstr "Oznake, ki so na voljo"
+
+#: ../features/email-confirmation/class-email-confirmation.php:91
+#: ../features/email-confirmation/class-email-confirmation.php:170
+#: ../modules/email-customizer/email-customizer.php:11
+msgid "User Meta"
+msgstr "Meta uporabnika"
+
+#: ../modules/email-customizer/email-customizer.php:21
+msgid "Site Url"
+msgstr "Spletni naslov"
+
+#: ../modules/email-customizer/email-customizer.php:22
+msgid "Site Name"
+msgstr "Ime spletnega mesta"
+
+#: ../modules/email-customizer/email-customizer.php:25
+#: ../modules/user-listing/userlisting.php:133
+msgid "User Id"
+msgstr "Identifikacijska št. uporabnika"
+
+#: ../modules/email-customizer/email-customizer.php:33
+msgid "Reply To"
+msgstr "Odgovori na"
+
+#: ../modules/email-customizer/email-customizer.php:36
+msgid "Activation Key"
+msgstr "Aktivacijski ključ"
+
+#: ../modules/email-customizer/email-customizer.php:37
+msgid "Activation Url"
+msgstr "Aktivacijski spletni naslov"
+
+#: ../modules/email-customizer/email-customizer.php:38
+msgid "Activation Link"
+msgstr "Aktivacijska povezava"
+
+#: ../modules/email-customizer/user-email-customizer.php:64
+msgid ""
+"\n"
+"<h3>Welcome to {{site_name}}!</h3>\n"
+"<p>Your username is:{{username}} and password:{{password}}</p>\n"
+msgstr ""
+"\n"
+"<h3>Dobrodošli na {{site_name}}!</h3>\n"
+"<p>Vaše uporabniško ime je:{{username}} in geslo:{{password}}</p>\n"
+
+#: ../modules/email-customizer/user-email-customizer.php:85
+msgid "Default Registration"
+msgstr "Privzeta registracija"
+
+#: ../modules/email-customizer/user-email-customizer.php:91
+msgid ""
+"\n"
+"<p>To activate your user, please click the following link:<br/>\n"
+"{{{activation_link}}}</p>\n"
+"<p>After you activate, you will receive another email with your credentials.</p>\n"
+msgstr ""
+"\n"
+"<p>Za aktivacijo vašega uporabniškega računa, prosimo klknite sledečo povezavo:<br/>\n"
+"{{{activation_link}}}</p>\n"
+"<p>Po aktivaciji boste prejeli dodatno e-pošto s prijavnimi podatki.</p>\n"
+
+#: ../modules/email-customizer/user-email-customizer.php:103
+msgid "[{{site_name}}] Activate {{username}}"
+msgstr "[{{site_name}}] Aktiviraj {{username}}"
+
+#: ../modules/email-customizer/user-email-customizer.php:114
+msgid "Registration with Email Confirmation"
+msgstr "Registracija s potrditveno e-pošto"
+
+#: ../modules/email-customizer/user-email-customizer.php:120
+msgid ""
+"\n"
+"<h3>Welcome to {{site_name}}!</h3>\n"
+"<p>Your username is:{{username}} and password:{{password}}</p>\n"
+"<p>Before you can access your account, an administrator needs to approve it. You will be notified via email.</p>\n"
+msgstr ""
+"\n"
+"<h3>Dobrodošli na {{site_name}}!</h3>\n"
+"<p>Vaše uporabniško ime je:{{username}} in geslo:{{password}}</p>\n"
+"<p>Preden lahko dostopate do svojega uporabniškega računa ga mora odobriti skrbnik strani. Obveščeni boste po e-pošti.</p>\n"
+
+#: ../modules/email-customizer/user-email-customizer.php:132
+msgid "A new account has been created for you on {{site_name}}"
+msgstr "Na {{site_name}} je bil ustvarjen nov račun za vas"
+
+#: ../modules/email-customizer/user-email-customizer.php:148
+msgid ""
+"\n"
+"<h3>Good News!</h3>\n"
+"<p>An administrator has just approved your account: {{username}} on {{site_name}}.</p>\n"
+msgstr ""
+"\n"
+"<h3>Dobra novica!</h3>\n"
+"<p>Skrbnik strani je pravkar odobril vaš račun: {{username}} na {{site_name}}.</p>\n"
+
+#: ../modules/email-customizer/user-email-customizer.php:159
+msgid "Your account on {{site_name}} has been approved!"
+msgstr "Vaš račun na {{site_name}} je bil odobren!"
+
+#: ../modules/email-customizer/user-email-customizer.php:170
+msgid "User Approval Notification"
+msgstr "Obvestilo o odobritvi uporabnika"
+
+#: ../modules/email-customizer/user-email-customizer.php:175
+msgid ""
+"\n"
+"<h3>Hello,</h3>\n"
+"<p>Unfortunatelly an administrator has just unapproved your account: {{username}} on {{site_name}}.</p>\n"
+msgstr ""
+"\n"
+"<h3>Pozdravljeni,</h3>\n"
+"<p>Na žalost je skrbnik strani pravkar označil vaš uporabniški račun kot neodobrenega: {{username}} na strani {{site_name}}.</p>\n"
+
+#: ../modules/email-customizer/user-email-customizer.php:187
+msgid "Your account on {{site_name}} has been unapproved!"
+msgstr "Vaš račun na {{site_name}} ni bil odobren!"
+
+#: ../modules/email-customizer/user-email-customizer.php:198
+msgid "Unapproved User Notification"
+msgstr "Obvestilo o neodobritvi uporabnika"
+
+#: ../modules/multiple-forms/edit-profile-forms.php:11
+#: ../modules/multiple-forms/edit-profile-forms.php:12
+msgid "Edit-profile Form"
+msgstr "Obrazec za ureditev profila"
+
+#: ../modules/multiple-forms/edit-profile-forms.php:13
+#: ../modules/multiple-forms/register-forms.php:13
+#: ../modules/user-listing/userlisting.php:13
+msgid "Add New"
+msgstr "Dodaj novo"
+
+#: ../modules/multiple-forms/edit-profile-forms.php:14
+msgid "Add new Edit-profile Form"
+msgstr "Dodaj nov obrazec za ureditev profila"
+
+#: ../modules/multiple-forms/edit-profile-forms.php:15
+msgid "Edit the Edit-profile Forms"
+msgstr "Uredi obrazec za ureditev profila"
+
+#: ../modules/multiple-forms/edit-profile-forms.php:16
+msgid "New Edit-profile Form"
+msgstr "Nov obrazec za ureditev profila"
+
+#: ../modules/multiple-forms/edit-profile-forms.php:17
+#: ../modules/multiple-forms/edit-profile-forms.php:23
+msgid "Edit-profile Forms"
+msgstr "Obrazci za ureditev profila"
+
+#: ../modules/multiple-forms/edit-profile-forms.php:18
+msgid "View the Edit-profile Form"
+msgstr "Ogled obrazcev za urejanje profila"
+
+#: ../modules/multiple-forms/edit-profile-forms.php:19
+msgid "Search the Edit-profile Forms"
+msgstr "Išči med obrazci za urejanje profila"
+
+#: ../modules/multiple-forms/edit-profile-forms.php:20
+msgid "No Edit-profile Form found"
+msgstr "Noben obrazec za urejanje profila ni bil najden"
+
+#: ../modules/multiple-forms/edit-profile-forms.php:21
+msgid "No Edit-profile Forms found in trash"
+msgstr "Noben obrazec za urejanje profila ni bil najden v smeteh"
+
+#: ../modules/multiple-forms/edit-profile-forms.php:131
+#: ../modules/multiple-forms/register-forms.php:134
+#: ../modules/user-listing/userlisting.php:1155
+msgid "Shortcode"
+msgstr "Kratka koda (shortcode)"
+
+#: ../modules/multiple-forms/edit-profile-forms.php:151
+#: ../modules/multiple-forms/register-forms.php:155
+#: ../modules/user-listing/userlisting.php:1176
+msgid "(no title)"
+msgstr "(brez naslova)"
+
+#: ../modules/multiple-forms/edit-profile-forms.php:171
+#: ../modules/multiple-forms/register-forms.php:174
+#: ../modules/user-listing/userlisting.php:1196
+msgid "The shortcode will be available after you publish this form."
+msgstr "Kratka koda (shortcode) bo na voljo po objavi tega obrazca."
+
+#: ../modules/multiple-forms/edit-profile-forms.php:173
+#: ../modules/multiple-forms/register-forms.php:176
+#: ../modules/user-listing/userlisting.php:1198
+msgid "Use this shortcode on the page you want the form to be displayed:"
+msgstr "Uporabite to kratko kodo (shortcode) na strani, kjer hočete, da se prikaže obrazec:"
+
+#: ../modules/multiple-forms/edit-profile-forms.php:177
+#: ../modules/multiple-forms/register-forms.php:180
+#: ../modules/user-listing/userlisting.php:1202
+msgid "<span style=\"color:red;\">Note:</span> changing the form title also changes the shortcode!"
+msgstr "<span style=\"color:red;\">Opomba:</span> sprememba naslova obrazca spremeni tudi kratko kodo (shortcode)!"
+
+#: ../modules/multiple-forms/edit-profile-forms.php:183
+#: ../modules/multiple-forms/register-forms.php:186
+#: ../modules/user-listing/userlisting.php:1235
+msgid "Form Shortcode"
+msgstr "Kratka koda (shortcode) obrazca"
+
+#: ../modules/multiple-forms/edit-profile-forms.php:202
+#: ../modules/multiple-forms/register-forms.php:226
+msgid "Whether to redirect the user to a specific page or not"
+msgstr "Ali preusmeriti uporabnika na določeno stran ali ne"
+
+#: ../modules/multiple-forms/edit-profile-forms.php:203
+#: ../modules/multiple-forms/register-forms.php:227
+msgid "Display Messages"
+msgstr "Prikazna sporočila"
+
+#: ../modules/multiple-forms/edit-profile-forms.php:203
+#: ../modules/multiple-forms/register-forms.php:227
+msgid "Allowed time to display any success messages (in seconds)"
+msgstr "Dovoljen čas prikaza kakršnihkoli sporočil o uspehu (v sekundah)"
+
+#: ../modules/multiple-forms/edit-profile-forms.php:204
+msgid "Specify the URL of the page users will be redirected once they updated their profile using this form<br/>Use the following format: http://www.mysite.com"
+msgstr "Določite spletno povezavo strani, na katero bodo preusmerjeni uporabniki, ko posodobijo svoj profil preko tega obrazca<br/>Uporabite naslednji format: http://www.mysite.com"
+
+#: ../modules/multiple-forms/edit-profile-forms.php:211
+msgid "After Profile Update..."
+msgstr "Po posodobitvi profila..."
+
+#: ../modules/multiple-forms/edit-profile-forms.php:237
+#: ../modules/multiple-forms/register-forms.php:258
+msgid "Add New Field to the List"
+msgstr "Dodaj novo polje na seznam"
+
+#: ../modules/multiple-forms/edit-profile-forms.php:241
+#: ../modules/multiple-forms/register-forms.php:262
+msgid "Choose one of the supported fields you manage <a href=\""
+msgstr "Izberite eno izmed podprtih polj, s katerimi upravljate <a href=\""
+
+#: ../modules/multiple-forms/multiple-forms.php:416
+msgid "<pre>Title (Type)</pre>"
+msgstr "<pre>Naslov (Tip)</pre>"
+
+#: ../modules/multiple-forms/multiple-forms.php:232
+msgid "You need to specify the title of the form before creating it"
+msgstr "Navesti morate naslov obrazca preden ga lahko ustvarite"
+
+#: ../modules/multiple-forms/register-forms.php:11
+#: ../modules/multiple-forms/register-forms.php:12
+msgid "Registration Form"
+msgstr "Registracijski obrazec"
+
+#: ../modules/multiple-forms/register-forms.php:14
+msgid "Add new Registration Form"
+msgstr "Dodaj nov registracijski obrazec"
+
+#: ../modules/multiple-forms/register-forms.php:15
+msgid "Edit the Registration Forms"
+msgstr "Uredite registracijske obrazce"
+
+#: ../modules/multiple-forms/register-forms.php:16
+msgid "New Registration Form"
+msgstr "Nov registracijski obrazec"
+
+#: ../modules/multiple-forms/register-forms.php:17
+#: ../modules/multiple-forms/register-forms.php:23
+msgid "Registration Forms"
+msgstr "Registracijski obrazci"
+
+#: ../modules/multiple-forms/register-forms.php:18
+msgid "View the Registration Form"
+msgstr "Preglej registracijske obrazce"
+
+#: ../modules/multiple-forms/register-forms.php:19
+msgid "Search the Registration Forms"
+msgstr "Išči med registracijskimi obrazci"
+
+#: ../modules/multiple-forms/register-forms.php:20
+msgid "No Registration Form found"
+msgstr "Noben registracijski obrazec ni bil najden"
+
+#: ../modules/multiple-forms/register-forms.php:21
+msgid "No Registration Forms found in trash"
+msgstr "Noben registracijski obrazec ni bil najden v smeteh"
+
+#: ../modules/multiple-forms/register-forms.php:215
+msgid "Default Role"
+msgstr "Privzeta vloga"
+
+#: ../modules/multiple-forms/register-forms.php:224
+msgid "Set Role"
+msgstr "Nastavi vlogo"
+
+#: ../modules/multiple-forms/register-forms.php:224
+msgid "Choose what role the user will have after (s)he registered<br/>If not specified, defaults to the role set in the WordPress settings"
+msgstr "Izberite katere vloge bo uporabnik imel, ko se registrira<br/>Če vloge niso določene bodo privzete vloge v nastavitvah WordPress"
+
+#: ../modules/multiple-forms/register-forms.php:225
+msgid "Automatically Log In"
+msgstr "Samodejna prijava"
+
+#: ../modules/multiple-forms/register-forms.php:225
+msgid "Whether to automatically log in the newly registered user or not<br/>Only works on single-sites without \"Admin Approval\" and \"Email Confirmation\" features activated<br/>WARNING: Caching the registration form will make automatic login not work"
+msgstr "Samodejna prijava novo ustvarjenih uporabnikov<br/>Deluje le na enojnih instalacijah brez aktiviranih funkcij \"Odobritev skrbnikov strani\" ter \"Potrditvena e-pošta\"<br/>OPOZORILO: Če je vključeno predpomnenje (caching) registracijskega obrazca samodejna prijava ne bo delovala"
+
+#: ../modules/multiple-forms/register-forms.php:228
+msgid "Specify the URL of the page users will be redirected once registered using this form<br/>Use the following format: http://www.mysite.com"
+msgstr "Določite spletno povezavo na katero bodo preusmerjeni uporabniki ko se registrirajo s tem obrazcem<br/>Uporabite sledeči format: http://www.mysite.com"
+
+#: ../modules/multiple-forms/register-forms.php:234
+msgid "After Registration..."
+msgstr "Po registraciji..."
+
+#: ../modules/user-listing/class-userlisting.php:470
+#: ../modules/user-listing/userlisting.php:724
+#: ../modules/user-listing/userlisting.php:968
+#: ../modules/user-listing/userlisting.php:1011
+#: ../modules/user-listing/userlisting.php:1355
+msgid "Search Users by All Fields"
+msgstr "Išči uporabnike po vseh poljih"
+
+#: ../modules/user-listing/userlisting.php:14
+msgid "Add new User Listing"
+msgstr "Dodaj nov seznam uporabnikov"
+
+#: ../modules/user-listing/userlisting.php:15
+msgid "Edit the User Listing"
+msgstr "Uredi seznam uporabnikov"
+
+#: ../modules/user-listing/userlisting.php:16
+msgid "New User Listing"
+msgstr "Nov seznam uporabnikov"
+
+#: ../modules/user-listing/userlisting.php:18
+msgid "View the User Listing"
+msgstr "Oglej si seznam uporabnikov"
+
+#: ../modules/user-listing/userlisting.php:19
+msgid "Search the User Listing"
+msgstr "Išči po seznamu uporabnikov"
+
+#: ../modules/user-listing/userlisting.php:20
+msgid "No User Listing found"
+msgstr "Noben seznam uporabnikov ni bil najden"
+
+#: ../modules/user-listing/userlisting.php:21
+msgid "No User Listing found in trash"
+msgstr "Noben seznam uporabnikov ni bil najden v smeteh"
+
+#: ../modules/user-listing/userlisting.php:95
+msgid "Display name as"
+msgstr "Prikaži ime kot"
+
+#: ../modules/user-listing/userlisting.php:125
+#: ../modules/user-listing/userlisting.php:1263
+msgid "Registration Date"
+msgstr "Datum registracije"
+
+#: ../modules/user-listing/userlisting.php:126
+#: ../modules/user-listing/userlisting.php:1267
+msgid "Number of Posts"
+msgstr "Število objav"
+
+#: ../modules/user-listing/userlisting.php:130
+msgid "More Info"
+msgstr "Več informacij"
+
+#: ../modules/user-listing/userlisting.php:131
+msgid "More Info Url"
+msgstr "Povezava do več informacij"
+
+#: ../modules/user-listing/userlisting.php:132
+msgid "Avatar or Gravatar"
+msgstr "Prikazna slika ali globalno prepoznavna prikazna slika (gravatar)"
+
+#: ../modules/user-listing/userlisting.php:161
+msgid "Meta Variables"
+msgstr "Meta spremenljivke"
+
+#: ../modules/user-listing/userlisting.php:167
+msgid "Sort Variables"
+msgstr "Razvrsti spremenljivke"
+
+#: ../modules/user-listing/userlisting.php:171
+#: ../modules/user-listing/userlisting.php:198
+msgid "Extra Functions"
+msgstr "Dodatne funkcije"
+
+#: ../modules/user-listing/userlisting.php:173
+msgid "Pagination"
+msgstr "Oštevilčenje strani"
+
+#: ../modules/user-listing/userlisting.php:174
+msgid "Search all Fields"
+msgstr "Išči po vseh poljih"
+
+#: ../modules/user-listing/userlisting.php:200
+msgid "Go Back Link"
+msgstr "Vrni se nazaj"
+
+#: ../modules/user-listing/userlisting.php:218
+msgid "All-userlisting Template"
+msgstr "Predloga za seznam vseh uporabnikov"
+
+#: ../modules/user-listing/userlisting.php:221
+msgid "Single-userlisting Template"
+msgstr "Predloga za seznam enega uporabnika"
+
+#: ../modules/user-listing/userlisting.php:614
+msgid "First/Lastname"
+msgstr "Ime/Priimek"
+
+#: ../modules/user-listing/userlisting.php:252
+#: ../modules/user-listing/userlisting.php:620
+msgid "Sign-up Date"
+msgstr "Datum registracije"
+
+#: ../modules/user-listing/userlisting.php:629
+#: ../modules/user-listing/userlisting.php:1266
+msgid "Display Name"
+msgstr "Prikazno ime"
+
+#: ../modules/user-listing/userlisting.php:251
+#: ../modules/user-listing/userlisting.php:638
+msgid "Posts"
+msgstr "Objave"
+
+#: ../modules/user-listing/userlisting.php:641
+#: ../modules/user-listing/userlisting.php:1272
+msgid "Aim"
+msgstr "Aim"
+
+#: ../modules/user-listing/userlisting.php:644
+#: ../modules/user-listing/userlisting.php:1273
+msgid "Yim"
+msgstr "Yim"
+
+#: ../modules/user-listing/userlisting.php:647
+#: ../modules/user-listing/userlisting.php:1274
+msgid "Jabber"
+msgstr "Jabber"
+
+#: ../modules/user-listing/userlisting.php:827
+msgid "Click here to see more information about this user"
+msgstr "Kliknite tukaj za več informacij o uporabniku"
+
+#: ../modules/user-listing/userlisting.php:827
+msgid "More..."
+msgstr "Več..."
+
+#: ../modules/user-listing/userlisting.php:830
+msgid "Click here to see more information about this user."
+msgstr "Kliknite tukaj za več informacij o uporabniku"
+
+#: ../modules/user-listing/userlisting.php:922
+#: ../modules/user-listing/userlisting.php:925
+msgid "Click here to go back"
+msgstr "Kliknite tukaj za korak nazaj"
+
+#: ../modules/user-listing/userlisting.php:922
+msgid "Back"
+msgstr "Nazaj"
+
+#: ../modules/user-listing/userlisting.php:955
+msgid "&laquo;&laquo; First"
+msgstr "&laquo;&laquo; Prvi"
+
+#: ../modules/user-listing/userlisting.php:956
+msgid "&laquo; Prev"
+msgstr "&laquo; Prejšnji"
+
+#: ../modules/user-listing/userlisting.php:957
+msgid "Next &raquo; "
+msgstr "Naslednji &raquo; "
+
+#: ../modules/user-listing/userlisting.php:958
+msgid "Last &raquo;&raquo;"
+msgstr "Zadnji &raquo;&raquo;"
+
+#: ../modules/user-listing/userlisting.php:987
+msgid "You don't have any pagination settings on this userlisting!"
+msgstr "Na temu seznamu uporabnikov ni nobenega oštevilčenja strani!"
+
+#: ../modules/user-listing/userlisting.php:1028
+msgid "Search"
+msgstr "Išči"
+
+#: ../modules/user-listing/userlisting.php:1029
+msgid "Clear Results"
+msgstr "Počisti rezultate"
+
+#: ../modules/user-listing/userlisting.php:1205
+#: ../modules/user-listing/userlisting.php:1209
+msgid "Extra shortcode parameters"
+msgstr "Dodatni parametri kratke kode (shortcode)"
+
+#: ../modules/user-listing/userlisting.php:1212
+msgid "displays users having a certain meta-value within a certain (extra) meta-field"
+msgstr "prikaži uporabnike z določeno meta-vrednostjo znotraj (dodatnega) meta-polja"
+
+#: ../modules/user-listing/userlisting.php:1213
+msgid "Example:"
+msgstr "Primer:"
+
+#: ../modules/user-listing/userlisting.php:1215
+msgid "Remember though, that the field-value combination must exist in the database."
+msgstr "Ne pozabite, da mora v bazi obstajati par polje-vrednost"
+
+#: ../modules/user-listing/userlisting.php:1284
+msgid "Random (very slow on large databases > 10K user)"
+msgstr "Naključno (zelo počasno pri velikih bazah > 10k uporabnikov)"
+
+#: ../modules/user-listing/userlisting.php:1297
+msgid "Roles to Display"
+msgstr "Vloge za prikaz"
+
+#: ../modules/user-listing/userlisting.php:1297
+msgid "Restrict the userlisting to these selected roles only<br/>If not specified, defaults to all existing roles"
+msgstr "Omeji seznam uporabnikov samo na izbrane vloge<br/>Če niso izbrane, vzami privzeto vse vloge"
+
+#: ../modules/user-listing/userlisting.php:1298
+msgid "Number of Users/Page"
+msgstr "Število uporabnikov/strani"
+
+#: ../modules/user-listing/userlisting.php:1299
+msgid "Default Sorting Criteria"
+msgstr "Privzeti kriterij za razvrščanje"
+
+#: ../modules/user-listing/userlisting.php:1299
+msgid "Set the default sorting criteria<br/>This can temporarily be changed for each new session"
+msgstr "Nastavi privzeti kriterij za razvrščanje<br/>To je lahko začasno nastavljeno za vsako novo sejo"
+
+#: ../modules/user-listing/userlisting.php:1300
+msgid "Default Sorting Order"
+msgstr "Privzeti vrstni red"
+
+#: ../modules/user-listing/userlisting.php:1300
+msgid "Set the default sorting order<br/>This can temporarily be changed for each new session"
+msgstr "Nastavi privzeti vrstni red<br/>To je lahko začasno nastavljeno za vsako novo sejo"
+
+#: ../modules/user-listing/userlisting.php:1301
+msgid "Avatar Size (All-userlisting)"
+msgstr "Velikost prikazne slike (vsi seznami uporabnikov)"
+
+#: ../modules/user-listing/userlisting.php:1301
+msgid "Set the avatar size on the all-userlisting only"
+msgstr "Nastavi velikost prikazne slike samo na vseobsegajočih seznamih uporabnikov"
+
+#: ../modules/user-listing/userlisting.php:1302
+msgid "Avatar Size (Single-userlisting)"
+msgstr "Velikost prikazne slike (enojni seznam uporabnikov)"
+
+#: ../modules/user-listing/userlisting.php:1302
+msgid "Set the avatar size on the single-userlisting only"
+msgstr "Nastavi prikazno sliko samo na enojnih seznamih uporabnikov"
+
+#: ../modules/user-listing/userlisting.php:1303
+msgid "Visible only to logged in users?"
+msgstr "Vidno samo prijavljenim uporabnikom?"
+
+#: ../modules/user-listing/userlisting.php:1303
+msgid "The userlisting will only be visible only to the logged in users"
+msgstr "Seznam uporabnikov bo viden samo prijavljenim uporabnikom"
+
+#: ../modules/user-listing/userlisting.php:1304
+msgid "Visible to following Roles"
+msgstr "Vidno naslednjim vlogam"
+
+#: ../modules/user-listing/userlisting.php:1304
+msgid "The userlisting will only be visible to the following roles"
+msgstr "Seznam uporabnikov bo viden samo naslednjim vlogam"
+
+#: ../modules/user-listing/userlisting.php:1310
+msgid "Userlisting Settings"
+msgstr "Nastavitve seznama uporabnikov"
+
+#: ../modules/user-listing/userlisting.php:1331
+msgid "You need to activate the Userlisting feature from within the \"Modules\" tab!"
+msgstr "Aktivirati morate možnost seznamov uporabnikov v zavihku \"Moduli\""
+
+#: ../modules/user-listing/userlisting.php:1331
+msgid "You can find it in the Profile Builder menu."
+msgstr "Najdete ga lahko v Profile Builder meniju"
+
+#: ../modules/user-listing/userlisting.php:1494
+msgid "No results found!"
+msgstr "Brez rezultatov!"

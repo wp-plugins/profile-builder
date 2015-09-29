@@ -86,28 +86,28 @@ function wppb_login_redirect( $redirect_to, $redirect_url, $user ){
                 $LostPassURL = apply_filters('wppb_pre_login_url_filter', $LostPassURL);
 
                 if ($user->get_error_code() == 'incorrect_password') {
-                    $error_string = '<strong>' . __('ERROR', 'profilebuilder') . '</strong>: ' . __('The password you entered is incorrect.', 'profilebuilder') . ' ';
-                    $error_string .= '<a href="' . $LostPassURL . '" title="' . __('Password Lost and Found.', 'profilebuilder') . '">' . __('Lost your password', 'profilebuilder') . '</a>?';
+                    $error_string = '<strong>' . __('ERROR', 'profile-builder') . '</strong>: ' . __('The password you entered is incorrect.', 'profile-builder') . ' ';
+                    $error_string .= '<a href="' . $LostPassURL . '" title="' . __('Password Lost and Found.', 'profile-builder') . '">' . __('Lost your password', 'profile-builder') . '</a>?';
 
                     // change the recover password link
                     $error_string = str_replace(site_url('/wp-login.php?action=lostpassword'), $LostPassURL, $error_string);
                 }
                 if ($user->get_error_code() == 'invalid_username') {
-                    $error_string = '<strong>' . __('ERROR', 'profilebuilder') . '</strong>: ' . __('Invalid username.', 'profilebuilder') . ' ';
-                    $error_string .= '<a href="' . $LostPassURL . '" title="' . __('Password Lost and Found.', 'profilebuilder') . '">' . __('Lost your password', 'profilebuilder') . '</a>?';
+                    $error_string = '<strong>' . __('ERROR', 'profile-builder') . '</strong>: ' . __('Invalid username.', 'profile-builder') . ' ';
+                    $error_string .= '<a href="' . $LostPassURL . '" title="' . __('Password Lost and Found.', 'profile-builder') . '">' . __('Lost your password', 'profile-builder') . '</a>?';
                 }
                 // if login with email is enabled change the word username with email
                 if ($wppb_generalSettings['loginWith'] == 'email')
-                    $error_string = str_replace( __('username','profilebuilder'), __('email','profilebuilder'), $error_string);
+                    $error_string = str_replace( __('username','profile-builder'), __('email','profile-builder'), $error_string);
 
 				// if login with username and email is enabled change the word username with username or email
 				if ($wppb_generalSettings['loginWith'] == 'usernameemail')
-					$error_string = str_replace( __('username','profilebuilder'), __('username or email','profilebuilder'), $error_string);
+					$error_string = str_replace( __('username','profile-builder'), __('username or email','profile-builder'), $error_string);
 
             }
             // if the error string is empty it means that none of the fields were completed
             if (empty($error_string)) {
-                $error_string = '<strong>' . __('ERROR', 'profilebuilder') . '</strong>: ' . __('Both fields are empty.', 'profilebuilder') . ' ';
+                $error_string = '<strong>' . __('ERROR', 'profile-builder') . '</strong>: ' . __('Both fields are empty.', 'profile-builder') . ' ';
                 $error_string = apply_filters('wppb_login_empty_fields_error_message', $error_string);
             }
 
@@ -167,11 +167,11 @@ function wppb_front_end_login( $atts ){
 			
 		// change the label argument for username is login with email is enabled
 		if ( isset( $wppb_generalSettings['loginWith'] ) && ( $wppb_generalSettings['loginWith'] == 'email' ) )
-			$form_args['label_username'] = __( 'Email', 'profilebuilder' );
+			$form_args['label_username'] = __( 'Email', 'profile-builder' );
 
 		// change the label argument for username on login with username or email when Username and Email is enabled
 		if ( isset( $wppb_generalSettings['loginWith'] ) && ( $wppb_generalSettings['loginWith'] == 'usernameemail' ) )
-			$form_args['label_username'] = __( 'Username or Email', 'profilebuilder' );
+			$form_args['label_username'] = __( 'Username or Email', 'profile-builder' );
 
 		// initialize our form variable
 		$login_form = '';
@@ -199,13 +199,13 @@ function wppb_front_end_login( $atts ){
                 $i = 0;
                 if (!empty($register_url)) {
                     if ( wppb_check_missing_http( $register_url ) ) $register_url = "http://" . $register_url;
-                    $login_form .= '<a href="' . esc_url($register_url) . '">'. apply_filters('wppb_login_register_text', __('Register','profilebuilder')) .'</a>';
+                    $login_form .= '<a href="' . esc_url($register_url) . '">'. apply_filters('wppb_login_register_text', __('Register','profile-builder')) .'</a>';
                     $i++;
                 }
                 if (!empty($lostpassword_url)) {
                     if ($i != 0) $login_form .= ' | ';
                     if ( wppb_check_missing_http( $lostpassword_url ) ) $lostpassword_url = "http://" . $lostpassword_url;
-                    $login_form .= '<a href="'. esc_url($lostpassword_url) .'">'. apply_filters('wppb_login_lostpass_text', __('Lost your password?','profilebuilder')) .'</a>';
+                    $login_form .= '<a href="'. esc_url($lostpassword_url) .'">'. apply_filters('wppb_login_lostpass_text', __('Lost your password?','profile-builder')) .'</a>';
                 }
                 $login_form .= '</p>';
         }
@@ -237,8 +237,8 @@ function wppb_front_end_login( $atts ){
 			$display_name = $wppb_user->display_name;
 
 		$logged_in_message = '<p class="wppb-alert">';
-        $logout_url = '<a href="'.wp_logout_url( $redirectTo = wppb_curpageurl() ).'" class="wppb-logout-url" title="'.__( 'Log out of this account', 'profilebuilder' ).'">'. __( 'Log out', 'profilebuilder').' &raquo;</a>';
-        $logged_in_message .= sprintf(__( 'You are currently logged in as %1$s. %2$s', 'profilebuilder' ), $display_name, $logout_url );
+        $logout_url = '<a href="'.wp_logout_url( $redirectTo = wppb_curpageurl() ).'" class="wppb-logout-url" title="'.__( 'Log out of this account', 'profile-builder' ).'">'. __( 'Log out', 'profile-builder').' &raquo;</a>';
+        $logged_in_message .= sprintf(__( 'You are currently logged in as %1$s. %2$s', 'profile-builder' ), $display_name, $logout_url );
         $logged_in_message .= '</p><!-- .wppb-alert-->';
 		
 		return apply_filters( 'wppb_login_message', $logged_in_message, $wppb_user->ID, $display_name );

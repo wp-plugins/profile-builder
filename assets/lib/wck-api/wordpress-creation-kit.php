@@ -334,7 +334,7 @@ class Wordpress_Creation_Kit_PB{
 				?>
                 <?php if( ! $this->args['single'] || $this->args['context'] == 'option' ){ ?>
                     <li style="overflow:visible;" class="add-entry-button">
-                        <a href="javascript:void(0)" class="button-primary" onclick="addMeta('<?php echo esc_js($meta); ?>', '<?php echo esc_js( $post_id ); ?>', '<?php echo esc_js($nonce); ?>')"><span><?php if( $this->args['single'] ) echo apply_filters( 'wck_add_entry_button', __( 'Save', 'profilebuilder' ), $meta, $post ); else echo apply_filters( 'wck_add_entry_button', __( 'Add Entry', 'wck' ), $meta, $post ); ?></span></a>
+                        <a href="javascript:void(0)" class="button-primary" onclick="addMeta('<?php echo esc_js($meta); ?>', '<?php echo esc_js( $post_id ); ?>', '<?php echo esc_js($nonce); ?>')"><span><?php if( $this->args['single'] ) echo apply_filters( 'wck_add_entry_button', __( 'Save', 'profile-builder' ), $meta, $post ); else echo apply_filters( 'wck_add_entry_button', __( 'Add Entry', 'wck' ), $meta, $post ); ?></span></a>
                     </li>
                 <?php }elseif($this->args['single'] && $this->args['context'] == 'post_meta' ){ ?>
                     <input type="hidden" name="_wckmetaname_<?php echo $meta ?>#wck" value="true">
@@ -395,8 +395,8 @@ class Wordpress_Creation_Kit_PB{
 				}
 			}
 			$form .= '<li style="overflow:visible;">';
-			$form .= '<a href="javascript:void(0)" class="button-primary" onclick=\'updateMeta("'.esc_js($meta).'", "'.esc_js($id).'", "'.esc_js($element_id).'", "'.esc_js($update_nonce).'")\'><span>'. __( apply_filters( 'wck_save_changes_button', 'Save Changes', $meta ), 'profilebuilder' ) .'</span></a>';
-			$form .= '<a href="javascript:void(0)" class="button-secondary" style="margin-left:10px;" onclick=\'removeUpdateForm("'. esc_js( 'update_container_'.$meta.'_'.$element_id ). '" )\'><span>'. __( apply_filters( 'wck_cancel_button', 'Cancel', $meta ), 'profilebuilder' ) .'</span></a>';
+			$form .= '<a href="javascript:void(0)" class="button-primary" onclick=\'updateMeta("'.esc_js($meta).'", "'.esc_js($id).'", "'.esc_js($element_id).'", "'.esc_js($update_nonce).'")\'><span>'. __( apply_filters( 'wck_save_changes_button', 'Save Changes', $meta ), 'profile-builder' ) .'</span></a>';
+			$form .= '<a href="javascript:void(0)" class="button-secondary" style="margin-left:10px;" onclick=\'removeUpdateForm("'. esc_js( 'update_container_'.$meta.'_'.$element_id ). '" )\'><span>'. __( apply_filters( 'wck_cancel_button', 'Cancel', $meta ), 'profile-builder' ) .'</span></a>';
 			$form .= '</li>';			
 			
 			$form .= '</ul>';
@@ -437,7 +437,7 @@ class Wordpress_Creation_Kit_PB{
 		
 		
 		if( !empty( $results ) ){
-			$list .= apply_filters( 'wck_metabox_content_header_'.$meta , '<thead><tr><th class="wck-number">#</th><th class="wck-content">'. __( 'Content', 'profilebuilder' ) .'</th><th class="wck-edit">'. __( 'Edit', 'wck' ) .'</th><th class="wck-delete">'. __( 'Delete', 'wck' ) .'</th></tr></thead>' );
+			$list .= apply_filters( 'wck_metabox_content_header_'.$meta , '<thead><tr><th class="wck-number">#</th><th class="wck-content">'. __( 'Content', 'profile-builder' ) .'</th><th class="wck-edit">'. __( 'Edit', 'wck' ) .'</th><th class="wck-delete">'. __( 'Delete', 'wck' ) .'</th></tr></thead>' );
 			$i=0;
 			foreach ($results as $result){			
 				
@@ -526,8 +526,8 @@ class Wordpress_Creation_Kit_PB{
 		}
 
 		$list .= '</td>';				
-		$list .= '<td style="text-align:center;vertical-align:middle;" class="wck-edit"><a href="javascript:void(0)" class="button-secondary"  onclick=\'showUpdateFormMeta("'.esc_js($meta).'", "'.esc_js($id).'", "'.esc_js($element_id).'", "'.esc_js($edit_nonce).'")\' title="'. __( 'Edit this item', 'profilebuilder' ) .'">'. apply_filters( 'wck_edit_button', __('Edit','wck'), $meta ) .'</a></td>';
-		$list .= '<td style="text-align:center;vertical-align:middle;" class="wck-delete"><a href="javascript:void(0)" class="mbdelete" onclick=\'removeMeta("'.esc_js($meta).'", "'.esc_js($id).'", "'.esc_js($element_id).'", "'.esc_js($delete_nonce).'")\' title="'. __( 'Delete this item', 'profilebuilder' ) .'">'. apply_filters( 'wck_delete_button', __( 'Delete', 'wck' ), $meta) .'</a></td>';
+		$list .= '<td style="text-align:center;vertical-align:middle;" class="wck-edit"><a href="javascript:void(0)" class="button-secondary"  onclick=\'showUpdateFormMeta("'.esc_js($meta).'", "'.esc_js($id).'", "'.esc_js($element_id).'", "'.esc_js($edit_nonce).'")\' title="'. __( 'Edit this item', 'profile-builder' ) .'">'. apply_filters( 'wck_edit_button', __('Edit','wck'), $meta ) .'</a></td>';
+		$list .= '<td style="text-align:center;vertical-align:middle;" class="wck-delete"><a href="javascript:void(0)" class="mbdelete" onclick=\'removeMeta("'.esc_js($meta).'", "'.esc_js($id).'", "'.esc_js($element_id).'", "'.esc_js($delete_nonce).'")\' title="'. __( 'Delete this item', 'profile-builder' ) .'">'. apply_filters( 'wck_delete_button', __( 'Delete', 'wck' ), $meta) .'</a></td>';
 
 		$list .= "</tr> \r\n";
 
@@ -1152,7 +1152,7 @@ class Wordpress_Creation_Kit_PB{
 			}
 			
 			if($has_wck_with_unserialize_fields){
-				add_meta_box( 'wck_sync_translation', __( 'Syncronize WCK', 'profilebuilder' ), array( &$this, 'wck_add_sync_box' ), $post->post_type, 'side', 'low' );
+				add_meta_box( 'wck_sync_translation', __( 'Syncronize WCK', 'profile-builder' ), array( &$this, 'wck_add_sync_box' ), $post->post_type, 'side', 'low' );
 			}
 			
 		}			
@@ -1164,7 +1164,7 @@ class Wordpress_Creation_Kit_PB{
 	function wck_add_sync_box(){
 		global $post;
 		?>	
-		<span id="wck_sync" class="button" onclick="wckSyncTranslation(<?php echo $post->ID; ?>)"><?php _e( 'Syncronize WCK Translation', 'profilebuilder' ) ?></span>
+		<span id="wck_sync" class="button" onclick="wckSyncTranslation(<?php echo $post->ID; ?>)"><?php _e( 'Syncronize WCK Translation', 'profile-builder' ) ?></span>
 		<?php 
 	}
 

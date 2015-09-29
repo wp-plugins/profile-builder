@@ -34,11 +34,11 @@ function wppb_check_repeat_password_value( $message, $field, $request_data, $for
 			return wppb_required_field_error($field["field-title"]);
 			
 		elseif ( isset( $request_data['passw1'] ) && isset( $request_data['passw2'] ) && ( trim( $request_data['passw1'] ) != trim( $request_data['passw2'] ) ) && ( $field['required'] == 'Yes' ) )
-			return __( "The passwords do not match", "profilebuilder" );
+			return __( "The passwords do not match", "profile-builder" );
 	
 	}elseif ( $form_location == 'edit_profile' ){
 		if ( isset( $request_data['passw1'] ) && isset( $request_data['passw2'] ) && ( trim( $request_data['passw1'] ) != trim( $request_data['passw2'] ) ) )
-			return __( "The passwords do not match", "profilebuilder" );
+			return __( "The passwords do not match", "profile-builder" );
 	}
 
     return $message;

@@ -278,7 +278,7 @@ function wppb_delete(){
 		
 		if ( ( isset( $_POST['what'] ) ) && ( $_POST['what'] == 'avatar' ) ){
 			if ( !wp_verify_nonce( $_POST['_ajax_nonce'], 'user'.base64_decode( $_POST['currentUser'] ).'_nonce_avatar' ) ){
-				echo __( 'The user-validation has failed - the avatar was not deleted!', 'profilebuilder' );
+				echo __( 'The user-validation has failed - the avatar was not deleted!', 'profile-builder' );
 				die();
 				
 			}else{
@@ -289,7 +289,7 @@ function wppb_delete(){
 			}
 		}elseif ( ( isset( $_POST['what'] ) ) && ( $_POST['what'] == 'attachment' ) ){
 			if ( !wp_verify_nonce( $_POST['_ajax_nonce'], 'user'.base64_decode( $_POST['currentUser'] ).'_nonce_upload' ) ){
-				echo __( 'The user-validation has failed - the attachment was not deleted!', 'profilebuilder' );
+				echo __( 'The user-validation has failed - the attachment was not deleted!', 'profile-builder' );
 				die();
 				
 			}else{
@@ -484,7 +484,7 @@ function wppb_check_missing_http( $redirectLink ) {
 function wppb_password_strength_checker_html(){
     $wppb_generalSettings = get_option( 'wppb_general_settings' );
     if( !empty( $wppb_generalSettings['minimum_password_strength'] ) ){
-        $password_strength = '<span id="pass-strength-result">'.__('Strength indicator', 'profilebuilder' ).'</span>
+        $password_strength = '<span id="pass-strength-result">'.__('Strength indicator', 'profile-builder' ).'</span>
         <input type="hidden" value="" name="wppb_password_strength" id="wppb_password_strength"/>';
         return $password_strength;
     }
@@ -509,7 +509,7 @@ function wppb_check_password_strength(){
     $wppb_generalSettings = get_option( 'wppb_general_settings' );
     if( isset( $_POST['wppb_password_strength'] ) && !empty( $wppb_generalSettings['minimum_password_strength'] ) ){
         $password_strength_array = array( 'short' => 0, 'bad' => 1, 'good' => 2, 'strong' => 3 );
-        $password_strength_text = array( 'short' => __( 'Very Weak', 'profilebuilder' ), 'bad' => __( 'Weak', 'profilebuilder' ), 'good' => __( 'Medium', 'profilebuilder' ), 'strong' => __( 'Strong', 'profilebuilder' ) );
+        $password_strength_text = array( 'short' => __( 'Very Weak', 'profile-builder' ), 'bad' => __( 'Weak', 'profile-builder' ), 'good' => __( 'Medium', 'profile-builder' ), 'strong' => __( 'Strong', 'profile-builder' ) );
         if( $password_strength_array[$_POST['wppb_password_strength']] < $password_strength_array[$wppb_generalSettings['minimum_password_strength']] ){
             return $password_strength_text[$wppb_generalSettings['minimum_password_strength']];
         }
@@ -523,7 +523,7 @@ function wppb_check_password_strength(){
 function wppb_password_length_text(){
     $wppb_generalSettings = get_option( 'wppb_general_settings' );
     if( !empty( $wppb_generalSettings['minimum_password_length'] ) ){
-        return sprintf(__('Minimum length of %d characters', 'profilebuilder'), $wppb_generalSettings['minimum_password_length']);
+        return sprintf(__('Minimum length of %d characters', 'profile-builder'), $wppb_generalSettings['minimum_password_length']);
     }
     return '';
 }
@@ -597,14 +597,14 @@ function wppb_password_strength_check(){
  * Create functions for repeating error messages in front-end forms
  */
 function wppb_required_field_error($field_title='') {
-    $required_error = apply_filters('wppb_required_error' , __('This field is required','profilebuilder') , $field_title);
+    $required_error = apply_filters('wppb_required_error' , __('This field is required','profile-builder') , $field_title);
 
     return $required_error;
 
 }
 /* Function for displaying reCAPTCHA error on Login and Recover Password forms */
 function wppb_recaptcha_field_error($field_title='') {
-    $recaptcha_error = apply_filters('wppb_recaptcha_error' , __('Please enter a (valid) reCAPTCHA value','profilebuilder') , $field_title);
+    $recaptcha_error = apply_filters('wppb_recaptcha_error' , __('Please enter a (valid) reCAPTCHA value','profile-builder') , $field_title);
 
     return $recaptcha_error;
 
@@ -617,35 +617,35 @@ function wppb_get_query_var( $varname ){
 
 /*Filter the "Save Changes" button text, to make it translatable*/
 function wppb_change_save_changes_button($value){
-    $value = __('Save Changes','profilebuilder');
+    $value = __('Save Changes','profile-builder');
     return $value;
 }
 add_filter( 'wck_save_changes_button', 'wppb_change_save_changes_button', 10, 2);
 
 /*Filter the "Cancel" button text, to make it translatable*/
 function wppb_change_cancel_button($value){
-    $value = __('Cancel','profilebuilder');
+    $value = __('Cancel','profile-builder');
     return $value;
 }
 add_filter( 'wck_cancel_button', 'wppb_change_cancel_button', 10, 2);
 
 /*Filter the "Delete" button text, to make it translatable*/
 function wppb_change_delete_button($value){
-    $value = __('Delete','profilebuilder');
+    $value = __('Delete','profile-builder');
     return $value;
 }
 add_filter( 'wck_delete_button', 'wppb_change_delete_button', 10, 2);
 
 /*Filter the "Edit" button text, to make it translatable*/
 function wppb_change_edit_button($value){
-    $value = __('Edit','profilebuilder');
+    $value = __('Edit','profile-builder');
     return $value;
 }
 add_filter( 'wck_edit_button', 'wppb_change_edit_button', 10, 2);
 
 /*Filter the User Listing, Register Forms and Edit Profile forms metabox header content, to make it translatable*/
 function wppb_change_metabox_content_header(){
-  return '<thead><tr><th class="wck-number">#</th><th class="wck-content">'. __( 'Content', 'profilebuilder' ) .'</th><th class="wck-edit">'. __( 'Edit', 'profilebuilder' ) .'</th><th class="wck-delete">'. __( 'Delete', 'profilebuilder' ) .'</th></tr></thead>';
+  return '<thead><tr><th class="wck-number">#</th><th class="wck-content">'. __( 'Content', 'profile-builder' ) .'</th><th class="wck-edit">'. __( 'Edit', 'profile-builder' ) .'</th><th class="wck-delete">'. __( 'Delete', 'profile-builder' ) .'</th></tr></thead>';
 }
 add_filter('wck_metabox_content_header_wppb_ul_page_settings', 'wppb_change_metabox_content_header', 1);
 add_filter('wck_metabox_content_header_wppb_rf_page_settings', 'wppb_change_metabox_content_header', 1);
@@ -656,11 +656,11 @@ add_filter('wck_metabox_content_header_wppb_epf_page_settings', 'wppb_change_met
 if ( get_option('users_can_register') == false) {
     if( is_multisite() ) {
         new WPPB_Add_General_Notices('wppb_anyone_can_register',
-            sprintf(__('To allow users to register for your website via Profile Builder, you first must enable user registration. Go to %1$sNetwork Settings%2$s, and under Registration Settings make sure to check “User accounts may be registered”. %3$sDismiss%4$s', 'profilebuilder'), "<a href='" . network_admin_url('settings.php') . "'>", "</a>", "<a href='" . esc_url( add_query_arg('wppb_anyone_can_register_dismiss_notification', '0') ) . "'>", "</a>"),
+            sprintf(__('To allow users to register for your website via Profile Builder, you first must enable user registration. Go to %1$sNetwork Settings%2$s, and under Registration Settings make sure to check “User accounts may be registered”. %3$sDismiss%4$s', 'profile-builder'), "<a href='" . network_admin_url('settings.php') . "'>", "</a>", "<a href='" . esc_url( add_query_arg('wppb_anyone_can_register_dismiss_notification', '0') ) . "'>", "</a>"),
             'update-nag');
     }else{
         new WPPB_Add_General_Notices('wppb_anyone_can_register',
-            sprintf(__('To allow users to register for your website via Profile Builder, you first must enable user registration. Go to %1$sSettings -> General%2$s tab, and under Membership make sure to check “Anyone can register”. %3$sDismiss%4$s', 'profilebuilder'), "<a href='" . admin_url('options-general.php') . "'>", "</a>", "<a href='" . esc_url( add_query_arg('wppb_anyone_can_register_dismiss_notification', '0') ) . "'>", "</a>"),
+            sprintf(__('To allow users to register for your website via Profile Builder, you first must enable user registration. Go to %1$sSettings -> General%2$s tab, and under Membership make sure to check “Anyone can register”. %3$sDismiss%4$s', 'profile-builder'), "<a href='" . admin_url('options-general.php') . "'>", "</a>", "<a href='" . esc_url( add_query_arg('wppb_anyone_can_register_dismiss_notification', '0') ) . "'>", "</a>"),
             'update-nag');
     }
 }

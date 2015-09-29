@@ -43,11 +43,11 @@ function wppb_activate_signup( $key ) {
 	$signup = ( is_multisite() ? $wpdb->get_row( $wpdb->prepare("SELECT * FROM $wpdb->signups WHERE activation_key = %s", $key) ) : $wpdb->get_row( $wpdb->prepare( "SELECT * FROM ".$wpdb->base_prefix."signups WHERE activation_key = %s", $key ) ) );
 	
 	if ( empty( $signup ) )
-		return apply_filters( 'wppb_register_activate_user_error_message1', '<p class="error">'.__( 'Invalid activation key!', 'profilebuilder' ).'</p>');
+		return apply_filters( 'wppb_register_activate_user_error_message1', '<p class="error">'.__( 'Invalid activation key!', 'profile-builder' ).'</p>');
 
 	if ( $signup->active )
 		if ( empty( $signup->domain ) )
-			return apply_filters( 'wppb_register_activate_user_error_message2', '<p class="error">'.__( 'This username is now active!', 'profilebuilder' ).'</p>' );
+			return apply_filters( 'wppb_register_activate_user_error_message2', '<p class="error">'.__( 'This username is now active!', 'profile-builder' ).'</p>' );
 
 	$meta = unserialize( $signup->meta );
 	
@@ -65,10 +65,10 @@ function wppb_activate_signup( $key ) {
 		$user_already_exists = true;
 
 	if ( ! $user_id )
-		return apply_filters( 'wppb_register_activate_user_error_message4', '<p class="error">'.__('Could not create user!', 'profilebuilder').'</p>' );
+		return apply_filters( 'wppb_register_activate_user_error_message4', '<p class="error">'.__('Could not create user!', 'profile-builder').'</p>' );
 		
 	elseif ( isset( $user_already_exists ) && ( $user_already_exists == true ) )
-		return apply_filters( 'wppb_register_activate_user_error_message5', '<p class="error">'.__( 'This username is already activated!', 'profilebuilder' ).'</p>' );
+		return apply_filters( 'wppb_register_activate_user_error_message5', '<p class="error">'.__( 'This username is already activated!', 'profile-builder' ).'</p>' );
 	
 	else{
 		$inserted_user = ( is_multisite() ? $wpdb->update( $wpdb->signups, array( 'active' => 1, 'activated' => current_time( 'mysql', true ) ), array( 'activation_key' => $key ) ) : $wpdb->update( $wpdb->base_prefix.'signups', array( 'active' => 1, 'activated' => current_time( 'mysql', true ) ), array( 'activation_key' => $key ) ) );
@@ -112,8 +112,8 @@ function wppb_activate_signup( $key ) {
 		do_action( 'wppb_activate_user', $user_id, $password, $meta );
 		
 		if ( $inserted_user ){
-			$success_message = apply_filters('wppb_success_email_confirmation', '<p class="wppb-success">'. __('Your email was successfully confirmed.', 'profilebuilder') .'</p><!-- .success -->');
-            $admin_approval_message = apply_filters('wppb_email_confirmation_with_admin_approval', '<p class="wppb-success">'. __('Before you can access your account, an administrator needs to approve it. You will be notified via email.', 'profilebuilder') . '</p>' );
+			$success_message = apply_filters('wppb_success_email_confirmation', '<p class="wppb-success">'. __('Your email was successfully confirmed.', 'profile-builder') .'</p><!-- .success -->');
+            $admin_approval_message = apply_filters('wppb_email_confirmation_with_admin_approval', '<p class="wppb-success">'. __('Before you can access your account, an administrator needs to approve it. You will be notified via email.', 'profile-builder') . '</p>' );
 
             $wppb_general_settings = get_option( 'wppb_general_settings', 'false' );
 
@@ -141,7 +141,7 @@ function wppb_activate_signup( $key ) {
                 return $success_message;
             }
         } else {
-			return apply_filters('wppb_register_failed_user_activation', '<p class="error">'. __('There was an error while trying to activate the user.', 'profilebuilder') .'</p><!-- .error -->');
+			return apply_filters('wppb_register_failed_user_activation', '<p class="error">'. __('There was an error while trying to activate the user.', 'profile-builder') .'</p><!-- .error -->');
         }
 	}		
 }

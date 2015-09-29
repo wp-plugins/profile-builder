@@ -44,7 +44,7 @@ function wppb_add_pending_users_header_script(){
 	<script type="text/javascript">	
 		jQuery(document).ready(function() {
 			jQuery.post( ajaxurl ,  { action:"wppb_get_unconfirmed_email_number"}, function(response) {
-				jQuery('.wrap ul.subsubsub').append('<span id="separatorID"> |</span> <li class="listUsersWithUncofirmedEmail"><a class="unconfirmedEmailUsers" href="?page=unconfirmed_emails"><?php _e('Users with Unconfirmed Email Address', 'profilebuilder');?></a> <font id="unconfirmedEmailNo" color="grey">('+response.number+')</font></li>');	
+				jQuery('.wrap ul.subsubsub').append('<span id="separatorID"> |</span> <li class="listUsersWithUncofirmedEmail"><a class="unconfirmedEmailUsers" href="?page=unconfirmed_emails"><?php _e('Users with Unconfirmed Email Address', 'profile-builder');?></a> <font id="unconfirmedEmailNo" color="grey">('+response.number+')</font></li>');
 			});			
 		});
 		
@@ -55,7 +55,7 @@ function wppb_add_pending_users_header_script(){
 	
 		// script to create a confirmation box for the user upon approving/unapproving a user
 		function confirmECAction( URL, todo, user_email, actionText ) {
-			actionText = '<?php _e( 'Do you want to', 'profilebuilder' ); ?>' + ' ' + actionText;
+			actionText = '<?php _e( 'Do you want to', 'profile-builder' ); ?>' + ' ' + actionText;
 		
 			if (confirm(actionText)) {
 				jQuery.post( ajaxurl ,  { action:"wppb_handle_email_confirmation_cases", URL:URL, todo:todo, user_email:user_email}, function(response) {	
@@ -107,7 +107,7 @@ function wppb_handle_email_confirmation_cases() {
 			$results = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM " . $wpdb->base_prefix . "signups WHERE active = 0 AND user_email = %s", $user_email ) );
 			
 			if ( count( $results ) != 1 )
-				die( __( "There was an error performing that action!", "profilebuilder" ) );
+				die( __( "There was an error performing that action!", "profile-builder" ) );
 				
 			elseif ( $todo == 'delete' ){
 				$sql_result = $wpdb->delete( $wpdb->base_prefix.'signups', array( 'user_login' => $results[0]->user_login, 'user_email' => $results[0]->user_email ) );
@@ -115,7 +115,7 @@ function wppb_handle_email_confirmation_cases() {
 					die( 'ok' );
 					
 				else
-					die( __( "The selected user couldn't be deleted", "profilebuilder" ) );
+					die( __( "The selected user couldn't be deleted", "profile-builder" ) );
 
 			}elseif ( $todo == 'confirm' ){
 				die( wppb_manual_activate_signup( $results[0]->activation_key ) );
@@ -126,13 +126,13 @@ function wppb_handle_email_confirmation_cases() {
 				if ( $sql_result ){
 					wppb_signup_user_notification( trim( $sql_result['user_login'] ), trim( $sql_result['user_email'] ), $sql_result['activation_key'], $sql_result['meta'] );
 					
-					die( __( "Email notification resent to user", "profilebuilder" ) );
+					die( __( "Email notification resent to user", "profile-builder" ) );
 				}
 				
 			}
 		}
 
-	die( __("You either don't have permission for that action or there was an error!", "profilebuilder") );
+	die( __("You either don't have permission for that action or there was an error!", "profile-builder") );
 }
 
 
@@ -381,10 +381,10 @@ function wppb_signup_user_notification( $user, $user_email, $activation_key, $me
 		$registration_page_url = ( ( strpos( $post_content, '[wppb-register' ) !== false ) ? add_query_arg( array('activation_key' => $activation_key ), $permalink ) : add_query_arg( array('activation_key' => $activation_key ), get_bloginfo( 'url' ) ) );
 	}
 	
-	$subject = sprintf( __( '[%1$s] Activate %2$s', 'profilebuilder'), $from_name, $user );
+	$subject = sprintf( __( '[%1$s] Activate %2$s', 'profile-builder'), $from_name, $user );
 	$subject = apply_filters( 'wppb_signup_user_notification_email_subject', $subject, $user_email, $user, $activation_key, $registration_page_url, $meta, $from_name, 'wppb_user_emailc_registr_w_email_confirm_email_subject' );
 
-	$message = sprintf( __( "To activate your user, please click the following link:\n\n%s%s%s\n\nAfter you activate it you will receive yet *another email* with your login.", "profilebuilder" ), '<a href="'.$registration_page_url.'">', $registration_page_url, '</a>.' );
+	$message = sprintf( __( "To activate your user, please click the following link:\n\n%s%s%s\n\nAfter you activate it you will receive yet *another email* with your login.", "profile-builder" ), '<a href="'.$registration_page_url.'">', $registration_page_url, '</a>.' );
     $message = apply_filters( 'wppb_signup_user_notification_email_content', $message, $user_email, $user, $activation_key, $registration_page_url, $meta, $from_name, 'wppb_user_emailc_registr_w_email_confirm_email_content' );
 
 	$message_context = 'email_user_activate';
@@ -425,10 +425,10 @@ function wppb_manual_activate_signup( $activation_key ) {
 			$user_already_exists = true;
 
 		if ( !$user_id )
-			return __( 'Could not create user!', 'profilebuilder' );
+			return __( 'Could not create user!', 'profile-builder' );
 			
 		elseif ( isset( $user_already_exists ) && ( $user_already_exists == true ) )
-			return __( 'That username is already activated!', 'profilebuilder' );
+			return __( 'That username is already activated!', 'profile-builder' );
 		
 		else{
 			$now = current_time('mysql', true);
@@ -450,7 +450,7 @@ function wppb_manual_activate_signup( $activation_key ) {
 			
 			do_action('wppb_activate_user', $user_id, $password, $meta);
 			
-			return ( $retVal ? 'ok' : __( 'There was an error while trying to activate the user', 'profilebuilder' ) );			
+			return ( $retVal ? 'ok' : __( 'There was an error while trying to activate the user', 'profile-builder' ) );
 		}
 	}
 }
@@ -498,10 +498,10 @@ function wppb_notify_user_registration_email( $bloginfo, $user_name, $email, $se
 	//send email to the admin
 	$message_from = apply_filters( 'wppb_register_from_email_message_admin_email', $bloginfo );
 	
-	$message_subject = '['.$message_from.'] '.__( 'A new subscriber has (been) registered!', 'profilebuilder' );
+	$message_subject = '['.$message_from.'] '.__( 'A new subscriber has (been) registered!', 'profile-builder' );
 	$message_subject = apply_filters ('wppb_register_admin_email_subject_without_admin_approval', $message_subject, $email, $password, $message_from, 'wppb_admin_emailc_default_registration_email_subject' );
 	
-	$message_content = sprintf( __( 'New subscriber on %1$s.<br/><br/>Username:%2$s<br/>E-mail:%3$s<br/>', 'profilebuilder'), $message_from, $user_name, $email );
+	$message_content = sprintf( __( 'New subscriber on %1$s.<br/><br/>Username:%2$s<br/>E-mail:%3$s<br/>', 'profile-builder'), $message_from, $user_name, $email );
 
 	$message_context = 'email_admin_new_subscriber';
 
@@ -547,14 +547,14 @@ function wppb_notify_user_registration_email( $bloginfo, $user_name, $email, $se
 	if ( isset( $send_credentials_via_email ) && ( $send_credentials_via_email == 'sending' ) ){
 		$user_message_from = apply_filters( 'wppb_register_from_email_message_user_email', $bloginfo );
 
-		$user_message_subject = sprintf( __( '[%1$s] Your new account information', 'profilebuilder' ), $user_message_from, $user_name, $password );
+		$user_message_subject = sprintf( __( '[%1$s] Your new account information', 'profile-builder' ), $user_message_from, $user_name, $password );
 		$user_message_subject = apply_filters( 'wppb_register_user_email_subject_without_admin_approval', $user_message_subject, $email, $password, $user_message_subject, 'wppb_user_emailc_default_registration_email_subject' );
 
         if ( $password === NULL ) {
-            $password = __( 'Your selected password at signup', 'profilebuilder' );
+            $password = __( 'Your selected password at signup', 'profile-builder' );
         }
-		$user_message_content = sprintf( __( 'Welcome to %1$s!<br/><br/><br/>Your username is:%2$s and password:%3$s', 'profilebuilder' ), $user_message_from, $user_name, $password );
-        if ( $password === __( 'Your selected password at signup', 'profilebuilder' ) ) {
+		$user_message_content = sprintf( __( 'Welcome to %1$s!<br/><br/><br/>Your username is:%2$s and password:%3$s', 'profile-builder' ), $user_message_from, $user_name, $password );
+        if ( $password === __( 'Your selected password at signup', 'profile-builder' ) ) {
             $password = NULL;
         }
 
@@ -602,7 +602,7 @@ function wppb_notify_user_registration_email( $bloginfo, $user_name, $email, $se
 
 // function with content to be added in email sent to admin if "Admin Approval" is on
 function wppb_adminApproval_adminEmailContent() {
-	$emailContent = '<br/>' . __( 'The "Admin Approval" feature was activated at the time of registration, so please remember that you need to approve this user before he/she can log in!', 'profilebuilder') ."\r\n";
+	$emailContent = '<br/>' . __( 'The "Admin Approval" feature was activated at the time of registration, so please remember that you need to approve this user before he/she can log in!', 'profile-builder') ."\r\n";
 
 	return $emailContent;
 }
@@ -610,7 +610,7 @@ function wppb_adminApproval_adminEmailContent() {
 
 // function with content to be added in email sent to user if "Admin Approval" is on
 function wppb_adminApproval_userEmailContent() {
-	$emailContent = '<br/><br/>' . __( 'Before you can access your account, an administrator needs to approve it. You will be notified via email.', 'profilebuilder' );
+	$emailContent = '<br/><br/>' . __( 'Before you can access your account, an administrator needs to approve it. You will be notified via email.', 'profile-builder' );
 
 	return $emailContent;
 }
