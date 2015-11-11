@@ -556,3 +556,86 @@ function wppb_add_existing_default_fields ( $backed_up_manage_fields = array(), 
 	
 	return $backed_up_manage_fields;
 }
+
+
+/**
+ * Function that assures compatibility for the old Custom Redirects settings with the new Custom Redirects module
+ *
+ * @since v.2.2.5
+ *
+ */
+function wppb_new_custom_redirects_compatibility() {
+	$wppb_old_cr = get_option( 'customRedirectSettings', 'not_found' );
+
+	$wppb_new_cr_global = array();
+	$wppb_new_cr_wp_default = array();
+
+	if( $wppb_old_cr != 'not_found' ) {
+		// new Custom Redirect -> Global Redirects
+		if( $wppb_old_cr['afterRegister'] == 'yes' ) {
+			$wppb_new_cr_global[] = array(
+				'type' => 'after_registration',
+				'url' => $wppb_old_cr['afterRegisterTarget'],
+				'id' => 1,
+			);
+		}
+
+		if( $wppb_old_cr['afterLogin'] == 'yes' ) {
+			$wppb_new_cr_global[] = array(
+				'type' => 'after_login',
+				'url' => $wppb_old_cr['afterLoginTarget'],
+				'id' => 1,
+			);
+		}
+
+		if( $wppb_old_cr['loginRedirectLogout'] == 'yes' ) {
+			$wppb_new_cr_global[] = array(
+				'type' => 'after_logout',
+				'url' => $wppb_old_cr['loginRedirectTargetLogout'],
+				'id' => 1,
+			);
+		}
+
+		if( $wppb_old_cr['dashboardRedirect'] == 'yes' ) {
+			$wppb_new_cr_global[] = array(
+				'type' => 'dashboard_redirect',
+				'url' => $wppb_old_cr['dashboardRedirectTarget'],
+				'id' => 1,
+			);
+		}
+
+		// new Custom Redirect -> Redirect Default WordPress Forms and Pages
+		if( $wppb_old_cr['loginRedirect'] == 'yes' ) {
+			$wppb_new_cr_wp_default[] = array(
+				'type' => 'login',
+				'url' => $wppb_old_cr['loginRedirectTarget'],
+				'id' => 1,
+			);
+		}
+
+		if( $wppb_old_cr['registerRedirect'] == 'yes' ) {
+			$wppb_new_cr_wp_default[] = array(
+				'type' => 'register',
+				'url' => $wppb_old_cr['registerRedirectTarget'],
+				'id' => 1,
+			);
+		}
+
+		if( $wppb_old_cr['recoverRedirect'] == 'yes' ) {
+			$wppb_new_cr_wp_default[] = array(
+				'type' => 'lostpassword',
+				'url' => $wppb_old_cr['recoverRedirectTarget'],
+				'id' => 1,
+			);
+		}
+
+		// add new Custom Redirect database options
+		if( isset( $wppb_new_cr_global ) && ! empty( $wppb_new_cr_global ) ) {
+			update_option( 'wppb_cr_global', $wppb_new_cr_global );
+		}
+
+		if( isset( $wppb_new_cr_wp_default ) && ! empty( $wppb_new_cr_wp_default ) ) {
+			update_option( 'wppb_cr_default_wp_pages', $wppb_new_cr_wp_default );
+		}
+	}
+}

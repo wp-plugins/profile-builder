@@ -52,6 +52,13 @@ function wppb_update_patch(){
 			wppb_pro_email_customizer_compatibility_upgrade();
 		}
 	}
+
+	// this should run only once, mainly if the old version is < 2.2.5 (can be anything)
+	if ( version_compare( $wppb_version, '2.2.5', '<' ) ) {
+		if ( PROFILE_BUILDER == 'Profile Builder Pro' ) {
+			wppb_new_custom_redirects_compatibility();
+		}
+	}
 	
 	do_action ( 'wppb_after_default_changes', PROFILE_BUILDER_VERSION, $wppb_version );	
 }

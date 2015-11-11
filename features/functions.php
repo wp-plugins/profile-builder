@@ -242,15 +242,31 @@ function wppb_print_cpt_script( $hook ){
 		wp_enqueue_script( 'wppb-manage-fields-live-change', WPPB_PLUGIN_URL . 'assets/js/jquery-manage-fields-live-change.js', array(), PROFILE_BUILDER_VERSION, true );
 	}
 
-	if ( ( $hook == 'profile-builder_page_manage-fields' ) || ( $hook == 'profile-builder_page_profile-builder-basic-info' ) || ( $hook == 'profile-builder_page_profile-builder-modules' ) || ( $hook == 'profile-builder_page_profile-builder-general-settings' ) || ( $hook == 'profile-builder_page_profile-builder-admin-bar-settings' ) || ( $hook == 'profile-builder_page_profile-builder-register' ) || ( $hook == 'profile-builder_page_profile-builder-wppb_userListing' ) || ( $hook == 'profile-builder_page_profile-builder-wppb_customRedirect' ) || ( $hook == 'profile-builder_page_profile-builder-wppb_emailCustomizer' ) || ( $hook == 'profile-builder_page_profile-builder-wppb_emailCustomizerAdmin' ) || ( $hook == 'profile-builder_page_profile-builder-add-ons' ) || ( $hook == 'profile-builder_page_profile-builder-woocommerce-sync') ){
-		wp_enqueue_style( 'wppb-back-end-style', WPPB_PLUGIN_URL . 'assets/css/style-back-end.css', false, PROFILE_BUILDER_VERSION );
+	if (( $hook == 'profile-builder_page_manage-fields' ) ||
+		( $hook == 'profile-builder_page_profile-builder-basic-info' ) ||
+		( $hook == 'profile-builder_page_profile-builder-modules' ) ||
+		( $hook == 'profile-builder_page_profile-builder-general-settings' ) ||
+		( $hook == 'profile-builder_page_profile-builder-admin-bar-settings' ) ||
+		( $hook == 'profile-builder_page_profile-builder-register' ) ||
+		( $hook == 'profile-builder_page_profile-builder-wppb_userListing' ) ||
+		( $hook == 'profile-builder_page_custom-redirects' ) ||
+		( $hook == 'profile-builder_page_profile-builder-wppb_emailCustomizer' ) ||
+		( $hook == 'profile-builder_page_profile-builder-wppb_emailCustomizerAdmin' ) ||
+		( $hook == 'profile-builder_page_profile-builder-add-ons' ) ||
+		( $hook == 'profile-builder_page_profile-builder-woocommerce-sync') ||
+		( $hook == 'admin_page_profile-builder-pms-promo') ) {
+			wp_enqueue_style( 'wppb-back-end-style', WPPB_PLUGIN_URL . 'assets/css/style-back-end.css', false, PROFILE_BUILDER_VERSION );
 	}
 	
 	if ( $hook == 'profile-builder_page_profile-builder-general-settings' )
 		wp_enqueue_script( 'wppb-manage-fields-live-change', WPPB_PLUGIN_URL . 'assets/js/jquery-email-confirmation.js', array(), PROFILE_BUILDER_VERSION, true );
 
-    if( $hook == 'profile-builder_page_profile-builder-add-ons' )
-        wp_enqueue_script( 'wppb-add-ons', WPPB_PLUGIN_URL . 'assets/js/jquery-pb-add-ons.js', array(), PROFILE_BUILDER_VERSION, true );
+    if( ($hook == 'profile-builder_page_profile-builder-add-ons' ) ||
+        ($hook == 'admin_page_profile-builder-pms-promo' ) ) {
+        wp_enqueue_script('wppb-add-ons', WPPB_PLUGIN_URL . 'assets/js/jquery-pb-add-ons.js', array(), PROFILE_BUILDER_VERSION, true);
+        wp_enqueue_style( 'thickbox' );
+        wp_enqueue_script( 'thickbox' );
+    }
 
 	if ( isset( $_GET['post_type'] ) || isset( $_GET['post'] ) ){
 		if ( isset( $_GET['post_type'] ) )
@@ -265,9 +281,9 @@ function wppb_print_cpt_script( $hook ){
 		}
 	}
     if ( file_exists ( WPPB_PLUGIN_DIR.'/update/update-checker.php' ) ) {
-        wp_enqueue_style( 'wppb-serial-notice-css', WPPB_PLUGIN_URL . 'assets/css/serial-notice.css', false, PROFILE_BUILDER_VERSION );
         wp_enqueue_script( 'wppb-sitewide', WPPB_PLUGIN_URL . 'assets/js/jquery-pb-sitewide.js', array(), PROFILE_BUILDER_VERSION, true );
     }
+    wp_enqueue_style( 'wppb-serial-notice-css', WPPB_PLUGIN_URL . 'assets/css/serial-notice.css', false, PROFILE_BUILDER_VERSION );
 }
 add_action( 'admin_enqueue_scripts', 'wppb_print_cpt_script' );
 
@@ -653,7 +669,7 @@ add_filter('wck_metabox_content_header_wppb_epf_page_settings', 'wppb_change_met
 
 
 /* Add a notice if people are not able to register via Profile Builder; Membership -> "Anyone can register" checkbox is not checked under WordPress admin UI -> Settings -> General tab */
-if ( get_option('users_can_register') == false) {
+if ( (get_option('users_can_register') == false) && (!class_exists('PMS_Add_General_Notices')) ) {
     if( is_multisite() ) {
         new WPPB_Add_General_Notices('wppb_anyone_can_register',
             sprintf(__('To allow users to register for your website via Profile Builder, you first must enable user registration. Go to %1$sNetwork Settings%2$s, and under Registration Settings make sure to check “User accounts may be registered”. %3$sDismiss%4$s', 'profile-builder'), "<a href='" . network_admin_url('settings.php') . "'>", "</a>", "<a href='" . esc_url( add_query_arg('wppb_anyone_can_register_dismiss_notification', '0') ) . "'>", "</a>"),

@@ -12,7 +12,16 @@
 
         $current_user = get_userdata( get_current_user_id() );
 
-        extract( shortcode_atts( array( 'text' => sprintf( __('You are currently logged in as %s. ','profile-builder') ,$current_user->user_login) , 'redirect' => wppb_curpageurl(), 'link_text' => __('Log out &raquo;','profile-builder')), $atts ) );
+        extract( shortcode_atts( array( 'text' => sprintf( __('You are currently logged in as %s. ','profile-builder') ,$current_user->user_login) , 'redirect' => wppb_curpageurl(), 'redirect_priority' => 'normal', 'link_text' => __('Log out &raquo;','profile-builder')), $atts ) );
+
+		if( PROFILE_BUILDER == 'Profile Builder Pro' ) {
+			$wppb_module_settings = get_option( 'wppb_module_settings' );
+
+			if( isset( $wppb_module_settings['wppb_customRedirect'] ) && $wppb_module_settings['wppb_customRedirect'] == 'show' && $redirect_priority != 'top' && function_exists( 'wppb_custom_redirect_url' ) ) {
+				$redirect = wppb_custom_redirect_url( 'after_logout', $redirect );
+			}
+		}
+		$redirect = apply_filters( 'wppb_after_logout_redirect_url', $redirect );
 
         $logout_link = '<a href="' . wp_logout_url( $redirect ) . '" class="wppb-logout-url" title="' . __( 'Log out of this account', 'profile-builder' ) . '">' . $link_text . '</a>';
 

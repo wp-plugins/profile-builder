@@ -609,7 +609,7 @@ function wppb_return_unique_field_list( $only_default_fields = false ){
  */
 function wppb_check_field_on_edit_add( $message, $fields, $required_fields, $meta_name, $posted_values, $post_id ){
 	global $wpdb;
-	
+
 	if ( $meta_name == 'wppb_manage_fields' ){
 	
 		// check for a valid field-type (fallback)

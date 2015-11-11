@@ -143,7 +143,6 @@ var fields 	=	{
 						'Default - Password':					{	'show_rows'	:	[
 																						'.row-field-title',
 																						'.row-description',
-																						'.row-default-value',
 																						'.row-required'
 																					],
                                                                     'properties':	{
@@ -157,7 +156,6 @@ var fields 	=	{
 						'Default - Repeat Password':			{	'show_rows'	:	[
 																					'.row-field-title',
 																					'.row-description',
-																					'.row-default-value',
 																					'.row-required'
 																					],
                                                                     'properties':	{

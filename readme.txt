@@ -5,7 +5,7 @@ Tags: registration, user profile, user registration, custom field registration, 
 
 Requires at least: 3.1
 Tested up to: 4.3.1
-Stable tag: 2.2.4
+Stable tag: 2.2.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -115,6 +115,14 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 10. Profile Builder Login Widget
 
 == Changelog ==
+= 2.2.5 =
+* Fixed issue that prevented  the value 0 to be set as default value
+* Fixed xss vulnerability
+* Fixed issue that was preventing to change back to original email address in edit-profile, after changing to a new one
+* Removed default value option from PB Password and Repeat Password fields
+* Changed name of japanese translation file
+* Fixed updating edit-profile form without email field, when allowing users to login only with email
+
 = 2.2.4 =
 * Translation Updates
 
