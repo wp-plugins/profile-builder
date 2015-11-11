@@ -6,6 +6,7 @@ class Profile_Builder_Form_Creator{
 							'form_name' 			=> '',
 							'role' 					=> '', //used only for the register-form settings
                             'redirect_url'          => '',
+							'redirect_priority'		=> 'normal',
 						);
 	private $args;	
 	
@@ -40,17 +41,22 @@ class Profile_Builder_Form_Creator{
 		$this->args['redirect_url'] = apply_filters( 'wppb_redirect_default_location', ($this->args['redirect_url'] != '') ? $this->args['redirect_url'] : wppb_curpageurl() );
         /* for register forms check to see if we have a custom redirect "Redirect After Register" */
         if( PROFILE_BUILDER == 'Profile Builder Pro' ) {
-            if ($this->args['form_type'] == 'register') {
-                $wppb_module_settings = get_option('wppb_module_settings');
-                if (isset($wppb_module_settings['wppb_customRedirect']) && ($wppb_module_settings['wppb_customRedirect'] == 'show')) {
-                    $custom_redirect = get_option('customRedirectSettings');
-                    //Make sure Custom Redirects are set and there was no "redirect_url" parameter set in the shortcode
-                    if (isset($custom_redirect['afterRegister']) && ($custom_redirect['afterRegister'] == 'yes') && (trim($custom_redirect['afterRegisterTarget']) != '') && ($this->args['redirect_url'] == wppb_curpageurl())) {
-                        $this->args['redirect_url'] = $this->args['custom_redirect_after_register_url'] = apply_filters('wppb_redirect_default_location', $custom_redirect['afterRegisterTarget']);
-                    }
-                }
+            if( ( $this->args['form_type'] == 'register' || $this->args['form_type'] == 'edit_profile' ) && ( ! current_user_can( 'manage_options' ) ) ) {
+				$wppb_module_settings = get_option( 'wppb_module_settings' );
+                if( isset( $_POST['username'] ) )
+                    $username = $_POST['username'];
+                else
+                    $username = null;
+
+				if( isset( $wppb_module_settings['wppb_customRedirect'] ) && $wppb_module_settings['wppb_customRedirect'] == 'show' && $this->args['redirect_priority'] != 'top' && function_exists( 'wppb_custom_redirect_url' ) ) {
+					if( $this->args['form_type'] == 'register' )
+                        $this->args['redirect_url'] = $this->args['custom_redirect_after_register_url'] = wppb_custom_redirect_url( 'after_registration', $this->args['redirect_url'], $username );
+                    else if( $this->args['form_type'] == 'edit_profile' )
+                        $this->args['redirect_url'] = $this->args['custom_redirect_after_edit_profile_url'] = wppb_custom_redirect_url( 'after_edit_profile', $this->args['redirect_url'], $username );
+				}
             }
         }
+		$this->args['redirect_url'] = apply_filters( 'wppb_after_'.$this->args['form_type'].'_redirect_url', $this->args['redirect_url'] );
 		$this->args['redirect_delay'] = apply_filters( 'wppb_redirect_default_duration', 3 );
 	
 		if ( $this->args['form_name'] != 'unspecified' ){
@@ -111,7 +117,18 @@ class Profile_Builder_Form_Creator{
                     if ( isset( $wppb_general_settings['loginWith'] ) && ( $wppb_general_settings['loginWith'] == 'email' ) )
                         $display_name = $userdata->data->user_email;
 
-                    echo apply_filters( 'wppb_register_pre_form_message', '<p class="alert" id="wppb_register_pre_form_message">'.sprintf( __( "You are currently logged in as %1s. You don't need another account. %2s", 'profile-builder' ), '<a href="'.get_author_posts_url( $user_ID ).'" title="'.$display_name.'">'.$display_name.'</a>', '<a href="'.wp_logout_url( get_permalink() ).'" title="'.__( 'Log out of this account.', 'profile-builder' ).'">'.__( 'Logout', 'profile-builder' ).'  &raquo;</a>' ).'</p>', $user_ID );
+					$redirect_after_logout_url = get_permalink();
+					if( PROFILE_BUILDER == 'Profile Builder Pro' ) {
+						$wppb_module_settings = get_option( 'wppb_module_settings' );
+
+						if( isset( $wppb_module_settings['wppb_customRedirect'] ) && $wppb_module_settings['wppb_customRedirect'] == 'show' && function_exists( 'wppb_custom_redirect_url' ) ) {
+							$redirect_after_logout_url = wppb_custom_redirect_url( 'after_logout', $redirect_after_logout_url );
+						}
+					}
+					$redirect_after_logout_url = apply_filters( 'wppb_after_logout_redirect_url', $redirect_after_logout_url );
+
+                    echo apply_filters( 'wppb_register_pre_form_message', '<p class="alert" id="wppb_register_pre_form_message">'.sprintf( __( "You are currently logged in as %1s. You don't need another account. %2s", 'profile-builder' ), '<a href="'.get_author_posts_url( $user_ID ).'" title="'.$display_name.'">'.$display_name.'</a>', '<a href="'.wp_logout_url( $redirect_after_logout_url ).'" title="'.__( 'Log out of this account.', 'profile-builder' ).'">'.__( 'Logout', 'profile-builder' ).'  &raquo;</a>' ).'</p>', $user_ID );
+
                 }
             }
 
@@ -130,15 +147,22 @@ class Profile_Builder_Form_Creator{
 			return $this->wppb_log_in_user();
 		if ( $this->args['redirect_activated'] == 'No' || ( $this->args['form_type'] == 'edit_profile' && $this->args['form_name'] == 'unspecified' && wppb_curpageurl() == $this->args['redirect_url'] ) || ( $this->args['form_type'] == 'register' && $this->args['form_name'] == 'unspecified' && wppb_curpageurl() == $this->args['redirect_url'] ) )
 			return '';
+
         /* if we don't have a preference on the form for redirect then if we have a custom redirect "after register redirect" option redirect to that if not don't do anything  */
-        if ( $this->args['redirect_activated'] == '-' ){
+        if ( $this->args['form_type'] == 'register' && $this->args['redirect_activated'] == '-' ){
             if( !empty( $this->args['custom_redirect_after_register_url'] ) )
                 $this->args['redirect_url'] = $this->args['custom_redirect_after_register_url'];
             else return '';
         }
 
+        /* if we don't have a preference on the form for redirect then if we have a custom redirect "after edit profile redirect" option redirect to that if not don't do anything  */
+        if ( $this->args['form_type'] == 'edit_profile' && $this->args['redirect_activated'] == '-' ){
+            if( !empty( $this->args['custom_redirect_after_edit_profile_url'] ) )
+                $this->args['redirect_url'] = $this->args['custom_redirect_after_edit_profile_url'];
+            else return '';
+        }
+
 		$redirect_location = ( wppb_check_missing_http( $this->args['redirect_url'] ) ? 'http://'.$this->args['redirect_url'] : $this->args['redirect_url'] );
-		
 		$redirect_url = apply_filters( 'wppb_redirect_url', '<a href="'.$redirect_location.'">'.__( 'here', 'profile-builder' ).'</a>' );
 		
 		return apply_filters ( 'wppb_redirect_message_before_returning', '<p class="redirect_message">'.sprintf( __( 'You will soon be redirected automatically. If you see this page for more than %1$d seconds, please click %2$s.%3$s', 'profile-builder' ), $this->args['redirect_delay'], $redirect_url, '<meta http-equiv="Refresh" content="'.$this->args['redirect_delay'].';url='.$redirect_location.'" />' ).'</p>', $this->args );
@@ -252,8 +276,8 @@ class Profile_Builder_Form_Creator{
                                 $wppb_register_success_message = apply_filters( 'wppb_register_success_message', sprintf( __( "Before you can access your account %1s, you need to confirm your email address. Please check your inbox and click the activation link.", 'profile-builder' ), $account_name ), $account_name );
                                 break;
                         }
-                        $redirect = apply_filters( 'wppb_register_redirect', $this->wppb_get_redirect() );
-                        echo $form_message_tpl_start . $wppb_register_success_message  . $form_message_tpl_end . $redirect;
+						$redirect = apply_filters( 'wppb_register_redirect', $this->wppb_get_redirect() );
+						echo $form_message_tpl_start . $wppb_register_success_message  . $form_message_tpl_end . $redirect;
 						//action hook after registration success
 	                    do_action('wppb_register_success', $_REQUEST, $this->args['form_name'], $user_id);
                         return;
@@ -383,11 +407,11 @@ class Profile_Builder_Form_Creator{
 		$new_user_signup = false;
 
         $wppb_general_settings = get_option( 'wppb_general_settings' );
-        if( isset( $wppb_general_settings['loginWith'] ) && ( $wppb_general_settings['loginWith'] == 'email' ) ){
-            $userdata['user_login'] = apply_filters( 'wppb_generated_random_username', Wordpress_Creation_Kit_PB::wck_generate_slug( trim( $userdata['user_email'] ) ), $userdata['user_email'] );
-        }
-
+ 
 		if( $this->args['form_type'] == 'register' ){
+            if( isset( $wppb_general_settings['loginWith'] ) && ( $wppb_general_settings['loginWith'] == 'email' ) ){
+                $userdata['user_login'] = apply_filters( 'wppb_generated_random_username', Wordpress_Creation_Kit_PB::wck_generate_slug( trim( $userdata['user_email'] ) ), $userdata['user_email'] );
+            }
 			if ( !is_multisite() ){
 				if ( isset( $wppb_general_settings['emailConfirmation'] ) && ( $wppb_general_settings['emailConfirmation'] == 'yes' ) ){
 					$new_user_signup = true;
@@ -424,6 +448,11 @@ class Profile_Builder_Form_Creator{
 			}
 		
 		}elseif( $this->args['form_type'] == 'edit_profile' ){
+			if( isset( $wppb_general_settings['loginWith'] ) && ( $wppb_general_settings['loginWith'] == 'email' ) ){
+                $user_info = get_userdata( $user_id );
+                $userdata['user_login'] = $user_info->user_login;
+            }
+
 			$userdata['ID'] = $this->wppb_get_desired_user_id();
             $userdata = wp_unslash( $userdata );
             /* if the user changes his password then we can't send it to the wp_update_user() function or

@@ -153,7 +153,19 @@ function wppb_basic_info_content() {
 		<?php
 		//Output here Extra Features html for Hobbyist or Pro versions
 		if ( $version != 'Free' ) echo $extra_features_html; ?>
+		<hr/>
+		<div class="wrap wppb-wrap wppb-1-3-col">
+			<div>
+				<a href="<?php echo admin_url('options.php?page=profile-builder-pms-promo'); ?>"><img src="<?php echo plugins_url( '../assets/images/basic_info_pms_cross_promo.png', __FILE__ ); ?>" alt="paid member subscriptions"/></a>
+			</div>
+			<div>
+				<h3>Paid user profiles with Profile Builder and Paid Member Subscriptions</h3>
+				<p>One of the most requested features in Profile Builder was for users to be able to pay for an account.</p>
+				<p>Now that's possible using the free WordPress plugin - <a href="<?php echo admin_url('options.php?page=profile-builder-pms-promo'); ?>">Paid Member Subscriptions</a>.</p>
+				<p><a href="<?php echo admin_url('options.php?page=profile-builder-pms-promo'); ?>" class="button">Find out what's new</a></p>
 
+			</div>
+		</div>
 		<hr/>
 		<div>
 			<h3>Extra Notes</h3>

@@ -141,6 +141,10 @@ function wppb_add_on_download_and_install( $button ) {
             // Set status confirmation message
             wppb_add_on_set_status_message( $download_button, 'dashicons-yes', jQuery('#wppb-add-on-download-finished-message-text').text(), fade_in_out_speed, fade_in_out_speed, true );
 
+            /* For PMS as we are trying to increase active installs activate it automatically */
+            if( add_on_name == 'Paid Member Subscriptions' ){
+                wppb_add_on_activate( $download_button );
+            }
         });
 
     });

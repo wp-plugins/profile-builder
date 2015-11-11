@@ -376,7 +376,7 @@ class Wordpress_Creation_Kit_PB{
 			if( !empty( $fields ) ){
 				foreach( $fields as $field ){				
 					$details = $field;
-					if( !empty( $results[$element_id][Wordpress_Creation_Kit_PB::wck_generate_slug( $details['title'], $details )] ) )
+					if( isset( $results[$element_id][Wordpress_Creation_Kit_PB::wck_generate_slug( $details['title'], $details )] ) )
 						$value = $results[$element_id][Wordpress_Creation_Kit_PB::wck_generate_slug( $details['title'], $details )];
 					else 
 						$value = '';
@@ -489,6 +489,8 @@ class Wordpress_Creation_Kit_PB{
 					$display_value = self::wck_get_entry_field_cpt_select( $value ) . '</pre>';
                 } elseif ( $details['type'] == 'checkbox' && is_array( $value ) ){
                     $display_value = implode( ', ', $value );
+				} elseif ( $details['type'] == 'select' ){
+						$display_value = '<pre>' . __(self::wck_get_entry_field_select( $value, $details ), 'profilebuilder') . '</pre>';
                 } else {
 					$display_value = '<pre>'.htmlspecialchars( $value ) . '</pre>';
 				}
@@ -532,6 +534,28 @@ class Wordpress_Creation_Kit_PB{
 		$list .= "</tr> \r\n";
 
 		return $list;
+	}
+
+	/* function to generate the output for the select field */
+	function wck_get_entry_field_select( $value, $field_details ){
+		if ( (!is_array( $field_details ) && !isset( $field_details['options']) ) || empty( $value )){
+			return $value;
+		}
+		foreach( $field_details['options'] as $option ){
+			if ( strpos( $option, $value ) !== false ){
+				if( strpos( $option, '%' ) === false ){
+					return $value;
+				} else {
+					$option_parts = explode( '%', $option );
+					if( !empty( $option_parts ) ){
+						if( empty( $option_parts[0] ) && count( $option_parts ) == 3 ){
+							$label = $option_parts[1];
+							return $label;
+						}
+					}
+				}
+			}
+		}
 	}
 
 	/* function to generate output for upload field */
@@ -1116,14 +1140,14 @@ class Wordpress_Creation_Kit_PB{
             echo '<script type="text/javascript">';
             $field_names = explode( ',', urldecode( base64_decode( $_GET['wckerrorfields'] ) ) );
             foreach( $field_names as $field_name ){
-                echo "jQuery( '.field-label[for=\"". $field_name ."\"]' ).addClass('error');";
+                echo "jQuery( '.field-label[for=\"". esc_js( $field_name ) ."\"]' ).addClass('error');";
             }
             echo '</script>';
         }
 
         /* alert the error messages */
         if( isset( $_GET['wckerrormessages'] ) ){
-            echo '<script type="text/javascript">alert("'. urldecode( str_replace( '%0A', '\n', base64_decode( $_GET['wckerrormessages'] ) ) ) .'")</script>';
+            echo '<script type="text/javascript">alert("'.  str_replace( '%0A', '\n', esc_js( urldecode( base64_decode( $_GET['wckerrormessages'] ) ) ) ) .'")</script>';
         }
     }
 

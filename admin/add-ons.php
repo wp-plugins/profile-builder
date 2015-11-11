@@ -184,6 +184,87 @@ function wppb_add_ons_content() {
 
         ?>
         </div>
+
+        <div class="clear"></div>
+        <div>
+            <h2><?php _e( 'Recommended Plugins', 'profile-builder' ) ?></h2>
+            <?php
+            $pms_add_on_exists = 0;
+            $pms_add_on_is_active = 0;
+            $pms_add_on_is_network_active = 0;
+            // Check to see if add-on is in the plugins folder
+            foreach ($wppb_get_all_plugins as $wppb_plugin_key => $wppb_plugin) {
+                if( strtolower($wppb_plugin['Name']) == strtolower( 'Paid Member Subscriptions' ) && strpos(strtolower($wppb_plugin['AuthorName']), strtolower('Cozmoslabs')) !== false) {
+                    $pms_add_on_exists = 1;
+                    if (in_array($wppb_plugin_key, $wppb_get_active_plugins)) {
+                        $pms_add_on_is_active = 1;
+                    }
+                    // Consider the add-on active if it's network active
+                    if (is_plugin_active_for_network($wppb_plugin_key)) {
+                        $pms_add_on_is_network_active = 1;
+                        $pms_add_on_is_active = 1;
+                    }
+                    $plugin_file = $wppb_plugin_key;
+                }
+            }
+            ?>
+            <div class="plugin-card wppb-recommended-plugin wppb-add-on">
+                <div class="plugin-card-top">
+                    <a target="_blank" href="http://wordpress.org/plugins/paid-member-subscriptions/">
+                        <img src="<?php echo plugins_url( '../assets/images/pms_recommended.jpg', __FILE__ ); ?>" width="100%">
+                    </a>
+                    <h3 class="wppb-add-on-title">
+                        <a target="_blank" href="http://wordpress.org/plugins/paid-member-subscriptions/">Paid Member Subscriptions</a>
+                    </h3>
+                    <h3 class="wppb-add-on-price"><?php  _e( 'Free', 'profile-builder' ) ?></h3>
+                    <p class="wppb-add-on-description">
+                        <?php _e( 'Accept user payments, create subscription plans and restrict content on your membership site.', 'profile-builder' ) ?>
+                        <a href="<?php admin_url();?>plugin-install.php?tab=plugin-information&plugin=paid-member-subscriptions&TB_iframe=true&width=772&height=875" class="thickbox" aria-label="More information about Paid Member Subscriptions - membership & content restriction" data-title="Paid Member Subscriptions - membership & content restriction"><?php _e( 'More Details' ); ?></a>
+                    </p>
+                </div>
+                <div class="plugin-card-bottom wppb-add-on-compatible">
+                   <?php
+                   if ($pms_add_on_exists) {
+
+                       // Display activate/deactivate buttons
+                       if (!$pms_add_on_is_active) {
+                           echo '<a class="wppb-add-on-activate right button button-secondary" href="' . $plugin_file . '" data-nonce="' . $ajax_nonce . '">' . __('Activate', 'profile-builder') . '</a>';
+
+                           // If add-on is network activated don't allow deactivation
+                       } elseif (!$pms_add_on_is_network_active) {
+                           echo '<a class="wppb-add-on-deactivate right button button-secondary" href="' . $plugin_file . '" data-nonce="' . $ajax_nonce . '">' . __('Deactivate', 'profile-builder') . '</a>';
+                       }
+
+                       // Display message to the user
+                       if( !$pms_add_on_is_active ){
+                           echo '<span class="dashicons dashicons-no-alt"></span><span class="wppb-add-on-message">' . __('Plugin is <strong>inactive</strong>', 'profile-builder') . '</span>';
+                       } else {
+                           echo '<span class="dashicons dashicons-yes"></span><span class="wppb-add-on-message">' . __('Plugin is <strong>active</strong>', 'profile-builder') . '</span>';
+                       }
+
+                   } else {
+
+                       // If we're on a multisite don't add the wpp-add-on-download class to the button so we don't fire the js that
+                       // handles the in-page download
+                       if (is_multisite()) {
+                           $wppb_paid_link_class = 'button-secondary';
+                           $wppb_paid_link_text = __('Download Now', 'profile-builder' );
+                       } else {
+                           $wppb_paid_link_class = 'button-secondary wppb-add-on-download';
+                           $wppb_paid_link_text = __('Install Now', 'profile-builder');
+                       }
+
+                       echo '<a target="_blank" class="right button ' . $wppb_paid_link_class . '" href="https://downloads.wordpress.org/plugin/paid-member-subscriptions.zip" data-add-on-slug="paid-member-subscriptions" data-add-on-name="Paid Member Subscriptions" data-nonce="' . $ajax_nonce . '">' . $wppb_paid_link_text . '</a>';
+                       echo '<span class="dashicons dashicons-yes"></span><span class="wppb-add-on-message">' . __('Compatible with your version of Profile Builder.', 'profile-builder') . '</span>';
+
+                   }
+                    ?>
+                    <div class="spinner"></div>
+                    <span class="wppb-add-on-user-messages wppb-error-manual-install"><?php printf(__('Could not install plugin. Retry or <a href="%s" target="_blank">install manually</a>.', 'profile-builder'), esc_url( 'http://www.wordpress.org/plugins/paid-member-subscriptions' )) ?></a>.</span>
+                </div>
+            </div>
+        </div>
+
     </div>
     <?php
 }
@@ -279,12 +360,11 @@ function wppb_add_on_download_zip_file() {
     $wppb_add_on_download_url = $_POST['wppb_add_on_download_url'];
     $wppb_add_on_zip_name = $_POST['wppb_add_on_zip_name'];
 
-    if( strpos( $wppb_add_on_download_url, 'http://www.cozmoslabs.com/' ) === false )
+    if( strpos( $wppb_add_on_download_url, 'http://www.cozmoslabs.com/' ) === false && strpos( $wppb_add_on_download_url, 'https://downloads.wordpress.org/' )  === false )
         wp_die();
 
-
     // Get .zip file
-    $remote_response = wp_remote_get( $wppb_add_on_download_url );
+    $remote_response = wp_remote_get( $wppb_add_on_download_url, array( 'timeout' => 500000) );
     if( is_wp_error( $remote_response ) ) {
         $response = 'error-' . $add_on_index;
     } else {
@@ -337,6 +417,7 @@ function wppb_add_on_get_new_plugin_data() {
 
             // Return the plugin path
             echo $wppb_plugin_key;
+            wp_die();
         }
     }
 

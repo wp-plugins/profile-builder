@@ -364,8 +364,13 @@ function wppb_signup_user_notification( $user, $user_email, $activation_key, $me
 	$from_name = apply_filters ( 'wppb_signup_user_notification_email_from_field', get_bloginfo( 'name' ) );
 	
 	$message_headers = apply_filters ( 'wppb_signup_user_notification_from', "From: \"{$from_name}\" <{$admin_email}>\n" . "Content-Type: text/plain; charset=\"" . get_option('blog_charset') . "\"\n" );
-	
-	$registration_page_url = ( ( isset( $wppb_general_settings['activationLandingPage'] ) && ( trim( $wppb_general_settings['activationLandingPage'] ) != '' ) ) ? add_query_arg( array('activation_key' => $activation_key ), get_permalink( $wppb_general_settings['activationLandingPage'] ) ) : 'not_set' );	
+
+	if( isset( $wppb_general_settings['activationLandingPage'] ) && ( trim( $wppb_general_settings['activationLandingPage'] ) != '' ) ) {
+		$registration_page_url = add_query_arg( array('activation_key' => $activation_key), get_permalink( $wppb_general_settings['activationLandingPage'] ) );
+	} else {
+		$registration_page_url = 'not_set';
+	}
+
 	if ( $registration_page_url == 'not_set' ){
 		global $post;
         if( !empty( $post->ID ) )
@@ -378,7 +383,7 @@ function wppb_signup_user_notification( $user, $user_email, $activation_key, $me
         else
             $post_content = '';
 
-		$registration_page_url = ( ( strpos( $post_content, '[wppb-register' ) !== false ) ? add_query_arg( array('activation_key' => $activation_key ), $permalink ) : add_query_arg( array('activation_key' => $activation_key ), get_bloginfo( 'url' ) ) );
+		$registration_page_url = ( ( strpos( $post_content, '[wppb-register' ) !== false ) ? add_query_arg( array( 'activation_key' => $activation_key ), $permalink ) : add_query_arg( array( 'activation_key' => $activation_key ), get_bloginfo( 'url' ) ) );
 	}
 	
 	$subject = sprintf( __( '[%1$s] Activate %2$s', 'profile-builder'), $from_name, $user );
@@ -449,7 +454,6 @@ function wppb_manual_activate_signup( $activation_key ) {
 			wppb_notify_user_registration_email( get_bloginfo( 'name' ), $user_login, $user_email, 'sending', $password, ( isset( $wppb_general_settings['adminApproval'] ) ? $wppb_general_settings['adminApproval'] : 'no' ) );
 			
 			do_action('wppb_activate_user', $user_id, $password, $meta);
-			
 			return ( $retVal ? 'ok' : __( 'There was an error while trying to activate the user', 'profile-builder' ) );
 		}
 	}

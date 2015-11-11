@@ -343,8 +343,30 @@ function wppb_front_end_password_recovery(){
 						wppb_create_recover_password_form( $user, $_POST );
 					}
 				}else{
-					if( $messageNo2 == '1' )
-						echo apply_filters( 'wppb_recover_password_password_changed_message1', '<p class="wppb-success">'.$message2.'</p>', $message2 );
+					if( $messageNo2 == '1' ) {
+						if( PROFILE_BUILDER == 'Profile Builder Pro' ) {
+							$wppb_module_settings = get_option( 'wppb_module_settings' );
+
+							if( isset( $wppb_module_settings['wppb_customRedirect'] ) && $wppb_module_settings['wppb_customRedirect'] == 'show' && function_exists( 'wppb_custom_redirect_url' ) ) {
+								$redirect_url = wppb_custom_redirect_url( 'after_success_password_reset', '', $_GET['loginName'] );
+								$redirect_url = apply_filters( 'wppb_after_success_password_reset_redirect_url', $redirect_url );
+
+								if( isset( $redirect_url ) && ! empty( $redirect_url ) ) {
+									$redirect_after_seconds = 3;
+									echo apply_filters( 'wppb_after_success_password_reset_redirect_after_seconds', '<meta http-equiv="refresh" content="' . $redirect_after_seconds . '; url=' . $redirect_url . '">', $redirect_after_seconds );
+
+									$before_redirect_message = 'You will soon be redirected automatically. If you see this page for more than ' . $redirect_after_seconds . ' seconds, please click <a href="' . $redirect_url . '">here</a>.';
+									$before_redirect_message = apply_filters( 'wppb_after_success_password_reset_before_redirect_message', $before_redirect_message );
+								}
+							}
+						}
+
+						echo apply_filters( 'wppb_recover_password_password_changed_message1', '<p class="wppb-success">' . $message2 . '</p>', $message2 );
+
+						if( isset( $before_redirect_message ) && ! empty( $before_redirect_message ) ) {
+							echo '<p>' . $before_redirect_message . '</p>';
+						}
+					}
 
 					elseif( $messageNo2 == '2' )
 						echo apply_filters( 'wppb_recover_password_password_changed_message2', '<p class="wppb-error">'.$message2.'</p>', $message2 );

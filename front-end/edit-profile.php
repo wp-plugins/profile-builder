@@ -52,9 +52,20 @@ function wppb_autologin_after_password_changed(){
 		
 function wppb_front_end_profile_info( $atts ){
 	// get value set in the shortcode as parameter, still need to default to something else than empty string
-	extract( shortcode_atts( array( 'form_name' => 'unspecified', 'redirect_url' => '' ), $atts, 'wppb-edit-profile' ) );
-    global $$form_name;
-    $$form_name = new Profile_Builder_Form_Creator( array( 'form_type' => 'edit_profile', 'form_name' => $form_name, 'redirect_url' => $redirect_url ) );
+	extract( shortcode_atts( array( 'form_name' => 'unspecified', 'redirect_url' => '', 'redirect_priority' => 'normal' ), $atts, 'wppb-edit-profile' ) );
+
+	if( PROFILE_BUILDER == 'Profile Builder Pro' ) {
+		$wppb_module_settings = get_option( 'wppb_module_settings' );
+
+		if( isset( $wppb_module_settings['wppb_customRedirect'] ) && $wppb_module_settings['wppb_customRedirect'] == 'show' && $redirect_priority != 'top' && function_exists( 'wppb_custom_redirect_url' ) ) {
+			$redirect_url = wppb_custom_redirect_url( 'after_edit_profile', $redirect_url );
+		}
+	}
+	$redirect_url = apply_filters( 'wppb_after_edit_profile_redirect_url', $redirect_url );
+
+	global $$form_name;
+
+    $$form_name = new Profile_Builder_Form_Creator( array( 'form_type' => 'edit_profile', 'form_name' => $form_name, 'redirect_url' => $redirect_url, 'redirect_priority' => $redirect_priority ) );
 
     return $$form_name;
 }

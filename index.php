@@ -3,7 +3,7 @@
 Plugin Name: Profile Builder
 Plugin URI: http://www.cozmoslabs.com/wordpress-profile-builder/
 Description: Login, registration and edit profile shortcodes for the front-end. Also you can chose what fields should be displayed or add new (custom) ones both in the front-end and in the dashboard.
-Version: 2.2.4
+Version: 2.2.5
 Author: Cozmoslabs, Madalin Ungureanu, Antohe Cristian, Barina Gabriel, Mihai Iova
 Author URI: http://www.cozmoslabs.com/
 License: GPL2
@@ -73,7 +73,7 @@ function wppb_free_plugin_init() {
          *
          *
          */
-        define('PROFILE_BUILDER_VERSION', '2.2.4' );
+        define('PROFILE_BUILDER_VERSION', '2.2.5' );
         define('WPPB_PLUGIN_DIR', plugin_dir_path(__FILE__));
         define('WPPB_PLUGIN_URL', plugin_dir_url(__FILE__));
         define('WPPB_SERVER_MAX_UPLOAD_SIZE_BYTE', apply_filters('wppb_server_max_upload_size_byte_constant', wppb_return_bytes(ini_get('upload_max_filesize'))));
@@ -122,6 +122,7 @@ function wppb_free_plugin_init() {
         include_once(WPPB_PLUGIN_DIR . '/admin/general-settings.php');
         include_once(WPPB_PLUGIN_DIR . '/admin/admin-bar.php');
         include_once(WPPB_PLUGIN_DIR . '/admin/manage-fields.php');
+        include_once(WPPB_PLUGIN_DIR . '/admin/pms-cross-promotion.php');
         include_once(WPPB_PLUGIN_DIR . '/features/email-confirmation/email-confirmation.php');
         include_once(WPPB_PLUGIN_DIR . '/features/email-confirmation/class-email-confirmation.php');
         if (file_exists(WPPB_PLUGIN_DIR . '/features/admin-approval/admin-approval.php')) {

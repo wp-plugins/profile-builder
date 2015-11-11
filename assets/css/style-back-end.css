@@ -1,4 +1,9 @@
 .wppb-wrap{
+	clear: both;
+	margin: 10px 0px 0 2px;
+}
+.wppb-wrap,
+.wppb-wrap p{
 	font-size: 15px;
 	max-width: 1050px;
 }
@@ -69,6 +74,10 @@
 	background:url(../images/logo_free.png) center 20px no-repeat #d54e21;
 }
 
+.wppb-badge.wppb-pb-pms{
+	background:url(../images/pb+pms.png) center center no-repeat;
+}
+
 /* Userlist page */
 .wppb-ul-templates > textarea,
 .wppb-single-ul-templates > textarea {
@@ -87,42 +96,43 @@
 	margin-top:60px;
 }
 
+
+/* Shortcode */
+.wppb-shortcode {
+	display: inline-block;
+	font-size: 13px;
+	font-weight: bold;
+	background: #fff !important;
+	padding: 5px 10px;
+	margin-top: 5px;
+	border: 1px solid #e1e1e1;
+	box-shadow: none !important;
+	font-family: 'Arial';
+}
+
+.wppb-shortcode.textarea {
+	width: 100%;
+	height: 1px;
+	resize: none;
+}
+
+.wppb-shortcode:focus {
+	border-color: #e1e1e1 !important;
+}
+
+.wppb-shortcode-temp {
+	display: inline-block;
+	font-size: 13px;
+	font-weight: bold;
+	padding: 11px;
+	font-family: 'Arial';
+}
+
+
 /* Manage Fields page */
 .profile-builder_page_manage-fields .metabox-holder .column-1{
 	 /* margin-right:0; */
 }
-
-/* Shortcode */
-.wppb-shortcode {
-    display: inline-block;
-    font-size: 13px;
-    font-weight: bold;
-    background: #fff !important;
-    padding: 5px 10px;
-    margin-top: 5px;
-    border: 1px solid #e1e1e1;
-    box-shadow: none !important;
-    font-family: 'Arial';
-}
-
-.wppb-shortcode.textarea {
-    width: 100%;
-    height: 1px;
-    resize: none;
-}
-
-.wppb-shortcode:focus {
-    border-color: #e1e1e1 !important;
-}
-
-.wppb-shortcode-temp {
-    display: inline-block;
-    font-size: 13px;
-    font-weight: bold;
-    padding: 11px;
-    font-family: 'Arial';
-}
-
 
 #container_wppb_manage_fields li strong{
 	display:none !important;
@@ -280,6 +290,16 @@
 	margin:0;
 }
 
+.wppb-1-3-col > div {
+	float:left;
+	width:28%;
+	margin-right:5%;
+}
+.wppb-1-3-col > div:last-child{
+	float:right;
+	width: 67%;
+	margin:0;
+}
 /* Extra Form Styles */
 .wppb-text{
     min-width: 16.4em;
@@ -394,35 +414,6 @@
 	border-radius:3px;
 }
 
-.wppb-custom-redirects .widefat tr td{
-    padding: 12px 10px;
-}
-
-.wppb-custom-redirects .widefat tbody tr:hover{
-    background: #def6ff;
-}
-
-.wppb-extra-info-notice{
-    font-style: italic;
-    opacity: 0.7;
-}
-
-.wppb-custom-redirects .wppb_col_1{
-	width: 24%;
-}
-
-.wppb-custom-redirects .wppb_col_2{
-	width: 18%;
-}
-
-.wppb-custom-redirects .wppb_col_3{
-	width: 58%;
-}
-
-.wppb-custom-redirects input[type="text"]{
-	width: 100%;
-}
-
 /* hide "View post" link from update messages on internal post types */
 .post-type-wppb-ul-cpt #message.updated a, .post-type-wppb-rf-cpt #message.updated a, .post-type-wppb-epf-cpt #message.updated a{
     display:none;
@@ -517,6 +508,17 @@
     background: url('../images/spinner.gif') no-repeat center;
 }
 
+.wppb-recommended-plugin{
+    width:100%;
+    margin:0 8px 16px 0;
+}
+
+@media screen and (min-width: 1600px){
+    .wppb-recommended-plugin{
+        width:66%;
+    }
+}
+
 .wppb-confirmation-success {
     color: #27ae60;
 }
@@ -573,4 +575,33 @@ p .wppb-button-free {
     background: #e45424;
     border-color: #6d2811;
     color: #fff;
+}
+
+/* PMS Compatibility page */
+#pms-bottom-install .plugin-card-bottom{
+	border:none;
+	background: #5693d3;
+	color:#fff;
+}
+
+#pms-bottom-install .plugin-card-bottom span{
+	display: inline-block;
+	margin-top:7px;
+}
+
+#pms-bottom-install  .wppb-add-on-download, #pms-bottom-install a{
+	font-size: 130%;
+	padding: 10px 20px;
+	height: auto;
+	color: #5693d3;
+	text-decoration: none;
+}
+
+#pms-bottom-install a:hover{
+	background: #fff;
+	text-decoration: none;
+}
+
+#pms-bottom-install .wppb-confirmation-success{
+    color:#FFFFFF;
 }

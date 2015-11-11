@@ -528,3 +528,26 @@ ul.wppb-profile li h3:first-child{
     background-color: #c3ff88;
     border-color: #8dff1c;
 }
+
+/**************************************************/
+/* Profile Builder Subscription Plans Field
+/**************************************************/
+.wppb-form-field.wppb-subscription-plans label {
+    width: 100%;
+    float: none;
+}
+
+.wppb-form-field.wppb-subscription-plans input {
+    display: inline-block;
+    width: auto;
+    float: none;
+    margin-right: 10px !important;
+}
+
+.wppb-form-field.wppb-subscription-plans span.description {
+    display: block;
+    font-size: 100%;
+    font-style: italic;
+    margin-left: 0;
+    margin-bottom: 1.5em;
+}
