@@ -389,7 +389,7 @@ function wppb_signup_user_notification( $user, $user_email, $activation_key, $me
 	$subject = sprintf( __( '[%1$s] Activate %2$s', 'profile-builder'), $from_name, $user );
 	$subject = apply_filters( 'wppb_signup_user_notification_email_subject', $subject, $user_email, $user, $activation_key, $registration_page_url, $meta, $from_name, 'wppb_user_emailc_registr_w_email_confirm_email_subject' );
 
-	$message = sprintf( __( "To activate your user, please click the following link:\n\n%s%s%s\n\nAfter you activate it you will receive yet *another email* with your login.", "profile-builder" ), '<a href="'.$registration_page_url.'">', $registration_page_url, '</a>.' );
+	$message = sprintf( __( "To activate your user, please click the following link:<br><br>%s%s%s<br><br>After you activate it you will receive yet *another email* with your login.", "profile-builder" ), '<a href="'.$registration_page_url.'">', $registration_page_url, '</a>.' );
     $message = apply_filters( 'wppb_signup_user_notification_email_content', $message, $user_email, $user, $activation_key, $registration_page_url, $meta, $from_name, 'wppb_user_emailc_registr_w_email_confirm_email_content' );
 
 	$message_context = 'email_user_activate';
@@ -625,31 +625,26 @@ function wppb_adminApproval_userEmailContent() {
 add_action( 'wp_ajax_wppb_get_unconfirmed_email_number', 'wppb_get_unconfirmed_email_number' );	
 add_action( 'wp_ajax_wppb_handle_email_confirmation_cases', 'wppb_handle_email_confirmation_cases' );
 
-if ( is_multisite() ){
 
-    /* don't display on network admin */
-	if( strpos($_SERVER['SCRIPT_NAME'], 'users.php') && !is_network_admin() ){  //global $pagenow doesn't seem to work
-		add_action( 'admin_head', 'wppb_add_pending_users_header_script' );
-	}
+$wppb_general_settings = get_option( 'wppb_general_settings', 'not_found' );
+if( $wppb_general_settings != 'not_found' )
+    if( !empty($wppb_general_settings['emailConfirmation'] ) && ( $wppb_general_settings['emailConfirmation'] == 'yes' ) ){
+        if ( is_multisite() ){
+            /* don't display on network admin */
+            if( strpos($_SERVER['SCRIPT_NAME'], 'users.php') && !is_network_admin() ){  //global $pagenow doesn't seem to work
+                add_action( 'admin_head', 'wppb_add_pending_users_header_script' );
+            }
+        }else{
+            global $pagenow;
+            if ( $pagenow == 'users.php' ){
+                add_action( 'admin_head', 'wppb_add_pending_users_header_script' );
+            }
+        }
 
-	if ( file_exists ( WPPB_PLUGIN_DIR . '/features/admin-approval/admin-approval.php' ) )
-		add_action( 'user_register', 'wppb_update_user_status_on_admin_registration' );
-	
-}else{
-	$wppb_general_settings = get_option( 'wppb_general_settings', 'not_found' );
-	
-	if( $wppb_general_settings != 'not_found' )
-		if( !empty($wppb_general_settings['emailConfirmation'] ) && ( $wppb_general_settings['emailConfirmation'] == 'yes' ) ){
-			global $pagenow;
-			
-			if ( $pagenow == 'users.php' ){
-				add_action( 'admin_head', 'wppb_add_pending_users_header_script' );
+        if ( file_exists ( WPPB_PLUGIN_DIR . '/features/admin-approval/admin-approval.php' ) )
+            add_action( 'user_register', 'wppb_update_user_status_on_admin_registration' );
+    }
 
-			}
-			if ( file_exists ( WPPB_PLUGIN_DIR . '/features/admin-approval/admin-approval.php' ) )
-				add_action( 'user_register', 'wppb_update_user_status_on_admin_registration' );
-		}
-}
 
 // function to delete the users from the _signups table also
 function wppb_delete_user_from_signups( $user_id ) {

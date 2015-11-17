@@ -459,17 +459,14 @@ if ( is_admin() ){
 		else
 			$delete = $wpdb->delete( $wpdb->prefix.'signups', array( 'user_login' => $userLogin ) );
 	}
-	
-	if ( is_multisite() )
-		add_action( 'wpmu_delete_user', 'wppb_delete_user_from_signups_table' );
-	
-	else{
-		$wppb_generalSettings = get_option( 'wppb_general_settings' );
-				
-		if ( $wppb_generalSettings['emailConfirmation'] == 'yes' )
-			add_action( 'delete_user', 'wppb_delete_user_from_signups_table' );
-	}
 
+    $wppb_generalSettings = get_option( 'wppb_general_settings' );
+    if ( $wppb_generalSettings['emailConfirmation'] == 'yes' ) {
+        if( is_multisite() )
+            add_action( 'wpmu_delete_user', 'wppb_delete_user_from_signups_table' );
+        else
+            add_action('delete_user', 'wppb_delete_user_from_signups_table');
+    }
 }
 
 

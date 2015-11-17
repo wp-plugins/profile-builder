@@ -429,17 +429,13 @@ class wpp_list_unfonfirmed_email_table extends PB_WP_List_Table {
  * Now we just need to define an admin page.
  */
 function wppb_add_ec_submenu_page() {
-	if (is_multisite()){
-		add_submenu_page( 'users.php', 'Unconfirmed Email Address', 'Unconfirmed Email Address', 'manage_options', 'unconfirmed_emails', 'wppb_unconfirmed_email_address_custom_menu_page' );
-		remove_submenu_page( 'users.php', 'unconfirmed_emails' ); //hide the page in the admin menu
-	
-	}else{
-		$wppb_generalSettings = get_option('wppb_general_settings', 'not_found');
-		if($wppb_generalSettings != 'not_found')
-			if(!empty($wppb_generalSettings['emailConfirmation']) && ($wppb_generalSettings['emailConfirmation'] == 'yes'))
-				add_submenu_page( 'users.php', 'Unconfirmed Email Address', 'Unconfirmed Email Address', 'manage_options', 'unconfirmed_emails', 'wppb_unconfirmed_email_address_custom_menu_page' );
-				remove_submenu_page( 'users.php', 'unconfirmed_emails' ); //hide the page in the admin menu
-	}
+    $wppb_generalSettings = get_option('wppb_general_settings', 'not_found');
+    if($wppb_generalSettings != 'not_found') {
+        if( !empty($wppb_generalSettings['emailConfirmation']) && ($wppb_generalSettings['emailConfirmation'] == 'yes') ){
+            add_submenu_page('users.php', 'Unconfirmed Email Address', 'Unconfirmed Email Address', 'manage_options', 'unconfirmed_emails', 'wppb_unconfirmed_email_address_custom_menu_page');
+            remove_submenu_page('users.php', 'unconfirmed_emails'); //hide the page in the admin menu
+        }
+    }
 }
 add_action('admin_menu', 'wppb_add_ec_submenu_page');
 

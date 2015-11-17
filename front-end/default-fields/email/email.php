@@ -49,7 +49,7 @@ function wppb_check_email_value( $message, $field, $request_data, $form_location
 	}
 
     $wppb_generalSettings = get_option( 'wppb_general_settings' );
-	if ( is_multisite() || ( !is_multisite() && ( isset( $wppb_generalSettings['emailConfirmation'] ) && ( $wppb_generalSettings['emailConfirmation'] == 'yes' ) ) ) ){
+	if ( isset( $wppb_generalSettings['emailConfirmation'] ) && ( $wppb_generalSettings['emailConfirmation'] == 'yes' ) ){
 		$user_signup = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM ".$wpdb->base_prefix."signups WHERE user_email = %s AND active=0", $request_data['email'] ) );
 
         if ( !empty( $user_signup ) ){

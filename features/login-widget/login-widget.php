@@ -19,14 +19,14 @@ class wppb_login_widget extends WP_Widget {
 	function widget( $args, $instance ) {
 		extract( $args );
 
-		$title = apply_filters('wppb_login_widget_title', $instance['title'] );
-		$redirect = trim($instance['redirect']);
-		$register = trim($instance['register']);
-		$lostpass = trim($instance['lostpass']);
+		$title = apply_filters( 'wppb_login_widget_title', ( isset( $instance['title'] ) ? $instance['title'] : '' ) );
+		$redirect = ( isset( $instance['redirect'] ) ? trim( $instance['redirect'] ) : '' );
+		$register = ( isset( $instance['register'] ) ? trim( $instance['register'] ) : '' );
+		$lostpass = ( isset( $instance['lostpass'] ) ? trim( $instance['lostpass'] ) : '' );
 
 		echo $before_widget;
 
-		if ( $title )
+		if ( ! empty( $title ) )
 			echo $before_title . $title . $after_title;
 
 		echo do_shortcode('[wppb-login display="false" register_url="'.$register.'" lostpassword_url="'.$lostpass.'" redirect="'.$redirect.'"]');

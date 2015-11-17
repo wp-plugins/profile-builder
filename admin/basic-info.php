@@ -162,7 +162,7 @@ function wppb_basic_info_content() {
 				<h3>Paid user profiles with Profile Builder and Paid Member Subscriptions</h3>
 				<p>One of the most requested features in Profile Builder was for users to be able to pay for an account.</p>
 				<p>Now that's possible using the free WordPress plugin - <a href="<?php echo admin_url('options.php?page=profile-builder-pms-promo'); ?>">Paid Member Subscriptions</a>.</p>
-				<p><a href="<?php echo admin_url('options.php?page=profile-builder-pms-promo'); ?>" class="button">Find out what's new</a></p>
+				<p><a href="<?php echo admin_url('options.php?page=profile-builder-pms-promo'); ?>" class="button">Find out how</a></p>
 
 			</div>
 		</div>

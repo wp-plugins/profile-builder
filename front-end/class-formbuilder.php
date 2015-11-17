@@ -232,17 +232,10 @@ class Profile_Builder_Form_Creator{
                         $wppb_general_settings = get_option( 'wppb_general_settings', 'false' );
                         if ( $wppb_general_settings ){
                             if( !empty( $wppb_general_settings['emailConfirmation'] ) )
-								if ( is_multisite() ) {
-									$wppb_email_confirmation = 'yes';
-								} else {
-									$wppb_email_confirmation = $wppb_general_settings['emailConfirmation'];
-								}
+								$wppb_email_confirmation = $wppb_general_settings['emailConfirmation'];
                             else
-								if ( is_multisite() ) {
-									$wppb_email_confirmation = 'yes';
-								} else {
-									$wppb_email_confirmation = 'no';
-								}
+								$wppb_email_confirmation = 'no';
+
                             if( !empty( $wppb_general_settings['adminApproval'] ) )
                                 $wppb_admin_approval = $wppb_general_settings['adminApproval'];
                             else
@@ -374,14 +367,9 @@ class Profile_Builder_Form_Creator{
 		
 		else{
 			$checkbox = apply_filters( 'wppb_send_credentials_checkbox_logic', '<li class="wppb-form-field wppb-send-credentials-checkbox"><label for="send_credentials_via_email"><input id="send_credentials_via_email" type="checkbox" name="send_credentials_via_email" value="sending"'.( ( isset( $request_data['send_credentials_via_email'] ) && ( $request_data['send_credentials_via_email'] == 'sending' ) ) ? ' checked' : '' ).'/>'.__( 'Send these credentials via email.', 'profile-builder').'</label></li>', $request_data, $form );
-		
-			if ( !is_multisite() ){
-				$wppb_general_settings = get_option( 'wppb_general_settings' );
-				
-				echo ( isset( $wppb_general_settings['emailConfirmation'] ) && ( $wppb_general_settings['emailConfirmation'] == 'yes' ) ? '' : $checkbox );
-				
-			}else
-				echo '';
+
+			$wppb_general_settings = get_option( 'wppb_general_settings' );
+			echo ( isset( $wppb_general_settings['emailConfirmation'] ) && ( $wppb_general_settings['emailConfirmation'] == 'yes' ) ? '' : $checkbox );
 		}
 	}
 	
@@ -412,40 +400,32 @@ class Profile_Builder_Form_Creator{
             if( isset( $wppb_general_settings['loginWith'] ) && ( $wppb_general_settings['loginWith'] == 'email' ) ){
                 $userdata['user_login'] = apply_filters( 'wppb_generated_random_username', Wordpress_Creation_Kit_PB::wck_generate_slug( trim( $userdata['user_email'] ) ), $userdata['user_email'] );
             }
-			if ( !is_multisite() ){
-				if ( isset( $wppb_general_settings['emailConfirmation'] ) && ( $wppb_general_settings['emailConfirmation'] == 'yes' ) ){
-					$new_user_signup = true;
-					$multisite_message = true;					
-					$userdata = $this->wppb_add_custom_field_values( $global_request, $userdata, $this->args['form_fields'] );
 
-                    if( !isset( $userdata['role'] ) )
-                        $userdata['role'] = $this->args['role'];
-
-                    $userdata['user_pass'] = wp_hash_password( $userdata['user_pass'] );
-					wppb_signup_user( $userdata['user_login'], $userdata['user_email'], $userdata );
-				
-				}else{
-                    if( !isset( $userdata['role'] ) )
-					    $userdata['role'] = $this->args['role'];
-
-                    $userdata = wp_unslash( $userdata );
-					$user_id = wp_insert_user( $userdata );
-				}
-			
-			}else{
-				$new_user_signup = true;
-				$multisite_message = true;			
-				$userdata = $this->wppb_add_custom_field_values( $global_request, $userdata, $this->args['form_fields'] );
+            if ( isset( $wppb_general_settings['emailConfirmation'] ) && ( $wppb_general_settings['emailConfirmation'] == 'yes' ) ){
+                $new_user_signup = true;
+                $multisite_message = true;
+                $userdata = $this->wppb_add_custom_field_values( $global_request, $userdata, $this->args['form_fields'] );
 
                 if( !isset( $userdata['role'] ) )
-				    $userdata['role'] = $this->args['role'];
+                    $userdata['role'] = $this->args['role'];
 
                 $userdata['user_pass'] = wp_hash_password( $userdata['user_pass'] );
-                /* since version 2.0.7 add this meta so we know on what blog the user registered */
-                $userdata['registered_for_blog_id'] = get_current_blog_id();
+
+                if( is_multisite() ){
+                    /* since version 2.0.7 add this meta so we know on what blog the user registered */
+                    $userdata['registered_for_blog_id'] = get_current_blog_id();
+                    $userdata = wp_unslash( $userdata );
+                }
+
+                wppb_signup_user( $userdata['user_login'], $userdata['user_email'], $userdata );
+
+            }else{
+                if( !isset( $userdata['role'] ) )
+                    $userdata['role'] = $this->args['role'];
+
                 $userdata = wp_unslash( $userdata );
-				wppb_signup_user( $userdata['user_login'], $userdata['user_email'], $userdata );
-			}
+                $user_id = wp_insert_user( $userdata );
+            }
 		
 		}elseif( $this->args['form_type'] == 'edit_profile' ){
 			if( isset( $wppb_general_settings['loginWith'] ) && ( $wppb_general_settings['loginWith'] == 'email' ) ){
