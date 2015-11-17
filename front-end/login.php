@@ -14,7 +14,7 @@ function wppb_login_form_bottom( $form_part, $args ){
 		$form_part .= '<input type="hidden" name="wppb_request_url" value="'. esc_url( wppb_curpageurl() ).'"/>';
         $form_part .= '<input type="hidden" name="wppb_lostpassword_url" value="'.esc_url( $args['lostpassword_url'] ).'"/>';
 		$form_part .= '<input type="hidden" name="wppb_redirect_priority" value="'. esc_attr( isset( $args['redirect_priority'] ) ? $args['redirect_priority'] : '' ) .'"/>';
-
+		$form_part .= '<input type="hidden" name="wppb_referer_url" value="'.esc_url( isset( $_SERVER['HTTP_REFERER'] ) ? $_SERVER['HTTP_REFERER'] : '' ).'"/>';
 	}
 	
 	return $form_part;

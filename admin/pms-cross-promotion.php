@@ -34,7 +34,7 @@ function wppb_pms_cross_promo() {
 		<hr/>
 		<div class="wppb-row wppb-2-col">
 			<div>
-				<p><?php _e( 'With the new Subscriptions Field in Profile Builder, your registration forms will allow your users to register paid accounts.', 'profile-builder' ); ?></p>
+				<p><?php _e( 'With the new Subscriptions Field in Profile Builder, your registration forms will allow your users to sign up for paid accounts.', 'profile-builder' ); ?></p>
 				<p>Other features of Paid Member Subscriptions are:</p>
 				<ul>
 					<li><?php _e( 'Paid & Free Subscriptions', 'profile-builder' ); ?></li>

@@ -54,7 +54,7 @@ function wppb_check_username_value( $message, $field, $request_data, $form_locat
 		}
 
         $wppb_generalSettings = get_option('wppb_general_settings');
-        if ( is_multisite() || ( !is_multisite() && $wppb_generalSettings['emailConfirmation'] == 'yes'  ) ){
+        if ( $wppb_generalSettings['emailConfirmation'] == 'yes'  ){
 
             if( is_multisite() && $request_data['username'] != preg_replace( '/\s+/', '', $request_data['username'] ) ){
                 return __( 'This username is invalid because it uses illegal characters.', 'profile-builder' ) .'<br/>'. __( 'Please enter a valid username.', 'profile-builder' );
